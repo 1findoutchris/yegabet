@@ -81,17 +81,21 @@ jobs:
       # DATABASE_URL is deliberately NEVER set. tests/guard.ts validates
       # TEST_DATABASE_URL and assigns it — that is the only assignment path.
       TEST_DATABASE_URL: postgresql://postgres:postgres@localhost:5432/vamos_test
-      AUTH_SECRET: ${{ secrets.AUTH_SECRET }}
-      ADMIN_SECRET: ${{ secrets.ADMIN_SECRET }}
-      ADMIN_USERNAME: ${{ secrets.ADMIN_USERNAME }}
-      ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
-      PAYOUT_SECRET: ${{ secrets.PAYOUT_SECRET }}
-      SILENT_API_SECRET_KEY: ${{ secrets.SILENT_API_SECRET_KEY }}
-      SMS_FORWARDER_SECRET: ${{ secrets.SMS_FORWARDER_SECRET }}
-      CRON_SECRET: ${{ secrets.CRON_SECRET }}
-      # Not secrets — these only need to exist. src/lib/providers/silent-api.ts
-      # non-null-asserts them and calls axios.create() at module load, so an
-      # import throws without them even though no test makes a provider call.
+      # Dummy values, not secrets — the tests only need each var to EXIST and
+      # match between the test harness and the route under test (e.g. the
+      # callback test signs with SILENT_API_SECRET_KEY and the route verifies
+      # with the same value). Nothing here reaches a real external service.
+      AUTH_SECRET: ci-auth-secret
+      ADMIN_SECRET: ci-admin-secret
+      ADMIN_USERNAME: admin
+      ADMIN_PASSWORD: ci-admin-password
+      PAYOUT_SECRET: ci-payout-secret
+      SILENT_API_SECRET_KEY: ci-silent-hmac-secret
+      SMS_FORWARDER_SECRET: ci-sms-secret
+      CRON_SECRET: ci-cron-secret
+      # src/lib/providers/silent-api.ts non-null-asserts these and calls
+      # axios.create() at module load — an import throws without them even
+      # though no test makes a provider call.
       SILENT_API_BASE_URL: http://127.0.0.1:9/unused
       SILENT_API_BEARER_TOKEN: unused
 
@@ -169,14 +173,15 @@ jobs:
     env:
       TEST_DATABASE_URL: postgresql://postgres:postgres@localhost:5432/vamos_test
       E2E_REDIS_URL: redis://127.0.0.1:6379
-      AUTH_SECRET: ${{ secrets.AUTH_SECRET }}
-      ADMIN_SECRET: ${{ secrets.ADMIN_SECRET }}
-      ADMIN_USERNAME: ${{ secrets.ADMIN_USERNAME }}
-      ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
-      PAYOUT_SECRET: ${{ secrets.PAYOUT_SECRET }}
-      SILENT_API_SECRET_KEY: ${{ secrets.SILENT_API_SECRET_KEY }}
-      SMS_FORWARDER_SECRET: ${{ secrets.SMS_FORWARDER_SECRET }}
-      CRON_SECRET: ${{ secrets.CRON_SECRET }}
+      # Same as the db job — dummy values, they only need to exist.
+      AUTH_SECRET: ci-auth-secret
+      ADMIN_SECRET: ci-admin-secret
+      ADMIN_USERNAME: admin
+      ADMIN_PASSWORD: ci-admin-password
+      PAYOUT_SECRET: ci-payout-secret
+      SILENT_API_SECRET_KEY: ci-silent-hmac-secret
+      SMS_FORWARDER_SECRET: ci-sms-secret
+      CRON_SECRET: ci-cron-secret
 
     steps:
       - uses: actions/checkout@v4
