@@ -56,11 +56,23 @@ jobs:
     needs: check
     runs-on: ubuntu-latest
 
-    # ONE shared test database means one writer. Without this, two PRs reset the
-    # schema under each other mid-run and it looks exactly like flaky tests.
-    concurrency:
-      group: vamos-testdb
-      cancel-in-progress: false
+    # Fresh Postgres per run — no shared test DB to lock on, no public
+    # endpoint to secure, nothing to pay for. The suite runs
+    # `prisma migrate reset`, which is exactly what a disposable container is
+    # for. tests/guard.ts still validates the URL (name must contain `test`).
+    services:
+      postgres:
+        image: postgres:16
+        ports: ["5432:5432"]
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: vamos_test
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 5s
+          --health-timeout 3s
+          --health-retries 10
 
     # Forks cannot read secrets. Skip rather than fail red on every fork PR.
     if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository
@@ -68,7 +80,7 @@ jobs:
     env:
       # DATABASE_URL is deliberately NEVER set. tests/guard.ts validates
       # TEST_DATABASE_URL and assigns it — that is the only assignment path.
-      TEST_DATABASE_URL: ${{ secrets.TEST_DATABASE_URL }}
+      TEST_DATABASE_URL: postgresql://postgres:postgres@localhost:5432/vamos_test
       AUTH_SECRET: ${{ secrets.AUTH_SECRET }}
       ADMIN_SECRET: ${{ secrets.ADMIN_SECRET }}
       ADMIN_USERNAME: ${{ secrets.ADMIN_USERNAME }}
@@ -127,15 +139,11 @@ jobs:
     needs: db
     runs-on: ubuntu-latest
 
-    # Shares the one test database with the `db` job, so it takes the same lock.
-    concurrency:
-      group: vamos-testdb
-      cancel-in-progress: false
-
     if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository
 
     # The app under test is a real Next process — it cannot see Vitest's module
     # alias, so this needs an actual Redis rather than the in-memory fake.
+    # Postgres is its own fresh container too — no shared state with the db job.
     services:
       redis:
         image: redis:7
@@ -145,9 +153,21 @@ jobs:
           --health-interval 5s
           --health-timeout 3s
           --health-retries 10
+      postgres:
+        image: postgres:16
+        ports: ["5432:5432"]
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: vamos_test
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 5s
+          --health-timeout 3s
+          --health-retries 10
 
     env:
-      TEST_DATABASE_URL: ${{ secrets.TEST_DATABASE_URL }}
+      TEST_DATABASE_URL: postgresql://postgres:postgres@localhost:5432/vamos_test
       E2E_REDIS_URL: redis://127.0.0.1:6379
       AUTH_SECRET: ${{ secrets.AUTH_SECRET }}
       ADMIN_SECRET: ${{ secrets.ADMIN_SECRET }}
