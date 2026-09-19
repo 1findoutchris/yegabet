@@ -91,17 +91,17 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Name, phone and commission rate are required" }, { status: 400 });
   }
 
-  // Credentials auth matches User.phone exactly, and the login form sends the
-  // 9-digit local format (911111111). normalizePhone gives E.164 — strip the
-  // +251 so whatever the admin typed (09…, +251…, 9…) stores canonically.
-  const e164 = normalizePhone(parsed.data.phone);
-  if (!e164) {
+  // Credentials auth matches User.phone exactly, and the login form sends
+  // E.164 (+2519XXXXXXXX — PhoneField prepends +251). normalizePhone returns
+  // the same E.164, so whatever the admin typed (09…, +251…, 9…) stores in the
+  // canonical format registered users already use.
+  const phone = normalizePhone(parsed.data.phone);
+  if (!phone) {
     return NextResponse.json(
       { error: "Enter a valid Ethiopian phone number (9XXXXXXXX or 7XXXXXXXX)." },
       { status: 400 }
     );
   }
-  const phone = e164.slice(4);
 
   const phoneTaken = await prisma.user.findUnique({
     where: { phone },
