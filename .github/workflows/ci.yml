@@ -132,6 +132,10 @@ jobs:
             u.pathname = "/vamos_shadow";
             process.stdout.write(u.toString());
           ')"
+          # migrate diff connects before it drops/recreates — the shadow DB
+          # must already exist. Fresh container, so create it first.
+          echo "CREATE DATABASE vamos_shadow;" | npx prisma db execute \
+            --url "$TEST_DATABASE_URL" --stdin
           npx prisma migrate diff \
             --from-migrations prisma/migrations \
             --to-schema-datamodel prisma/schema.prisma \
