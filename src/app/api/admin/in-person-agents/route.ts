@@ -4,6 +4,7 @@ import { z } from "zod";
 import { prisma } from "@/lib/prisma";
 import { requireAdminAuth, logAdminAction, getClientIp } from "@/lib/adminAuth";
 import { generateCredentials } from "@/lib/payoutAgents";
+import { normalizePhone } from "@/lib/sms";
 
 /**
  * GET — every in-person betting agent with live stats: tickets, stake volume,
@@ -90,8 +91,20 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Name, phone and commission rate are required" }, { status: 400 });
   }
 
+  // Credentials auth matches User.phone exactly, and the login form sends the
+  // 9-digit local format (911111111). normalizePhone gives E.164 — strip the
+  // +251 so whatever the admin typed (09…, +251…, 9…) stores canonically.
+  const e164 = normalizePhone(parsed.data.phone);
+  if (!e164) {
+    return NextResponse.json(
+      { error: "Enter a valid Ethiopian phone number (9XXXXXXXX or 7XXXXXXXX)." },
+      { status: 400 }
+    );
+  }
+  const phone = e164.slice(4);
+
   const phoneTaken = await prisma.user.findUnique({
-    where: { phone: parsed.data.phone },
+    where: { phone },
     select: { id: true },
   });
   if (phoneTaken) {
@@ -108,7 +121,7 @@ export async function POST(req: NextRequest) {
       data: {
         username,
         name: parsed.data.name,
-        phone: parsed.data.phone,
+        phone,
         passwordHash: await bcrypt.hash(password, 10),
         role: "IN_PERSON_AGENT",
         isVerified: true, // admin-created — no OTP step
