@@ -1,0 +1,185 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  # No secrets, so this also runs on fork PRs. Everything here is fast and
+  # catches the two classes of bug that used to reach Railway unnoticed:
+  # type drift across the client/server wire, and broken pure logic.
+  check:
+    name: typecheck · lint · unit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      # `npm install`, not `npm ci`.
+      #
+      # The lockfile is generated on Windows, which omits the Linux-only
+      # optional deps of the wasm32-wasi fallback packages (@emnapi/core and
+      # @emnapi/runtime, pulled in by @tailwindcss/oxide and sharp). `npm ci`
+      # refuses to install from a lockfile it considers out of sync, so it
+      # fails here before running anything, and neither `npm install` on
+      # Windows nor `--os=linux` adds the missing entries.
+      #
+      # Cost: CI no longer enforces the lockfile, so a dependency could resolve
+      # differently here than locally. Fix properly by regenerating
+      # package-lock.json on Linux (Docker: `node:22-alpine npm install
+      # --package-lock-only`) and switching this back to `npm ci`.
+      - run: npm install --no-audit --no-fund
+
+      # The Prisma client is generated, not committed — tsc fails without it.
+      - run: npx prisma generate
+
+      # Nothing ran tsc outside an editor before. This is what makes removing a
+      # field from an API response a build failure instead of the string
+      # "undefined" rendering in production.
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Lint
+        run: npm run lint
+
+      # The 9 src/lib/*.check.ts self-checks, ~215 asserts over the money math,
+      # plus the phone/SMS-parser/HMAC/guard unit tests.
+      - name: Unit tests
+        run: npm test
+
+  db:
+    name: database integration
+    needs: check
+    runs-on: ubuntu-latest
+
+    # ONE shared test database means one writer. Without this, two PRs reset the
+    # schema under each other mid-run and it looks exactly like flaky tests.
+    concurrency:
+      group: vamos-testdb
+      cancel-in-progress: false
+
+    # Forks cannot read secrets. Skip rather than fail red on every fork PR.
+    if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository
+
+    env:
+      # DATABASE_URL is deliberately NEVER set. tests/guard.ts validates
+      # TEST_DATABASE_URL and assigns it — that is the only assignment path.
+      TEST_DATABASE_URL: ${{ secrets.TEST_DATABASE_URL }}
+      AUTH_SECRET: ${{ secrets.AUTH_SECRET }}
+      ADMIN_SECRET: ${{ secrets.ADMIN_SECRET }}
+      ADMIN_USERNAME: ${{ secrets.ADMIN_USERNAME }}
+      ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
+      PAYOUT_SECRET: ${{ secrets.PAYOUT_SECRET }}
+      SILENT_API_SECRET_KEY: ${{ secrets.SILENT_API_SECRET_KEY }}
+      SMS_FORWARDER_SECRET: ${{ secrets.SMS_FORWARDER_SECRET }}
+      CRON_SECRET: ${{ secrets.CRON_SECRET }}
+      # Not secrets — these only need to exist. src/lib/providers/silent-api.ts
+      # non-null-asserts them and calls axios.create() at module load, so an
+      # import throws without them even though no test makes a provider call.
+      SILENT_API_BASE_URL: http://127.0.0.1:9/unused
+      SILENT_API_BEARER_TOKEN: unused
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      # See the note on the `check` job — lockfile is Windows-generated.
+      - run: npm install --no-audit --no-fund
+      - run: npx prisma generate
+
+      # globalSetup guards the URL, then replays all migrations from empty —
+      # which is itself the check that the migration chain still works. Columns
+      # that only exist because someone ran `db push` fail here.
+      - name: DB integration tests
+        run: npm run test:db
+
+      # Schema drift: the migrations and schema.prisma must agree.
+      #
+      # The shadow database MUST NOT be the test database. Prisma DROPS AND
+      # RECREATES whatever it is given here in order to replay migrations into
+      # it — passing TEST_DATABASE_URL silently wiped the database the tests had
+      # just finished using, _prisma_migrations included, leaving it unusable
+      # until the next full reset. Uses a dedicated `vamos_shadow` database on
+      # the same instance instead.
+      - name: Migration drift check
+        run: |
+          SHADOW_URL="$(node -e '
+            const u = new URL(process.env.TEST_DATABASE_URL);
+            u.pathname = "/vamos_shadow";
+            process.stdout.write(u.toString());
+          ')"
+          npx prisma migrate diff \
+            --from-migrations prisma/migrations \
+            --to-schema-datamodel prisma/schema.prisma \
+            --shadow-database-url "$SHADOW_URL" \
+            --exit-code
+
+  e2e:
+    name: end-to-end
+    needs: db
+    runs-on: ubuntu-latest
+
+    # Shares the one test database with the `db` job, so it takes the same lock.
+    concurrency:
+      group: vamos-testdb
+      cancel-in-progress: false
+
+    if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository
+
+    # The app under test is a real Next process — it cannot see Vitest's module
+    # alias, so this needs an actual Redis rather than the in-memory fake.
+    services:
+      redis:
+        image: redis:7
+        ports: ["6379:6379"]
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 5s
+          --health-timeout 3s
+          --health-retries 10
+
+    env:
+      TEST_DATABASE_URL: ${{ secrets.TEST_DATABASE_URL }}
+      E2E_REDIS_URL: redis://127.0.0.1:6379
+      AUTH_SECRET: ${{ secrets.AUTH_SECRET }}
+      ADMIN_SECRET: ${{ secrets.ADMIN_SECRET }}
+      ADMIN_USERNAME: ${{ secrets.ADMIN_USERNAME }}
+      ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
+      PAYOUT_SECRET: ${{ secrets.PAYOUT_SECRET }}
+      SILENT_API_SECRET_KEY: ${{ secrets.SILENT_API_SECRET_KEY }}
+      SMS_FORWARDER_SECRET: ${{ secrets.SMS_FORWARDER_SECRET }}
+      CRON_SECRET: ${{ secrets.CRON_SECRET }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      # See the note on the `check` job — lockfile is Windows-generated.
+      - run: npm install --no-audit --no-fund
+      - run: npx prisma generate
+
+      - run: npx playwright install --with-deps chromium
+
+      # playwright.config.ts builds and starts the app itself (a production
+      # build, not `next dev`, so RSC/build breakage is caught).
+      - name: E2E tests
+        run: npm run test:e2e
+
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 7

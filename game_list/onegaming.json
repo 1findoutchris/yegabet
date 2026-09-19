@@ -1,0 +1,320 @@
+[
+    {
+        "gameNameEn": "Fortune Dragon",
+        "gameID": "eb974cce48697925955ce55d1afb13c1",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "Gate to Gold",
+        "gameID": "17997c58cc44b30679e7efe5ccaa4c8d",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "Big Rich Fortune",
+        "gameID": "0052ab3e8fbff56f9d192925ede93728",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "Fortune Festival",
+        "gameID": "c631bfe3a20840a8654d684a291e6e68",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "Dragons Legend",
+        "gameID": "9fc16beadc31ce189f56a6ec86117547",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "FaFa Babies",
+        "gameID": "8110ac702071ebc71ca1698143dc7b85",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "Heavenly Rich",
+        "gameID": "a349eb03e085ed1a84dbdc48e22f6614",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "Happy Panda",
+        "gameID": "a233ca6f73ed10fe1133903a34f9788a",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "Celebrating Lions",
+        "gameID": "19b2c308faa7f159cde4494b1a5d3285",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "Kings Piggy Bank",
+        "gameID": "d0e22b9864ee4c422d94168e101ccfa2",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "Lucky Koi",
+        "gameID": "86b90d79b25cb4d4ae4b058d4b72a0e1",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "Double Dragon",
+        "gameID": "5f04ba80f992a71962436c9c48335bc0",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "Money Frog",
+        "gameID": "c2e78f3755809824dd635085170b7583",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "Rising Phoenix",
+        "gameID": "de5964c285168068c8c448d4fc47552f",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "Winning Scroll",
+        "gameID": "c00c5e9bbe6c918ebf9ea6951889d748",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "Fa Cai Shen",
+        "gameID": "f0a8e72cf4de310323cfcb5d99391c3e",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "Double Happiness",
+        "gameID": "3f6751075faaed2465733a36ed20ac9d",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "Party Monkey",
+        "gameID": "09742732dd9ec6bc24870a1965004969",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "Beautiful Peony",
+        "gameID": "0db6915d71e008683985e3637e3e7c2c",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "Eternal Fortune",
+        "gameID": "b63e1ad05d45d80e967ce3be5339b776",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "88 Treasures",
+        "gameID": "c4bd1db960587685ad9fc6e644bb9a38",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "Kings Piggy Gold",
+        "gameID": "439796e07619bca73888d6d069d3e0f8",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "Monkey King Opera",
+        "gameID": "6f5eed37f19a7bdb5586b42ab6e2ed60",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "Kings Jackpots",
+        "gameID": "36f220f7a76f7e7e8c57169546af6b9a",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "88 Golden Fortunes",
+        "gameID": "700ecc233948076cd0743d937b3ed02a",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "Jin Chan",
+        "gameID": "a3ed01075f2f55704553425f4a7fcf52",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "Jackpot Treasures",
+        "gameID": "320b24ada6ce9087b4747eeeebcc2898",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "Monkey King Opera 2",
+        "gameID": "4f07d5311bf8f9455e7d35eb3b73a40b",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "Tom Yum",
+        "gameID": "a2c7bf307127a8d6f82dea44ff01c7cb",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "Piggy Bank XPlay",
+        "gameID": "e82dec5e52ad4aa4590180d8cc908b70",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "Prosperity Rat",
+        "gameID": "1a499305f1eb9b59bbc7d3ecb189cd78",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "Farm Of Fortune",
+        "gameID": "68f42ae0380460dc049d517b085dd85b",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "Thai Sweets Bonanza",
+        "gameID": "fc37c59478bdd8770bfd59294139e16e",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "Jin Chan Xplay",
+        "gameID": "679ca4120fa5dbde81c5cb3403fbe3fe",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "The Legend Of Banyan Tree",
+        "gameID": "04d23162d73e78890c73a8c86eb07d13",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "Songkran Lucky Splash",
+        "gameID": "6604aebe11352c012868311f314b013f",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "Royal Treasures",
+        "gameID": "52f524729f48e7112e1c5907d7db28be",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "Dragon King Of The Ocean",
+        "gameID": "c92805536524fc8abc8ef0887996e383",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "Wild West Gold Rush",
+        "gameID": "811a2c9060d465c62b79c3469bb28aa1",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "Vikings Fate Of Prosperity",
+        "gameID": "00a05e14c5b350367cb2ace55591554f",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "The Game",
+        "gameID": "76ab3078bdefc63e1911fd668e38bdbe",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "Usaba Samba",
+        "gameID": "583906c65e4b70cdc006223bbdc08706",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "Guardian of Fortune",
+        "gameID": "064b673d42e2b9a0e7e7579b011c88c2",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "Majestic Manda",
+        "gameID": "43d9cc3b237253bcea9fbb2bd7778046",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "Himalaya Treasures",
+        "gameID": "4f4167c88bfd7441f8031c528dad5f74",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "White Elephant",
+        "gameID": "89d3e5cc59919e4bcd2969c5a9475986",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "Break The Bank",
+        "gameID": "beb125737b2aadf2d7ffacc86ec25f99",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "Diamond King",
+        "gameID": "08e2f7cb49c357990ef848c73a5dd25d",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "Wild Miner",
+        "gameID": "c71dd3e903f5666d1096125547b917c2",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "The Big The Fat And The Ugly",
+        "gameID": "7083bf6168e2fefdef510b0e837174f5",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "Eyes of Ra",
+        "gameID": "5d2ac8989d90d73c261f9b570a749e87",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "Lady of Ra",
+        "gameID": "9b99e457e857faf34837d0c278dac9d5",
+        "customGameType": 0,
+        "vendorCode": 19
+    },
+    {
+        "gameNameEn": "Redbeard Treasures",
+        "gameID": "44e251e080e57d0efbeb8593b9fc2e62",
+        "customGameType": 0,
+        "vendorCode": 19
+    }
+]

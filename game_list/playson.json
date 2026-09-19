@@ -1,0 +1,387 @@
+[
+    {
+        "gameNameEn": "100 Joker Staxx",
+        "gameID": "0fffc0c15d1b529f6af331c5b0b41ab1",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "3 Fruits Win: 10 Lines",
+        "gameID": "398e1acd74bc1b6676d6d86807dd3abc",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "5 Fortunator",
+        "gameID": "ef78338785bb8639e0d85897596c6ef8",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "5 Super Sevens & Fruits",
+        "gameID": "0d412154526087972a09d5859e4f75e6",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "9 Happy Pharaohs",
+        "gameID": "9dcbb784669a544c54db9761262bc055",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Book del Sol: Multiplier",
+        "gameID": "7049dd372d031c0a4ba49ff5873088fb",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Book of Gold: Classic",
+        "gameID": "6a8fd95a1693bbfd26631e9d7cb18978",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Book of Gold: Double Chance",
+        "gameID": "20fc6793ce7160a9ada16c404f304eee",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Book of Gold: Multichance",
+        "gameID": "a61b821c703e7bc6cac7b001df9a7257",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Buffalo Power Megaways\u2122",
+        "gameID": "ac5a515cb1479b2f1c4de4a16d4e12cf",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Buffalo Power: Christmas",
+        "gameID": "91fe47eb80dbbcfb22b6ceea76e13101",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Buffalo Power: Hold and Win",
+        "gameID": "1a54ae74fd76abf95c6c63efd0c8bf00",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Burning Fortunator",
+        "gameID": "fcf29a701bf081d918de6a6454d01bca",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Burning Wins x2",
+        "gameID": "7445aafb7120fb1fc644f01e988c0cfc",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Burning Wins: classic 5 lines",
+        "gameID": "ef8efe79a6254f2ec6ea25a7faeeeeaf",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Crystal Land",
+        "gameID": "338c30117b7990cadb0813a6f50e6e77",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Diamond Fortunator: Hold and Win",
+        "gameID": "db609496937822e011bafff4fd70fce7",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Diamond Wins: Hold and Win",
+        "gameID": "cf0ac9cdca2fa85dfa249ad042e4eb98",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Divine Dragon: Hold and Win",
+        "gameID": "254ed79ea292a512d5badb39f473bacc",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Eagle Power: Hold and Win",
+        "gameID": "75dd62216b8277df0e4e530a39d4293d",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Fruits & Jokers: 100 Lines",
+        "gameID": "d1ee0e66fe74859959b6f1b7f835c7bb",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Fruits & Jokers: 20 lines",
+        "gameID": "5c57fd339db9083f1693b533ce4fd44e",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Fruits & Jokers: 40 Lines",
+        "gameID": "3060053df546f3f2511a2d6bc3428c27",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Hot Burning Wins",
+        "gameID": "b4b7e5463088efd8628dddbbfbebffc2",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Hot Coins: Hold and Win",
+        "gameID": "d3d6843fb8b0e7608f6eafc4f8a203af",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Imperial Fruits: 100 Lines",
+        "gameID": "4137f1bdb6f8599f4d248c7568d8252e",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Imperial Fruits: 5 Lines",
+        "gameID": "8edd67b87223d7f71af51aa2c60ece27",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Joker Expand: 5 Lines",
+        "gameID": "e3c847c5f8727c5b840f2a0eb3563c4f",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Joker's Coins: Hold and Win",
+        "gameID": "09e1616ff5f020d5f35a3009a4e8ad29",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Juice Inc.",
+        "gameID": "445ce2a63ebc069f7b84dd93a3103ee1",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Legend of Cleopatra",
+        "gameID": "f7bbd0636698ea47cdaf59c8020ac258",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Legend of Cleopatra Megaways\u2122",
+        "gameID": "1a2686fa98327637cf80b047d2cc9cf3",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Lion Gems: Hold and Win",
+        "gameID": "82130908e039d7b92568791129b38b6c",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Luxor Gold: Hold and Win",
+        "gameID": "b358a282d5fa1b0ed3e293fc444a2b48",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Pearl Beauty: Hold and Win",
+        "gameID": "8a11edf5625dc2a1e38c8e1d998afeb8",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Pirate Sharky",
+        "gameID": "e72ee9e6d91d5e78f88336ff92b26f50",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Rich Diamonds: Hold and Win",
+        "gameID": "42f8a66dddf5425a2eea930ae96e5600",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Rise of Egypt",
+        "gameID": "8eca78f34cf1222ac9a45d45d11d30ab",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Royal Coins 2: Hold and Win",
+        "gameID": "889be21389af06ae588a2db61a676407",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Royal Coins: Hold and Win",
+        "gameID": "419f693276d7f35fa3e3b57371626701",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Ruby Hit: Hold and Win",
+        "gameID": "369dd8a7d81298709d216dfc8c752b5a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Sevens&Fruits",
+        "gameID": "59df691ad15f2f78493e5bf02dd30fb3",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Sevens&Fruits: 20 Lines",
+        "gameID": "2a6d5454ac716bee2586ff3274442e93",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Solar King",
+        "gameID": "2101d4e65beb437647c89b715dd97fc5",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Solar Queen",
+        "gameID": "10d17f8e085d61b9bc006bb0ae478fb6",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Solar Queen Megaways\u2122",
+        "gameID": "70ce1d59647aa394c96452d83b811fd7",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Solar Temple",
+        "gameID": "0f0ee7d15228b33c1edb463a18f0f9db",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Spirit of Egypt: Hold and Win",
+        "gameID": "76c85f34032116d89619e2a1274547d2",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Sunny Fruits: Hold and Win",
+        "gameID": "9c75f34c18f6826be545aaf2d51ebafa",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Super Burning Wins",
+        "gameID": "6410b005e55e4d2a968047ce7b312bb2",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Super Sunny Fruits: Hold and Win",
+        "gameID": "d83b1fec89519061d8dbd0e6a9174245",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Treasures of Fire: Scatter Pays",
+        "gameID": "fe09206edfa3af77a01397c31ca84f46",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Ultra Fortunator: Hold and Win",
+        "gameID": "db612b0c81cf7a32e238836b08a2fe4f",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Wolf Power Megaways\u2122",
+        "gameID": "9193c199dbb91e18d2174e4412c44104",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Wolf Power: Hold and Win",
+        "gameID": "9ce92ee30c97133cabf0a62ead081356",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    }
+]

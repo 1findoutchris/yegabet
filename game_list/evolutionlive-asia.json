@@ -1,0 +1,3607 @@
+[
+    {
+        "gameNameEn": "Auto-Roulette VIP",
+        "gameID": "367c395a50d4ef9edda332e17094670b",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP A",
+        "gameID": "555681ca33cd74847afbab62a9c446a3",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Blackjack G",
+        "gameID": "fb166643bac3b714a7ce524c2fb0eb00",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP V",
+        "gameID": "c69e64c185d94548fda619a867e1f031",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Auto-Roulette",
+        "gameID": "ed9e15ea8a2cbb9e7ad2604819764d43",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Baccarat B",
+        "gameID": "0ea8519b837ebd62f5a8978acca33e1d",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Immersive Roulette",
+        "gameID": "3b43390eebe1f1a84b15f1251a253b24",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Silver B",
+        "gameID": "8de1993b371ce298b85584d21e5d2106",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "American Roulette",
+        "gameID": "0afb35f8abd269ca0c0c65a49d5145db",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Super Andar Bahar",
+        "gameID": "f7b98e899461bdd49f92afc36b4c0db5",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Bac Bo",
+        "gameID": "9b25f8d744859c6840d16ff6103dc5a6",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP U",
+        "gameID": "921477a239b298fdd623e29c8f982274",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP X",
+        "gameID": "195f9f3cb289ab0c8e281317692590ba",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Cash or Crash",
+        "gameID": "b53a604877024ef2eab9946898e65d6b",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Free Bet VIP Blackjack B",
+        "gameID": "6199b85a5e56f0ac613f3c3ed49b2d78",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Free Bet VIP Blackjack A",
+        "gameID": "4e11ce207582fcffe80e0174a116bb74",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP B",
+        "gameID": "446551dd9ae32002824b065e57686463",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Craps",
+        "gameID": "689dd8e8f17dae910dba9fdd4990d41e",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Crazy Coin Flip",
+        "gameID": "c177ce05258ed2dcbdece64434eaf817",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Crazy Pachinko",
+        "gameID": "911a32ad38d77f86baf29a2cdb95da05",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Crazy Time",
+        "gameID": "917c0c51d248c33eb058e3210a2e7371",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Crazy Time A",
+        "gameID": "814aa56348ac4165588f2a3e251f8732",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Caribbean Stud Poker",
+        "gameID": "724eebd5cbe7555b01ed60279cb59e5a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Deal or No Deal",
+        "gameID": "bee6be84ab995f2040f4e575c2cc3910",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "2 Hand Casino Hold'em",
+        "gameID": "97dcc429fe7142159aab82b918780f14",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Dead or Alive: Saloon",
+        "gameID": "eda1a2c5edb8370f8df58dcf8e1381b9",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Double Ball Roulette",
+        "gameID": "fae08e8e222f162b27a2d5c4329d1044",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Dragon Tiger",
+        "gameID": "1fd20a344c9f147cdef85bbaa7447dcd",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP F",
+        "gameID": "201a27d2b833951f5d982dc5c313fe74",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Fortune VIP",
+        "gameID": "06e7ecf8debac2b86e8b38342de30a7a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Emperor Sic Bo",
+        "gameID": "6a1e55dc7a14f038d9b0207fdb3ecbc0",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Evo Speed Blackjack 4",
+        "gameID": "a8f13fe5c06d1834b7f21c1e3b18ba14",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Evo Speed Blackjack 5",
+        "gameID": "e1275fa257ec5eaa91aa92e90c52fa42",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Evo Speed Blackjack 6",
+        "gameID": "f8c1f4dc8ca9cd39b44011c1adefa9c2",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Evo Speed Blackjack 7",
+        "gameID": "b61a4d32bde967239d321ab8363424be",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Evo Speed Blackjack 8",
+        "gameID": "a8c16416f0b48b87cccdd470723b6d8a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Evo Speed Blackjack 10",
+        "gameID": "3c7c139fc7095e3ddeeffed3fdd4da3c",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Evo Speed Blackjack 11",
+        "gameID": "211fb0f922ef785382a129c6fdb02b46",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Extreme Texas Hold'em",
+        "gameID": "fc4e71748bc1a8a7abfc4c1e2f63aa3b",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Funky Time",
+        "gameID": "8405541014f364b7dc59657aa6892446",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Silver E",
+        "gameID": "0fcd90352f378191e02359a0ab9df5a8",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Grand VIP",
+        "gameID": "79efa086e10bbd8543b6e03e7a491351",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Silver A",
+        "gameID": "faa0c98465e5fe48aefaca3fc885977e",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Gold Vault Roulette",
+        "gameID": "a8d52f6fa06dafce786d70d190c25cbe",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Gonzo's Treasure Map",
+        "gameID": "3f0b35e91f18915f5c5e88f3e1daf66e",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Platinum VIP",
+        "gameID": "c2bd2aafaa4dbaff9df0cd0b53fc6056",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Casino Hold'em",
+        "gameID": "8cb4d1c55915742a45f59f2adbb97e24",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Hindi Speed Baccarat B",
+        "gameID": "327b996d10cab4e88d68a0d1782681b1",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Blackjack J",
+        "gameID": "5a948565b571fadb2256a7789de597ec",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Imperial Quest",
+        "gameID": "624db9f6b362baf19796f281dfdee1ab",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Instant Roulette",
+        "gameID": "ec65c22981a707736871eecfca8e5e25",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack C",
+        "gameID": "135c1d0063a5a18532314e7f669da0a2",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Blackjack K",
+        "gameID": "063cf66c2e8b256eb49ba0c5983354e0",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Blackjack L",
+        "gameID": "e23e0f97958143d951abc0fecca02ec4",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Blackjack M",
+        "gameID": "323c8a2868da01aeae418d247e4f3ee0",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP C",
+        "gameID": "68c5eb853ecdfee94cd5a22f3210aacf",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Baccarat A",
+        "gameID": "ca432917c1beafa247d346bdc7c178a7",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Lightning Baccarat",
+        "gameID": "0f78172e62af19dcc9c75077ea0d0cd0",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Lightning Dragon Tiger",
+        "gameID": "d8da3c5c99a593a44c97325e7ba83838",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Lightning Roulette",
+        "gameID": "4a858d6b74c05260d3ea2762838798c7",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Roulette",
+        "gameID": "b4af506243cafae52908e8fa266f8ff6",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP I",
+        "gameID": "2703c1a1340451d9f9d35904c721f7d6",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Silver F",
+        "gameID": "cd2394d2d8ef2160c8b4826233f7b2fb",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Silver G",
+        "gameID": "fdc106b08bfc4c4d324cac4fa347bf19",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Baccarat B",
+        "gameID": "d3c71b0de6799ca7419d1e7834a05a47",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP J",
+        "gameID": "bd5be8139f01f6719bdd15b92e005523",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP K",
+        "gameID": "ce84d2072af4db522109e3e349bec9c9",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Salon Priv\u00e9 Blackjack A",
+        "gameID": "0b8610191202673d86d53d45f4f05804",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Salon Priv\u00e9 Blackjack C",
+        "gameID": "2e8a0e70afbf41baf8200fbdf90fb6ec",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Salon Priv\u00e9 Roulette",
+        "gameID": "105735cbbaca3b69176c710ebb2c751d",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Mega Ball",
+        "gameID": "3955853fc6a0b53f7f9b9cff0be19cb8",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "MONOPOLY Big Baller",
+        "gameID": "067806e82742ca16bfffe70f76215647",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "MONOPOLY Live",
+        "gameID": "d496ac5fd91702331133e44b6bd12b26",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Dream Catcher",
+        "gameID": "7f50a6fbfcd9257299303b5757d43525",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Infinite Blackjack",
+        "gameID": "58d7089aa20bce7f70e0e2ce81e888f4",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Salon Priv\u00e9 Baccarat B",
+        "gameID": "0c3d0758899d28221890b665fa59a0b3",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP L",
+        "gameID": "2d2e7afef9695e9cf82be87a08f28d23",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP M",
+        "gameID": "bee49a234fcb2ed9547b9e1562953f35",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Blackjack H",
+        "gameID": "3a8c810f74a20fc9e8e871af1c3100db",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Baccarat E",
+        "gameID": "b565bd61b2dd5216d910bd07feb5994e",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "No Commission Speed Baccarat A",
+        "gameID": "b82371488f8fb90efb946634ac61d7f5",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Baccarat C",
+        "gameID": "21cf3fdf28915845ff76f963695bb8e3",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Baccarat C",
+        "gameID": "78a8f259b57a85b7c01f9a1c5c667898",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Baccarat D",
+        "gameID": "441f7d75f645a3ba8c6ca6ac97766e27",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP N",
+        "gameID": "8cadf51f3bab6ca1d1351e39920f0cd0",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP O",
+        "gameID": "4134e22ef51602a341306df756ee8f2c",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Baccarat F",
+        "gameID": "b332c47c868946659d7de97f4157bdb3",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Baccarat G",
+        "gameID": "0f318059268a7522710dfa4b867005e9",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "No Commission Baccarat",
+        "gameID": "17440e0b64775115bb5ae6554a2973a9",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP P",
+        "gameID": "5a04abf1c8f61ff36beaa840b38fd720",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP R",
+        "gameID": "20e34228a5086c5a4198a3c967f99301",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP S",
+        "gameID": "a422edff8144adb81cd3e5d0236bb52b",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP T",
+        "gameID": "78beceac05fb03bb597646ee2a85cb1e",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Baccarat H",
+        "gameID": "08e3fac9968542e243e1b320c033b8d7",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Baccarat I",
+        "gameID": "306416e24dc7aa7400ae46d151c3526e",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP D",
+        "gameID": "d3cc53709c12b63755a2e40bba47f448",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Baccarat Q",
+        "gameID": "85e9ebaaec03ab8d1e579cf2d28a898e",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Baccarat R",
+        "gameID": "44eca39b0a839bf2af75db7a5ecb3450",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Baccarat S",
+        "gameID": "3c4df047efd6126b12f351ad40123e40",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 1",
+        "gameID": "9f509cdc3cdce669368977eda1588011",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 2",
+        "gameID": "7530ac3d1140882df7e883641237bb42",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 3",
+        "gameID": "f8e17bc0ad780b65f684558001ee2e64",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 4",
+        "gameID": "aed251dded03e8a1e665e52cdc4b6e80",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 5",
+        "gameID": "f3d684a1b2fb22ac35c67e296df4db31",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 6",
+        "gameID": "4a33673ccc580aea8ae80ffa03c12ba7",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 7",
+        "gameID": "3d3f89247b5ec9e98e76ef2b22da2532",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 8",
+        "gameID": "ecffee81bd446ea53e4836e497f9e803",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP Z",
+        "gameID": "54b14b8af2eab62dad3053c09ff7508d",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP Q",
+        "gameID": "694ea4e8c2bc49bb69c0c113a29e5c18",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Baccarat J",
+        "gameID": "fbd7f3f9692774963341d7758aa0f439",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Baccarat K",
+        "gameID": "04bbac98e29afadca20019f21b2c21d2",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "No Commission Speed Baccarat B",
+        "gameID": "7f5b0d20c3f491c4fc9456e951ea7005",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Salon Priv\u00e9 Baccarat C",
+        "gameID": "d0fd04343f3d6e77136f4752d93c7610",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Salon Priv\u00e9 Blackjack B",
+        "gameID": "4c4ee10f6c080904bc2e70f66d6185d4",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Salon Priv\u00e9 Blackjack D",
+        "gameID": "9e78f6d00dbebadc3efe5a52af3a0c83",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP Beta",
+        "gameID": "3a3bb51ef96c4795ac20c935ca68443b",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP Alpha",
+        "gameID": "a6117241477a0b712edc856274691f9b",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP Gamma",
+        "gameID": "9f71de77938927179599cd645a5688c5",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Baccarat L",
+        "gameID": "5c58dcfb54df086d00b8725a10761e03",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Baccarat M",
+        "gameID": "47a936ba7665516ecf132a2b8898b2eb",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Baccarat N",
+        "gameID": "374b0298147823425fb0d41a6fae25ba",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Baccarat O",
+        "gameID": "964e7d090167c429e1b6c15a97210e22",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Baccarat P",
+        "gameID": "cb6e4ad80df2c456cc69d7d43400ef2a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "No Commission Speed Baccarat C",
+        "gameID": "f9e106cfc932d1f0fdb0cc3dd1057c1a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Baccarat A",
+        "gameID": "1d955d48d50aef2e9546466d9d859be1",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed VIP Blackjack J",
+        "gameID": "8a14300bc05eba74aab16e4946e29edf",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 21",
+        "gameID": "fcb1de01fe2c14217bfabd92976c7a05",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 22",
+        "gameID": "ba4f73d5e19cb97db65f0766cd785434",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed VIP Blackjack H",
+        "gameID": "ea5bb4a83394921afb0f26635b331266",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed VIP Blackjack I",
+        "gameID": "fd0ce69ba5a8e9fde4a0118e0b9498e8",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 20",
+        "gameID": "a9d74415dfdde9ca16087d260c63fd68",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Salon Priv\u00e9 Baccarat F",
+        "gameID": "61a5215e2679932781ed245b59d34679",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Salon Priv\u00e9 Baccarat G",
+        "gameID": "7d35a160644fdff741e92b1b96285fd5",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Salon Priv\u00e9 Blackjack G",
+        "gameID": "cf2ee43e0200d8fe0564628d5a56bd6f",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Salon Priv\u00e9 Baccarat E",
+        "gameID": "e48c03210c8a577516c69c7fec657356",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 14",
+        "gameID": "1d5d1c1c3d9c76bd7f4c58b9239c373a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 13",
+        "gameID": "ad6b96a22d790052e3f899b3ece69c03",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 15",
+        "gameID": "e200f3434cd89322594336ee0f90afd0",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 16",
+        "gameID": "295743c7d72fd2eb61ca06749bb25a44",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 9",
+        "gameID": "54806d16c3eac96d4bea63ccfc0c674c",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 10",
+        "gameID": "323f4086833fda7bb471f10e18a28364",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 11",
+        "gameID": "1329b0405db81b9964d6dd6eb0a514c9",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 12",
+        "gameID": "87a7f4550407f5ed73c3353a54a11187",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Peek Baccarat",
+        "gameID": "c367b8269a44719f19d7264b37d4582b",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Power Blackjack",
+        "gameID": "1d1c0d3ec98deb128bdd5acdef0f157e",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 17",
+        "gameID": "994a2681526c98fec2b9a2d63a642faa",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 18",
+        "gameID": "ebdf09c0f6d79eed79b1027afc9d7df7",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 19",
+        "gameID": "31915e590bc4f5904681c9ed3fec7e91",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed VIP Blackjack E",
+        "gameID": "ac5ae4dd6c8b09b3da54aad693345ea5",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed VIP Blackjack F",
+        "gameID": "29a0088d6ddc73df59bbd2cadedb3e64",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed VIP Blackjack G",
+        "gameID": "5b28de9903431500b020d6fa6fa84ac4",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP E",
+        "gameID": "2c2f06025f65fe745cabd81a3aae8aba",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Emperor Speed Baccarat B",
+        "gameID": "7b44393101abad7ac31e21fc1bdb3d56",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Emperor Dragon Tiger",
+        "gameID": "1eaa16200ee75bddd50ab54b01fbefa9",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Emperor Speed Baccarat A",
+        "gameID": "68fa4cdc74cd23b043db2caa25f1b42c",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Emperor Roulette",
+        "gameID": "53b7cbb34adc1279d0df4c0942af9393",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 28",
+        "gameID": "e2124ac641282f02462d0b6e0245f3f9",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 29",
+        "gameID": "6f22caa749471a99b1ded2c9a35d9542",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Silver D",
+        "gameID": "91cbad4d3ac237e40d477539e5c767fa",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 25",
+        "gameID": "cc61ff297d5beef775880c9ffcccf63e",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 26",
+        "gameID": "84c4ac47b33cb83dbdfbd56af4e658ad",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 27",
+        "gameID": "74f9dadea990e593f531953b1feaac7b",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed VIP Blackjack L",
+        "gameID": "41ff316f28958f3939f2886e3d8813f7",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed VIP Blackjack K",
+        "gameID": "553ef75ae9c5c6be76f50e2187685231",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed VIP Blackjack M",
+        "gameID": "51636f763710a40d94435d5721b47afb",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Baccarat T",
+        "gameID": "60c61989f6a8ff1a33b14c98abe83e62",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Baccarat U",
+        "gameID": "e0e8f76fa25eb2fcebf96e7b5f45e120",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Baccarat V",
+        "gameID": "ce7558886d46f01a02aade95a5127b43",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Baccarat W",
+        "gameID": "239ca8da8e291b7d9e377adfcf4745dc",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Baccarat X",
+        "gameID": "128268adb0c5c9cd62746a0a8105dc21",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Silver C",
+        "gameID": "422b5f8f63f54841a0045584237c4eee",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Baccarat Z",
+        "gameID": "52a7b9d8c127b8b33f5c8d682ed40371",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Baccarat 1",
+        "gameID": "d607a58df6bb6a5e4d356ee13c241126",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Baccarat 2",
+        "gameID": "3ae1a406c3f243f1559759f041cd1dcd",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Baccarat 3",
+        "gameID": "e7931b2e0d410ddc4f88520e9ad87c4b",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 31",
+        "gameID": "d8ab16519a21608d1fed93cc83690593",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 32",
+        "gameID": "97e1e4e23f9fd02ea58a8415a515d1e5",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 30",
+        "gameID": "530ed3caad9e07621982956b571f6794",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Diamond VIP",
+        "gameID": "7d4e80750fdbd046e210dc8e1d1a0c21",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Baccarat 4",
+        "gameID": "498de0e2c664b3865a6e0387e6839f2a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Red Door Roulette",
+        "gameID": "6ddd73419e9a49b6b942e29088219d64",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Baccarat 5",
+        "gameID": "30faa46ba41ab76519816ca827d19320",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Baccarat 12",
+        "gameID": "898ec009cf2e34a256e6340238c8d95c",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "First Person Lightning Blackjack",
+        "gameID": "74914b065a9e6b9c7cb8a0e4b17294ed",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "First Person Blackjack",
+        "gameID": "4ac0e874a4d5fc55bcdba5302b43bc96",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "First Person Dragon Tiger",
+        "gameID": "4b4c45709dfd8188d7d6d12fae15bd42",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "First Person Dream Catcher",
+        "gameID": "7ee0da50996278d7fe5136f86f368fa5",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "First Person Golden Wealth Baccarat",
+        "gameID": "88e49e3fb9a9883f01f167d03f5efdcb",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "First Person Lightning Baccarat",
+        "gameID": "fec1b730e804bf14bd471a1e9b82bf44",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "First Person American Roulette",
+        "gameID": "88b2d98462fbc45d6d31e95083e183df",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "First Person Roulette",
+        "gameID": "a82670530f49a6b3445dc1a592a2eb9e",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "First Person Lightning Roulette",
+        "gameID": "f5ee6fce16d369d1a656f3b227fc7236",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "First Person Top Card",
+        "gameID": "64985010e87aab51c7fb18076d34062d",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "First Person Baccarat",
+        "gameID": "e18dfa4a5dd4a0f2d8b45337bd6abb9d",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "First Person Craps",
+        "gameID": "823245918aa2afd108a5912e363c083c",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "First Person Deal or No Deal",
+        "gameID": "c715eb06391fabe5275d0b56440f49f3",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "First Person Mega Ball",
+        "gameID": "3150b1cd8fbbddd94d36f20fab504653",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 33",
+        "gameID": "401d3a40b06fa9b0ee299e31823796d9",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 34",
+        "gameID": "8b6200a6ef1f7df8c91c51dfe4444866",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 35",
+        "gameID": "64fee17522e56dd16ad4a0548c5b842c",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 38",
+        "gameID": "abdae315508ec2b531c87cadf4b790ae",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 36",
+        "gameID": "c6361dfd83d86cc5c98e2b41c28791eb",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 37",
+        "gameID": "3acbe78079e7e8841ab34ebe03a1f4d7",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 41",
+        "gameID": "e02f15bb0df96c186555c62264bd4379",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 42",
+        "gameID": "8909fa4180ae8c713b5d75aa04b5b3b9",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 44",
+        "gameID": "bb5d9a68f06045695ba133a6f4bba082",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 43",
+        "gameID": "6e5c07c21a9739e0986b67675e990d04",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP H",
+        "gameID": "fe2e28180d600b1dfc7784324d3df640",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Salon Priv\u00e9 Baccarat A",
+        "gameID": "21e95ab2901433939d83fcd79be52925",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Salon Priv\u00e9 Baccarat D",
+        "gameID": "538b9ff225701f1e4e851167e5af1b84",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Salon Priv\u00e9 Baccarat H",
+        "gameID": "44f46f61a501ab9555f46eeecae266ce",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Salon Priv\u00e9 Baccarat I",
+        "gameID": "6407557ea880b7f6276ec9d4e23e7926",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Salon Priv\u00e9 Baccarat J",
+        "gameID": "ec258bed8fd84778fc31a864fe1571b4",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Salon Priv\u00e9 Blackjack E",
+        "gameID": "88094da66b69066587ab29163d239142",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Salon Priv\u00e9 Blackjack F",
+        "gameID": "9aef9d09e355adc2f1bb3c4179d28385",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Salon Priv\u00e9 Blackjack H",
+        "gameID": "db69d21bbd5bc9d37b38bbfbfa3169fc",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Salon Priv\u00e9 Blackjack I",
+        "gameID": "d9b7ea7819d2d7abee3197bf2b1281c7",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Salon Priv\u00e9 Blackjack J",
+        "gameID": "cae32c1011d6e41ab7d6948f1696ab1c",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Party",
+        "gameID": "d609730e8da3693bd8ac428926747390",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Auto Roulette",
+        "gameID": "1ffeecc77f75d0485e83036269fd9401",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed VIP Blackjack A",
+        "gameID": "fdf05d777a59a24fd546e06cb460980e",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed VIP Blackjack B",
+        "gameID": "5fdb477013f4d377433e2a3daeac1d28",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed VIP Blackjack C",
+        "gameID": "fcdeb63512da4f7980a03b3542a21796",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed VIP Blackjack D",
+        "gameID": "994a06251ad003c0be35b252803f49a5",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed VIP Blackjack N",
+        "gameID": "a9e710a7389d1096cdab23e530cc8d06",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed VIP Blackjack O",
+        "gameID": "ec9fb09912bc272168651f43ec4c78a6",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed VIP Blackjack P",
+        "gameID": "868116316bb9c2f9498b2165c7db9bd4",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed VIP Blackjack Q",
+        "gameID": "19bc9ea56909a0bdbd43b0a6471849bb",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed VIP Blackjack R",
+        "gameID": "ceda0cfac236c9431f061d964ed5062b",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Stock Market",
+        "gameID": "699fff17c56ac4af07db510e86cdf6bb",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Super Sic Bo",
+        "gameID": "e3951a5bf624e822a22cba1cbe619df5",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Teen Patti",
+        "gameID": "0617a82334f4f1766cf282ce906e1df7",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Texas Hold'em Bonus Poker",
+        "gameID": "0d743830cca897a7c4c9187bc7f9b812",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Football Studio",
+        "gameID": "392e13e38b3cec5ad259254a206d343a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Football Studio Dice",
+        "gameID": "1909b4e3380dc37654f8e3997e63ec1b",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Triple Card Poker",
+        "gameID": "b7c3b022f1c2b768524523d855a58d89",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack A",
+        "gameID": "e7df9c2fdf7c680ddee3739f5b703c88",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Roulette",
+        "gameID": "c9020da3ac9119910b7146416d5a9850",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "VIP Roulette",
+        "gameID": "e8f217c3d554285933cb67072c897fac",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack B",
+        "gameID": "5344ba3dbbd1b3c4b0082fe6212d502c",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Blackjack D",
+        "gameID": "b796189e77ae8a84f4b2e65a6bbe1a15",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Blackjack I",
+        "gameID": "0fd44663c3e5db6c9f14b2a6114d5e8d",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "XXXtreme Lightning Roulette",
+        "gameID": "394fe6a2cde24bc487767236cc6eccd6",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Blackjack E",
+        "gameID": "15dddd63199059f97f21c456a4c74da3",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP G",
+        "gameID": "40273c03c2a48786cb6111e35f012e6b",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Super Speed Baccarat",
+        "gameID": "bfed6d19ac81b4a24ae60895c05b701d",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Football Studio Roulette",
+        "gameID": "b063d1d13905aa838776a7909387af5f",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Balloon Race",
+        "gameID": "97da77a6853a5af187e58e9187dd5a70",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Bonsai Speed Baccarat A",
+        "gameID": "faeebab72bc5f5c6072921051fa0ebea",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Bonsai Speed Baccarat B",
+        "gameID": "4436c95650dd0627aa04449ccc6d7d45",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Bonsai Speed Baccarat C",
+        "gameID": "b77310480077fb06f8d6f35055cebca6",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Free Bet Blackjack 1",
+        "gameID": "84e2dd5556c015169aa113495dcfa7f0",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Free Bet Blackjack 2",
+        "gameID": "1f39316ec046231b60176fbf4dfbeb1b",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Free Bet Blackjack 3",
+        "gameID": "b640a6526c646feee19b71c91e5c639e",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Free Bet Blackjack 4",
+        "gameID": "347ba2422760f82bd1e8e178835f81f3",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Free Bet Blackjack 5",
+        "gameID": "22e85290d8aabd9aef01b14e4b4f4bbd",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Free Bet Blackjack 6",
+        "gameID": "984bbc70e68a8e21f67df84dd83fb8da",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Free Bet Blackjack 7",
+        "gameID": "2e7146f4168008134fd980832f2ef0b0",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Free Bet Blackjack 8",
+        "gameID": "425385cfb85feed4664aa8ead9136c96",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Free Bet Blackjack 9",
+        "gameID": "9b331d04e8cfd9503de7b6585063d1c6",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Free Bet Blackjack 10",
+        "gameID": "56b6c5256c06ec9dc81b1fe66817ac8d",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Free Bet Blackjack 11",
+        "gameID": "408dcb986db9b7041118fbdcfe582496",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Free Bet Blackjack 12",
+        "gameID": "417b5507f7708c2df1a06defb7f07cc0",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Free Bet Blackjack 13",
+        "gameID": "140987a2ab4c181fe67e26b01b4d5bd0",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Free Bet Blackjack 14",
+        "gameID": "acc879de76e5a318059e36a13a902e22",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Free Bet Blackjack 15",
+        "gameID": "8b630821f44e2f3e36f23daa60a37b64",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Free Bet Blackjack 16",
+        "gameID": "ab7f139f494fb504ad1abdc00650b399",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Free Bet Blackjack 17",
+        "gameID": "9a4ea1acdd420b2c1090f4c9b8962adc",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Free Bet Blackjack 18",
+        "gameID": "c05645707b6df7f5555956b1a0000735",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Free Bet Blackjack 19",
+        "gameID": "307ce1756391d51e2dccf5edce96f3ad",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Free Bet Blackjack 20",
+        "gameID": "b5b0c1f3690134989b894dfe078b8c65",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Free Bet Blackjack 21",
+        "gameID": "4f2c4e5a85c8f6d33fff3a6476493714",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Free Bet Blackjack 22",
+        "gameID": "9f6975313318e10d5a2235428a01a7aa",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Free Bet Blackjack 23",
+        "gameID": "73a80c8e267f589e67414a16dc4b712c",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Free Bet VIP Blackjack C",
+        "gameID": "9b5cbb31871b798e3ec8e47d05f518da",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Free Bet VIP Blackjack D",
+        "gameID": "589bbcd5e66a4acb98c796c7a86c90d6",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Free Bet VIP Blackjack E",
+        "gameID": "992ded5d64085e395e4f65a5fab22ec4",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Free Bet VIP Blackjack F",
+        "gameID": "345b94f96c6d586c91d8c9e1484ba15d",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Free Bet VIP Blackjack G",
+        "gameID": "81511a7a12f7ee49bc3fd049faba0f3a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Free Bet VIP Blackjack H",
+        "gameID": "c3891e0f84b22e6956d601d7d5dd6b05",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Free Bet VIP Blackjack I",
+        "gameID": "c321eb36cd21aa81c71365a7399383ab",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Free Bet VIP Blackjack J",
+        "gameID": "39443f8248d39dea14df5f37ad589bfb",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Free Bet VIP Blackjack K",
+        "gameID": "9868876b21103b511cdba4a11d09feb4",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Free Bet VIP Blackjack L",
+        "gameID": "7289958227cb88eeb1de0e91dae1b8ed",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Free Bet VIP Blackjack M",
+        "gameID": "5f5ee3b07f1a12cc42eed5c893630a95",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Free Bet VIP Blackjack N",
+        "gameID": "a5f6f73d15efb626ed30dcf48b920cb3",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Free Bet VIP Blackjack O",
+        "gameID": "e743cda8c7f160c50173f0bb46b5f7f0",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Free Bet VIP Blackjack P",
+        "gameID": "2263c1f2c4679478df0435f5422aa6c2",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Emperor Sic Bo A",
+        "gameID": "758772f63feb61b6ab997d8d37385a65",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Emperor Golden Wealth Baccarat",
+        "gameID": "f7967398d7cd3e114e3dea7c1eb350b1",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Evo Speed Blackjack 1",
+        "gameID": "232307d28ab01bac2f4afb6665d18bbb",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Evo Speed Blackjack 2",
+        "gameID": "80f0179f173b9d90b7abd7a602c5bccb",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Evo Speed Blackjack 3",
+        "gameID": "c072c5d6161ca1deca73b0402ec0c138",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Evo Speed Blackjack 12",
+        "gameID": "2b00986972de479963137bffc98cf756",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Evo Speed Blackjack 13",
+        "gameID": "14f6ad487a8da11096e8ec279386b003",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Evo Speed Blackjack 14",
+        "gameID": "c2b4c9d4a9568e5ce70d057b50624a25",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Evo Speed Blackjack 15",
+        "gameID": "2048f2cb25aa99ef9dfb3d287ca1d300",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Evo Speed Blackjack 16",
+        "gameID": "3f118d8c5c7218a660e2227bb42963ba",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Evo Speed Blackjack 17",
+        "gameID": "b4ef5df14a77e9a3b5f7204f25f96438",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Evo Speed Blackjack 18",
+        "gameID": "225e7f1fb1fb611f8a90010d86e4572b",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Evo Speed Blackjack 19",
+        "gameID": "170c6c11ce13a447ed4be6b533436d96",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Evo Speed Blackjack 20",
+        "gameID": "9107513c1442b9f0a43ae88cbd33034f",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Extra Chilli Epic Spins",
+        "gameID": "ed0d26758183cfc88c8c791233d86de9",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "First Person Video Poker",
+        "gameID": "24e52b094b2dfadb0c641ed4f4935077",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Infinite Free Bet Blackjack",
+        "gameID": "1d7e0343d64f0427f639bf57228a8cc0",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Golden Wealth Baccarat",
+        "gameID": "6bfe5f8bc47dd87f38fc38ff837b11a6",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Super Sic Bo",
+        "gameID": "6a18d921ac483ee49f2a2e77558a0c0b",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Control Squeeze Baccarat",
+        "gameID": "35e1da683d06a2d3ac866435ea24af9d",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Bucharest Auto-Roulette",
+        "gameID": "f6aa535001abae70f5251ac0712db0ac",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Classic Speed Blackjack 20",
+        "gameID": "dd209450a34e7f58e4bb02a5d76d374a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Classic Speed Blackjack 7",
+        "gameID": "8c710686ca7fa8aa35bd09a181746e57",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Classic Speed Blackjack 25",
+        "gameID": "3aa56f179e1003992cdec2971cb089e1",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 7",
+        "gameID": "66f7e9beebe978ea23d60c4b5b0e46de",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Classic Speed Blackjack 5",
+        "gameID": "6f0f835b7f1e9fa1ec8dbd33cf93ad7e",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Classic Speed Blackjack 21",
+        "gameID": "41640d8a0c806e9bf5ef6bae35345ceb",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Classic Speed Blackjack 6",
+        "gameID": "46e9bc0cf410ff23dcc686e56bcd69af",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Lightning Ball",
+        "gameID": "96050ea4ce01c7c295c15cf910aa7bc4",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Lightning Dice",
+        "gameID": "ec5d495bd8aa5908e46d24a53e09f2dc",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Lightning Sic Bo",
+        "gameID": "7df14b65a14ab249155c76bc888f4f59",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Lightning Blackjack",
+        "gameID": "47df3bc7507fabb193a52b459b175733",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Lightning Storm",
+        "gameID": "2fa292e4b9852e4f2d79360bab5ccbbc",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Bet with Streamers",
+        "gameID": "95a1a4626f0279f9616e7013bd39f648",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Bet with Streamers",
+        "gameID": "6a77cf51c93987eab6d2e824f3557265",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Bet with Streamers",
+        "gameID": "d5dc87baf68c7b1506ea53852c9ed697",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Bet with Streamers",
+        "gameID": "3c1c89c41d4be583c92ee9cb91a0ced9",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Classic Speed Blackjack 22",
+        "gameID": "d806a4839c79e8f57098e42d663b6603",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Classic Speed Blackjack 12",
+        "gameID": "09c12356d5273ae20d7aedb8302a257e",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 24",
+        "gameID": "604e91505af167043db8868b9c7af821",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 25",
+        "gameID": "5c5ab925693548f2117e7ac342cbac2a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 29",
+        "gameID": "bc907c269b3e68dcb779d874d8989eae",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 26",
+        "gameID": "15179c39ee90aba555e8b001639f7991",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Classic Speed Blackjack 17",
+        "gameID": "775782f47ce9e010c9baa124b62fc7df",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Classic Speed Blackjack 18",
+        "gameID": "ce2ddfc203271519a550fc92a35ea316",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 8",
+        "gameID": "e8ca631e0d792990d775576fb22644c9",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 9",
+        "gameID": "ca0dbe3e87a253013cf8bc0b7eb2166c",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Classic Speed Blackjack 8",
+        "gameID": "7f4ea85b128994860893f5f1c1d4e398",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Classic Speed Blackjack 26",
+        "gameID": "f1b3ce73b6603f63d5b4dba244990343",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Classic Speed Blackjack 13",
+        "gameID": "f5e7507be760cee091dec5e1d7aece8a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Classic Speed Blackjack 19",
+        "gameID": "f690dbaaf6dd0db8bc9c8c5d65d43718",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Classic Speed Blackjack 27",
+        "gameID": "deca4eaa4aa826046efbb24146d183f1",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Classic Speed Blackjack 9",
+        "gameID": "234f3f11b9150f6cb2fb2ea3c5b6606d",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Classic Speed Blackjack 11",
+        "gameID": "7f3dfd4f0f07a5c69d7de5c5c30bddcf",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Classic Speed Blackjack 10",
+        "gameID": "e92fa66a41c3d0f44e72a6a954c87217",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 17",
+        "gameID": "7901548fed93d7543c390f2e0822d5b9",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 18",
+        "gameID": "b39fe15b457b402a90f596aefa81c048",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Classic Speed Blackjack 14",
+        "gameID": "64f5e06f41a7b679a96b60cb71248c5f",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 20",
+        "gameID": "0fb33c3943606437e46013b83ba8b285",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 30",
+        "gameID": "2fcd64da84e5875c6dc8fec635db7d77",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Classic Speed Blackjack 15",
+        "gameID": "c1d55d8694c7775785f4efb31524c666",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Classic Speed Blackjack 16",
+        "gameID": "0a5d8fc5afcfe86550ee505e63cfc76c",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Classic Speed Blackjack 23",
+        "gameID": "e7c33263046b566e32423284d3f85a94",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Classic Speed Blackjack 24",
+        "gameID": "8f74f5845252e9f1927e23217315fa3d",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 35",
+        "gameID": "455b08300dd9bf0d8c8f3bb728750170",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Classic Speed Blackjack 28",
+        "gameID": "3cd89080ad4f8cee322b3f4a0af35dda",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Classic Speed Blackjack 29",
+        "gameID": "aaa7cefd5a47f9a93330411766017782",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Classic Speed Blackjack 30",
+        "gameID": "4cd3edfae1239d46847cf020f82d0720",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Classic Speed Blackjack 31",
+        "gameID": "e17ca9b161a058973830868fbc1478e4",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Classic Speed Blackjack 33",
+        "gameID": "af66f6a4ce6f2f714e14b643f6310c49",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Classic Speed Blackjack 32",
+        "gameID": "3045e804119de5764b83c78861e69ec5",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Classic Speed Blackjack 34",
+        "gameID": "b1fac267051a9b6f748ad564daba54a6",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 43",
+        "gameID": "3e3e0c248a5092f48f1e24c83087469d",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 45",
+        "gameID": "754ca80078785ab45343dd4a0ded3c39",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 44",
+        "gameID": "c2b9a9c15c9be249cd0d283bd8da6918",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 48",
+        "gameID": "c59558be0f3aebac03c13ff2829a3fb0",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 49",
+        "gameID": "7d6cface03fae0b2ea6cbc63a02c4f75",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 46",
+        "gameID": "75971773fec9008d1945c0ca8a310f2e",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 47",
+        "gameID": "925f4a88fe82d984f137cff3b752a23b",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 53",
+        "gameID": "29fd9b4b21d17d0470b9ab726a4b37be",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 52",
+        "gameID": "2ac081e6af1d01e653b4c6afc6c607ac",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 51",
+        "gameID": "b99710181c66ae05c795b29313ba629b",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 50",
+        "gameID": "7ef4fc91276f6e986daf2d6717414f68",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 54",
+        "gameID": "eda957cb15521bc082f838fa265c2c2a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 55",
+        "gameID": "20a5cb8b7d343c1d974c6898f945d8a9",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 56",
+        "gameID": "ad3cf85076269da7e0c401ad3952e2bb",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 57",
+        "gameID": "0e8124c26d6e2f0cdb04568a00fd952e",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 58",
+        "gameID": "697921d78bd86bf968b3a0419a8ac81b",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 59",
+        "gameID": "d5cfb4cf56fdd906794859a946cd66a3",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 60",
+        "gameID": "3260f9a61f1ebc5657fdefb22ed71f35",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 61",
+        "gameID": "2a8a9d9ca37e73569862a0301698d088",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 62",
+        "gameID": "1f16fc024af0c54dadc67716a1630737",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 63",
+        "gameID": "8d82bdbd6b8a998e7ec38b21779519d8",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 64",
+        "gameID": "44ad25bfd515fb583f21c6728597125a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 65",
+        "gameID": "da79d30f29bd50e2b53a0b3acca6be23",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 66",
+        "gameID": "1c84f3c34b9432260f11702b528ed5c1",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 67",
+        "gameID": "d7e0d04ee556c25cf0e89c42484af491",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 68",
+        "gameID": "ddbfb51522d277c825c974055e614ee9",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 69",
+        "gameID": "e816eef38cb51604d5fbd09d851eda8c",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 70",
+        "gameID": "eab4b3dceec8cd02850264fc2e71c76f",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 71",
+        "gameID": "b8b0c610948310e768c3d2978a0d0d74",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 72",
+        "gameID": "b14e625542adb3d41a087179d8765edd",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 82",
+        "gameID": "a405eb3351d99359021fa859d66a1bf6",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 83",
+        "gameID": "8f1755d1b2ae25ec8c23da4ff243795f",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 84",
+        "gameID": "dfc79bb20f2ea920c8c8587847ab0157",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 85",
+        "gameID": "2108931c055d3ad057720e6aee4939c9",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 86",
+        "gameID": "2b24b68f2aa7718504b7dec0b30faeb8",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 87",
+        "gameID": "9788a19244f650068b92d7c60b99fdbd",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 73",
+        "gameID": "7e7a4d04303f5355d8a64840b61f3118",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 74",
+        "gameID": "b3aca8f3b59b85c7258eaa5bed1407cc",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 75",
+        "gameID": "e8bcd58667f3385a58b16dbb1793fce5",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 76",
+        "gameID": "74aaea48737f8494c920a4bfa0f2c83c",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 77",
+        "gameID": "e89ace74b4310e3e593f650211c6635b",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 78",
+        "gameID": "e6bdc2e4fb12970a62dfe050a78aa74e",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 79",
+        "gameID": "c414e6ada63d9b6f4c034079607404ea",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 80",
+        "gameID": "2674292600f925fb6cae172c9949d5d9",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 81",
+        "gameID": "5e89583d86ede8751bb554e8f1b62617",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Platinum Priv\u00e9 Blackjack 1",
+        "gameID": "ab7135708a9dffcd935d7e0703e3b045",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Platinum Priv\u00e9 Blackjack 2",
+        "gameID": "a83c1d72da5a9fbbfaf3a66062c04416",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Platinum Priv\u00e9 Blackjack 3",
+        "gameID": "c3953cf4996f46c1ef7aa93bf17101c0",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Platinum Priv\u00e9 Blackjack 4",
+        "gameID": "82c2fcfa582d2ddeece011eaa97057d2",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Platinum Priv\u00e9 Blackjack 5",
+        "gameID": "0355fdb4696099fbd2bb15cfc99902b9",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Platinum Priv\u00e9 Blackjack 6",
+        "gameID": "45000788253282ed978484377c2848e5",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Platinum Priv\u00e9 Blackjack 7",
+        "gameID": "d0f6797b02963b3c61c80e9a231f35a3",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Platinum Priv\u00e9 Blackjack 8",
+        "gameID": "bb2bb62346db01bdfb4241dd89eea933",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Platinum Priv\u00e9 Blackjack 9",
+        "gameID": "cbe6ce97015c27be6acbb4411c046196",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Prosperity Tree Baccarat",
+        "gameID": "418f38d98be47c4f77c052347e56b481",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Emperor Speed Baccarat C",
+        "gameID": "3e600bcdccd38c0e4383f90f41477c76",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 88",
+        "gameID": "5fddecb259ce41dc0af75f47a8eefc60",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Emperor Speed Baccarat D",
+        "gameID": "94ee2b657375b079b44c12d19dfde8f9",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Hindi Speed Baccarat A",
+        "gameID": "6e9d55c8ef63776d56c85a51a934451f",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 89",
+        "gameID": "ac3653864dbb0dbba2e910b413f65b70",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 90",
+        "gameID": "01f7964de8832955198fbf1ef8d1ff28",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Baccarat 6",
+        "gameID": "2ef06aa38d149fb5fb708ff650153ac0",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Baccarat 7",
+        "gameID": "d26747ca84730c71a415680e3dcaa282",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Baccarat 8",
+        "gameID": "8c8a73faefddd236bbc18afc8388ac18",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Baccarat 9",
+        "gameID": "4ce386bbf23b5d10eabfafdf028f649d",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Baccarat 10",
+        "gameID": "96550fdcfc5a84ab34072b987f13e03d",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Baccarat 11",
+        "gameID": "660e0fdbb13f94818568a630c9285b76",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Baccarat 13",
+        "gameID": "bd21dcb90aaa42aba37b18960c4a3b8c",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Baccarat 14",
+        "gameID": "91450648d341d25c86f471d0169ec48c",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Baccarat 15",
+        "gameID": "252640ecc8dac94d22f23d98635f4b92",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Emperor Bac Bo",
+        "gameID": "0cca3db8b5cbf76b1ac52f9e9f149aa1",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Classic Speed Blackjack 67",
+        "gameID": "eb2adacf8a81469b505b58f12b7b79f4",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Classic Speed Blackjack 68",
+        "gameID": "2dd40d67f6a4095f96c5215c41e827e1",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Classic Speed Blackjack 69",
+        "gameID": "2ce6ad17388d11c74fa6788bbb32de23",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Classic Speed Blackjack 70",
+        "gameID": "6fffcf15283e0bbfeddfa4cce69cbd5e",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Classic Speed Blackjack 71",
+        "gameID": "c3b19e16b57d1111094b0adaa6fc8b51",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Classic Speed Blackjack 72",
+        "gameID": "f7720074832f2158473c7ecca53591be",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Classic Speed Blackjack 73",
+        "gameID": "69466266768e66f47ebf2613d10e40ca",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Classic Speed Blackjack 74",
+        "gameID": "75dbd0f6f1884c184af1416a8746b75f",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Classic Speed Blackjack 75",
+        "gameID": "5898f57bf7d571aee95c017f4cc34ad8",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "First Person Prosperity Tree Baccarat",
+        "gameID": "fde4cf03eb3504e9f3898e528231f564",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "First Person XXXtreme Lightning Roulette",
+        "gameID": "7f59ab12793402d5d5c499798460c3a1",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "First Person HiLo",
+        "gameID": "7b5d05fc48390b74980d63ac1ea78ed5",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "First Person Super Sic Bo",
+        "gameID": "797aa3e732352d1348b5c876597f5cb4",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "First Person XXXtreme Lightning Baccarat",
+        "gameID": "318291bd00fb6542cf6b6d35e2a9b41a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 39",
+        "gameID": "da65016b2b7e3f7c51be8db58a595f8c",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 40",
+        "gameID": "7ead721e6220224a367362a3ea89889c",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 50",
+        "gameID": "b835d3e03eec9779949c72310fe37c53",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 45",
+        "gameID": "f9aba6e9d3f59fa8ee3edd4a5b4a9bd2",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 46",
+        "gameID": "e16e070de7db1ea315b0c9f5f60830ee",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 47",
+        "gameID": "89588c289f8707465be8fbcaf95bd8f1",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 48",
+        "gameID": "3012c88e228506b2f4cfcca4e6b81d61",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 49",
+        "gameID": "93b393f0e0eb4739faf4bbf54746fa7e",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 51",
+        "gameID": "0f0d486eacd85fc7060ea75051aecb95",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 55",
+        "gameID": "39dd86e02de1804c833b80978c081af9",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 56",
+        "gameID": "8cea3fabbf11985f1819283948b1153b",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 57",
+        "gameID": "615790b1e05ca8901b281a2dbe52e850",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 52",
+        "gameID": "4a788a2ef46c8d6ccc39830576db0a02",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 53",
+        "gameID": "72a60af64b6de200278aa22d8fd9f23c",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 54",
+        "gameID": "b3082dbb759cb4fa14f383ed259594d7",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 68",
+        "gameID": "b6f3ebe270b6d43eed7628931b87569d",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 69",
+        "gameID": "4d0da3ab9e4239b1c27c51bef7d5abf0",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 70",
+        "gameID": "c128ed5964165053a4a8bb669979f976",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 58",
+        "gameID": "3174a2dfdfce49dfcf195e1ecf28ffca",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 59",
+        "gameID": "379525832473d435b13d01a5fd930ef2",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 60",
+        "gameID": "7464b86ca2c053a2a7a1c106b7e3cc72",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 61",
+        "gameID": "859b6924f06177d52c2ff34abd834980",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 62",
+        "gameID": "65dedc34edea4638a801710fdf857735",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 63",
+        "gameID": "d442be76daa4ef8e97cfd4ac915367ed",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 64",
+        "gameID": "3330fe5e1b210008023c11cc1f878501",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 65",
+        "gameID": "52eccdf9d6ed2b910018df6cbb5d6fba",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 66",
+        "gameID": "49b346b8a9c714b23ada71cd82cce0c3",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack VIP 67",
+        "gameID": "81d5d04706f19d67c655f165a251f526",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Salon Priv\u00e9 Baccarat K",
+        "gameID": "ef0694c32c13373e40c97a3d7e420584",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Salon Priv\u00e9 Baccarat L",
+        "gameID": "c2550330df7cf67d61e7332510849d4d",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Salon Priv\u00e9 Baccarat M",
+        "gameID": "50a6cd19ce1c2f96dd37609c3e498884",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Salon Priv\u00e9 Baccarat N",
+        "gameID": "6d07fe83997a8054b04b02e4e06ef933",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Salon Priv\u00e9 Blackjack K",
+        "gameID": "d4b081e51b2318b782822ab486790510",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Salon Priv\u00e9 Blackjack L",
+        "gameID": "625943119e8bcf8148b2313f0a3f5667",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Salon Priv\u00e9 Blackjack M",
+        "gameID": "3adc84fc534ea72f46668966aab4358e",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Salon Priv\u00e9 Blackjack N",
+        "gameID": "f53f3ec34bb9c673feeae4e210bda630",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Salon Priv\u00e9 Blackjack O",
+        "gameID": "694753456098f8c38f1c805ff6a9e89d",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Salon Priv\u00e9 Blackjack P",
+        "gameID": "57c34c9de3a8c987d25b4350ef2462b7",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Salon Priv\u00e9 Blackjack Q",
+        "gameID": "5b06ecd80ec5b0b7376346b63cb60bbf",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Infinite Fun Fun 21 Blackjack",
+        "gameID": "e722b180875038d8a9b5df84ff340577",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 91",
+        "gameID": "d3410824062247e94d3f19dcd353fdb3",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 92",
+        "gameID": "98e7df3abb7aba57fa09020a424ae048",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 97",
+        "gameID": "641c9ef7549e2f15de17de7fff38718c",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 98",
+        "gameID": "078f48ffbec1eccefef429c60bc04671",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 93",
+        "gameID": "ca67da3bf0a86ecd26fe5eaeecbb5572",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 94",
+        "gameID": "5f5b13d27eb47a4d7a83b19158538834",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 95",
+        "gameID": "6d0d3f8e701feb1a566d60e6da4e795c",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Classic 96",
+        "gameID": "7aeced72be18ab20320818869a4e4ec9",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed VIP Blackjack S",
+        "gameID": "ca2cbd58c1231c54381e576397415617",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed VIP Blackjack T",
+        "gameID": "1264af71dcf8bbd2e45a4e1a0e6f7f13",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed VIP Blackjack U",
+        "gameID": "b92b45f4722dbff285ec4391a3f7e9ba",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed VIP Blackjack V",
+        "gameID": "6e5098362cdc7bd22faa36c71b25a71f",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed VIP Blackjack W",
+        "gameID": "5961c9db91cad8f5b397845cf87ec727",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed VIP Blackjack X",
+        "gameID": "16bbc5af75ecf5f46d7083e6851cd762",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed VIP Blackjack Y",
+        "gameID": "e93089ec3a80e5cbdd9027b82ace6e92",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed VIP Blackjack Z",
+        "gameID": "04b88ff980d11be2686883f50db135cb",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed VIP Blackjack 1",
+        "gameID": "1540f63f71cfac51f4c0dcf0edc61968",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed VIP Blackjack 2",
+        "gameID": "1faabefd2851d3e5a775eabc8e00d612",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Stock Market A",
+        "gameID": "13b2c803a7b8055fa64b5c00fbe26e38",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Video Poker",
+        "gameID": "f079230acdc5863cfa6c6d0c7b0273fe",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "XXXtreme Lightning Baccarat",
+        "gameID": "bbf570734d54910e75ee4bfc788e00df",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Squeeze Baccarat",
+        "gameID": "a6e810b7656bfdca41878ab10ceb1ddc",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "RaceTrack0000001",
+        "gameID": "83eb4d9569a99a0c234c4152393256a2",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Super Color Game",
+        "gameID": "e39fe089ced4676b1d61bd4c4442a9f2",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Dragon Tiger Phoenix",
+        "gameID": "e6cbbf0e9f197a0cfbc7511b04452a06",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Ice Fishing",
+        "gameID": "dcfd7f4a51ffbd64aa760d319394e5ca",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Insurance Baccarat",
+        "gameID": "2978ffa7d2297e8b933b77ca677f9bb8",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Crazy Balls",
+        "gameID": "c32a26d1204bf752ec5768e88a27d3eb",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Always 9 Baccarat",
+        "gameID": "08f7ef59810b52bd7b75716737dc01aa",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Evolution Lobby",
+        "gameID": "8ef39602e589bf9f32fc351b1cbb338b",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    }
+]

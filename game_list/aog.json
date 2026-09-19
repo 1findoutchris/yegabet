@@ -1,0 +1,23 @@
+[
+    {
+        "gameNameEn": "wcc",
+        "gameID": "475a85119e0133e7b790be265fa9358a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "wgc",
+        "gameID": "304947ef77b76b16f2064932d72c78ee",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "wgb",
+        "gameID": "4bcadf180372c12c40d0efe0517b5dc9",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    }
+]

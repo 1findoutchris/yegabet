@@ -1,0 +1,303 @@
+ [
+    {
+      "gameNameEn": "Crash X",
+      "gameID": "2d66114ff4a5575d2f6534f48d4f76e6",
+      "customGameType": 3,
+      "vendorCode": 71,
+      "img": "https://turbogames.io/public/Games_crash_background_a67d37f69d.webp"
+    },
+    {
+      "gameNameEn": "Dice Twice",
+      "gameID": "c17dd26c288586092f507a2216d07dc8",
+      "customGameType": 3,
+      "vendorCode": 71,
+      "img": "https://turbogames.io/public/Games_dice_background_3720e6b0e6.webp"
+    },
+    {
+      "gameNameEn": "Mines",
+      "gameID": "aac8e2584b1e769338d8f2f73d7623a6",
+      "customGameType": 3,
+      "vendorCode": 71,
+      "img": "https://turbogames.io/public/Games_mines_background_cbe4dd809e.webp"
+    },
+    {
+      "gameNameEn": "Neko",
+      "gameID": "b69a8a7ecbe68109c42b4ab7d030dc28",
+      "customGameType": 7,
+      "vendorCode": 71,
+      "img": "https://turbogames.io/public/Games_neko_background_0579290884.webp"
+    },
+    {
+      "gameNameEn": "Tower",
+      "gameID": "a76d880ea734be74dee1547e5a833a3f",
+      "customGameType": 3,
+      "vendorCode": 71,
+      "img": "https://turbogames.io/public/Games_towers_background_a02c02b414.webp"
+    },
+    {
+      "gameNameEn": "Hamsta",
+      "gameID": "e20c1a4cacd8fe5946418163e300f0e7",
+      "customGameType": 3,
+      "vendorCode": 71,
+      "img": "https://turbogames.io/public/Games_Hamsta_background_48b75bd04c.webp"
+    },
+    {
+      "gameNameEn": "Fury Stairs",
+      "gameID": "8e6a07873e1c5aded569fc3b3598cadf",
+      "customGameType": 3,
+      "vendorCode": 71,
+      "img": "https://turbogames.io/public/Games_Stairs_background_a02967aec0.webp"
+    },
+    {
+      "gameNameEn": "Ball & Ball",
+      "gameID": "025b2759235a9533579e9f711c203df9",
+      "customGameType": 0,
+      "vendorCode": 71,
+      "img": "https://turbogames.io/public/Games_ballandball_background_d8c82363a1.webp"
+    },
+    {
+      "gameNameEn": "Limbo Rider",
+      "gameID": "bb9ed7911cf37ae7c20fa34c25ef90cf",
+      "customGameType": 3,
+      "vendorCode": 71,
+      "img": "https://turbogames.io/public/Games_Limbo_background_0640900c5d.webp"
+    },
+    {
+      "gameNameEn": "Bayraktar",
+      "gameID": "bf182b9875ba9ca7363977fb58a246b9",
+      "customGameType": 3,
+      "vendorCode": 71,
+      "img": "https://turbogames.io/public/Games_bayraktar_background_b771684824.webp"
+    },
+    {
+      "gameNameEn": "Crash X Football Edition",
+      "gameID": "87dcbf13a9e360a0367db76026cc8770",
+      "customGameType": 3,
+      "vendorCode": 71,
+      "img": "https://turbogames.io/public/Games_crashfootball_background_352605170e.webp"
+    },
+    {
+      "gameNameEn": "Javelin X",
+      "gameID": "679c554109b4b12be75de80054f23103",
+      "customGameType": 7,
+      "vendorCode": 71,
+      "img": "https://turbogames.io/public/Games_javelinx_background_61dd2f5931.webp"
+    },
+    {
+      "gameNameEn": "Save the Princess",
+      "gameID": "df78bf0b54a42a9c2cc267a733503278",
+      "customGameType": 3,
+      "vendorCode": 71,
+      "img": "https://turbogames.io/public/Games_stp_background_088514fde9.webp"
+    },
+    {
+      "gameNameEn": "Turbo Plinko",
+      "gameID": "aa9729494e9e7f4a0fa8c679fcc8c798",
+      "customGameType": 3,
+      "vendorCode": 71,
+      "img": "https://turbogames.io/public/Games_turboplinko_background_00c05be10b.webp"
+    },
+    {
+      "gameNameEn": "Turbo Mines",
+      "gameID": "d25d5064c19a05d91cea36f07f7d9bbc",
+      "customGameType": 3,
+      "vendorCode": 71,
+      "img": "https://turbogames.io/public/Games_turbomines_background_11fadbdcdc.webp"
+    },
+    {
+      "gameNameEn": "Magic Keno",
+      "gameID": "cdca1aeb7629cf768f314aed88ee4747",
+      "customGameType": 3,
+      "vendorCode": 71,
+      "img": "https://turbogames.io/public/Games_keno_background_070106c312.webp"
+    },
+    {
+      "gameNameEn": "Dogs' Street",
+      "gameID": "edde55f923ce7829110047739d6ced55",
+      "customGameType": 3,
+      "vendorCode": 71,
+      "img": "https://turbogames.io/public/Games_dogstreet_background_6d3402a730.webp"
+    },
+    {
+      "gameNameEn": "Double Roll",
+      "gameID": "6fa7df782854efc5dbe6ce9ed8c8ca1a",
+      "customGameType": 7,
+      "vendorCode": 71,
+      "img": "https://turbogames.io/public/Games_double_background_e54c21a4d2.webp"
+    },
+    {
+      "gameNameEn": "Fruit Towers",
+      "gameID": "044f82e9401bafbc67544d166f8b7523",
+      "customGameType": 3,
+      "vendorCode": 71,
+      "img": "https://turbogames.io/public/Games_fruittowers_background_3577a6ecbb.webp"
+    },
+    {
+      "gameNameEn": "HiLo",
+      "gameID": "ad7fddd7eb1d4240a43d5295ba973f32",
+      "customGameType": 6,
+      "vendorCode": 71,
+      "img": "https://turbogames.io/public/Games_hilo_background_a16a1a442e.webp"
+    },
+    {
+      "gameNameEn": "Spin Strike",
+      "gameID": "6a987cdd7dcd8ba3afe3d87ffaab1d47",
+      "customGameType": 7,
+      "vendorCode": 71,
+      "img": "https://turbogames.io/public/Games_spinstrike_background_01bb5fca7d.webp"
+    },
+    {
+      "gameNameEn": "Wicket Blast",
+      "gameID": "5937bd1b27f28f76772921fa5b6e9005",
+      "customGameType": 3,
+      "vendorCode": 71,
+      "img": "https://turbogames.io/public/Games_wicketblast_background_8cf762b424.webp"
+    },
+    {
+      "gameNameEn": "Fast Fielder",
+      "gameID": "28b64af2cf50ab37c8b3a1a64dd1ecad",
+      "customGameType": 3,
+      "vendorCode": 71,
+      "img": "https://turbogames.io/public/Games_fastfielder_background_fb83a83278.webp"
+    },
+    {
+      "gameNameEn": "Take My Plinko",
+      "gameID": "d1898cc7388290d9d99e6bd6485654fc",
+      "customGameType": 3,
+      "vendorCode": 71,
+      "img": "https://turbogames.io/public/Games_takemyplinko_background_631b8a58da.webp"
+    },
+    {
+      "gameNameEn": "Bubbles",
+      "gameID": "cc96456e449f97d12114e5e158f21509",
+      "customGameType": 3,
+      "vendorCode": 71,
+      "img": "https://turbogames.io/public/Games_bubbles_background_c98c9ddfcc.webp"
+    },
+    {
+      "gameNameEn": "Aero",
+      "gameID": "97333881d7c179510d6cb54e18521a2b",
+      "customGameType": 3,
+      "vendorCode": 71,
+      "img": "https://turbogames.io/public/Games_aero_background_9e1d952c22.webp"
+    },
+    {
+      "gameNameEn": "Vortex",
+      "gameID": "34b47beaafa0c5b217d4b5897e107b42",
+      "customGameType": 0,
+      "vendorCode": 71,
+      "img": "https://turbogames.io/public/Games_vortex_background_179829299c.webp"
+    },
+    {
+      "gameNameEn": "Trading Dice",
+      "gameID": "43b3c23010404828a5c2caa70fc66564",
+      "customGameType": 3,
+      "vendorCode": 71,
+      "img": "https://turbogames.io/public/Games_tradingdice_background_8ca946cddd.webp"
+    },
+    {
+      "gameNameEn": "1Tap Mines",
+      "gameID": "11ecee9facb7f8e008771e3ba905f6a7",
+      "customGameType": 3,
+      "vendorCode": 71,
+      "img": "https://turbogames.io/public/Games_1tapmines_background_webp_707d022e39.webp"
+    },
+    {
+      "gameNameEn": "Book of Mines",
+      "gameID": "098f868dcd56a2dbbd21ca83d8daca1f",
+      "customGameType": 3,
+      "vendorCode": 71,
+      "img": "https://turbogames.io/public/Games_bookofmines_background_2ee5dbeeb7.webp"
+    },
+    {
+      "gameNameEn": "Multiplayer Mines",
+      "gameID": "a1d2079f3ca468feb2da41bddae0e091",
+      "customGameType": 3,
+      "vendorCode": 71,
+      "img": "https://turbogames.io/public/games_multiplayermines_background_e45fcbb1c4.webp"
+    },
+    {
+      "gameNameEn": "Crystal Poker",
+      "gameID": "db27012e4eee7cc6c736da8ea71e4185",
+      "customGameType": 0,
+      "vendorCode": 71,
+      "img": "https://turbogames.io/public/games_crystalpoker_background_ea8a725f32.webp"
+    },
+    {
+      "gameNameEn": "Donny King",
+      "gameID": "cecb13b6b3165e61427252281fee8050",
+      "customGameType": 3,
+      "vendorCode": 71,
+      "img": "https://turbogames.io/public/Games_donnyking_background_847b6746c6.webp"
+    },
+    {
+      "gameNameEn": "Pumped X",
+      "gameID": "8541b442a43a0feba5cf6b1240397e2",
+      "customGameType": 3,
+      "vendorCode": 71,
+      "img": "https://turbogames.io/public/Games_Pumped_X_background_eb44a54556.webp"
+    },
+    {
+      "gameNameEn": "Dice Thrice",
+      "gameID": "571e5cb9991539df6e5c05355a792d3c",
+      "customGameType": 3,
+      "vendorCode": 71,
+      "img": "https://turbogames.io/public/games_dicethrice_background_e762d16e4e.webp"
+    },
+    {
+      "gameNameEn": "Jewel Clicker",
+      "gameID": "821228ed5fccc65b83f8d8ffed68ab2e",
+      "customGameType": 3,
+      "vendorCode": 71,
+      "img": "https://turbogames.io/public/Games_jewelclicker_background_3d2afae69f.webp"
+    },
+    {
+      "gameNameEn": "Catanza",
+      "gameID": "b2bc9b5978d9c56a5d8f4ad29d007e3e",
+      "customGameType": 0,
+      "vendorCode": 71,
+      "img": "https://turbogames.io/public/games_catanza_background_d61f5da1ab.webp"
+    },
+    {
+      "gameNameEn": "Cricket Boom",
+      "gameID": "a10eb96e9fa2801ed37e5dc3a21c80f1",
+      "customGameType": 3,
+      "vendorCode": 71,
+      "img": "https://turbogames.io/public/Games_cricketboom_background_f6cfd8eb25.webp"
+    },
+    {
+      "gameNameEn": "Rings of Olympus",
+      "gameID": "3ad277f11073cc81f18b11bc430e223e",
+      "customGameType": 0,
+      "vendorCode": 71,
+      "img": "https://turbogames.io/public/Games_ringsofolympus_background_0873fbc039.webp"
+    },
+    {
+      "gameNameEn": "Panda Bao",
+      "gameID": "eb0bf25612ee3c6f84cecf37f93cb558",
+      "customGameType": 0,
+      "vendorCode": 71,
+      "img": "https://turbogames.io/public/games_pandabao_background_070aca21f0.webp"
+    },
+    {
+      "gameNameEn": "Mysteco",
+      "gameID": "c339780a03e0533bfdfffebac5d39ec03",
+      "customGameType": 7,
+      "vendorCode": 71,
+      "img": "https://turbogames.io/public/games_mysteco_background_6ed5689bcc.webp"
+    },
+    {
+      "gameNameEn": "Chicken Route",
+      "gameID": "NotProvided",
+      "customGameType": 3,
+      "vendorCode": 71,
+      "img": "https://turbogames.io/public/Games_chickenroute_background_173f450d5c.webp"
+    },
+    {
+      "gameNameEn": "Tapinata",
+      "gameID": "NotProvided",
+      "customGameType": 3,
+      "vendorCode": 71,
+      "img": "https://turbogames.io/public/Games_tapinata_background_fc3dcf3270.webp"
+    }
+  ]

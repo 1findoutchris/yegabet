@@ -1,0 +1,380 @@
+ [
+    {
+      "gameNameEn": "Candy’s Bonanza",
+      "gameID": "cac9570277a8aadd301ec4dbef27905e",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/candysbonanza.png"
+    },
+    {
+      "gameNameEn": "Wild White Whale",
+      "gameID": "440da67124d5a32815d37aa74e057e47",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/wildwhitewhale.png"
+    },
+    {
+      "gameNameEn": "Wild West Spirit",
+      "gameID": "7fb73fb93d9c0e7e8b1ca46d21119e12",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/wildwestspirit.png"
+    },
+    {
+      "gameNameEn": "Beach Penalties",
+      "gameID": "8f4fe3ad2c3c1f8d6eb8c7d5fcf074d7",
+      "customGameType": 3,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/beachpenalties.png"
+    },
+    {
+      "gameNameEn": "Shaolin Crew",
+      "gameID": "20f10593d6165f54bda322b42a6d21b9",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/shaolincrew.png"
+    },
+    {
+      "gameNameEn": "Leprechaun Wish",
+      "gameID": "dd759414c09be5f790152b44eb197d73",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/leprechaunwish.png"
+    },
+    {
+      "gameNameEn": "Swipe",
+      "gameID": "ed56be8cf5721f685af9046729ef6b71",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/swipe.png"
+    },
+    {
+      "gameNameEn": "PINATA LOCA",
+      "gameID": "38a893f77ea636f6834ef19a6f312634",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/pinataloca.png"
+    },
+    {
+      "gameNameEn": "Pia",
+      "gameID": "afd24a94330580a78e5e1269b11a25b3",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/pia.png"
+    },
+    {
+      "gameNameEn": "Veni Vidi Vici",
+      "gameID": "64fb9c0afe18e6d4660f6ce685717303",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/venividivici.png"
+    },
+    {
+      "gameNameEn": "Zombie Apocalypse",
+      "gameID": "1dde08b56825f3f35f141f78e4275fc7",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/zombieapocalypse.png"
+    },
+    {
+      "gameNameEn": "Win & Go",
+      "gameID": "4ef11772a6b37ca116a4d1a998ddb918",
+      "customGameType": 5,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/winandgo.png"
+    },
+    {
+      "gameNameEn": "God of Coins",
+      "gameID": "3657fee74680d81981356746522826d5",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/godofcoins.png"
+    },
+    {
+      "gameNameEn": "Digits",
+      "gameID": "3e7b0e3ac9acbc8fd8acc508b06b4e1f",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/digits.png"
+    },
+    {
+      "gameNameEn": "Sic Bo",
+      "gameID": "d01ff7e065843b968e9b99a73cebbb9c",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/sicbo.png"
+    },
+    {
+      "gameNameEn": "Titan Roulette Deluxe",
+      "gameID": "30c65b92c0fbaf3dbccb60ef18ebd1d3",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/titanroulettedeluxe.png"
+    },
+    {
+      "gameNameEn": "Titan Roulette",
+      "gameID": "497dfeff9232540f344d277a1611136d",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/titanroulette.png"
+    },
+    {
+      "gameNameEn": "Joker Poker",
+      "gameID": "93f25ebb0a53818ca43331244add5c6f",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/jokerpoker.png"
+    },
+    {
+      "gameNameEn": "Planets Power",
+      "gameID": "a6d0d77d8d53828d607c0758498356bc",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/planetspower.png"
+    },
+    {
+      "gameNameEn": "Pixel Poker",
+      "gameID": "49ef5aa44c20f30632f3daf5ee65396d",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/pixelpoker.png"
+    },
+    {
+      "gameNameEn": "Pirates Power",
+      "gameID": "41be94a0db6e5ad979fa33462aca5fa9",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/piratespower.png"
+    },
+    {
+      "gameNameEn": "Piggy Party",
+      "gameID": "0bc4992e1944a38657ac1d2896841b1a",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/piggyparty.png"
+    },
+    {
+      "gameNameEn": "Odd One Out",
+      "gameID": "8c1e90e2f009b542e6f0fb33cd8bdd85",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/oddoneout.png"
+    },
+    {
+      "gameNameEn": "Mini Roulette",
+      "gameID": "34782e366374efd0e72cf1bb1891aa3d",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/miniroulette.png"
+    },
+    {
+      "gameNameEn": "Gem Miner",
+      "gameID": "8c9d789bb6b6d5adb29ae5067e976cfe",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/gemminer.png"
+    },
+    {
+      "gameNameEn": "Maya‘s Treasure",
+      "gameID": "57482d7c8f0717cbca8bb04de24ce08d",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/mayastreasure.png"
+    },
+    {
+      "gameNameEn": "Magic Wheel",
+      "gameID": "300c3732d2bc65389c43e98c5796486b",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/magicwheel.png"
+    },
+    {
+      "gameNameEn": "Lucky‘s Betting Shop",
+      "gameID": "5155d5e60d23a3f16cb3b7c6593e8eb7",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/luckybettingshop.png"
+    },
+    {
+      "gameNameEn": "Keno",
+      "gameID": "6375f0e3fd18920aff5ec09498eb64fd",
+      "customGameType": 5,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/keno.png"
+    },
+    {
+      "gameNameEn": "HiLo Mini",
+      "gameID": "7cea009925614257b372efbb508f5437",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/hilo.png"
+    },
+    {
+      "gameNameEn": "HiLo",
+      "gameID": "aba4ce51ef918e4c0ded230d1ffa7476",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/hilo.png"
+    },
+    {
+      "gameNameEn": "Fortune Farm",
+      "gameID": "ef3bbd8f134c65c289db0ff53ca62e2d",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/fortunefarm.png"
+    },
+    {
+      "gameNameEn": "Forest Rock",
+      "gameID": "7c046d76067ca94595417f5379f8a20b",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/forestrock.png"
+    },
+    {
+      "gameNameEn": "Fairy in Wonderland",
+      "gameID": "3f3543335884566622e5dc23ba0a2ab1",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/fairyinwonderland.png"
+    },
+    {
+      "gameNameEn": "Evoji",
+      "gameID": "482d3d19bff904e06f0e174791a889c6",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/evoji.png"
+    },
+    {
+      "gameNameEn": "Circus Fever",
+      "gameID": "0ad88795df36d0eac7e184812d83493a",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/clownfever.png"
+    },
+    {
+      "gameNameEn": "Dots Racing",
+      "gameID": "174f418555e7d2972b071cf23edfddab",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/dotsracing.png"
+    },
+    {
+      "gameNameEn": "Dice Mini",
+      "gameID": "b475f5492065e3a055c6c634f0911145",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/dicemini.png"
+    },
+    {
+      "gameNameEn": "Titan Dice",
+      "gameID": "7fea56bb364749865962851e15e4940d",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/titandice.png"
+    },
+    {
+      "gameNameEn": "Deuces Wild",
+      "gameID": "9aad7d30f74c002ce843dfbdfa3cd1ec",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/deuceswild.png"
+    },
+    {
+      "gameNameEn": "Crazy Horses",
+      "gameID": "1a17748e230ff687998f33be5996d4b9",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/crazyhorses.png"
+    },
+    {
+      "gameNameEn": "Circus Fever Deluxe",
+      "gameID": "3c3442fb2e71b8e3a4f6d2ee92d69e8a",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/clownfeverdeluxe.png"
+    },
+    {
+      "gameNameEn": "Diamond Blackjack",
+      "gameID": "0ffec3cd7901fe974134ba97b70fc489",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/diamondblackjack.png"
+    },
+    {
+      "gameNameEn": "Casino Heist",
+      "gameID": "d323005dcedfa35489b26c5f8a979800",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/casinoheist.png"
+    },
+    {
+      "gameNameEn": "Capital City Derby",
+      "gameID": "20031522418c06a570f619f1d68f4eca",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/capitalcityderby.png"
+    },
+    {
+      "gameNameEn": "Bounty Hunters",
+      "gameID": "b84244fe3a53d41ee041b4a0c8615aac",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/bountyhunters.png"
+    },
+    {
+      "gameNameEn": "Book of Egypt",
+      "gameID": "a7fa4dd148330111edc2fd57cca064bc",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/bookofegypt.png"
+    },
+    {
+      "gameNameEn": "Spinning Buddha",
+      "gameID": "da62e9f59312f077117021d2a27181e8",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/spinningbuddha.png"
+    },
+    {
+      "gameNameEn": "Sticky777",
+      "gameID": "eb92d9634f51eb38546ad5c6d293d92c",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/sticky777.png"
+    },
+    {
+      "gameNameEn": "The Book of Eskimo",
+      "gameID": "374a7c1be39089ca5276a29210548561",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/bookofeskimo.png"
+    },
+    {
+      "gameNameEn": "Wheel",
+      "gameID": "0cb0237cc8133ff3b5cacedd47d9c47d",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/wheel.png"
+    },
+    {
+      "gameNameEn": "Wild Corrida",
+      "gameID": "311e832b4c6cba130d21b3112b5c3839",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/wildcorrida.png"
+    },
+    {
+      "gameNameEn": "Wild Icy Fruits",
+      "gameID": "9ab51512b1bb1cea764308033132c3a9",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/wildicyfruits.png"
+    },
+    {
+      "gameNameEn": "Battle For The Throne",
+      "gameID": "a7c5e1882f202dc53571d7d0ae67e7ee",
+      "customGameType": 0,
+      "vendorCode": 83,
+      "img": "https://img.dyn123.com/images/slot-images/EXPANSE/battleforthethrone.png"
+    }
+  ]

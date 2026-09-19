@@ -1,0 +1,947 @@
+[
+  {
+    "gameNameEn": "Plinko Empire",
+    "gameID": "6f0e4efa301f54fef763b2a81bbf633e",
+    "customGameType": 3
+  },
+  {
+    "gameNameEn": "Secret Treasure",
+    "gameID": "a82ca93017ac887a3a60219b01f545fa",
+    "customGameType": 3
+  },
+  {
+    "gameNameEn": "Crazy Hunter",
+    "gameID": "62c3fd40b01135935b95760be3919cea",
+    "customGameType": 3
+  },
+  {
+    "gameNameEn": "Dragon Treasure",
+    "gameID": "b6a3cf0d084eb6ca80ec532209f2baca",
+    "customGameType": 3
+  },
+  {
+    "gameNameEn": "Pearls of Bingo",
+    "gameID": "1c223365d069d576e4760a12d47e06b8",
+    "customGameType": 4
+  },
+  {
+    "gameNameEn": "Magic Lamp Bingo",
+    "gameID": "e1d087ac664059fe941ebd1f25026578",
+    "customGameType": 4
+  },
+  {
+    "gameNameEn": "Candyland Bingo",
+    "gameID": "24bf917b7965fa1c4b876559520df579",
+    "customGameType": 4
+  },
+  {
+    "gameNameEn": "West Hunter Bingo",
+    "gameID": "2bbdbe25dca762f351548d49a1c538dc",
+    "customGameType": 4
+  },
+  {
+    "gameNameEn": "Bingo Adventure",
+    "gameID": "f9a5f4bb8c5e6055afc196f552a98e06",
+    "customGameType": 4
+  },
+  {
+    "gameNameEn": "Go Goal Bingo",
+    "gameID": "0ab650f410a8a33729c207511839341a",
+    "customGameType": 4
+  },
+  {
+    "gameNameEn": "Jackpot Bingo",
+    "gameID": "613c435eb8cb52b7bfd3b6819ca37c7a",
+    "customGameType": 4
+  },
+  {
+    "gameNameEn": "Calaca Bingo",
+    "gameID": "3d598adbada166d841e1981d07f8bb9e",
+    "customGameType": 4
+  },
+  {
+    "gameNameEn": "Lucky Bingo",
+    "gameID": "52a9d745720a5fd9af1464a0f0eab3a1",
+    "customGameType": 4
+  },
+  {
+    "gameNameEn": "Fortune Bingo",
+    "gameID": "75ec18c636c755ee8dcf15bf343c00e1",
+    "customGameType": 4
+  },
+  {
+    "gameNameEn": "Bingo Carnaval",
+    "gameID": "38f979670b13ef21f664763827aadd0a",
+    "customGameType": 4
+  },
+  {
+    "gameNameEn": "Super Bingo",
+    "gameID": "29d29b7cd389564ef82c17166930ad91",
+    "customGameType": 4
+  },
+  {
+    "gameNameEn": "iRich Bingo",
+    "gameID": "df2c7bb2e23e165a1004e29e5b7ec7ab",
+    "customGameType": 4
+  },
+  {
+    "gameNameEn": "Bingo Empire",
+    "gameID": "9c51354411a7796f06556812c4bf688e",
+    "customGameType": 4
+  },
+  {
+    "gameNameEn": "Bonus Bingo",
+    "gameID": "6d4e77f7cdfda99bc141f493b811dd06",
+    "customGameType": 4
+  },
+  {
+    "gameNameEn": "Truco",
+    "gameID": "8d7131152157ab8e52879eafa29a3826",
+    "customGameType": 5
+  },
+  {
+    "gameNameEn": "MiniFlush",
+    "gameID": "5163a1642e99271a34310dd047824688",
+    "customGameType": 5
+  },
+  {
+    "gameNameEn": "Blackjack",
+    "gameID": "f091760a785e2910ca57abe89c5abf9d",
+    "customGameType": 5
+  },
+  {
+    "gameNameEn": "Ludo Quick",
+    "gameID": "849ec97b9b69d12b8ce146816874cd73",
+    "customGameType": 5
+  },
+  {
+    "gameNameEn": "Ludo",
+    "gameID": "f44b30970395d9a6a36415396d588035",
+    "customGameType": 5
+  },
+  {
+    "gameNameEn": "Andar Bahar",
+    "gameID": "34eb3c1bff2b30c2540bd34c6f8af119",
+    "customGameType": 5
+  },
+  {
+    "gameNameEn": "European Roulette",
+    "gameID": "f3fb208db3b9ae06f9bb44c7a21a2607",
+    "customGameType": 6
+  },
+  {
+    "gameNameEn": "Jogo Do Bicho",
+    "gameID": "717f216e81f7cfcdd5330e4cc5c27be2",
+    "customGameType": 6
+  },
+  {
+    "gameNameEn": "Golden Land",
+    "gameID": "50cdc4f6789df66a73554d3a9c708439",
+    "customGameType": 6
+  },
+  {
+    "gameNameEn": "Color Game",
+    "gameID": "946b6e513e1a89ddff28123460b5616f",
+    "customGameType": 6
+  },
+  {
+    "gameNameEn": "Sic Bo",
+    "gameID": "7f26fac3dbf12f5a007e02db8d7e8a3c",
+    "customGameType": 6
+  },
+  {
+    "gameNameEn": "Baccarat",
+    "gameID": "f9114d196506e32f9d719eedb38b8fba",
+    "customGameType": 6
+  },
+  {
+    "gameNameEn": "7up7down",
+    "gameID": "1f33556f61ba5453bbced11e308252cd",
+    "customGameType": 6
+  },
+  {
+    "gameNameEn": "Dragon & Tiger",
+    "gameID": "9904a181e77d690b94b7426dfa2311ca",
+    "customGameType": 6
+  },
+  {
+    "gameNameEn": "Number King",
+    "gameID": "75a1d1fa8504fcd90dbedd107cc36342",
+    "customGameType": 6
+  },
+  {
+    "gameNameEn": "Poker King",
+    "gameID": "84cc2e6d65e32dbc68f87537abefd4b4",
+    "customGameType": 6
+  },
+  {
+    "gameNameEn": "Color Prediction",
+    "gameID": "b77a626e5b58e99e953dc7e892558522",
+    "customGameType": 7
+  },
+  {
+    "gameNameEn": "Plinko",
+    "gameID": "30ac2fa62dced7e1220d1dbe33cfeaba",
+    "customGameType": 7
+  },
+  {
+    "gameNameEn": "Keno",
+    "gameID": "1d8320406fbed015440c9dac1fe9d80d",
+    "customGameType": 7
+  },
+  {
+    "gameNameEn": "Mines Gold",
+    "gameID": "ed5d8fe3d07646d3876fdcce158eb7a9",
+    "customGameType": 7
+  },
+  {
+    "gameNameEn": "Limbo",
+    "gameID": "aa95744c814b13ccec7c1d5812ed7a7f",
+    "customGameType": 7
+  },
+  {
+    "gameNameEn": "Wheel",
+    "gameID": "0b277b270f9a8371c2094e302391f8a3",
+    "customGameType": 7
+  },
+  {
+    "gameNameEn": "Go Rush",
+    "gameID": "69589795850de013cd8cded87ad42547",
+    "customGameType": 7
+  },
+  {
+    "gameNameEn": "HILO",
+    "gameID": "6e2c927b3cc4df46313fb0ccf5bec6a8",
+    "customGameType": 7
+  },
+  {
+    "gameNameEn": "Mines",
+    "gameID": "6db01ab94d038c2c3bfa3342bb3cd1d0",
+    "customGameType": 7
+  },
+  {
+    "gameNameEn": "Tower",
+    "gameID": "41a3b1cdcd2c5494676553b2a344b7f7",
+    "customGameType": 7
+  },
+  {
+    "gameNameEn": "Ocean King Jackpot",
+    "gameID": "2cccbb53dc31457d0fda2b1af7b87f90",
+    "customGameType": 8
+  },
+  {
+    "gameNameEn": "Dinosaur Tycoon II",
+    "gameID": "d96a6188227cfe71995feadc70f03c06",
+    "customGameType": 8
+  },
+  {
+    "gameNameEn": "Happy Fishing",
+    "gameID": "11055f0bc7f35b34bcfa966b529dba63",
+    "customGameType": 8
+  },
+  {
+    "gameNameEn": "Mega Fishing",
+    "gameID": "5b4c3acdabc8ac8f234d6864d2ee3a8a",
+    "customGameType": 8
+  },
+  {
+    "gameNameEn": "All-star Fishing",
+    "gameID": "bb0c86c376c785e0133af2fe88faaadd",
+    "customGameType": 8
+  },
+  {
+    "gameNameEn": "Boom Legend",
+    "gameID": "fc537dbfab0fcfa7ade4bcb9210e78e0",
+    "customGameType": 8
+  },
+  {
+    "gameNameEn": "Dragon Fortune",
+    "gameID": "5c35435c71eb4674e79b1cd8068ba430",
+    "customGameType": 8
+  },
+  {
+    "gameNameEn": "Dinosaur Tycoon",
+    "gameID": "dff81bd0bba33f59adf64ca1ba80b63b",
+    "customGameType": 8
+  },
+  {
+    "gameNameEn": "Jackpot Fishing",
+    "gameID": "599dc6e567e3cf3bc75c19318812bdbb",
+    "customGameType": 8
+  },
+  {
+    "gameNameEn": "Bombing Fishing",
+    "gameID": "386cd7d395614ff0e15e6c832211ecd1",
+    "customGameType": 8
+  },
+  {
+    "gameNameEn": "Witches' Night",
+    "gameID": "281b5ae6c8ed2cc1f9effb73cb4a9ffb",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Arena Fighter",
+    "gameID": "e1d792d3e4548e7c6607d21337886d2b",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Sin City",
+    "gameID": "d0f2da0ff7b7a1dd1431da66136a9ab9",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "King Arthur",
+    "gameID": "9df210b252b6c62c3e8c8064deb3bbfe",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Jackpot Joker",
+    "gameID": "e8215954973e826fefe4cb9180036110",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Aztec Priestess",
+    "gameID": "f84a727d535dde69b98cfd2f9686a63e",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Fortune Monkey",
+    "gameID": "f86e0b38c64805f8f5b3965bd8e510a8",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Devil Fire",
+    "gameID": "0295743804ccb2891ca7b5d3edcc8f78",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Golden Temple",
+    "gameID": "7c5108e6e7469a465242486834864b00",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Elf Bingo",
+    "gameID": "0e66f31bce361f7bde89b6e3eee114b4",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Sweet Land",
+    "gameID": "dc2b732b584e4bcd56f9a29f9b15c47c",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Fortune Gems 2",
+    "gameID": "fa17d2d18a0c01c87f14154317dcf885",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Master Tiger",
+    "gameID": "d79cebf1481c9a8953826c114d1c4afc",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Wild Ace",
+    "gameID": "e102679ba236589a2f7d12a02cb1b5d0",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Golden Joker",
+    "gameID": "d5d1d548f86674926d23902439c22799",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Pirate Queen",
+    "gameID": "01c24cdab9fd1db64a56c3a67a9addb2",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Neko Fortune",
+    "gameID": "5affff2e6e3856f19ef07d92ca25b513",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Wild Racer",
+    "gameID": "400751d5990ff9ec95ae391da269715e",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "World cup",
+    "gameID": "a005b2e22881865a481d7af10b1e9933",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Sambadab",
+    "gameID": "cfd7d9df53c4d11f360a5aa713f64",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Bonus Hunter",
+    "gameID": "7a18ed7d7e6857a462205d385726461c",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Bone Fortune",
+    "gameID": "f025a7480a8a3bb4a3f51a6e0a80a883",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Mayan Empire",
+    "gameID": "a987776b82047b699a1516a3b3d37ba6",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Happy Taxi",
+    "gameID": "a263971492fc759836771085eddd3948",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Gold Rush",
+    "gameID": "36608f764d7f2aba9da097ecabadedd9",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Thor X",
+    "gameID": "57f682b234b4df323498859ab9b8a444",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Book of Gold",
+    "gameID": "0cdb2874d01794cb45315b803920fbd8",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Mega Ace",
+    "gameID": "fff41101f0a91d8e5a2925e550ea40cb",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Medusa",
+    "gameID": "c2d94b60a5b7c271de6b548e377042a9",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Lucky Coming",
+    "gameID": "036f22c11b477a093435a705ec9457c9",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Super Rich",
+    "gameID": "ff88c9fa2d65325c34d68e5f9725f668",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Roma X",
+    "gameID": "b77839199912077744f09f6bc5c33022",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Party Night",
+    "gameID": "0fcec1abfe2d9c200667fa25fdb86394",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "TWIN WINS",
+    "gameID": "57f1c96725f6c7847e7949330ecd386d",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Pharaoh Treasure",
+    "gameID": "a3ece549edea7c892d2272d11c039de3",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Agent Ace",
+    "gameID": "dcc2fc1e3be5c6059a72526e125a6772",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Fortune Gems",
+    "gameID": "faf4f3954f523783497e789d876dedb8",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Ali Baba",
+    "gameID": "bd34fd63d9c93cbc431f608e03e6b327",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Jungle King",
+    "gameID": "28578086920ebb5ba9a5924a55c54e3c",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Golden Empire",
+    "gameID": "41734bc4661db2fccbc567a9ad5cf3b2",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Boxing King",
+    "gameID": "31a05fe6795c85900fc689ae736c3ba2",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Magic Lamp",
+    "gameID": "390e23a6451aae9857a99f4d10374266",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Candy Baby",
+    "gameID": "4c2ed505188fee7b6d492235659b02ac",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "XiYangYang",
+    "gameID": "21e8efc1da83b20e959ecf2e20bfd2bf",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Lucky Goldbricks",
+    "gameID": "64a9f899f582e7e38860766e1971a757",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Fortune Pig",
+    "gameID": "e71559957bd4eb4d819e4295b442d0b6",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Golden Bank",
+    "gameID": "d88d23b62bc338fd5eab9244c3a99b47",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Golden Queen",
+    "gameID": "1a65d1c2e7c39f19b111b3cc6974c16f",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Super Ace",
+    "gameID": "a49dd5aa59cd8474cfd4ee39ca4e412e",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Money Coming",
+    "gameID": "dbe5d2422eb7ec894428a0fcf125011c",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Charge Buffalo",
+    "gameID": "a8d37ef9d3b9953444bd494e63e8ead9",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Fortune Tree",
+    "gameID": "7034fa0112ca81d5fdd28d7682d59aa9",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Fa Fa Fa",
+    "gameID": "1d52feb6ff3929d70d609910b7abc34a",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Chin Shi Huang",
+    "gameID": "086c44fa04799b4a0398d7498ed5ff5a",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "SevenSevenSeven",
+    "gameID": "29b3e9544df44bf8e7d50c49881b118a",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Shanghai Beauty",
+    "gameID": "a944b44508559d370ff12377a180cfc1",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Bubble Beauty",
+    "gameID": "bc897ab80620782e589c0a2cc89dff2e",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Crazy777",
+    "gameID": "0834753f90696829e7d30e4f34a3799e",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Blackjack Lucky Ladies",
+    "gameID": "7cfe3bd6243ad25ebb6a84e7185f2498",
+    "customGameType": 5
+  },
+  {
+    "gameNameEn": "Party Star",
+    "gameID": "386112cc7b25c7f3b3c6f56ef5fd46ff",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Zeus",
+    "gameID": "67dca927bc3549d688f73fa5e4d10730",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Video Poker",
+    "gameID": "fa0b2bbb732769912b9ebda82939b169",
+    "customGameType": 6
+  },
+  {
+    "gameNameEn": "Devil Fire 2",
+    "gameID": "d18bbd4c5ac228673ed3767d757b4f5b",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Charge Buffalo-ASCENT",
+    "gameID": "1d53e9f101150cdf1629384d63da05d1",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Crash Bonus",
+    "gameID": "5f95ee8e06b656cfb470faf1cee1820b",
+    "customGameType": 7
+  },
+  {
+    "gameNameEn": "Fortune Gems 3",
+    "gameID": "17bbcb402f27138b4eb15dad9760cdac",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Super Cockfight",
+    "gameID": "4ad6b6fb18f3600c57db5e5568d09aaa",
+    "customGameType": 6
+  },
+  {
+    "gameNameEn": "3 Coin Treasures",
+    "gameID": "bf97a68aa49e3d277900d6a558b802b9",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "3 LUCKY PIGGY",
+    "gameID": "4256be4e51ba5841d70c5d236ed86217",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Crash Goal",
+    "gameID": "f0776e17b00a90828b52a0ebaffc5bd6",
+    "customGameType": 7
+  },
+  {
+    "gameNameEn": "Crazy Hunter 2",
+    "gameID": "fe1bf01364d065e560e8a572c373ff87",
+    "customGameType": 3
+  },
+  {
+    "gameNameEn": "3 Pot Dragons",
+    "gameID": "aa89acfb88e50451806c84f8041cd040",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Potion Wizard",
+    "gameID": "9009f9f9427c146fe40dd4e99a1051af",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Fortune Coins",
+    "gameID": "6a0c83d372aae9f2296334dd30e87c34",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Pirate Queen 2",
+    "gameID": "053b24f28aa71ef3c5096a76f4bc66c5",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Safari Mystery",
+    "gameID": "ba3f0ee917dc9a47168e84ad3a8efbc8",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Fruity Wheel",
+    "gameID": "35ec74f659a1e0228db790bc0f6d8ff1",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Domino Go",
+    "gameID": "19bb5ec420fc002b854ed6b406f6dacd",
+    "customGameType": 5
+  },
+  {
+    "gameNameEn": "Money Pot",
+    "gameID": "974bfff9c0dd0cc733c4070b531e9844",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Penalty Kicks",
+    "gameID": "2231e3982a8ea0023451702add2c6c16",
+    "customGameType": 6
+  },
+  {
+    "gameNameEn": "Treasure Quest",
+    "gameID": "c99a1e48248e424972e4dc4132fd98d2",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Lucky Jaguar",
+    "gameID": "5a8f772556d1e0bc12285ea6e2979e18",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Keno Super Chance",
+    "gameID": "ee63f655baf16e7c131e33c5d0d4d12f",
+    "customGameType": 6
+  },
+  {
+    "gameNameEn": "Trial of Phoenix",
+    "gameID": "f2fca97b7bfca280b4dd33ccb2cd8987",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Crash Touchdown",
+    "gameID": "58404e9d8012649989a8ffcd1014c5ad",
+    "customGameType": 7
+  },
+  {
+    "gameNameEn": "Ocean Hunter",
+    "gameID": "a2ed3777470366dc21a6aa7c169a5b3a",
+    "customGameType": 8
+  },
+  {
+    "gameNameEn": "Diamond Party",
+    "gameID": "c66e5e077eb4b24513b3de36dab61543",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Coin infinity Surge Reel",
+    "gameID": "3801b059ecce1ee4cfa001f682fb1042",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Jhandi Munda",
+    "gameID": "6ee31dc1c4794549a4b021bad8a354de",
+    "customGameType": 6
+  },
+  {
+    "gameNameEn": "Happy Fishing Lightning",
+    "gameID": "225037e2cfddd102fe66849b13329e47",
+    "customGameType": 8
+  },
+  {
+    "gameNameEn": "Keno Bonus Number",
+    "gameID": "c8bdb01e06ae3fbdc5d136a1d1668b0c",
+    "customGameType": 6
+  },
+  {
+    "gameNameEn": "Poseidon",
+    "gameID": "5ff3e26697717f068fc8dd5116a311e0",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Lucky Doggy",
+    "gameID": "a0330b6c8f87e4c0559a998c8d4e9fcf",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Speed Baccarat",
+    "gameID": "c3e8b539ca1504e94e10f10e84c50227",
+    "customGameType": 6
+  },
+  {
+    "gameNameEn": "SHŌGUN",
+    "gameID": "4f50b068d44720e4216755d4f04af386",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Legacy of Egypt",
+    "gameID": "92822f874d79824e9609917642c7a8a7",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Nightfall Hunting",
+    "gameID": "a08ef688a41e4252ba4aadbe2b01f122",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Fortune king jackpot",
+    "gameID": "ab2eaafa6c5810a063c5cab2dee22c50",
+    "customGameType": 8
+  },
+  {
+    "gameNameEn": "Ultimate Texas Holdem",
+    "gameID": "475dff786abc2368ac8c081b457d217b",
+    "customGameType": 6
+  },
+  {
+    "gameNameEn": "Egypt's Glow",
+    "gameID": "6aaf23c150b2420503ade2338105356d",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "The Pig House",
+    "gameID": "bb9f5ea07dc1733b8d91980acee7b308",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Crash Puck",
+    "gameID": "ef9f3b036d9e4bc67727aeaabf3d02e1",
+    "customGameType": 7
+  },
+  {
+    "gameNameEn": "Coin Tree",
+    "gameID": "44d0b170b23e3117a2b91245e8b73e8c",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Bikini Lady",
+    "gameID": "f37ebba8cd675dabb59f1e3d12ce717c",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Lucky Jaguar 2",
+    "gameID": "3ad73174a475dc3f8d24533ad598576e",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Royal Shooter",
+    "gameID": "240f916c7bcd7cf5736153cdc30190da",
+    "customGameType": 3
+  },
+  {
+    "gameNameEn": "Golden Bank 2",
+    "gameID": "bbf88fa0b7a64e24d481dc6c83db48a4",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Golden Treasure",
+    "gameID": "1efad0f9edd3ab3df167dff524376aff",
+    "customGameType": 6
+  },
+  {
+    "gameNameEn": "Fortune Hook",
+    "gameID": "3b4854979be952d5a32a1d114bc1aca9",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Clover Coins 3x3",
+    "gameID": "65f8f54135510cfc2dcc878fc9e998ad",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "3 Charge Buffalo",
+    "gameID": "13be74c6c9cce2eb61d885ffb17ab0ba",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Plinko of Mine",
+    "gameID": "2b25856a89a5a0cd7b0b10c73700aa53",
+    "customGameType": 7
+  },
+  {
+    "gameNameEn": "20 Blazing Clover",
+    "gameID": "9762e8058984f382c6a908a60b1f7a18",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Money Coming 2",
+    "gameID": "d7625c407686e3f00bad5498241ec0f3",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "3 Coin Treasures 2",
+    "gameID": "5a09859c1b1b291a946a924f306614f5",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Fortune Gems 5",
+    "gameID": "00c93a1ca1879da73da216872f5c11e9c9",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Lucky Tiger",
+    "gameID": "100259675947a9b5448b1964addacad0",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "40 Sparkling Crown",
+    "gameID": "f0760a921e3487566fffd4fa6b5c6f46",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Big Boss",
+    "gameID": "cbfa259be021ec67fc85f3ba35583047",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Jackpot Joker FEVER",
+    "gameID": "22ae60f92bf42fc426b39540750ddd89",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "3 Coin Wild Horse",
+    "gameID": "f7f5d6968d06c1d4018c5e7630fbfca0",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Kung Fu Tiger",
+    "gameID": "2d6966d0990e5cc0088b4fc1d7855dd2",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Caribbean Queen",
+    "gameID": "f479954308deec89b220f3c661879462",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Bounty Frenzy",
+    "gameID": "24565d74792df1d29e98d65c3215389a",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "NekoNeko",
+    "gameID": "64a43a2282ecbda325c8b3712b628db4",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Clover Coins 4x4",
+    "gameID": "48adf8b55e6a7415f418470b7e26135ac",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Crazy777 2",
+    "gameID": "032d8a1457944f999a666f3e188fcc5f",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "100 Blazing Clover",
+    "gameID": "950bb3f88dbe4fd100147fe93249bba0",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Money Pot DELUXE",
+    "gameID": "3efca04484b79784bab1e92ff0b6ad40",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Fortune Coins 2",
+    "gameID": "14220c2b7d081d8e30d70ae0ec69fa8d",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Fortune Zombie Lightning",
+    "gameID": "0e93864e3e7e141a8b3268ba2ed79aed",
+    "customGameType": 8
+  },
+  {
+    "gameNameEn": "Devil Fire Twins",
+    "gameID": "d950c1e9e8d6fb4c9e31e06b2afb59d4",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Fortune Hook Boom",
+    "gameID": "46a0b6e514cfa2c071a3fa226bd73bbc",
+    "customGameType": 0
+  },
+  {
+    "gameNameEn": "Rise Of Egypt",
+    "gameID": "6d689bbeeffdb703e9393ecb164d71ac",
+    "customGameType": 0
+  }
+]

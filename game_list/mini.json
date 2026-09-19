@@ -1,0 +1,709 @@
+[
+    {
+        "gameNameEn": "WhackAMole",
+        "gameID": "df196b6df7af6da164fdca33adfebb95",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/100/WhackAMole.webp"
+    },
+    {
+        "gameNameEn": "MouseTower",
+        "gameID": "a739521e60a1b22fb58cb9568518a61b",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/100/MouseTower.webp"
+    },
+    {
+        "gameNameEn": "MagicLamp",
+        "gameID": "b9f3f1ef3da5e20eed37be71662ed4b4",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/100/MagicLamp.webp"
+    },
+    {
+        "gameNameEn": "Plinko",
+        "gameID": "f8cbbe2385c03d99f65c0ce8e28e51b5",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/1/plinko.webp"
+    },
+    {
+        "gameNameEn": "Mines",
+        "gameID": "9e75688264cf2e10f93504bfce9ae880",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/1/mines.webp"
+    },
+    {
+        "gameNameEn": "Dice",
+        "gameID": "37c0948df16dd376002c465891c38a32",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/1/dice.webp"
+    },
+    {
+        "gameNameEn": "Limbo",
+        "gameID": "452deea1aa0148308ff6f5cacde45efc",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/1/limbo.webp"
+    },
+    {
+        "gameNameEn": "Dragon Tower",
+        "gameID": "926ae3eebad16451ad1905ba6c24b00d",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/1/dragon-tower.webp"
+    },
+    {
+        "gameNameEn": "Crash",
+        "gameID": "e744d7ca13a668df6572bedab278c93e",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/1/crash.webp"
+    },
+    {
+        "gameNameEn": "MultiplayerKeno",
+        "gameID": "2dfe6b27bff3ff84894294d6524e7b8f",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/1/keno.webp"
+    },
+    {
+        "gameNameEn": "Wheel",
+        "gameID": "63e6a91c2036975c0242e721bed4572a",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/1/wheel.webp"
+    },
+    {
+        "gameNameEn": "Hilo",
+        "gameID": "390145ebab971345d41bb8d91e09c0c5",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/1/hilo.webp"
+    },
+    {
+        "gameNameEn": "Blackjack",
+        "gameID": "1661f96a09d4b4836db80557c4094b51",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/1/blackjack.webp"
+    },
+    {
+        "gameNameEn": "Diamonds",
+        "gameID": "15f493c9823adb523e2504f25ab4b903",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/1/diamonds.webp"
+    },
+    {
+        "gameNameEn": "Slide",
+        "gameID": "2adc3b75f14c5d427e69ca6f8ad8bb67",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/1/slide.webp"
+    },
+    {
+        "gameNameEn": "MultiplayerRoulette",
+        "gameID": "767bb7ada651a444e2c5c1c15d80f98e",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/1/roulette.webp"
+    },
+    {
+        "gameNameEn": "Aviator",
+        "gameID": "b36de3f246c8695d6ca27ba8a28abb9c",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/2/aviator.webp"
+    },
+    {
+        "gameNameEn": "MultiplayerMines",
+        "gameID": "d0ecadcba50bfeb6de958bb42ba700bc",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/2/mines.webp"
+    },
+    {
+        "gameNameEn": "Dice",
+        "gameID": "9c81a2acb3eb54f48bf497f7405ed5dc",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/2/dice.webp"
+    },
+    {
+        "gameNameEn": "MiniRoulette",
+        "gameID": "fb20d21f04d607baf4f19268af77bcfa",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/2/mini-roulette.webp"
+    },
+    {
+        "gameNameEn": "Hilo",
+        "gameID": "e96286feee969f34da10cd3331e3861a",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/2/hilo.webp"
+    },
+    {
+        "gameNameEn": "Plinko",
+        "gameID": "2b42f9099fca962308c4e5c3363b56b3",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/2/plinko.webp"
+    },
+    {
+        "gameNameEn": "Goal",
+        "gameID": "fed66cee9b16edc2fa0f99289c111526",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/2/goal.webp"
+    },
+    {
+        "gameNameEn": "Keno",
+        "gameID": "ea77e05f00979e7a927ff8f40b665244",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/2/keno.webp"
+    },
+    {
+        "gameNameEn": "Hotline",
+        "gameID": "2ef5d8c2b12857b38c2e1c097f94f9cc",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/2/hotline.webp"
+    },
+    {
+        "gameNameEn": "LostTreasure",
+        "gameID": "de9c60259ffc8134a675242fdabb3cd6",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/3/lost-treasure.webp"
+    },
+    {
+        "gameNameEn": "SushiMines",
+        "gameID": "20562eb57af225275ebe5a3ebec30138",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/3/sushi-mines.webp"
+    },
+    {
+        "gameNameEn": "FootballX",
+        "gameID": "54efbbd43d011fe38457e565eb2159e6",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/3/football-x.webp"
+    },
+    {
+        "gameNameEn": "PandaCrash",
+        "gameID": "f7ce119539b4487ffb0e3189da6d7b20",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/3/panda-crash.webp"
+    },
+    {
+        "gameNameEn": "NinjaCrash",
+        "gameID": "04b0eaf0a7a2c2ee2231d8577406577c",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/3/ninja-crash.webp"
+    },
+    {
+        "gameNameEn": "Limbo",
+        "gameID": "663a9584acac897575d09b334286f7e9",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/3/limbo.webp"
+    },
+    {
+        "gameNameEn": "LuckyTanks",
+        "gameID": "212f17ea1dd06f2ffeb039b423738b39",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/3/lucky-tanks.webp"
+    },
+    {
+        "gameNameEn": "Mines",
+        "gameID": "9e54edcc6fcb6fb6750eca43e3fa1a98",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/3/mines.webp"
+    },
+    {
+        "gameNameEn": "TreasureHuntMoles",
+        "gameID": "fd378d996097e6903ade1b69db1b6d2d",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/3/treasure-hunt-moles.webp"
+    },
+    {
+        "gameNameEn": "ColorGame",
+        "gameID": "9aa84e4ef2d60dd7a4f7eb8784a8d488",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/3/color-game.webp"
+    },
+    {
+        "gameNameEn": "MultiplayerMonopoly",
+        "gameID": "d9bc2ab75ecce6bc77cdab8407e5590e",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/3/monopoly.webp"
+    },
+    {
+        "gameNameEn": "BankHeist",
+        "gameID": "80f46cf174b529e293489c253ca44f6c",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/3/bank-heist.webp"
+    },
+    {
+        "gameNameEn": "FastFurious",
+        "gameID": "9e2af0dbda8ef7d7b82b6e17073d5aa9",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/3/fast-furious.webp"
+    },
+    {
+        "gameNameEn": "MultiplayerRing",
+        "gameID": "8340db263b410b2cb756eb2afc42ff8d",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/3/ring.webp"
+    },
+    {
+        "gameNameEn": "Keno",
+        "gameID": "5ae9aeba07c628ba49d0f70a31559bb1",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/3/keno.webp"
+    },
+    {
+        "gameNameEn": "Dice",
+        "gameID": "10d6dd3895bd125881dc6719e4bdce6f",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/3/dice.webp"
+    },
+    {
+        "gameNameEn": "FieryBot",
+        "gameID": "aef4dfea245e3796fe7fea0ca09362dd",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/3/fiery-bot.webp"
+    },
+    {
+        "gameNameEn": "GoForGold",
+        "gameID": "2020e1f416f44a4920b3a2b244e9fc97",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/3/go-for-gold.webp"
+    },
+    {
+        "gameNameEn": "SuperDouble",
+        "gameID": "3940c014a492bced4c322de1238dd27c",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/3/super-double.webp"
+    },
+    {
+        "gameNameEn": "GoBananas",
+        "gameID": "114091a9c1bf4af78d830a53c51ca5b3",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/3/go-bananas.webp"
+    },
+    {
+        "gameNameEn": "LuckyFootball",
+        "gameID": "78d476a502c5f5232974bcb66b2ea9e2",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/3/lucky-football.webp"
+    },
+    {
+        "gameNameEn": "SlapShot",
+        "gameID": "c98b8a60baef298d5e33c34be8e6eb8d",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/4/SlapShot.webp"
+    },
+    {
+        "gameNameEn": "BlackJack",
+        "gameID": "f23786ff750e1a8fb67e2a74246c02ba",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/4/BlackJack.webp"
+    },
+    {
+        "gameNameEn": "DrShocker",
+        "gameID": "3393f57cf4d84a6bacc535afc5b28bfb",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/4/DrShocker.webp"
+    },
+    {
+        "gameNameEn": "TowerRush",
+        "gameID": "5e1d3c647f9015a0cb8347d20d11068b",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/4/TowerRush.webp"
+    },
+    {
+        "gameNameEn": "TurboMines",
+        "gameID": "7de21f7616ddb4f9486641d2d99dcaf5",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/4/TurboMines.webp"
+    },
+    {
+        "gameNameEn": "Plinkoman",
+        "gameID": "988a40d3fdea68e6764a4250f430e8a8",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/4/Plinkoman.webp"
+    },
+    {
+        "gameNameEn": "HamsterMania",
+        "gameID": "223b8d6d039d68f661e305bb2d646e4e",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/4/HamsterMania.webp"
+    },
+    {
+        "gameNameEn": "CosmoSaga",
+        "gameID": "e4441f18ea7133e5b341e5f516bef35c",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/4/CosmoSaga.webp"
+    },
+    {
+        "gameNameEn": "Atlantis",
+        "gameID": "838a1f101ba94a4a1611c419a6e8ca33",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/4/Atlantis.webp"
+    },
+    {
+        "gameNameEn": "HotGear",
+        "gameID": "f99a723c1fb1083fc226ca98dffee15d",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/4/HotGear.webp"
+    },
+    {
+        "gameNameEn": "Totem",
+        "gameID": "fc246b7b9e396a4471a35c8a1fbc1d26",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/4/Totem.webp"
+    },
+    {
+        "gameNameEn": "Roulette",
+        "gameID": "a45abfe967f4aa60c47fa8cacf4f8b56",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/4/Roulette.webp"
+    },
+    {
+        "gameNameEn": "LimboCrash",
+        "gameID": "d27a8c6ec6aefa6bbaa9ebdaf8e4ddb9",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/4/LimboCrash.webp"
+    },
+    {
+        "gameNameEn": "CoinFlip",
+        "gameID": "534ff8786c847789c054fd7447e5c1b1",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/4/CoinFlip.webp"
+    },
+    {
+        "gameNameEn": "Thimble",
+        "gameID": "7b7dff4328b11a95174600c395665f89",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/4/Thimble.webp"
+    },
+    {
+        "gameNameEn": "ScratchMap",
+        "gameID": "08b30c8b511005b4d591b602e1fcf301",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/4/ScratchMap.webp"
+    },
+    {
+        "gameNameEn": "PlayMe",
+        "gameID": "739af76b486105ca8dc6b49447bd9706",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/4/PlayMe.webp"
+    },
+    {
+        "gameNameEn": "AviatorJerry",
+        "gameID": "a7f65a7e2bac849aa21ed92d70589fc0",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/100/AviatorJerry.webp"
+    },
+    {
+        "gameNameEn": "LoveGift",
+        "gameID": "b8530fdbbfa8fd0fe48c87b2c2536d2c",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/100/LoveGift.webp"
+    },
+    {
+        "gameNameEn": "PowerBall",
+        "gameID": "1b5bb74c93b1d8e026dc4828ebce0238",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/200/PowerBall.webp"
+    },
+    {
+        "gameNameEn": "BingoMega",
+        "gameID": "44943fcb2b973e8fbd346934570e25fc",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/200/BingoMega.webp"
+    },
+    {
+        "gameNameEn": "BingoRush",
+        "gameID": "bf7e52d75550723d05ad0401302f6dff",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/200/BingoRush.webp"
+    },
+    {
+        "gameNameEn": "BingoBoom",
+        "gameID": "ac3b55fd9339d0bcc5dda839f10ed322",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/200/BingoBoom.webp"
+    },
+    {
+        "gameNameEn": "MTD",
+        "gameID": "135103c66220afbd9a20ee1eac21ca89",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/200/MTD.webp"
+    },
+    {
+        "gameNameEn": "DragonTiger",
+        "gameID": "25795082b3c347b996b8032d52953919",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/300/DragonTiger.webp"
+    },
+    {
+        "gameNameEn": "OverUnder",
+        "gameID": "fc3d8ecd0a7ae360bbb2a5538dc1315c",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/300/OverUnder.webp"
+    },
+    {
+        "gameNameEn": "TossACoin",
+        "gameID": "1f31f881b928bb49c04488f4d69dc711",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/300/TossACoin.webp"
+    },
+    {
+        "gameNameEn": "OneMRace",
+        "gameID": "315200ece9ad897d8c4845c4c5baecc8",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/300/OneMRace.webp"
+    },
+    {
+        "gameNameEn": "SicBo",
+        "gameID": "889c8e03d2d164bdb5cd99b974e54f75",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/300/SicBo.webp"
+    },
+    {
+        "gameNameEn": "OneMWinGo",
+        "gameID": "dabaf34d67f40de28ff5b9d9304dddab",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/300/OneMWinGo.webp"
+    },
+    {
+        "gameNameEn": "Pump",
+        "gameID": "6750d75d4267a0b6534580c0ab054051",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/1/pump.webp"
+    },
+    {
+        "gameNameEn": "Cases",
+        "gameID": "5782816b72d4cf7aaa64271432ab29cf",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/1/cases.webp"
+    },
+    {
+        "gameNameEn": "VideoPoker",
+        "gameID": "39048a4c366ea90deb9be399912a6f0f",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/1/video-poker.webp"
+    },
+    {
+        "gameNameEn": "Baccarat",
+        "gameID": "51011e68d428e23170a6bb0d848de34b",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/1/baccarat.webp"
+    },
+    {
+        "gameNameEn": "Balloon",
+        "gameID": "c962d8776420b24d31ab023c3c4b503a",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/2/balloon.webp"
+    },
+    {
+        "gameNameEn": "GoLabubu",
+        "gameID": "a8b59a577778524c4fa3559fc9bf10aa",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/3/go-labubu.webp"
+    },
+    {
+        "gameNameEn": "LabubuForSugar",
+        "gameID": "b85a9d7e385e3ad9da1d4026f0e4e180",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/3/labubu-for-sugar.webp"
+    },
+    {
+        "gameNameEn": "RockPaperScissors",
+        "gameID": "c84b71693b838f5ba24356ee1be275ec",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/3/rock-paper-scissors.webp"
+    },
+    {
+        "gameNameEn": "LabubuMines",
+        "gameID": "b8e1bedc6f600980cb9065ff9637c9a1",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/3/labubu-mines.webp"
+    },
+    {
+        "gameNameEn": "GoCryBaby",
+        "gameID": "923abacf5ac67523d76d6c8213a708f0",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/3/go-cry-baby.webp"
+    },
+    {
+        "gameNameEn": "GoMolly",
+        "gameID": "2256257006a2c16aae14cb13dde3ea90",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/3/go-molly.webp"
+    },
+    {
+        "gameNameEn": "LabubuCarnival",
+        "gameID": "7eaa64c24469b0db6423c53cff4d4caf",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/3/labubu-carnival.webp"
+    },
+    {
+        "gameNameEn": "ChickenRoadTwo",
+        "gameID": "4bd14ae4ff5ddebf4516695676890928",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/5/chicken-road-two.webp"
+    },
+    {
+        "gameNameEn": "ChickenRoad",
+        "gameID": "b269566aad409214c338f0cc4ed20e8b",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/5/chicken-road.webp"
+    },
+    {
+        "gameNameEn": "Stairs",
+        "gameID": "60fbf9c812a11d8c9ad04b141c5704ec",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/5/stairs.webp"
+    },
+    {
+        "gameNameEn": "JokerPoker",
+        "gameID": "b12c2f419c8148b35686e48781255c32",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/5/joker-poker.webp"
+    },
+    {
+        "gameNameEn": "PenaltyUnlimited",
+        "gameID": "680f7453f0278f3da62cb91b212245e3",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/5/penalty-unlimited.webp"
+    },
+    {
+        "gameNameEn": "Coinflip",
+        "gameID": "b32ecd59bb034621ead58ddc48a85e3e",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/5/coinflip.webp"
+    },
+    {
+        "gameNameEn": "PlatformMines",
+        "gameID": "af15c581a0cdafe9fa3a56d0b3d6c477",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/5/platform-mines.webp"
+    },
+    {
+        "gameNameEn": "Bubbles",
+        "gameID": "bbc504d41d028ec679197d2d5d2ec29d",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/5/bubbles.webp"
+    },
+    {
+        "gameNameEn": "Keno",
+        "gameID": "872379660132d7924f56249e3a45d969",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/5/keno.webp"
+    },
+    {
+        "gameNameEn": "LuckyMines",
+        "gameID": "b930fe411a27adec15e82b489b2d07c4",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/5/lucky-mines.webp"
+    },
+    {
+        "gameNameEn": "Limbo",
+        "gameID": "e6638819f0f5804d2f27c62d9b36b27b",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/5/limbo.webp"
+    },
+    {
+        "gameNameEn": "HotMines",
+        "gameID": "0de6ef0da684db897221edec3b520b9c",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/5/hot-mines.webp"
+    },
+    {
+        "gameNameEn": "Plinko",
+        "gameID": "a8ca85536ff3597144b74fb8325e1215",
+        "customGameType": 0,
+        "vendorCode": 19,
+        "img": "https://static.mini.game/icon/game1/5/plinko.webp"
+    }
+]

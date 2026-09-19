@@ -1,0 +1,842 @@
+[
+    {
+        "gameNameEn": "Coin Lamp",
+        "gameID": "18d2ca49820914e3f1b3ca88610a16d6",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Rocket Wins",
+        "gameID": "aad89c012611340502a5f105ca2dde40",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Hawaii Riches",
+        "gameID": "88e999e8df5e2a70ec8a0481ea33b9f2",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "China Festival",
+        "gameID": "4efa2ac563b7ae6f99fe0e11e6df9f58",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "3 Pots of Egypt",
+        "gameID": "fab4a5fc613f3b08f6b63fe3039821a2",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Hot Fire Fruits",
+        "gameID": "dae33a1828602bf49c76ada0a4db5add",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Lucky Penny",
+        "gameID": "a2da6132ead534376530a0cca05208ca",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Super Hot Chilli",
+        "gameID": "4aa6d31f8bdf2dc44405c2dd985b55e4",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Sky Coins",
+        "gameID": "b15df829f4c65a6d31c2b834519f443a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Lamp of Wonder",
+        "gameID": "661e5162fc87e9085c15b394313a916f",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "3 China Pots",
+        "gameID": "8bcd327841f028a109c7706ef63560fb",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Lion Coins",
+        "gameID": "96e8a53300cb8db059e3d306746594e8",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "3 Egypt Chests",
+        "gameID": "417656f2f7a1515bfedc35ebacf0f891",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Sun of Egypt 4",
+        "gameID": "94ca4998d75e3a2d9e86a5a2ae657409",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Gold Nuggets",
+        "gameID": "5db228344e2a69073981507adcd13718",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Crystal Scarabs",
+        "gameID": "d7c1d4df446af83339e8f5b41d54928a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Grab more Gold!",
+        "gameID": "97aad25a816bfa3cd7ba10166c6417ff",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "777 Coins",
+        "gameID": "c22f3aa1524ff13f1b2d0b85d139069c",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Little Farm",
+        "gameID": "465db13ea441c620a1d8e186c129c836",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Green Chilli 2",
+        "gameID": "1b9b09595e83a6acfcda32321673ad94",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Forest Spirit",
+        "gameID": "9124408508309fa92ce05afc1616fe19",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Lady Fortune",
+        "gameID": "330d984535d95d3d8bcdd680a0d14343",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Grab the Gold!",
+        "gameID": "830594e296506000e87c43a12fb634c8",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "More Magic Apple",
+        "gameID": "0672f4d6f0053d6889ed8f0eb3b88ef7",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Maya Sun",
+        "gameID": "c433923addc200f1c65ed3946003e463",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Dragon Wealth",
+        "gameID": "ec253493644df4a1af5ee39834f92bee",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Sunlight Princess",
+        "gameID": "472fc11f004fe0996a9f8c4ad0be365f",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Goddess of Egypt",
+        "gameID": "872155586cf761e80df010fd38058b2c",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Hit more Gold",
+        "gameID": "40109eee3d546e0a3a1bbe96bacd7f3a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Green Chilli",
+        "gameID": "2e66fd182be145a86ab77c634a659cbe",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Big Heist",
+        "gameID": "2f09791f9fc7655410414e1031872a8d",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Lotus Charm",
+        "gameID": "61a07f3c3a80f57b5ba2f5dee58de3ad",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Magic Apple 2",
+        "gameID": "519940e9de34471301d505e0c3e27bc3",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Sun of Egypt 3",
+        "gameID": "d98e5c6301edbcc6f1cefb96c55ff88a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Happy Fish",
+        "gameID": "1cb340b490fe1893b691ce6f3d343ed3",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Queen of the Sun",
+        "gameID": "cf850797c069431ff5a0d1c512083c19",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Golden Dancing Lion",
+        "gameID": "778852dd4e78cadbe8a0489e6a10ae05",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Candy Boom",
+        "gameID": "ba86d26f99b3c4612c99900220f51b13",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Gold Express",
+        "gameID": "f527e42c6b7b1084399040df31e4f845",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Tiger Jungle",
+        "gameID": "f6668123b9128123a67b06cab274fe15",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Wolf Night",
+        "gameID": "1b9cf5e44f1041ab1ff69e0eabece2a5",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "3 Coins: Egypt",
+        "gameID": "9cbcb3079913faed43b53e679db12054",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Scarab Boost",
+        "gameID": "c647432be835c78bd5a797a6a4f341c1",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Hit the Gold",
+        "gameID": "fab8529f51cac472de6a637704b6f85c",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Magic Apple",
+        "gameID": "165ea500252e86e516e04b5c60d5e768",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "3 Coins",
+        "gameID": "62bdd197cbcbe5bea67b00744b634d8f",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Tiger Stone",
+        "gameID": "43d5849550520632db69539717d42393",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Sun of Egypt 2",
+        "gameID": "366dd1f2071847e620e23567e0fbac10",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Scarab Temple",
+        "gameID": "d9059b4ab34f7f3db33197a99c12a511",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Thunder of Olympus",
+        "gameID": "2af796e10b525050662b8a3ef04d7c99",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "15 Dragon Pearls",
+        "gameID": "b46d315d49c7ba8bd9be41235414b08c",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Aztec Sun",
+        "gameID": "593f0d4969a2bfff2834a731a8f3cb34",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Moon Sisters",
+        "gameID": "9e833c88f8ca82e4f1c4669e7b18a697",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Great Panda",
+        "gameID": "78216eae8dfb5a821549d68130242919",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Tiger\u2019s Gold",
+        "gameID": "a5780ab96e7fd8cfa2c399bc94b96cbb",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Sun of Egypt",
+        "gameID": "7553295566a5552550c29c80c6a2cb88",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Scarab Riches",
+        "gameID": "0fbc47f2ab26fa6a5a721b42048bd16f",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Olympian Gods",
+        "gameID": "44e6c9744d9518a80c2f98dfd1306991",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Book of Sun: Multichance",
+        "gameID": "f80b12969aed789dcd7cf0757e61dc1b",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Dragon Pearls",
+        "gameID": "41b08038555e6f7d643b177653f4dc98",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "3 African Drums",
+        "gameID": "9301226771ddc4e55ab52bcb049c5871",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "3 Clover Pots",
+        "gameID": "f12f8a6227e73123a2dd731b4b78cc77",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Goddess of Egypt",
+        "gameID": "872155586cf761e80df010fd38058b2c",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Golden Teapot",
+        "gameID": "ed9a1b43a68e35fd68b12b2956b45250",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "African Spirit Sticky Wilds",
+        "gameID": "d8aa309f2bf9001606d96ca46a67437e",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Olympian Gods",
+        "gameID": "44e6c9744d9518a80c2f98dfd1306991",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Supercharged Clovers: Hold and Win",
+        "gameID": "0c627b51bb9815660a05fbe92182ddcb",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Pink Joker: Hold and Win",
+        "gameID": "fd1b1fdc7bf3624a410eeb67d5230986",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Piggy Power: Hit the Bonus",
+        "gameID": "d69cebfd1f2c06aaf0950b4547db349b",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Treasures of Fire: Scatter pays",
+        "gameID": "af0dac39ff8b27637044bac2cf16373e",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Arizona Heist: Hold and Win",
+        "gameID": "2a7b5e7fc98749ce3c495adb98dce9cc",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "3 Carts of Gold",
+        "gameID": "a592337224dc98465a3bfe2f7293b1d5",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "3 Pirate Barrels: Hold and Win",
+        "gameID": "6b4f88c4aa7d388feff86a212d2927a3",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "3 Pots Riches Extra: Hold and Win",
+        "gameID": "dbeded96c32d7f9bc1dd2c60fd2dfd31",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Power Crown: Hold and Win",
+        "gameID": "f05a8e7dd49bf6d97fd73e266e092a47",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Fortune Globe",
+        "gameID": "db8712a0c53069ad38db5d6cc042d0c0",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "3 Clover Pots Extra",
+        "gameID": "aac9aee1b601830cc22f50d6147c8467",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Sky Pearls",
+        "gameID": "6885c1d517aab1988ff8d0b3052f0c62",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Lava Coins",
+        "gameID": "828e96e0b6c1a630f073f029e302dc85",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "3 Pots Riches: Hold and Win",
+        "gameID": "b1e8d4893d25e8258296036ebba128af",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Crown and Diamonds: Hold and Win",
+        "gameID": "500fd885fe835348b92971b0f2760c5d",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Fire Temple: Hold and Win",
+        "gameID": "ef938e06ea96112998eb555e1c597e73",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Buffalo Power 2: Hold and Win",
+        "gameID": "1045f8974dd64fd22e7793a9896d1df0",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Sherwood Coins: Hold and Win",
+        "gameID": "cc3719c9d0308d9efc5b993257f57eb1",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Wolf Power Megaways",
+        "gameID": "b625b5838d827bb05d4f3ff0389e85e5",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "3 Magic Lamps: Hold and Win",
+        "gameID": "ff1670d857f35e070f56af509ccf40d3",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Pirate Chest: Hold and Win",
+        "gameID": "0e8d4970ff63be7837d110cd5eb7f334",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Lion Gems: Hold and Win",
+        "gameID": "0eaf21f013bd18fb8c91da231fa33fc2",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Mammoth Peak: Hold & Win",
+        "gameID": "4bc7f49c1b59861792c1151368e8f361",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Buffalo Power Megaways",
+        "gameID": "9633d9fde350b74656ee0b593101222b",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Pearl Ocean: Hold and Win",
+        "gameID": "d2b46f5408188ff4bd0bf1ba9179dec5",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Luxor Gold: Hold and Win",
+        "gameID": "468dbda7854233766b10a17e016ea7ce",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Solar Queen",
+        "gameID": "c4ab8950e8945ca3c4e7626708b589ff",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Energy Coins: Hold and Win",
+        "gameID": "4474df7c609514d8329a841f9569168c",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Fire Coins: Hold and Win",
+        "gameID": "2f23cebb7849d3c38e3088bd31b57c8e",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Clover Charm: Hit the Bonus",
+        "gameID": "f54f430705e55ee3f530497c47304f87",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Solar Temple",
+        "gameID": "276a39995bf47ffc7c76254012cd462c",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "3 Chillies and Joker: Hold and Win",
+        "gameID": "0ba9b0e9614c96ecf7a1dbcc64186c4f",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Royal Express: Hold and Win",
+        "gameID": "eaf87a578033509864dbd068bf632661",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Legend of Cleopatra Megaways",
+        "gameID": "8ac78e7bb7cb880c03a9aa754e108837",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Dancing Joker",
+        "gameID": "b0d2f93e42948182d1c78c54ad4b6ddc",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "3 Super Hot Chillies : Hold",
+        "gameID": "0c9c23eae409e499d2bf5e9662806724",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "King of the Sky: Hit the Bonus",
+        "gameID": "8a791d166a6f0841e0a12080ed3d03cf",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "3 Hungry Pandas",
+        "gameID": "0983fe50c1cacc385729496954f6b93a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Fruits Fever 5 lines",
+        "gameID": "02efe146f4106a240df01ed4f921339a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Fruits & Joker: Fever",
+        "gameID": "2cb83192cce2be9790e1f2e89afb07c3",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Fruits & Sevens: Fever",
+        "gameID": "80a459df90ff7aa8cf4f330000026c8b",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Mariachi Lock",
+        "gameID": "604cab5d83cdd0b469469853aa417235",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Nights of Fire",
+        "gameID": "35a395e2aa2638d2d025541cd0272852",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "3 Fortune Trees",
+        "gameID": "84397000846bb5f1d9be2a85498dde55",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Hot Chilli Joker",
+        "gameID": "c3f92480c9411e817e5fdd3d19d90fba",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Wild Cats Fire",
+        "gameID": "4bbc2cdd2cf79ed7c71a1e8c8a5ccb51",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Cash Volcano",
+        "gameID": "621d21f62fb8f2dddcaf701a6d5e17c3",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Bluffy Cat",
+        "gameID": "2fe12f3d2d2109af0c10afc586097496",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Pig Up",
+        "gameID": "641437c7f757422a63074d7873197586",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Flash Joker : Fever",
+        "gameID": "54313af29dd605b2e20c55a0a4f77420",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Zeus Power",
+        "gameID": "ed663aa7d01d50f48041c38c8a96231e",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "3x Catchs",
+        "gameID": "237a9abde0107684ef4a170dd84a1490",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Space Coins: Hold and Win",
+        "gameID": "9bcbc6a2e7809d6f0b3b5a3ce24bbdca",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Super China Pots: Hold and Win",
+        "gameID": "7482b8d0ae75e81563dd081878c7d6c7",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    }
+]

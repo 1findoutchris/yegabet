@@ -1,0 +1,430 @@
+ [
+   
+    {
+      "gameNameEn": "Candy Super Tumble",
+      "gameID": "f00a3ac180a30efd7670147417f3d4ec",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-059.png?v=1759492726446"
+    },
+    {
+      "gameNameEn": "Jungle Quest",
+      "gameID": "fe5bb309f6849942cf788d72d9b80bc5",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-058.png?v=1759492752027"
+    },
+    {
+      "gameNameEn": "Blade of Fortune",
+      "gameID": "94a1353177b3466a67f70021893aca67",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-057.png?v=1759492702384"
+    },
+    {
+      "gameNameEn": "Wild Mafia",
+      "gameID": "6ab9b470b5049025104d710fcc8f4091",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-056.png?v=1759492773644"
+    },
+    {
+      "gameNameEn": "Alien Smash",
+      "gameID": "70ff4744e87b0124c1840e09446f9292",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-055.png?v=1758787914259"
+    },
+    {
+      "gameNameEn": "Snake Treasure",
+      "gameID": "02a6445f671a56c435d0a98cfce5f479",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-054.png?v=1758792419723"
+    },
+    {
+      "gameNameEn": "Guardian of the Museum",
+      "gameID": "dfcca5c7420280aece1ee28d94c560f8",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-053.png?v=1758788810455"
+    },
+    {
+      "gameNameEn": "Beasts of Luck",
+      "gameID": "bc71e694e3e21cf662c40a95bcb88252",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-052.png?v=1758788033699"
+    },
+    {
+      "gameNameEn": "Pumpkins Go Lucky",
+      "gameID": "5603ec5b778820ddb69673626402dda3",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-051.png?v=1758791497697"
+    },
+    {
+      "gameNameEn": "Apollo Ray of Luck",
+      "gameID": "95a295cb2fed7dc72bc9552f00c1162d",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-050.png?v=1758787929720"
+    },
+    {
+      "gameNameEn": "Nezha",
+      "gameID": "287a6d42bff507c831c3ee53c6a519d0",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-049.png?v=1758790686487"
+    },
+    {
+      "gameNameEn": "Pai Gow Ways",
+      "gameID": "85802d51c1da2e7deb2b821642b8c06b",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-048.png?v=1758791257737"
+    },
+    {
+      "gameNameEn": "Mahjong Princess",
+      "gameID": "64588f61b265819f4f37e0ce3d25ef60",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-047.png?v=1758789455235"
+    },
+    {
+      "gameNameEn": "Caribbean Riches",
+      "gameID": "4295951dd153df37ceed88a2c52a7d63",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-046.png?v=1758788114486"
+    },
+    {
+      "gameNameEn": "Farm Of Fortune",
+      "gameID": "41eb48def69db51d75c2ba453912655d",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-045.png?v=1758788216545"
+    },
+    {
+      "gameNameEn": "Adventure To The West",
+      "gameID": "013badb5ea523b60f102753ee0f1f150",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-044.png?v=1758787872072"
+    },
+    {
+      "gameNameEn": "Money Dragon",
+      "gameID": "69ecf345b0ba235319ac9f224ba76236",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-043.png?v=1758789671918"
+    },
+    {
+      "gameNameEn": "Ranger Showdown",
+      "gameID": "7c6007d9ba2db80a04a1e0a7eb46d8e8",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-042.png?v=1758791545386"
+    },
+    {
+      "gameNameEn": "Yeti Boom",
+      "gameID": "3e64439df128cc1a98dbad4a02c0935f",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-041.png?v=1758792871084"
+    },
+    {
+      "gameNameEn": "Money Empire",
+      "gameID": "5a7ba344416b8911881457b5a71da0ce",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-040.png?v=1758789687786"
+    },
+    {
+      "gameNameEn": "Leprechaun Bonanza",
+      "gameID": "a9ba5cde9103cf71fffbd65f2629f9cd",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-039.png?v=1758789144658"
+    },
+    {
+      "gameNameEn": "Sweet Frenzy",
+      "gameID": "6901234b0b8090c609b2f9a68281d34b",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-038.png?v=1758792642066"
+    },
+    {
+      "gameNameEn": "City of Jewels",
+      "gameID": "cb5daea3e2a2a688e30b01659eea6ed2",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-037.png?v=1758788202002"
+    },
+    {
+      "gameNameEn": "Mushroom Bandit",
+      "gameID": "cb9aa4e8c9791bacc3605241cd65e4ff",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-036.png?v=1758789761658"
+    },
+    {
+      "gameNameEn": "Mighty Sevens",
+      "gameID": "3195c50b8dac84360463008a51f4b3d5",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-035.png?v=1758789470811"
+    },
+    {
+      "gameNameEn": "Neko Riches",
+      "gameID": "81396e48d80069867d916e51bdd4bb26",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-034.png?v=1758789778902"
+    },
+    {
+      "gameNameEn": "The Great Safari",
+      "gameID": "0dc1fac12a21b8fd04578dc6f82e0878",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-032.png?v=1758792740648"
+    },
+    {
+      "gameNameEn": "Tiki Rush",
+      "gameID": "283c494f7478794cd3976a57e01902e4",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-033.png?v=1758792797302"
+    },
+    {
+      "gameNameEn": "Legend of Nian",
+      "gameID": "5ee3d06323becb3ef562b6e43f92a96e",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-031.png?v=1758789122775"
+    },
+    {
+      "gameNameEn": "The Nutcrackers",
+      "gameID": "7ab4612d1866b90bd04b63a097e6b0f8",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-030.png?v=1758792781408"
+    },
+    {
+      "gameNameEn": "Mining Bonanza",
+      "gameID": "c6f0dc239b25a83e8d83404eff91b3a5",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-029.png?v=1758789484827"
+    },
+    {
+      "gameNameEn": "Heavenly Fortunes 2",
+      "gameID": "dd1844c1569cbbee5a3556083f837d9b",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-026.png?v=1758788987551"
+    },
+    {
+      "gameNameEn": "Ganesha Luck",
+      "gameID": "e60d78af143917d49ffedd40740cf415",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-027.png?v=1758788474466"
+    },
+    {
+      "gameNameEn": "Heavenly Fortunes",
+      "gameID": "b3d6c98f8ce7a3f77eaa951642313258",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-028.png?v=1758788938108"
+    },
+    {
+      "gameNameEn": "Safari Blitz",
+      "gameID": "90acee06b3727368dd4ca3b85dae0d60",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-024.png?v=1758792256759"
+    },
+    {
+      "gameNameEn": "Goddess Of Egypt",
+      "gameID": "fb9f0111cad5a9743c6b9ea65d9d6e33",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-025.png?v=1758788503544"
+    },
+    {
+      "gameNameEn": "The Maya Myth",
+      "gameID": "d903a8b607b6dba8839e5ef290d8830b",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-022.png?v=1758792766213"
+    },
+    {
+      "gameNameEn": "Spin and Win",
+      "gameID": "afe76d7daf71c22377722ea3e68292a2",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-023.png?v=1758792492874"
+    },
+    {
+      "gameNameEn": "Fortune Lions",
+      "gameID": "bc04341da269a2a80113c8dad3e49972",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-019.png?v=1758788327343"
+    },
+    {
+      "gameNameEn": "Honey Trap",
+      "gameID": "444c9fbcb648995eb79e99a552bbe56d",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-020.png?v=1758789038240"
+    },
+    {
+      "gameNameEn": "Oceanic Melodies",
+      "gameID": "43944d91d2c047fd9ee5968f7e2a723e",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-021.png?v=1758790795488"
+    },
+    {
+      "gameNameEn": "Loki",
+      "gameID": "7f2f5e93fdafa0003f18a17eaaff0a82",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-018.png?v=1758789160730"
+    },
+    {
+      "gameNameEn": "Fruits Mania",
+      "gameID": "addc875986cd01bca49aa4cb72caea9c",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-012.png?v=1758788342183"
+    },
+     {
+      "gameNameEn": "Ocean Carnival",
+      "gameID": "f1606550cc2110be65e134be6693495f",
+      "customGameType": 4,
+      "vendorCode": 86,
+      "remarks": "No matching image found in provided HTML"
+    },
+    {
+      "gameNameEn": "Fishing Treasure",
+      "gameID": "5fa951b60fd3387d83b2029763193cc2",
+      "customGameType": 4,
+      "vendorCode": 86,
+      "remarks": "No matching image found in provided HTML"
+    },
+    {
+      "gameNameEn": "Fiery Lava",
+      "gameID": "d63e8e598a73919eaa2c5c1491219408",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-013.png?v=1758788308635"
+    },
+    {
+      "gameNameEn": "God Of Wealth",
+      "gameID": "2658c844bf9d2d43ebd71b810b44d02f",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-014.png?v=1758788488450"
+    },
+    {
+      "gameNameEn": "Legend Of Eagle",
+      "gameID": "6597ca57c907b0a8b6af4d3f7fad4287",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-015.png?v=1758789103117"
+    },
+    {
+      "gameNameEn": "Neon Fantasy",
+      "gameID": "7480e9f0d5f9491fc57c5416038ccaf4",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-016.png?v=1758790342882"
+    },
+    {
+      "gameNameEn": "Triple Happiness",
+      "gameID": "ef30327a01710ded2e34aaf255f3825f",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-010.png?v=1758792816455"
+    },
+    {
+      "gameNameEn": "Lucky Fortune",
+      "gameID": "5a49955d400478e90c5d71b58a3257ac",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-011.png?v=1758789175611"
+    },
+    {
+      "gameNameEn": "Space Conquest",
+      "gameID": "75215c8e062e661a81c2fd362a588673",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-017.png?v=1758792477985"
+    },
+    {
+      "gameNameEn": "Royale House",
+      "gameID": "de8088af0ae4a09599f6710ff89bf0b1",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-001.png?v=1758792239790"
+    },
+    {
+      "gameNameEn": "Sexy Vegas",
+      "gameID": "6b704ad69f470a31db78fe73c5c43df0",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-002.png?v=1758792271892"
+    },
+    {
+      "gameNameEn": "Roma",
+      "gameID": "ddd5122d58891fd7cd1e3140d5772c95",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-003.png?v=1758791577552"
+    },
+    {
+      "gameNameEn": "Gold Rush Cowboys",
+      "gameID": "8ab1410f2a57b3ca3a4080f28e9e18c4",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-004.png?v=1758788591822"
+    },
+    {
+      "gameNameEn": "Wild Wet Win",
+      "gameID": "f86ce480f13b1aa0cdbf8e1ed20150c5",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-005.png?v=1759492821554"
+    },
+    {
+      "gameNameEn": "Royal Katt",
+      "gameID": "e232d99e752305098c846fc0bb82984b",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-006.png?v=1758791592258"
+    },
+    {
+      "gameNameEn": "Rich Cai Shen",
+      "gameID": "650a541ce544f0cb65f948c1e2309ca5",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-007.png?v=1758791560380"
+    },
+    {
+      "gameNameEn": "Muay Thai Fighter",
+      "gameID": "f7b16f5624b430ab69984da4c88c65a4",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-008.png?v=1758789741324"
+    },
+    {
+      "gameNameEn": "Poker Ways",
+      "gameID": "3abb65a0bb24d01d03cb04822db7de5e",
+      "customGameType": 0,
+      "vendorCode": 86,
+      "img": "https://img.j189eb.com/upload/game/AWCV2_FASTSPIN/INR/FastSpin-SLOT-009.png?v=1758791272922"
+    }
+  ]

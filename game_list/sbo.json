@@ -1,0 +1,25 @@
+[
+    {
+      "gameNameEn": "SBO VirtualSports (VS)",
+      "gameID": "341827d4370bb198b18364e2d75e6916",
+      "customGameType": 2,
+      "vendorCode": 85,
+      "currencies": ["AED"],
+      "languages": ["en"]
+    },
+    {
+      "gameNameEn": "SBO Sportsbook",
+      "gameID": "07baf9e1388d32cd4cee0c0c91b23020",
+      "customGameType": 2,
+      "vendorCode": 85,
+      "currencies": ["AFN"],
+      "languages": ["th"]
+    },
+    {
+      "gameNameEn": "568win Sportsbook",
+      "gameID": "171ffc7c",
+      "customGameType": 2,
+      "vendorCode": 85,
+      "remarks": "Truncated gameID in source data"
+    }
+  ]

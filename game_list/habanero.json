@@ -1,0 +1,1731 @@
+[
+  {
+    "gameNameEn": "Baba Yaga",
+    "gameID": "93c3a38c6328b7c71b709de0e898a7bd",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1hyGfzj-6iX_d-Tvzdv8bDgQ85fHlhbvr=s400"
+  },
+  {
+    "gameNameEn": "Poseidon",
+    "gameID": "9a00b70e271704aff1c490fbf69cb8f4",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1wfvcVqWZjKt4R1O69Q0qFy1HCqhkfWzI=s400"
+  },
+  {
+    "gameNameEn": "Jump! 2",
+    "gameID": "a3eaa2c4d178f22b8330fb2e4504f632",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1c04KnOI3CIaw0j34hl2GoO9s8N2jQeMZ=s400"
+  },
+  {
+    "gameNameEn": "Haunted Harbor",
+    "gameID": "b1a3aa577715c164246198fdd390882d",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1b-1MMpWRiXHypJGGfA8FsfMlLNRq48zO=s400"
+  },
+  {
+    "gameNameEn": "Glory Of Rome",
+    "gameID": "01cb650e13cfd9513560ba3c3ae8d815",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1bSUY3szvjj8P-yNsLQGPirL_t6W1QtP1=s400"
+  },
+  {
+    "gameNameEn": "Koi Koi Treasure",
+    "gameID": "c94c8faedf3c6f81cd46ea44ac0f95b1",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1uRVRQGkI5PVcMoO-brskajLsx_RYTddZ=s400"
+  },
+  {
+    "gameNameEn": "Waltz Beauty",
+    "gameID": "a6e4216d6aa32d3c8dbcf738faae33b1",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1to8i3Kq7n6Rl_vHrxwMveHcUcQkGb_xH=s400"
+  },
+  {
+    "gameNameEn": "Totem Warrior",
+    "gameID": "c12f18f8bb275b39dd5be2dafea119a3",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1gVDt4a2BhdcEjuVlifq3uZnVLyEkO_HE=s400"
+  },
+  {
+    "gameNameEn": "Arctic Hunt",
+    "gameID": "fbf6ee060d43941326f0221ca97c0b33",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/11y6wuhKwqauziKAWLfwu36TaSgNWqC8v=s400"
+  },
+  {
+    "gameNameEn": "Moo Moo Cow",
+    "gameID": "4d6a50276effa7443b68a33ad7f4d84c",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1z2GnbGQnGKOc6_4em7YycJ-g_wsXN_WM=s400"
+  },
+  {
+    "gameNameEn": "Golden Taj Mahal",
+    "gameID": "aa353ef7353ad649b267eb652f8bb3d0",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1_m9oLLDNATODXctNtITDYGSQ0qlumZPX=s400"
+  },
+  {
+    "gameNameEn": "Wild Flow",
+    "gameID": "47b03597ef0a28924605cd8f66ba5371",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1Y3cZ5-iWAUpMg8ZGa8Ec3RBFr_F6ge1L=s400"
+  },
+  {
+    "gameNameEn": "Vampire's Fate",
+    "gameID": "80a893716572c6320e44e35c14f60e2e",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1lQSxD-cNT89c-c_Eqrd1Lc6ew7jDqCeV=s400"
+  },
+  {
+    "gameNameEn": "Hot Hot Summer",
+    "gameID": "97be6354d270d33129a5d2a8a80174c2",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1vYd9KK031Mh5R3FiECUCE0h0vaPc_AdG=s400"
+  },
+  {
+    "gameNameEn": "Valentine Monchy",
+    "gameID": "543d627169107a843dc2543a5ecc2f45",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1rhtqRPIs0eXA0vPfd_E6gm78xMpDSVEm=s400"
+  },
+  {
+    "gameNameEn": "Fruity Mayan",
+    "gameID": "cd453e3a9ac9b29117f9565616831f50",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1JKbiK7J8xRtngJrbQ0g-iCrrWkSipDox=s400"
+  },
+  {
+    "gameNameEn": "Santa's Inn",
+    "gameID": "e9ea5d60f2d81b5c05ed9fd47d77a152",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1zlemzdtth3Kck7sH5v8VYNwKy8sKgQDY=s400"
+  },
+  {
+    "gameNameEn": "Zeus Deluxe",
+    "gameID": "12fafdb590471dcf9511d852f7e2298e",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1I81tTSmdTAH-GVCCQpUgUwGiQsOiBU9G=s400"
+  },
+  {
+    "gameNameEn": "Fruity Halloween",
+    "gameID": "fb6aa93a21a9e83abd7b9cd4f7545793",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1VufUmWYL7iH9vJYstLUBPPWJUGQ5aBXs=s400"
+  },
+  {
+    "gameNameEn": "Slime Party",
+    "gameID": "173f850e22922d9021828f95720a31ed",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1ujCAQx41lwerjdkth_2E1SipPCfG4M-Y=s400"
+  },
+  {
+    "gameNameEn": "Meow Janken",
+    "gameID": "02d712d114283c8f31b069915e28f3a7",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1PDYK8GM8m-fXIdwN6Oqev4QFP5DTOTfz=s400"
+  },
+  {
+    "gameNameEn": "Bikini Island Deluxe",
+    "gameID": "cbfd6ebce44076ecf3ebcfe614f0af7d",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1SAEnM2p4gC9eXjh_5YfTwHe6LYus-E0B=s400"
+  },
+  {
+    "gameNameEn": "Atomic Kittens",
+    "gameID": "b00d702c11e20807ad16488125352f22",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1jyEZKUT9jc9kN1rsb17A1JIVLI-wXUSD=s400"
+  },
+  {
+    "gameNameEn": "Witches Tome",
+    "gameID": "aced4dd020a1b26c7552a683a72a959f",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1llAyTsdFyJaoxJBHFU-f3dOoZ4Fp_S0U=s400"
+  },
+  {
+    "gameNameEn": "Legend of Nezha",
+    "gameID": "23f1fd5e1e5e2774fb2a0a17f46ed966",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1kprF-6ldepvwXWkLWqP8oTHcZtr7o6_G=s400"
+  },
+  {
+    "gameNameEn": "Tooty Fruity Fruits",
+    "gameID": "627476f55dce18d37544120e806076f7",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1yIKm6SwlG8HdugCsSIyxE3mxcCCUqz2W=s400"
+  },
+  {
+    "gameNameEn": "Siren\u2019s Spell",
+    "gameID": "b1871a738ac7ce0fb916a69b67d4465d",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1q93LFOUA1T41K8SrsPCepuc-NokseKJp=s400"
+  },
+  {
+    "gameNameEn": "Crystopia",
+    "gameID": "1747decd5115c97ece2652d47c1e61b4",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1h54ktcnJcPBpB5ZTbhPztWvyZxbSwo7X=s400"
+  },
+  {
+    "gameNameEn": "The Big Deal Deluxe",
+    "gameID": "1a0938c6c27ccd98656cc21dce606687",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1mTGtxqXWnaJsARD3O-1JFsbxAfpo2j5B=s400"
+  },
+  {
+    "gameNameEn": "Naughty Wukong",
+    "gameID": "ff86b9a34e1e816af02666862d9b2b9d",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1Jmlb-eg3HmhTcmB-p1XTKU5Ce7cSmRhn=s400"
+  },
+  {
+    "gameNameEn": "Legendary Beasts",
+    "gameID": "c4cfec29b32e9286034f64b67134687a",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1yBXe6YTmUv1eNzyqzvhWlK9tZ8qyuNAr=s400"
+  },
+  {
+    "gameNameEn": "Rainbowmania",
+    "gameID": "63435de069a86db74f606fadb1dbb069",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1p6a7ilgLyxJJOKMyMTFZFwxe3nXszamO=s400"
+  },
+  {
+    "gameNameEn": "Dragon Tiger gate",
+    "gameID": "8441bc979527ed9e1819478040e7f39d",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1jDFD2N-6_TT1l_2tF5VwB_6HVKEeBFf3=s400"
+  },
+  {
+    "gameNameEn": "Soju Bomb",
+    "gameID": "a56165f454c932e7b0a64971af152e71",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1RJD33BaVJxQKlUxeyoo06qCZSHadHEZN=s400"
+  },
+  {
+    "gameNameEn": "Tuk Tuk Thailand",
+    "gameID": "90bcd524bba72960f17423ee5c27cb62",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1hMC1E9ddalPANrOfTw_qldmh2SH0ysAA=s400"
+  },
+  {
+    "gameNameEn": "Taiko Beats",
+    "gameID": "a78eca8da6a361cb939d1457e32e9d05",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1c0r6mk8y8PRvyBpmxjsi4qgMXQ6ZzHy6=s400"
+  },
+  {
+    "gameNameEn": "Laughing Buddha",
+    "gameID": "07017442372c6667ba027e4b19494c61",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1X3Dq9R-OPIdeLc3kgppZvZ0tqtviaeNS=s400"
+  },
+  {
+    "gameNameEn": "Space Goonz",
+    "gameID": "fa3d805268cda2fade5d0c63993b29b5",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1szG1_JDxGkLpUiyjKN2Qlxnsmm92hkT5=s400"
+  },
+  {
+    "gameNameEn": "Golden Unicorn Deluxe",
+    "gameID": "20f25bda50ce4ea2c84a07684d4077da",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1QIkW6olwwDylONXYW9OczrPwO8XD8Li0=s400"
+  },
+  {
+    "gameNameEn": "Bomb Runner",
+    "gameID": "8120f85a51e95cedc0bed93502d47821",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1DVL4xJwmKaEL3wDfjXMImfxteAILCFC3=s400"
+  },
+  {
+    "gameNameEn": "Mighty Medusa",
+    "gameID": "3987a72acc8e668b101ea26421687440",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/10NeS2-rw3_Mk9by2v1YX5Q2zzuDhIG_Z=s400"
+  },
+  {
+    "gameNameEn": "Disco Beats",
+    "gameID": "a62a925367ebae81892e83f9529d4f17",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1CLy7DujcRAy_MEafgGIe7mFzm4hbuyH_=s400"
+  },
+  {
+    "gameNameEn": "Lantern Luck",
+    "gameID": "8d39e8c33ca2e5010f1daa4fb53c6676",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1E58tiToWaf_Zc7sfIBcuX5qPlRDc15tA=s400"
+  },
+  {
+    "gameNameEn": "Lucky Durian",
+    "gameID": "d8d244a5431ba2ba60b781fa2a44f9c9",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1pAZVlvaw6SYuCY3Q4kUi6r6wv6__KHvg=s400"
+  },
+  {
+    "gameNameEn": "New Years Bash",
+    "gameID": "1c04ab040d55808bd43d0054cdfc55a1",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1vrSPCOd8kKVAD_q8u2NS2kiRKtPoQUsu=s400"
+  },
+  {
+    "gameNameEn": "Prost!",
+    "gameID": "0284df6cce2c484f04146d9bfac8cc42",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1ql6jvtdkzI-NNxfPqaq3ktq_gLBZSu0K=s400"
+  },
+  {
+    "gameNameEn": "Nine Tails",
+    "gameID": "fdd098dfbfbb4ba837a1c52e51c69c00",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1FXigHs1N3Betj6TvtjJZcYQ6rfaJqMUO=s400"
+  },
+  {
+    "gameNameEn": "Fly!",
+    "gameID": "f3274cf7278e519afbefa5d9b619e21b",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1cbQY07Z6r4OeMGsQi5TMjrUETWHOLYxZ=s400"
+  },
+  {
+    "gameNameEn": "Mystic Fortune Deluxe",
+    "gameID": "01b7527e226ab344df294a2c90627825",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1hq6iTMlW8pcF-gRZaEVROLFUQmRGYi7M=s400"
+  },
+  {
+    "gameNameEn": "Calaveras Explosivas",
+    "gameID": "5d55cbaab451ed6f1c8191ddf05bb687",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1v7JraPj33C43KOl7SRFHiwXTLniEUxUE=s400"
+  },
+  {
+    "gameNameEn": "Marvelous Furlongs",
+    "gameID": "8c73626508ae9039f51a6fe738bc3ebc",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1zY2PtCxSbJOmdfUJbA1oUwiYfcn-9OnA=s400"
+  },
+  {
+    "gameNameEn": "Candy Tower",
+    "gameID": "055a3c5145f67b3c4175629b59509947",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1YACbo8-1VvKLbMxuRXj177B2L4nB-rqQ=s400"
+  },
+  {
+    "gameNameEn": "Return To The Feature",
+    "gameID": "e62204aa1bd218c9b9f4380002c0b872",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1sZPF9G8ydFFEw0GQneoyMpfVEvreaWIA=s400"
+  },
+  {
+    "gameNameEn": "Before Time Runs Out",
+    "gameID": "60d7a3d52af861c7e76f6feb985d1206",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1QkKboSlCjQsOwcRcDSEqyeMMFqUBdEtM=s400"
+  },
+  {
+    "gameNameEn": "Orbs of Atlantis",
+    "gameID": "3daa57cbee99087e87dd4a4ac3c1fb7f",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1VFvJmHLvvNlCA1S7WLB4KIwEJ0nlEL4E=s400"
+  },
+  {
+    "gameNameEn": "Totem Towers",
+    "gameID": "0a4778a9f4622bc715796b205f27c690",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1NoL1Rq5aRbz4p9f0Al8yA9jadQkTPDUH=s400"
+  },
+  {
+    "gameNameEn": "Christmas Gift Rush",
+    "gameID": "0249c59f523dfa2327f6542f1fdd3c14",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/16o17hdW2-mayRTcULGimu5bCj_qyqAde=s400"
+  },
+  {
+    "gameNameEn": "Taberna De Los Muertos",
+    "gameID": "ccab146827cd9948237ed196de762d46",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1P8uWYxWtlaZOCFsj1m7wHMCnB7aWCIg4=s400"
+  },
+  {
+    "gameNameEn": "Taberna De Los Muertos Ultra",
+    "gameID": "f500b2e01fae4ea31756206697f626bf",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1DsynXSumJbunAcjSVP4T9I3XUn_XK0Pr=s400"
+  },
+  {
+    "gameNameEn": "Happy Ape",
+    "gameID": "81e04944b87d04a1abb3f326f991bd6c",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1v_7bpMXLe38zOkhfbrB5RwNExyvN9krY=s400"
+  },
+  {
+    "gameNameEn": "Jellyfish Flow",
+    "gameID": "16ab35239e612be250c071b0a3a1e41f",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1Aomc4aCLh2ue1zx2yyC3s5h8YdRTuxKj=s400"
+  },
+  {
+    "gameNameEn": "Jellyfish Flow Ultra",
+    "gameID": "92d6fa83022e6938d7923e4892e379ce",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1n9iDdOuMI9URlWcBg2pANPCnwcOBPrfA=s400"
+  },
+  {
+    "gameNameEn": "Wealth Inn",
+    "gameID": "259f3a0923e8c451300d5c50f5bb39e1",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1IXTqBQXCh6ravHYDVmvEO9a9zuRpbZM9=s400"
+  },
+  {
+    "gameNameEn": "Hey Sushi",
+    "gameID": "ae4872456c44dadc929dbb4d002846a7",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1hqjgMJT6-KDHl18noV-7T6uscIJVsCdl=s400"
+  },
+  {
+    "gameNameEn": "Scopa",
+    "gameID": "62c00ce5fce7ed23d6a34f2f7c9f7b37",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1qsyHOTItqHp7Oq6L-ppc3fgtk5zfaATN=s400"
+  },
+  {
+    "gameNameEn": "Techno Tumble",
+    "gameID": "0dc7820d4ad450f7e183043799ee196d",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1n6qY1ww6aZKG5LZJoG67JisJ6-NCyeDX=s400"
+  },
+  {
+    "gameNameEn": "Lucky Fortune Cat",
+    "gameID": "0af94e9dfb7ad28a6485543239bdeba4",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1E2MoUnHuARrEcni74oAXohzqcis8jfz0=s400"
+  },
+  {
+    "gameNameEn": "Knockout Football Rush",
+    "gameID": "f7bfd8ea9855b0863c6f0e9894326794",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1iMW5Sbw8_Td4vTIyYFBXav0_rNb7ip3A=s400"
+  },
+  {
+    "gameNameEn": "Loony Blox",
+    "gameID": "1e310e6cc1afe59a7051628b1d85bcf0",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1qyku-TnxI-V5rkiRSDeCg5bLeTV_Ni9x=s400"
+  },
+  {
+    "gameNameEn": "Fa Cai Shen Deluxe",
+    "gameID": "8321550d6fcccde9c5afc95e5b1afa44",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/11RjZLE2BnW-woBJ7WNSuoJf9sIkw6N6o=s400"
+  },
+  {
+    "gameNameEn": "Naughty Santa",
+    "gameID": "a288f4e3c3bf097f32e798c274434aef",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1wzh8YeXh0wzv4Vy9O4CJtYiajLJeU5wU=s400"
+  },
+  {
+    "gameNameEn": "Hot Hot Halloween",
+    "gameID": "329399bfe60653a7219e2c6ec8f6b066",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1Yb0LtAMsRBp4Lu96fQBushew5YoZdUAr=s400"
+  },
+  {
+    "gameNameEn": "Wizards Want War!",
+    "gameID": "dfaa499a667ae8e8b9661d2749ba5efa",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1wVEkTm_sihlv73cNTTM8nzQ2D45xTL5w=s400"
+  },
+  {
+    "gameNameEn": "Colossal Gems",
+    "gameID": "9ca8a1d4fc1fac2c25c57935c3b44668",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1TgOXQdu1m2pQZFvue0nP_Z9zTHz1kkxn=s400"
+  },
+  {
+    "gameNameEn": "Nuwa",
+    "gameID": "7650e8c8a0efd16eb5a320f3acbea130",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1FSSIoL94J5r44KjGpajSHQ_mnmnt9Xz3=s400"
+  },
+  {
+    "gameNameEn": "Wild Trucks",
+    "gameID": "ca2aaafa50243bc30f771239f48b7a6b",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1vvAtaCxQGyWuscoF-7P_GAqZlsL9Xgfv=s400"
+  },
+  {
+    "gameNameEn": "Lucky Lucky",
+    "gameID": "1d1cf511b717fe1ceed567e6992f8cb7",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1uu0RVn6rrc4rTcJc2st8aESrpPe81EJ7=s400"
+  },
+  {
+    "gameNameEn": "Magic Oak",
+    "gameID": "05a14cf61d7fa6b3476a1480664a6706",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1VSe21775bBli4RVUlR_1C1IwcEAGLiwV=s400"
+  },
+  {
+    "gameNameEn": "Mount Mazuma",
+    "gameID": "319ecb744397657f4369fed32384e2be",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1FxZZAjdLxQflyd03BN9XHjoreyGN_ogf=s400"
+  },
+  {
+    "gameNameEn": "5 Lucky Lions",
+    "gameID": "fa175432d4e34c7e90cc7fe878c4a206",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1twasTdjk71EEuXHTnUC-nPauXOSo3ThT=s400"
+  },
+  {
+    "gameNameEn": "Hot Hot Fruit",
+    "gameID": "ddbee4551a9c52a5b90b0bbe7bc52d12",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1o_YKxAcTf9nluXqsMyqjrDQEgCqIf7d1=s400"
+  },
+  {
+    "gameNameEn": "Happiest Christmas Tree",
+    "gameID": "0c298b2a752e4d01040e7368684a21b6",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/12267paViDygentJffAbapwAJAW22hUKL=s400"
+  },
+  {
+    "gameNameEn": "Pumpkin Patch",
+    "gameID": "188a1ee3b3b4768679ba335dfbc526f2",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1FtVq7ky4ksuRqxNQikbr-Ipsf7NGOdui=s400"
+  },
+  {
+    "gameNameEn": "Jump!",
+    "gameID": "594a7821cf98315df7df476d8f268cc0",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1wK_L_pyno64KYv_uoWRrdC1k_hGPaH64=s400"
+  },
+  {
+    "gameNameEn": "Egyptian Dreams Deluxe",
+    "gameID": "a0483d27cf5ebac65e80cad56e921c3b",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1rvrEyuh5ZxNgiPCr8Q6RxsDvI4iZ41w7=s400"
+  },
+  {
+    "gameNameEn": "Ways Of Fortune",
+    "gameID": "86499e0f13e08e3281ffbe6cdc34aeec",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1TfHE9znwCsxqZ4XKGfB4VkN1_UlTLAIy=s400"
+  },
+  {
+    "gameNameEn": "Knockout Football",
+    "gameID": "118212f8ddf2e5f1531029798ca1aedd",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/16TXumKghS19WKzJNMU6dIb9hTviIPH-t=s400"
+  },
+  {
+    "gameNameEn": "Fortune Dogs",
+    "gameID": "605c8a1a68e04386a909e0e122354c61",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1xVlPQCoGcAObJ_wHkE7coSrLHot0t0-P=s400"
+  },
+  {
+    "gameNameEn": "Presto!",
+    "gameID": "2c536706630ad431e89aa54f2c8d5472",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1gtojuhMT2CcYI7QiewmQxqVVwvRfp6yr=s400"
+  },
+  {
+    "gameNameEn": "London Hunter",
+    "gameID": "35c75e0846fd4a69168ebbd373fb4327",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1R-FKSAKHjSCceE1QvaeKfbFAqdweBWEd=s400"
+  },
+  {
+    "gameNameEn": "Four Divine Beasts",
+    "gameID": "87e568161a9f4ea007634dd2ebe37907",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/14M3OV8orxwx1H0eV2977llRvgk1Sm-cx=s400"
+  },
+  {
+    "gameNameEn": "5 Mariachis",
+    "gameID": "b7cafdec84e7b1f2ac485b41678898be",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1zudylnY1y-pHfTo2VbDiE43zADaHx00Q=s400"
+  },
+  {
+    "gameNameEn": "Santa's Village",
+    "gameID": "b3878254a43572075615b67c10d5c9b9",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1qdfMHe3xXfuVsInUfYe8LxHIo3io8paq=s400"
+  },
+  {
+    "gameNameEn": "Rolling Roger",
+    "gameID": "83e89476bf530f0ba20a1c94472c3d88",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1iGkayr7LOlqOMScw-tCHEz6NrYhV-Mj3=s400"
+  },
+  {
+    "gameNameEn": "Cake Valley",
+    "gameID": "5d33cda36d8959bfe7429039d1c9400f",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1AboNIa-zMlJ7mT4ctbubwqnZHZxrV9w9=s400"
+  },
+  {
+    "gameNameEn": "Scruffy Scallywags",
+    "gameID": "ed6ba4ad4bb430e25d4bf2ae427d4fde",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1U0cKy3sNDwLbAGS4vU2w8Pxt2q0yNYUE=s400"
+  },
+  {
+    "gameNameEn": "The Dead Escape",
+    "gameID": "93e763177978e6e34f9187402d864361",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1lHSC4AbemsKRqHDTd21OhsyuNJR9JfDe=s400"
+  },
+  {
+    "gameNameEn": "Panda Panda",
+    "gameID": "3f19dd798f423ba5da31e9e3d3d6d1c0",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1bLQ1bwOdQPmMJke38PU3bjed4xbyWCT6=s400"
+  },
+  {
+    "gameNameEn": "Bird of Thunder",
+    "gameID": "8de75bfd7e0252b2a0f6dbf6a4a995e2",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1bGJt2UHYnpAdjjc8RgJMkiNgEfOBdH-E=s400"
+  },
+  {
+    "gameNameEn": "Koi Gate",
+    "gameID": "5c08667f31cf0525b7723167aa3143c4",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1EF-H2EWPw93Nfy6A_IIQ8bFT9sg3CPaf=s400"
+  },
+  {
+    "gameNameEn": "Fire Rooster",
+    "gameID": "eca083d1d0ef6301c7fdde829f108e9d",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1kuHxOGAGbAJcqAISyyTtXItrUaaSJ6hW=s400"
+  },
+  {
+    "gameNameEn": "Fenghuang",
+    "gameID": "d27e81a127ca93e8937abde4a090a4c1",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1xOCa41_tkMFqYtbzvrHE_cY--4AQvR9G=s400"
+  },
+  {
+    "gameNameEn": "Jugglenaut",
+    "gameID": "2d4ea0b5fb290be90625aa45ad62af88",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1rgRzVhvfUxLAg4UUDhWruvfrfwqmdGNy=s400"
+  },
+  {
+    "gameNameEn": "Ocean's Call",
+    "gameID": "7ef2da688ce4af21f3d0916a90d5c434",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1SDalllogJW1Tha3D-OkdZiUPTPnrfOny=s400"
+  },
+  {
+    "gameNameEn": "Gangsters",
+    "gameID": "5aea97dbe8d9de64cd0783302a499b25",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/17IUGxGeVbV7Xlb_IDDylW5Htwd1z8HPf=s400"
+  },
+  {
+    "gameNameEn": "Sparta",
+    "gameID": "f59b1ddbbca8af4ecf1f9e1a73f32942",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/12VlT1sgdDytZ7aa1r5hfBJaOuWxgKcrY=s400"
+  },
+  {
+    "gameNameEn": "Super Twister",
+    "gameID": "2b0a36a1f8c2185e143c792872e087f9",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1lBdM5MHN-xXqaXHFVF_B2Dd0TY3gLbxf=s400"
+  },
+  {
+    "gameNameEn": "12 Zodiacs",
+    "gameID": "b88e91b328ecc8e990af48df6db705b4",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/13M22TT0L4PaSdA3ebEgF4_OXXUNsbK7y=s400"
+  },
+  {
+    "gameNameEn": "Arcane Elements",
+    "gameID": "9e5e1dfa488243f7c1f1b4380de76d59",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1dwRdTRhqE_s-50e7DQq_MQIMZbgf1VfC=s400"
+  },
+  {
+    "gameNameEn": "Dragon's Throne",
+    "gameID": "a1533506cdf70571e2f45b5308287b38",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1x0lYUEGvZpgxJa4p5fdnTeApFo6Wt_Es=s400"
+  },
+  {
+    "gameNameEn": "Coyote Crash",
+    "gameID": "bb5f56d7a88310a7f10e625222989676",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1Wi7aqvXKUy9VYp0YVkOtozl0Yysw0WAZ=s400"
+  },
+  {
+    "gameNameEn": "Roman Empire",
+    "gameID": "59a584c08255434d3c10e208afce1b74",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1L_D3OjkxnjA-RaF39hxosdiXIiKnwt9s=s400"
+  },
+  {
+    "gameNameEn": "Ruffled Up",
+    "gameID": "abe9d9a2344576f834e9541ca75aea0d",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/18k0xeENX7q1WP7YTKS-FyXaPfZEjDH-3=s400"
+  },
+  {
+    "gameNameEn": "Fa Cai Shen",
+    "gameID": "a97e5f089527b86f31cb8a4da4e2e26a",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1VK9YMOQJrFhBulV2exIe2rPiezFdy9I-=s400"
+  },
+  {
+    "gameNameEn": "Bombs Away",
+    "gameID": "b879595bebb998f69436411933b90576",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/19cPOxhzMnjkcGrKlQrzfEu81y8HfHzeP=s400"
+  },
+  {
+    "gameNameEn": "Gold Rush",
+    "gameID": "afe4330794a1c0604148c8e58de742b2",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1AB181N14iXwI5a3AznxJRqRdeirX7QIQ=s400"
+  },
+  {
+    "gameNameEn": "Wicked Witch",
+    "gameID": "351a9a00cdcc709865a929d537d6e09f",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1N1yTX0Bag003-ULYSfOeCmUzgbgF2mad=s400"
+  },
+  {
+    "gameNameEn": "Galactic Cash",
+    "gameID": "bacff418db55907d1b1c77b389794c63",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1tSeGZ8rawEgZ1FjrdsBLmVUFiUvGgrjc=s400"
+  },
+  {
+    "gameNameEn": "Buggy Bonus",
+    "gameID": "733e0891c16cd24b4eef2f2fc29a9ad4",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1sY6I4E9S7e0-snOfXaUiB9lRJu5sU66R=s400"
+  },
+  {
+    "gameNameEn": "Kane's Inferno",
+    "gameID": "14e44a127c53093b5c59244489389fa2",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/16BOZ8hrJsZa__OCJv3NhMB2EtoWGdAZV=s400"
+  },
+  {
+    "gameNameEn": "All For One",
+    "gameID": "a4f3dc2ac909b38932bdd93e9f08c388",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/15w_1_yFpkU2_Qhs6adJS0l7iljwQrkPJ=s400"
+  },
+  {
+    "gameNameEn": "Arctic Wonders",
+    "gameID": "29febebc630e6a50827f1378a8c27cea",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/18Q2DiEjMmO5f7G7IXqmhY9aRoxmvq_WH=s400"
+  },
+  {
+    "gameNameEn": "Aztlan's Gold",
+    "gameID": "de22829d0f90ad7e8d8b7be8eaf5eeb1",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1nUYv0vAXAISh6NnJHWi2KjrOATEzpVA-=s400"
+  },
+  {
+    "gameNameEn": "Barnstormer Bucks",
+    "gameID": "628fddf63268039e791b78730503779e",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1e5ibZHwYtwugXAWsmsngYhtSk9TAQtrZ=s400"
+  },
+  {
+    "gameNameEn": "Bikini Island",
+    "gameID": "210439ea290f96370d4961981dfa6893",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1y0lrxPynx4x8LNvqRbC-0RJdtAzonlzJ=s400"
+  },
+  {
+    "gameNameEn": "Blackbeard's Bounty",
+    "gameID": "9af361afe0a4742263edf8941d2907c9",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1BcKlQOxFu2yL33GnepJwivS7aWYUylI-=s400"
+  },
+  {
+    "gameNameEn": "Carnival Cash",
+    "gameID": "a69db42c995b398e78053a5053a176c3",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1Qv5O_eAWF3MRcJgaxET_T-_vhIMH9EC9=s400"
+  },
+  {
+    "gameNameEn": "Cashosaurus",
+    "gameID": "28893fc4faa944f7d5554803ab06833d",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1JCDC6vX8G_5PTkpuXNODNmJiekKPMm12=s400"
+  },
+  {
+    "gameNameEn": "Cash Reef",
+    "gameID": "09d615525603407004c4329418239d14",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1eh_6hn_TNRMwwoxZiZ5vGKnPaqYWS6Es=s400"
+  },
+  {
+    "gameNameEn": "Disco Funk",
+    "gameID": "7fed0ae89ba9724d195eb4e47b048a30",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1YCDnmcP75fBzKEtlpsNEV4cVYmINt3VH=s400"
+  },
+  {
+    "gameNameEn": "Double O Dollars",
+    "gameID": "220e86a3f31851fbc70200fc04f220de",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1TwbFchQGGHb-4f-Snv1TIsr1qzFC4PDI=s400"
+  },
+  {
+    "gameNameEn": "Dragon's Realm",
+    "gameID": "eebe359b1015a154f272adf9c894493a",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/14i24MnpgrQq0pMdRLok860OLOXYFuAVT=s400"
+  },
+  {
+    "gameNameEn": "Dr Feelgood",
+    "gameID": "4773a7f8ca0e019f9b84e46a7a8bbc1a",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1HTQmCj8KgdXYryAG7mBgXNnFtpCvdBT4=s400"
+  },
+  {
+    "gameNameEn": "Egyptian Dreams",
+    "gameID": "88a94ec5c4c687f308baae10accbd240",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1eM0FJEUM2eWiZMYKVcWm38WyZevcrWaJ=s400"
+  },
+  {
+    "gameNameEn": "Flying High",
+    "gameID": "726d25366068f171dacc25839b266346",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1MwK2v_RVm99zoqUfk6xfaHHAQLHBrK2D=s400"
+  },
+  {
+    "gameNameEn": "Frontier Fortunes",
+    "gameID": "e09fd91289bc467a88ad21e3a12b5238",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1pSXj7cKE9Vgjla7wkvDX3WKvaGUwQrJx=s400"
+  },
+  {
+    "gameNameEn": "Glam Rock",
+    "gameID": "70af629305c671007694a9ecf084134b",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1IqDbnBb5h8J96R6CdbCoHvrWJK9ErzvP=s400"
+  },
+  {
+    "gameNameEn": "Golden Unicorn",
+    "gameID": "ef908513f6081a0312b0003069e1d260",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1txgGW2b0WtEGDNmOcvqsShTzrnpPVpLH=s400"
+  },
+  {
+    "gameNameEn": "Grape Escape",
+    "gameID": "af214cf8ea82d85ce2315a143b0b690a",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1XmIixCWSFq3wgnBfZ7VV2cOSutS2gvOM=s400"
+  },
+  {
+    "gameNameEn": "Haunted House",
+    "gameID": "c0e375807d56e9c0490d24b219670c6d",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1bROk2ICpIdX4NHTcD_XdDc5y3MC2-Yhk=s400"
+  },
+  {
+    "gameNameEn": "Indian Cash Catcher",
+    "gameID": "0db044859c3f4335110e0adb8a778df9",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/19r88F0h653DV9BVPTzhDFgkTqMX_RUNq=s400"
+  },
+  {
+    "gameNameEn": "Jungle Rumble",
+    "gameID": "92c623216bfbb023a2e1f580e88d4b36",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1ew90Qwtp6O7mrpI56-2Den0yY324pO7a=s400"
+  },
+  {
+    "gameNameEn": "King Tut's Tomb",
+    "gameID": "1499a70b0f167928a3dcb42257811999",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1rqHu8_m_E6fIFOfsflagsn6iU6JGPMS5=s400"
+  },
+  {
+    "gameNameEn": "Little Green Money",
+    "gameID": "36b6cd7805ba90cb8340fa1ad73369ed",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1qk9Fm9EyDgMy3b9T5mtwBvrInTyxAb7P=s400"
+  },
+  {
+    "gameNameEn": "Monster Mash Cash",
+    "gameID": "c74a444c3c485efbf574e28ddb5f908f",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1KswI7HreW8dMGiL_re3TAs-h3cWwLkyv=s400"
+  },
+  {
+    "gameNameEn": "Mr Bling",
+    "gameID": "b6ae34b5ec7203135549e6ed3e146eca",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1M0lwl37qdIhdV8HBu6ZWRSsEfYE9cjH8=s400"
+  },
+  {
+    "gameNameEn": "Mummy Money",
+    "gameID": "922e12c0503544994f900563f1875c65",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1oC4T2zlwUNLSIY0r_S1O-jtiDjjb2AUK=s400"
+  },
+  {
+    "gameNameEn": "Mystic Fortune",
+    "gameID": "dd3cea1928d040778157a83872f1c0b1",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/18NOP1xPzoq8-IBe0wFhwtN4axVxsz9eo=s400"
+  },
+  {
+    "gameNameEn": "Pamper Me",
+    "gameID": "db7c8eeb84669522fbbd96e66c1532ce",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1pHXEGKq7WqOw4TyMkPQ9F2v_vyGbJXvF=s400"
+  },
+  {
+    "gameNameEn": "Pirate's Plunder",
+    "gameID": "983e08c42af866e6decd2934e08a5baa",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1ULu7D5I7Tid2teJD1sPAh3yOK3uBHLPW=s400"
+  },
+  {
+    "gameNameEn": "Pool Shark",
+    "gameID": "1ef92a7f28e89b000f75a13c93b68ca9",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1Fe4XEB60HvcvbYupikBApUITFtcMdyD2=s400"
+  },
+  {
+    "gameNameEn": "Pucker Up Prince",
+    "gameID": "99f5d2899bef02d100239617ac9ca1c4",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1TJZdABol-PD8rVgY3EIyznUqcuFX3fML=s400"
+  },
+  {
+    "gameNameEn": "Queen of Queens II",
+    "gameID": "d447ead1540f0777e3d7ebd80193a0eb",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/16KZpSynAKQRcIFB5mYOK7dplASPYkOhu=s400"
+  },
+  {
+    "gameNameEn": "Queen of Queens",
+    "gameID": "c62808a14697447a6114c6c56c3d0e0f",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/15OjSyotWuAAp7PBzOOJTFisvr_1UTmq8=s400"
+  },
+  {
+    "gameNameEn": "Ride 'em Cowboy",
+    "gameID": "f8f7ea2a170f980be77968a6735aeb5b",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1K2u7gK36UAKX06qPz0lYZKZcjcht-rNC=s400"
+  },
+  {
+    "gameNameEn": "Rodeo Drive",
+    "gameID": "96a24684ce8cb1e3ebb6004c2ac21333",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/16rzfQTeU2BPgGRevhFjKj_RyCBmIVyaV=s400"
+  },
+  {
+    "gameNameEn": "Shaolin Fortunes 100",
+    "gameID": "a4786efd24fb8d9e1dfabe3eebe98509",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/17PVR8jaeWUGFdq2JdL3D8lMjw9YQ0vSb=s400"
+  },
+  {
+    "gameNameEn": "Shaolin Fortunes",
+    "gameID": "4ada4dadcbebebe61bb37a77c844ecd3",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/173b7Y2Go9K7eiPN7dvl7iZutVyTeygPC=s400"
+  },
+  {
+    "gameNameEn": "Shogun's Land",
+    "gameID": "82bb89af8ddcd9a04b860c5c4062422c",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/194Xmz7dGWYNgRYiFvukZ_-G_5-HVSslB=s400"
+  },
+  {
+    "gameNameEn": "Sir Blingalot",
+    "gameID": "380c362de8bf6085bbd808840da6c47b",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/14u3P_KqaTDbt7X-b-82Y8GapY_W9_t0G=s400"
+  },
+  {
+    "gameNameEn": "Sky's the Limit",
+    "gameID": "bf2f00d626935fb3a41cb208ac06f8e3",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1OmXA--VJ3HeJmOrJ1zyDPB2tSN2rcRl7=s400"
+  },
+  {
+    "gameNameEn": "S.O.S!",
+    "gameID": "f4d3bb09cd3e227b657783b2ee386e9b",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1DGf0jX_CaZQva4hi-8PIsT_fxvVl74ep=s400"
+  },
+  {
+    "gameNameEn": "Space Fortune",
+    "gameID": "4453e768d5c761e58b58d298bb9977ca",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1txezj9WIk0_uWlwMIdRPO3CDK131dmCK=s400"
+  },
+  {
+    "gameNameEn": "Super Strike",
+    "gameID": "9d25d28c1e34b37598d1d36f4e4b2ac7",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1dS9Xl3UDZSYzfIjnrTqt7MLTTibrOeLF=s400"
+  },
+  {
+    "gameNameEn": "The Big Deal",
+    "gameID": "53920229be660c509e8f3b0edf52e25e",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1TeCzXqI5w95RylZy7Epp-9pTrhDYfsIm=s400"
+  },
+  {
+    "gameNameEn": "Dragon Castle",
+    "gameID": "794816303168fac2d5a0d71b2e378547",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1nZrmdlNgfTNefImZ__fVZBLtyuNhqajP=s400"
+  },
+  {
+    "gameNameEn": "Tower Of Pizza",
+    "gameID": "c6b5fa833d4d2b52fde6e562f9023acd",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1VR-ztyykZPW_egebV74Xenu0JOKjj3ZF=s400"
+  },
+  {
+    "gameNameEn": "Treasure Diver",
+    "gameID": "cdea7dafdb3093e7da6146bec0e1de29",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1Yt0jostV8cNg7STpwQVJODUYkapJZKS3=s400"
+  },
+  {
+    "gameNameEn": "Treasure Tomb",
+    "gameID": "7f54212ad836d61d03f49f4c774b537e",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1ZXafgqPZYdXgHtfLSRULO2CzawqzgjI8=s400"
+  },
+  {
+    "gameNameEn": "Viking's Plunder",
+    "gameID": "7a63c3646216f255413c9c72a81c815e",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1MhFLXKwPa2exBMHF-krQYg40-jp3QI5E=s400"
+  },
+  {
+    "gameNameEn": "Weird Science",
+    "gameID": "27345e828221561ac6f23036d2b58aee",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/16dBWmz7lgwlpTl_FozSuGbYGrkVq_u30=s400"
+  },
+  {
+    "gameNameEn": "Zeus",
+    "gameID": "f853e6f24232be760a997db4dca13424",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1hTfaxxe8iD-xaXr1sAOegRpyOCqdz2do=s400"
+  },
+  {
+    "gameNameEn": "Zeus 2",
+    "gameID": "0d7248228639d8579efe6eb71c010b89",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/13_FjGu15U_TUjKrXJWC4l61-EOcMs_NI=s400"
+  },
+  {
+    "gameNameEn": "Caribbean Hold'Em",
+    "gameID": "d060803d3810d6c4643923bb5360541e",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1XeJplZyoITooItDkGB1WkYcbNjQOkJWg=s400"
+  },
+  {
+    "gameNameEn": "Caribbean Stud",
+    "gameID": "f4edf57a20355ab5126075c76b53be7d",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/15HeYIpSBfM9BGW8kq5FaLNwu52oX2rA0=s400"
+  },
+  {
+    "gameNameEn": "Blackjack 3 Hand",
+    "gameID": "bb244b9b1bbbd44bf48880d8e4ee8de2",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1C-OPZfJyEpvvasdhbToAh3h1Nt7umDq5=s400"
+  },
+  {
+    "gameNameEn": "Blackjack Double Exposure 3 Hand",
+    "gameID": "185855cfc86f9c8c815e872bb97e7488",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1axXBMCKqv2s7sL3Hrc6MhV3WM2zhGo4u=s400"
+  },
+  {
+    "gameNameEn": "American Blackjack",
+    "gameID": "d80d37ac665c1bcdb00b529d7b82e0aa",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1OSkqDRu5znt_6Y4SSZtNHMwWcE6pL32b=s400"
+  },
+  {
+    "gameNameEn": "European Roulette",
+    "gameID": "84a29dcba174dac10e21cfbbed5e4f4d",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1SMq9-JGYJmkQG-ThFub_eQjHKPv_dVCg=s400"
+  },
+  {
+    "gameNameEn": "American Baccarat",
+    "gameID": "3531899b7d259dd0cfdec83717e1654c",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/13ZKOBehMHPYrqholdqMdy5i2MFQVz7KP=s400"
+  },
+  {
+    "gameNameEn": "American Baccarat Zero Commission",
+    "gameID": "8b575c340acda75dd07931254a0d29cc",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1FzySc0t_iT9J9DULvQfCfLygUVUzWTKm=s400"
+  },
+  {
+    "gameNameEn": "Sicbo",
+    "gameID": "272b9a332c4b8fa4593b55b76a98b674",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1YDTQa_kKABIWeYoYic-78rok9x0vNSUn=s400"
+  },
+  {
+    "gameNameEn": "Three Card Poker",
+    "gameID": "5765cb8ee010ad47d6470cf396a145b5",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1wSd4FHnab8lbTuGxp9EOlsUHzCya1jj5=s400"
+  },
+  {
+    "gameNameEn": "Three Card Poker Deluxe",
+    "gameID": "4da272f6cd8a825a3ea69f89813ada90",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1hyAi7LzBwI-frpatIMlh66BfiGy8AVk_=s400"
+  },
+  {
+    "gameNameEn": "War",
+    "gameID": "e08d5aca44ddc54419ad60ded84cfaa5",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/127A2oIWGhNT4jm2vxBspleXaIbplSEYV=s400"
+  },
+  {
+    "gameNameEn": "Dragon Tiger",
+    "gameID": "2e84b25633e4e881a2886adbdb58ade4",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1xEzEqj0qkjOAp1oWZjCtaJVAE3icpWTw=s400"
+  },
+  {
+    "gameNameEn": "Aces & Eights 1 Hand",
+    "gameID": "bfdf7753da5f115e906019c99c21cee0",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/132jWh7N1ri_wCSafq07_k6q2AGBfvSIW=s400"
+  },
+  {
+    "gameNameEn": "Aces & Eights 5 Hand",
+    "gameID": "ec08a425dbd3b34bdf1a97d15d8a4403",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1kALuo_SL4prWXgSXWTa7Yv6gLpQg_SGd=s400"
+  },
+  {
+    "gameNameEn": "Aces & Eights 10 Hand",
+    "gameID": "dfd49e9b95ecf9063e38015e5c5c6df5",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1705uaHcF4YKV8USSS2DmJ-Kg2tzFDhLQ=s400"
+  },
+  {
+    "gameNameEn": "Aces & Eights 50 Hand",
+    "gameID": "9ac082b19569d028cb5c7d13a981be19",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1ZPjIoK_gqkMiLaWbqsXkKMEVwSXrnxx0=s400"
+  },
+  {
+    "gameNameEn": "Aces & Eights 100 Hand",
+    "gameID": "ea70d5647f129816b27c563e36e71112",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1gG7zHOh4GWmpmxEp3kCQQOJUfjf5mlqy=s400"
+  },
+  {
+    "gameNameEn": "All American Poker 1 Hand",
+    "gameID": "b2e4725dacbaf2ea837d5a23ec614f36",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1qOFlFx5BunKbh2Fz8VaXYK7WxWeTV0ZJ=s400"
+  },
+  {
+    "gameNameEn": "All American Poker 5 Hand",
+    "gameID": "6ac6202dff71e53a2be3943e544cb805",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1immEctXKeNoOpOEbzdRG6sOgGAPGRSRU=s400"
+  },
+  {
+    "gameNameEn": "All American Poker 10 Hand",
+    "gameID": "c4d396361dfa4855804b68ec7a756057",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1hpkrMxZuOv_e7AJR5wFoIAZd4-YaJnnS=s400"
+  },
+  {
+    "gameNameEn": "All American Poker 50 Hand",
+    "gameID": "93c02b53dfb9c31e049019823cd4676a",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/17XOouNVZNiP-bzQbDE5zWhKz-2pX4Hn5=s400"
+  },
+  {
+    "gameNameEn": "All American Poker 100 Hand",
+    "gameID": "4074e6339efacdcadb9bffc61d18b33d",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1eNx8qGQTc8WyPd_kDX72073VrzGAgul7=s400"
+  },
+  {
+    "gameNameEn": "Bonus Deuces Wild 1 Hand",
+    "gameID": "19a70991cf02aa7b517b05e84328fbbe",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1xtzHWeAK-zcx8FEdflNLGZYkDkjSKYZn=s400"
+  },
+  {
+    "gameNameEn": "Bonus Deuces Wild 5 Hand",
+    "gameID": "3afe60c12e37507350773d07068bb60d",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1lkUMNQh9krnUKbzJYQkC74aqRsYBXmMV=s400"
+  },
+  {
+    "gameNameEn": "Bonus Deuces Wild 10 Hand",
+    "gameID": "d0b937a1c29b4e7f115e3d087668d3ed",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1r_3xzydulTrCGF8_nNzkvG_WJWI_kqkp=s400"
+  },
+  {
+    "gameNameEn": "Bonus Deuces Wild 50 Hand",
+    "gameID": "106cc49d035d8f7bed23d0c1f6e2d681",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/15QNQzz3K8IlBxlNWCAB6xFZzRMrTwmQs=s400"
+  },
+  {
+    "gameNameEn": "Bonus Deuces Wild 100 Hand",
+    "gameID": "79d7fdc3032dd096b4ba7556d9eede22",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1c-bIvyUS1qesl6-ePLuiEFV3QTlgmxj5=s400"
+  },
+  {
+    "gameNameEn": "Bonus Poker 1 Hand",
+    "gameID": "61a5f3c563fcb0df69df01ff3d0b164b",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1ybmaA7aHDGby1OPr38X5KPeN1M3Z3aXp=s400"
+  },
+  {
+    "gameNameEn": "Bonus Poker 5 Hand",
+    "gameID": "4df4aab3a35d9b9bf915a3bc3dff27ed",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/10xxn91D4pEK9lMpikXoG4Vx1ENaT2UVO=s400"
+  },
+  {
+    "gameNameEn": "Bonus Poker 10 Hand",
+    "gameID": "286517c70c6f4dfcbe7868c454c71bef",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/12N0t2MIpzRTPMG-TLtXcmP3Yqs1ya860=s400"
+  },
+  {
+    "gameNameEn": "Bonus Poker 50 Hand",
+    "gameID": "89bf2e559e409427f942b753f04a0877",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1m-weo-vYeD-_SQnAxlXwxfWu5l2YOG1R=s400"
+  },
+  {
+    "gameNameEn": "Bonus Poker 100 Hand",
+    "gameID": "b9167616fa224abcce884ffcf17a83e2",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1OTE2xOJNDSYghUY4JNdqWDQa_t0WOPRM=s400"
+  },
+  {
+    "gameNameEn": "Deuces Wild 1 Hand",
+    "gameID": "98166e77c5f842880dad8387563e5051",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1n_uVLxeuLH0vTwVN0v6f0QfCWFXxYRP4=s400"
+  },
+  {
+    "gameNameEn": "Deuces Wild 5 Hand",
+    "gameID": "803a35be479b5dba96f6fb8af98a3e4e",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1m0t2BRFGru-knSUaaqqNQZhBLJGWeLko=s400"
+  },
+  {
+    "gameNameEn": "Deuces Wild 10 Hand",
+    "gameID": "cc6e680be7c2e4a20c7cbfb265aecd71",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1umpMigqEl9NmAeC-Z1og6YiE4x0Lwp2d=s400"
+  },
+  {
+    "gameNameEn": "Deuces Wild 50 Hand",
+    "gameID": "b8357f48a8610cd04c25c90a7356176a",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1NFeolSXNnHu7nFaTDtGxZ010mv8Rqnta=s400"
+  },
+  {
+    "gameNameEn": "Deuces Wild 100 Hand",
+    "gameID": "d4f693ecd243a921da16eb06fd82d1c7",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1yl8Y2AA1tT0PNmIZYTE12L_xuccdMpUP=s400"
+  },
+  {
+    "gameNameEn": "Double Bonus Poker 1 Hand",
+    "gameID": "a844b70f7877e21f86bc06f7339d5ad5",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1hdLpHHalqHteo2MQ5AFEA37GPh57Uf8h=s400"
+  },
+  {
+    "gameNameEn": "Double Bonus Poker 5 Hand",
+    "gameID": "40d673e8b523557d81ea07a7cae0721b",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1IAqewunJj-3ZWnYmA-bMJHbMFwwVqatX=s400"
+  },
+  {
+    "gameNameEn": "Double Bonus Poker 10 Hand",
+    "gameID": "010d1f424aed46be6d88aa200f37dac6",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1icDjgHF16Ivan2-NbZFu2s7nWOgCtMz-=s400"
+  },
+  {
+    "gameNameEn": "Double Bonus Poker 50 Hand",
+    "gameID": "ac97e9db9149080cbc53ae51a7e2830c",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1sGg53kVaM7BN2rfgz-XSJseusuIaVzKs=s400"
+  },
+  {
+    "gameNameEn": "Double Bonus Poker 100 Hand",
+    "gameID": "18f16b76a62d9ba482aa82a96b0afa34",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1dUje3y--wOgO0ScmjsGk-g9s7MDI0okj=s400"
+  },
+  {
+    "gameNameEn": "Double Double Bonus Poker 1 Hand",
+    "gameID": "6f9f3cfc294e173b731c51542ce3cb25",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1kIJOEtDqIMDwIN_OcOtyhL3HainOfF6o=s400"
+  },
+  {
+    "gameNameEn": "Double Double Bonus Poker 5 Hand",
+    "gameID": "5e0e2ff1023e02e44c36e116d756f169",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1b0EmXD55hiZo1bJlEDK-xl2-rGqhz3ux=s400"
+  },
+  {
+    "gameNameEn": "Double Double Bonus Poker 10 Hand",
+    "gameID": "963039a5a6a3959fcf327cecb6b8bdab",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1OrpXo1wOK62kW9azhQK7tacpw119WDXE=s400"
+  },
+  {
+    "gameNameEn": "Double Double Bonus Poker 50 Hand",
+    "gameID": "a5dfeb0f2f8daf9a1f16c2abfd5e426d",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1SzbjhNwcBE75oZONUDSAokwdQOsQarTD=s400"
+  },
+  {
+    "gameNameEn": "Double Double Bonus Poker 100 Hand",
+    "gameID": "6ee847a12309d3af0a645eb430516024",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1sxRUb2CfoGAy2hjzEmFXBVCVuax8Q8o-=s400"
+  },
+  {
+    "gameNameEn": "Jacks or Better 1 Hand",
+    "gameID": "36defab8c39bb488c5476631676765b2",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/18rVdg6bV6kdf4FK0yhTi1wq2EPgIg3Ie=s400"
+  },
+  {
+    "gameNameEn": "Jacks or Better 5 Hand",
+    "gameID": "e5f973a03d8e51fba0aecc4d2e030048",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1sDNkUzgfSznrWaYpj5qAqOOkzNWX5K46=s400"
+  },
+  {
+    "gameNameEn": "Jacks or Better 10 Hand",
+    "gameID": "313021ff10036e814dc64b0621d27e46",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1Ye1wYYjDtid0nNgn9nmWYFOUZ6bN5olL=s400"
+  },
+  {
+    "gameNameEn": "Jacks or Better 50 Hand",
+    "gameID": "cf7e8661ba5d61ec16dae0bc52d670f3",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1WfaMe5IR4qjWTxO5s-_cfticR-rpdWfu=s400"
+  },
+  {
+    "gameNameEn": "Jacks or Better 100 Hand",
+    "gameID": "4049871381a355a06f416bd4eec7d17b",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1kLNiT2BlZU_bMv8MmvwvQRlGfU6a3k9o=s400"
+  },
+  {
+    "gameNameEn": "Joker Poker 1 Hand",
+    "gameID": "6edbe35aea2af4e889dcd080c2e6a9f6",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/10YtHFLfvYxI5VMvKWQOqcEKH8R7XuBKm=s400"
+  },
+  {
+    "gameNameEn": "Joker Poker 5 Hand",
+    "gameID": "a1bf38e894956c7163c631e055c3adb1",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1NW0BvHDotFUAkWD3-M0g72crTqL1KsI2=s400"
+  },
+  {
+    "gameNameEn": "Joker Poker 10 Hand",
+    "gameID": "16e798394110306e7c860941c664a074",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1hOcBc_RCoolWhdZR2CWMkyBK3qMzTdK4=s400"
+  },
+  {
+    "gameNameEn": "Joker Poker 50 Hand",
+    "gameID": "3222a49c65c6ccd9984dd5d72ea3df61",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1hK5G6hDBByF_9rAm0NcjyelyqTOJgrFb=s400"
+  },
+  {
+    "gameNameEn": "Joker Poker 100 Hand",
+    "gameID": "e2ec089bf5bc49a3b299ddd2e45e184d",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1wt42-kXhfJlWcXIuAOku4S67jz01yqoc=s400"
+  },
+  {
+    "gameNameEn": "Tens Or Better 1 Hand",
+    "gameID": "94042dc6a7dcffe4555911a2546d3146",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1YCBNP4xUp_eS5WWUqM5Jc1DB0n6xlEmf=s400"
+  },
+  {
+    "gameNameEn": "Tens Or Better 5 Hand",
+    "gameID": "f2f438b977e0f89645e105b5606fcaed",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1psSQ3lyth1wGMxk_imrSmnB64_EUse9N=s400"
+  },
+  {
+    "gameNameEn": "Tens Or Better 10 Hand",
+    "gameID": "9dbf99db5b4016474746cf4e46dc1d4e",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1Hcec_DI-3nUD1YF1MCktxtJP0AY0TuDy=s400"
+  },
+  {
+    "gameNameEn": "Tens Or Better 50 Hand",
+    "gameID": "6f9e2fe88718f3ebf96ca4516d36636a",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1xZdMW5G6Fwpj13hzgFSS6X7sX4ucqmYU=s400"
+  },
+  {
+    "gameNameEn": "Tens Or Better 100 Hand",
+    "gameID": "c2410d403196a0b44005420645acb1b0",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1oJ3ZTqNyFmneZmYRpaSb8CnhfOq6GIPx=s400"
+  },
+  {
+    "gameNameEn": "Love And Riches: Eldorado",
+    "gameID": "377258383841889942fa2377fd5d7f29",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1nlCNTvBglhRIh2H6ZGF5Mumw8grjV_lk=s400"
+  },
+  {
+    "gameNameEn": "Super Fruit Blast",
+    "gameID": "12e9a08581e07cfb4fcd5bfc3647f325",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1eOr_wL7STL0eYUDO1oUZSyz5OTSAg-uI=s400"
+  },
+  {
+    "gameNameEn": "Shamrock Quest",
+    "gameID": "a62aaa5ace1f4e4c20316f8c162bf95e",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1s-QwseQk5R_JRC8wrxRcafDrIuXui43w=s400"
+  },
+  {
+    "gameNameEn": "Japanese Mask",
+    "gameID": "400c4b200dd8015b56d705960c6e3dac",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/16dsyDiCRnWDimApRWH3jF-ijwE2COZQV=s400"
+  },
+  {
+    "gameNameEn": "Hyper Hues",
+    "gameID": "ac095ea218bef3ebde56bbc796ea7f43",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1ThCfXRYbhHLan0vB4_CwOGjr91hpV-2S=s400"
+  },
+  {
+    "gameNameEn": "Carnival Cove",
+    "gameID": "9a186f9d2dc34a040f3ce3151c7a1601",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/16GX8MerT_kIJxWLZsqxfb3ONPfhNasyx=s400"
+  },
+  {
+    "gameNameEn": "Mystic Rings",
+    "gameID": "2857dda089068169c08406e8a392609d",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1XA7WsnFVeX32-QSh3kwM7uu19BbpniYm=s400"
+  },
+  {
+    "gameNameEn": "Mummy Hunter",
+    "gameID": "f991c73624812784c2eb0f17e1960889",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1lhRHMQK73yp2eKItGkXuxCdnWJVxgGt-=s400"
+  },
+  {
+    "gameNameEn": "Gladiator Royal",
+    "gameID": "67684960c153e11b262c7c79254a98fe",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1z2q4G8Ti3NrmjA58TaqHqm6SoAqNRdw5=s400"
+  },
+  {
+    "gameNameEn": "Mystic Shaman",
+    "gameID": "495748063887cc4c307d1785c0238b43",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1lq6AjCm1VMUK3MpVVI_h_ObX5LTTjoUD=s400"
+  },
+  {
+    "gameNameEn": "Safari Rumble",
+    "gameID": "13431608fb2a6816db0bffa14f5df635",
+    "customGameType": "1",
+    "vendorCode": 86,
+    "img": "https://lh3.googleusercontent.com/d/1xf5gyVQV11oHwy-1EA5ZXGeTXCdzQ7al=s400"
+  }
+]

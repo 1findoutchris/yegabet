@@ -1,0 +1,740 @@
+ [
+    {
+      "gameNameEn": "GOD OF WEALTH",
+      "gameID": "c44dc56b33f2f501d5e0ce24abbe1345",
+      "customGameType": 0,
+      "vendorCode": 90,
+      "img": "https://img.et606.com/admin_official2J_2024_8_22_66739467e03412a5417bd2fc_0b3ab236604911ef99269eb82c5ad46e"
+    },
+    {
+      "gameNameEn": "ELVES",
+      "gameID": "8c1c484262be6d9a972e7c6bd705e788",
+      "customGameType": 0,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "777 FRUIT",
+      "gameID": "48d221f9239f3602b2b2bf63d6ec39c4",
+      "customGameType": 0,
+      "vendorCode": 90,
+      "img": "https://img.et606.com/admin_official2J_2024_8_22_66739467e03412a5417bd2fc_1130b8d4604e11efa4750e09adc7cf63"
+    },
+    {
+      "gameNameEn": "BINGO LUCKY CLOVER",
+      "gameID": "7bd34489984eea3d1bad41975fae542e",
+      "customGameType": 0,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "FOOTBALL",
+      "gameID": "5697722e6724bd046fb2afbd424a014d",
+      "customGameType": 0,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "WILD VEGAS",
+      "gameID": "b282943cd126f41a9e38bdd2bc76fe43",
+      "customGameType": 0,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "LAND OF GEMS",
+      "gameID": "9094042632aac3550530ad5b525ffae6",
+      "customGameType": 0,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "PHOENIX",
+      "gameID": "d56057bffa63438983c93aaf6fc788d6",
+      "customGameType": 0,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "GOD OF FORTUNE",
+      "gameID": "59d69795bd961796525c0c49f294d6a9",
+      "customGameType": 0,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "ZEUS POWER",
+      "gameID": "0a911e36d58aeeac8808333cd26e8cf6",
+      "customGameType": 0,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "RAMPAGE BUFFALO",
+      "gameID": "53cc627c02b695d79426cb84306efde0",
+      "customGameType": 0,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "FRUIT MARY",
+      "gameID": "24171abe41bd7430d492347af1e9ebe1",
+      "customGameType": 0,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "MERMAID'S DANCE",
+      "gameID": "7226f8d02b70a7178bbbb5fc9a9865e9",
+      "customGameType": 0,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "HALLOWEEN",
+      "gameID": "dd99170cfbb6b9a58917af1cc5a5df64",
+      "customGameType": 0,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "RISING FORTUNES",
+      "gameID": "8047980e348b59a65833104f8c78b617",
+      "customGameType": 0,
+      "vendorCode": 90,
+      "img": "https://img.et606.com/admin_official2J_2024_8_22_66739467e03412a5417bd2fc_a85bcf9e605a11ef89520e09adc7cf63"
+    },
+    {
+      "gameNameEn": "JUNGLE TIGER",
+      "gameID": "44f66afddb97af672d3a30f3b19e43a5",
+      "customGameType": 0,
+      "vendorCode": 90,
+      "img": "https://img.et606.com/admin_official2J_2024_8_22_66739467e03412a5417bd2fc_67a3b992605c11ef9afc9eb82c5ad46e"
+    },
+    {
+      "gameNameEn": "MR.FRANKENSTEIN",
+      "gameID": "efc05ce7e0af629721fb5494df9642e6",
+      "customGameType": 0,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "FORTUNE BAMBOO PANDA",
+      "gameID": "8cb2464026c36f1d298cfaec4e36350f",
+      "customGameType": 0,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "FORTUNE DRAGON",
+      "gameID": "402e65f67c48d292c829e7e48455b8c8",
+      "customGameType": 0,
+      "vendorCode": 90,
+      "img": "https://img.et606.com/admin_official2J_2024_8_22_66739467e03412a5417bd2fc_9fbf4fec606311efa4750e09adc7cf63"
+    },
+    {
+      "gameNameEn": "LEPRECHAUN'S COIN",
+      "gameID": "a1e92bcfe4873ada9f3679aa68603206",
+      "customGameType": 0,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "MEDUSA UNLEASHED",
+      "gameID": "e8b4fe5a8da7bb125a41864870dcc6bd",
+      "customGameType": 0,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "DRAGON & TIGER",
+      "gameID": "6673747584a36fcaf6ac8aade83d2466",
+      "customGameType": 0,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "ROMA",
+      "gameID": "23ed719389933dc12f05b86ad9fb06ef",
+      "customGameType": 0,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "JIN JI MAHJONG",
+      "gameID": "ee03265be153b55c1ef0eeb9775a85be",
+      "customGameType": 0,
+      "vendorCode": 90,
+      "img": "https://img.et606.com/admin_official2J_2024_8_23_66739467e03412a5417bd2fc_f73bba3060ef11ef9afc9eb82c5ad46e"
+    },
+    {
+      "gameNameEn": "MONEY MANIA",
+      "gameID": "03ec742d26a407f36db0156c4bfa4b9c",
+      "customGameType": 0,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "88 FORTUNES",
+      "gameID": "93c4c19eb73187845dfda4c449fdcf96",
+      "customGameType": 0,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "FAFAFA",
+      "gameID": "0e933ccadf04a3dbee6693841393350b",
+      "customGameType": 0,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "FORTUNE TIGER",
+      "gameID": "be5277ed827b54b348cf16412f014728",
+      "customGameType": 0,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "GOLDEN OX",
+      "gameID": "d9c6bd759a47fb4c912ec0934f31727b",
+      "customGameType": 0,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "ENDLESS TREASURE",
+      "gameID": "ea80640b23b088d3f95dda363e44fbe1",
+      "customGameType": 0,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "GOLDEN CENTURY",
+      "gameID": "81addf6688b92ef68b074c845e903e63",
+      "customGameType": 0,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "ORIENTAL RICHES",
+      "gameID": "438d6653d54337f0ddf5f223a7c33149",
+      "customGameType": 0,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "JIN LOONG",
+      "gameID": "c07e536d8ce8ba3fa7d288084038348c",
+      "customGameType": 0,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "GOLD MANIA",
+      "gameID": "4958fecf8209bcd535b5c031678b2dcd",
+      "customGameType": 0,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "GATES OF OLYMPUS",
+      "gameID": "0c6c06d65c1b9f31227d1c06b878bc2d",
+      "customGameType": 0,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "TREASURE OF AZTEC",
+      "gameID": "c0cfdded5d3b450fadd0e462eedd08cf",
+      "customGameType": 0,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "SUPER ACE",
+      "gameID": "a791dbb81fa957b28e8d02c973feb859",
+      "customGameType": 0,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "GOLDEN BUFFALO",
+      "gameID": "534e0caa3ffd75ad31ba9a0fa0eb7832",
+      "customGameType": 0,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "FORTUNE RABBIT",
+      "gameID": "5e679c5f6ca439829f4956d57baa9cd7",
+      "customGameType": 0,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "STARLIGHT PRINCESS 1000",
+      "gameID": "e8208f9ed8e383694902d3b44c2075ca",
+      "customGameType": 0,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "SWEET BONANZA 1000",
+      "gameID": "49186eb5963672420497f9ba07887584",
+      "customGameType": 0,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "FORTUNE MOUSE",
+      "gameID": "65294436702e4366f583d31fc81483f2",
+      "customGameType": 0,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "PUMPKIN PARTY",
+      "gameID": "7132023dee6269490bf06d613a58c9d5",
+      "customGameType": 0,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "CLEOPATRA'S FLAME",
+      "gameID": "318d27434705a4d46b588beb2840e50c",
+      "customGameType": 0,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "HUFF N PUFF",
+      "gameID": "d55d758f4fc04a98e244e206050e5d90",
+      "customGameType": 0,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "ORB OF GANESHA",
+      "gameID": "dacd9b1abc1377542aa735ec682ba594",
+      "customGameType": 0,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "PIGGY BANKIN",
+      "gameID": "f11f25f2d0a02780c1131a3a7dcc5f09",
+      "customGameType": 0,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "RAILROAD RICHES",
+      "gameID": "514a21b94ff4f68d5f0692d4f7758722",
+      "customGameType": 0,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "BELL DEER",
+      "gameID": "9d24aed9df52f5660c559ac54372c9cd",
+      "customGameType": 0,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "RISING FORTUNES",
+      "gameID": "5cd03b6a63beb007c855bdbb56bf9889",
+      "customGameType": 0,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "FORTUNE GEMS",
+      "gameID": "9f2f30298893df6fecb0eb3559800522",
+      "customGameType": 0,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "MONEY MANIA",
+      "gameID": "7a89e4262652500b3020e11c7311f01a",
+      "customGameType": 0,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "FORTUNE DRAGON",
+      "gameID": "1c02b0834cf565a40df5df6ca65885d5",
+      "customGameType": 0,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "FISH ON! BASS HUNTER",
+      "gameID": "17b0a56d5fff462564f2baf387a67f96",
+      "customGameType": 4,
+      "vendorCode": 90,
+      "img": "https://img.et606.com/admin_official2J_2025_4_27_66739467e03412a5417bd2fc_137c07f6230d11f0ad4792807d378477"
+    },
+    {
+      "gameNameEn": "COSMIC BLITZ",
+      "gameID": "8e66c2f885af481ede941af4ea770858",
+      "customGameType": 0,
+      "vendorCode": 90,
+      "img": "https://img.et606.com/admin_official2J_2025_5_29_66739467e03412a5417bd2fc_2e1465063c6a11f0a3bd5afbaf09b2fa"
+    },
+    {
+      "gameNameEn": "X-PLOSIVE ROCK",
+      "gameID": "0316829380e91b80237c95490a2abcd5",
+      "customGameType": 0,
+      "vendorCode": 90,
+      "img": "https://img.et606.com/admin_official2J_2025_3_3_66739467e03412a5417bd2fc_56a56104f80511efb2f3ba891ba5ddde"
+    },
+    {
+      "gameNameEn": "Y-PLOSIVE ROCK",
+      "gameID": "ac942a4436a572a2b9b5573e3958065e",
+      "customGameType": 0,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "TRUMP IT",
+      "gameID": "57eba1135ea172e3d888336e5f548517",
+      "customGameType": 0,
+      "vendorCode": 90,
+      "img": "https://img.et606.com/admin_official2J_2025_3_31_66739467e03412a5417bd2fc_9e4058700e1211f0bc0ad691d282ba9e"
+    },
+    {
+      "gameNameEn": "FATHER KIM",
+      "gameID": "fb8f38f446b4d4a4591933c5bd290c24",
+      "customGameType": 0,
+      "vendorCode": 90,
+      "img": "https://img.et606.com/admin_official2J_2025_5_29_66739467e03412a5417bd2fc_8c7d4a443c6b11f0a3bd5afbaf09b2fa"
+    },
+    {
+      "gameNameEn": "FPRTUNE GONG",
+      "gameID": "b7644fa8f76771485d5184ba436679db",
+      "customGameType": 0,
+      "vendorCode": 90,
+      "img": "https://img.et606.com/admin_official2J_2025_7_1_66739467e03412a5417bd2fc_70448122566411f0ba97560fd8db5ab4"
+    },
+    {
+      "gameNameEn": "CHEESE CLASH",
+      "gameID": "e6c405db51c1f3333586d100f38b26d1",
+      "customGameType": 0,
+      "vendorCode": 90,
+      "img": "https://img.et606.com/admin_official2J_2025_7_1_66739467e03412a5417bd2fc_cbf10fd8564911f0b89a560fd8db5ab4"
+    },
+    {
+      "gameNameEn": "777 FRUIT",
+      "gameID": "e91bc7072343ee4b6c57ee357758f317",
+      "customGameType": 0,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "DRAGON TIGER",
+      "gameID": "d906e75652c87c414aeba526cca7030e",
+      "customGameType": 0,
+      "vendorCode": 90,
+      "img": "https://img.et606.com/admin_official2J_2024_10_31_652f4e6034f2e8693007013b_65adc03c973011ef8a22326fafbc8614"
+    },
+    {
+      "gameNameEn": "RED VS BLACK",
+      "gameID": "6d47a04fcf8502d4e0b6967d5c3c6145",
+      "customGameType": 6,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "7 UP DOWN",
+      "gameID": "eb1521520dbb0e583a717e1c4a5286eb",
+      "customGameType": 6,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "BEST OF FIVE",
+      "gameID": "8fb18cef8da9875dd09d6ea54c58d448",
+      "customGameType": 6,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "CRICKET BATTLE / BEST CLUB",
+      "gameID": "1b9e8c3e853365ae49838d08e210074e",
+      "customGameType": 6,
+      "vendorCode": 90,
+      "img": "https://img.et606.com/admin_official2J_2024_10_31_652f4e6034f2e8693007013b_80f2695a973111efac239a441c120f22"
+    },
+    {
+      "gameNameEn": "THREE DICE",
+      "gameID": "52406a8a22aa0706e9a969a88472efb3",
+      "customGameType": 6,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "ANDAR BAHAR",
+      "gameID": "b184fae0c98f47fd6d79babc747044a9",
+      "customGameType": 6,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "JHANDI MUNDA",
+      "gameID": "e1d8a53d15772a9f5876789b89ce0645",
+      "customGameType": 6,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "ROULETTE",
+      "gameID": "377989413fba1a506b32cf9f1417c3ff",
+      "customGameType": 6,
+      "vendorCode": 90,
+      "img": "https://img.et606.com/admin_official2J_2024_10_31_652f4e6034f2e8693007013b_c920a958973111efb5599a441c120f22"
+    },
+    {
+      "gameNameEn": "SIC BO",
+      "gameID": "d5c46e03fbfc66a865ff2b5968c21bd9",
+      "customGameType": 6,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "HOURSE RACING",
+      "gameID": "1c5787a0fb55147f97958f596be14c60",
+      "customGameType": 6,
+      "vendorCode": 90,
+      "img": "https://img.et606.com/admin_official2J_2024_10_22_652f4e6034f2e8693007013b_dd5c003e903e11ef9f2e4ab512bb5dbf"
+    },
+    {
+      "gameNameEn": "LUCKY LOTTERY",
+      "gameID": "948170ec4a41e05216572f5996f85b32",
+      "customGameType": 5,
+      "vendorCode": 90,
+      "img": "https://img.et606.com/admin_official2J_2024_12_10_66739467e03412a5417bd2fc_c3f0afe0b6d611ef8787cee0c37ec700"
+    },
+    {
+      "gameNameEn": "BẦU CUA/HOO HEY HOW",
+      "gameID": "755654fdf8f3b48fafa504b19925f044",
+      "customGameType": 6,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "BACCARAT",
+      "gameID": "db0e4e50d14e311210bdb8e9dd6685e2",
+      "customGameType": 6,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "TH SICBO",
+      "gameID": "85574d3c98b87d296ee8b13211620431",
+      "customGameType": 6,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "SA BONG",
+      "gameID": "a496ab532f75c0acff5177278e383d3a",
+      "customGameType": 6,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "CAR ROULETTE",
+      "gameID": "995e93b889a5e60305bd5077ba1da4ff",
+      "customGameType": 6,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "COLOR GAME",
+      "gameID": "2a9411e004eef01835c39f21ef99c730",
+      "customGameType": 6,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "TOSS A COIN",
+      "gameID": "e2a0044b1300a8b4ddb72726d9481648",
+      "customGameType": 6,
+      "vendorCode": 90,
+      "img": "https://img.et606.com/admin_official2J_2025_7_29_66739467e03412a5417bd2fc_e2da39326c2311f09816b6c491620a61"
+    },
+    {
+      "gameNameEn": "MYTHICAL ANIMALS",
+      "gameID": "c37c62d3533cb871c70f9a28cb8b387f",
+      "customGameType": 6,
+      "vendorCode": 90,
+      "img": "https://img.et606.com/admin_official2J_2024_10_31_652f4e6034f2e8693007013b_146c61fc973411ef9b249a441c120f22"
+    },
+    {
+      "gameNameEn": "ZOO ROULETTE",
+      "gameID": "cc0380582166e82db7d46cab37cad74d",
+      "customGameType": 6,
+      "vendorCode": 90,
+      "img": "https://img.et606.com/admin_official2J_2024_10_31_652f4e6034f2e8693007013b_c0be7ff8973411efa7a69a441c120f22"
+    },
+    {
+      "gameNameEn": "DIRECTION BOUNTY",
+      "gameID": "ab8d335957492c65519ccb98f3ad1b32",
+      "customGameType": 6,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "CRAZY WIN88",
+      "gameID": "aa862f08c2cf0536bdd2aa419a4518",
+      "customGameType": 6,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "CRASH",
+      "gameID": "dace13a026dd29e7db7e1c6ab0ab175c",
+      "customGameType": 3,
+      "vendorCode": 90,
+      "img": "https://img.et606.com/admin_official2J_2024_10_31_652f4e6034f2e8693007013b_05a98e86973111ef8a22326fafbc8614"
+    },
+    {
+      "gameNameEn": "CRASH II",
+      "gameID": "b5df52ae1883b1f0613f62a28533b998",
+      "customGameType": 3,
+      "vendorCode": 90,
+      "img": "https://img.et606.com/admin_official2J_2024_10_31_652f4e6034f2e8693007013b_43d93cfe973311efb5599a441c120f22"
+    },
+    {
+      "gameNameEn": "PLINKO",
+      "gameID": "6d4e3081a3d2c7872b03fb3c8ffdbbbf",
+      "customGameType": 3,
+      "vendorCode": 90,
+      "img": "https://img.et606.com/admin_official2J_2024_10_22_652f4e6034f2e8693007013b_96b1c380903d11efad18d2528cb35829"
+    },
+    {
+      "gameNameEn": "MINES",
+      "gameID": "420eae065802704e3b324b276b5df495",
+      "customGameType": 3,
+      "vendorCode": 90,
+      "img": "https://img.et606.com/admin_official2J_2024_10_31_652f4e6034f2e8693007013b_ae7462c6973511efbc3f326fafbc8614"
+    },
+    {
+      "gameNameEn": "LIMBO",
+      "gameID": "31ac22dabebb08f9cdf4d398998754ac",
+      "customGameType": 3,
+      "vendorCode": 90,
+      "img": "https://img.et606.com/admin_official2J_2024_10_31_652f4e6034f2e8693007013b_31f31fc0973611efac239a441c120f22"
+    },
+    {
+      "gameNameEn": "DICE",
+      "gameID": "76a55cc0e0fd8d6103b8b65b88c3691d",
+      "customGameType": 3,
+      "vendorCode": 90,
+      "img": "https://img.et606.com/admin_official2J_2024_10_31_652f4e6034f2e8693007013b_75185d6a973611efb5599a441c120f22"
+    },
+    {
+      "gameNameEn": "MINES II",
+      "gameID": "80ae37b2cd19da63154566b35f192e49",
+      "customGameType": 3,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "HILO",
+      "gameID": "6201463025847d26067853ad0dac1f8c",
+      "customGameType": 3,
+      "vendorCode": 90,
+      "img": "https://img.et606.com/admin_official2J_2024_10_31_652f4e6034f2e8693007013b_9c12ae56973711ef9b249a441c120f22"
+    },
+    {
+      "gameNameEn": "SNAKES AND LADDERS",
+      "gameID": "3b6753d5a3342fa14c90bd480e47b5a9",
+      "customGameType": 3,
+      "vendorCode": 90,
+      "img": "https://img.et606.com/admin_official2J_2025_1_14_66739467e03412a5417bd2fc_fe8de1a4d22e11ef96f21ac4ad55b4fb"
+    },
+    {
+      "gameNameEn": "POINT RUMMY",
+      "gameID": "80ecd2441d840f74cbb0fb33056c1aaa",
+      "customGameType": 6,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "TEEN PATTI",
+      "gameID": "b2209f84d2e5d835744b7cc5a4dfc5f6",
+      "customGameType": 6,
+      "vendorCode": 90,
+      "img": "https://img.et606.com/admin_official2J_2024_12_10_66739467e03412a5417bd2fc_6b9c3ad6b6da11efa7f6d2ae77edbaa3"
+    },
+    {
+      "gameNameEn": "TRUCO",
+      "gameID": "772dc94ab1f913afa1218de98107d765",
+      "customGameType": 6,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "CALL BREAK",
+      "gameID": "09bb57ef1cbdaa36dc575c66b4a545be",
+      "customGameType": 6,
+      "vendorCode": 90,
+      "img": "https://img.et606.com/admin_official2J_2024_10_22_652f4e6034f2e8693007013b_30d9d024903e11ef9f2e4ab512bb5dbf"
+    },
+    {
+      "gameNameEn": "BLACK JACK",
+      "gameID": "973fc94de61caf9779afd25dcd115b17",
+      "customGameType": 6,
+      "vendorCode": 90,
+      "img": "https://img.et606.com/admin_official2J_2024_12_10_66739467e03412a5417bd2fc_e8bd4528b6da11efbfd4cee0c37ec700"
+    },
+    {
+      "gameNameEn": "DOMINO GAPLE",
+      "gameID": "0b709ff139f6546374cba14f51345140",
+      "customGameType": 6,
+      "vendorCode": 90,
+      "img": "https://img.et606.com/admin_official2J_2024_12_10_66739467e03412a5417bd2fc_41d29578b6db11ef8ecccee0c37ec700"
+    },
+    {
+      "gameNameEn": "POOL RUMMY",
+      "gameID": "08ebf8001ca546ce8d8772244cb2f7b9",
+      "customGameType": 6,
+      "vendorCode": 90,
+      "img": "https://img.et606.com/admin_official2J_2025_1_21_66739467e03412a5417bd2fc_77aae1e2d7be11ef8fc3868d750eb3a7"
+    },
+    {
+      "gameNameEn": "DOMINO QIUQIU",
+      "gameID": "c3d158a3865618cf69fc6fae77e426f5",
+      "customGameType": 6,
+      "vendorCode": 90,
+      "img": "https://img.et606.com/admin_official2J_2024_11_14_652f4e6034f2e8693007013b_919f30dea25e11ef890b12d26e4f9903"
+    },
+    {
+      "gameNameEn": "QUICK LUDO",
+      "gameID": "98bcfab0b0808eb3063b559049afd0e9",
+      "customGameType": 6,
+      "vendorCode": 90,
+      "img": "https://img.et606.com/admin_official2J_2024_12_10_66739467e03412a5417bd2fc_689546a6b6db11efa88dd2ae77edbaa3"
+    },
+    {
+      "gameNameEn": "REMI",
+      "gameID": "5c1fcf0a4576a49df3b9965dca658706",
+      "customGameType": 6,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "TEXAS HOLD'EM",
+      "gameID": "09f1b05cbce637f9838b5173f18f041e",
+      "customGameType": 6,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "BIG TWO",
+      "gameID": "f6415181962eb72097931ee1cbf74ffc",
+      "customGameType": 6,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "MẬU BINH",
+      "gameID": "c0713007ffa41a0d1f9003bef075bdd9",
+      "customGameType": 6,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "TONGITS",
+      "gameID": "374897fbbf20f4638d091ce7c4a8f099",
+      "customGameType": 6,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "POKDENG",
+      "gameID": "3eb453fb1a45ca19f40a776053613497",
+      "customGameType": 6,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "DUMMY",
+      "gameID": "dae71f173c0d28cc56ba5689128bcf6d",
+      "customGameType": 6,
+      "vendorCode": 90
+    },
+    {
+      "gameNameEn": "CRAZY LUDO",
+      "gameID": "19ab4d3d2e9e493ae07f500cdb988850",
+      "customGameType": 6,
+      "vendorCode": 90,
+      "img": "https://img.et606.com/admin_official2J_2024_12_10_66739467e03412a5417bd2fc_84ce53e2b6dd11efbfd4cee0c37ec700"
+    },
+    {
+      "gameNameEn": "ALL-IN POKER",
+      "gameID": "e6564f3ca52702489344eb7402a6cc25",
+      "customGameType": 6,
+      "vendorCode": 90,
+      "img": "https://img.et606.com/admin_official2J_2024_12_10_66739467e03412a5417bd2fc_a931d4a2b6dd11ef8ecccee0c37ec700"
+    },
+    {
+      "gameNameEn": "ANDAR BAHAR-BATTLE",
+      "gameID": "8b21a3f048813bcea049fd11529373ea",
+      "customGameType": 6,
+      "vendorCode": 90,
+      "img": "https://img.et606.com/admin_official2J_2025_1_21_66739467e03412a5417bd2fc_acce2c6cd7be11efb2f036cf14644cb0"
+    },
+    {
+      "gameNameEn": "Fishing",
+      "gameID": "3c9c7fcda7e8fad01594de887e2981f1",
+      "customGameType": 4,
+      "vendorCode": 90,
+      "img": "https://img.et606.com/admin_official2J_2024_10_31_656e9efde41fb9ce5396c16e_d4bd8b1e973111efbc3f326fafbc8614"
+    },
+    {
+      "gameNameEn": "Fishdom",
+      "gameID": "c471ce60d3478e3a9f0bdded30d9eba2",
+      "customGameType": 4,
+      "vendorCode": 90,
+      "img": "https://img.et606.com/admin_official2J_2024_10_9_656e9efde41fb9ce5396c16e_ebaa64cc860211efa106a20461ef30d8"
+    },
+    {
+      "gameNameEn": "MAGIC DROP",
+      "gameID": "dc3ec0356de0eb58f0151371451b25f9",
+      "customGameType": 0,
+      "vendorCode": 90,
+      "img": "https://img.et606.com/admin_official2J_2025_8_19_66739467e03412a5417bd2fc_d5ef9cca7ccd11f0a9ad26d697eede04"
+    }
+  ]

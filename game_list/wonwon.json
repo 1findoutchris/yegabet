@@ -1,0 +1,238 @@
+[
+    {
+      "gameNameEn": "Dragon Mystery",
+      "gameID": "e1e9b9cf9a3bfdfd48ca71d2b2f2af81",
+      "customGameType": 0,
+      "vendorCode": 80,
+      "img": "https://wonwongames.com/wp-content/uploads/2024/10/Game_DragonMystery_215.png"
+    },
+    {
+      "gameNameEn": "Emperor",
+      "gameID": "766774f8d98b26997fbeeee4b7bc8a60",
+      "customGameType": 0,
+      "vendorCode": 80,
+      "img": "https://wonwongames.com/wp-content/uploads/2024/10/Game_Emperor_214.png"
+    },
+    {
+      "gameNameEn": "Pirate Q",
+      "gameID": "10409f1c255547df5e579994eac23f6d",
+      "customGameType": 0,
+      "vendorCode": 80,
+      "img": "https://wonwongames.com/wp-content/uploads/2024/10/Game_PirateQ_218.png"
+    },
+    {
+      "gameNameEn": "Thor",
+      "gameID": "f7ffd2685529b6cb451264d2c78ed1d8",
+      "customGameType": 0,
+      "vendorCode": 80,
+      "img": "https://wonwongames.com/wp-content/uploads/2024/10/Game_Thor_219.png"
+    },
+    {
+      "gameNameEn": "Fortune Lion",
+      "gameID": "b1a67ee89d76bd45ee0a0010e98994f6",
+      "customGameType": 0,
+      "vendorCode": 80,
+      "img": "https://wonwongames.com/wp-content/uploads/2024/10/Game_FortuneLion_220.png"
+    },
+    {
+      "gameNameEn": "Golden Tiger",
+      "gameID": "9ffc0d65b92d416f1763273ea0fb481e",
+      "customGameType": 0,
+      "vendorCode": 80,
+      "img": "https://wonwongames.com/wp-content/uploads/2024/10/Game_GoldenTiger_216.png"
+    },
+    {
+      "gameNameEn": "Mahjong Mania",
+      "gameID": "829527d76cfb331a375eecdc2111d1c8",
+      "customGameType": 0,
+      "vendorCode": 80,
+      "img": "https://wonwongames.com/wp-content/uploads/2024/10/Game_MahjongMania_221.png"
+    },
+    {
+      "gameNameEn": "Katana Hime",
+      "gameID": "3d0f020c93f5cab162eb7ad2c57389df",
+      "customGameType": 0,
+      "vendorCode": 80,
+      "img": "https://wonwongames.com/wp-content/uploads/2024/10/Game_KatanaHime_222.png"
+    },
+    {
+      "gameNameEn": "Lamp Genie",
+      "gameID": "e09f0148f885d12e520d62996f6c779e",
+      "customGameType": 0,
+      "vendorCode": 80,
+      "img": "https://wonwongames.com/wp-content/uploads/2024/10/Game_LampGenie_213.png"
+    },
+    {
+      "gameNameEn": "Royal Poker",
+      "gameID": "18806668c48baafafc4d09d3b64ff5c6",
+      "customGameType": 0,
+      "vendorCode": 80,
+      "img": "https://wonwongames.com/wp-content/uploads/2024/10/Game_RoyalPoker_1221.png"
+    },
+    {
+      "gameNameEn": "Double Fortune",
+      "gameID": "aebf65991f80d140c304e098e862c605",
+      "customGameType": 0,
+      "vendorCode": 80,
+      "img": "https://wonwongames.com/wp-content/uploads/2024/10/Game_DoubleFortune_223.png"
+    },
+    {
+      "gameNameEn": "Phoenix Rising",
+      "gameID": "6176163e0617e50ebf4c30a277bbd0f0",
+      "customGameType": 0,
+      "vendorCode": 80,
+      "img": "https://wonwongames.com/wp-content/uploads/2024/10/Game_PhoenixRising_209.png"
+    },
+    {
+      "gameNameEn": "Dragon Pearl",
+      "gameID": "8f4aa0f3863934b8c4ac6b36163ef8ea",
+      "customGameType": 0,
+      "vendorCode": 80,
+      "img": "https://wonwongames.com/wp-content/uploads/2024/10/Game_DragonPearl_224.png"
+    },
+    {
+      "gameNameEn": "Fortune Arrives",
+      "gameID": "1372a1d584b4fd95e973c0f2fa701c24",
+      "customGameType": 0,
+      "vendorCode": 80,
+      "img": "https://wonwongames.com/wp-content/uploads/2024/10/Game_FortuneArrives_225.png"
+    },
+    {
+      "gameNameEn": "Chin Shi Huang",
+      "gameID": "a34da9d0c6f7e2bb21f677e8998f62b1",
+      "customGameType": 0,
+      "vendorCode": 80,
+      "img": "https://wonwongames.com/wp-content/uploads/2024/10/Game_ChinShiHuang_1214.png"
+    },
+    {
+      "gameNameEn": "Nine Tails",
+      "gameID": "534058f4dd4c7a60697d61efb649b661",
+      "customGameType": 0,
+      "vendorCode": 80,
+      "img": "https://wonwongames.com/wp-content/uploads/2024/10/Game_NineTails_226.png"
+    },
+    {
+      "gameNameEn": "Fortune Tree",
+      "gameID": "30a3c20d1ce42f20af4b137d6cd0df31",
+      "customGameType": 0,
+      "vendorCode": 80,
+      "img": "https://wonwongames.com/wp-content/uploads/2024/10/Game_FortuneTree_1215.png"
+    },
+    {
+      "gameNameEn": "Magic Charm",
+      "gameID": "16a560d2858bbb272202ecfb2fc15067",
+      "customGameType": 0,
+      "vendorCode": 80,
+      "img": "https://wonwongames.com/wp-content/uploads/2024/10/Game_MagicCharm_1219.png"
+    },
+    {
+      "gameNameEn": "Samba Carnival",
+      "gameID": "ddbe457266883cd370ec718b3816b8f8",
+      "customGameType": 0,
+      "vendorCode": 80,
+      "img": "https://wonwongames.com/wp-content/uploads/2024/10/Game_SambaCarnival_311.png"
+    },
+    {
+      "gameNameEn": "Five Dragons",
+      "gameID": "b694261f0e808bd63864b835c8f14fbb",
+      "customGameType": 0,
+      "vendorCode": 80,
+      "img": "https://wonwongames.com/wp-content/uploads/2024/10/Game_FiveDragons_212.png"
+    },
+    {
+      "gameNameEn": "Mahjong Mania 2",
+      "gameID": "fe4f3f23938a0a056ab20f432a9fb4f5",
+      "customGameType": 0,
+      "vendorCode": 80,
+      "img": "https://wonwongames.com/wp-content/uploads/2024/10/Game_MahjongMania2_227.png"
+    },
+    {
+      "gameNameEn": "Kirin Blessings",
+      "gameID": "7fc9628525db269406a067705e93cb92",
+      "customGameType": 0,
+      "vendorCode": 80,
+      "img": "https://wonwongames.com/wp-content/uploads/2024/10/Game_KirinBlessings_46.png"
+    },
+    {
+      "gameNameEn": "Maya Empire",
+      "gameID": "58922d4753eb30a7a43a8e2c11fc72ef",
+      "customGameType": 0,
+      "vendorCode": 80,
+      "img": "https://wonwongames.com/wp-content/uploads/2024/10/Game_MayaEmpire_2000.png"
+    },
+    {
+      "gameNameEn": "King Arthur",
+      "gameID": "3d3caca9c8e561081c35798dde295c4f",
+      "customGameType": 0,
+      "vendorCode": 80,
+      "img": "https://wonwongames.com/wp-content/uploads/2024/10/Game_KingArthur_305.png"
+    },
+    {
+      "gameNameEn": "Rich Pa Pa",
+      "gameID": "5539092fd18b0238d6f4327ef300ea72",
+      "customGameType": 0,
+      "vendorCode": 80,
+      "img": "https://wonwongames.com/wp-content/uploads/2024/10/Game_RichPaPa_1.png"
+    },
+    {
+      "gameNameEn": "Fortune Gate",
+      "gameID": "12d61a3d7b616d96090d50f77ee80b22",
+      "customGameType": 0,
+      "vendorCode": 80,
+      "img": "https://wonwongames.com/wp-content/uploads/2024/11/Game_-FortuneGate_2001.png"
+    },
+    {
+      "gameNameEn": "Tomb Raider",
+      "gameID": "9c834d6bd22803cf095681bae0d0008a",
+      "customGameType": 0,
+      "vendorCode": 80
+    },
+    {
+      "gameNameEn": "Longevity 88",
+      "gameID": "a3d528828cc7105e827a143c1dc99c6c",
+      "customGameType": 0,
+      "vendorCode": 80
+    },
+    {
+      "gameNameEn": "Lucky Cat",
+      "gameID": "fc173d237039502a9081323129609f8f",
+      "customGameType": 0,
+      "vendorCode": 80
+    },
+    {
+      "gameNameEn": "Hou Yi",
+      "gameID": "8546723a182896cf470ee4ee6fa11234",
+      "customGameType": 0,
+      "vendorCode": 80
+    },
+    {
+      "gameNameEn": "Western Legends",
+      "gameID": "eedcda70679fe9850f1eda8bd903afa7",
+      "customGameType": 0,
+      "vendorCode": 80
+    },
+    {
+      "gameNameEn": "Ganesha",
+      "gameID": "b28757e3a5295e69e2be64e8dbfd5ca8",
+      "customGameType": 0,
+      "vendorCode": 80
+    },
+    {
+      "gameNameEn": "Won Won Caishen",
+      "gameID": "d3d2bafaffa78d2d6cf70f5d0b2766f9",
+      "customGameType": 0,
+      "vendorCode": 80
+    },
+    {
+      "gameNameEn": "Blessed Serpent",
+      "gameID": "fad2b35d6cd38411f42c43a0931843a9",
+      "customGameType": 0,
+      "vendorCode": 80
+    },
+    {
+      "gameNameEn": "Fist King",
+      "gameID": "a41effbd970e174bd47fadfd46ed45aa",
+      "customGameType": 0,
+      "vendorCode": 80
+    }
+  ]

@@ -1,0 +1,744 @@
+[
+    {
+        "gameNameEn": "Road Rage",
+        "gameID": "deb5a68e6a9844df172046620b88595b",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Fire in the Hole xBomb",
+        "gameID": "5797f48bfd6cf4319facb6566c315821",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Outsourced: Slash Game",
+        "gameID": "bec50445bc19b6f1ad9a380b41a2906c",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Manhattan Goes Wild",
+        "gameID": "e313c707097ddd09313ce4739faf3250",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Deadwood RIP",
+        "gameID": "af767fb845d38b31d21bb36ea6394e7d",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Das xBoot",
+        "gameID": "92b70fc82d0159207cb2eea975fb8f68",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Karen Maneater",
+        "gameID": "41f76203e1fe3aa96a834ce5d1c63add",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Hot Nudge",
+        "gameID": "668121ffb33f279af9fb6bae0d55e9ad",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "El Paso Gunfight xNudge",
+        "gameID": "62dfd7a6e2d2b6e03aae84c865043e08",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Folsom Prison",
+        "gameID": "582a7bccc646797ac4c8efa7545042d9",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Warrior Graveyard xNudge",
+        "gameID": "3ea12d7072a593a33e6cbe21b6ce9aba",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Ice Ice Yeti",
+        "gameID": "994f9ee41dff025bea27b724904b9dcd",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Possessed",
+        "gameID": "25ac214a3bda107fe69f990d530d33d4",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Deadwood xNudge",
+        "gameID": "48e2f84982aa84c106a1b0d671ecc285",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Hot 4 Cash",
+        "gameID": "50b3f2771e0cd402b0991e467ad59ea8",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Whacked!",
+        "gameID": "17b6500a872305eb9500eb2e030dc0d7",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Dragon Tribe",
+        "gameID": "5593f73cb807b2d18f9766326d7b5c83",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Fire In The Hole 2",
+        "gameID": "546e61e52247da10819cbfc125f3ee8d",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Ugliest Catch",
+        "gameID": "4816287f0a348fd80d5a35e834d7c64f",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Bonus Bunnies",
+        "gameID": "e24b1eceecf3680c51d2b6bef57d3437",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Gluttony",
+        "gameID": "5de4ff7eb5ed317030ae49c146f7f926",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Thor Hammer Time",
+        "gameID": "978a1295e7350141a0c43d618a153f13",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Stockholm Syndrome",
+        "gameID": "2d5ae2fd28e0cb711f929b40b9417af9",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "The Crypt",
+        "gameID": "afd55ffc71f99af84c5a12e52ef7e1b2",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Punk Rocker",
+        "gameID": "f399c95a0ac1e6a236065fa7aca8d0ff",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Buffalo Hunter",
+        "gameID": "8033592ca91e0864c56ca13b4b941270",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Immortal Fruits",
+        "gameID": "56c50d7fddd329f8dbed1dd0bfce61a9",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Little Bighorn",
+        "gameID": "b986a4cdb97183d3056fd780bb12e468",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Tomb of Nefertiti",
+        "gameID": "557fa778d85044277a9d018f482ce1d5",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blood & Shadow",
+        "gameID": "c3cdda6fbce0d505dc05afa911ab8c1a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Golden Genie & the Walking Wilds",
+        "gameID": "ca0185b461d39a4651b962125e18a573",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Brick Snake 2000",
+        "gameID": "dee22b3bd4045e94c41ff3f4adfd67c1",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Pearl Harbor",
+        "gameID": "4e3508090cbe484a669aee0627436aea",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Owls",
+        "gameID": "ffc50723c40746cc40f34793c4b2d499",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Milky Ways",
+        "gameID": "768fd0fa68162bbcfec8e7c48cbf1b15",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "East Coast vs West Coast",
+        "gameID": "e127e034151975f8ed0c3b1966935621",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Misery Mining",
+        "gameID": "c1dede823d1364de5abe621197f9e6ff",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Dj Psycho",
+        "gameID": "31a535370d6c1904e4cc9e554204c389",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Tombstone No Mercy",
+        "gameID": "81dfb8eaa2c93b828b2b26884ee9717e",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Tractor Beam",
+        "gameID": "efc71839b3550f249f6bd487446a8d84",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Poison Eve",
+        "gameID": "21da6459057f70199f49d47692d92921",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Skate or Die",
+        "gameID": "9fe6ae5818b7af27fe0db1093d2206cc",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Bounty Hunters xNudge",
+        "gameID": "fefc265ad2c6e0196ab228e4bbd20cd2",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "True Kult",
+        "gameID": "a30b84c9e12e13818c0fa6317a0e4799",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Monkey's Gold xPays",
+        "gameID": "f9a7572c0c1f2e9f7dfb6904e684117b",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Fruits",
+        "gameID": "f126ed33fc04c286ddd28c39b35297db",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Remember Gulag",
+        "gameID": "f2e65d92ced95c0e92cd8bc940883fb7",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "San Quentin xWays",
+        "gameID": "8cfee8485fafe48b9e75a0953aff3305",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Dungeon Quest",
+        "gameID": "589f199026d1fbb661a6d0b8a03dd6c2",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Legion X",
+        "gameID": "aeda1bb91d4865af3608c63f8fed666c",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Evil Goblins xBomb",
+        "gameID": "b46caa599caa7ef96c87cba6539cd8ba",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Apocalypse Super xNudge",
+        "gameID": "2802ea0039230bef820d98eca8c8257f",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Mayan Magic Wildfire",
+        "gameID": "56b03dda919dcea79ad918d320892528",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Gaelic Gold",
+        "gameID": "0c3549c5c785088689f85571a4c201fa",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Harlequin Carnival",
+        "gameID": "1991f4aa9e0af34830870ca94b4b46ed",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Walk of Shame",
+        "gameID": "49f6d2605310ddd2ac286da412a98138",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Tombstone Rip",
+        "gameID": "779d35294964d0a08f238cb9c5ac9b9c",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Pixies vs Pirates",
+        "gameID": "779832e22cb0fdeb1e989551a0d1612c",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Starstruck",
+        "gameID": "808b420b2e027484d598d0c374dfd073",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Disturbed",
+        "gameID": "85fa77cc9a3f55d9fd9001c6dd439ae9",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "The Creepy Carnival",
+        "gameID": "a06f7bd49a182d430ca5545c2cb36d67",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Rock Bottom",
+        "gameID": "6a2fbe544fd072d9c67c3c6064014bb8",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Punk Toilet",
+        "gameID": "5f882000cf4e55c527a7001296bb4bad",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blood & Shadow 2",
+        "gameID": "d1e15cc0efc88208b2fcfb9250c0acf8",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Book Of Shadows",
+        "gameID": "880700e2a395b83e00642c4935c69adb",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Land Of The Free",
+        "gameID": "d2e4e4337c8c9c26b3882a3051d11cfe",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Kiss My Chainsaw",
+        "gameID": "f9a1a5b32a083e87f40edcd48216951b",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Loner",
+        "gameID": "ff7293f57e99aa8383f30b8bcf8a13ad",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "The Cage",
+        "gameID": "402e8f8e16ca858b90e068d41fe59439",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Benji Killed in Vegas",
+        "gameID": "09ce4c89fd58ad1cbcf9d4229e8215e0",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "San Quentin 2: Death Row",
+        "gameID": "b7e1e72e840bbf14039f6f1ce3c32158",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "The Rave",
+        "gameID": "ad18e92686af3f87e7d77698f9eb609e",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "xWays Hoarder xSplit",
+        "gameID": "48cc81e83fc5d2461d122cf7f4d9c43f",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "True Grit Redemption",
+        "gameID": "58e5dda1d6dce82659837de86843b371",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Nine To Five",
+        "gameID": "2fc8c6b5dce661e6ad94c217e9a78add",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Oktoberfest",
+        "gameID": "328fe4c21719024783469d988b915782",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Kitchen Drama: Sushi Mania",
+        "gameID": "a55ef9e0afe767fb497561089e92d88c",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Beheaded",
+        "gameID": "e7ca58ea8125971362ee94637cf96b07",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Outsourced",
+        "gameID": "a197c5fbc9229c5e87abb5000e85bc45",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "D Day",
+        "gameID": "e81f8e11dacffef03e8e22186b9ee13f",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Space Donkey",
+        "gameID": "79084a9e5ea724182d46cd94aa196301",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Tomb Of Akhenaten",
+        "gameID": "5ce5035664a1a30decfda7a3d4702a51",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Tombstone",
+        "gameID": "578fa655f4da3f07cdb3c663016d5151",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "The Border",
+        "gameID": "c87831785362b36ace598324c3687104",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Kenneth Must Die",
+        "gameID": "e986f8c40568824558b093a67fac8345",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Serial",
+        "gameID": "a778f5639b11caa25844cd64ebafa695",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Punk Rocker 2",
+        "gameID": "e75c034dabd8291cabbc6dc7430cc6db",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Casino Win Spin",
+        "gameID": "6b42cddd443c37337c11847577ddd27b",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Barbarian Fury",
+        "gameID": "f2ac541e3931399f7034ec1d9099d02d",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Bushido Ways xNudge",
+        "gameID": "380e57d736ead8bfba5c751e176c4db3",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Roadkill",
+        "gameID": "9f6a5137385c21bcaff3a5af6bf1fc3c",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Infectious 5 xWays",
+        "gameID": "ad73ce959af8939588449058cb3e5785",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "WiXX",
+        "gameID": "5a92204e6726d1bfab9a99624b113e90",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Coins of Fortune",
+        "gameID": "f0765536ccf11c7c17f05481edeb9e06",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Mental",
+        "gameID": "9fc0b40a47e159eb99a9521e2c421e91",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Brute Force",
+        "gameID": "95ca81990d6e245c0d2c97cb2e123a8d",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Devil's Crossroad",
+        "gameID": "1b10306d4fab8aa1bb5e63f946748e79",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Tesla Jolt",
+        "gameID": "19b4c001cbdeea0d5ab71dd03e2ef34a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Dead Canary",
+        "gameID": "7cd2678e111da840a1e6283777ab4cda",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Jingle Balls",
+        "gameID": "576599c0d0f39e72cf3326e191735913",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blood Diamond",
+        "gameID": "2770a1bfd27e074f1c16fb8e7c148e53",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Mental 2",
+        "gameID": "e36c31dcb8e3928ba940867f066e71f8",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Home of the Brave",
+        "gameID": "30a226933091eed680fd55345852771a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "xWays Hoarder 2",
+        "gameID": "1803e12d19343663136590860a7590de",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Tanked",
+        "gameID": "2c46b695160455e6a4673dd2ad4364f9",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Duck Hunters",
+        "gameID": "5d1165514c14816fa81280b0c827ca86",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    }
+]

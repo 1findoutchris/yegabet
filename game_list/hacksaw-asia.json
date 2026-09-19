@@ -1,0 +1,919 @@
+[
+  {
+    "gameNameEn": "The Wildwood Curse",
+    "gameID": "1891",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1891.jpg"
+  },
+  {
+    "gameNameEn": "Chaos Crew 3",
+    "gameID": "1867",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1867.jpg"
+  },
+  {
+    "gameNameEn": "Stormborn",
+    "gameID": "1875",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1875.jpg"
+  },
+  {
+    "gameNameEn": "Le Zeus",
+    "gameID": "1830",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1830.jpg"
+  },
+  {
+    "gameNameEn": "Tiger Legends",
+    "gameID": "1744",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1744.jpg"
+  },
+  {
+    "gameNameEn": "Miami Mayhem",
+    "gameID": "1824",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1824.jpg"
+  },
+  {
+    "gameNameEn": "Bullets and Bounty",
+    "gameID": "1799",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1799.jpg"
+  },
+  {
+    "gameNameEn": "Marlin Masters: The Big Haul",
+    "gameID": "1811",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1811.jpg"
+  },
+  {
+    "gameNameEn": "Rainbow Princess",
+    "gameID": "1817",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1817.jpg"
+  },
+  {
+    "gameNameEn": "Aiko and the Wind Spirit",
+    "gameID": "1756",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1756.jpg"
+  },
+  {
+    "gameNameEn": "The Luxe",
+    "gameID": "1897",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1897.jpg"
+  },
+  {
+    "gameNameEn": "Eye of Medusa",
+    "gameID": "1740",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1740.jpg"
+  },
+  {
+    "gameNameEn": "Invictus",
+    "gameID": "1791",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1791.jpg"
+  },
+  {
+    "gameNameEn": "Le King",
+    "gameID": "1787",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1787.jpg"
+  },
+  {
+    "gameNameEn": "Freds Food Truck",
+    "gameID": "1229",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1229.jpg"
+  },
+  {
+    "gameNameEn": "Booze Bash",
+    "gameID": "1783",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1783.jpg"
+  },
+  {
+    "gameNameEn": "Ultimate Slot of America",
+    "gameID": "1760",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1760.jpg"
+  },
+  {
+    "gameNameEn": "Spinman",
+    "gameID": "1752",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1752.jpg"
+  },
+  {
+    "gameNameEn": "Pray for Three",
+    "gameID": "1736",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1736.jpg"
+  },
+  {
+    "gameNameEn": "Danny Dollar",
+    "gameID": "1685",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1685.jpg"
+  },
+  {
+    "gameNameEn": "Rad Maxx",
+    "gameID": "1732",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1732.jpg"
+  },
+  {
+    "gameNameEn": "Reign of Rome",
+    "gameID": "1728",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1728.jpg"
+  },
+  {
+    "gameNameEn": "Fighter Pit",
+    "gameID": "1715",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1715.jpg"
+  },
+  {
+    "gameNameEn": "Wishbringer",
+    "gameID": "1711",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1711.jpg"
+  },
+  {
+    "gameNameEn": "Life and Death",
+    "gameID": "1460",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1460.jpg"
+  },
+  {
+    "gameNameEn": "Dorks of the Deep",
+    "gameID": "1430",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1430.jpg"
+  },
+  {
+    "gameNameEn": "Strength of Hercules",
+    "gameID": "1697",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1697.jpg"
+  },
+  {
+    "gameNameEn": "Hounds of Hell",
+    "gameID": "1666",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1666.jpg"
+  },
+  {
+    "gameNameEn": "FRKN Bananas",
+    "gameID": "1693",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1693.jpg"
+  },
+  {
+    "gameNameEn": "Marlin Masters",
+    "gameID": "1681",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1681.jpg"
+  },
+  {
+    "gameNameEn": "Phoenix DuelReels",
+    "gameID": "1675",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1675.jpg"
+  },
+  {
+    "gameNameEn": "Le Viking",
+    "gameID": "1689",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1689.jpg"
+  },
+  {
+    "gameNameEn": "Klowns",
+    "gameID": "1438",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1438.jpg"
+  },
+  {
+    "gameNameEn": "Fire my Laser",
+    "gameID": "1640",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1640.jpg"
+  },
+  {
+    "gameNameEn": "Donut Division",
+    "gameID": "1608",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1608.jpg"
+  },
+  {
+    "gameNameEn": "Shaolin Master",
+    "gameID": "1554",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1554.jpg"
+  },
+  {
+    "gameNameEn": "Snow Slingers",
+    "gameID": "1558",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1558.jpg"
+  },
+  {
+    "gameNameEn": "Duel at Dawn",
+    "gameID": "1620",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1620.jpg"
+  },
+  {
+    "gameNameEn": "Wings of Horus",
+    "gameID": "1612",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1612.jpg"
+  },
+  {
+    "gameNameEn": "Rise of Ymir",
+    "gameID": "1616",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1616.jpg"
+  },
+  {
+    "gameNameEn": "Get the CHEESE",
+    "gameID": "1580",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1580.jpg"
+  },
+  {
+    "gameNameEn": "Cloud Princess",
+    "gameID": "1602",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1602.jpg"
+  },
+  {
+    "gameNameEn": "Le Pharaoh",
+    "gameID": "1562",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1562.jpg"
+  },
+  {
+    "gameNameEn": "Evil Eyes",
+    "gameID": "1570",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1570.jpg"
+  },
+  {
+    "gameNameEn": "Octo Attack",
+    "gameID": "1584",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1584.jpg"
+  },
+  {
+    "gameNameEn": "Donny Dough",
+    "gameID": "1530",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1530.jpg"
+  },
+  {
+    "gameNameEn": "Dragon's Domain",
+    "gameID": "1360",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1360.jpg"
+  },
+  {
+    "gameNameEn": "SixSixSix",
+    "gameID": "1534",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1534.jpg"
+  },
+  {
+    "gameNameEn": "Tai the Toad",
+    "gameID": "1478",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1478.jpg"
+  },
+  {
+    "gameNameEn": "Twisted Lab",
+    "gameID": "1514",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1514.jpg"
+  },
+  {
+    "gameNameEn": "Ze Zeus",
+    "gameID": "1508",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1508.jpg"
+  },
+  {
+    "gameNameEn": "Cursed Crypt",
+    "gameID": "1434",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1434.jpg"
+  },
+  {
+    "gameNameEn": "Slayers Inc",
+    "gameID": "1482",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1482.jpg"
+  },
+  {
+    "gameNameEn": "Jelly Slice",
+    "gameID": "1452",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1452.jpg"
+  },
+  {
+    "gameNameEn": "Keep'em",
+    "gameID": "1494",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1494.jpg"
+  },
+  {
+    "gameNameEn": "Divine Drop",
+    "gameID": "1490",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1490.jpg"
+  },
+  {
+    "gameNameEn": "Orb of Destiny",
+    "gameID": "1474",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1474.jpg"
+  },
+  {
+    "gameNameEn": "Cash Crew",
+    "gameID": "1456",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1456.jpg"
+  },
+  {
+    "gameNameEn": "Rusty & Curly",
+    "gameID": "1404",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1404.jpg"
+  },
+  {
+    "gameNameEn": "Bouncy Bombs",
+    "gameID": "1422",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1422.jpg"
+  },
+  {
+    "gameNameEn": "Dawn of Kings",
+    "gameID": "1442",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1442.jpg"
+  },
+  {
+    "gameNameEn": "Fist of Destruction",
+    "gameID": "1408",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1408.jpg"
+  },
+  {
+    "gameNameEn": "Beam Boys",
+    "gameID": "1426",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1426.jpg"
+  },
+  {
+    "gameNameEn": "Feel the Beat",
+    "gameID": "1372",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1372.jpg"
+  },
+  {
+    "gameNameEn": "2 Wild 2 Die",
+    "gameID": "1400",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1400.jpg"
+  },
+  {
+    "gameNameEn": "Dark Summoning",
+    "gameID": "1392",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1392.jpg"
+  },
+  {
+    "gameNameEn": "Xmas Drop",
+    "gameID": "1396",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1396.jpg"
+  },
+  {
+    "gameNameEn": "Immortal Desire",
+    "gameID": "1364",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1364.jpg"
+  },
+  {
+    "gameNameEn": "Eye of the Panda",
+    "gameID": "1344",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1344.jpg"
+  },
+  {
+    "gameNameEn": "Benny the Beer",
+    "gameID": "1356",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1356.jpg"
+  },
+  {
+    "gameNameEn": "Chaos Crew 2",
+    "gameID": "1352",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1352.jpg"
+  },
+  {
+    "gameNameEn": "Densho",
+    "gameID": "1348",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1348.jpg"
+  },
+  {
+    "gameNameEn": "Le Bandit",
+    "gameID": "1309",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1309.jpg"
+  },
+  {
+    "gameNameEn": "Ronin Stackways",
+    "gameID": "1267",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1267.jpg"
+  },
+  {
+    "gameNameEn": "Drop'em",
+    "gameID": "1314",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1314.jpg"
+  },
+  {
+    "gameNameEn": "Vending Machine",
+    "gameID": "1340",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1340.jpg"
+  },
+  {
+    "gameNameEn": "Beast Below",
+    "gameID": "1279",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1279.jpg"
+  },
+  {
+    "gameNameEn": "Mighty Masks",
+    "gameID": "1305",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1305.jpg"
+  },
+  {
+    "gameNameEn": "Temple of Torment",
+    "gameID": "1237",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1237.jpg"
+  },
+  {
+    "gameNameEn": "Mayan Stackways",
+    "gameID": "1275",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1275.jpg"
+  },
+  {
+    "gameNameEn": "Cursed Seas",
+    "gameID": "1263",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1263.jpg"
+  },
+  {
+    "gameNameEn": "Fear the Dark",
+    "gameID": "1271",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1271.jpg"
+  },
+  {
+    "gameNameEn": "Stormforged",
+    "gameID": "1243",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1243.jpg"
+  },
+  {
+    "gameNameEn": "Keep 'em Cool",
+    "gameID": "1259",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1259.jpg"
+  },
+  {
+    "gameNameEn": "Magic Piggy",
+    "gameID": "1247",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1247.jpg"
+  },
+  {
+    "gameNameEn": "Bloodthirst",
+    "gameID": "1251",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1251.jpg"
+  },
+  {
+    "gameNameEn": "Frank's Farm",
+    "gameID": "1225",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1225.jpg"
+  },
+  {
+    "gameNameEn": "Rip City",
+    "gameID": "1233",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1233.jpg"
+  },
+  {
+    "gameNameEn": "Rotten",
+    "gameID": "1209",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1209.jpg"
+  },
+  {
+    "gameNameEn": "Gronk's Gems",
+    "gameID": "1221",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1221.jpg"
+  },
+  {
+    "gameNameEn": "Book of Time",
+    "gameID": "1213",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1213.jpg"
+  },
+  {
+    "gameNameEn": "Pug Life",
+    "gameID": "1217",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1217.jpg"
+  },
+  {
+    "gameNameEn": "Undead Fortune",
+    "gameID": "1193",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1193.jpg"
+  },
+  {
+    "gameNameEn": "Break Bones",
+    "gameID": "1205",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1205.jpg"
+  },
+  {
+    "gameNameEn": "Alpha Eagle",
+    "gameID": "1201",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1201.jpg"
+  },
+  {
+    "gameNameEn": "Forest Fortune",
+    "gameID": "1185",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1185.jpg"
+  },
+  {
+    "gameNameEn": "Time Spinners",
+    "gameID": "1181",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1181.jpg"
+  },
+  {
+    "gameNameEn": "Fruit Duel",
+    "gameID": "1197",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1197.jpg"
+  },
+  {
+    "gameNameEn": "Dork Unit",
+    "gameID": "1172",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1172.jpg"
+  },
+  {
+    "gameNameEn": "Born Wild",
+    "gameID": "1189",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1189.jpg"
+  },
+  {
+    "gameNameEn": "Outlaws Inc.",
+    "gameID": "1083",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1083.jpg"
+  },
+  {
+    "gameNameEn": "Buffalo Stack'n'Sync",
+    "gameID": "1176",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1176.jpg"
+  },
+  {
+    "gameNameEn": "Itero",
+    "gameID": "1168",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1168.jpg"
+  },
+  {
+    "gameNameEn": "Hand Of Anubis",
+    "gameID": "1164",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1164.jpg"
+  },
+  {
+    "gameNameEn": "Gladiator Legends",
+    "gameID": "1160",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1160.jpg"
+  },
+  {
+    "gameNameEn": "Warrior Ways",
+    "gameID": "1131",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1131.jpg"
+  },
+  {
+    "gameNameEn": "Double Rainbow",
+    "gameID": "1144",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1144.jpg"
+  },
+  {
+    "gameNameEn": "The Bowery Boys",
+    "gameID": "1135",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1135.jpg"
+  },
+  {
+    "gameNameEn": "Harvest Wilds",
+    "gameID": "1140",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1140.jpg"
+  },
+  {
+    "gameNameEn": "King Carrot",
+    "gameID": "1127",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1127.jpg"
+  },
+  {
+    "gameNameEn": "Joker Bombs",
+    "gameID": "1117",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1117.jpg"
+  },
+  {
+    "gameNameEn": "Tasty Treats",
+    "gameID": "1096",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1096.jpg"
+  },
+  {
+    "gameNameEn": "Cash Quest",
+    "gameID": "1099",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1099.jpg"
+  },
+  {
+    "gameNameEn": "Wanted Dead Or a Wild",
+    "gameID": "1067",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1067.jpg"
+  },
+  {
+    "gameNameEn": "Rocket Reels",
+    "gameID": "1102",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1102.jpg"
+  },
+  {
+    "gameNameEn": "Toshi Video Club",
+    "gameID": "1087",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1087.jpg"
+  },
+  {
+    "gameNameEn": "Xpander",
+    "gameID": "1093",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1093.jpg"
+  },
+  {
+    "gameNameEn": "Hop'N'Pop",
+    "gameID": "1091",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1091.jpg"
+  },
+  {
+    "gameNameEn": "Stack'Em",
+    "gameID": "1084",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1084.jpg"
+  },
+  {
+    "gameNameEn": "Frutz",
+    "gameID": "1081",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1081.jpg"
+  },
+  {
+    "gameNameEn": "Aztec Twist",
+    "gameID": "1066",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1066.jpg"
+  },
+  {
+    "gameNameEn": "Cubes 2",
+    "gameID": "1069",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1069.jpg"
+  },
+  {
+    "gameNameEn": "Let It Snow",
+    "gameID": "1070",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1070.jpg"
+  },
+  {
+    "gameNameEn": "Mystery Motel",
+    "gameID": "1071",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1071.jpg"
+  },
+  {
+    "gameNameEn": "Chaos Crew",
+    "gameID": "1059",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1059.jpg"
+  },
+  {
+    "gameNameEn": "The Respinners",
+    "gameID": "1058",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1058.jpg"
+  },
+  {
+    "gameNameEn": "Cash Compass",
+    "gameID": "1055",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1055.jpg"
+  },
+  {
+    "gameNameEn": "Cubes",
+    "gameID": "1048",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1048.jpg"
+  },
+  {
+    "gameNameEn": "Miami Multiplier",
+    "gameID": "1049",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1049.jpg"
+  },
+  {
+    "gameNameEn": "OmNom",
+    "gameID": "1043",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1043.jpg"
+  },
+  {
+    "gameNameEn": "Stick'Em",
+    "gameID": "1042",
+    "customGameType": 0,
+    "vendorCode": 70,
+    "img": "https://www-live.hacksawgaming.com/casino_thumbnails/1042.jpg"
+  }
+]

@@ -1,0 +1,81 @@
+/* Casino v2 keyframe animations.
+   The `ticker` keyframe + `.ticker-track` class live in globals.css so the
+   WinnersTicker animation is available app-wide; this file adds the entrance
+   animation and a small set of token-driven helpers used across the casino
+   sections. */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.casino-fade-up {
+  animation: fadeUp 360ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* ── Vibrant category tiles (lobby "Browse the floor") ─────────────────────
+   Saturated branded tiles that pop against the plum velvet backdrop. Each
+   tile lifts and blooms its own colour on hover; the inner sheen sweeps. */
+.cat-tile {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  animation: fadeUp 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  transition: transform 200ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 220ms ease;
+}
+.cat-tile:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 14px 32px rgba(0, 0, 0, 0.45),
+    0 0 28px var(--cat-glow, rgba(245, 180, 0, 0.45)),
+    inset 0 1px 0 rgba(255, 255, 255, 0.28);
+}
+/* diagonal light sweep on hover */
+.cat-tile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, transparent 30%, rgba(255, 255, 255, 0.35) 50%, transparent 70%);
+  transform: translateX(-120%) skewX(-12deg);
+  transition: transform 650ms ease;
+  pointer-events: none;
+}
+.cat-tile:hover::after {
+  transform: translateX(120%) skewX(-12deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cat-tile { animation-duration: 1ms; }
+  .cat-tile::after { display: none; }
+  .cat-tile:hover { transform: none; }
+}
+
+/* My Casino portal button — hover lift + dual-glow + light sweep */
+.mc-entry {
+  transition: transform 200ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 220ms ease, border-color 220ms ease;
+}
+.mc-entry:hover {
+  transform: translateY(-3px);
+  border-color: var(--purple);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45), 0 0 30px rgba(139, 92, 246, 0.4);
+}
+.mc-entry::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, transparent 35%, rgba(255, 255, 255, 0.22) 50%, transparent 65%);
+  transform: translateX(-130%) skewX(-12deg);
+  transition: transform 700ms ease;
+  pointer-events: none;
+}
+.mc-entry:hover::after { transform: translateX(130%) skewX(-12deg); }
+
+@media (prefers-reduced-motion: reduce) {
+  .mc-entry::after { display: none; }
+  .mc-entry:hover { transform: none; }
+}

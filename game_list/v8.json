@@ -1,0 +1,159 @@
+[
+    {
+      "gameNameEn": "Three Cards",
+      "gameID": "ed8f32f7545713e569bad0c57132b2a9",
+      "customGameType": 0,
+      "img": "https://huidu-bucket.s3.ap-southeast-1.amazonaws.com/api/v8/Three-Cards.png"
+    },
+    {
+      "gameNameEn": "Fishing Wars",
+      "gameID": "1c91f676fcae7b3fdd118526ece1084a",
+      "customGameType": 0,
+      "img": "https://huidu-bucket.s3.ap-southeast-1.amazonaws.com/api/v8/Fishing-Wars.png"
+    },
+    {
+      "gameNameEn": "Black Jack",
+      "gameID": "a3ba99e3799d57f533ff9bc5d5f97cf7",
+      "customGameType": 0,
+      "img": "https://huidu-bucket.s3.ap-southeast-1.amazonaws.com/api/v8/Black-Jack.png"
+    },
+    {
+      "gameNameEn": "Texas Hold'em Poker",
+      "gameID": "bc8e26ae2ed78045838d2b50946798c4",
+      "customGameType": 0,
+      "img": "https://huidu-bucket.s3.ap-southeast-1.amazonaws.com/api/v8/Texas-Holdem-Poker.png"
+    },
+    {
+      "gameNameEn": "Thirteen Cards",
+      "gameID": "7128b30d74f30d5f82bcb29c72f01512",
+      "customGameType": 0,
+      "img": "https://huidu-bucket.s3.ap-southeast-1.amazonaws.com/api/v8/Thirteen-Cards.png"
+    },
+    {
+      "gameNameEn": "Fight the Landlord",
+      "gameID": "626781e7935025f569f6debc81c0b2bb",
+      "customGameType": 0,
+      "img": "https://huidu-bucket.s3.ap-southeast-1.amazonaws.com/api/v8/Fight-the-Landlord.png"
+    },
+    {
+      "gameNameEn": "Bull-Bull",
+      "gameID": "c8278ef7047eac0b8ed4afe9c6a38ec2",
+      "customGameType": 0,
+      "img": "https://huidu-bucket.s3.ap-southeast-1.amazonaws.com/api/v8/Bull-Bull.png"
+    },
+    {
+      "gameNameEn": "Three Toy",
+      "gameID": "98ac7d3b46e4be2a4cb3948cf9dbf97a",
+      "customGameType": 0,
+      "img": "https://huidu-bucket.s3.ap-southeast-1.amazonaws.com/api/v8/Three-Toy.png"
+    },
+    {
+      "gameNameEn": "Baccarat",
+      "gameID": "7cbb72b1bbb091239a5b3ddd6709d804",
+      "customGameType": 0,
+      "img": "https://huidu-bucket.s3.ap-southeast-1.amazonaws.com/api/v8/Baccarat.png"
+    },
+    {
+      "gameNameEn": "Forest Dance",
+      "gameID": "ac9344a6ee33b251654172a5ac4f2943",
+      "customGameType": 0,
+      "img": "https://huidu-bucket.s3.ap-southeast-1.amazonaws.com/api/v8/Forest-Dance.png"
+    },
+    {
+      "gameNameEn": "Hundreds People of Bull",
+      "gameID": "15d121c45259d337aecfdf0d24d23ddb",
+      "customGameType": 0,
+      "img": "https://huidu-bucket.s3.ap-southeast-1.amazonaws.com/api/v8/Hundreds-People-Of-Bull.png"
+    },
+    {
+      "gameNameEn": "Red Black War",
+      "gameID": "7f6e9ed282a69e6c176fdc45a81a88b2",
+      "customGameType": 0,
+      "img": "https://huidu-bucket.s3.ap-southeast-1.amazonaws.com/api/v8/Red-Black-War.png"
+    },
+    {
+      "gameNameEn": "See Cards Bull",
+      "gameID": "6893d58911e226f4465c9154b968d74d",
+      "customGameType": 0,
+      "img": "https://huidu-bucket.s3.ap-southeast-1.amazonaws.com/api/v8/See-Cards-Bull.png"
+    },
+    {
+      "gameNameEn": "Four Cards Bull",
+      "gameID": "f147decaefa9f50b20766805a7f99fd6",
+      "customGameType": 0,
+      "img": "https://huidu-bucket.s3.ap-southeast-1.amazonaws.com/api/v8/Four-Cards-Bull.png"
+    },
+    {
+      "gameNameEn": "Hundred SicBo",
+      "gameID": "f08aec65a255fca8109bc01d5f58170f",
+      "customGameType": 0,
+      "img": "https://huidu-bucket.s3.ap-southeast-1.amazonaws.com/api/v8/Hundred-Sic-Bo.png"
+    },
+    {
+      "gameNameEn": "Tai Xiu",
+      "gameID": "44220d5ec0cecda47e9bb9224c6828f4",
+      "customGameType": 0,
+      "img": "https://huidu-bucket.s3.ap-southeast-1.amazonaws.com/api/v8/Tai-xiu.png"
+    },
+    {
+      "gameNameEn": "Fish Shrimp Crab",
+      "gameID": "e29ac59a5d7d5395a0384b9171706d3e",
+      "customGameType": 0,
+      "img": "https://huidu-bucket.s3.ap-southeast-1.amazonaws.com/api/v8/Fish-Shrimp-Crab.png"
+    },
+    {
+      "gameNameEn": "FanTan",
+      "gameID": "a545434481d07cfa04a7d8185f1dd472",
+      "customGameType": 0,
+      "img": "https://huidu-bucket.s3.ap-southeast-1.amazonaws.com/api/v8/Fan_Tan.png"
+    },
+    {
+      "gameNameEn": "Xoc Dia",
+      "gameID": "6832298ce1c665e4ccd0d3af3e12ba52",
+      "customGameType": 0,
+      "img": "https://huidu-bucket.s3.ap-southeast-1.amazonaws.com/api/v8/Xoc-Dia.png"
+    },
+    {
+      "gameNameEn": "SixCards",
+      "gameID": "d9e5861af623a30b9757f796206ae951",
+      "customGameType": 0,
+      "img": "https://huidu-bucket.s3.ap-southeast-1.amazonaws.com/api/v8/Six-cards.png"
+    },
+    {
+      "gameNameEn": "Killer 13",
+      "gameID": "5ae100483e7375ec088874aeedc35658",
+      "customGameType": 0,
+      "img": "https://huidu-bucket.s3.ap-southeast-1.amazonaws.com/api/v8/Killer-13.png"
+    },
+    {
+      "gameNameEn": "Cai Shen Dao",
+      "gameID": "5317e85f3785828e1f5ef3e5dc7db5d5",
+      "customGameType": 0,
+      "img": "https://huidu-bucket.s3.ap-southeast-1.amazonaws.com/api/v8/Cai-Shen-Dao.png"
+    },
+    {
+      "gameNameEn": "Ta La-Phom",
+      "gameID": "714b9499ffa714c196bbfd33703d218c",
+      "customGameType": 0,
+      "img": "https://huidu-bucket.s3.ap-southeast-1.amazonaws.com/api/v8/TaLa-Phom.png"
+    },
+    {
+      "gameNameEn": "Whot",
+      "gameID": "2a78b574ddc31807709e8321ccd2063e",
+      "customGameType": 0,
+      "img": "https://huidu-bucket.s3.ap-southeast-1.amazonaws.com/api/v8/WHOT.png"
+    },
+    {
+      "gameNameEn": "Limbo",
+      "gameID": "98a89941a0ef2374a0cfaa8855841e77",
+      "customGameType": 0,
+      "img": "https://huidu-bucket.s3.ap-southeast-1.amazonaws.com/api/v8/Limbo.png"
+    },
+    {
+      "gameNameEn": "Tai Xiu-mini",
+      "gameID": "b1be52abe348c5f2f2cc235e6a5b38a6",
+      "customGameType": 0,
+      "img": "https://huidu-bucket.s3.ap-southeast-1.amazonaws.com/api/v8/TaiXiu%20mini.png"
+    }
+  ]
+    

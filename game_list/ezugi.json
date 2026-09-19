@@ -1,0 +1,638 @@
+[
+    {
+        "gameNameEn": "Andar Bahar",
+        "gameID": "435b892a73bf466e0ad584d480e12143",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamcasino.live/andar_bahar_228000.webp"
+    },
+     {
+        "gameNameEn": "Ultimate Andar Bahar",
+        "gameID": "75f81c56555d394503f544f3431ef370",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://media.getmood.io/warehouse/dynamic/682474.png"
+    },
+     {
+        "gameNameEn": "Teen Patti 3 Card",
+        "gameID": "26f9f76a8fc813b8abcb6b8cb03c2eab",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamcasino.live/teen_patti_227100.webp"
+    },
+     {
+        "gameNameEn": "Bet on Teen Patti",
+        "gameID": "e1b5650cd867be7719c15e7596aa7217",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamcasino.live/beton_teenpatti.webp"
+    },
+    {
+        "gameNameEn": "One Day Teen Patti",
+        "gameID": "01556a46c5163d5570739dd7cddfcf68",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamcasino.live/ezugi/ezg_onedayteenpatticlassic.webp"
+    },
+     {
+        "gameNameEn": "Speed Roulette",
+        "gameID": "b5c8e49fdd80b57de6da0e234b1bd683",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamcasino.live/speed_roulette_221000.webp"
+    },
+     {
+        "gameNameEn": "Prestige Auto Roulette",
+        "gameID": "efaed662fbebbb84e056c09580ae1aa4",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamcasino.live/ezugi/ezg_prestigeautoroulette.webp"
+    },
+    {
+        "gameNameEn": "Namaste Roulette",
+        "gameID": "b1ffb1afd5b76785bd4ee21e31400849",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamcasino.live/ezugi/namaste-roulette-thumb-v2.webp"
+    },
+     {
+        "gameNameEn": "Lucky 7",
+        "gameID": "c88c40ec4fc544518d938315e2d1b2a3",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamcasino.live/lucky7_228001.webp"
+    },
+     
+    {
+        "gameNameEn": "Dragon Tiger",
+        "gameID": "efdb52994fbfe97efcbd878dbd697ebb",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamcasino.live/ezugi/ezg_dragontiger.webp"
+    },
+    {
+        "gameNameEn": "Dragon Tiger da Sorte",
+        "gameID": "f84c5ce9ae53fac2e7afa9f8157e453c",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamdelhi.com/ezugi/dt_da_sorte.webp"
+    },
+     {
+        "gameNameEn": "Spanish Roulette",
+        "gameID": "7d0d91d4477b9d14e3a4ba40e34451ea",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamcasino.live/ezugi/ezg_ruleta-del-sol-thumb.webp"
+    },
+    {
+        "gameNameEn": "Sic Bo",
+        "gameID": "101e3c281b35485001bec47561a0a03e",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamcasino.live/ezugi/sicbo-thumbnail.webp"
+    },
+    
+    {
+        "gameNameEn": "EZ Dealer Roleta Brazileira",
+        "gameID": "4165dec80667c631a66941c68a5bee96",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamdelhi.com/ezugi/ez_dealer_roleta_brasileira.webp"
+    },
+    {
+        "gameNameEn": "Roleta da sorte",
+        "gameID": "eacbc601b30b2992db7c3eda2a777fe6",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamdelhi.com/ezugi/roleta_da_sorte.webp"
+    },
+    
+    {
+        "gameNameEn": "Blackjack da Sorte",
+        "gameID": "4f22281594a261d99c1b1222bc2d3a4a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamdelhi.com/ezugi/blackjack_da_sorte.webp"
+    },
+    {
+        "gameNameEn": "Oracle 360 Roulette",
+        "gameID": "c74c90c712566b3212cd08a4c191275d",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamcasino.live/ezugi/ezg_oraclecasinoroulette.webp"
+    },
+    {
+        "gameNameEn": "Oracle Real Roulette",
+        "gameID": "c5d4fd6cec78dd439ed2ee33c8965777",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamcasino.live/oracle_roulette.webp"
+    },
+    {
+        "gameNameEn": "Russian Roulette",
+        "gameID": "ce1b314dccf3756a581d117190ddd172",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamcasino.live/ruletka russia.webp"
+    },
+    {
+        "gameNameEn": "Turkish Roulette",
+        "gameID": "f8bbea8c1a3b2204190d6a7e3c8d55e8",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamcasino.live/turkish_roulette.webp"
+    },
+    {
+        "gameNameEn": "EZ Dealer Roulette Mandarin",
+        "gameID": "db62931938bcaf0b327b11304a406b16",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://hx-app-assets.s3.eu-west-2.amazonaws.com/gap_casino/ez_dealer_roulette_mandarin.jpg"
+    },
+    {
+        "gameNameEn": "EZ Dealer Roulette Japanese",
+        "gameID": "4a963476f45508711a7147ba888600ad",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://hx-app-assets.s3.eu-west-2.amazonaws.com/gap_casino/ezg_ez_dealer_roulette_japanese.jpg"
+    },
+    {
+        "gameNameEn": "EZ Roulette",
+        "gameID": "fb53959d1f55434d555ee50e0fc764b8",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://hx-app-assets.s3.eu-west-2.amazonaws.com/gap_casino/ezg_ez_dealer_roulette.jpg"
+    },
+    {
+        "gameNameEn": "Ruleta del Sol",
+        "gameID": "4589bec2f464797bb0752d2eb283babd",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamcasino.live/ezugi/ezg_ruleta-del-sol-thumb.webp"
+    },
+   
+    {
+        "gameNameEn": "Casino Marina Roulette 2",
+        "gameID": "44b99989a409c0ca24aca784f0433dcc",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamcasino.live/ezugi/ezg_OTT_roulette_2-thumb.webp"
+    },
+    {
+        "gameNameEn": "Casino Marina Roulette 1",
+        "gameID": "d205c518208016404504e995620d2b83",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamcasino.live/ezugi/ezg_marinacasinoroulette.webp"
+    },
+   
+  
+    
+    {
+        "gameNameEn": "Diamond Roulette",
+        "gameID": "a40c7e3222a17717bcc1d2e4f5d6eae8",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamcasino.live/ezugi/diamond-roulette-thumb-v2.webp"
+    },
+    {
+        "gameNameEn": "Speed Auto Roulette",
+        "gameID": "f4299915859041e94b641a558a1ca9df",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamcasino.live/ezugi/ezg_speedautoroulette.webp"
+    },
+   
+    {
+        "gameNameEn": "Casino Marina Baccarat 4",
+        "gameID": "527db204952a306f8459b9d702dfb285",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamcasino.live/ezugi/ezg_OTT_Baccarat_4-thumb.webp"
+    },
+    {
+        "gameNameEn": "Casino Marina Baccarat 3",
+        "gameID": "243c511540c8d82597245bd282c327a1",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamcasino.live/ezugi/ezg_OTT_Baccarat_3-thumb.webp"
+    },
+    {
+        "gameNameEn": "Casino Marina Baccarat 2",
+        "gameID": "58501dadbf6088c4722e72660a1f38b7",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamcasino.live/marina_casino_baccarat_2.webp"
+    },
+    {
+        "gameNameEn": "Spanish Unlimited Blackjack",
+        "gameID": "e34d828be9c5dbd861dbcc414d2daad7",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamcasino.live/ezugi/440x528+ubj++es.webp"
+    },
+    {
+        "gameNameEn": "Rumba Blackjack 4",
+        "gameID": "1c77a06449c384b97f6239572ef87be3",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamcasino.live/ezugi/rumba_blackjack_4.webp"
+    },
+    {
+        "gameNameEn": "Rumba Blackjack 3",
+        "gameID": "e6a2e3cc081f28298164d9197c38ec7c",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamcasino.live/ezugi/rumba_blackjack_3.webp"
+    },
+    {
+        "gameNameEn": "Rumba Blackjack 2",
+        "gameID": "22c57f788355265137a61874d0b53bb9",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamcasino.live/rumba_blackjack_2.webp"
+    },
+    {
+        "gameNameEn": "Rumba Blackjack 1",
+        "gameID": "8ef17e9b4c5c67b7f43f4bced3c31a27",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamcasino.live/ezugi/rumba_blackjack_1.webp"
+    },
+    {
+        "gameNameEn": "VIP Diamond Blackjack",
+        "gameID": "48420430ede7a5d7615dae19aa4463a7",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamcasino.live/ezugi/vip-bj-thumb-v2.webp"
+    },
+    {
+        "gameNameEn": "Surrender Blackjack",
+        "gameID": "d9723621d4007265d66cc115b5a953df",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamcasino.live/ezugi/vip-bj-surrender-thumb-v2.webp"
+    },
+    {
+        "gameNameEn": "Gold Blackjack 1",
+        "gameID": "2955688bdb4f23686e3ce61b905aafeb",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamcasino.live/gold_blackjack_2.webp"
+    },
+    {
+        "gameNameEn": "Gold Blackjack 3",
+        "gameID": "02478a653aa641470951d0a9cae59699",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamcasino.live/gold_blackjack_1.webp"
+    },
+    {
+        "gameNameEn": "VIP Fortune Baccarat",
+        "gameID": "044a24737767690ed7a0be43ed9dd137",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://hx-app-assets.s3.eu-west-2.amazonaws.com/gap_casino/ezg_fortune_baccarat.jpg"
+    },
+    {
+        "gameNameEn": "Speed Fortune Baccarat",
+        "gameID": "a4f20ded65fffacd9001782619a90cce",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://hx-app-assets.s3.eu-west-2.amazonaws.com/gap_casino/ezg_speed_fortunebaccarat.jpg"
+    },
+    {
+        "gameNameEn": "Fortune Baccarat",
+        "gameID": "04f266b7a2e9e68865d52fb7f2ac5e8a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://hx-app-assets.s3.eu-west-2.amazonaws.com/gap_casino/ezg_fortune_baccarat.jpg"
+    },
+    {
+        "gameNameEn": "Unlimited Blackjack",
+        "gameID": "18cf7864fee424c7471bb7996aa4d37a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamcasino.live/ezugi/ezg_unlimitedblackjack.webp"
+    },
+    {
+        "gameNameEn": "Ultimate Sic Bo",
+        "gameID": "5cd59a9381764a84f5792d237469903a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://hx-app-assets.s3.eu-west-2.amazonaws.com/gap_casino/ezg_ultimate_sicbo.jpg"
+    },
+    {
+        "gameNameEn": "Ultimate Roulette",
+        "gameID": "b7385424b2c19a46cbcece0c8dfb0080",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamdelhi.com/ezugi/ultimate_roulette.webp"
+    },
+    
+    {
+        "gameNameEn": "Italian Roulette",
+        "gameID": "2e31c310ad2491d3c6021f6063dc9b74",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamcasino.live/italian roulette.webp"
+    },
+    {
+        "gameNameEn": "EZ Dealer Roulette Thai",
+        "gameID": "a987ab0cda923c2f8e6fbc5292d7a062",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://hx-app-assets.s3.eu-west-2.amazonaws.com/gap_casino/ezg_thai_roulette.jpg"
+    },
+    {
+        "gameNameEn": "Portomaso Roulette 2",
+        "gameID": "91a2daa3d4b8065ffb75818568907ff8",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamcasino.live/ezugi/ezg_portomasocasinoroulette.webp"
+    },
+    {
+        "gameNameEn": "Casino Marina Baccarat 1",
+        "gameID": "2227c0b7445885e9f6a852eaf2fe74b6",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamcasino.live/ezugi/ezg_marinacasinobaccarat1.webp"
+    },
+    {
+        "gameNameEn": "Casino Marina Andar Bahar",
+        "gameID": "5058f0aa42547208b1307fcbf21dcf9a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamcasino.live/ezugi/ott-ab-thumbnail.webp"
+    },
+    
+  
+    {
+        "gameNameEn": "Cricket War",
+        "gameID": "93e289d1b18a9f82fb5d790f3c8e6735",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamcasino.live/cricket_war.webp"
+    },
+    {
+        "gameNameEn": "Casino Hold'em",
+        "gameID": "045e21f65e0e96eb502a4856ca9ababb",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamcasino.live/ezugi/ezg_casinoholdem.webp"
+    },
+    {
+        "gameNameEn": "Salon Prive Blackjack",
+        "gameID": "9f944a6cb336df7664f81e3ff6aba50e",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://hx-app-assets.s3.eu-west-2.amazonaws.com/gap_casino/ezg_blackjack_salonprive.jpg"
+    },
+    {
+        "gameNameEn": "Gold Blackjack 5",
+        "gameID": "b307868469ec2b2e612045335086ff33",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamcasino.live/ezugi/ezg_blackjackgold5.webp"
+    },
+   
+    {
+        "gameNameEn": "Super 6 Baccarat",
+        "gameID": "f1fa68fce40959ce6ad5f367739f9e27",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamcasino.live/ezugi/ezg_baccaratsuper6.webp"
+    },
+    {
+        "gameNameEn": "Knockout Baccarat",
+        "gameID": "b12517092523e6d4b0c991a181c7d813",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamcasino.live/ezugi/ezg_goldenbaccaratknockout.webp"
+    },
+    {
+        "gameNameEn": "Auto Roulette",
+        "gameID": "9b8fae325d15021b79f4fc650d5b8df5",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamcasino.live/ezugi/auto-roulette-thumbb.webp"
+    },
+    
+    {
+        "gameNameEn": "32 Cards",
+        "gameID": "69e690d4f810d033fb4bb8ac7f3cc12f",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Skyline Roulette",
+        "gameID": "88317b0c9ebdb820791b9a04f7f4cb53",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamdelhi.com/ezugi/ezg_skylineroulette.png"
+    },
+    {
+        "gameNameEn": "No Commission Baccarat B",
+        "gameID": "d6e47ef481f4af20efdb9200f1c52ba0",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamdelhi.com/ezugi/no_commission_baccarat_b.webp"
+    },
+    {
+        "gameNameEn": "Cricket Auto Roulette",
+        "gameID": "52025a1bfd476328388a494b3c26f934",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamdelhi.com/ezugi/cricket_auto_roulette.webp"
+    },
+    {
+        "gameNameEn": "Football Auto Roulette",
+        "gameID": "d5ccaa5c78166eac1d050ae404e44133",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamdelhi.com/ezugi/football_auto_roulette.webp"
+    },
+    {
+        "gameNameEn": "Horse Racing Auto Roulette",
+        "gameID": "d8da4193e0a21fd1e4877c3bd2f47934",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamdelhi.com/ezugi/ezg_horse_racing_auto_roulette.webp"
+    },
+    {
+        "gameNameEn": "VIP Roulette",
+        "gameID": "8565af28665ccfff07a8d9e13e11b706",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamdelhi.com/ezugi/vip_roulette.webp"
+    },
+    {
+        "gameNameEn": "EZ Dealer Roulette Turkish",
+        "gameID": "2e5fddb7122e37bd995b6452f086b7ef",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamdelhi.com/ezugi/ezg_ez_dealer_roulette_turkish.webp"
+    },
+    {
+        "gameNameEn": "EZ Dealer Roulette Hindi",
+        "gameID": "382c8d0c9979a8ac81bd5478aafd978b",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamdelhi.com/ezugi/hindi_roulette.webp"
+    },
+    {
+        "gameNameEn": "EZ Dealer Roulette Nederlands",
+        "gameID": "7a830dc45fa7dc026b763933053dc381",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamdelhi.com/ezugi/ezg_ez_dealer_roulette_nederlands.webp"
+    },
+    {
+        "gameNameEn": "EZ Dealer Roulette Latina",
+        "gameID": "3ab713a79064ae71a24b8604463603cb",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamdelhi.com/ezugi/ezg_ez_dealer_roulette_latina.webp"
+    },
+    {
+        "gameNameEn": "EZ Dealer Roulette Savanna",
+        "gameID": "3441d70cc5ea958a21ac15fe001b96e0",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamdelhi.com/ezugi/ezg_ez_dealer_roulette_savanna.webp"
+    },
+    {
+        "gameNameEn": "Ultimate Auto Roulette",
+        "gameID": "271518dc372206a2742d798254236f90",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamdelhi.com/ezugi/ezg_ultimate_auto_roulette.webp"
+    },
+    {
+        "gameNameEn": "Revolution Roulette",
+        "gameID": "6ce4f2f84f8b31aa17f52ff0482a7912",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamdelhi.com/ezugi/ezg_revolution_roulette.webp"
+    },
+    {
+        "gameNameEn": "Baccarat E",
+        "gameID": "bec10a94f6654bf5338476c69323f910",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamdelhi.com/ezugi/baccarat_e.webp"
+    },
+    {
+        "gameNameEn": "Over Under Baccarat",
+        "gameID": "79b3288245d32ea2ba7162b7494a4a41",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamdelhi.com/ezugi/ezg_baccaratoverunder.webp"
+    },
+    {
+        "gameNameEn": "No Commission Baccarat A",
+        "gameID": "38d74f2907817f31a392399b88f88795",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamdelhi.com/ezugi/no_commission_baccarat_a.webp"
+    },
+    {
+        "gameNameEn": "No Commission Over Under Baccarat",
+        "gameID": "68171abd1c4d9c306e3f0777adf62bb2",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamdelhi.com/ezugi/ezg_nocommbaccarat.webp"
+    },
+    {
+        "gameNameEn": "EZ Baccarat",
+        "gameID": "d60a3de76746e30959ee740e3780e7e1",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamdelhi.com/ezugi/ezg_ezbaccarat.png"
+    },
+    {
+        "gameNameEn": "Auto Claw Roulette",
+        "gameID": "9bb9fea5f86ca2f9356af29cfadbedbc",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamdelhi.com/ezugi/ezg_auto_claw_roulette.webp"
+    },
+    {
+        "gameNameEn": "Magic Claw",
+        "gameID": "42869887a4f22440c67c05ea0c92114d",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamdelhi.com/ezugi/ezg_magic_claw.webp"
+    },
+    {
+        "gameNameEn": "Fortune Pusher Standard",
+        "gameID": "43cbf40ab7018ad2d3c7c919381c75f0",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamdelhi.com/ezugi/ezg_fortune_pusher.webp"
+    },
+    {
+        "gameNameEn": "Cricket Ball Roulette",
+        "gameID": "016096b641747ddaf6c5f4534e1839e3",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamdelhi.com/ezugi/ezg_cricket_ball_roulette.webp"
+    },
+    {
+        "gameNameEn": "Coin Rush Pro",
+        "gameID": "5f0c8b2cf5784388ac935c462f6d733f",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamdelhi.com/ezugi/ezg_coin_rush_pro.webp"
+    },
+    {
+        "gameNameEn": "Coin Rush",
+        "gameID": "de88fee404907e2836b8dd69d75efeef",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamdelhi.com/ezugi/ezg_coin_rush.webp"
+    },
+    {
+        "gameNameEn": "EZ Bingo 90",
+        "gameID": "9a20c0a7f7bda179b64dd6601348347d",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamdelhi.com/ezugi/ezg_bingo.webp"
+    },
+    {
+        "gameNameEn": "EZ Bingo 90 Brasileira",
+        "gameID": "957e517bb2c3e30748835769afe3ddd1",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamdelhi.com/ezugi/ezg_bingo_brasileira.webp"
+    },
+    {
+        "gameNameEn": "Xoc Dia",
+        "gameID": "9024786469ae71a1b5eaab3c62991208",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamdelhi.com/ezugi/xoc_dia.webp"
+    },
+    {
+        "gameNameEn": "Matka",
+        "gameID": "ceb0eb8957571ee0852c6f7eb761ebe1",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": "https://cdn.dreamdelhi.com/ezugi/matka.webp"
+    },
+    {
+        "gameNameEn": "Ultimate Flip",
+        "gameID": "7758936bfff853b06836541b03b372a6",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Ezugi Lobby",
+        "gameID": "d0e052b031dfcdb08d1803f4bcc618ef",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    }
+]

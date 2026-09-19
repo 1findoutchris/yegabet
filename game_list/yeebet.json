@@ -1,0 +1,114 @@
+[
+    {
+        "gameNameEn": "Classic Baccarat EU01",
+        "gameID": "c14c2eb3f2f0977c20620e1345ff2958",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Galaxy Roulette EU01",
+        "gameID": "d31a9ba2de905f07a6c240cf44c49335",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Immortal Roulette ROU06",
+        "gameID": "27c3bcb7a5e357274a0760821a134990",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Black Roulette ROU01",
+        "gameID": "59c83ff765dfd5df2a6660f1917e5422",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Black Roulette ROU02",
+        "gameID": "5334832a146f9b8bc809bf3127ff8601",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Bright Roulette ROU05",
+        "gameID": "94d5c5086b6da35e96645d25e66cfaf7",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Dragon Tiger MD01",
+        "gameID": "e8845533a361c539e5821ea6b8d7dcef",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Sapphire Bac SB01",
+        "gameID": "afbd613f74ebe4f486193595e171cc9b",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Prestige Bac SB02",
+        "gameID": "6e175e096458acceb38ba77c0b5a2b8a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Comet Bac PB11",
+        "gameID": "35aac68c176cee37f14d88cefcf95ab6",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Gravity Blackjack IBJ01",
+        "gameID": "96337f9cfa39a2dec11321f75c4c377d",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Blackjack IBJ02",
+        "gameID": "c3d9889f9d5471cd7f04bbb6310250b4",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Take Deal or Risk Blackjack IBJ03",
+        "gameID": "2e71dbe2569eb74b720db2c73a768e7f",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "VIP Blackjack IBJ04",
+        "gameID": "c54e2cf028cdbbd1a51fcc381b39deaa",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Oasis Blackjack 2 IBJ05",
+        "gameID": "8b422603f4799e682a62158454c5bf8a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Yeebet Lobby",
+        "gameID": "527ce1300602be169045e5dd8216a2b8",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    }
+]

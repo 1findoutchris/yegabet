@@ -1,0 +1,240 @@
+[
+    {
+        "gameNameEn": "Space Max",
+        "gameID": "848ebfac6e4d55ef39627a095ebd26f8",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Crash",
+        "gameID": "5923c75679d745a0480ad41a20c660b0",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Mine",
+        "gameID": "356f227defbce28810364c9f3f6c4381",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Plinko",
+        "gameID": "8c60c8b596ed12091e6482d1a00077f5",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Lucky Beer",
+        "gameID": "85ff7a73ad051f233f9153f1e139f22d",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Limbo",
+        "gameID": "e48627055bc9a7bd31ba88abeb2341fb",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Double",
+        "gameID": "8d306e4d05dcca550d0710d667186be9",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Keno",
+        "gameID": "7ae97925b9fbfbeb139a0278cc7ae038",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Crypto",
+        "gameID": "436b7bacc2d7380aa831a7fd601cacf8",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Triple",
+        "gameID": "3acb7551cade0b78e0df47b10d8b8fcb",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Hilo",
+        "gameID": "fb5365328a7cc17713daeb5582243420",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Goal",
+        "gameID": "d98f6dd49e25cf19c5cea335488ed6ec",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Tower",
+        "gameID": "664b631bcfd9e4fc15a260697ac1fff6",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Bingo",
+        "gameID": "a2673f1e4860e4945ff76e7fd3f5c330",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Video Poker",
+        "gameID": "7631048f0f23195c3eb482fdfafc0ba1",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Wheel",
+        "gameID": "1e2cab0ffc1a23d11432e6f0014c394e",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Nine",
+        "gameID": "62eb731c971b01366bbbaf8a90546ae7",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Color",
+        "gameID": "d659e4a269aae0c072c0e399c4b02d33",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Racing",
+        "gameID": "b3691c8e7b4bbe24379f2a4712b14e29",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Monster Mine",
+        "gameID": "bde09d18222d332f9208a231a33b107e",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Monster Plinko",
+        "gameID": "00f07b77e0339eb54f66e6c8b4393e6b",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Monster Tower",
+        "gameID": "ce87df213389f0a1a6f9aff23bab86df",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Monster Fight",
+        "gameID": "ef1d5c489520c84ec2c459ae415a4a5d",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Monster Crypto",
+        "gameID": "657ff1d8774ea8f5f2d996f183d157d8",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Monster Triple",
+        "gameID": "2b29323f88a45dc9e2019f10445b9312",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Monster HiLo",
+        "gameID": "606b4cc0f23af92c668f99722512248b",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Monster Dice",
+        "gameID": "7d4686a2ec9f3d6b63540096b0bd7af8",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Monster Crash",
+        "gameID": "16f6104ec959dba4a3a4064f06fdf9d1",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Happy Farm",
+        "gameID": "0b7f921a2b70eecd837133c250057045",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Lucky 10",
+        "gameID": "6e805a995c67ddf0afe7d0fd585abc87",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Super 777",
+        "gameID": "2c7e443d51dd762d4c1dcba670a14a2f",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Jungle Adventure",
+        "gameID": "5004dd68fdb1318e07aa293ba8008523",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Shoot out",
+        "gameID": "c2ee8218a680bd049beac19394c1c360",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Niu Niu",
+        "gameID": "c6709fddf2e259e1eb4c3109d7a0b6dd",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    }
+]

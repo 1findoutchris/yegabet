@@ -1,0 +1,178 @@
+[
+    {
+      "gameNameEn": "Tombola Bingo",
+      "gameID": "286eb47a1b213dc71e7723bba7d3f1b7",
+      "customGameType": 5,
+      "vendorCode": 84
+  
+    },
+    {
+      "gameNameEn": "Football Legend",
+      "gameID": "67693d017d28e1ac8b9d14038a87b888",
+      "customGameType": 6,
+      "vendorCode": 84
+    },
+    {
+      "gameNameEn": "Dice",
+      "gameID": "de17737b935dd7a77885d45a6dfb164e",
+      "customGameType": 3,
+      "vendorCode": 84,
+      "currencies": ["BRL"]
+    },
+    {
+      "gameNameEn": "Bombing Fortune",
+      "gameID": "fb3334b89b498706938d6bb2857adae5",
+      "customGameType": 3,
+      "vendorCode": 84
+    },
+    {
+      "gameNameEn": "Fruit Bombs",
+      "gameID": "320f3853ab8f0266f8731a69035326ac",
+      "customGameType": 3,
+      "vendorCode": 84
+    },
+    {
+      "gameNameEn": "Gladiator",
+      "gameID": "b7efe84654be7e64cb2031cecf185e41",
+      "customGameType": 3,
+      "vendorCode": 84
+    },
+    {
+      "gameNameEn": "Looking For Gophers",
+      "gameID": "3a3df38a88a964504e4b0d9fe79e669f",
+      "customGameType": 3,
+      "vendorCode": 84
+    },
+    {
+      "gameNameEn": "King Of The Hammer",
+      "gameID": "34d8fe6f50f63e3e08909b4cffb9c96c",
+      "customGameType": 3,
+      "vendorCode": 84
+    },
+    {
+      "gameNameEn": "Mines",
+      "gameID": "2cd2df27a9a6164308a0b13d04bb58b3",
+      "customGameType": 3,
+      "vendorCode": 84
+    },
+    {
+      "gameNameEn": "Mines2",
+      "gameID": "d701f5a04f96cde58b684105d06b0fb5",
+      "customGameType": 3,
+      "vendorCode": 84
+    },
+    {
+      "gameNameEn": "Secret Tetris",
+      "gameID": "f1f4fd2ae86664a0eca72c18a16f88ea",
+      "customGameType": 3,
+      "vendorCode": 84
+    },
+    {
+      "gameNameEn": "Survivor",
+      "gameID": "cc2dd6301b649aa597c172132ddc486c",
+      "customGameType": 3,
+      "vendorCode": 84
+    },
+    {
+      "gameNameEn": "Lucky Wheel",
+      "gameID": "4b6d8a3f28ea08e921543d556b043475",
+      "customGameType": 3,
+      "vendorCode": 84
+    },
+    {
+      "gameNameEn": "Poking Fortune",
+      "gameID": "a2c1ede663a14ce53102893000016027",
+      "customGameType": 3,
+      "vendorCode": 84
+    },
+    {
+      "gameNameEn": "Happy Encounter",
+      "gameID": "bfd417aef228670d3285c02093a4ffc6",
+      "customGameType": 5,
+      "vendorCode": 84
+    },
+    {
+      "gameNameEn": "The God Of Wealth Has Arrived",
+      "gameID": "797435cc84db3ccc29e7bc1c8fb3644f",
+      "customGameType": 5,
+      "vendorCode": 84
+    },
+    {
+      "gameNameEn": "Houyi Shot The Suns",
+      "gameID": "bb4cc22adbcc8a44a01483d0225d8c58",
+      "customGameType": 5,
+      "vendorCode": 84
+    },
+    {
+      "gameNameEn": "Mahjong God",
+      "gameID": "610d7e3f3f3f825cc22d36c00a88ccc6",
+      "customGameType": 5,
+      "vendorCode": 84
+    },
+    {
+      "gameNameEn": "Tigerlions Lead To Auspicious",
+      "gameID": "eb5a73350de857befecb7b5aeca51f33",
+      "customGameType": 5,
+      "vendorCode": 84
+    },
+    {
+      "gameNameEn": "Great Luck In The Year Of The Dragon",
+      "gameID": "4ebd94eafac4533e251e372cd2a0d13f",
+      "customGameType": 5,
+      "vendorCode": 84
+    },
+    {
+      "gameNameEn": "Battle Royale",
+      "gameID": "6af81100fde4aa5f884a63ed6881322e",
+      "customGameType": 0,
+      "vendorCode": 84
+    },
+    {
+      "gameNameEn": "Candle In The Tomb",
+      "gameID": "042fb3347ab19a3fda2d83768df20b20",
+      "customGameType": 0,
+      "vendorCode": 84
+    },
+    {
+      "gameNameEn": "Fortune Fafafa",
+      "gameID": "33bfdcfc4dff3c81faf1b534d2acba21",
+      "customGameType": 0,
+      "vendorCode": 84
+    },
+    {
+      "gameNameEn": "Gold Digger",
+      "gameID": "05f4c53f5dc0a6e13551c3b98cad0125",
+      "customGameType": 0,
+      "vendorCode": 84
+    },
+    {
+      "gameNameEn": "Golden Tiger",
+      "gameID": "8b5d6fbb00064bf0dda1ef5148f606ad",
+      "customGameType": 0,
+      "vendorCode": 84
+    },
+    {
+      "gameNameEn": "King Of Glory",
+      "gameID": "e08ab293b15f5510738c9c27450fd29c",
+      "customGameType": 0,
+      "vendorCode": 84
+    },
+    {
+      "gameNameEn": "Lucky Panda",
+      "gameID": "b923f3f7990c7b308adaf8bc02f79074",
+      "customGameType": 0,
+      "vendorCode": 84
+    },
+    {
+      "gameNameEn": "Monkey King Black Wukong",
+      "gameID": "e9781000b1ef56b1676948d95d1ffd7b",
+      "customGameType": 0,
+      "vendorCode": 84
+    },
+    {
+      "gameNameEn": "Three Kingdoms",
+      "gameID": "6544c12c5213dcf4ba132a70d42de52e",
+      "customGameType": 0,
+      "vendorCode": 84
+    }
+  ]

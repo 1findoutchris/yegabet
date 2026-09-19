@@ -1,0 +1,92 @@
+[
+            {
+        "gameNameEn": "Aviator",
+        "gameID": "a04d1f3eb8ccec8a4823bdf18e3f0e84",
+        "img": "https://ossimg.forpicstore777.top/rajalottery/gamelogo/TB_Chess/800_20250421220338955.png",
+        "vendorId": 23,
+        "vendorCode": "SPRIBE",
+        "imgUrl2": "",
+        "customGameType": 0
+    },
+    {
+        "gameNameEn": "Dice",
+        "gameID": "8a87aae7a3624d284306e9c6fe1b3e9c",
+        "img": "https://ossimg.forpicstore777.top/rajalottery/gamelogo/TB_Chess/102_20250421220818638.png",
+        "vendorId": 23,
+        "vendorCode": "SPRIBE",
+        "imgUrl2": "",
+        "customGameType": 0
+    },
+    {
+        "gameNameEn": "Goal",
+        "gameID": "c68a515f0b3b10eec96cf6d33299f4e2",
+        "img": "https://ossimg.forpicstore777.top/rajalottery/gamelogo/TB_Chess/105_20250421220747055.png",
+        "vendorId": 23,
+        "vendorCode": "SPRIBE",
+        "imgUrl2": "",
+        "customGameType": 0
+    },
+    {
+        "gameNameEn": "Hi Lo",
+        "gameID": "a669c993b0e1f1b7da100fcf95516bdf",
+        "img": "https://ossimg.forpicstore777.top/rajalottery/gamelogo/TB_Chess/101_20250421221204898.png",
+        "vendorId": 23,
+        "vendorCode": "SPRIBE",
+        "imgUrl2": "",
+        "customGameType": 0
+    },
+    {
+        "gameNameEn": "Hotline",
+        "gameID": "b31720b3cd65d917a1a96ef61a72b672",
+        "img": "https://ossimg.forpicstore777.top/rajalottery/gamelogo/TB_Chess/107_20250421221316094.png",
+        "vendorId": 23,
+        "vendorCode": "SPRIBE",
+        "imgUrl2": "",
+        "customGameType": 0
+    },
+    {
+        "gameNameEn": "Keno",
+        "gameID": "c311eb4bbba03b105d150504931f2479",
+        "img": "https://ossimg.forpicstore777.top/rajalottery/gamelogo/TB_Chess/106_20250421221642390.png",
+        "vendorId": 23,
+        "vendorCode": "SPRIBE",
+        "imgUrl2": "",
+        "customGameType": 0
+    },
+    {
+        "gameNameEn": "Mines",
+        "gameID": "5c4a12fb0a9b296d9b0d5f9e1cd41d65",
+        "img": "https://ossimg.forpicstore777.top/rajalottery/gamelogo/SPRIBE/mines_20250422181633566.png",
+        "vendorId": 23,
+        "vendorCode": "SPRIBE",
+        "imgUrl2": "",
+        "customGameType": 0
+    },
+    {
+        "gameNameEn": "Mini Roulette",
+        "gameID": "9dc7ac6155c5a19c1cc204853e426367",
+        "img": "https://ossimg.forpicstore777.top/rajalottery/gamelogo/TB_Chess/104_20250421221445376.png",
+        "vendorId": 23,
+        "vendorCode": "SPRIBE",
+        "imgUrl2": "",
+        "customGameType": 0
+    },
+    {
+        "gameNameEn": "Plinko",
+        "gameID": "6ab7a4fe5161936012d6b06143918223",
+        "img": "https://ossimg.forpicstore777.top/rajalottery/gamelogo/TB_Chess/103_20250421221058225.png",
+        "vendorId": 23,
+        "vendorCode": "SPRIBE",
+        "imgUrl2": "",
+        "customGameType": 0
+    },
+    {
+        "gameNameEn": "Balloon",
+        "gameID": "de88f202c5a8beeaccabbd944f8acfbf",
+        "img": "https://huidu-bucket.s3.ap-southeast-1.amazonaws.com/api/spribe/balloon.png",
+        "vendorId": 23,
+        "vendorCode": "SPRIBE",
+        "imgUrl2": "",
+        "customGameType": 0
+    }
+    ]

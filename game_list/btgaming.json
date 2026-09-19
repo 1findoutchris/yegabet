@@ -1,0 +1,742 @@
+[
+  {
+    "gameNameEn": "Fervent Samba",
+    "gameID": "8b85d249bf18b497c6d2c711206c7e9d",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1540-ae96d6d5adb772bf5b6d7343b5ae0cc4.png"
+  },
+  {
+    "gameNameEn": "Dragon777",
+    "gameID": "251ab02e05f3289609035451ead6621e",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1533-461c145dc504e746ff0435aaffa76c1e.png"
+  },
+  {
+    "gameNameEn": "Football Boys",
+    "gameID": "64657e65e3693f39e8b2db62d859ab26",
+    "customGameType": 6,
+    "vendorCode": 86
+  },
+  {
+    "gameNameEn": "Unparalleled Phoenix Dynasty",
+    "gameID": "dd64c5b3648782ce6dd85234965c8c28",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1530-e2005b3a3a497b71f1d0d4cbefae6d2d.png"
+  },
+  {
+    "gameNameEn": "Fuwa Baoxi",
+    "gameID": "0a2dee7f1fe43a295805afe66accd091",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1534-5d426497ba755949cb7d8b3dfba0f5f7.png"
+  },
+  {
+    "gameNameEn": "X'Mas LABUBU",
+    "gameID": "3453f2016be66309bfdda1e9d429ed85",
+    "customGameType": 1,
+    "vendorCode": 86
+  },
+  {
+    "gameNameEn": "Christmas 3 Surprises",
+    "gameID": "2ff9d61d3e56886acf5d59b4fcf504de",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1531-f344c72cdbe83b6d87c74de1904acc64.png"
+  },
+  {
+    "gameNameEn": "Olympus - Zeus",
+    "gameID": "2df9c674591b4c20728ed9c32b731d88",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1529-73fda32980d0b9efbc01a08c3fd8d0ca.png"
+  },
+  {
+    "gameNameEn": "BIRD'S PARADISE - FLYING TIGER",
+    "gameID": "f8e048aa5128bffba9ec26ae6c26a692",
+    "customGameType": 2,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/VG0007-e8985cc5863857c97b97b5034ecb0cc6.png"
+  },
+  {
+    "gameNameEn": "Yuanbao Mahjong",
+    "gameID": "35f72f81cca26581ae5bf0c4bfd42533",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1527-bde29d1bc540bb22c28951d80caab23b.png"
+  },
+  {
+    "gameNameEn": "Big Eater",
+    "gameID": "2880c3582e5c21cad989953b56c05153",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1524-47c58c98e5981f6527518ca2af628e17.png"
+  },
+  {
+    "gameNameEn": "ROMAN WARRIOR",
+    "gameID": "6ba74d948a39b6ca9898eab9f8f52f5b",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1516-e7b388c7c5170adf65071a0c8c28c369.png"
+  },
+  {
+    "gameNameEn": "Riches Phoenix",
+    "gameID": "2d7642c9a6b06212749e9b2664a5198c",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1510-f20cfabb0c5e5de6b0b62e12a28b2931.png"
+  },
+  {
+    "gameNameEn": "EURO2024",
+    "gameID": "bddaeeaefd4ffaf77c0e929b2209f6f1",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1532-abb28957fd901ebfe0a665fe8d6ea66b.png"
+  },
+  {
+    "gameNameEn": "SEAFOOD PARADISE",
+    "gameID": "3a6ad1585bcd080bd3636dc1feb04cd2",
+    "customGameType": 2,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/VG0004-0fdf898ac2da6a52d0ef541fe6edf804.png"
+  },
+  {
+    "gameNameEn": "Fighting Academy",
+    "gameID": "89ed2a979cba0cb22b1055413d0be23c",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1005-46ba1bba807934aeb18aa95c2bcd22b2.png"
+  },
+  {
+    "gameNameEn": "Songkran Festival",
+    "gameID": "312180250195f31567bba9a713faa93d",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1525-bf2a42469df28b161df793a8d6c23f21.png"
+  },
+  {
+    "gameNameEn": "777-CLASSIC STYLE",
+    "gameID": "48c69725fb9ccaa68b5288882c899d37",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1522-49b3f1eb2e8e141e0bbc9d899229f180.png"
+  },
+  {
+    "gameNameEn": "Gong Xi Fa Cai",
+    "gameID": "8c7ff9483564c200c0ff71f68d147f79",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1515-21b52ec67d1a9f93e7e9c472807c44c6.png"
+  },
+  {
+    "gameNameEn": "Rich Fortune",
+    "gameID": "23030285b98deb2e13adee7c9c39d696",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1523-99fb3afff672526b9118cf4d07ad6d1f.png"
+  },
+  {
+    "gameNameEn": "GOLDEN BASIN",
+    "gameID": "2ed6a06cbcb01b1b26d7a00489e15609",
+    "customGameType": 3,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/VG1007-a8c2b5d5d776256abde05c52036072a3.png"
+  },
+  {
+    "gameNameEn": "X'mas Gift City",
+    "gameID": "2b5ef52ca2f8e68f5216d9653130fe19",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1521-9add0b7379299db9ff4fafbdeeb8160f.png"
+  },
+  {
+    "gameNameEn": "All for the Winner",
+    "gameID": "a3fc35b1163ee046822fa85e5e09f11e",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1512-c4eba63c9bd6255dba83ae02b56a2c5b.png"
+  },
+  {
+    "gameNameEn": "Gaogashou2-MULTIPLY FUN",
+    "gameID": "14ee3b819bb070ab0bd50064f6901aaa",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1055-af41119bdf23559c206ba02eea40ae02.png"
+  },
+  {
+    "gameNameEn": "SAFARI HEAT-MULTIPLY FUN",
+    "gameID": "b6808e7f462928a789978fa2b1098c71",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1054-2f6dedca72c38888cee18507b2e290c2.png"
+  },
+  {
+    "gameNameEn": "Sugar Bar",
+    "gameID": "76a68f189ab6ca858fd237c1bd779fbc",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1517-709bcaabf88e1185e5cfb2b11ec840ef.png"
+  },
+  {
+    "gameNameEn": "Monkey Thunderbolt",
+    "gameID": "3fa5b886c6f08946329535a043174cc1",
+    "customGameType": 3,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/VG1005-a28562f9d7425b7ba1cf4cc478af8fbe.png"
+  },
+  {
+    "gameNameEn": "Riches Phoenix",
+    "gameID": "a1b20a7c567ad88571b5f5bc2b0b207a",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1510-f20cfabb0c5e5de6b0b62e12a28b2931.png"
+  },
+  {
+    "gameNameEn": "Mayan Adventure",
+    "gameID": "2b5e3338acad9519d537a4bb25f78a1f",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1520-2abbf9c3404ca64869540315b868033b.png"
+  },
+  {
+    "gameNameEn": "Gods of Egypt",
+    "gameID": "2ed317813a09563d163e091a70ffa8c6",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1053-584a187ec410b8e78387659165672d3b.png"
+  },
+  {
+    "gameNameEn": "PHOENIX WORLD",
+    "gameID": "f8a21c5a2ae61d1ce295082a3ee600a4",
+    "customGameType": 2,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/VG0003-0360bbb414f7e3ae9e10833af2040237.png"
+  },
+  {
+    "gameNameEn": "Fortunate Lion-Lucky Mix",
+    "gameID": "91caf941e38f74ace6cd0b04a0f49a58",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1052-0846df46ae00eb31340ccf29364d04d7.png"
+  },
+  {
+    "gameNameEn": "Monkey King",
+    "gameID": "99d057317b8c6a15b2b32bf5dbbbd634",
+    "customGameType": 3,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/VG1003-6408aaa25658f6973673e8b6cf664657.png"
+  },
+  {
+    "gameNameEn": "Infinity Mining",
+    "gameID": "a0cff14fe575513ccc07f76e865a957e",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1507-9cc4b8debe4a4c82b025f7dfd2e392da.png"
+  },
+  {
+    "gameNameEn": "Beach Baby",
+    "gameID": "2134c799c6eb920d654960ed812640fb",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1051-4f3dad24bd0ec5052f68df5fc14f4f4d.png"
+  },
+  {
+    "gameNameEn": "Gold Fairy",
+    "gameID": "25273ee6e7aae11caea37e5872e77df9",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1007-88f4450462efae449fbb75fc39ae9384.png"
+  },
+  {
+    "gameNameEn": "Deep Rising",
+    "gameID": "b635889a3c059b3d41c2448dbfa4eb90",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1505-9232f5aaa4156941fe9db830e36915ea.png"
+  },
+  {
+    "gameNameEn": "SEAFOOD PARADISE IV PLUS+",
+    "gameID": "26b946419082781ef309a2db1783c422",
+    "customGameType": 2,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/VG0002-f38ac6fe0ac7a4b46a17504d5eedf2e6.png"
+  },
+  {
+    "gameNameEn": "Weird Xmas",
+    "gameID": "22ed0857ee6496a41a964dd64004695b",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1017-a3e91ce9f8f46424d4c54e4997f1f1a8.png"
+  },
+  {
+    "gameNameEn": "Belangkai",
+    "gameID": "912a21265868f268e5a3d48138912ec9",
+    "customGameType": 3,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/VG1004-21872d879620e3a8128dce16de2f57d2.png"
+  },
+  {
+    "gameNameEn": "Slime Gem",
+    "gameID": "ce4e0d1162775b30ecec39fbd605b27f",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1506-5517da698434eb761f5330c6628b7334.png"
+  },
+  {
+    "gameNameEn": "Pokdeng",
+    "gameID": "b62d500aa8481087d23429ee70423a4a",
+    "customGameType": 4,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/VG1002-9732f1596673ecfa6b2337eee9f8e2ff.png"
+  },
+  {
+    "gameNameEn": "SUPER Roulette",
+    "gameID": "091ee6a3947b154674b65720e8e3165a",
+    "customGameType": 3,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/VG1001-351c9e9bfcc06bcff91cb9758ac79cef.png"
+  },
+  {
+    "gameNameEn": "Ghost Mansion",
+    "gameID": "f632291362f3b89caee19908204da18d",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1503-27a2cfce784aa6989b87fc402e42adc6.png"
+  },
+  {
+    "gameNameEn": "Yu Yue Long Men",
+    "gameID": "b2cd39bc04990263dd96c1af8991df9a",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1502-64a97e6deaffd20b650a2c8d9ce7acf2.png"
+  },
+  {
+    "gameNameEn": "Mayan Adventure",
+    "gameID": "695295dd8c5721110f4dc7abe32b5127",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1504-e61e83cc7730428d3dc1665b1d67160c.png"
+  },
+  {
+    "gameNameEn": "Detective Girl",
+    "gameID": "0a702e3f1020d78914ba2f8a1fcb7a8d",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1501-55db6fdfa487d14e65f50b0102b281d5.png"
+  },
+  {
+    "gameNameEn": "5PK",
+    "gameID": "9189409a47fc6fabb9957e4c1ba1ee9e",
+    "customGameType": 3,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB5001-af31f495836a356ca75127469b8a70f4.png"
+  },
+  {
+    "gameNameEn": "SPACE WAR",
+    "gameID": "bec01885155b6be724fcbb7d93f9e94d",
+    "customGameType": 2,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/VGF01-fbc30ddf480e10dbde320b54d0926542.png"
+  },
+  {
+    "gameNameEn": "BullBullClassic",
+    "gameID": "4423ec61b326f6b8e4d99054f91502ea",
+    "customGameType": 5,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/VGGyumaoC-6d64b157c146e1fe3ab113d4e7d42c69.png"
+  },
+  {
+    "gameNameEn": "BullBullMega",
+    "gameID": "81dea743a44cf13345c84dd82166288d",
+    "customGameType": 4,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/VGGyumaoM-5da60611062ff407f65b494b59f00d45.png"
+  },
+  {
+    "gameNameEn": "Circus-Lucky Mix",
+    "gameID": "d5317d8eabfb05221445ac7f9a4f9c71",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1040-6183ea2452a3e3d3fac4d9e9f04894d8.png"
+  },
+  {
+    "gameNameEn": "Wonderland",
+    "gameID": "65db0cda0c470ba69905a515ff426b5d",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1045-fff1489ed401a6027caba4e2006064cb.png"
+  },
+  {
+    "gameNameEn": "Beach Baby",
+    "gameID": "eff78b885ebae6bfcc5f80c0b9041737",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1044-d6ec7aca33ff115f4350e9779a5cdb72.png"
+  },
+  {
+    "gameNameEn": "MacauBaccarat",
+    "gameID": "c3e95f10cdc82833d7cd2ae724d4605e",
+    "customGameType": 4,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/VGBACCARAT-1dce100ce4a60b9bd3e5d29e56657b65.png"
+  },
+  {
+    "gameNameEn": "Fortune Cat",
+    "gameID": "81459334f804115d629e77bc7b7ad0e0",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1041-e9bdc38e2eb7c81a57c4305542034b68.png"
+  },
+  {
+    "gameNameEn": "Time Machine",
+    "gameID": "824013d86115a7826fce4df3f88a551f",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1043-16a142115f63f46e831648c6459d1c2c.png"
+  },
+  {
+    "gameNameEn": "UMO",
+    "gameID": "f84afd86bb4099347ebaf33e6f1ea436",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1042-784b1f72b59eff8edac437154c3cdf7f.png"
+  },
+  {
+    "gameNameEn": "SHARK DANCE",
+    "gameID": "61879351feba69978e4d91041f3de056",
+    "customGameType": 2,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/VGF02-47913b43f0a6cee7752d00bfe23aa6e1.png"
+  },
+  {
+    "gameNameEn": "Treasure Hunters",
+    "gameID": "2787ab2d929fb842316d9211eaf1dfd8",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1039-09fe859c600641f3ec6f55cb2b56eea0.png"
+  },
+  {
+    "gameNameEn": "Sic-bo",
+    "gameID": "f91bf9c8d0601e876e77ee901c79658e",
+    "customGameType": 4,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB4001-139463655285eabf123b1dd4438152fb.png"
+  },
+  {
+    "gameNameEn": "Mansion Battle Royale",
+    "gameID": "06271ec91be94efc0e2d343d8945c7d0",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1036-60c1d5af06ea6735be1c7c2ff1a8a631.png"
+  },
+  {
+    "gameNameEn": "Fire Dragon",
+    "gameID": "05036f46259ecbf92e6b7c51db4096a3",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1037-0164ba2ce2ad84e7f025143e22077b2c.png"
+  },
+  {
+    "gameNameEn": "Water Dragon",
+    "gameID": "54e19e6cc2668b0b677ab6a3cbba1f99",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1038-1f9627276a26601c8628cf2e353fc422.png"
+  },
+  {
+    "gameNameEn": "Dragon’s Treasures",
+    "gameID": "d8d0c15eebfc044a008d89ab40d26a33",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1034-2cfde58cb7e994f9864532625f2607c3.png"
+  },
+  {
+    "gameNameEn": "Rich Fortune",
+    "gameID": "74c63ad177c132239ab053248b5b19dd",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1047-5309f902b8c0312c8ed96a5a260b9804.png"
+  },
+  {
+    "gameNameEn": "CakeMatch",
+    "gameID": "45cc4b28a5817ab1705ae7c479113e3a",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB2002-f7a6147e63a6170cb00241fa27e5a46c.png"
+  },
+  {
+    "gameNameEn": "Snow God",
+    "gameID": "b0006d30b9ec5070311977d036e4f7da",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1027-31fba43fe2d3bac95ced969471dd9b69.png"
+  },
+  {
+    "gameNameEn": "The Journey To The West",
+    "gameID": "bb0a4fd434d6de5e8ba418b12dd3fa68",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1030-68fa3b719eb1affba889fac29103a41d.png"
+  },
+  {
+    "gameNameEn": "Ennead",
+    "gameID": "9bfd4d03d7f480f12b513a0ee303a06c",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1032-0290f8525295667806a725ab090777f1.png"
+  },
+  {
+    "gameNameEn": "The White Snake",
+    "gameID": "54269cc4b7d3ae87be5ee5d017561ebb",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1035-4c04dd1210e8bed24cbcbc5d81d718d5.png"
+  },
+  {
+    "gameNameEn": "Gods of Egypt",
+    "gameID": "5430c8b7525eef3105e28886cd19c4dd",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1048-d313897eb3ec312fb0f043aedfb14bba.png"
+  },
+  {
+    "gameNameEn": "Sushi Match",
+    "gameID": "0fa04748335a8df5342149768ae63d69",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB2001-f1691fb7e3f93584cd63c417aeaaf1a5.png"
+  },
+  {
+    "gameNameEn": "LUXURY WORLD",
+    "gameID": "556561669078885492a392fadd4f560b",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1026-d082fa8fcbf4ff81d02aa16316db0820.png"
+  },
+  {
+    "gameNameEn": "Little Red Riding Hood",
+    "gameID": "297bbce460c555cc4f4c2946f5825f0a",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1028-6cbdc0760ec424f0b4a34c7fd0cf8df9.png"
+  },
+  {
+    "gameNameEn": "Three Little Pigs",
+    "gameID": "2a27065c0e7d0e71a16b2f9d98d4648a",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1031-0d1d4bc70402747fff51e975fe1f9b37.png"
+  },
+  {
+    "gameNameEn": "Stonelions",
+    "gameID": "fee4c669c2b6d53387824188a00539d2",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1033-ad7dae23cf94a5626fc345397ebc0188.png"
+  },
+  {
+    "gameNameEn": "Weird Xmas",
+    "gameID": "14c5625f852dbe83c48aae5e2ba1d90e",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1049-562a3844c1c58909657dd1f6c36a67e6.png"
+  },
+  {
+    "gameNameEn": "Candy House",
+    "gameID": "dbc24fa57c6d2fb0a8f09ef61b9630be",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1018-8b6706184a5a6e9b313b8ba447c58e0e.png"
+  },
+  {
+    "gameNameEn": "Prehistoric Park",
+    "gameID": "8272d2bfdb8c3dfb3e073a44b8e4945d",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1019-5d5d8c9cfc22b5d45534dcbbf5c2d3b0.png"
+  },
+  {
+    "gameNameEn": "Beer Carnival",
+    "gameID": "158d347f601e98b60e4cc9843abe6a05",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1020-4f6e0ea257450ddf1f1864e45e536a70.png"
+  },
+  {
+    "gameNameEn": "Cat VS Mouse",
+    "gameID": "e3e2c6715f8b4df8381a18dd0985f345",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1021-45db12d76eca43b5cdd49d866c2c6bdc.png"
+  },
+  {
+    "gameNameEn": "Lovecraft's Legacy",
+    "gameID": "cc76206ff325f3e4d1fe9531bc243a65",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1022-e8b23ca7b7118fa369285c970fa5f50b.png"
+  },
+  {
+    "gameNameEn": "Happy Fruit Stand",
+    "gameID": "b75d887a4f5e440b515d7d6b70e7aaa0",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1023-15bf33332a9a2931554ed4a662b68397.png"
+  },
+  {
+    "gameNameEn": "THOR",
+    "gameID": "7616f5b4388e2aebf895a5799e9e3bcd",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1024-1359e7ae4864b725507d3cd28b37d0fd.png"
+  },
+  {
+    "gameNameEn": "Magic House",
+    "gameID": "9b921657808381be91b3428b1701206c",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1025-594bfd66802d44ef7ddba9be52e30ed0.png"
+  },
+  {
+    "gameNameEn": "Ninja Phantom",
+    "gameID": "5268c5a9c48e21f301e6ca0e0bc87fd7",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1029-48846e55769dbb0455b2a8cd22afed6b.png"
+  },
+  {
+    "gameNameEn": "Halloween Horror",
+    "gameID": "cce265acbd8af9857e6b670c1e5e0f25",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1013-90d35ab2253a162a0fbee746553bbf5e.png"
+  },
+  {
+    "gameNameEn": "Ghost Zombie",
+    "gameID": "4d6339c1c0024ad46c0595d70719c77b",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1014-76eb568fbef95622475aebfae467ccf4.png"
+  },
+  {
+    "gameNameEn": "Mutation fish",
+    "gameID": "cde97d392e59c6bae7ff6f1a4ac0f27b",
+    "customGameType": 2,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1015-a3d205c65871bf5d6a56b19c9a0680cf.png"
+  },
+  {
+    "gameNameEn": "Star Cruise",
+    "gameID": "153c4cee05999212c48e03d77579485a",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1016-581fadd136b9dce2a7cf9375843b558e.png"
+  },
+  {
+    "gameNameEn": "Insect Doctor",
+    "gameID": "45a9c78be5e2e4f34461d21ad8afdbe3",
+    "customGameType": 2,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/VGDRINSECT-a7afc186dff39b53d28da03261b899d5.png"
+  },
+  {
+    "gameNameEn": "Bird'sParadise",
+    "gameID": "cf18c7e48efa6a82bb0969882ba4ece2",
+    "customGameType": 2,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/VGPHOENIX-a0bc9ab03bd30ac3bcf90a987ca6eb2c.png"
+  },
+  {
+    "gameNameEn": "SeaFoodParadise",
+    "gameID": "2dc3904eeb6e6244a0553f83b5127fc6",
+    "customGameType": 2,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/VGSEAFOOD2-d378aac0ea3d47760e6b434867ae9862.png"
+  },
+  {
+    "gameNameEn": "Graveyard Keeper",
+    "gameID": "c00c5dbbd9ff91c522d7aa64bc18e06b",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1009-de5f9caffbb44e2f12420c0a0b7e5377.png"
+  },
+  {
+    "gameNameEn": "DR. Crazy",
+    "gameID": "058c5da884373bc7612b60bc420be900",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1010-040c1380cd7968848446f0d14c318aa5.png"
+  },
+  {
+    "gameNameEn": "Run Date",
+    "gameID": "2ba9d3b6aa1f87d7a8f6410e0ca8dd66",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1011-7588cf611216c46dee59918c6f783cad.png"
+  },
+  {
+    "gameNameEn": "Egypt Gods",
+    "gameID": "1be50fbb6306ad37601eb2587e02d28b",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1012-0800cc5e1988c073f845b5e121fe92c4.png"
+  },
+  {
+    "gameNameEn": "Live Goddess",
+    "gameID": "dbf30b4f8a7606657a22a8ffd360bbd8",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1001-bcf0b0364e4c5357b599d8923907c9c6.png"
+  },
+  {
+    "gameNameEn": "Wilderness Hunting",
+    "gameID": "d5dcf7f421824121a52814b064b0b71a",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1002-161f78209db18d3576d038f63e7f3e61.png"
+  },
+  {
+    "gameNameEn": "Gaogashou",
+    "gameID": "585eb87344b82bfee208f8a8091681d9",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1003-071740fae295918ae1fb236af2af4ad8.png"
+  },
+  {
+    "gameNameEn": "Three Kingdoms",
+    "gameID": "0885c9790330eefffcea4cbecbaadae2",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1004-eb500aa8327be260cf8087d1063b0be4.png"
+  },
+  {
+    "gameNameEn": "Fighting Academy",
+    "gameID": "d6b43c1c6f2e9c2289e7a1d7d91450dc",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1005-46ba1bba807934aeb18aa95c2bcd22b2.png"
+  },
+  {
+    "gameNameEn": "Yakuza",
+    "gameID": "dd49eb7945429677557efe3f3ced77f3",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1006-46ba1bba807934aeb18aa95c2bcd22b2.png"
+  },
+  {
+    "gameNameEn": "Gold Fairy",
+    "gameID": "a1bd17ad085e8b509bcaf54d807245bb",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1007-88f4450462efae449fbb75fc39ae9384.png"
+  },
+  {
+    "gameNameEn": "Gumiho",
+    "gameID": "ee774ff880d73f0f0dcbb1fe076d0191",
+    "customGameType": 1,
+    "vendorCode": 86,
+    "img": "https://btgaming.com/packs/media/images/game_icon/en/AB1008-349bba4976af349a58d05f1737167e02.png"
+  }
+]

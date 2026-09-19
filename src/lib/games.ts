@@ -1,0 +1,379 @@
+import "server-only";
+import fs from "fs";
+import path from "path";
+import type { Game, Provider } from "@/types/games";
+import { PROVIDER_META } from "@/types/games";
+
+export type { Game, Provider };
+export { PROVIDER_META };
+
+// Crash / instant-win providers
+const CRASH_PROVIDERS = new Set([
+  "inout",
+  "spribe",
+  "smartsoft",
+  "turbogames-world",
+  "turbogames-asia",
+  "galaxsys",
+  "expanse",
+]);
+
+// Live casino providers
+const LIVE_PROVIDERS = new Set([
+  "evolutionlive",
+  "pragmaticplaylive-eu",
+  "pragmaticplaylive-asia",
+  "sagaming",
+  "sexy",
+  "yeebet",
+  "v8",
+  "dreamgaming",
+  "ezugi",
+]);
+
+// Disabled providers — hidden everywhere (they don't accept our currency /
+// aren't working). Their games are filtered out of every list.
+const HIDDEN_PROVIDERS = new Set([
+  "jili",
+  "hacksaw-asia",
+  "cq9",
+  "jdb",
+  "2j",
+  "btgaming",
+  "5ggaming",
+  "wonwon",
+  "evolutionlive-asia",
+  "playtech",
+  "microgaming",
+  "playngo",
+  "mac88_en",
+  "bgaming",
+  "skywind",
+  "relaxgaming",
+  "bng",
+  "bng-asia",
+  "nolimitcity",
+  "nolimitcity-asia",
+  "gameart",
+  "ace",
+  "pgsgaming",
+  "ygrgaming",
+  "ws168_en",
+]);
+
+// ── Shuffle helpers ───────────────────────────────────────────────────────────
+
+function daySeededRng(): () => number {
+  let s = Math.floor(Date.now() / 86_400_000);
+  return () => {
+    s = (Math.imul(1664525, s) + 1013904223) | 0;
+    return (s >>> 0) / 0xffffffff;
+  };
+}
+
+function shuffle<T>(arr: T[]): T[] {
+  const rng = daySeededRng();
+  const out = [...arr];
+  for (let i = out.length - 1; i > 0; i--) {
+    const j = Math.floor(rng() * (i + 1));
+    [out[i], out[j]] = [out[j], out[i]];
+  }
+  return out;
+}
+
+// ── File loading ──────────────────────────────────────────────────────────────
+
+function parseGameFile(raw: string, providerSlug: string): Game[] {
+  try {
+    const parsed = JSON.parse(raw);
+    const list: unknown[] = Array.isArray(parsed)
+      ? parsed
+      : Array.isArray(parsed?.gameLists)
+      ? parsed.gameLists
+      : [];
+
+    return list
+      .filter((g: unknown) => {
+        const game = g as Record<string, unknown>;
+        // Only skip if the entry has no ID or name — images optional
+        return !!(game.gameID && game.gameNameEn);
+      })
+      .map((g: unknown) => {
+        const game = g as Record<string, unknown>;
+        return {
+          gameID: game.gameID as string,
+          gameNameEn: game.gameNameEn as string,
+          img: (game.img as string) || "",
+          customGameType: Number(game.customGameType ?? 0),
+          vendorCode: (game.vendorCode ?? providerSlug) as string | number,
+          provider: providerSlug,
+        };
+      });
+  } catch {
+    return [];
+  }
+}
+
+function loadAllGames(): Game[] {
+  // Read directly from the game_list folder at the project root
+  const dir = path.join(process.cwd(), "game_list");
+  if (!fs.existsSync(dir)) return [];
+  const files = fs.readdirSync(dir).filter((f) => f.endsWith(".json"));
+  const all: Game[] = [];
+  for (const file of files) {
+    const slug = file.replace(".json", "");
+    const raw = fs.readFileSync(path.join(dir, file), "utf-8");
+    all.push(...parseGameFile(raw, slug));
+  }
+  return all;
+}
+
+let _cache: Game[] | null = null;
+function getAllGames(): Game[] {
+  if (_cache) return _cache;
+  const all = loadAllGames();
+  const seen = new Set<string>();
+  _cache = all.filter((g) => {
+    if (HIDDEN_PROVIDERS.has(g.provider)) return false; // disabled providers
+    if (seen.has(g.gameID)) return false;
+    seen.add(g.gameID);
+    return true;
+  });
+  return _cache;
+}
+
+// ── Public exports ────────────────────────────────────────────────────────────
+
+// Popular crash/instant games — fixed order, shown first on Games page
+const POPULAR_GAME_IDS = [
+  "a04d1f3eb8ccec8a4823bdf18e3f0e84", // Aviator        — Spribe
+  "2e815f80a5a87b0255c130c00d95a71e", // JetX           — SmartSoft
+  "66d311ff6cf531e40b61c483dd34c5c9", // Penalty Unlimited — InOut
+  "562b299961b0ec40f252a832453c67b0", // Chicken Road 2.0  — InOut
+  "c311eb4bbba03b105d150504931f2479", // Keno            — Spribe
+  "5c4a12fb0a9b296d9b0d5f9e1cd41d65", // Mines           — Spribe
+  "6ab7a4fe5161936012d6b06143918223", // Plinko          — Spribe
+  "2126c5c458316ba1f2df65b387b60408", // Chicken Road    — InOut
+  "af95a673c8f3a420444d73421bcf0e7a", // Hamster Run     — InOut
+  "de88f202c5a8beeaccabbd944f8acfbf", // Balloon         — Spribe
+  "8a87aae7a3624d284306e9c6fe1b3e9c", // Dice            — Spribe
+  "458bd34bc83e34501df7e7f96626df6b", // Forest Arrow    — InOut
+];
+
+/**
+ * Name search across the whole catalogue (~8,300 games), for the lobby search
+ * field. Games whose name STARTS with the query come first — typing "book"
+ * should surface "Book of Dead" ahead of "Wild Book Bonanza" — and within each
+ * group the ones with artwork lead, since a wall of placeholder tiles reads as
+ * a broken search.
+ *
+ * Server-side because the catalogue is 1.8 MB of JSON: shipping it to the
+ * browser to filter three characters would cost more than every other asset on
+ * the page combined.
+ */
+export function searchGames(query: string, limit = 24): Game[] {
+  const q = query.trim().toLowerCase();
+  if (q.length < 2) return [];
+
+  const starts: Game[] = [];
+  const contains: Game[] = [];
+  for (const g of getAllGames()) {
+    const name = g.gameNameEn.toLowerCase();
+    if (name.startsWith(q)) starts.push(g);
+    else if (name.includes(q)) contains.push(g);
+  }
+
+  const byArtwork = (a: Game, b: Game) => Number(Boolean(b.img)) - Number(Boolean(a.img));
+  return [...starts.sort(byArtwork), ...contains.sort(byArtwork)].slice(0, limit);
+}
+
+export function getPopularGames(): Game[] {
+  const byId = new Map(getAllGames().map((g) => [g.gameID, g]));
+  return POPULAR_GAME_IDS.flatMap((id) => {
+    const g = byId.get(id);
+    return g ? [g] : [];
+  });
+}
+
+// Hot: non-live, non-crash — shuffled daily (prefer games that have images)
+export function getHotGames(limit = 18): Game[] {
+  const all = getAllGames().filter(
+    (g) => !LIVE_PROVIDERS.has(g.provider) && !CRASH_PROVIDERS.has(g.provider)
+  );
+  const withImg = shuffle(all.filter((g) => g.img));
+  const noImg   = shuffle(all.filter((g) => !g.img));
+  return [...withImg, ...noImg].slice(0, limit);
+}
+
+// New: different daily shuffle, prefer games with images
+export function getNewGames(limit = 18): Game[] {
+  const rng = daySeededRng();
+  for (let i = 0; i < 50; i++) rng();
+  const pool = getAllGames().filter(
+    (g) => !LIVE_PROVIDERS.has(g.provider) && !CRASH_PROVIDERS.has(g.provider)
+  );
+  const withImg = [...pool.filter((g) => g.img)];
+  for (let i = withImg.length - 1; i > 0; i--) {
+    const j = Math.floor(rng() * (i + 1));
+    [withImg[i], withImg[j]] = [withImg[j], withImg[i]];
+  }
+  return withImg.slice(0, limit);
+}
+
+// Slots: customGameType 0, non-crash, non-live — shuffled daily
+/**
+ * SmartSoft's slot titles, in the order they head the Slots rail.
+ *
+ * Listed by id because nothing in the feed can derive them: SmartSoft is in
+ * CRASH_PROVIDERS (most of its catalogue is JetX, PlinkoX, Balloon…) so its
+ * games are excluded from slots wholesale, and all 39 of them carry
+ * customGameType 0 — the same value as a real slot. Its roulette and keno
+ * titles are deliberately absent too.
+ *
+ * Anything not listed here stays out of the rail, so a new SmartSoft slot needs
+ * a line added.
+ */
+const SMARTSOFT_SLOT_IDS: string[] = [
+  "a3168ce2162dd8abce11220bd9f21f84", // RodeoX
+  "d14c7bee006243f2c871f948567cd6de", // MultiHot 5
+  "d1b3c0d5a9244f091326d5b67326be29", // Multi Hot Ways
+  "cab7aee3bac4f737e21064af9b15eb3e", // 4 Bonuses Bonanza
+  "80d9739d8f8c28efed374f92004aeff9", // Burning Ice
+  "ec484f392ab823b1eda3ae165855aa62", // Burning Ice 10
+  "a45fe51120ece7b82df68db517be93ef", // Burning Ice 40
+  "0c6784230fa2e9a1025b94e5f922db20", // Wild & Gods
+  "70aa2b994c771293caf6e293ad558184", // Book of Futuria
+  "15aaf33fa883350f2e30e6e154da983d", // WildMultiStar
+  "97975f474952c6f82eca72c0dec22479", // HotSamba
+  "3a849575e6d3df594ba83d3083260a6e", // Vampires
+  "01339844968800b82b913fdbe84d57ab", // Genie's Bonanza
+  "64baba1e8dac6b12acccb88bb945d91a", // Foxy Hot 20
+  "556c49ac0e6031cd0387bd3d8dae9e5e", // Samurai
+  "b093f4f7518a4929e21df64c718edb32", // Safari Simba
+  "8a35c9e64d05c2556035c4a04fa9cc51", // Sugar Fiesta
+  "19e72f5d7562f1129621394f6d765da7", // Dracula's Fortune
+  "b04b18102cbf1e72c80a940b45adf0a9", // Book Of Bonanza
+  "a938075077a7d997ea53ee0570ab4223", // Mad Slot
+];
+
+// Slots: customGameType 0, non-crash, non-live — SmartSoft's slots pinned to
+// the front in listed order, everything else shuffled daily behind them.
+// Feeds both the lobby rail and /casino/slots, so the pinning holds in both.
+export function getSlotGames(limit = 18): Game[] {
+  const featured = getGamesByIds(SMARTSOFT_SLOT_IDS).filter((g) => g.img);
+  // SmartSoft is a CRASH_PROVIDER, so the shuffled pool can't duplicate these.
+  const pool = getAllGames().filter(
+    (g) =>
+      !CRASH_PROVIDERS.has(g.provider) &&
+      !LIVE_PROVIDERS.has(g.provider) &&
+      g.customGameType === 0
+  );
+  return [...featured, ...shuffle(pool.filter((g) => g.img))].slice(0, limit);
+}
+
+// Crash: popular first, rest shuffled
+export function getCrashGames(limit = 500): Game[] {
+  const popular = getPopularGames();
+  const popularIds = new Set(popular.map((g) => g.gameID));
+  const rest = shuffle(
+    getAllGames().filter(
+      (g) => CRASH_PROVIDERS.has(g.provider) && !popularIds.has(g.gameID)
+    )
+  );
+  return [...popular, ...rest].slice(0, limit);
+}
+
+// Live casino: evolutionlive first, then others (prioritizing games with images)
+export function getLiveCasinoGames(limit = 18): Game[] {
+  const evo = getAllGames().filter(
+    (g) => g.provider === "evolutionlive"
+  );
+  const others = getAllGames().filter(
+    (g) =>
+      LIVE_PROVIDERS.has(g.provider) &&
+      g.provider !== "evolutionlive"
+  );
+
+  const evoWithImg = evo.filter((g) => g.img);
+  const evoNoImg = evo.filter((g) => !g.img);
+  const othersWithImg = others.filter((g) => g.img);
+  const othersNoImg = others.filter((g) => !g.img);
+
+  return [...evoWithImg, ...othersWithImg, ...evoNoImg, ...othersNoImg].slice(0, limit);
+}
+
+// Resolve an ordered list of gameIDs → Game objects (skips unknown IDs).
+// Order follows the input `ids` array, so callers control sort (e.g. recency).
+export function getGamesByIds(ids: string[]): Game[] {
+  const byId = new Map(getAllGames().map((g) => [g.gameID, g]));
+  return ids.flatMap((id) => {
+    const g = byId.get(id);
+    return g ? [g] : [];
+  });
+}
+
+// Recommendations seeded from the providers the player actually played.
+// Pulls more games from those providers (excluding `excludeIds`), then tops up
+// with hot games so the rail is always full.
+export function getRecommendedFrom(
+  playedGameIds: string[],
+  excludeIds: string[],
+  limit = 18
+): Game[] {
+  const exclude = new Set(excludeIds);
+  const played = getGamesByIds(playedGameIds);
+  const providers = new Set(played.map((g) => g.provider));
+
+  const fromProviders = shuffle(
+    getAllGames().filter(
+      (g) =>
+        providers.has(g.provider) &&
+        !exclude.has(g.gameID) &&
+        g.img &&
+        !LIVE_PROVIDERS.has(g.provider)
+    )
+  );
+
+  const out: Game[] = [];
+  const seen = new Set<string>();
+  for (const g of [...fromProviders, ...getHotGames(limit * 3)]) {
+    if (seen.has(g.gameID) || exclude.has(g.gameID)) continue;
+    seen.add(g.gameID);
+    out.push(g);
+    if (out.length >= limit) break;
+  }
+  return out;
+}
+
+export function getGamesByProvider(providerSlug: string, limit = 500): Game[] {
+  const games = getAllGames().filter((g) => g.provider === providerSlug);
+  const withImg = games.filter((g) => g.img);
+  const noImg = games.filter((g) => !g.img);
+  return [...withImg, ...noImg].slice(0, limit);
+}
+
+export function getProviderStats(): { slug: string; name: string; count: number }[] {
+  const counts = new Map<string, number>();
+  for (const g of getAllGames()) {
+    counts.set(g.provider, (counts.get(g.provider) ?? 0) + 1);
+  }
+  return Array.from(counts.entries())
+    .map(([slug, count]) => ({ slug, name: PROVIDER_META[slug]?.name ?? slug, count }))
+    .filter((p) => p.count >= 5)
+    .sort((a, b) => b.count - a.count);
+}
+
+// Lobby category tile counts — computed once over the in-memory game set.
+export function getCategoryCounts(): {
+  all: number; slots: number; live: number; crash: number; new: number; hot: number;
+} {
+  const all = getAllGames();
+  let slots = 0, live = 0, crash = 0, lobby = 0;
+  for (const g of all) {
+    if (LIVE_PROVIDERS.has(g.provider)) { live++; continue; }
+    if (CRASH_PROVIDERS.has(g.provider)) { crash++; continue; }
+    lobby++;
+    if (g.customGameType === 0 && g.img) slots++;
+  }
+  return { all: all.length, slots, live, crash, new: lobby, hot: lobby };
+}

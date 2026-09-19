@@ -1,0 +1,2732 @@
+[
+    {
+        "gameNameEn": "Lobby",
+        "gameID": "4e58131adb95bb061a40e6e309116c19",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Aztec Triple Riches Power Combo",
+        "gameID": "33fce45f64bc4cf9619a0a990a414bb8",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Gold Infinity",
+        "gameID": "7b034f007297975a3a0c17654abd3067",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Mammoth Triple Riches",
+        "gameID": "90b0d3ee68eff4c40e655a4111c156b5",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Hades Lost Treasures",
+        "gameID": "8c5874cfc46c093c3f662bcee65a7173",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Book of Wolves",
+        "gameID": "5032c2878ba3a8548ce7764521401c53",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Sienna Steele",
+        "gameID": "d8d4c4574921210121c4899e45718cf6",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Candy Rush Wilds 2",
+        "gameID": "128ad77a36e65eda0182d9f87a837454",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Almighty Athena Empire",
+        "gameID": "e7b3aeba1ecd7976c494cd433c20c6e2",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Treasure Stacks",
+        "gameID": "6f88f00e8a2e840315663813d75645d4",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "3 Laughing Lions Power Combo",
+        "gameID": "6ad579a6a69bb7b11bf61058b1c8e9a6",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Crazy Bob Bonanza",
+        "gameID": "3688da0f7f533b8d9b266db97676b7a1",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Lucky Twins PowerClusters",
+        "gameID": "930c5186d0ee26a46331a09542b7c78c",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Mighty Panda",
+        "gameID": "a371eb859fdc03660fb289af804d0759",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Massive Gold",
+        "gameID": "ce1e1a7163d5343502b9fd8e0b14420f",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Shark Platinum",
+        "gameID": "f74babecd48f203130ab2162957c8b8e",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Dr Watts Up",
+        "gameID": "2878ce1a5eda3b9bb7a3318cb8600197",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Lucky Little Dragons",
+        "gameID": "c7f81d017424ac5efd86e9f354c3fc9e",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Queen of Cairo",
+        "gameID": "75e86c64e4fe5a4dbbf8390c2a44e67a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "108 Heroes Water Margin",
+        "gameID": "d693c33ddb634da6e5f3d53d35e4f07c",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Almighty Zeus Wilds",
+        "gameID": "10f0cb371de1096e988ed79be19a23a0",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Mining Pots of Gold",
+        "gameID": "0b1526cfd8a26ed0fc3b88d934fa1af4",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Crazy Rich Tigers",
+        "gameID": "a954eeb9410724c86ad359eb08b6e906",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Chronicles of Olympus II - Zeus",
+        "gameID": "a95e5181843d844ec83f3f0f7c004f86",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "FlyX",
+        "gameID": "5e52a78a913c4ff0b217802ac5bb18d9",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Amazing Pharaoh",
+        "gameID": "d31d0b9a48c678b84de14f0c9ef3c94c",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Pong Pong Mahjong",
+        "gameID": "0ad23d1f5b708d66750f8c038965a683",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Break Away Max",
+        "gameID": "5172b9d610de76f84fe4eb5e27d3eb1a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Fishin' Pots of Gold Gold Blitz",
+        "gameID": "f96d4f4bfddef0ce8382e1bf95a19b46",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "9 Enchanted Beans",
+        "gameID": "6c72e5c4248e0197e31ca64173fc1e6e",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Fire and Roses Jolly Joker",
+        "gameID": "a53a06effd3b80dd8b723e82778687b6",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Dragon's Loot Link&Win 4Tune",
+        "gameID": "40d5ec99e62b0d1a9238da0bd52ddf76",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Gods & Pyramids Power Combo",
+        "gameID": "554f7ea67c9e2e827d908f2462d92db6",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Gold Blitz Extreme",
+        "gameID": "a22aee195d737e962865e8dac17c9b29",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "9 Pots of Gold Megaways",
+        "gameID": "0f22c38909e2f1a61f8a7516d326691d",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Tiki Tiki Boom",
+        "gameID": "bc6e20e07ad21bc92bb8cfe307c5e237",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Asgardian Fire",
+        "gameID": "57cc1c1180105e70d1bdf808bb0ea532",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Unusual Suspects",
+        "gameID": "67b3918a380d3954467da49894068f9d",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Anvil and Ore",
+        "gameID": "00fdc51384136a1d376c61e708d191ce",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "The Eternal Widow",
+        "gameID": "0b0c3c1e48b5b5277c579d40fa8e6a46",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Gem Fire Frenzy",
+        "gameID": "dac76c8f56b4f56dce3a8b089f10a91b",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Queens of Ra",
+        "gameID": "dcea49407609b537cf8487449ed9c432",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Legendary Treasures",
+        "gameID": "ecf818781fbaae441270ef1cb6300df4",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Tippy Tavern",
+        "gameID": "615033c728332e36dc2b055afb6f77fd",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Storm to Riches",
+        "gameID": "5fee9fb824d486668cc571dd5a2569a2",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Magic Jokers",
+        "gameID": "1984f48b505b3f6b8192a35be38685c0",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Fish Em Up",
+        "gameID": "6652d8c875fd7b7fcb7bf5b55699176e",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Andvari : The Magic Ring",
+        "gameID": "968808ad447d05dc3f98af2a9917beb0",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Dog Days",
+        "gameID": "99753daa8f1f4dc33966aafc4860da90",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Amazon - Lost Gold",
+        "gameID": "3e6e74024989b68d643a50be861d5c3d",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Champions of Olympus",
+        "gameID": "7a1486bb9c1b9ce938dcb63b656e214b",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Spin Spin Sugar",
+        "gameID": "fc8d4317c17615a57bfcf6cbeecad878",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Granny Vs Zombies",
+        "gameID": "a77ed66fd68dbf148470d7df3d42c6f0",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Almighty Zeus Empire",
+        "gameID": "0f7da3c3fbb3cb2fd40e6f7a3f4fa737",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "WWE Legends",
+        "gameID": "120c0fa718e352b163e361d07e69deb2",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Wolf Blaze Megaways",
+        "gameID": "95c8f6dd0f8f698dcc57507ff383378d",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Win Sum Dim Sum",
+        "gameID": "8500820a9a5f3b09036b1d23e533c374",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Wildfire Wins Extreme",
+        "gameID": "4b8d6ccb2701966093d23927931be142",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Wildfire Wins",
+        "gameID": "daabc9426034dc78ce3c6b5c5bb1c3d6",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Wild Wild Romance",
+        "gameID": "9337a8e1367c791b63bd39049aedc63f",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Wild Scarabs",
+        "gameID": "193c21c83af8f4c17df0cb7cc14bfe89",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Wild Orient",
+        "gameID": "9bf41431312f68940ae1f3257cccfbe2",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Wild Catch (New)",
+        "gameID": "8bb66f724e46befb15476310e149de91",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Wicked Tales: Dark Red",
+        "gameID": "61529a1352c81f4bde81d2516b0313fa",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "What A Hoot",
+        "gameID": "9338b8a9638417dde731adcb3d5b81d0",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Western Gold",
+        "gameID": "edc7e5b4c2b02926bc90b5341df0a3d3",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Wanted Outlaws",
+        "gameID": "3751758ba73da69418fda3057a97bf59",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Wacky Panda",
+        "gameID": "687016930a7310e0b8da16fc726bedd4",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Untamed - Giant Panda",
+        "gameID": "05b71f57bb2c111cd093016a92562099",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Trojan Kingdom",
+        "gameID": "cad650b6937de27ca8385780d40bd665",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Treasures of Lion City",
+        "gameID": "ed4c173d8aab90791f16fc24ad4516c8",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Treasure Palace",
+        "gameID": "a54ed7cd379aab1d0d89509225e3cd29",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Treasure Dash",
+        "gameID": "f2e93907964f7632245733a5f223c692",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Tiger's Ice",
+        "gameID": "9cc04610002c6462e28a4c9d9d1213e6",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Tiger's Eye",
+        "gameID": "ba1a74845aeb3d1c2f0fe8ddd048a4f8",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Thunderstruck Stormchaser",
+        "gameID": "b052d764188fd9c0e355a61d0acc24c4",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Thunderstruck Wild Lightning",
+        "gameID": "167dab624866bbdd19effc424ef31514",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Thunderstruck II",
+        "gameID": "7abba264a25236378317f9d8c76a992a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Thunderstruck",
+        "gameID": "134272e64759d79cf70a1c06aec7e263",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "The Twisted Circus",
+        "gameID": "3e4495711574496dd131b1c6d144d4f3",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "The Incredible Balloon Machine",
+        "gameID": "d7f07998a42f33cdd13a2c3b60a2b7bc",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Tally Ho",
+        "gameID": "8cb5c467a309e5e406c65689889bd190",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Sure Win",
+        "gameID": "c59e5018be81b6604cb6dbaf462d06a8",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "SunTide",
+        "gameID": "6e75323336ddd5f1645417b2c35da654",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Summertime",
+        "gameID": "80cbbd248db7eeccfdbd11ee80d0c281",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Sugar Craze Bonanza",
+        "gameID": "5e4e00fa58ba25a4c9c981e5aa16c84c",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Sterling Silver",
+        "gameID": "4f18d31c1f8f87fbae710ce912c5a92d",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Starlite Fruits",
+        "gameID": "b5ccb0c5e7f3ba7dc0c36ce4e24c81a7",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Starlight Kiss",
+        "gameID": "6f81d5b4d9f31dc5a1eb35e5dd84fa59",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Squealin' Riches",
+        "gameID": "50a0754e622ba0cb10f058da761bd019",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Spring Break",
+        "gameID": "028d4d523b6d2ecdd131899721b62543",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Sonic Links",
+        "gameID": "183a033e921f04d27b7c89b97010cf01",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Soccer Striker",
+        "gameID": "275a757c5692e2e61b52d074db3a2d4d",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Silverback: Multiplier Mountain",
+        "gameID": "ff61900cb8f96516761873a563e84f3a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Silver Fang",
+        "gameID": "1dd99e765a3c260576d5a0f977edd1f6",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Shogun of Time",
+        "gameID": "ce27d475e42b105ce90024d9ad685ab4",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Shamrock Holmes Megaways",
+        "gameID": "1bf958350c51cc4e319c91c40dc5c7e2",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Serengeti Gold",
+        "gameID": "6a7906de20730c9b32e45b9be59ff772",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Secret Romance",
+        "gameID": "137434b7367c8f87899cd0ca8c77814e",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Secret Admirer",
+        "gameID": "f6b266f4fbc9a31db36704c7cb82c778",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Scrooge",
+        "gameID": "41d166881351165dc229b299abb9a757",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Santa's Wild Ride",
+        "gameID": "8b361db8a97095b9f3cf2d81e69ca1f5",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Rugby Star Deluxe",
+        "gameID": "77ae73eaff750367eea162125acf6caf",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Rugby Star",
+        "gameID": "963b814351f1c0ea22729dfc9d206082",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Rome : Fight for Gold",
+        "gameID": "8e9fa47e31275089d43f8fdc339b2cc7",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Robin Hood\u2019s Heroes",
+        "gameID": "eb9a0df0d8eecf244598e353e304c930",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Rhyming Reels - Hearts & Tarts",
+        "gameID": "7bf7f6b07f2c9c0404c7cd9909935b9e",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Retro Reels - Extreme Heat",
+        "gameID": "97755d68cc7c25f9fe5dc12002770eb4",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Retro Reels - Diamond Glitz",
+        "gameID": "0e44cbc821c9b4396d4c20bdd47be020",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Retro Reels",
+        "gameID": "29e449790eb5d8a30c3ab0e7b2d8be29",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Relic Seekers",
+        "gameID": "913756f4391686d502d4b5e60a6f4ab1",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Reel Thunder",
+        "gameID": "63e556aa39eb55d20c3a54363a741fc6",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Reel Talent",
+        "gameID": "9c07eebee1436e2f32f480919857afd2",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Reel Spinner",
+        "gameID": "09861198a58b2f3ae751df6e4f1caffb",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Reel Gems Deluxe",
+        "gameID": "1c858ec30673261918f12b911cc7cb25",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Reel Gems",
+        "gameID": "33b96b1b06f98cfda0ae3c1c25f19c0b",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Queen of the Crystal Rays",
+        "gameID": "d124d82e1ef0a6824caa6939afb50728",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Queen of Alexandria",
+        "gameID": "8471c39141a767f9a3b56f2007abf90d",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Pure Platinum",
+        "gameID": "8724d36d1c4180b4af483ffaf92c4c42",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Playboy Gold Jackpots",
+        "gameID": "eadfca38f8612792abc8cb1e2a437c7b",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Playboy Wilds",
+        "gameID": "9174b7167b049b4d4309ec4fa622fa68",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Playboy Gold",
+        "gameID": "d52c132ba1db1105d3888f89fada9947",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Playboy Fortunes",
+        "gameID": "77a75ea71bf69fc3b24de3ad49b2b956",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Playboy",
+        "gameID": "e388b21fa436b64c28025cc7ddd89625",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Ping Pong Star",
+        "gameID": "a09be0fb28d9301b9f4b043d268d298d",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Our Days",
+        "gameID": "17311afe1cf66f8e9d8238312744c713",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Oni Hunter Plus",
+        "gameID": "82ce6c546749875e17d776075363f996",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Oni Hunter Night Sakura",
+        "gameID": "e626e71a8c76f53a23fa645d5ad5ca5f",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Oni Hunter",
+        "gameID": "74a568e1f9f7d9237dca17d00f3fe9a0",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Odin\u2019s Riches",
+        "gameID": "9c018413defe8ac57727196d7241f0f8",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Neptune's Riches: Ocean of Wilds",
+        "gameID": "2600bdcde83fb483dddcf8bbc4328349",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Monster Blast",
+        "gameID": "df8faaa433ce859696ea350aeaad6089",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Monkey Bonanza",
+        "gameID": "9ed8c86a852d878bbb3be656503889b3",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Mermaids Millions",
+        "gameID": "5c5a9ec3b1c4a4c12d6def141b601775",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Mega Money Multiplier",
+        "gameID": "49dd95a3d29945b0a8ee05d51120701c",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Max Damage and the Alien Attack",
+        "gameID": "d124d56940a1b7e47e17a30c767df687",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Masters of Valhalla",
+        "gameID": "d076fd2a00aaa75a99614d7769212dfb",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Masters of Olympus",
+        "gameID": "2cae384b0ab75c7a3e952ac80254e958",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Mask of Amun",
+        "gameID": "b6c4008786ee86172039b5a11d282ea0",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Magic of Sahara",
+        "gameID": "8dcc9390cf3338d9c308336f3e7cd4be",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Lucky Twins Wilds",
+        "gameID": "96332d54a93ce9fb3cce2bd364b35f54",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Lucky Twins Link & Win",
+        "gameID": "11e79bfe403734eb2833391b02e1dc76",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Lucky Twins Jackpot",
+        "gameID": "ffa428a20a3d9d552e22c5dce22dbdd4",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Lucky Twins Catcher",
+        "gameID": "9f274d5016fc4c8da8d8136198f8510e",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Lucky Twins",
+        "gameID": "f4724fdfdf34d69bd861138e42c3ff7d",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Lucky Riches Hyperspins",
+        "gameID": "1cd0ffb87290019b0ec73ac480844df7",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Lucky Little Gods",
+        "gameID": "b81c8c97ccc1221ce01c61e4f2c49d37",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Lucky Leprechaun Clusters",
+        "gameID": "6f5f79340281a98e71b8e7fd0432e8df",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Lucky Leprechaun",
+        "gameID": "4d0a9be94bf7021f495046dd563780be",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Lucky Koi",
+        "gameID": "d4ca40d217cc0c43ace39d03c96a7e29",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Lucky Firecracker",
+        "gameID": "2c84f3233bdacd097226985075cbfd1a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Lucky Clucks",
+        "gameID": "4b55f30a1305a755422c229386dbc944",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Lucky Bachelors",
+        "gameID": "a190830edf7d0f71fe4d952b5fd336fb",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Lucha Legends",
+        "gameID": "92b3708bce58d08a6ef6f2c40d1a1f9f",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Lost Vegas",
+        "gameID": "d61ceb8404340e88141179e6aa177731",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Long Mu Fortunes",
+        "gameID": "44cd80c549ed230c5e6de799c1ddc2a9",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Loaded",
+        "gameID": "a4a25aa2a0471b33caabc5dc900e21a6",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Lightning Fortunes",
+        "gameID": "12d8b8d07a5b3d4dc8adeeec6b3f9f79",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Life of Riches",
+        "gameID": "678475009ab2b66c7135797c8b9cdf4c",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Leprechaun Strike",
+        "gameID": "d230b6903b40710c890e3af43936b171",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Legacy of Oz",
+        "gameID": "3eac8249f82226967498d681ac8c0aa5",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Lara Croft - Temples and Tombs",
+        "gameID": "209a50731cb3830126158b01c4509379",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Ladies Nite",
+        "gameID": "a4c81dea5ac1c05ef3c45649daac3c28",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Kodiak Kingdom",
+        "gameID": "ed4ceef05a6b97328af5c3363ec58bb7",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Kitsune Adventure",
+        "gameID": "086588cd897a3068fae8784a536b5323",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Kings of Crystals",
+        "gameID": "5c0e7a48dcc6a9ed9f64d9108bc29cb8",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Kings of Cash",
+        "gameID": "6f70340142cf92a67b92348ea9c2ea4d",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "King Tusk",
+        "gameID": "8557fd7312d2a38df32516197c79dbbf",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Kathmandu",
+        "gameID": "1e5ee71d04c4f7e2cb1128cd037383c3",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Jungle Jim and the Lost Sphinx",
+        "gameID": "082daf1754f47e7ae01ef2fbee347a57",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Jungle Jim - El Dorado",
+        "gameID": "47c2ad70bc20411bef02fc51737bddd4",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Jade Shuriken",
+        "gameID": "81fc2f231864509ff4a298ee8e65e799",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Incan Adventure",
+        "gameID": "8af059346463c54641817d7938677e45",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Hyper Gold",
+        "gameID": "0730895ad71b84b0c00d2f45a74dc61a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Holly Jolly Penguins",
+        "gameID": "135228072d98b8962fc26f77d8abfd33",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "High Society",
+        "gameID": "3660405392b85f5bf104de6ce901ad8a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Happy Monster Claw",
+        "gameID": "dd554e7e2ba9a83720d032812bb68288",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Happy Lucky Cats",
+        "gameID": "7a89e994e35cf372cb36891ff8946d2e",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Happy Holidays",
+        "gameID": "c86ae467ff57cfba24c94c832d23baad",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Halloweenies",
+        "gameID": "f6b63e6c189e3c07f1891eb3999f20d2",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Gopher Gold",
+        "gameID": "d87b9af9be6825928297b16356c93754",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Golden Stallion",
+        "gameID": "26a196576ff2e638792863de4738c558",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Golden Princess",
+        "gameID": "2646c2eb32dd0a23b2a948f83bc00fda",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Golden Era",
+        "gameID": "6682fa559d7668a6ba25db75cd01693b",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Gold Collector",
+        "gameID": "3899fe0217159ecd122f39305073fa07",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Gold Blitz",
+        "gameID": "be22ad3b87ce76e1bac0e363738d2646",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Gems & Dragons",
+        "gameID": "1a67c62aac6682db28cfa0c245a7fc5a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Gallo Gold Bruno's Megaways",
+        "gameID": "33fa79fa136fae0734c14289f3c084ec",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Fruit vs Candy",
+        "gameID": "482a38dcafcb26c929c721fd625ac007",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Fruit Blast",
+        "gameID": "399be438fa9e101b38bba6944859e60a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Fortunium",
+        "gameID": "7a7a8a16082ad2a041553ce44b598dbe",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Fortune Rush",
+        "gameID": "e0ab81e9b985904462e899a1d828dd03",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Fortune Pike Gold",
+        "gameID": "c85adcc53a3abae62927bb4e0724bcca",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Fortune Girl",
+        "gameID": "c11381e9329a9860809d76046efba646",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Forgotten Island Megaways",
+        "gameID": "4d4c1ec4f1c8b84761627c546c8a24ca",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Football Star Deluxe",
+        "gameID": "5dd8c68f0cb0796d0f4714bc5d8c21ba",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Football Star",
+        "gameID": "3e11fce97784b93530bddec8b5af34f8",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Fishin' Pots Of Gold",
+        "gameID": "843d24de81b3e66b5eb72debfb6def43",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Fishin' Christmas Pots of Gold",
+        "gameID": "8a9168fdc1bf0ccf7ff8bf17f242c7e7",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Fishin' Bigger Pots Of Gold",
+        "gameID": "a83408748f49b1f49965f53aad0872df",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Fish Party",
+        "gameID": "bb6180515555b18972a67f465a60bc60",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Fire Forge",
+        "gameID": "32f495ae66e37f8084edb33084463c16",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Fire and Roses Joker",
+        "gameID": "fd6bc025d66852513f4adfadf740ab17",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Fiona's Christmas Fortune",
+        "gameID": "d905832eec3a66a2dae447e10be2e9fc",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Exotic Cats",
+        "gameID": "06e64d0cb00e289f708ce93d0cc900fb",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Emperor of the Sea Deluxe",
+        "gameID": "fdd8ea7bd4addc1ab43506953eed3a62",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Emperor of the Sea",
+        "gameID": "fc741725aeb56d242efbb832c404706f",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Emerald Gold",
+        "gameID": "33d0ca8117415580061ed32641382a7d",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Eagle's Wings",
+        "gameID": "3739c8b1bb4d4a1caed8cd684d499624",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Dungeons and Diamonds",
+        "gameID": "301a45047cb812f57f1acdeab337d1b3",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Dream Date",
+        "gameID": "9fb42427c0c47e19bdb1e6eea2b79c74",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Dragonz",
+        "gameID": "44a9f31b40f1adfafe424c3d49538569",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Dragon's Keep",
+        "gameID": "79e8f8bfb638a6918bf8e4b76034fdde",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Dragon Shard",
+        "gameID": "6419d152886e225b3ef4d04f1a724fd2",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Dragon Dance",
+        "gameID": "2c1e476071a34b42bb680d9721e14604",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Doki Doki Parfait",
+        "gameID": "6d3e47059542bd573f12af8aaf33e7bb",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Doki Doki Fireworks",
+        "gameID": "64e3b71e5dba8c46f622439e4d1ff9e6",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Divine Riches Helios",
+        "gameID": "0f3b5ba4aaa14d3529fdb513fd79d137",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Deck the Halls",
+        "gameID": "c1e2d56b39ebcc0c19827734dd99c5b1",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Cricket Star Scratch",
+        "gameID": "139c8d6fc545358eadf9ab77fcb69bc6",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Cricket Star",
+        "gameID": "6f187ac09b32a783dd54bca244299fed",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Cool Wolf",
+        "gameID": "23e99e9558e1307c199adf2a83d99c66",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Cool Buck - 5 Reel",
+        "gameID": "4447e0008c5bfbb034b564a9a5779574",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Circus Jugglers Jackpots",
+        "gameID": "e09e011366e64e5707b94e8227ed1f07",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Chronicles of Olympus X Up",
+        "gameID": "e0578185008a5e213fdac402054bb2e4",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Chilli Pepe Hot Stacks",
+        "gameID": "35c192e1836a33d8577ce5dce064ab67",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Chests of Gold : Power Combo",
+        "gameID": "fe7112d640521acc9480233930fa3a3e",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Centre Court",
+        "gameID": "09a2de90c91f863c85efcd70f278ef3d",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Cat Clans",
+        "gameID": "0020b45228fbb3aac28aafb9482cb893",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Cashapillar",
+        "gameID": "accc10c1845eb7f6d6eb8d7974bb71d6",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Cash of Kingdoms",
+        "gameID": "85737e98c1c3a4120a46207c8470c816",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Cash 'N Riches Megaways",
+        "gameID": "cf62dcca76ac485322840edc1cfac2e0",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Carnaval Jackpot",
+        "gameID": "90ebf6e3fce7f5d47e8d8cd166bb41a0",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Carnaval",
+        "gameID": "fd2aa72f5726bcca129be9c14f0f4f03",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Candy Rush Wilds",
+        "gameID": "1f166f78d4346a4c193733a20a295cee",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Bust the Bank",
+        "gameID": "d25fd1c2b5473578d291fcdfa3515211",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Bush Telegraph",
+        "gameID": "80b2e8b5f411c42818958e3f15cb5807",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Burning Desire",
+        "gameID": "d2ab94c26cca7b150fb19fbc7769b216",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Bubble Beez",
+        "gameID": "6072d0eb5798df526fe263b068865439",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Break Da Bank Again MEGAWAYS",
+        "gameID": "e955e85224c20a9603f065d3c18a5620",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Break Da Bank Again Respin",
+        "gameID": "0bbb4240bee74e4b5896467f2b365b39",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Break da Bank Again",
+        "gameID": "16734ebb53345c9ada880589af35bb07",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Break da Bank",
+        "gameID": "d82bff1347cd2fd1155af31aec8eba55",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Break Away Ultra",
+        "gameID": "aa568bff1dd0ece0b03f5ff3f43d8a13",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Break Away Lucky Wilds",
+        "gameID": "1f77923409f8f75c35fb1422403be04a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Break Away Deluxe",
+        "gameID": "041297879a95a21f6c34d35044af8da6",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Break Away",
+        "gameID": "2d03e936a36d24f8f4b35df3eb77330c",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Boom Pirates",
+        "gameID": "1f17dab23ac38a7785fadf47bbce76c1",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Bookie of Odds",
+        "gameID": "52627b15bb0b64abd088d8a77cec2582",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Book of Oz - Lock 'N Spin",
+        "gameID": "797d8d43fe9c6e0dd84e5330b244fb8a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Book Of Oz",
+        "gameID": "bcbf0d52dfa96c70273484657331eb01",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Book of Mrs Claus",
+        "gameID": "f93ea734fc3add4867c799dfbab27ed5",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Book of King Arthur",
+        "gameID": "37fbc392ddce7383a7cfec93ec99ad9a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Bolt X UP",
+        "gameID": "020a1ecfdc2bd0b135f01a63ac9c1791",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Boat of Fortune",
+        "gameID": "98ca6b79ab22a2f4058d5ecf5ff27592",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blazing Mammoth",
+        "gameID": "47763a8142fb5ead3aff6c55532f0ea3",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Bison Moon",
+        "gameID": "c3e279f72921fb7da838a888ddd42b96",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Bikini Party",
+        "gameID": "fc51371c374b038a17aad6a945817cff",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Big Top",
+        "gameID": "3b54b33fc203fd941f12f9c9a3b17635",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Big Kahuna",
+        "gameID": "15511ea42a3b873c0ef6905e159e101a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Big Boom Riches",
+        "gameID": "b7186a42fbdb8214f4fa614645d56103",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Beautiful Bones",
+        "gameID": "94fc00c46c042b4c08aaff4996b1b311",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Basketball Star Wilds",
+        "gameID": "d1635737a47bc39695bb7a3760787bb2",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Basketball Star on Fire",
+        "gameID": "8724456c5ba544f7e2830c051fb649d1",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Basketball Star Deluxe",
+        "gameID": "933a20c132746cf894de63c021a95bf6",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Basketball Star",
+        "gameID": "8c1c9f489fc8a7ee765f155b5756d7cd",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Bars & Stripes",
+        "gameID": "cf6acbdf57b6e0ba7222d2897eebe2bb",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Bar Bar Black Sheep - 5 Reel",
+        "gameID": "8b69a7b0bb8db384858ca59fc056b0b9",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Banana Odyssey",
+        "gameID": "75705442f9338941923efe19f4766cc1",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Badminton Hero",
+        "gameID": "6f9d30fa32d7b2f6e5ed4d7305656854",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Aztec Falls",
+        "gameID": "ba8cca97e7660e3f76da0c2d2b9f71ea",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Avalon",
+        "gameID": "c1051316caf21845eec6057ed8489214",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Aurora Wilds",
+        "gameID": "42b4332beb84831f6989a9c6b57e3f00",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Astro Legends: Lyra and Erion",
+        "gameID": "2510f09b23b5b0b687cc65f6500eb4ce",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Assassin Moon",
+        "gameID": "e5bb4fcc888c1e5a38ddfdf4d27cce2f",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Asian Beauty",
+        "gameID": "90da73be20eab0c1510bc0779fda6077",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Ark of Ra",
+        "gameID": "0f00b46adf4214ce02bdeef8fedc9494",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Ariana",
+        "gameID": "e53a6ad9d92f90eb9cd162c164406c5c",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Aquanauts",
+        "gameID": "4f67d6510e835a58f3239b21a94e7705",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Ancient Fortunes: Zeus",
+        "gameID": "e3c6bb32a3e5ba0492e2270011854803",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Ancient Fortunes : Poseidon Megaways",
+        "gameID": "e5a04ab0a8a1b85b479050dbd17cac0f",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Amazon Kingdom",
+        "gameID": "cc8d501a134dcbc42e659a8d3da22c9a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Alchemy Fortunes",
+        "gameID": "458b55e79c34ed4cb27c27e25322ad53",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Alaskan Fishing",
+        "gameID": "43218af12f4de49500c5b66a74095b5b",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Agent Jane Blonde Max Volume",
+        "gameID": "f34905f94a8733bc7916a8eaabd08803",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Agent Jane Blonde",
+        "gameID": "ce4e0826528f84f031f1f6a6d693a3d6",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Age of Discovery",
+        "gameID": "20cd279dee908c992f8b764ffe210169",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Africa X UP",
+        "gameID": "f21d2d701fa6b8c9cf0ec5b4038e62c8",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Adventures Of Doubloon Island",
+        "gameID": "47bbb5ba63f2410064db4f35f4bc3d63",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Adventure Palace",
+        "gameID": "f78e5b41a786e6063a3ac699ae60ef6b",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "ActionOps: Snow and Sable",
+        "gameID": "ff77bb0ec5c6fcdeccd1dcda4b883920",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "AbraCatDabra",
+        "gameID": "57df4ecb51e8b3f7ff131d980350a286",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "A Tale of Elves",
+        "gameID": "de2f3a149d5140d5a8ed3abbe3aacf39",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "A Dark Matter",
+        "gameID": "efdb0546fd1c18e100507dd58c0a91e0",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "9 Pots of Gold",
+        "gameID": "0395d9bcb682184fb3a87673bd5f2388",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "9 Masks of Fire HyperSpins",
+        "gameID": "a74ea268ae7874d2eda04356aeeebffa",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "9 Masks of Fire",
+        "gameID": "dd147b95d16e6f09b2cc98e3fcc766be",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "777 Surge",
+        "gameID": "6aec55f4ffadb5fa4166f0f3880169dc",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "777 Super BIG BuildUp Deluxe",
+        "gameID": "c12a5fcd5a90ce9fb9b05edef4732388",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "777 Royal Wheel",
+        "gameID": "313bcbba88204f30ad0f6f8b90b7a957",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "777 Mega Deluxe",
+        "gameID": "544255049e1cc666e87742e5c7dc7582",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "5 Star Knockout",
+        "gameID": "7eec59f718e241064f73afba9836c985",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "5 Reel Drive",
+        "gameID": "b9ed0788e55895d7dd460ffd359b1ff9",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "4 Diamond Blues Megaways",
+        "gameID": "fd4ce87e90334ad2f1166535a2ef6609",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "25000 Talons",
+        "gameID": "29baca9a06f2b1147e5e2cc741515a21",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "15 Tridents",
+        "gameID": "22cda159b93170df2433368afd6e716e",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "108 Heroes",
+        "gameID": "a899b3c1735898b9a1ae18bdf372a297",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "10000 Wishes",
+        "gameID": "2ca3b8cad27b28796280325dbd2e8e50",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Lucky Twins & 9 Lions",
+        "gameID": "262cda5fa53c68d59c8d236b04595e41",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Almighty Dionysus Empire",
+        "gameID": "5cc75b479a8afe74aa4d0c082f6c0e0c",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Frankenstein",
+        "gameID": "9b7446dfd8cbb3714738dad83a8404c7",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Carnaval Fiesta",
+        "gameID": "85363dc3f17d94e9fd3cff6715baf842",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Gates of Asgard Power Combo",
+        "gameID": "18c50928a01051deea1b14b59b4b50a7",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Pong Pong Mahjong Jackpots",
+        "gameID": "dad552d71b64841aec70f5e15f32677d",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Cash Blitz",
+        "gameID": "97f8acb0f1bdf7a5eca64a17fea7c5b0",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Amsterdam",
+        "gameID": "e470eeeaf04542696eb38a5b9f258819",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack London",
+        "gameID": "7cafed64c20875072d0ca3bd9ec5c51b",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Manchester",
+        "gameID": "b3339853d704feabd055899f74ddb40a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Toronto",
+        "gameID": "52132070d76ca606a15cfbc3c90c6074",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Madrid",
+        "gameID": "ca89ca47ff8ccd2b9103aba923572d7f",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Monte Carlo",
+        "gameID": "4b4719bcb625e9a512f9ff3774c3b552",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Berlin",
+        "gameID": "4dac97f6614136c10d80c9f3929750c9",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Riga",
+        "gameID": "da1255b9e3e91851bc80771d631e149d",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Airwave Roulette",
+        "gameID": "aebfbc5a3fe2f28af7eaf4cf7a59d436",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Clubhouse Roulette",
+        "gameID": "1acbe3f4942faa857995dd4c35ca29c0",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Amstel Roulette",
+        "gameID": "76bce76b87bd3ce8d5d5ace38bcc6ed6",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Roulette",
+        "gameID": "0dde1e2bb4c1843ec93370cfbecaa4e0",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Auto Roulette",
+        "gameID": "3597c1344d8473dc260abc8cf01b7cc8",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Baccarat 1",
+        "gameID": "1fb333954772d674f81ddd347bf90c79",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Baccarat 2",
+        "gameID": "70984c9c2dffa0cd039a2cad05228f48",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Baccarat 3",
+        "gameID": "f1196b5b7864f2302225b091808c37b4",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Baccarat 4",
+        "gameID": "77afbc9d1b79faad145868bb055c6a32",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Cards Champion",
+        "gameID": "88d40b9c0faf5a6985474e01804693cf",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Dragon Tiger",
+        "gameID": "a9a6f0dab1c2cd8c11b395d230e273ce",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Everplay Blackjack",
+        "gameID": "abaa5ece25a4fd6845067427a61386c0",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Blackjack 1",
+        "gameID": "e5d911733c791524a43687976559985c",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Speed Blackjack 2",
+        "gameID": "207d318232df7686702f4a6aabf2105b",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Holo Roulette",
+        "gameID": "26d1e4776e2d48d777369ecd9ba3f903",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Istanbul Roulette",
+        "gameID": "de473034cbf2ae2b874b1a50d5786d65",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Diamond Roulette",
+        "gameID": "4286b2cea14b127d949d81d18d31c824",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Casino Hold'em",
+        "gameID": "9dee61e5e0a6dd0fdc865ae3d75459d9",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Turkish Roulette",
+        "gameID": "25b0bb7276fa2893a4abefdea373c8d7",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Cash Wheel Carnival",
+        "gameID": "1e77cbe546a2d4a9a2b2708b3fb3b8f7",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Montreal",
+        "gameID": "6655a82d639b10f019835752fbebd8d3",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Vancouver",
+        "gameID": "59be2ca6bc92922710d0d76e2386ebaa",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Baccarat 4",
+        "gameID": "837c69cad673580542f91974993b7bff",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Baccarat 5",
+        "gameID": "68c4eea31e5673008f1d2c965061cfc4",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Baccarat 6",
+        "gameID": "d7e1f7855f8f347e7ad1664e3aa23293",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Baccarat 7",
+        "gameID": "c475ba352fae8cdf0789352cdf18a959",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Playboy Speed Baccarat 1",
+        "gameID": "1651f7bfdae3e26e023b1f6d33bb419e",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Playboy Speed Baccarat 2",
+        "gameID": "f3333cd09bb9fbf23e6d8fbb7f06c9a7",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Playboy Speed Baccarat 3",
+        "gameID": "613322a58d3050bfdac1afb01fd51256",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Blackjack Calgary",
+        "gameID": "936651bfd3aeb789d957f4393078367a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "FashionTV X-Beat Roulette",
+        "gameID": "b1fe7a2af37aa8cf5a2e20787a5e08f5",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Mummy Lock Riches",
+        "gameID": "f613ab677a256b83c1b0b871b6ccb019",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Bonny's Treasures",
+        "gameID": "c34791011f598c242c7cc14478752aa7",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Bountiful Birds",
+        "gameID": "63dd10a8f391d2bd5f3f6b6b88dd7fc9",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Star Stash Wild 7's",
+        "gameID": "e7720d6a44a7bc6b61315566ab537ec6",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Joker Burst Frenzy",
+        "gameID": "9cdb6fff1030f36e0b8cc94fb364fa3a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Big Button Bash",
+        "gameID": "ba58d0edb052919c3b7bf6d6b0594b52",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Break Away Shootout",
+        "gameID": "bf8d3cd1bd4bf62a3a7ee55a6f166405",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Break Away Gold",
+        "gameID": "961b2387b7d5244a61d47ca444ca47d9",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Dragon's Rhythm Link&Win",
+        "gameID": "39f077bb4ab9946f51adc32dd0d8cafc",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Money On Reels",
+        "gameID": "6739f677d71af30e6d3844c40120acaf",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Playboy Roulette",
+        "gameID": "9c286c1494300efdfc18f9d110d0e6ba",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Playboy Blackjack",
+        "gameID": "f4474fd9fb7bf3f92f6b7140d62b9216",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Andvari The Golden Fish",
+        "gameID": "bd99c8b3355903e49fe815e7b46c3abf",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Diamond Diva Oink Bonanza",
+        "gameID": "42b2d77f09626b93b56cf50a589e9ed2",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Moonlight Romance-The Awakening",
+        "gameID": "c4f10f040816685c5eac8d52c7f86275",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Sugar Mania 8000",
+        "gameID": "e68d9dd7a0b0e171602270ea77b95fee",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Diamond Inferno",
+        "gameID": "e263a7fffa11942f314ff9d75992954e",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Devil\u2019s Finger",
+        "gameID": "026221faa5dd2031e0c0cafa714990ff",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Bass Catch SUPER UP",
+        "gameID": "2d7b7877257da644481eabae1d7c5043",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Lucky Twins Wilds Jackpots",
+        "gameID": "214ee5b2f5eb860f9fe5d668ccde119e",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "African Wilds",
+        "gameID": "6c9e839070f5e1c0c52d608aab04acee",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Mine Pop",
+        "gameID": "deea362d26a3d8efebe0c8d31054b848",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Dice Pop",
+        "gameID": "4149ec2b54d29d4d20b660c10b9ca1d8",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Plinko Pop",
+        "gameID": "f3ef6e232b5202a1a8add209479af2a7",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Chicken Night Fever",
+        "gameID": "a8c61e1de10b6895047fb7e34c4ce08a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Joker Ice Frenzy Epic Strike",
+        "gameID": "71ccd009c1f78df0c81839e57cfb07d0",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Bears Make Bank! Power Combo",
+        "gameID": "67660018dcc0c6a0fd5aa0fada28a50b",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Lucky Twins Wilds Jackpots",
+        "gameID": "47e38956128ad69d2edf3ebf604dfa57",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Bass Catch SUPER UP",
+        "gameID": "1eb30b87bd7a78d47760b26e93184bb5",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "African Wilds",
+        "gameID": "736387c42b927e58c7727437aeea7a11",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Fire & Diamond Joker",
+        "gameID": "e3000aba8b18b9bd108510986f025bac",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Prosperity Blessing",
+        "gameID": "1ed165b180e4d669a5572d31db10c24a",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "African Quest",
+        "gameID": "e95f57d473139816130929730c0c78ed",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "12 Skulls of the Dead",
+        "gameID": "ca6f6856efefb5d3a5deff01409572cb",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Joker Loko's Multiplier Trail",
+        "gameID": "75a5f1d10940999f8a18cdec8d9c161b",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    },
+    {
+        "gameNameEn": "Brainwashed",
+        "gameID": "4950cd17a88018d7568a4d52b86ed9d4",
+        "customGameType": "1",
+        "vendorCode": 86,
+        "img": ""
+    }
+]

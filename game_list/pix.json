@@ -1,0 +1,218 @@
+ [
+    {
+      "gameNameEn": "Pirate Dice",
+      "gameID": "3a6ea138a8a5bf43167014d5aca7e0ae",
+      "customGameType": 3,
+      "vendorCode": 80
+    },
+    {
+      "gameNameEn": "Storm Riders",
+      "gameID": "a2641f734c657aa2d887292083c3fc98",
+      "customGameType": 3,
+      "vendorCode": 80
+    },
+    {
+      "gameNameEn": "Piggy Bar",
+      "gameID": "1fd072f0b3577300db8562faf52f1ef4",
+      "customGameType": 3,
+      "vendorCode": 80
+    },
+    {
+      "gameNameEn": "I'm A Cat",
+      "gameID": "903673bbffff599fccd76aa21d83543d",
+      "customGameType": 3,
+      "vendorCode": 80
+    },
+    {
+      "gameNameEn": "Captain Dodger",
+      "gameID": "5d172ef0a4988ba5a98332ff20f03fe8",
+      "customGameType": 3,
+      "vendorCode": 80
+    },
+    {
+      "gameNameEn": "Rock Scissors Paper",
+      "gameID": "9ac0aaf24d6b95bb40b46e2ad689bc54",
+      "customGameType": 3,
+      "vendorCode": 80
+    },
+    {
+      "gameNameEn": "Chicken",
+      "gameID": "oeb0ef68759ebea80946931f46f4038fd",
+      "customGameType": 3,
+      "vendorCode": 80
+    },
+    {
+      "gameNameEn": "Call Of The Jungle",
+      "gameID": "ec65256962d3104084bfdec811f8df42",
+      "customGameType": 3,
+      "vendorCode": 80
+    },
+    {
+      "gameNameEn": "Wish Of Fortune",
+      "gameID": "cd9af8a7cedf860327241308493c1931",
+      "customGameType": 3,
+      "vendorCode": 80
+    },
+    {
+      "gameNameEn": "Monk Frogs",
+      "gameID": "d097ef7b443820f30d47867673afdf61",
+      "customGameType": 3,
+      "vendorCode": 80
+    },
+    {
+      "gameNameEn": "Santa's Little Helper",
+      "gameID": "dd507585055131d8264ab1c734130ea8",
+      "customGameType": 3,
+      "vendorCode": 80
+    },
+    {
+      "gameNameEn": "King Thimbles",
+      "gameID": "09907ece09d7b397b8b709b8b5de5838",
+      "customGameType": 3,
+      "vendorCode": 80
+    },
+    {
+      "gameNameEn": "Castle Smashers",
+      "gameID": "0fccbf41e367266af068ce729cfd0552",
+      "customGameType": 3,
+      "vendorCode": 80
+    },
+    {
+      "gameNameEn": "Grave Hilo",
+      "gameID": "96942fef553bcbf416cc25ef36be02de",
+      "customGameType": 3,
+      "vendorCode": 80
+    },
+    {
+      "gameNameEn": "Fox Job",
+      "gameID": "6c929de53f497aa3e20b1189a22dafb6",
+      "customGameType": 3,
+      "vendorCode": 80
+    },
+    {
+      "gameNameEn": "Swoop",
+      "gameID": "b1830cf87c08a524c4ca7981ffc4e499",
+      "customGameType": 3,
+      "vendorCode": 80
+    },
+    {
+      "gameNameEn": "Book of Giza",
+      "gameID": "b3e6ead769306a8139d468b59f9caca6",
+      "customGameType": 0,
+      "vendorCode": 80
+    },
+    {
+      "gameNameEn": "Food Truck",
+      "gameID": "c2738f3824b30bc8c5e32b6b344b4053",
+      "customGameType": 0,
+      "vendorCode": 80
+    },
+    {
+      "gameNameEn": "La Mafia",
+      "gameID": "45c12728f3f2842b1608f14f5a3d1be3",
+      "customGameType": 0,
+      "vendorCode": 80
+    },
+    {
+      "gameNameEn": "Sheriff's Coins",
+      "gameID": "5513b58ec997ad6716309d440673bfc7",
+      "customGameType": 3,
+      "vendorCode": 80
+    },
+    {
+      "gameNameEn": "Fruit Luck",
+      "gameID": "5b5814ee82460b9027e0d6d694bba704",
+      "customGameType": 0,
+      "vendorCode": 80
+    },
+    {
+      "gameNameEn": "Future Fruits",
+      "gameID": "4cb0e2ee3a0d1afed34182976469ac25",
+      "customGameType": 0,
+      "vendorCode": 80
+    },
+    {
+      "gameNameEn": "Neon Ferocity",
+      "gameID": "b92eb83271284b7c8c2c983d390960c9",
+      "customGameType": 0,
+      "vendorCode": 80
+    },
+    {
+      "gameNameEn": "Saturn Express",
+      "gameID": "0ad013186bb1ee848fda0d7c6b563cc2",
+      "customGameType": 0,
+      "vendorCode": 80
+    },
+    {
+      "gameNameEn": "Four Queens",
+      "gameID": "55d5816583ac3cbde6b8e381e5f883b1",
+      "customGameType": 0,
+      "vendorCode": 80
+    },
+    {
+      "gameNameEn": "Los Enamorados",
+      "gameID": "df0dd1faaa4d35ef805796473ed6a602",
+      "customGameType": 0,
+      "vendorCode": 80
+    },
+    {
+      "gameNameEn": "Rotten Bottom",
+      "gameID": "42e428a3a4aab355488c56c9052cc56d",
+      "customGameType": 0,
+      "vendorCode": 80
+    },
+    {
+      "gameNameEn": "Yokai Hunter",
+      "gameID": "c7006aad545a06053873afbd987f5b9f",
+      "customGameType": 0,
+      "vendorCode": 80
+    },
+    {
+      "gameNameEn": "Cyber Snack",
+      "gameID": "7f2ea77d25aacd0b66e562200ecd673a",
+      "customGameType": 0,
+      "vendorCode": 80
+    },
+    {
+      "gameNameEn": "Ha-Ha-Hamster",
+      "gameID": "ac3450b1ac5292751f55ff447ee3e028",
+      "customGameType": 3,
+      "vendorCode": 80
+    },
+    {
+      "gameNameEn": "The Red Widow",
+      "gameID": "b628853cc6a5d429fff862e0f7e8c6fb",
+      "customGameType": 0,
+      "vendorCode": 80
+    },
+    {
+      "gameNameEn": "Fortune Teller",
+      "gameID": "046ed09806be661e697b712e226ca590",
+      "customGameType": 0,
+      "vendorCode": 80
+    },
+    {
+      "gameNameEn": "Heaven VS Hell",
+      "gameID": "93c50e881b7be3cb170565a57e834c41",
+      "customGameType": 0,
+      "vendorCode": 80
+    },
+    {
+      "gameNameEn": "Sweetie Spin",
+      "gameID": "4c0ff2f727da65a237c30d905a9c65bd",
+      "customGameType": 0,
+      "vendorCode": 80
+    },
+    {
+      "gameNameEn": "Merry Catsmas",
+      "gameID": "9b988016c049d421dc8512d07f29e0cf",
+      "customGameType": 0,
+      "vendorCode": 80
+    },
+    {
+      "gameNameEn": "Monk vs Monkey",
+      "gameID": "fcbe9ddc7f4fb7a2c5a664135a128212",
+      "customGameType": 0,
+      "vendorCode": 80
+    }
+  ]

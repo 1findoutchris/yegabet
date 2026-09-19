@@ -1,0 +1,13 @@
+-- Drop the database default on ads.updatedAt.
+--
+-- 20260808100000_ad_edit_and_order added the column with
+-- DEFAULT CURRENT_TIMESTAMP so existing rows had a value. The schema declares
+-- it `@updatedAt` with no `@default`, meaning Prisma sets it on every write —
+-- so the leftover default made the migrations and schema.prisma disagree.
+--
+-- Caught by `prisma migrate diff --exit-code` in CI:
+--   [*] Changed the `ads` table
+--     [*] Altered column `updatedAt` (default changed from `Some(Now)` to `None`)
+--
+-- The backfill has already happened, so the default has no remaining purpose.
+ALTER TABLE "ads" ALTER COLUMN "updatedAt" DROP DEFAULT;

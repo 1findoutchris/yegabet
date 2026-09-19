@@ -1,0 +1,464 @@
+[
+  {
+    "gameNameEn": "Mines",
+    "gameID": "ffca0e72767ba6be51a1c0aa3d78c55f",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Dice",
+    "gameID": "6d5d8256f1f2da3dfb8080f5d578d1f7",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Limbo",
+    "gameID": "cf029006316c0afc83265001499456e4",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Keno",
+    "gameID": "94fbb2876063a54fb5ec6a2e5970fbcb",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Wheel",
+    "gameID": "95b0f63d3423f9de9f55166f260030f5",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Video Poker",
+    "gameID": "ce4674896484d3ae5750dd1478c352b5",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Hilo",
+    "gameID": "58d227d74779a53ba5c79b6a4ec6ac56",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Plinko",
+    "gameID": "725a5f502b5568648385d03e10494a44",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Crash Meteor",
+    "gameID": "e11cb59c7ce63643f6641b562e677539",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Diamonds",
+    "gameID": "48a88f03800072b94dbda61bb8834247",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Plinko Classic",
+    "gameID": "335a4861d48ec435c69a029462881e30",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Mines Classic",
+    "gameID": "abe37c0e403c22fd324117e07ad284de",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Crash Classic",
+    "gameID": "0327ef94362cd21a6385d4847869a815",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Limbo Classic",
+    "gameID": "b347ac2a73a97e03f720150a8a146a19",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Hilo Classic",
+    "gameID": "d1ca34a0be98ad1d8b124cac358a40dc",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Aviator",
+    "gameID": "852f6833b5eeb7a06cdc0811ffaa6211",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Mines Neon",
+    "gameID": "b702c7995bdf42898eae0f9087e6f4dd",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Hilo Neon",
+    "gameID": "79a1cdf40c8d852d524d04657b5fc310",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Multi Hilo",
+    "gameID": "c994a5ab1e25f701bd625319ba5c7aa8",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Crash Neon",
+    "gameID": "d4e29b49dee59c8e58de6516a473a35b",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Plinko Neon",
+    "gameID": "30edd05ca9a48acbfab0b9d629d00bf2",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Limbo Neon",
+    "gameID": "ca7afa0bbf9a6a8da125531523c54103",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Mines Gold Rush",
+    "gameID": "5b30c85d38382626531fc310305427e9",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Hilo Gold Rush",
+    "gameID": "119d4403e799bd6ff24b75c151d0f236",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Limbo Gold Rush",
+    "gameID": "2f0c1d65ba69f15976a9037c9d25039a",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Crash Gold Rush",
+    "gameID": "0b784755d5a575cc4475b525e233faf2",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Lucky Drop-Olympus",
+    "gameID": "03468467fff691a3e1519b08f037f0e0",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Plinko Gold Rush",
+    "gameID": "49e1131b6a35e89c6bfad4e0e420b177",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Mines Maple",
+    "gameID": "ffb8082005b432a681b99ec61ed299f6",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Lucky Drop-Coco",
+    "gameID": "521903555f51ee147a6c8c5efc799da1",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "UpDown",
+    "gameID": "ac9395d3430e015e734720959e039134",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Mines Raider",
+    "gameID": "f9f2a148f101e25c381c7259ae41d9da",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Lucky Hilo",
+    "gameID": "848c8a181806df336eaca3df4ab161a5",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "DragonTower",
+    "gameID": "a9c1c5bec41c5cc8d49dd5e2e718b5c0",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Lucky Drop-Gong Xi Fa Chai",
+    "gameID": "9078081e5997da47d0b7018d1d8b16d2",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Candy Mines",
+    "gameID": "262dccceb9bc3d12a4b6dc3a8cd564fb",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Pinoy Mines",
+    "gameID": "b4029fcec3c50e45d3e68851832e355f",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Aviator2-Sky Elite",
+    "gameID": "7407f47edf26062fa66f68dfe53aecb3",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Mines Soccer",
+    "gameID": "2c4dc8fcca8c83c2bc41dbff6d197606",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Egypt Hilo",
+    "gameID": "c97af01e7c6ff9d344832b0dd91b7cf5",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Lucky Drop-Coco 2",
+    "gameID": "7e15a453faf3c8d87f37b83331442f7c",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Mines Cricket",
+    "gameID": "ab8c86dbc3f6fded2e68937c5335c58a",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Sky Mission",
+    "gameID": "3b94266e766c115e2d536ee6309e9b6e",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Caribbean Bingo",
+    "gameID": "3d9da31400d1d1c782a82fca7291a78e",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Odin Bingo",
+    "gameID": "952978f5473e05ccd6be2ca761b443e5",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Cave Bingo",
+    "gameID": "efcfef17f3f2aefbdedf0ee0ed092f77",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Steampunk",
+    "gameID": "c852a948526f013c8da4052ed4d9ea04",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Lost Ruins",
+    "gameID": "aaadbb18885abcf9b1995c34a98afa3a",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Magic Bingo",
+    "gameID": "5896a5f4c542990c269dccc50b6b3e5b",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Bonus Bingo",
+    "gameID": "49667d62de044eb29cf928b5c3165041",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Maple Bingo",
+    "gameID": "73c7119792f15bff67ec8c90b9d34d75",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Arcade Bingo",
+    "gameID": "e63a6cedb9ad7f7c1b18637de4da2e3d",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "EggHunt Bingo",
+    "gameID": "ad83961dcc51cf075b996d6efcd47ee4",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Steampunk 2",
+    "gameID": "00f18bbae75476df3382718cd20143c6",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Bingo Bells",
+    "gameID": "5b022f14acbf657f71deac3ca389e7cd",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Golden Bingo",
+    "gameID": "bb872d43d0760ae96eb57d498df6203d",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Gold Rush: Boomers",
+    "gameID": "32f85035403672bee6542e8335e5aaa9",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Forest Tea Party",
+    "gameID": "455372b1e515b4a13946b2565c5a5d0e",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Gold Rush: Wild Dig",
+    "gameID": "930ba91c9116ee97fd8604f5f9778892",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Golden Clover",
+    "gameID": "54cf483aad59683bc94b286dc79b0c26",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Chili Fiesta",
+    "gameID": "59b5f16edbeaaa6b8cbbe26999f89c27",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Chicken Run",
+    "gameID": "f12bb4265ad8066e003b93e3982936a5",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Golden Horse Riches",
+    "gameID": "47c9872ab1462b10bc8e52bc1ca0f180",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Golden Fortunes",
+    "gameID": "90ceec91ffd4d7748c84f46cb69c5a5c",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "WS168 Cockfight",
+    "gameID": "7813255c532f0115a805739dac984ec8",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Mines Cookie",
+    "gameID": "1aee3ea6580bad0e08cf8d8979c5c6f7",
+    "customGameType": 0,
+    "vendorCode": 223,
+    "img": ""
+  }
+]

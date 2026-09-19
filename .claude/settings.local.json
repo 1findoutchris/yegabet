@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/HP/Desktop/vamos/**)",
+      "Bash(npx tsc *)",
+      "Bash(npx next *)",
+      "PowerShell(npm run *)",
+      "PowerShell(npm install *)"
+    ]
+  }
+}

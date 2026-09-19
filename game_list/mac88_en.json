@@ -1,0 +1,1612 @@
+[
+  {
+    "gameNameEn": "Mini MAC88 Lobby",
+    "gameID": "e391f7dbfbc9ded0ea4a487c39c1e8b8",
+    "customGameType": 6,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Mini JetX",
+    "gameID": "e0402c58af3c567366aa6cf0f5821980",
+    "customGameType": 6,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Poison Teenpatti 20 20",
+    "gameID": "3845e907ece3ec94443a6aa3e49b51a8",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Mini Aviator",
+    "gameID": "a5b8acdf0e7497d37cc785e0d4f1e0d0",
+    "customGameType": 6,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Mini Dice",
+    "gameID": "80ad35ede55f78fbd73e74505b5b6134",
+    "customGameType": 6,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Unique Teenpatti",
+    "gameID": "2c997dc6acdd89859160ee259e864afb",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Joker Teenpatti One Day",
+    "gameID": "2854446d9b0a32070e341e3dcd61ef16",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Lightning Dragon Tiger",
+    "gameID": "d005f9c3e7ee55784534461aace672af",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Unique Teenpatti",
+    "gameID": "65ee16cb356c5e8459089aeac42d11f8",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Poison Teenpatti 20 20",
+    "gameID": "9a77d6f70d286588db2a5e097915d639",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Sexy Lucky 7 -2",
+    "gameID": "566495ad80dc35d8ebb504ffb50aa6d8",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Sexy 2 Card Teenpatti",
+    "gameID": "7941279a8a3939b432c71d84e7e2afd2",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Sexy Teenpatti 20-20",
+    "gameID": "e39cabdb0050effba6b7051e65665128",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Sexy Lucky 7 -3",
+    "gameID": "fc46c02363cbae83f57026a6887722b3",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Sexy Dragon tiger 2",
+    "gameID": "8462efb7e3477bdbe4e7af9dc4a32f8d",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Sexy Dragon Tiger",
+    "gameID": "3af2f103fe4d196eb19aa3439cf74d32",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Sexy Lucky 7",
+    "gameID": "03a2171abc81db1bb2e3a714c95f4abe",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Sexy High Low",
+    "gameID": "6c6d9322e3a3e023b56216a11c3bd884",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Sexy Amar Akbar Anthony",
+    "gameID": "729fdf0380e92735cff0e8b62bdac358",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Trade88 RNG2",
+    "gameID": "fb748cc1e60cc2e4b653722e202aa0bd",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Lucky Tiger Mines",
+    "gameID": "15bdbae0eb6d3e91430cd9cfcdc41c86",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "VR Lightning Roulette",
+    "gameID": "fba6287ee18e548bfe2af0d20cda85f0",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Deal Or No Deal",
+    "gameID": "401487e6cf5489fd9153a83a337edc01",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "The Voice",
+    "gameID": "0984a086c231ad1d3639ad3fa01f1e78",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Plane Crash",
+    "gameID": "80d58c9cf15545f06e89f482a7872dfd",
+    "customGameType": 6,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "CRASH MAN",
+    "gameID": "29d3c28e7825e2324e683d1e2b4b2488",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Trade88 ETHUSD",
+    "gameID": "2a3f9c1d229b2640ae1638b0d773af05",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Trade88 SOLUSD",
+    "gameID": "88dc93e15982d45f97aa5cd86ef53861",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Snakes",
+    "gameID": "9193f864c9b1bebedbfc7b56f5332edb",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Jalwa Color Game 10",
+    "gameID": "0e504250a731f65aab34a31a2c32b0db",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Jalwa Color Game 5",
+    "gameID": "5391e93d03d0adcf6f8ab4360a72db06",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Jalwa Color Game 3",
+    "gameID": "32fab661cd9274e0672248152746b8a8",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Jalwa Color Game",
+    "gameID": "2d3eae979426701b1cd443636f24b6b4",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Naughty Button",
+    "gameID": "e7fdcc9c3b60855acc8c1f0afc2f5a96",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Packs",
+    "gameID": "a2c566600da7afeae2a8f47f6174c37a",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Dragon Tower",
+    "gameID": "2e4b140d5ba77c625d0b5142ef3d19c5",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Pump",
+    "gameID": "b1f7c2de35204853db6dc17fd88edc00",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Stock Matka",
+    "gameID": "7972e54fd89e2703b737fa2c87009ddd",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Race Track",
+    "gameID": "346debe8c51d61ba12556191dd15e913",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Trade88 NATURAL GAS",
+    "gameID": "026096a11f0c51dbb3c22a8b7680eb00",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Chicken Road Cross 2",
+    "gameID": "453428976b2a2214aee4f3e679f2303b",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Mini Xroulette",
+    "gameID": "8fdb4607fdcd6e9cf0458b92a98558ff",
+    "customGameType": 6,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Mini Crash X",
+    "gameID": "ca04bdb935a510f908193abef2b95b02",
+    "customGameType": 6,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Mini Coin Flip",
+    "gameID": "4a368a4e7e7421a2c83fca8eaf5c07a3",
+    "customGameType": 6,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Mini Fortune Wheel",
+    "gameID": "f73d28f118be9e9ce7152be41bbcce28",
+    "customGameType": 6,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Mini Rock Paper Scissors",
+    "gameID": "d51a9db17cd6b8d613ef9861412d605a",
+    "customGameType": 6,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Marble Run",
+    "gameID": "1930ee02de3046101d3290059b1098b1",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Mini Limbo",
+    "gameID": "fd01295cf73d124112b3f865738d7eab",
+    "customGameType": 6,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Cricket Battle",
+    "gameID": "2360ac16b63283ecd91d138cca7695ab",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Lucky Tiger Spin",
+    "gameID": "4cf5cae14ca39638b116a722c1ebcbd5",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Teenpatti Joker 20-20",
+    "gameID": "f132dfac909bc7f0e27ae35555136aa2",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Turbo Auto Roulette",
+    "gameID": "7df6270b1e776f1a60f59366842e7f53",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Speed Auto Roulette",
+    "gameID": "e12a9ed677050df19d5f4bf7018e690a",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Lottery",
+    "gameID": "9720272e09fb36c251a786cd53738ca5",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Worli Matka",
+    "gameID": "e20fd1d5917c8c79d887a08d0a255374",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Casino War",
+    "gameID": "542a3cd134328c99cca94106889e140e",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Race 20",
+    "gameID": "53e9e0eec427f802f51c0b5ff04d4688",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Queen Race",
+    "gameID": "58753d0d9856bbc02a8aa4ca45c280c8",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "3 Cards Judgement",
+    "gameID": "1b72a33d0f799ac4dc75d01e87c51f6b",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Amar Akbar Anthony",
+    "gameID": "b2002b98c6c1546fbf7d83bcd6032d62",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Dragon Tiger Lion",
+    "gameID": "e29b63a8bb6376e3566c826386036baa",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "32 Cards",
+    "gameID": "9970d3ec6f0d6d239f30a7c532a7fc9c",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Teenpatti One Day",
+    "gameID": "b187b5c184a4dbd767da247a3ea0729a",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Andar Bahar",
+    "gameID": "c57c0ced1fd67c58daa47d3b6004d6cc",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Lucky 7",
+    "gameID": "83926ba32b3cb89e542ab3dae151126a",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Poker 20-20",
+    "gameID": "d7f85682fe97073dbbb198cf1f3bd4da",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Roulette",
+    "gameID": "e7ce60df355cd1b8926d36f06bb6892c",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Sic Bo",
+    "gameID": "1d2b93b90209e1515db2de44f166ae62",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Baccarat",
+    "gameID": "4911bff87b46f952d54f4cc07d51862a",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Dragon Tiger",
+    "gameID": "55520a99e27c2c2a8ca837cda66d59be",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Pick3 3min",
+    "gameID": "06874ecc21f7383599e28f999949693a",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Pick3 1min",
+    "gameID": "f0efa0ece80ba1942c7a034992cb410e",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Color Game",
+    "gameID": "7c47de75096ca247e50d0ee688e36e1e",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Color Game",
+    "gameID": "d9d67af529d5ff61f74e3a02dc25324b",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Jhandi Munda",
+    "gameID": "209b915020437af4ffec121a1a2ff1da",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Chicken Road Cross",
+    "gameID": "98f5d119d84614777c3a371bd8e0df6f",
+    "customGameType": 6,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Trade88 OIL",
+    "gameID": "9cbb39bc54b91a9251b6a5a2aae65e25",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Trade88 SILVER",
+    "gameID": "f3fefa71a5c1572191b78223000d37fc",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Trade88 GOLD",
+    "gameID": "3fcc6a9348b35092e32afad119e80858",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Trade88 LTCUSD",
+    "gameID": "7767ae0fd91d8d699c5f43fd6fef7072",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Trade88 BTCUSD",
+    "gameID": "acf41ccab7997c115808c87c6faf6721",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Trade88 BNBUSD",
+    "gameID": "75897680a8ad71048aab67a89b37df9e",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Trade88 EURUSD",
+    "gameID": "abf8a5832bcc3353be9a339b57f8847a",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Trade88 RNG",
+    "gameID": "1435fb86269c204d5e87713168816b83",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Sky fall",
+    "gameID": "0a952bf0d6024f2a0ec84b9597c93399",
+    "customGameType": 6,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Fortune Wheel",
+    "gameID": "71a0492e34fba4262f2a8e1dc9be817d",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Coin Flip",
+    "gameID": "97d9e3e53ec193d7e62dd4520bdaeb3c",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Rock Paper Scissors",
+    "gameID": "857a7f98340d2aee65a63a60b81c3a60",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Jet XT",
+    "gameID": "6ed76a12fd215a978d9fdf483d1d450d",
+    "customGameType": 6,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Kitex",
+    "gameID": "3c286558bcca2aade3ded558b889f2e4",
+    "customGameType": 6,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Hi Lo",
+    "gameID": "deaffd5bc53b9c475e62b545a2b7d943",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Pushpa Rani",
+    "gameID": "345a42c0d84ad44d0f3ba9744f95000b",
+    "customGameType": 6,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Ball by Ball VR",
+    "gameID": "bde1b1d597053bf8b71d6c451cd98c82",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "X Roulette",
+    "gameID": "90aabfc0872d07d348714e16c86f28ff",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Lucky 15",
+    "gameID": "3c565ac78f42109fb5570fd96a0a91d8",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Twist X",
+    "gameID": "e11a2739cce3071337aace92d84bcd3e",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Lucky 5",
+    "gameID": "ce1b8890f42f47988a1c19d5fc339269",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Plinko",
+    "gameID": "3eaa8bf137468144cb2c2e2b6731e82e",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Diamonds",
+    "gameID": "7f0f95e35760e4d7ea6c8b132a80e618",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Mines",
+    "gameID": "966251e51babbd71cfbc64534a2fce22",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Dice",
+    "gameID": "894d1ee7814e5894c2e859dd71d21800",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Limbo",
+    "gameID": "196e9bdd385e9ffa123c396a6b9571a0",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Crash X",
+    "gameID": "6d437ef774817d3d20f076673a219a5b",
+    "customGameType": 6,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "AK47 VR",
+    "gameID": "2fa2488d4bcf013a9d92a708e831fd76",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Center Card VR",
+    "gameID": "19c8f646c6fdaa65cb1da81d47174efb",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Hi Lo VR",
+    "gameID": "bcfd8864016a39e8bc1abb9d5365aa29",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "AviatorX2",
+    "gameID": "70b1aa46bc98c9850de8a1b1ce8267f7",
+    "customGameType": 6,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "K3 Lottery 10",
+    "gameID": "0a17581fb39d78128b16ae27d1dbdf7f",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "K3 Lottery 5",
+    "gameID": "f00ec059497b059c9093475d3f43d749",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "K3 Lottery 3",
+    "gameID": "3af8adefe292ced0dd66f30c81b78d60",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "K3 Lottery 1",
+    "gameID": "59e0125cf12c8dad5d94b6ed6de35282",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "5D Lottery 10",
+    "gameID": "010e192216c719227819f53847154783",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "5D Lottery 5",
+    "gameID": "c075c4b688edfbd4cf94e7665ad2c716",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "5D Lottery 3",
+    "gameID": "3c1c0b6eb9e0f61eb4ccd6a4fb3f0e60",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "5D Lottery 1",
+    "gameID": "17b65eb1bb2f86a891d69e580633e0a7",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "WINGO10",
+    "gameID": "26bb7ee7385f12a3df412c410529792c",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "WINGO5",
+    "gameID": "50e1d3b90f7aae519ac4f7dbffc5d7e9",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "WINGO3",
+    "gameID": "87c9055bd91f1045ef149f3ff5de8f99",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "WINGO",
+    "gameID": "5e8199c43e3bf2e6317cfb47ab5e8070",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Aviator X",
+    "gameID": "dbd35d66eb2c8b5277ab3ec88e92b7cf",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Lankesh",
+    "gameID": "35989c76d9a05bc45d564ebd73b8b098",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "VR 29 card bacarrat",
+    "gameID": "c03a53b445f5111ce7f303b415f45a78",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "VR Worli Matka",
+    "gameID": "8fd1a7a8e220c0dc28c7d0990bbaf1a9",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "VR High low",
+    "gameID": "19d57727e61818b68675915e2f78e0e6",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "VR Auto Roulette",
+    "gameID": "7f689894de729784f2d7a3dc946ab861",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "VR Race T20",
+    "gameID": "ac9dd6afa0c262cb088192210ca43788",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "VR Poker",
+    "gameID": "52ee41ddbbb329ac9d6144d345e018fd",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "VR Queen Race",
+    "gameID": "73428f933e7a5d4d60645cd98062542d",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "VR 2 Card TP",
+    "gameID": "d21058fee38e22d56f1493a20ed55dca",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "VR Andar Bahar",
+    "gameID": "cf2b9056bf9274180256168496bd2b0b",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "VR 32 Cards",
+    "gameID": "9489f8da408ac6ee09f0917b264a70fc",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "VR 20-20 Teenpatti",
+    "gameID": "f6c74af6d71dbb3924148c68c92c4b88",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "VR Casino Meter",
+    "gameID": "607b4c910c5e4be70129a57ed49c1201",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "VR Dragon Tiger",
+    "gameID": "060a26b27cdffb1bdb140fb400f811ff",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "VR Amar Akbar Anthony",
+    "gameID": "16a051a381051e852ac308f7a342eedf",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "VR Bollywood Casino",
+    "gameID": "8d0a4b8d791e2061627b7def7ba63956",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "VR Mulfis Teenpatti",
+    "gameID": "cf18165703bd21ba2b89ccc2bbb60a00",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "VR 20-20 DTL",
+    "gameID": "b4e0d67b8b733b522d4216c2d9c8ab81",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "VR Trio",
+    "gameID": "bb3d2d3255c30967738da26c6ff7329a",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "VR Lucky 7",
+    "gameID": "e29b43abfe3937db533ec56354bfa4c3",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "MAC Excite Lobby",
+    "gameID": "749e6234d718903d8595ba3dcf16cf00",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Speed Auto Roulette",
+    "gameID": "126c3e8b4e20b273b14e82731b81cabb",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Turbo Auto Roulette",
+    "gameID": "9a75be5be5872cbc379d13d81adeef6b",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Teenpatti Joker One Day",
+    "gameID": "9968f013b601e74d6873171b888c6d96",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Teenpatti Joker 20-20",
+    "gameID": "77e1e1f8e75fc4bcf88ee7a6399198b7",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "AK47 Teenpatti",
+    "gameID": "14e1e9fff78a3efce3d110b293db50e7",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Lucky 5",
+    "gameID": "65a47c67a52cc7cb3feb4f17dbfd50fa",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Dragon Tiger 2",
+    "gameID": "08f3c36deb5a2dda760f59bf99c0c0e4",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "20 20 Teenpatti 2",
+    "gameID": "4bc3c56df613b843bf5210754b10e0a1",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Dream Wheel",
+    "gameID": "71ad561a64bb4f57ac220a466c58ecdf",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Football StudIo",
+    "gameID": "9c5866b1e501dcd1f9341b3a8562edf1",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Center card",
+    "gameID": "ae1de4edff38c0644cfeef3ab6882d41",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Super Over",
+    "gameID": "6dda02b7471f1d7c83a2f784d38ee31a",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Andar Bahar 50",
+    "gameID": "4d3049fe72cf775f9cf84b49945e59ce",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Instant Teen Patti",
+    "gameID": "ba554d37d7e77dde4a763e5c2f8a1d02",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Muflis Teenpatti",
+    "gameID": "5f2b5f86af4cd6ff58d63ce6855ecf85",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "10 - 10 cricket",
+    "gameID": "386eced5c11593bc02bb7d11d8f49d67",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "High Low",
+    "gameID": "43571703ea236608d99fa2021e5805ac",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Open Teen patti",
+    "gameID": "f4eaab0183fe2e9d905bf6a7d35b79a7",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Cricket Match 20-20",
+    "gameID": "031493eae01be1f1f6a3d77b3cb47fa2",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Note Number",
+    "gameID": "e3717b821f7b304cb9c3cb6be0bfa013",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Race to 17",
+    "gameID": "0050eea7c4d25edf7503fb4111b72cb3",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Instant 2 Cards Teenpatti",
+    "gameID": "d1cdc6b019d6303cfe23a73e3a4388cd",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "6 Player Poker",
+    "gameID": "8729907ee52bf7503092bff47e53c9be",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "One Card One Day",
+    "gameID": "2ddda5e4529917bd1ced85e262ec3d56",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "One Card Meter",
+    "gameID": "baf3899ce5f0da32b3c5de878433a0d0",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "One Card 20 20",
+    "gameID": "b3c5db8cfaeacca56d3d04ddbe63ef5a",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Dus Ka Dum",
+    "gameID": "6d6a7ba2b2e13eb4a5538cca4c486d51",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "1 Day Dragon Tiger",
+    "gameID": "d9589a9453aba5c2704ffce85c1c4f1e",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "5 Five Cricket",
+    "gameID": "97da0f93f35949165d4ecbe3f5599d7d",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Super Over",
+    "gameID": "b11f86112aa04aae953dbd972d9334a9",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "20-20 Teenpatti",
+    "gameID": "8e92bccb1446c8b9e8818911da28b61d",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Poker 1-Day",
+    "gameID": "f20073d691950a175f650f672c754b13",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Bollywood Casino B",
+    "gameID": "57d4c7e7065a8d62c1e6c30b99bd6096",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Muflis Teenpatti",
+    "gameID": "3d3cf3be7fd64df0fd3c62a1676ecc37",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Two Card Teenpatti",
+    "gameID": "2cf2f6c377e34e1e4cdc2f4cb5bc73f7",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "29 Baccarat",
+    "gameID": "a6748ae8ac36dfca78c3d61807cab291",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Lottery",
+    "gameID": "027a46d68b150fcb427beced5ec08ad3",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Worli Matka",
+    "gameID": "53a4d12a9ecd10037ed61661b7bb869d",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Casino War",
+    "gameID": "be4651db717276b60fc7772ec26a9208",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Race 20",
+    "gameID": "f31ba679f8271c01ddb84c42af7ac1f8",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Queen Race",
+    "gameID": "9191937a14a2aa842e40523c06f33bcc",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Dream Wheel",
+    "gameID": "7b099dd82191cdf97e93d6fb0e58e6b1",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "FootBall Studio Dice",
+    "gameID": "764728e8809aa5fe9a7ed29886ca491f",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Andar Bahar 50",
+    "gameID": "10b969e35b3d42c3a8dc8bfc666c2537",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Instant Teenpatti",
+    "gameID": "9ea063dbac63f4918bd0e7d6793b0b21",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Instant Super Over",
+    "gameID": "2a429c451db5f45e64bedf47cccbfbe1",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Lucky 5",
+    "gameID": "2bfa8f7774d00f0202d414c32e9ab59d",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Center Card",
+    "gameID": "84f0bfc22e638c312d619695e9d54c9c",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "AK47 Teenpatti",
+    "gameID": "d6f40c34e73c71ae169238e7c5ebb44c",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "One Card One Day",
+    "gameID": "13a022b08657f50b41379f20ea1ca15f",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Muflis Teenpatti",
+    "gameID": "1616ec13397aacbcf90acbdb8bd520ae",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Dragon Tiger 2",
+    "gameID": "587b934ed11359d7acc23a4480833880",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "20 20 Teenpatti 2",
+    "gameID": "6328ab25ed935e3b6b4d26990bbc4fbb",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "10 - 10 cricket",
+    "gameID": "dd4c2f1b8d5f1b59ebf0e1c5798c3d12",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "High Low",
+    "gameID": "ea75a51fa8c60d155c142007474d7152",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Open Teen patti",
+    "gameID": "c6d010abe7368e2304776b78b6d0d3af",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Cricket Match 20-20",
+    "gameID": "a9f7c358d2c1ef29406b11675f6bef9f",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Note Number",
+    "gameID": "4f5f606535e8178d7d0151e5fe40b6e8",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Race to 17",
+    "gameID": "cc476d50800d73f2206ff10e49d038af",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Instant 2 Cards Teenpatti",
+    "gameID": "96109be6f6719cd2bcc6b84e488e85db",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "6 Player Poker",
+    "gameID": "4afe2b70837b85ea218f458abef66b86",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "One Card 20 20",
+    "gameID": "90611bf67cef295595e581e99008eb39",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Dus Ka Dum",
+    "gameID": "e7e5e1489556ab31a386e271e30c854b",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "1 Day Dragon Tiger",
+    "gameID": "f04bd72c204ebbef16d4889d9e3d1b2b",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "5 Five Cricket",
+    "gameID": "8d8ba0242de74548b2bf284e01dd0c1c",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Super Over",
+    "gameID": "8da5d87d6a0c7fa19b6eaf0439c62a68",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "20-20 Teenpatti",
+    "gameID": "0342aa81771adfc335c6c91d2b58dc4b",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Poker 1-Day",
+    "gameID": "0cfb79942bb7754b00e6571161f3d8d1",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Bollywood Casino",
+    "gameID": "c93d32ab8696e24b86f6ea96b415c1e7",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Muflis Teenpatti One Day",
+    "gameID": "02fe8e136fe63d7f9271714b3362019a",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "3 Cards Judgement",
+    "gameID": "1c426805e13f435c5141507508c7491a",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Amar Akbar Anthony",
+    "gameID": "565054bdeb782b5242c47bcbf65c1dc1",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "DTL",
+    "gameID": "30a05dd4b55482a8551b982848a34495",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "32 Cards",
+    "gameID": "908afb4cad15466560905baaf476fc7d",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Mac88 Gaming Lobby",
+    "gameID": "29ce164e26e341769e226de3dd1ef6a6",
+    "customGameType": 0,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Teenpatti One Day",
+    "gameID": "6140ab35786aab1672d1c461adef69f8",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Andar Bahar",
+    "gameID": "61534f0355179b2f0fb658645563d05d",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Lucky7",
+    "gameID": "a1a3795989340ccd1ae1042c8c2204ef",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Poker 20-20",
+    "gameID": "64affc98d87a15e6c6a23df0f684c8b8",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Roulette",
+    "gameID": "54d5673e198f422b2b5c93b4399bc4de",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Sic Bo",
+    "gameID": "34a9fcee3f7c4cf7e39c55d3f4e630a5",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Bacarrat",
+    "gameID": "4e9c033b5144f2ac2bd0bce3e4e2b880",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Two Card Teenpatti",
+    "gameID": "e80a1a052663765f314398ac856fea88",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "29 Baccarat",
+    "gameID": "481e738cbb3a794d0f6565d02c5fd2c8",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Test Teenpatti",
+    "gameID": "a67d6dfcf398e42a0c4aa537224b3da0",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Trio",
+    "gameID": "f46896afc7a3a4a3d1d4ff08a45a48ec",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Test Teenpatti",
+    "gameID": "4c6ccd65d59d8513156331160fbda7a0",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Dragon Tiger",
+    "gameID": "b7edd7202a50b426e593f33963fb4a2f",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  },
+  {
+    "gameNameEn": "Trio",
+    "gameID": "760cf78c795b6e6dadf8b08b6751c2fe",
+    "customGameType": 1,
+    "vendorCode": 224,
+    "img": ""
+  }
+]
