@@ -201,6 +201,11 @@ jobs:
 
       - run: npx playwright install --with-deps chromium
 
+      # Fresh container = empty DB. The e2e globalSetup truncates but does not
+      # migrate (it used to share the db job's already-migrated database).
+      - name: Apply migrations to fresh test DB
+        run: DATABASE_URL=$TEST_DATABASE_URL npx prisma migrate deploy
+
       # playwright.config.ts builds and starts the app itself (a production
       # build, not `next dev`, so RSC/build breakage is caught).
       - name: E2E tests
