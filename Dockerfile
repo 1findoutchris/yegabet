@@ -52,4 +52,6 @@ EXPOSE 3000
 ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
 
-CMD ["node", "server.js"]
+# Migrate then serve — npx fetches prisma@5 at boot (runner stage has no CLI).
+# Schema is copied above; DATABASE_URL comes from the Railway Postgres plugin.
+CMD ["sh", "-c", "npx --yes prisma@5 migrate deploy && node server.js"]
