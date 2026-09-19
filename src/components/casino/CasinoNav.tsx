@@ -40,7 +40,7 @@ export function CasinoNav() {
     const playing = !!current;
     if (wasPlaying.current && !playing) {
       refresh();
-      window.dispatchEvent(new Event("fetan:activity"));
+      window.dispatchEvent(new Event("vinna:activity"));
     }
     wasPlaying.current = playing;
   }, [current, refresh]);
@@ -56,13 +56,13 @@ export function CasinoNav() {
   }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 h-14 bg-[#0B0710]/80 backdrop-blur-xl border-b border-[color:var(--border-muted)]">
+    <header className="fixed top-0 left-0 right-0 z-50 h-14 bg-[#0C2027]/80 backdrop-blur-xl border-b border-[color:var(--border-muted)]">
       <div className="max-w-7xl mx-auto h-full px-3 sm:px-6 flex items-center gap-2 sm:gap-8">
 
         {/* Logo */}
         <Link href="/casino" className="shrink-0 select-none">
           <span className="font-display text-xl font-extrabold tracking-[-0.04em] text-[color:var(--text-primary)]">
-            Fetan<span className="text-gold-grad">Bet</span>
+            Vinna<span className="text-gold-grad">Bet</span>
           </span>
         </Link>
 
@@ -114,7 +114,7 @@ export function CasinoNav() {
             >
               <StreakFlame days={streakDays ?? 0} active={(streakDays ?? 0) > 0} className="w-4 h-4 shrink-0" />
               <span className="text-[13px] font-bold text-[color:var(--text-primary)] tabular-nums">{streakDays ?? 0}</span>
-              <span className="hidden sm:inline text-[11px] text-[color:var(--text-muted)]">day</span>
+              <span className="hidden sm:inline text-[11px] text-[color:var(--text-secondary)]">day</span>
             </Link>
 
             {/* Deposit — desktop (mobile uses the bottom-bar FAB) */}

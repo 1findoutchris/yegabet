@@ -7,7 +7,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "All Games — Slots, Crash & New Releases",
   description:
-    "Browse every game at Fetan Bet: popular titles, crash games, hundreds of slots and the newest releases. Play in ETB with telebirr, CBE Birr and eBirr.",
+    "Browse every game at VinnaBet: popular titles, crash games, hundreds of slots and the newest releases. Play in ETB with telebirr, CBE Birr and eBirr.",
   alternates: { canonical: "/games" },
 };
 

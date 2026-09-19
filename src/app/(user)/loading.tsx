@@ -1,5 +1,5 @@
-import { FetanLoader } from "@/components/casino/VamosLoader";
+import { VinnaLoader } from "@/components/casino/VinnaLoader";
 
 export default function Loading() {
-  return <FetanLoader />;
+  return <VinnaLoader />;
 }

@@ -34,7 +34,7 @@ export const PAYMENT_METHODS: PaymentMethod[] = [
     logo: "/payment/telebirr.svg",
     agentLabel: "telebirr number",
     agentNumber: "0912 345 678",
-    agentName: "Fetan Agent",
+    agentName: "Vinna Agent",
   },
   {
     id: "cbebirr",
@@ -44,7 +44,7 @@ export const PAYMENT_METHODS: PaymentMethod[] = [
     logo: "/payment/cbebirr.svg",
     agentLabel: "CBE account number",
     agentNumber: "1000 1234 5678",
-    agentName: "Fetan Betting PLC",
+    agentName: "VinnaBetting PLC",
     // A transfer from any other bank arrives without the CBE Birr confirmation
     // SMS the auto-matcher reads, so it cannot be credited automatically.
     warning: "Only CBE Birr to CBE Birr transfers are accepted. Sending from another bank or wallet will not be credited.",
@@ -57,7 +57,7 @@ export const PAYMENT_METHODS: PaymentMethod[] = [
     logo: "/payment/ebirr.webp",
     agentLabel: "eBirr number",
     agentNumber: "0712 345 678",
-    agentName: "Fetan Agent",
+    agentName: "Vinna Agent",
   },
 ];
 

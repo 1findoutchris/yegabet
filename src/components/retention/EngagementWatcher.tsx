@@ -26,8 +26,8 @@ export function EngagementWatcher() {
       const earned = data.earned ?? [];
       const streakDays = data.streakDays ?? 0;
 
-      const streakKey = `fetan:streak:${userId}`;
-      const achKey = `fetan:ach:${userId}`;
+      const streakKey = `vinna:streak:${userId}`;
+      const achKey = `vinna:ach:${userId}`;
 
       // Streak increase
       const prevStreakRaw = localStorage.getItem(streakKey);
@@ -60,10 +60,10 @@ export function EngagementWatcher() {
     check();
     const id = setInterval(check, 45_000);
     const onActivity = () => check();
-    window.addEventListener("fetan:activity", onActivity);
+    window.addEventListener("vinna:activity", onActivity);
     return () => {
       clearInterval(id);
-      window.removeEventListener("fetan:activity", onActivity);
+      window.removeEventListener("vinna:activity", onActivity);
     };
   }, [userId, check]);
 

@@ -394,7 +394,7 @@ function StatCard({
     green: { bg: "#10B98118", border: "#10B98133", icon: "var(--green)" },
     red: { bg: "#FF3B5C18", border: "#FF3B5C33", icon: "var(--red)" },
     gold: { bg: "var(--bg-accent-dim)", border: "var(--border-accent)", icon: "var(--gold)" },
-    purple: { bg: "#8B5CF618", border: "#8B5CF633", icon: "var(--purple-2)" },
+    purple: { bg: "#C07AFF18", border: "#C07AFF33", icon: "var(--purple-2)" },
   };
   const c = colorMap[color];
   return (

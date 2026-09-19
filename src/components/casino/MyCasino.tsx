@@ -51,24 +51,24 @@ export function MyCasino({ recent, bigWin, stats, tiers = TIERS }: Props) {
   const statTiles = [
     { icon: <IcLevel className="w-4 h-4" />,  label: "Level",         value: rank.tier.name,            accent: rank.tier.color, bar: rank.progressPct },
     { icon: <IcTrophy className="w-4 h-4" />, label: "Biggest win",   value: etb(stats.biggestWin),     accent: "#2BD974" },
-    { icon: <IcCoins className="w-4 h-4" />,  label: "Total wagered", value: etb(stats.totalWagered),   accent: "#F5B400" },
+    { icon: <IcCoins className="w-4 h-4" />,  label: "Total wagered", value: etb(stats.totalWagered),   accent: "#2DD4BF" },
     { icon: <IcStreak className="w-4 h-4" />, label: "Day streak",    value: `${stats.streakDays} ${stats.streakDays === 1 ? "day" : "days"}`, accent: "#FF7A1A" },
   ];
 
   return (
     <section
       className="relative overflow-hidden rounded-3xl border border-[color:var(--border-base)] p-5 sm:p-7"
-      style={{ background: "linear-gradient(155deg,#1B1430 0%,#15101D 55%,#120D18 100%)" }}
+      style={{ background: "linear-gradient(155deg,#1B1430 0%,#12303C 55%,#120D18 100%)" }}
     >
       {/* decorative blooms */}
       <span aria-hidden className="pointer-events-none absolute -top-20 -right-16 w-72 h-72 rounded-full"
-        style={{ background: "radial-gradient(circle,rgba(245,180,0,0.18),transparent 65%)" }} />
+        style={{ background: "radial-gradient(circle,rgba(45,212,191,0.18),transparent 65%)" }} />
       <span aria-hidden className="pointer-events-none absolute -bottom-24 -left-16 w-72 h-72 rounded-full"
-        style={{ background: "radial-gradient(circle,rgba(139,92,246,0.20),transparent 65%)" }} />
+        style={{ background: "radial-gradient(circle,rgba(192,122,255,0.20),transparent 65%)" }} />
 
       {/* Header */}
       <div className="relative z-10 flex items-center gap-3 mb-5">
-        <ArtChip className="w-11 h-11 shrink-0 drop-shadow-[0_3px_8px_rgba(139,92,246,0.5)]" />
+        <ArtChip className="w-11 h-11 shrink-0 drop-shadow-[0_3px_8px_rgba(192,122,255,0.5)]" />
         <div className="min-w-0">
           <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-[color:var(--purple-2)]">My Casino</p>
           <h2 className="font-display text-[20px] sm:text-[24px] font-extrabold tracking-[-0.02em] text-[color:var(--text-primary)] leading-tight truncate">
@@ -85,7 +85,7 @@ export function MyCasino({ recent, bigWin, stats, tiers = TIERS }: Props) {
           </div>
           <div
             className="w-11 h-11 rounded-full grid place-items-center font-display font-extrabold text-[#1B1430] text-lg bg-gold-grad shrink-0"
-            style={{ boxShadow: "0 0 18px rgba(245,180,0,0.45)" }}
+            style={{ boxShadow: "0 0 18px rgba(45,212,191,0.45)" }}
           >
             {initial}
           </div>

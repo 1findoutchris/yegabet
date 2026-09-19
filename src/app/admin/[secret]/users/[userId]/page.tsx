@@ -47,12 +47,12 @@ interface UserDetail {
 
 const REQ_COLOR: Record<string, string> = {
   PENDING: "#F59E0B", APPROVED: "#2BD974", COMPLETED: "#2BD974",
-  REJECTED: "#FF3B5C", CANCELLED: "#A79FB5", PROCESSING: "#8B5CF6",
+  REJECTED: "#FF3B5C", CANCELLED: "#A79FB5", PROCESSING: "#C07AFF",
 };
 
-const TXN_COLOR: Record<string, string> = { DEPOSIT: "#2BD974", WITHDRAWAL: "#FF3B5C", BET: "#A79FB5", WIN: "#2BD974", BONUS: "#F5B400", COMMISSION: "#8B5CF6", REFUND: "#2BD974" };
+const TXN_COLOR: Record<string, string> = { DEPOSIT: "#2BD974", WITHDRAWAL: "#FF3B5C", BET: "#A79FB5", WIN: "#2BD974", BONUS: "#2DD4BF", COMMISSION: "#C07AFF", REFUND: "#2BD974" };
 const TXN_SIGN: Record<string, string> = { DEPOSIT: "+", WITHDRAWAL: "−", BET: "−", WIN: "+", BONUS: "+", COMMISSION: "+", REFUND: "+" };
-const TIER_COLOR: Record<string, string> = { BRONZE: "#CD7F32", SILVER: "#C7CCD1", GOLD: "#F0A500", PLATINUM: "#9FE7E3", VIP: "#A78BFA" };
+const TIER_COLOR: Record<string, string> = { BRONZE: "#CD7F32", SILVER: "#C7CCD1", GOLD: "#F0A500", PLATINUM: "#9FE7E3", VIP: "#D8B4FF" };
 
 function fmtETB(n: number) { return n.toLocaleString(undefined, { minimumFractionDigits: 2 }); }
 function fmtDate(iso: string) { return new Date(iso).toLocaleString("en-GB", { day: "2-digit", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" }); }
@@ -140,7 +140,7 @@ export default function UserDetailPage() {
   if (loading) return <div className="flex justify-center items-center h-64"><Loader2 className="w-6 h-6 animate-spin text-[color:var(--gold)]" /></div>;
   if (!user) return <div className="p-8 text-[color:var(--red)] text-sm">User not found.</div>;
 
-  const tierColor = TIER_COLOR[user.loyaltyTier] ?? "#F5B400";
+  const tierColor = TIER_COLOR[user.loyaltyTier] ?? "#2DD4BF";
 
   return (
     <div className="p-5 sm:p-7 max-w-4xl space-y-6">

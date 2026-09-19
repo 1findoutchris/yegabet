@@ -5,7 +5,7 @@ import Link from "next/link";
 import {
   LayoutDashboard, ArrowDownLeft, ArrowUpRight, Users,
   Menu, X, LogOut, BarChart3, Loader2, CreditCard, Gift, Send, Megaphone, Disc3,
-  MessageSquareText, Smartphone, HandCoins, Percent,
+  MessageSquareText, Smartphone, HandCoins, Percent, Store,
 } from "lucide-react";
 import { useState, useEffect, useCallback } from "react";
 import { cn } from "@/lib/utils";
@@ -81,6 +81,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     { href: `${base}/silent-ggr`,  label: "Silent GGR",  icon: Percent },
     { href: `${base}/payout-agents`, label: "Payout Agents", icon: Send },
     { href: `${base}/cash-agents`, label: "Cash Agents", icon: HandCoins },
+    { href: `${base}/in-person-agents`, label: "In-Person Agents", icon: Store },
     { href: `${base}/payment-methods`, label: "Payment Agents", icon: CreditCard },
     { href: `${base}/rewards`,     label: "Rewards",     icon: Gift },
     { href: `${base}/ads`,         label: "Ads",         icon: Megaphone },
@@ -113,7 +114,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     <>
       <div className="px-4 py-4 border-b border-[color:var(--border-muted)]">
         <p className="font-display text-[15px] font-extrabold text-[color:var(--text-primary)]">
-          Fetan<span className="text-gold-grad">Bet</span>
+          Vinna<span className="text-gold-grad">Bet</span>
         </p>
         <p className="text-[11px] text-[color:var(--text-muted)] mt-0.5">Admin Panel</p>
       </div>
@@ -139,7 +140,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
       <div className="md:hidden fixed top-0 left-0 right-0 z-50 h-12 flex items-center justify-between px-4 bg-[var(--bg-surface)] border-b border-[color:var(--border-muted)]">
         <p className="font-display text-[14px] font-extrabold text-[color:var(--text-primary)]">
-          Fetan<span className="text-gold-grad">Bet</span>{" "}
+          Vinna<span className="text-gold-grad">Bet</span>{" "}
           <span className="text-[color:var(--text-muted)] font-normal text-[12px]">Admin</span>
         </p>
         <button onClick={() => setSidebarOpen((v) => !v)} className="p-1.5 rounded-lg text-[color:var(--text-secondary)]">

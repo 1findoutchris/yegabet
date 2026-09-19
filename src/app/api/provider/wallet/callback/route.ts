@@ -3,7 +3,8 @@ import { prisma } from "@/lib/prisma";
 import { verifyHmacSignature, roundETB } from "@/lib/utils";
 import { getRewardConfig } from "@/lib/rewardConfig";
 import { dayIndexUtc, awardPoints } from "@/lib/loyalty";
-import { settleRound, withdrawable } from "@/lib/wallet";
+import { settleRound, withdrawable, credit } from "@/lib/wallet";
+import { attachBetToOpenTicket, settleTicketBet, agentCommission } from "@/lib/tickets";
 import { SilentApiCallbackPayload, SilentApiCallbackResponse } from "@/types";
 import { TransactionType } from "@prisma/client";
 import { publishBalanceEvent } from "@/lib/balanceEvents";
@@ -122,19 +123,27 @@ export async function POST(req: NextRequest) {
       winETB,
     );
 
+    // In-person agent extras. Commission is a percent of the stake, credited
+    // to withdrawable as its own COMMISSION row so the ledger shows it
+    // separately from the round settlement. Ticket bookkeeping links the BET
+    // row to the agent's open draft (or settles one via game_round on a win).
+    const commissionRate = user.role === "IN_PERSON_AGENT" ? Number(user.commissionRate ?? 0) : 0;
+    const commissionAmt = betETB > 0 ? agentCommission(betETB, commissionRate) : 0;
+    const finalWallet = commissionAmt > 0 ? credit(settled, commissionAmt, "withdrawable") : settled;
+
     // 7. Persist atomically
-    await prisma.$transaction([
-      prisma.user.update({
+    await prisma.$transaction(async (tx) => {
+      await tx.user.update({
         where: { id: user.id },
         data: {
-          balance: settled.balance,
-          depositBalance: settled.depositBalance,
-          bonusBalance: settled.bonusBalance,
+          balance: finalWallet.balance,
+          depositBalance: finalWallet.depositBalance,
+          bonusBalance: finalWallet.bonusBalance,
           ...awardPoints(totalPoints),
           ...streakUpdate,
         },
-      }),
-      prisma.transaction.create({
+      });
+      const txn = await tx.transaction.create({
         data: {
           userId: user.id,
           type: resolveTransactionType(betETB, winETB),
@@ -145,13 +154,36 @@ export async function POST(req: NextRequest) {
           reference: serial_number,
           metadata: payload as object,
         },
-      }),
-    ]);
+      });
+      if (commissionAmt > 0) {
+        await tx.transaction.create({
+          data: {
+            userId: user.id,
+            type: "COMMISSION",
+            status: "COMPLETED",
+            amount: commissionAmt,
+            balanceBefore: settled.balance,
+            balanceAfter: finalWallet.balance,
+            reference: `${serial_number}:commission`,
+            metadata: { stake: betETB, ratePct: commissionRate, serial: serial_number },
+          },
+        });
+      }
+      if (user.role === "IN_PERSON_AGENT") {
+        if (betETB > 0) {
+          // Pure bet or combined round — attach to the open ticket draft.
+          await attachBetToOpenTicket(tx, user.id, txn.id, betETB, payload.game_round ?? null, winETB);
+        } else if (winETB > 0) {
+          // Pure win — settle the matching ticket bet by provider round id.
+          await settleTicketBet(tx, user.id, payload.game_round ?? null, winETB);
+        }
+      }
+    });
 
     // Push the new balance to the player's live wallet stream
     await publishBalanceEvent(user.id, {
-      balance: settled.balance,
-      withdrawable: withdrawable(settled),
+      balance: finalWallet.balance,
+      withdrawable: withdrawable(finalWallet),
       reason: winETB > betETB ? "win" : "bet",
       amount: Math.abs(netChange),
     });
@@ -160,7 +192,7 @@ export async function POST(req: NextRequest) {
     const response: SilentApiCallbackResponse = {
       code: 0,
       msg: "Success",
-      balance: settled.balance,
+      balance: finalWallet.balance,
     };
     return NextResponse.json(response);
   } catch (error) {

@@ -57,11 +57,14 @@ export async function launchGame(params: LaunchGameParams): Promise<LaunchGameRe
   // typo) returns a mock launch that bounces back to our own site, so the UI
   // flow stays testable in dev without spending credits.
   if (process.env.SILENT_API_LIVE !== "true") {
+    // home_url is "<origin>/dashboard" — strip the path so the mock lands on
+    // the real /mock-game placeholder route instead of a 404.
+    const origin = new URL(params.home_url).origin;
     return {
       code: 0,
       msg: "Success (mocked — SILENT_API_LIVE is not enabled)",
       payload: {
-        game_launch_url: `${params.home_url}/casino?mocked_game=${encodeURIComponent(params.game_uid)}`,
+        game_launch_url: `${origin}/mock-game?game=${encodeURIComponent(params.game_uid)}`,
       },
     };
   }

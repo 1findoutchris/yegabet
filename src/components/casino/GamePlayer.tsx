@@ -15,11 +15,11 @@ export function GamePlayer() {
     <div className="fixed inset-0 z-[300] bg-black flex flex-col">
       {/* Top bar */}
       <div
-        className="flex items-center justify-between px-4 bg-[#0B0710]/95 backdrop-blur-xl border-b border-[color:var(--border-muted)] shrink-0"
+        className="flex items-center justify-between px-4 bg-[#0C2027]/95 backdrop-blur-xl border-b border-[color:var(--border-muted)] shrink-0"
         style={{ paddingTop: "env(safe-area-inset-top)", minHeight: 48 }}
       >
         <div className="flex items-center gap-2 min-w-0">
-          <span className="font-display text-gold-grad font-bold text-sm shrink-0">Fetan</span>
+          <span className="font-display text-gold-grad font-bold text-sm shrink-0">Vinna</span>
           <span className="text-[color:var(--text-primary)] font-semibold text-sm truncate">{current.gameNameEn}</span>
           <span className="text-[color:var(--text-muted)] text-xs shrink-0">· {providerName}</span>
         </div>

@@ -42,32 +42,32 @@ export default function AdminLoginPage() {
 
   return (
     <div style={{
-      minHeight: "100vh", background: "#0D0A13",
+      minHeight: "100vh", background: "#081820",
       display: "flex", alignItems: "center", justifyContent: "center", padding: "16px",
     }}>
       <div style={{
         width: "100%", maxWidth: "380px",
-        background: "linear-gradient(150deg,#1E1729,#15101D 60%)",
-        border: "1px solid #2A1F3D", borderRadius: "24px", padding: "32px",
+        background: "linear-gradient(150deg,#1A4252,#12303C 60%)",
+        border: "1px solid #1E4A58", borderRadius: "24px", padding: "32px",
       }}>
         {/* Logo */}
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "8px", marginBottom: "32px" }}>
           <div style={{
             width: "52px", height: "52px", borderRadius: "14px",
-            background: "linear-gradient(135deg,#FFD700,#FF8C00)",
+            background: "linear-gradient(135deg,#7DE8D8,#2DD4BF 45%,#0D9488)",
             display: "flex", alignItems: "center", justifyContent: "center",
           }}>
-            <span style={{ fontWeight: 900, color: "#09090B", fontSize: "22px" }}>F</span>
+            <span style={{ fontWeight: 900, color: "#09090B", fontSize: "22px" }}>V</span>
           </div>
           <p style={{ fontWeight: 800, fontSize: "22px", color: "#F5F5F5", margin: 0 }}>
-            Fetan<span style={{ color: "#FFD700" }}>Bet</span>
+            Vinna<span style={{ color: "#2DD4BF" }}>Bet</span>
           </p>
-          <p style={{ fontSize: "12px", color: "#7A6E8A", margin: 0 }}>Admin dashboard</p>
+          <p style={{ fontSize: "12px", color: "#AECDD6", margin: 0 }}>Admin dashboard</p>
         </div>
 
         {/* Username */}
         <div style={{ marginBottom: "12px" }}>
-          <label style={{ display: "block", fontSize: "11px", textTransform: "uppercase" as const, letterSpacing: "0.07em", color: "#7A6E8A", marginBottom: "6px" }}>
+          <label style={{ display: "block", fontSize: "11px", textTransform: "uppercase" as const, letterSpacing: "0.07em", color: "#AECDD6", marginBottom: "6px" }}>
             Username
           </label>
           <input
@@ -79,8 +79,8 @@ export default function AdminLoginPage() {
             placeholder="admin"
             style={{
               display: "block", width: "100%", height: "44px", padding: "0 14px",
-              borderRadius: "10px", background: "#1A1225",
-              border: "1px solid #3A2F4D", color: "#F5F5F5",
+              borderRadius: "10px", background: "#0C2027",
+              border: "1px solid #1E4A58", color: "#FFFFFF",
               fontSize: "14px", outline: "none", boxSizing: "border-box" as const,
             }}
           />
@@ -88,7 +88,7 @@ export default function AdminLoginPage() {
 
         {/* Password */}
         <div style={{ marginBottom: "16px" }}>
-          <label style={{ display: "block", fontSize: "11px", textTransform: "uppercase" as const, letterSpacing: "0.07em", color: "#7A6E8A", marginBottom: "6px" }}>
+          <label style={{ display: "block", fontSize: "11px", textTransform: "uppercase" as const, letterSpacing: "0.07em", color: "#AECDD6", marginBottom: "6px" }}>
             Password
           </label>
           <div style={{ position: "relative" as const }}>
@@ -100,8 +100,8 @@ export default function AdminLoginPage() {
               placeholder="••••••••"
               style={{
                 display: "block", width: "100%", height: "44px", padding: "0 40px 0 14px",
-                borderRadius: "10px", background: "#1A1225",
-                border: "1px solid #3A2F4D", color: "#F5F5F5",
+                borderRadius: "10px", background: "#0C2027",
+                border: "1px solid #1E4A58", color: "#FFFFFF",
                 fontSize: "14px", outline: "none", boxSizing: "border-box" as const,
               }}
             />
@@ -110,7 +110,7 @@ export default function AdminLoginPage() {
               onClick={() => setShowPw((v) => !v)}
               style={{
                 position: "absolute" as const, right: "12px", top: "50%", transform: "translateY(-50%)",
-                background: "none", border: "none", cursor: "pointer", color: "#7A6E8A",
+                background: "none", border: "none", cursor: "pointer", color: "#AECDD6",
                 display: "flex", padding: 0,
               }}
             >
@@ -137,7 +137,7 @@ export default function AdminLoginPage() {
           style={{
             display: "flex", alignItems: "center", justifyContent: "center", gap: "8px",
             width: "100%", height: "46px", borderRadius: "12px",
-            background: "linear-gradient(135deg,#FFD700,#FF8C00)",
+            background: "linear-gradient(135deg,#7DE8D8,#2DD4BF 45%,#0D9488)",
             color: "#09090B", fontWeight: 700, fontSize: "15px",
             border: "none", cursor: loading ? "not-allowed" : "pointer",
             opacity: loading ? 0.7 : 1,

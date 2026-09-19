@@ -28,7 +28,7 @@ export function TelegramChannel() {
 
   return (
     <a
-      href="https://t.me/fetanbet"
+      href="https://t.me/vinnabet"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Join our Telegram channel"

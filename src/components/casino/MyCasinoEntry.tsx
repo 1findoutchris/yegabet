@@ -13,9 +13,9 @@ export function MyCasinoEntry() {
     >
       {/* decorative blooms */}
       <span aria-hidden className="pointer-events-none absolute -top-16 left-16 w-56 h-56 rounded-full"
-        style={{ background: "radial-gradient(circle,rgba(139,92,246,0.22),transparent 65%)" }} />
+        style={{ background: "radial-gradient(circle,rgba(192,122,255,0.22),transparent 65%)" }} />
       <span aria-hidden className="pointer-events-none absolute -bottom-20 right-24 w-56 h-56 rounded-full"
-        style={{ background: "radial-gradient(circle,rgba(245,180,0,0.14),transparent 65%)" }} />
+        style={{ background: "radial-gradient(circle,rgba(45,212,191,0.14),transparent 65%)" }} />
 
       {/* custom artwork */}
       <ArtMyCasino className="relative z-10 w-[92px] sm:w-[120px] shrink-0 drop-shadow-[0_6px_14px_rgba(0,0,0,0.45)] transition-transform duration-300 group-hover:scale-105 group-hover:-rotate-2" />

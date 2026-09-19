@@ -26,8 +26,8 @@ export function AchievementsGrid({ achievements = ACHIEVEMENTS }: { achievements
   // Re-check after gameplay so a fresh unlock reflects without a reload.
   useEffect(() => {
     const handler = () => refresh();
-    window.addEventListener("fetan:activity", handler);
-    return () => window.removeEventListener("fetan:activity", handler);
+    window.addEventListener("vinna:activity", handler);
+    return () => window.removeEventListener("vinna:activity", handler);
   }, [refresh]);
 
   const earnedCount = achievements.filter((a) => earned.has(a.id)).length;

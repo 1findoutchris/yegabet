@@ -197,7 +197,7 @@ export default function DepositMethodPage() {
       <div className="max-w-xl mx-auto px-4 sm:px-6 py-6 pb-24">
         <div
           className="relative overflow-hidden rounded-3xl border border-[color:var(--border-base)] p-7 text-center"
-          style={{ background: "linear-gradient(150deg,#15201A,#15101D 60%)" }}
+          style={{ background: "linear-gradient(150deg,#12303C,#12303C 60%)" }}
         >
           <span aria-hidden className="pointer-events-none absolute -top-16 left-1/2 -translate-x-1/2 w-64 h-64 rounded-full"
             style={{ background: "radial-gradient(circle,rgba(43,217,116,0.18),transparent 65%)" }} />
@@ -227,10 +227,10 @@ export default function DepositMethodPage() {
       <div className="max-w-xl mx-auto px-4 sm:px-6 py-6 pb-24">
         <div
           className="relative overflow-hidden rounded-3xl border border-[color:var(--border-base)] p-7 text-center"
-          style={{ background: "linear-gradient(150deg,#1A1820,#15101D 60%)" }}
+          style={{ background: "linear-gradient(150deg,#12303C,#12303C 60%)" }}
         >
           <span aria-hidden className="pointer-events-none absolute -top-16 left-1/2 -translate-x-1/2 w-64 h-64 rounded-full"
-            style={{ background: "radial-gradient(circle,rgba(245,180,0,0.14),transparent 65%)" }} />
+            style={{ background: "radial-gradient(circle,rgba(45,212,191,0.14),transparent 65%)" }} />
           <div className="relative z-10 flex flex-col items-center gap-3">
             <div className="w-14 h-14 rounded-full border-2 border-[color:var(--gold)] grid place-items-center">
               <Loader2 className="w-7 h-7 text-[color:var(--gold)] animate-spin" />
@@ -260,7 +260,7 @@ export default function DepositMethodPage() {
       <div className="max-w-xl mx-auto px-4 sm:px-6 py-6 pb-24">
         <div
           className="relative overflow-hidden rounded-3xl border border-[color:var(--border-base)] p-7 text-center"
-          style={{ background: "linear-gradient(150deg,#1A1420,#15101D 60%)" }}
+          style={{ background: "linear-gradient(150deg,#12303C,#12303C 60%)" }}
         >
           <div className="flex flex-col items-center gap-3">
             <Clock className="w-14 h-14 text-[color:var(--text-muted)]" />
@@ -343,7 +343,7 @@ export default function DepositMethodPage() {
             <div className="min-w-0">
               <p className="text-[11px] uppercase tracking-[0.06em] text-[color:var(--text-muted)]">{method.agentLabel}</p>
               {agentLoading ? (
-                <span className="fetan-skeleton block h-[26px] w-40 rounded-md mt-1" />
+                <span className="vinna-skeleton block h-[26px] w-40 rounded-md mt-1" />
               ) : (
                 <p className="font-display text-[22px] font-extrabold tabular-nums text-[color:var(--text-primary)] leading-tight mt-0.5">{agentNumber}</p>
               )}
@@ -361,7 +361,7 @@ export default function DepositMethodPage() {
           <div className="mt-3 pt-3 border-t border-[color:var(--border-muted)] flex items-center justify-between gap-3">
             <p className="text-[11px] uppercase tracking-[0.06em] text-[color:var(--text-muted)]">Account name</p>
             {agentLoading ? (
-              <span className="fetan-skeleton block h-[18px] w-28 rounded-md" />
+              <span className="vinna-skeleton block h-[18px] w-28 rounded-md" />
             ) : (
               <p className="text-[14px] font-semibold text-[color:var(--text-primary)] truncate">{agentName}</p>
             )}

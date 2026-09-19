@@ -19,21 +19,21 @@ const sora = Sora({
   display: "swap",
 });
 
-const SITE_URL = process.env.NEXT_PUBLIC_APP_URL ?? "https://fetanbet.bet";
-const SITE_NAME = "Fetan Bet";
+const SITE_URL = process.env.NEXT_PUBLIC_APP_URL ?? "https://vinnabet.com";
+const SITE_NAME = "VinnaBet";
 const DESCRIPTION =
-  "Fetan Bet — the premier online casino and sports betting in Ethiopia. Play 1000+ slots and live casino games, bet on football and live sports, with instant telebirr, CBE Birr and eBirr deposits and fast withdrawals.";
+  "VinnaBet — the premier online casino and sports betting in Ethiopia. Play 1000+ slots and live casino games, bet on football and live sports, with instant telebirr, CBE Birr and eBirr deposits and fast withdrawals.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Fetan Bet — Online Casino & Sports Betting in Ethiopia",
-    template: "%s · Fetan Bet",
+    default: "VinnaBet — Online Casino & Sports Betting in Ethiopia",
+    template: "%s · VinnaBet",
   },
   description: DESCRIPTION,
   applicationName: SITE_NAME,
   keywords: [
-    "Fetan Bet", "Fetan", "sports betting Ethiopia", "online casino Ethiopia",
+    "VinnaBet", "Vinna", "sports betting Ethiopia", "online casino Ethiopia",
     "betting Ethiopia", "Ethiopian betting site", "telebirr betting", "CBE Birr betting",
     "football betting", "live casino", "online slots", "ETB betting", "ውርርድ",
   ],
@@ -51,13 +51,13 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: SITE_URL,
     siteName: SITE_NAME,
-    title: "Fetan Bet — Online Casino & Sports Betting in Ethiopia",
+    title: "VinnaBet — Online Casino & Sports Betting in Ethiopia",
     description: DESCRIPTION,
-    images: [{ url: "/icon.svg", width: 512, height: 512, alt: "Fetan Bet" }],
+    images: [{ url: "/icon.svg", width: 512, height: 512, alt: "VinnaBet" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Fetan Bet — Online Casino & Sports Betting",
+    title: "VinnaBet — Online Casino & Sports Betting",
     description: DESCRIPTION,
     images: ["/icon.svg"],
   },
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0B0710",
+  themeColor: "#0C2027",
   // viewport-fit=cover lets env(safe-area-inset-*) reach the mobile tab bar.
   viewportFit: "cover",
 };
@@ -101,8 +101,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 "@type": "WebSite",
                 name: SITE_NAME,
                 // What Google may show instead of the bare domain in a result
-                // header. Without these it only has "Fetan Bet" to work with.
-                alternateName: ["FetanBet", "Fetan", "ፈጣን ቤት"],
+                // header. Without these it only has "VinnaBet" to work with.
+                alternateName: ["VinnaBet", "Vinna", "ቪና ቤት"],
                 url: SITE_URL,
               },
             ]),
@@ -113,7 +113,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           theme="dark"
           position="top-right"
           toastOptions={{
-            style: { background: "#15101D", border: "1px solid #2A2236", color: "#F6F2FA" },
+            style: { background: "#12303C", border: "1px solid #2A2236", color: "#F6F2FA" },
           }}
         />
       </body>

@@ -18,7 +18,7 @@ assert.deepStrictEqual(botStep(null, "/nonsense"), { do: "help" });
 assert.deepStrictEqual(botStep(null, "hello"), { do: "help" }, "chatter before /login is not a credential");
 
 // Telegram appends the bot name to commands in groups.
-assert.deepStrictEqual(botStep(null, "/balance@FetanPayoutBot"), { do: "balance" });
+assert.deepStrictEqual(botStep(null, "/balance@VinnaPayoutBot"), { do: "balance" });
 assert.deepStrictEqual(botStep(null, "  /BALANCE  "), { do: "balance" }, "case and padding must not matter");
 
 // ── the two-step login ──────────────────────────────────────────────────────

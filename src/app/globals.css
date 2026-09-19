@@ -117,36 +117,36 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
-/* ── Fetan Bet · "Vegas Luxe" design tokens ───────────────────────────────
-   Black-plum velvet, glowing gold, royal-purple energy. Exciting, not flat.
+/* ── VinnaBet · "Neon Depths" design tokens ───────────────────────────────
+   Abyssal navy velvet, electric cyan energy, violet depth. Cyber, not flat.
    Shared globally because CasinoNav lives in the user layout. Token NAMES are
    kept stable so existing components keep working; only the values changed. */
 :root {
   /* Surfaces */
-  --bg-deep:        #070409;
-  --bg-base:        #0B0710;
-  --bg-surface:     #15101D;
-  --bg-elevated:    #1E1729;
-  --bg-accent-dim:  #F5B40018;
-  --bg-royal-dim:   #8B5CF618;
+  --bg-deep:        #081820;
+  --bg-base:        #0C2027;
+  --bg-surface:     #12303C;
+  --bg-elevated:    #1A4252;
+  --bg-accent-dim:  #2DD4BF18;
+  --bg-royal-dim:   #C07AFF18;
 
   /* Borders */
-  --border-base:    #2A2236;
-  --border-muted:   #1C1626;
-  --border-accent:  #F5B40059;
-  --border-royal:   #8B5CF659;
+  --border-base:    #1E4A58;
+  --border-muted:   #1A4252;
+  --border-accent:  #2DD4BF59;
+  --border-royal:   #C07AFF59;
 
-  /* Gold (primary energy) */
-  --gold:           #F5B400;
-  --gold-2:         #FFD66B;
-  --gold-deep:      #C8860A;
-  --gold-hover:     #FFC940;
-  --gold-dim:       #F5B40080;
+  /* Electric cyan (primary energy — token name kept as --gold) */
+  --gold:           #2DD4BF;
+  --gold-2:         #7DE8D8;
+  --gold-deep:      #0D9488;
+  --gold-hover:     #5EEAD4;
+  --gold-dim:       #2DD4BF80;
 
-  /* Royal purple (secondary energy) */
-  --purple:         #8B5CF6;
-  --purple-2:       #A78BFA;
-  --purple-deep:    #6D28D9;
+  /* Violet (secondary energy — token name kept as --purple) */
+  --purple:         #C07AFF;
+  --purple-2:       #D8B4FF;
+  --purple-deep:    #9D4AEC;
 
   /* Signals */
   --green:          #2BD974;
@@ -154,24 +154,24 @@
   --live:           #FF3B5C;
 
   /* Text */
-  --text-primary:   #F6F2FA;
-  --text-secondary: #A79FB5;
-  --text-muted:     #6E6580;
+  --text-primary:   #FFFFFF;
+  --text-secondary: #F0FDFB;
+  --text-muted:     #E2F2EF;
 
   /* Gradients + glows */
-  --grad-gold:   linear-gradient(135deg, #FFD66B, #F5B400 45%, #C8860A);
-  --grad-royal:  linear-gradient(135deg, #A78BFA, #8B5CF6 50%, #6D28D9);
-  --grad-jackpot:linear-gradient(120deg, #A78BFA, #F5B400 55%, #FFD66B);
-  --glow-gold:   0 0 28px rgba(245, 180, 0, 0.45);
-  --glow-purple: 0 0 28px rgba(139, 92, 246, 0.45);
+  --grad-gold:   linear-gradient(135deg, #7DE8D8, #2DD4BF 45%, #0D9488);
+  --grad-royal:  linear-gradient(135deg, #D8B4FF, #C07AFF 50%, #9D4AEC);
+  --grad-jackpot:linear-gradient(120deg, #D8B4FF, #2DD4BF 55%, #7DE8D8);
+  --glow-gold:   0 0 28px rgba(45, 212, 191, 0.45);
+  --glow-purple: 0 0 28px rgba(192, 122, 255, 0.45);
 }
 /* --font-display is provided on <html> by next/font (Sora) in the root layout. */
 
-/* Velvet backdrop with layered gold + purple blooms and a fixed noise grain. */
+/* Velvet backdrop with layered sky + indigo blooms and a fixed noise grain. */
 body {
   background:
-    radial-gradient(1200px 620px at 12% -8%, rgba(139, 92, 246, 0.16), transparent 60%),
-    radial-gradient(1100px 560px at 100% -4%, rgba(245, 180, 0, 0.10), transparent 55%),
+    radial-gradient(1200px 620px at 12% -8%, rgba(192, 122, 255, 0.16), transparent 60%),
+    radial-gradient(1100px 560px at 100% -4%, rgba(45, 212, 191, 0.10), transparent 55%),
     var(--bg-base);
   background-attachment: fixed;
   color: var(--text-primary);
@@ -283,8 +283,8 @@ body::before {
 }
 
 @keyframes glowPulse {
-  0%, 100% { box-shadow: 0 0 18px rgba(245, 180, 0, 0.25); }
-  50%      { box-shadow: 0 0 34px rgba(245, 180, 0, 0.55); }
+  0%, 100% { box-shadow: 0 0 18px rgba(45, 212, 191, 0.25); }
+  50%      { box-shadow: 0 0 34px rgba(45, 212, 191, 0.55); }
 }
 
 @keyframes popIn {
@@ -293,40 +293,38 @@ body::before {
   100% { transform: scale(1); opacity: 1; }
 }
 
-/* FetanBet branded route-loading shimmer */
-@keyframes fetanSpin    { to { transform: rotate(360deg); } }
-@keyframes fetanShimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
-@keyframes fetanDot     { 0%, 100% { opacity: 0.25; transform: translateY(0); } 50% { opacity: 1; transform: translateY(-4px); } }
+/* VinnaBet branded route-loading shimmer */
+@keyframes vinnaSpin    { to { transform: rotate(360deg); } }
+@keyframes vinnaShimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+@keyframes vinnaDot     { 0%, 100% { opacity: 0.25; transform: translateY(0); } 50% { opacity: 1; transform: translateY(-4px); } }
 
-.fetan-spin { animation: fetanSpin 1.1s linear infinite; }
-.fetan-shimmer, .fetan-shimmer-gold {
+.vinna-spin { animation: vinnaSpin 1.1s linear infinite; }
+.vinna-shimmer, .vinna-shimmer-gold {
   background-size: 200% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
+  -webkit-background-clip: text; background-clip: text;
   color: transparent;
-  animation: fetanShimmer 1.4s linear infinite;
+  animation: vinnaShimmer 1.4s linear infinite;
 }
-.fetan-shimmer      { background-image: linear-gradient(110deg, #564E6C 0%, #564E6C 36%, #F6F2FA 50%, #564E6C 64%, #564E6C 100%); }
-.fetan-shimmer-gold { background-image: linear-gradient(110deg, #8A6E16 0%, #8A6E16 36%, #FFE07A 50%, #8A6E16 64%, #8A6E16 100%); }
-.fetan-dot { animation: fetanDot 1s ease-in-out infinite; }
+.vinna-shimmer      { background-image: linear-gradient(110deg, #1E3A5F 0%, #1E3A5F 36%, #E0FAFF 50%, #1E3A5F 64%, #1E3A5F 100%); }
+.vinna-shimmer-gold { background-image: linear-gradient(110deg, #155E75 0%, #155E75 36%, #7DE8D8 50%, #155E75 64%, #155E75 100%); }
+.vinna-dot { animation: vinnaDot 1s ease-in-out infinite; }
 
-/* Shimmer sweep for skeleton blocks */
-.fetan-skeleton {
+.vinna-skeleton {
   position: relative;
   overflow: hidden;
   background: var(--bg-surface);
 }
-.fetan-skeleton::after {
+.vinna-skeleton::after {
   content: "";
   position: absolute;
   inset: 0;
   transform: translateX(-100%);
-  background: linear-gradient(90deg, transparent, rgba(245, 180, 0, 0.10), transparent);
-  animation: fetanShimmer 1.4s linear infinite;
+  background: linear-gradient(90deg, transparent, rgba(45, 212, 191, 0.10), transparent);
+  animation: vinnaShimmer 1.4s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .fetan-spin, .fetan-shimmer, .fetan-shimmer-gold, .fetan-dot, .fetan-skeleton::after { animation: none !important; }
+  .vinna-spin, .vinna-shimmer, .vinna-shimmer-gold, .vinna-dot, .vinna-skeleton::after { animation: none !important; }
 }
 
 .animate-float      { animation: floatY 4s ease-in-out infinite; }

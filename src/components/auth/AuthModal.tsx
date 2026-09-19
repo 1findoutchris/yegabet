@@ -428,7 +428,7 @@ export function AuthModal() {
             F
           </span>
           <span className="font-display text-[color:var(--text-primary)] font-extrabold text-lg tracking-[-0.03em]">
-            Fetan<span className="text-gold-grad">Bet</span>
+            Vinna<span className="text-gold-grad">Bet</span>
           </span>
         </div>
 

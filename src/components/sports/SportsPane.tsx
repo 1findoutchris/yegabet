@@ -11,7 +11,7 @@ const BETBY_GAME_ID = SPORTSBOOK_GAME_UID;
 
 type Status = "idle" | "loading" | "ready" | "auth" | "error";
 
-export function SportsPane() {
+export function SportsPane({ agentMode = false }: { agentMode?: boolean }) {
   const pathname  = usePathname();
   const isActive  = pathname.startsWith("/sports");
   const { data: session } = useSession();
@@ -65,7 +65,11 @@ export function SportsPane() {
     <div
       className={
         isActive
-          ? "fixed left-0 right-0 top-14 bottom-[calc(4rem+env(safe-area-inset-bottom))] md:bottom-0 z-10 bg-[var(--bg-base)]"
+          ? agentMode
+            // Agent shell: mobile top bar (h-12), desktop sidebar (w-56), and
+            // the ticket draft bar (~4rem) at the bottom.
+            ? "fixed left-0 right-0 top-12 bottom-16 md:top-0 md:left-56 z-10 bg-[var(--bg-base)]"
+            : "fixed left-0 right-0 top-14 bottom-[calc(4rem+env(safe-area-inset-bottom))] md:bottom-0 z-10 bg-[var(--bg-base)]"
           : "hidden"
       }
     >
@@ -83,14 +87,14 @@ export function SportsPane() {
           src={url}
           className="w-full h-full border-0"
           allow="fullscreen"
-          title="Fetan Bet Sports"
+          title="VinnaBet Sports"
           style={{ display: status === "ready" ? "block" : "none" }}
         />
       )}
 
       {/* Auth prompt */}
       {status === "auth" && (
-        <div className="absolute inset-0 flex items-center justify-center px-4" style={{ background: "radial-gradient(700px 400px at 50% 0%, rgba(139,92,246,0.18), transparent 60%), var(--bg-base)" }}>
+        <div className="absolute inset-0 flex items-center justify-center px-4" style={{ background: "radial-gradient(700px 400px at 50% 0%, rgba(192,122,255,0.18), transparent 60%), var(--bg-base)" }}>
           <div className="w-full max-w-sm bg-[var(--bg-surface)] border border-[color:var(--border-accent)] rounded-2xl p-8 text-center animate-pop" style={{ boxShadow: "0 24px 60px rgba(0,0,0,0.6), var(--glow-gold)" }}>
             <div className="w-16 h-16 bg-[var(--bg-accent-dim)] border border-[color:var(--border-accent)] rounded-full flex items-center justify-center mx-auto mb-5">
               <span className="text-3xl">⚽</span>

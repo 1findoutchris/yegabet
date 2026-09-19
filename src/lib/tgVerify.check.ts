@@ -50,7 +50,7 @@ assert.strictEqual(contactVerdict({ user_id: ME }, ME, PHONE).ok, false, "no num
 // ── /start payloads ──────────────────────────────────────────────────────────
 assert.strictEqual(startPayload("/start abc123"), "abc123");
 assert.strictEqual(startPayload("  /start abc123  "), "abc123");
-assert.strictEqual(startPayload("/start@FetanVerifyBot abc123"), "abc123", "groups get the @bot suffix");
+assert.strictEqual(startPayload("/start@VinnaVerifyBot abc123"), "abc123", "groups get the @bot suffix");
 assert.strictEqual(startPayload("/start"), null, "bare /start carries no verification");
 assert.strictEqual(startPayload("/balance"), null);
 assert.strictEqual(startPayload("hello"), null);
@@ -61,12 +61,12 @@ assert.strictEqual(startPayload("/start " + "a".repeat(65)), null, "longer than 
 // ── deep link ────────────────────────────────────────────────────────────────
 const env = (o: Record<string, string>) => o as NodeJS.ProcessEnv;
 assert.strictEqual(
-  verifyDeepLink("tok", env({ TELEGRAM_VERIFY_BOT_USERNAME: "FetanVerifyBot" })),
-  "https://t.me/FetanVerifyBot?start=tok",
+  verifyDeepLink("tok", env({ TELEGRAM_VERIFY_BOT_USERNAME: "VinnaVerifyBot" })),
+  "https://t.me/VinnaVerifyBot?start=tok",
 );
 assert.strictEqual(
-  verifyDeepLink("tok", env({ TELEGRAM_VERIFY_BOT_USERNAME: "@FetanVerifyBot" })),
-  "https://t.me/FetanVerifyBot?start=tok",
+  verifyDeepLink("tok", env({ TELEGRAM_VERIFY_BOT_USERNAME: "@VinnaVerifyBot" })),
+  "https://t.me/VinnaVerifyBot?start=tok",
   "a pasted @username must not become a broken link",
 );
 assert.strictEqual(verifyDeepLink("tok", env({})), "", "unconfigured → no link, caller falls back");

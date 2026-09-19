@@ -32,7 +32,7 @@
   transform: translateY(-4px);
   box-shadow:
     0 14px 32px rgba(0, 0, 0, 0.45),
-    0 0 28px var(--cat-glow, rgba(245, 180, 0, 0.45)),
+    0 0 28px var(--cat-glow, rgba(45, 212, 191, 0.45)),
     inset 0 1px 0 rgba(255, 255, 255, 0.28);
 }
 /* diagonal light sweep on hover */
@@ -62,7 +62,7 @@
 .mc-entry:hover {
   transform: translateY(-3px);
   border-color: var(--purple);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45), 0 0 30px rgba(139, 92, 246, 0.4);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45), 0 0 30px rgba(192, 122, 255, 0.4);
 }
 .mc-entry::after {
   content: "";

@@ -10,7 +10,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Rewards — Points, Tiers & Weekly Challenges",
   description:
-    "Earn points on every bet at Fetan Bet, climb the tiers and clear weekly challenges for bonuses, cashback and free spins.",
+    "Earn points on every bet at VinnaBet, climb the tiers and clear weekly challenges for bonuses, cashback and free spins.",
   alternates: { canonical: "/rewards" },
 };
 

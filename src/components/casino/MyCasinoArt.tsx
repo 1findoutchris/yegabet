@@ -15,11 +15,11 @@ export function ArtTreasure({ className }: P) {
         </radialGradient>
         <linearGradient id="tr-coin" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor="#FFE07A" />
-          <stop offset="50%" stopColor="#F5B400" />
-          <stop offset="100%" stopColor="#C8860A" />
+          <stop offset="50%" stopColor="#2DD4BF" />
+          <stop offset="100%" stopColor="#0D9488" />
         </linearGradient>
         <linearGradient id="tr-coin2" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#FFD66B" />
+          <stop offset="0%" stopColor="#7DE8D8" />
           <stop offset="100%" stopColor="#D9970C" />
         </linearGradient>
         <linearGradient id="tr-rim" x1="0" y1="0" x2="0" y2="1">
@@ -54,7 +54,7 @@ export function ArtTreasure({ className }: P) {
       {/* scattered coins + sparkles */}
       <circle cx="84" cy="24" r="5" fill="url(#tr-coin2)" stroke="#B7790A" strokeWidth="1" />
       <circle cx="14" cy="22" r="4" fill="url(#tr-coin2)" stroke="#B7790A" strokeWidth="1" />
-      <path d="M70 12l1.4 3.4 3.4 1.4-3.4 1.4L70 23l-1.4-3.4L65.2 18l3.4-1.4L70 12Z" fill="#FFD66B" />
+      <path d="M70 12l1.4 3.4 3.4 1.4-3.4 1.4L70 23l-1.4-3.4L65.2 18l3.4-1.4L70 12Z" fill="#7DE8D8" />
       <path d="M30 8l1 2.5 2.5 1-2.5 1L30 16l-1-2.5L26.5 12.5l2.5-1L30 8Z" fill="#FFE9A8" />
       <circle cx="58" cy="16" r="1.6" fill="#FFF4CC" />
     </svg>
@@ -67,8 +67,8 @@ export function ArtChip({ className }: P) {
     <svg viewBox="0 0 48 48" className={className} aria-hidden>
       <defs>
         <linearGradient id="chip-g" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#A78BFA" />
-          <stop offset="100%" stopColor="#6D28D9" />
+          <stop offset="0%" stopColor="#D8B4FF" />
+          <stop offset="100%" stopColor="#9D4AEC" />
         </linearGradient>
       </defs>
       <circle cx="24" cy="24" r="21" fill="url(#chip-g)" />
@@ -93,17 +93,17 @@ export function ArtMyCasino({ className }: P) {
     <svg viewBox="0 0 96 64" className={className} aria-hidden>
       <defs>
         <radialGradient id="mc-glow" cx="58%" cy="50%" r="55%">
-          <stop offset="0%" stopColor="#A78BFA" stopOpacity="0.55" />
-          <stop offset="100%" stopColor="#A78BFA" stopOpacity="0" />
+          <stop offset="0%" stopColor="#D8B4FF" stopOpacity="0.55" />
+          <stop offset="100%" stopColor="#D8B4FF" stopOpacity="0" />
         </radialGradient>
         <linearGradient id="mc-chip" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor="#B69BFF" />
-          <stop offset="100%" stopColor="#6D28D9" />
+          <stop offset="100%" stopColor="#9D4AEC" />
         </linearGradient>
         <linearGradient id="mc-coin" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor="#FFE07A" />
-          <stop offset="55%" stopColor="#F5B400" />
-          <stop offset="100%" stopColor="#C8860A" />
+          <stop offset="55%" stopColor="#2DD4BF" />
+          <stop offset="100%" stopColor="#0D9488" />
         </linearGradient>
         <linearGradient id="mc-rim" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor="#FFF4CC" />
@@ -138,7 +138,7 @@ export function ArtMyCasino({ className }: P) {
       </g>
 
       {/* sparkles */}
-      <path d="M86 12l1.5 3.6 3.6 1.5-3.6 1.5L86 23.8l-1.5-3.6-3.6-1.5 3.6-1.5L86 12Z" fill="#FFD66B" />
+      <path d="M86 12l1.5 3.6 3.6 1.5-3.6 1.5L86 23.8l-1.5-3.6-3.6-1.5 3.6-1.5L86 12Z" fill="#7DE8D8" />
       <circle cx="40" cy="12" r="1.7" fill="#C4B5FD" />
       <circle cx="80" cy="46" r="1.6" fill="#FFE9A8" />
     </svg>

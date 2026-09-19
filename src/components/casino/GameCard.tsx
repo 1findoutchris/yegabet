@@ -85,7 +85,7 @@ export function GameCard({ game, className, badge }: GameCardProps) {
           "bg-[var(--bg-surface)] border border-[color:var(--border-base)]",
           "transition-[border-color,transform,box-shadow] duration-200",
           "hover:border-[color:var(--border-accent)] hover:-translate-y-1",
-          "hover:shadow-[0_12px_30px_rgba(0,0,0,0.5),0_0_22px_rgba(245,180,0,0.22)]",
+          "hover:shadow-[0_12px_30px_rgba(0,0,0,0.5),0_0_22px_rgba(45,212,191,0.22)]",
           className
         )}
         onMouseEnter={() => setHovered(true)}
@@ -110,7 +110,7 @@ export function GameCard({ game, className, badge }: GameCardProps) {
             {imgError && (
               <div className="relative z-10 w-full">
                 <p className="text-white text-[11px] font-semibold leading-tight line-clamp-2">{game.gameNameEn}</p>
-                <p className="text-white/40 text-[9px] mt-0.5">{providerName}</p>
+                <p className="text-white/60 text-[9px] mt-0.5">{providerName}</p>
               </div>
             )}
           </div>

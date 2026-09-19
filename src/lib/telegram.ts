@@ -85,7 +85,7 @@ export function botStep(pending: string | null, text: string): BotAction {
   const trimmed = text.trim();
 
   if (trimmed.startsWith("/")) {
-    // "/balance@FetanPayoutBot" is what Telegram delivers in groups.
+    // "/balance@VinnaPayoutBot" is what Telegram delivers in groups.
     const cmd = trimmed.split(/[\s@]/)[0].toLowerCase();
     if (cmd === "/start" || cmd === "/login") return { do: "ask-username" };
     if (cmd === "/balance") return { do: "balance" };

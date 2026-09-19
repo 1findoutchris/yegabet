@@ -92,7 +92,7 @@ export default function PayoutLayout({ children }: { children: React.ReactNode }
     <>
       <div className="px-4 py-4 border-b border-[color:var(--border-muted)]">
         <p className="font-display text-[15px] font-extrabold text-[color:var(--text-primary)]">
-          Fetan<span className="text-gold-grad">Bet</span>
+          Vinna<span className="text-gold-grad">Bet</span>
         </p>
         <p className="text-[11px] text-[color:var(--text-muted)] mt-0.5">Payout Agent</p>
       </div>
@@ -118,7 +118,7 @@ export default function PayoutLayout({ children }: { children: React.ReactNode }
 
       <div className="md:hidden fixed top-0 left-0 right-0 z-50 h-12 flex items-center justify-between px-4 bg-[var(--bg-surface)] border-b border-[color:var(--border-muted)]">
         <p className="font-display text-[14px] font-extrabold text-[color:var(--text-primary)]">
-          Fetan<span className="text-gold-grad">Bet</span>{" "}
+          Vinna<span className="text-gold-grad">Bet</span>{" "}
           <span className="text-[color:var(--text-muted)] font-normal text-[12px]">Payout</span>
         </p>
         <button onClick={() => setSidebarOpen((v) => !v)} className="p-1.5 rounded-lg text-[color:var(--text-secondary)]">

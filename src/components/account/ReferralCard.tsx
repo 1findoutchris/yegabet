@@ -27,7 +27,7 @@ export function ReferralCard({ code }: { code: string }) {
   async function share() {
     if (navigator.share) {
       try {
-        await navigator.share({ title: "Join me on Fetan Bet", text: `Use my code ${code}`, url: link });
+        await navigator.share({ title: "Join me on VinnaBet", text: `Use my code ${code}`, url: link });
       } catch { /* user cancelled */ }
     } else {
       copy(link, "link");
@@ -40,7 +40,7 @@ export function ReferralCard({ code }: { code: string }) {
       style={{ background: "linear-gradient(135deg,#1E1633 0%,#171022 55%,#140E1D 100%)" }}
     >
       <span aria-hidden className="pointer-events-none absolute -top-16 right-8 w-48 h-48 rounded-full"
-        style={{ background: "radial-gradient(circle,rgba(139,92,246,0.22),transparent 65%)" }} />
+        style={{ background: "radial-gradient(circle,rgba(192,122,255,0.22),transparent 65%)" }} />
 
       <div className="relative z-10">
         <div className="flex items-center gap-2">

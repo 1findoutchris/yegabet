@@ -84,7 +84,7 @@ export function PushToggle() {
       disabled={busy}
       className="flex items-center gap-3 w-full rounded-2xl border border-[color:var(--border-base)] bg-[var(--bg-surface)] p-4 text-left hover:border-[color:var(--border-accent)] transition-colors disabled:opacity-60"
     >
-      <div className="w-10 h-10 rounded-xl grid place-items-center bg-[#F5B4001A]">
+      <div className="w-10 h-10 rounded-xl grid place-items-center bg-[#2DD4BF1A]">
         {busy ? (
           <Loader2 className="w-5 h-5 animate-spin text-[color:var(--gold)]" />
         ) : subscribed ? (

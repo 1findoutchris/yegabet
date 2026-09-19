@@ -20,7 +20,7 @@ type User = Omit<AdminUserRow, "createdAt"> & {
 function fmtETB(n: number) { return n.toLocaleString(undefined, { minimumFractionDigits: 2 }); }
 function fmtDate(iso: string) { return new Date(iso).toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" }); }
 
-const TIER_COLOR: Record<string, string> = { BRONZE: "#CD7F32", SILVER: "#C7CCD1", GOLD: "#F0A500", PLATINUM: "#9FE7E3", VIP: "#A78BFA" };
+const TIER_COLOR: Record<string, string> = { BRONZE: "#CD7F32", SILVER: "#C7CCD1", GOLD: "#F0A500", PLATINUM: "#9FE7E3", VIP: "#D8B4FF" };
 
 export default function UsersPage() {
   const { secret } = useParams<{ secret: string }>();
@@ -81,7 +81,7 @@ export default function UsersPage() {
                 </thead>
                 <tbody className="divide-y divide-[color:var(--border-muted)]">
                   {data.items.map((u) => {
-                    const tierColor = TIER_COLOR[u.loyaltyTier] ?? "#F5B400";
+                    const tierColor = TIER_COLOR[u.loyaltyTier] ?? "#2DD4BF";
                     return (
                       <tr key={u.id} onClick={() => router.push(`/admin/${secret}/users/${u.id}`)} className="cursor-pointer hover:bg-[var(--bg-elevated)] transition-colors">
                         <td className="px-4 py-3 whitespace-nowrap">

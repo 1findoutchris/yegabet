@@ -13,6 +13,10 @@ enum Role {
   AFFILIATE
   ADMIN
   SUPERADMIN
+  // Retail betting cashier: a normal user account (wallet, deposits,
+  // withdrawals) restricted to the sports UI, who places bets on behalf of
+  // walk-in customers against printed Tickets. Created only from admin.
+  IN_PERSON_AGENT
 }
 
 enum TransactionType {
@@ -123,6 +127,11 @@ model User {
   agent         Agent?       @relation(fields: [agentId], references: [id])
   affiliate     Affiliate?   @relation(fields: [affiliateId], references: [id])
 
+  // In-person betting agent (role = IN_PERSON_AGENT): percent of each bet's
+  // stake earned as commission, set by admin. NULL for everyone else.
+  commissionRate Decimal? @db.Decimal(5, 2)
+  agentTickets   Ticket[]
+
   transactions    Transaction[]
   bets            Bet[]
   bonuses         UserBonus[]
@@ -197,6 +206,9 @@ model Transaction {
   metadata      Json?
 
   user          User @relation(fields: [userId], references: [id])
+
+  // Set when this BET/WIN row was placed through an in-person agent's ticket.
+  ticketBet     TicketBet?
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -667,4 +679,70 @@ model SpinLink {
 
   @@index([claimedByUserId])
   @@map("spin_links")
+}
+
+// ── In-person betting agent (retail cashier) ─────────────────────────────────
+//
+// A Ticket is the printed receipt a walk-in customer holds. The agent opens a
+// draft (customer name + phone), places bets in the sportsbook iframe, and the
+// wallet callback attaches each BET Transaction to the open ticket via
+// TicketBet. When every bet on the ticket has settled the ticket is WON (any
+// win) or LOST; the customer returns with the ticket, the agent pays cash and
+// marks it PAID with an S3 receipt in proofKey.
+//
+// Money truth stays in Transaction — a ticket never moves funds, it only
+// groups the agent's own BET/WIN rows under a customer-facing code.
+model Ticket {
+  id            String   @id @default(cuid())
+  // Short human-readable code the customer quotes at the counter ("T-3F9K2A").
+  // Same reasoning as WithdrawalRequest.publicId.
+  publicId      String   @unique
+  agentId       String
+  customerName  String
+  customerPhone String
+
+  // OPEN    — draft; BET transactions attach while open
+  // PLACED  — issued/printed; waiting for results
+  // WON     — all bets settled, totalWin > 0 (customer is owed money)
+  // LOST    — all bets settled, totalWin = 0
+  // PAID    — agent paid the customer, receipt in proofKey
+  // CANCELLED — draft voided before any bet attached
+  status        String   @default("OPEN")
+
+  totalStake    Decimal  @default(0) @db.Decimal(12, 2)
+  totalWin      Decimal  @default(0) @db.Decimal(12, 2)
+
+  paidAt        DateTime?
+  proofKey      String?  // S3 key of the payout receipt the agent uploads
+
+  agent         User        @relation(fields: [agentId], references: [id])
+  bets          TicketBet[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([agentId, status])
+  @@index([customerPhone])
+  @@map("tickets")
+}
+
+// One BET Transaction attached to a Ticket. `gameRound` is the provider's round
+// id from the callback payload — the WIN callback carries the same value, which
+// is how a settling win finds its way back to the ticket.
+model TicketBet {
+  id            String   @id @default(cuid())
+  ticketId      String
+  transactionId String   @unique // the BET Transaction row (reference = serial_number)
+  gameRound     String?
+  betAmount     Decimal  @db.Decimal(12, 2)
+  winAmount     Decimal  @default(0) @db.Decimal(12, 2)
+  settled       Boolean  @default(false)
+
+  ticket        Ticket      @relation(fields: [ticketId], references: [id])
+  transaction   Transaction @relation(fields: [transactionId], references: [id])
+
+  createdAt DateTime @default(now())
+
+  @@index([gameRound])
+  @@map("ticket_bets")
 }

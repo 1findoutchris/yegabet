@@ -12,8 +12,29 @@ import { MobileTabBar } from "@/components/layout/MobileTabBar";
 import { TelegramChannel } from "@/components/layout/TelegramChannel";
 import { InstallBanner } from "@/components/layout/InstallBanner";
 import { SportsPane } from "@/components/sports/SportsPane";
+import { AgentShell } from "@/components/agent/AgentShell";
+import { auth } from "@/lib/auth";
 
-export default function UserLayout({ children }: { children: React.ReactNode }) {
+export default async function UserLayout({ children }: { children: React.ReactNode }) {
+  const session = await auth();
+  const isAgent = session?.user?.role === "IN_PERSON_AGENT";
+
+  // In-person betting agents get the cashier shell instead of the casino
+  // chrome — same providers, same mounted SportsPane, different nav. The
+  // shell's client-side guard bounces them off any non-agent route.
+  if (isAgent) {
+    return (
+      <AuthModalProvider>
+        <BalanceProvider>
+          <AgentShell>{children}</AgentShell>
+          {/* SportsPane stays mounted at all times so the iframe never reloads */}
+          <SportsPane agentMode />
+          <AuthModal />
+        </BalanceProvider>
+      </AuthModalProvider>
+    );
+  }
+
   return (
     <AuthModalProvider>
       <FavoritesProvider>

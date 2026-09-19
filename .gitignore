@@ -56,3 +56,4 @@ playwright-report/
 
 # bootstrap spec — contains live-looking provider credentials
 vamos-bet-claude-code-prompt.md
+.uploads/

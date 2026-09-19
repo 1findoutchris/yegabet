@@ -28,24 +28,24 @@ import {
 const ok = () => NextResponse.json({ ok: true });
 
 const HELP =
-  "This bot confirms your phone number for <b>FetanBet</b>.\n\n" +
+  "This bot confirms your phone number for <b>VinnaBet</b>.\n\n" +
   "Start from the sign-up form on the site — it will send you back here with your own link.";
 
-const EXPIRED = "This link has expired. Go back to FetanBet and start again.";
+const EXPIRED = "This link has expired. Go back to VinnaBet and start again.";
 
 const NOTHING_PENDING =
-  "There's nothing to confirm right now. Start from the FetanBet sign-up form and open the link it gives you.";
+  "There's nothing to confirm right now. Start from the VinnaBet sign-up form and open the link it gives you.";
 
 /** Stated plainly, and the reset case says what to do if it wasn't them: this
  *  message is the only thing standing between a user and someone who talked
  *  them into confirming a reset they didn't ask for. */
 function prompt(purpose: Purpose, phone: string): string {
   return purpose === "reset"
-    ? `🔑 <b>FetanBet password reset</b>\n\n` +
+    ? `🔑 <b>VinnaBet password reset</b>\n\n` +
         `A password reset was requested for <b>${phone}</b>.\n\n` +
         `If that wasn't you, just ignore this message — nothing changes.\n\n` +
         `If it was, tap the button below to confirm the number is yours.`
-    : `👋 <b>FetanBet sign-up</b>\n\n` +
+    : `👋 <b>VinnaBet sign-up</b>\n\n` +
         `You're creating an account with <b>${phone}</b>.\n\n` +
         `Tap the button below to confirm this number is yours. Telegram sends us the ` +
         `number on this account — nothing else.`;
@@ -53,8 +53,8 @@ function prompt(purpose: Purpose, phone: string): string {
 
 function done(purpose: Purpose): string {
   return purpose === "reset"
-    ? "✅ Number confirmed.\n\nGo back to FetanBet to set your new password."
-    : "✅ Number confirmed.\n\nGo back to FetanBet — your account is being created.";
+    ? "✅ Number confirmed.\n\nGo back to VinnaBet to set your new password."
+    : "✅ Number confirmed.\n\nGo back to VinnaBet — your account is being created.";
 }
 
 export async function POST(req: NextRequest) {

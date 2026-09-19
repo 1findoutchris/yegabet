@@ -254,7 +254,7 @@ export default function WithdrawalsPage() {
 }
 
 function StatusBadge({ status }: { status: string }) {
-  const map: Record<string, string> = { PENDING: "#F59E0B", PROCESSING: "#F5B400", APPROVED: "#2BD974", REJECTED: "#FF3B5C", CANCELLED: "#A79FB5" };
+  const map: Record<string, string> = { PENDING: "#F59E0B", PROCESSING: "#2DD4BF", APPROVED: "#2BD974", REJECTED: "#FF3B5C", CANCELLED: "#A79FB5" };
   const color = map[status] ?? "#A79FB5";
   return (
     <span className="inline-flex items-center px-2 py-0.5 rounded-md text-[11px] font-bold uppercase tracking-[0.04em]"

@@ -86,8 +86,8 @@ export function BalanceProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     if (!session) return;
     const onActivity = () => refresh();
-    window.addEventListener("fetan:activity", onActivity);
-    return () => window.removeEventListener("fetan:activity", onActivity);
+    window.addEventListener("vinna:activity", onActivity);
+    return () => window.removeEventListener("vinna:activity", onActivity);
   }, [session, refresh]);
 
   // Live wallet stream — patches balance/turnover the instant a deposit is

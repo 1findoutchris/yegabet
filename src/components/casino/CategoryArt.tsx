@@ -106,7 +106,7 @@ export function ArtRocket({ className }: ArtProps) {
       </defs>
       {shadow}
       <path d="M34 48 C24 46 20 36 24 24 C27 14 34 8 40 6 C46 12 49 22 47 32 C45 42 40 47 34 48 Z" fill="url(#rkt-body)" stroke="rgba(0,0,0,0.08)" />
-      <circle cx="37" cy="22" r="5" fill="#38BDF8" stroke="#0EA5E9" strokeWidth="1.5" />
+      <circle cx="37" cy="22" r="5" fill="#2DD4BF" stroke="#0EA5E9" strokeWidth="1.5" />
       <path d="M24 30 C18 31 14 36 14 43 C20 41 23 38 25 34 Z" fill="#EF4444" />
       <path d="M44 36 C50 38 53 43 52 49 C46 46 44 42 43 38 Z" fill="#EF4444" />
       <path d="M30 47 C30 52 32 56 34 58 C36 56 38 52 38 47 C36 49 32 49 30 47 Z" fill="url(#rkt-flm)" />
@@ -127,7 +127,7 @@ export function ArtGift({ className }: ArtProps) {
         </linearGradient>
         <linearGradient id="gft-lid" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor="#DDD6FE" />
-          <stop offset="100%" stopColor="#8B5CF6" />
+          <stop offset="100%" stopColor="#C07AFF" />
         </linearGradient>
         <linearGradient id="gft-rib" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor="#FDE68A" />
@@ -152,7 +152,7 @@ export function ArtCrown({ className }: ArtProps) {
       <defs>
         <linearGradient id="crn-a" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor="#FDE68A" />
-          <stop offset="50%" stopColor="#F5B400" />
+          <stop offset="50%" stopColor="#2DD4BF" />
           <stop offset="100%" stopColor="#B45309" />
         </linearGradient>
         <linearGradient id="crn-band" x1="0" y1="0" x2="0" y2="1">

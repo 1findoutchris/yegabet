@@ -55,7 +55,7 @@ export function MobileTabBar() {
 
   return (
     <nav
-      className="md:hidden fixed bottom-0 inset-x-0 z-50 border-t border-[color:var(--border-muted)] bg-[#0B0710]/90 backdrop-blur-xl"
+      className="md:hidden fixed bottom-0 inset-x-0 z-50 border-t border-[color:var(--border-muted)] bg-[#0C2027]/90 backdrop-blur-xl"
       style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
     >
       <div className="grid grid-cols-5 items-end h-16 px-1">
@@ -69,7 +69,7 @@ export function MobileTabBar() {
               className="press -mt-6 flex flex-col items-center"
               aria-label="Deposit"
             >
-              <span className="w-14 h-14 rounded-full bg-gold-grad glow-gold flex items-center justify-center ring-4 ring-[#0B0710]">
+              <span className="w-14 h-14 rounded-full bg-gold-grad glow-gold flex items-center justify-center ring-4 ring-[#0C2027]">
                 <Wallet className="w-6 h-6 text-[#09090B]" />
               </span>
               <span className="mt-1 text-[10px] font-bold text-[color:var(--gold)]">Deposit</span>
@@ -80,7 +80,7 @@ export function MobileTabBar() {
               className="press -mt-6 flex flex-col items-center"
               aria-label="Join now"
             >
-              <span className="w-14 h-14 rounded-full bg-gold-grad glow-gold flex items-center justify-center ring-4 ring-[#0B0710] text-[#09090B] text-2xl font-extrabold leading-none">
+              <span className="w-14 h-14 rounded-full bg-gold-grad glow-gold flex items-center justify-center ring-4 ring-[#0C2027] text-[#09090B] text-2xl font-extrabold leading-none">
                 +
               </span>
               <span className="mt-1 text-[10px] font-bold text-[color:var(--gold)]">Join</span>

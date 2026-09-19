@@ -66,9 +66,9 @@ export default function DepositPage() {
       {/* Balance */}
       <div
         className="relative overflow-hidden rounded-2xl border border-[color:var(--border-accent)] p-5 mb-6"
-        style={{ background: "linear-gradient(135deg,#1E1729,#15101D)" }}
+        style={{ background: "linear-gradient(135deg,#1A4252,#12303C)" }}
       >
-        <span aria-hidden className="pointer-events-none absolute -top-14 -right-10 w-44 h-44 rounded-full" style={{ background: "radial-gradient(circle,rgba(245,180,0,0.18),transparent 65%)" }} />
+        <span aria-hidden className="pointer-events-none absolute -top-14 -right-10 w-44 h-44 rounded-full" style={{ background: "radial-gradient(circle,rgba(45,212,191,0.18),transparent 65%)" }} />
         <div className="relative z-10 flex items-center gap-3">
           <div className="w-10 h-10 rounded-xl grid place-items-center bg-[var(--bg-accent-dim)] border border-[color:var(--border-accent)]">
             <Wallet className="w-5 h-5 text-[color:var(--gold)]" />

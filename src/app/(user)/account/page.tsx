@@ -29,7 +29,7 @@ interface Account {
 }
 
 const TIER_COLOR: Record<string, string> = {
-  BRONZE: "#CD7F32", SILVER: "#C7CCD1", GOLD: "#F0A500", PLATINUM: "#9FE7E3", DIAMOND: "#7DD3FC", VIP: "#A78BFA",
+  BRONZE: "#CD7F32", SILVER: "#C7CCD1", GOLD: "#F0A500", PLATINUM: "#9FE7E3", DIAMOND: "#7DE8D8", VIP: "#D8B4FF",
 };
 
 const TXN_META: Record<string, { icon: typeof Wallet; color: string; sign: string }> = {
@@ -37,8 +37,8 @@ const TXN_META: Record<string, { icon: typeof Wallet; color: string; sign: strin
   WITHDRAWAL: { icon: ArrowUpRight,  color: "#FF3B5C", sign: "−" },
   BET:        { icon: Dice5,         color: "#A79FB5", sign: "−" },
   WIN:        { icon: Trophy,        color: "#2BD974", sign: "+" },
-  BONUS:      { icon: Gift,          color: "#F5B400", sign: "+" },
-  COMMISSION: { icon: Receipt,       color: "#8B5CF6", sign: "+" },
+  BONUS:      { icon: Gift,          color: "#2DD4BF", sign: "+" },
+  COMMISSION: { icon: Receipt,       color: "#C07AFF", sign: "+" },
   REFUND:     { icon: Receipt,       color: "#2BD974", sign: "+" },
 };
 
@@ -96,7 +96,7 @@ export default function AccountPage() {
     );
   }
 
-  const tierColor = data ? (TIER_COLOR[data.loyaltyTier] ?? "#F5B400") : "#F5B400";
+  const tierColor = data ? (TIER_COLOR[data.loyaltyTier] ?? "#2DD4BF") : "#2DD4BF";
   const displayName = data?.name?.trim() || data?.username || "Player";
   const initial = displayName.charAt(0).toUpperCase();
 
@@ -121,12 +121,12 @@ export default function AccountPage() {
 
       {/* Profile + balance card */}
       <div className="relative overflow-hidden rounded-3xl border border-[color:var(--border-base)] p-5 sm:p-6"
-        style={{ background: "linear-gradient(150deg,#1E1729,#15101D 60%)" }}>
-        <span aria-hidden className="pointer-events-none absolute -top-20 -right-16 w-64 h-64 rounded-full" style={{ background: "radial-gradient(circle,rgba(245,180,0,0.16),transparent 65%)" }} />
+        style={{ background: "linear-gradient(150deg,#1A4252,#12303C 60%)" }}>
+        <span aria-hidden className="pointer-events-none absolute -top-20 -right-16 w-64 h-64 rounded-full" style={{ background: "radial-gradient(circle,rgba(45,212,191,0.16),transparent 65%)" }} />
 
         <div className="relative z-10 flex items-center gap-4">
           <div className="w-14 h-14 rounded-full grid place-items-center font-display font-extrabold text-[#1B1430] text-xl bg-gold-grad shrink-0"
-            style={{ boxShadow: "0 0 18px rgba(245,180,0,0.4)" }}>
+            style={{ boxShadow: "0 0 18px rgba(45,212,191,0.4)" }}>
             {initial}
           </div>
           <div className="min-w-0">
@@ -249,7 +249,7 @@ export default function AccountPage() {
           <div className="rounded-2xl border border-[color:var(--border-accent)] bg-[var(--bg-accent-dim)] divide-y divide-[color:var(--border-muted)] overflow-hidden">
             {data.pendingDeposits.map((d) => (
               <div key={d.id} className="flex items-center gap-3 px-4 py-3">
-                <div className="w-9 h-9 rounded-xl grid place-items-center shrink-0 bg-[#F5B4001A]">
+                <div className="w-9 h-9 rounded-xl grid place-items-center shrink-0 bg-[#2DD4BF1A]">
                   <Clock className="w-4 h-4 text-[color:var(--gold)]" />
                 </div>
                 <div className="min-w-0">
@@ -262,7 +262,7 @@ export default function AccountPage() {
                   <p className="font-bold text-[14px] tabular-nums text-[color:var(--gold)]">
                     {Number(d.amount).toLocaleString()} <span className="text-[11px] text-[color:var(--text-muted)] font-medium">ETB</span>
                   </p>
-                  <span className="inline-flex items-center gap-1 mt-0.5 rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.04em] text-[color:var(--gold)] bg-[#F5B40018] border border-[color:var(--border-accent)]">
+                  <span className="inline-flex items-center gap-1 mt-0.5 rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.04em] text-[color:var(--gold)] bg-[#2DD4BF18] border border-[color:var(--border-accent)]">
                     Pending
                   </span>
                 </div>

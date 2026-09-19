@@ -24,7 +24,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Online Casino & Sports Betting in Ethiopia",
   description:
-    "Play 1000+ slots, crash and live casino games at Fetan Bet. Instant telebirr, CBE Birr and eBirr deposits, fast withdrawals in ETB.",
+    "Play 1000+ slots, crash and live casino games at VinnaBet. Instant telebirr, CBE Birr and eBirr deposits, fast withdrawals in ETB.",
   alternates: { canonical: "/casino" },
 };
 

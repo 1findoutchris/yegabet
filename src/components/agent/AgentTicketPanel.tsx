@@ -1,0 +1,141 @@
+"use client";
+
+import { usePathname, useRouter } from "next/navigation";
+import { useState, useEffect, useCallback } from "react";
+import { Ticket, Plus, X, Printer, Loader2 } from "lucide-react";
+
+/*
+ * The open-ticket draft bar. Lives at the bottom of /sports for in-person
+ * agents: start a draft (customer name + phone), watch BET transactions attach
+ * as the wallet callback lands them, then issue + print or cancel.
+ *
+ * Polls while a draft is open — the callback attaches bets asynchronously, so
+ * the stake total updates a beat after the customer sees the bet placed.
+ */
+
+interface OpenTicket {
+  id: string;
+  publicId: string;
+  customerName: string;
+  customerPhone: string;
+  totalStake: string;
+  bets: { id: string; betAmount: string; settled: boolean }[];
+}
+
+export function AgentTicketPanel() {
+  const pathname = usePathname();
+  const router = useRouter();
+  const [open, setOpen] = useState<OpenTicket | null>(null);
+  const [starting, setStarting] = useState(false);
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState("");
+
+  const isSports = pathname === "/sports" || pathname.startsWith("/sports/");
+
+  const refresh = useCallback(async () => {
+    const res = await fetch("/api/agent/tickets?status=OPEN").catch(() => null);
+    if (!res?.ok) return;
+    const data = await res.json();
+    setOpen(data.tickets?.[0] ?? null);
+  }, []);
+
+  useEffect(() => {
+    if (!isSports) return;
+    refresh();
+    const t = setInterval(refresh, 4000);
+    return () => clearInterval(t);
+  }, [isSports, refresh]);
+
+  if (!isSports) return null;
+
+  async function start() {
+    setBusy(true); setError("");
+    const res = await fetch("/api/agent/tickets", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ customerName: name, customerPhone: phone }),
+    });
+    setBusy(false);
+    if (!res.ok) {
+      const d = await res.json().catch(() => ({}));
+      setError(d.error ?? "Could not open ticket");
+      return;
+    }
+    setStarting(false); setName(""); setPhone("");
+    refresh();
+  }
+
+  async function issue() {
+    if (!open) return;
+    setBusy(true);
+    const res = await fetch(`/api/agent/tickets/${open.id}/issue`, { method: "POST" });
+    setBusy(false);
+    if (!res.ok) {
+      const d = await res.json().catch(() => ({}));
+      setError(d.error ?? "Could not issue");
+      return;
+    }
+    router.push(`/agent/tickets/${open.id}?print=1`);
+  }
+
+  async function cancel() {
+    if (!open) return;
+    setBusy(true);
+    await fetch(`/api/agent/tickets/${open.id}/cancel`, { method: "POST" });
+    setBusy(false);
+    setOpen(null);
+  }
+
+  return (
+    <div className="fixed bottom-0 left-0 right-0 md:left-56 z-20 bg-[var(--bg-surface)] border-t border-[color:var(--border-muted)] px-4 py-3">
+      {error && <p className="text-[12px] text-[color:var(--red)] mb-2">{error}</p>}
+
+      {!open && !starting && (
+        <button onClick={() => setStarting(true)}
+          className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[var(--bg-accent-dim)] text-[color:var(--gold)] text-[13px] font-semibold border border-[color:var(--border-accent)]">
+          <Plus className="w-4 h-4" /> New ticket
+        </button>
+      )}
+
+      {!open && starting && (
+        <div className="flex flex-wrap items-center gap-2">
+          <input value={name} onChange={(e) => setName(e.target.value)} placeholder="Customer name"
+            className="px-3 py-2 rounded-lg bg-[var(--bg-elevated)] text-[13px] text-[color:var(--text-primary)] border border-[color:var(--border-muted)] w-40" />
+          <input value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Phone"
+            className="px-3 py-2 rounded-lg bg-[var(--bg-elevated)] text-[13px] text-[color:var(--text-primary)] border border-[color:var(--border-muted)] w-36" />
+          <button onClick={start} disabled={busy || name.trim().length < 2 || phone.trim().length < 7}
+            className="px-4 py-2 rounded-lg bg-[var(--gold)] text-black text-[13px] font-bold disabled:opacity-40">
+            {busy ? <Loader2 className="w-4 h-4 animate-spin" /> : "Open"}
+          </button>
+          <button onClick={() => setStarting(false)} className="p-2 text-[color:var(--text-muted)]">
+            <X className="w-4 h-4" />
+          </button>
+        </div>
+      )}
+
+      {open && (
+        <div className="flex flex-wrap items-center gap-3">
+          <Ticket className="w-4 h-4 text-[color:var(--gold)]" />
+          <div className="text-[13px]">
+            <span className="font-bold text-[color:var(--text-primary)]">{open.publicId}</span>
+            <span className="text-[color:var(--text-secondary)]"> · {open.customerName} · {open.customerPhone}</span>
+          </div>
+          <div className="text-[12px] text-[color:var(--text-muted)]">
+            {open.bets.length} bet{open.bets.length === 1 ? "" : "s"} · {Number(open.totalStake).toLocaleString()} ETB
+          </div>
+          <div className="flex-1" />
+          <button onClick={issue} disabled={busy || open.bets.length === 0}
+            className="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[var(--gold)] text-black text-[13px] font-bold disabled:opacity-40">
+            <Printer className="w-4 h-4" /> Issue & print
+          </button>
+          <button onClick={cancel} disabled={busy || open.bets.length > 0}
+            className="px-3 py-2 rounded-lg text-[12px] text-[color:var(--text-muted)] hover:text-[color:var(--red)] disabled:opacity-40">
+            Cancel
+          </button>
+        </div>
+      )}
+    </div>
+  );
+}

@@ -1,7 +1,7 @@
 import { redis } from "./redis";
 import crypto from "crypto";
 
-export const ADMIN_COOKIE = "fetan_admin";
+export const ADMIN_COOKIE = "vinnabet_admin";
 const SESSION_TTL = 8 * 60 * 60; // 8 hours
 
 export function generateSessionToken(): string {

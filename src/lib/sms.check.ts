@@ -143,9 +143,9 @@ const env = (o: Record<string, string>) => o as NodeJS.ProcessEnv;
   assert.strictEqual(afro.url, "https://api.afromessage.com/api/send");
   assert.strictEqual(afro.kind === "afro" && afro.sender, undefined, "unset sender stays absent, not empty-string");
 
-  const named = smsGateways(env({ AFROMESSAGE_API_KEY: "tok", AFROMESSAGE_SENDER: "FetanBet", AFROMESSAGE_FROM: "id-1" }));
+  const named = smsGateways(env({ AFROMESSAGE_API_KEY: "tok", AFROMESSAGE_SENDER: "VinnaBet", AFROMESSAGE_FROM: "id-1" }));
   assert.strictEqual(named.length, 1, "the carrier works with no handsets at all");
-  assert.strictEqual(named[0].kind === "afro" && named[0].sender, "FetanBet");
+  assert.strictEqual(named[0].kind === "afro" && named[0].sender, "VinnaBet");
   assert.strictEqual(named[0].kind === "afro" && named[0].from, "id-1");
 }
 

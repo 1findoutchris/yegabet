@@ -9,10 +9,10 @@ import {
 
 const G = {
   orange:  "linear-gradient(150deg,#FF9D2E 0%,#FB6107 55%,#C2410C 100%)",
-  gold:    "linear-gradient(150deg,#FFE07A 0%,#F5B400 50%,#C8860A 100%)",
+  gold:    "linear-gradient(150deg,#FFE07A 0%,#2DD4BF 50%,#0D9488 100%)",
   crimson: "linear-gradient(150deg,#FF6B8A 0%,#F0285A 55%,#A8123E 100%)",
   blue:    "linear-gradient(150deg,#4FD0FF 0%,#2B7FFF 55%,#3730D8 100%)",
-  violet:  "linear-gradient(150deg,#C29BFF 0%,#8B5CF6 50%,#6620C9 100%)",
+  violet:  "linear-gradient(150deg,#C29BFF 0%,#C07AFF 50%,#6620C9 100%)",
   emerald: "linear-gradient(150deg,#3BE6A6 0%,#10B57E 55%,#067A53 100%)",
 } as const;
 
@@ -31,16 +31,16 @@ export interface CategoryTheme {
 /* Keyed by the route slug used in /casino/[slug]. */
 export const CATEGORY_THEMES: Record<string, CategoryTheme> = {
   hot:   { title: "Popular",         tag: "Trending now",  grad: G.orange,  glow: "rgba(251,97,7,0.55)",   tint: "rgba(251,97,7,0.16)",   accent: "#FB6107", Art: ArtFlame    },
-  slots: { title: "Slots",           tag: "Spin to win",   grad: G.gold,    glow: "rgba(245,180,0,0.55)",  tint: "rgba(245,180,0,0.16)",  accent: "#F5B400", Art: ArtCherries },
+  slots: { title: "Slots",           tag: "Spin to win",   grad: G.gold,    glow: "rgba(45,212,191,0.55)",  tint: "rgba(45,212,191,0.16)",  accent: "#2DD4BF", Art: ArtCherries },
   live:  { title: "Live Casino",     tag: "Real dealers",  grad: G.crimson, glow: "rgba(240,40,90,0.55)",  tint: "rgba(240,40,90,0.16)",  accent: "#F0285A", Art: ArtCards    },
   crash: { title: "Crash & Instant", tag: "Cash out fast", grad: G.blue,    glow: "rgba(43,127,255,0.55)", tint: "rgba(43,127,255,0.16)", accent: "#3B82F6", Art: ArtRocket   },
-  new:   { title: "New Games",       tag: "Fresh drops",   grad: G.violet,  glow: "rgba(139,92,246,0.55)", tint: "rgba(139,92,246,0.16)", accent: "#8B5CF6", Art: ArtGift     },
+  new:   { title: "New Games",       tag: "Fresh drops",   grad: G.violet,  glow: "rgba(192,122,255,0.55)", tint: "rgba(192,122,255,0.16)", accent: "#C07AFF", Art: ArtGift     },
 };
 
 /* Neutral theme for provider pages (no dedicated category art). */
 export const DEFAULT_THEME: CategoryTheme = {
   title: "", tag: "Game provider", grad: G.gold,
-  glow: "rgba(245,180,0,0.5)", tint: "rgba(245,180,0,0.14)", accent: "#F5B400", Art: ArtCherries,
+  glow: "rgba(45,212,191,0.5)", tint: "rgba(45,212,191,0.14)", accent: "#2DD4BF", Art: ArtCherries,
 };
 
 /* ── Sub-categories ────────────────────────────────────────────────────────
@@ -101,9 +101,9 @@ export interface LobbyTile {
 
 export const LOBBY_TILES: LobbyTile[] = [
   { slug: "hot",   title: "Popular",         tag: "Trending now",  grad: G.orange,  glow: "rgba(251,97,7,0.55)",   Art: ArtFlame,    countKey: "hot"   },
-  { slug: "slots", title: "Slots",           tag: "Spin to win",   grad: G.gold,    glow: "rgba(245,180,0,0.55)",  Art: ArtCherries, countKey: "slots" },
+  { slug: "slots", title: "Slots",           tag: "Spin to win",   grad: G.gold,    glow: "rgba(45,212,191,0.55)",  Art: ArtCherries, countKey: "slots" },
   { slug: "live",  title: "Live Casino",     tag: "Real dealers",  grad: G.crimson, glow: "rgba(240,40,90,0.55)",  Art: ArtCards,    countKey: "live"  },
   { slug: "crash", title: "Crash & Instant", tag: "Cash out fast", grad: G.blue,    glow: "rgba(43,127,255,0.55)", Art: ArtRocket,   countKey: "crash" },
-  { slug: "new",   title: "New Games",       tag: "Fresh drops",   grad: G.violet,  glow: "rgba(139,92,246,0.55)", Art: ArtGift,     countKey: "new"   },
+  { slug: "new",   title: "New Games",       tag: "Fresh drops",   grad: G.violet,  glow: "rgba(192,122,255,0.55)", Art: ArtGift,     countKey: "new"   },
   { slug: "hot",   title: "Jackpots",        tag: "Mega payouts",  grad: G.emerald, glow: "rgba(16,181,126,0.55)", Art: ArtCrown,    countKey: "all"   },
 ];
