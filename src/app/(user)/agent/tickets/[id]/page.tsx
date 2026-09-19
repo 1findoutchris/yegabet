@@ -134,7 +134,7 @@ export default function AgentTicketDetailPage() {
         {ticket.status === "WON" && (
           <div className="bg-[var(--bg-surface)] border border-[color:var(--border-muted)] rounded-2xl p-4 space-y-3">
             <p className="text-[12px] text-[color:var(--text-secondary)]">
-              Verify the customer's name and phone above, hand over{" "}
+              Verify the customer&apos;s name and phone above, hand over{" "}
               <span className="font-bold text-emerald-400">{Number(ticket.totalWin).toLocaleString()} ETB</span>,
               then attach the receipt.
             </p>

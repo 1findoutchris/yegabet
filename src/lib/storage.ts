@@ -1,5 +1,5 @@
 import "server-only";
-import { S3Client, PutObjectCommand, GetObjectCommand, DeleteObjectCommand } from "@aws-sdk/client-s3";
+import { S3Client, PutObjectCommand, GetObjectCommand, DeleteObjectCommand, type GetObjectCommandOutput } from "@aws-sdk/client-s3";
 import { promises as fs } from "fs";
 import path from "path";
 
@@ -62,7 +62,7 @@ export async function getObject(key: string): Promise<{ body: Uint8Array; conten
     }
   }
   try {
-    const res = await s3().send(new GetObjectCommand({ Bucket: BUCKET, Key: key }));
+    const res: GetObjectCommandOutput = await s3().send(new GetObjectCommand({ Bucket: BUCKET, Key: key }));
     if (!res.Body) return null;
     const body = await res.Body.transformToByteArray();
     return { body, contentType: res.ContentType ?? "application/octet-stream" };

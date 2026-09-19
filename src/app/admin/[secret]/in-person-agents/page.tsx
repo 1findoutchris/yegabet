@@ -90,7 +90,7 @@ export default function InPersonAgentsPage() {
 
       {created && (
         <div className="mb-4 bg-emerald-950/40 border border-emerald-700/50 rounded-2xl p-4">
-          <p className="text-[13px] font-bold text-emerald-400 mb-2">Agent created — hand these over, they won't be shown again</p>
+          <p className="text-[13px] font-bold text-emerald-400 mb-2">Agent created — hand these over, they won&apos;t be shown again</p>
           <div className="font-mono text-[13px] text-[color:var(--text-primary)] space-y-1">
             <p>Phone (login): {created.phone}</p>
             <p>Username: {created.username}</p>
