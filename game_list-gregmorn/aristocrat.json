@@ -1,0 +1,938 @@
+[
+ {
+  "gameID": "magic-slots:aristocrat:910101",
+  "gameNameEn": "Autumn Moon",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/aristox/images_288_210/autumnmoon.png",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:aristocrat:910102",
+  "gameNameEn": "Moon Race",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/aristox/images_288_210/moonrace.png",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:aristocrat:910103",
+  "gameNameEn": "Magic Totem",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/aristox/images_288_210/magictotem.png",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:aristocrat:910104",
+  "gameNameEn": "Eyes of Fortune",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/aristox/images_288_210/eyesoffortune.png",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:aristocrat:910105",
+  "gameNameEn": "Golden Gong",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/aristox/images_288_210/goldengong.png",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:aristocrat:910106",
+  "gameNameEn": "Best Bet",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/aristox/images_288_210/bestbet.png",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:aristocrat:910107",
+  "gameNameEn": "Dragons Riches",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/aristox/images_288_210/dragonsriches.png",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:aristocrat:910108",
+  "gameNameEn": "Peace and Long Life",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/aristox/images_288_210/peaceandlonglife.png",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:aristocrat:910109",
+  "gameNameEn": "Spring Festival",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/aristox/images_288_210/springfestival.png",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:aristocrat:910123",
+  "gameNameEn": "Buffalo Link",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/aristox/images_288_210/buffalolink.png",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:aristocrat:910124",
+  "gameNameEn": "Big Red Gold",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/aristox/images_288_210/bigredgold.png",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:aristocrat:910125",
+  "gameNameEn": "Tiki Fire",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/aristox/images_288_210/tikifire.png",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:aristocrat:910126",
+  "gameNameEn": "50 Lions Deluxe",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/aristox/images_288_210/fiftylionsdeluxe.png",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:aristocrat:910127",
+  "gameNameEn": "Bengal Treasures",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/aristox/images_288_210/bengaltreasures.png",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:aristocrat:910132",
+  "gameNameEn": "Ninja Moon",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/aristox/images_288_210/ninjamoon.png",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:aristocrat:910133",
+  "gameNameEn": "Genghis Khan",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/aristox/images_288_210/genghiskhan.png",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:aristocrat:910134",
+  "gameNameEn": "Emperors Treasure",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/aristox/images_288_210/emperorstreasure.png",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:aristocrat:910135",
+  "gameNameEn": "King of the Nile",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/aristox/images_288_210/kingofthenile.png",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:aristocrat:910136",
+  "gameNameEn": "Wild Panda",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/aristox/images_288_210/wildpanda.png",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:aristocrat:910137",
+  "gameNameEn": "Wild Chuco",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/aristox/images_288_210/wildchuco.png",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:aristocrat:910138",
+  "gameNameEn": "Magic Pearl",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/aristox/images_288_210/magicpearl.png",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:aristocrat:910139",
+  "gameNameEn": "Kungfu Master",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/aristox/images_288_210/kungfumaster.png",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:aristocrat:910140",
+  "gameNameEn": "Happy Lantern",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/aristox/images_288_210/happylantern.png",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:aristocrat:910141",
+  "gameNameEn": "Egyptian Jewels",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/aristox/images_288_210/egyptianjewels.png",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:aristocrat:910142",
+  "gameNameEn": "Chica Bonita",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/aristox/images_288_210/chicabonita.png",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:aristocrat:910143",
+  "gameNameEn": "Aussie Boomer",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/aristox/images_288_210/aussieboomer.png",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:aristocrat:910144",
+  "gameNameEn": "Choys Kingdom Dancing Foo",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/aristox/images_288_210/choyskingdomdancingfoo.png",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:aristocrat:910145",
+  "gameNameEn": "Miss Kitty Gold",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/aristox/images_288_210/misskittygold.png",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:aristocrat:910146",
+  "gameNameEn": "Sun and Moon Deluxe",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/aristox/images_288_210/sunandmoondeluxe.png",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:aristocrat:910147",
+  "gameNameEn": "Caribbean Gold",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/aristox/images_288_210/caribbeangold.png",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:aristocrat:910148",
+  "gameNameEn": "Black Panther",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/aristox/images_288_210/blackpanther.png",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:aristocrat:910149",
+  "gameNameEn": "Corrida de Toros",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/aristox/images_288_210/corridadetoros.png",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:aristocrat:910150",
+  "gameNameEn": "Checkered Flag",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/aristox/images_288_210/checkeredflag.png",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:aristocrat:920001",
+  "gameNameEn": "More Hearts",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/aristocrat/morehearts.png",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:aristocrat:920002",
+  "gameNameEn": "More Chilli",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/aristocrat/morechilli.png",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:aristocrat:920006",
+  "gameNameEn": "Wild Stallion",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/aristocrat/wildstallion.png",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:1037",
+  "gameNameEn": "wild stallion",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/wildstallion.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:1038",
+  "gameNameEn": "timber wolf",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/TimberWolf.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:1039",
+  "gameNameEn": "more chilli",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/morechilli.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:1239",
+  "gameNameEn": "50 Lions Deluxe",
+  "img": "https://stage.gis-static.com/games/5cc985252d9ed98c062178805efdb16b/VoltEnt/9a6dc4da88a54892a505e76a059806cc.png",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:1240",
+  "gameNameEn": "Aussie Boomer",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/AussieBoomer.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:1241",
+  "gameNameEn": "Bengal Treasures",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/BengalTreasures.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:1242",
+  "gameNameEn": "Black Panther",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/BlackPanther.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:1243",
+  "gameNameEn": "Chica Bonita",
+  "img": "https://stage.gis-static.com/games/KajotGames/2182a321f834446b8725f582585a2742.png",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:1244",
+  "gameNameEn": "Corrida De Toros",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/CorridaDeToros.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:1245",
+  "gameNameEn": "Checkered Flag",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/CheckeredFlag.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:1246",
+  "gameNameEn": "Caribbean Gold",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/CaribbeanGold.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:1247",
+  "gameNameEn": "Egyptian Jewels",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/EgyptianJewels.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:1248",
+  "gameNameEn": "Genghis Khan",
+  "img": "https://stage.gis-static.com/games/KAGaming/7d0a1872a14446b88b5e6c8f8d41270d.png",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:1251",
+  "gameNameEn": "Kungfu Master",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/KungfuMaster.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:1252",
+  "gameNameEn": "Magic Pearl",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/MagicPearl.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:1253",
+  "gameNameEn": "Minja Moon",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/NinjaMoon.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:1254",
+  "gameNameEn": "Tiki Fire",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/TikiFire.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:1255",
+  "gameNameEn": "Wild Chuco",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/WildChuco.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:3",
+  "gameNameEn": "5 Koi",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/5Koi.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:338",
+  "gameNameEn": "Werewolf Wild",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/WerewolfWild.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:339",
+  "gameNameEn": "Jaguar Mist",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/JaguarMist.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:340",
+  "gameNameEn": "Pelican Pete",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/PelicanPete.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:341",
+  "gameNameEn": "Dolphins Treasure",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/DolphinsTreasure.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:342",
+  "gameNameEn": "Lucky 88",
+  "img": "https://stage.gis-static.com/games/Espressogames/9e0a5474c94f48d89d33ad2ea808af43.png",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:343",
+  "gameNameEn": "Moon Festival",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/MoonFestival.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:344",
+  "gameNameEn": "Fire Light",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/FireLight.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:345",
+  "gameNameEn": "Thunder King",
+  "img": "https://stage.gis-static.com/games/Fazi/07a8fa4f9c3947bbbaa9574fe7c41e54.png",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:388",
+  "gameNameEn": "Pompeii",
+  "img": "https://stage.gis-static.com/games/ConceptGaming/f9a2f8118c074b0cbe9030dcc4dadf23.png",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:391",
+  "gameNameEn": "Wild Splash",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/WildSplash.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:393",
+  "gameNameEn": "Silk Road",
+  "img": "https://stage.gis-static.com/games/Endorphina/33485b7bc35fd88f052e6eedbb593287020d4dbd.png",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:394",
+  "gameNameEn": "Tiger Princess",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/TigerPrincess.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:395",
+  "gameNameEn": "Fortune Princess",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/FortunePrincess.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:41",
+  "gameNameEn": "Big Red",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/182_BigRed.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:42",
+  "gameNameEn": "50 Dragons",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/172_5Dragons.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:43",
+  "gameNameEn": "Miss Kitty",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/440_175_MissKitty.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:44",
+  "gameNameEn": "50 Lions",
+  "img": "https://stage.gis-static.com/games/5cc985252d9ed98c062178805efdb16b/VoltEnt/9a6dc4da88a54892a505e76a059806cc.png",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:46",
+  "gameNameEn": "Tiki Torch",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/442_177_TikiTorch.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:47",
+  "gameNameEn": "Queen of the Nile",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/446_181_QueenoftheNile.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:49",
+  "gameNameEn": "5 Dragons",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/172_5Dragons.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:50",
+  "gameNameEn": "Sun and Moon",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/SunMoon.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:51",
+  "gameNameEn": "Buffalo",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/BuffaloLink.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:52",
+  "gameNameEn": "Queen of the Nile II",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/511_247_Queenof2.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:53",
+  "gameNameEn": "Big Ben",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/246_bigb.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:54",
+  "gameNameEn": "Red Baron",
+  "img": "https://stage.gis-static.com/games/KAGaming/e9d07ca5b5aa45a887ea7f7cea1d4873.png",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:55",
+  "gameNameEn": "Choy Sun Doa",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/ChoySunDoa.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:555",
+  "gameNameEn": "High Stakes",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/HighStakes.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:557",
+  "gameNameEn": "Sahara Gold",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/SaharaGold.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:564",
+  "gameNameEn": "Heart Throb",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/HeartThrob.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:567",
+  "gameNameEn": "Zorro",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/Zorro.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:568",
+  "gameNameEn": "Dragone Emperor",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/DragonEmperor.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:569",
+  "gameNameEn": "Wheres The Gold",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/WheresTheGold.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:57",
+  "gameNameEn": "Flame of Olympus",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/FlameOfOlympus.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:570",
+  "gameNameEn": "Wild panda",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/WildPanda.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:58",
+  "gameNameEn": "Lucky Count",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/LuckyCount.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:59",
+  "gameNameEn": "Double Happiness",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/doublehappiness.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:608",
+  "gameNameEn": "Panda Magic",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/PandaMagic.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:609",
+  "gameNameEn": "happy prosperous",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/HappyProsperous.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:610",
+  "gameNameEn": "golden century",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/goldencentury.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:72",
+  "gameNameEn": "Geisha",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/Geisha.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:956",
+  "gameNameEn": "autumn moon",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/autumnmoon.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:957",
+  "gameNameEn": "moon race",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/moonrace.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:958",
+  "gameNameEn": "magic totem",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/magictotem.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:959",
+  "gameNameEn": "eyes of fortune",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/eyesoffortune.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:960",
+  "gameNameEn": "golden gong",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/goldengong.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:961",
+  "gameNameEn": "best bet",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/bestbet.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:962",
+  "gameNameEn": "dragons riches",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/dragonsriches.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:963",
+  "gameNameEn": "peace and long life",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/peaceandlonglife.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:aristocrat:964",
+  "gameNameEn": "spring festival",
+  "img": "https://static.slot7hub.com/providers/aristocrat/linked_data/logos/springfestival.jpg",
+  "customGameType": 0,
+  "vendorCode": "aristocrat",
+  "provider": "aristocrat",
+  "category": "Slot"
+ }
+]

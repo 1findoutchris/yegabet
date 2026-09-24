@@ -1,0 +1,20 @@
+[
+ {
+  "gameID": "magic-slots:zitro:940001",
+  "gameNameEn": "La Calaca",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/zitro/images_288_210/lacalaca.png",
+  "customGameType": 0,
+  "vendorCode": "zitro",
+  "provider": "zitro",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:zitro:940002",
+  "gameNameEn": "Power Mania Bonus",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/zitro/images_288_210/powermaniabonus.png",
+  "customGameType": 0,
+  "vendorCode": "zitro",
+  "provider": "zitro",
+  "category": "Slot"
+ }
+]

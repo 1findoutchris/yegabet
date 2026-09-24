@@ -1,0 +1,353 @@
+[
+ {
+  "gameID": "black:netent:100",
+  "gameNameEn": "Reel Steal",
+  "img": "https://static.slot7hub.com/providers/netent/linked_data/logos/505_241_reelsteal.jpg",
+  "customGameType": 0,
+  "vendorCode": "netent",
+  "provider": "netent",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:netent:101",
+  "gameNameEn": "Dazzle Me",
+  "img": "https://static.slot7hub.com/providers/netent/games/dazzle_mobile_html/media/logos/640_480.jpg",
+  "customGameType": 0,
+  "vendorCode": "netent",
+  "provider": "netent",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:netent:108",
+  "gameNameEn": "Guns N Roses",
+  "img": "https://media.ohxeeshei2eigooji3ey8nah9bah7r.site/414/netent-gh/450x345/26343.jpg",
+  "customGameType": 0,
+  "vendorCode": "netent",
+  "provider": "netent",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:netent:131",
+  "gameNameEn": "When Pigs Fly",
+  "img": "https://lh3.googleusercontent.com/d/1zeJCPAB-PfiGQLrR_6wSPKVnRgaemTIX",
+  "customGameType": 0,
+  "vendorCode": "netent",
+  "provider": "netent",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:netent:132",
+  "gameNameEn": "Secrets of Atlantis",
+  "img": "https://static.slot7hub.com/providers/netent/linked_data/logos/SecretsOfAtlantis.jpg",
+  "customGameType": 0,
+  "vendorCode": "netent",
+  "provider": "netent",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:netent:133",
+  "gameNameEn": "twin happiness",
+  "img": "https://static.slot7hub.com/providers/netent/games/twinhappiness_mobile_html/media/logos/640_480.jpg",
+  "customGameType": 0,
+  "vendorCode": "netent",
+  "provider": "netent",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:netent:137",
+  "gameNameEn": "Motorhead",
+  "img": "https://static.slot7hub.com/providers/netent/linked_data/logos/Motorhead.jpg",
+  "customGameType": 0,
+  "vendorCode": "netent",
+  "provider": "netent",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:netent:139",
+  "gameNameEn": "Bloodsuckers II",
+  "img": "https://static.slot7hub.com/providers/netent/linked_data/logos/Bloodsuckers2.jpg",
+  "customGameType": 0,
+  "vendorCode": "netent",
+  "provider": "netent",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:netent:140",
+  "gameNameEn": "Fruit Spin",
+  "img": "https://media.ohxeeshei2eigooji3ey8nah9bah7r.site/414/netent-gh/450x345/26220.jpg",
+  "customGameType": 0,
+  "vendorCode": "netent",
+  "provider": "netent",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:netent:482",
+  "gameNameEn": "Copy Cats",
+  "img": "https://static.slot7hub.com/providers/netent/linked_data/logos/CopyCats.jpg",
+  "customGameType": 0,
+  "vendorCode": "netent",
+  "provider": "netent",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:netent:483",
+  "gameNameEn": "Fruit Shop",
+  "img": "https://static.slot7hub.com/providers/netent/games/fruitshop_mobile_html/media/logos/640_480.jpg",
+  "customGameType": 0,
+  "vendorCode": "netent",
+  "provider": "netent",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:netent:484",
+  "gameNameEn": "King of Slots",
+  "img": "https://static.slot7hub.com/providers/netent/linked_data/logos/441_kingofslots.jpg",
+  "customGameType": 0,
+  "vendorCode": "netent",
+  "provider": "netent",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:netent:523",
+  "gameNameEn": "Double Stacks",
+  "img": "https://static.slot7hub.com/providers/netent/games/doublestacks-client/media/logos/640_480.jpg",
+  "customGameType": 0,
+  "vendorCode": "netent",
+  "provider": "netent",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:netent:524",
+  "gameNameEn": "Butterfly Staxx",
+  "img": "https://static.slot7hub.com/providers/netent/linked_data/logos/114.jpg",
+  "customGameType": 0,
+  "vendorCode": "netent",
+  "provider": "netent",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:netent:526",
+  "gameNameEn": "Drive Multiplier Mayhem",
+  "img": "https://media.ohxeeshei2eigooji3ey8nah9bah7r.site/414/netent-gh/450x345/26201.jpg",
+  "customGameType": 0,
+  "vendorCode": "netent",
+  "provider": "netent",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:netent:60",
+  "gameNameEn": "Neon StaxX",
+  "img": "https://media.ohxeeshei2eigooji3ey8nah9bah7r.site/414/netent-gh/450x345/26240.jpg",
+  "customGameType": 0,
+  "vendorCode": "netent",
+  "provider": "netent",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:netent:61",
+  "gameNameEn": "Reel Rush",
+  "img": "https://static.slot7hub.com/providers/netent/linked_data/logos/26_reelrush.jpg",
+  "customGameType": 0,
+  "vendorCode": "netent",
+  "provider": "netent",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:netent:615",
+  "gameNameEn": "Happy Riches",
+  "img": "https://static.slot7hub.com/providers/netent/games/happyriches_mobile_html/media/logos/640_480.jpg",
+  "customGameType": 0,
+  "vendorCode": "netent",
+  "provider": "netent",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:netent:616",
+  "gameNameEn": "Fortune Rangers",
+  "img": "https://static.slot7hub.com/providers/netent/games/fortunerangers-client/media/logos/640_480.jpg",
+  "customGameType": 0,
+  "vendorCode": "netent",
+  "provider": "netent",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:netent:617",
+  "gameNameEn": "Sweety Honey Fruity",
+  "img": "https://static.slot7hub.com/providers/netent/games/sweetyhoneyfruity_mobile_html/media/logos/640_480.jpg",
+  "customGameType": 0,
+  "vendorCode": "netent",
+  "provider": "netent",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:netent:619",
+  "gameNameEn": "Pirate From The East",
+  "img": "https://static.slot7hub.com/providers/netent/linked_data/logos/PiratefromtheEast.jpg",
+  "customGameType": 0,
+  "vendorCode": "netent",
+  "provider": "netent",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:netent:63",
+  "gameNameEn": "Dead or Alive",
+  "img": "https://static.slot7hub.com/providers/netent/games/deadoralive_mobile_html/media/logos/640_480.jpg",
+  "customGameType": 0,
+  "vendorCode": "netent",
+  "provider": "netent",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:netent:64",
+  "gameNameEn": "Pyramid",
+  "img": "https://stage.gis-static.com/games/Fazi/c2f2d55d9b684a548c6ecfc5439d3e0a.png",
+  "customGameType": 0,
+  "vendorCode": "netent",
+  "provider": "netent",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:netent:66",
+  "gameNameEn": "Lucky Angler",
+  "img": "https://static.slot7hub.com/providers/netent/linked_data/logos/LuckyAngler.jpg",
+  "customGameType": 0,
+  "vendorCode": "netent",
+  "provider": "netent",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:netent:665",
+  "gameNameEn": "Long Pao",
+  "img": "https://stage.gis-static.com/games/a7ebde6002dee0b7b4748cd3c80c3394/NetEnt/d212826976a74fb38746ef3baf8d1190.png",
+  "customGameType": 0,
+  "vendorCode": "netent",
+  "provider": "netent",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:netent:666",
+  "gameNameEn": "King Of 3 Kingdoms",
+  "img": "https://static.slot7hub.com/providers/netent/games/kingof3kingdoms_mobile_html/media/logos/640_480.jpg",
+  "customGameType": 0,
+  "vendorCode": "netent",
+  "provider": "netent",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:netent:68",
+  "gameNameEn": "Wild Water",
+  "img": "https://static.slot7hub.com/providers/netent/games/wildwater_mobile_html/media/logos/640_480.jpg",
+  "customGameType": 0,
+  "vendorCode": "netent",
+  "provider": "netent",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:netent:71",
+  "gameNameEn": "Jack Hammer",
+  "img": "https://static.slot7hub.com/providers/netent/linked_data/logos/306_jackhammer.jpg",
+  "customGameType": 0,
+  "vendorCode": "netent",
+  "provider": "netent",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:netent:73",
+  "gameNameEn": "StarBurst",
+  "img": "https://static.slot7hub.com/providers/netent/games/starburst_mobile_html/media/logos/640_480.jpg",
+  "customGameType": 0,
+  "vendorCode": "netent",
+  "provider": "netent",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:netent:74",
+  "gameNameEn": "Twin Spin",
+  "img": "https://static.slot7hub.com/providers/netent/games/twinspin_mobile_html/media/logos/640_480.jpg",
+  "customGameType": 0,
+  "vendorCode": "netent",
+  "provider": "netent",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:netent:75",
+  "gameNameEn": "Victorious",
+  "img": "https://static.slot7hub.com/providers/netent/games/victorious_mobile_html/media/logos/max/640_480_a.jpg",
+  "customGameType": 0,
+  "vendorCode": "netent",
+  "provider": "netent",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:netent:76",
+  "gameNameEn": "Gonzos Quest",
+  "img": "https://static.slot7hub.com/providers/netent/linked_data/logos/83_eldorado.jpg",
+  "customGameType": 0,
+  "vendorCode": "netent",
+  "provider": "netent",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:netent:79",
+  "gameNameEn": "Magic Portals",
+  "img": "https://static.slot7hub.com/providers/netent/linked_data/logos/MagicPortals.jpg",
+  "customGameType": 0,
+  "vendorCode": "netent",
+  "provider": "netent",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:netent:82",
+  "gameNameEn": "jimi hendrix",
+  "img": "https://static.slot7hub.com/providers/netent/linked_data/logos/jimihendrix_not_mobile.jpg",
+  "customGameType": 0,
+  "vendorCode": "netent",
+  "provider": "netent",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:netent:83",
+  "gameNameEn": "Flowers",
+  "img": "https://static.slot7hub.com/providers/netent/games/flowers_mobile_html/media/logos/640_480.jpg",
+  "customGameType": 0,
+  "vendorCode": "netent",
+  "provider": "netent",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:netent:94",
+  "gameNameEn": "Piggy Riches",
+  "img": "https://static.slot7hub.com/providers/netent/linked_data/logos/PiggyRiches.jpg",
+  "customGameType": 0,
+  "vendorCode": "netent",
+  "provider": "netent",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:netent:95",
+  "gameNameEn": "The Wish Master",
+  "img": "https://stage.gis-static.com/games/a7ebde6002dee0b7b4748cd3c80c3394/NetEnt/de8090f95cbc4d6d900416c01be23a9a.png",
+  "customGameType": 0,
+  "vendorCode": "netent",
+  "provider": "netent",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:netent:97",
+  "gameNameEn": "Blood Suckers",
+  "img": "https://static.slot7hub.com/providers/netent/linked_data/logos/70_bloodsuckers.jpg",
+  "customGameType": 0,
+  "vendorCode": "netent",
+  "provider": "netent",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:netent:98",
+  "gameNameEn": "Secret Of The Stones",
+  "img": "https://media.ohxeeshei2eigooji3ey8nah9bah7r.site/414/netent-gh/450x345/26250.jpg",
+  "customGameType": 0,
+  "vendorCode": "netent",
+  "provider": "netent",
+  "category": "Slot"
+ }
+]

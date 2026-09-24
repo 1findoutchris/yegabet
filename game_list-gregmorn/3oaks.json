@@ -1,0 +1,650 @@
+[
+ {
+  "gameID": "black:3oaks:1040",
+  "gameNameEn": "Sunlight Princess",
+  "img": "https://stage.gis-static.com/games/29628fd19bc622c686edbbe39f7a01ba/Booongo/f4f99937076a43b6b8632b8052791003.png",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1048",
+  "gameNameEn": "Tiger Jungle",
+  "img": "https://stage.gis-static.com/games/ThreeOaks/dc5b2b9a69cd4aa68f47b28c5273c006.png",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1053",
+  "gameNameEn": "Sun of Egypt 3",
+  "img": "https://stage.gis-static.com/games/ThreeOaks/b7716cc4a92bc91739e76dfc8c02cff420454595.jpg",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1054",
+  "gameNameEn": "Sun of Egypt 2",
+  "img": "https://stage.gis-static.com/games/ThreeOaks/b7716cc4a92bc91739e76dfc8c02cff420454595.jpg",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1055",
+  "gameNameEn": "Wukong",
+  "img": "https://stage.gis-static.com/games/JDB/f04cc6bb1b22414e9cd75f9acf8e48c5.png",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1056",
+  "gameNameEn": "Wolf Night",
+  "img": "https://stage.gis-static.com/games/ThreeOaks/dc0da54714b8490a99aebe603a629e97.png",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1057",
+  "gameNameEn": "Magic Apple",
+  "img": "https://stage.gis-static.com/games/ThreeOaks/810fdf0ac3c246b1a172aff0e664d80d.png",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1058",
+  "gameNameEn": "Olympian Gods",
+  "img": "https://stage.gis-static.com/games/ThreeOaks/32072c41642342d48f1b8ec0de313987.png",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1059",
+  "gameNameEn": "Super Rich God",
+  "img": "https://stage.gis-static.com/games/ThreeOaks/918186d24dc942d4938acc1476276732.png",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1060",
+  "gameNameEn": "Sun of Egypt",
+  "img": "https://stage.gis-static.com/games/ThreeOaks/b7716cc4a92bc91739e76dfc8c02cff420454595.jpg",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1061",
+  "gameNameEn": "Scarab Temple",
+  "img": "https://stage.gis-static.com/games/ThreeOaks/d848381c9ffc42bbb00c3668fd0e624d.png",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1062",
+  "gameNameEn": "Thunder of Olympus",
+  "img": "https://stage.gis-static.com/games/ThreeOaks/61ee202a5cb74711940e84174e803b49.png",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1063",
+  "gameNameEn": "Moon Sisters",
+  "img": "https://stage.gis-static.com/games/29628fd19bc622c686edbbe39f7a01ba/Booongo/9c51f670ff53457cbfb570f8a0e009e5.png",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1064",
+  "gameNameEn": "Magic Apple 2",
+  "img": "https://stage.gis-static.com/games/ThreeOaks/810fdf0ac3c246b1a172aff0e664d80d.png",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1065",
+  "gameNameEn": "Hit The Gold",
+  "img": "https://stage.gis-static.com/games/ThreeOaks/4e26e0d34af64a59a4b07e734e970830.png",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1066",
+  "gameNameEn": "Dragon Pearls",
+  "img": "https://stage.gis-static.com/games/ThreeOaks/5fb836fbac494caca33b024d924480e8.png",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1067",
+  "gameNameEn": "Aztec Sun",
+  "img": "https://stage.gis-static.com/games/ThreeOaks/2f07cc0de97b496dab214b8f70dbe261.png",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1068",
+  "gameNameEn": "Book of wizard",
+  "img": "https://stage.gis-static.com/games/ThreeOaks/7fa0f432cc114098b219f1f1c2f60ea3.png",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1069",
+  "gameNameEn": "Scarab Boost",
+  "img": "https://stage.gis-static.com/games/ThreeOaks/841ce49e68fa47b989ae62b9b7e045f3.png",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1070",
+  "gameNameEn": "Hit More Gold",
+  "img": "https://stage.gis-static.com/games/ThreeOaks/62f8cca1448246d39dee4eab0bc7a9dc.png",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1071",
+  "gameNameEn": "Green Chilli",
+  "img": "https://stage.gis-static.com/games/29628fd19bc622c686edbbe39f7a01ba/Booongo/4641835acb95458da461c9365a21969f.png",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1072",
+  "gameNameEn": "Coin Express",
+  "img": "https://stage.gis-static.com/games/ThreeOaks/e09ade34ee9c46ab9b17218715264a8f.jpg",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1073",
+  "gameNameEn": "Hot Fire Fruits",
+  "img": "https://stage.gis-static.com/games/ThreeOaks/685669127af045e5b74447dd3a1eb7a3.jpg",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1074",
+  "gameNameEn": "777 Fruity Classic",
+  "img": "https://stage.gis-static.com/games/ThreeOaks/6aa97d3322e24bdf95139d5d6561fea9.png",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1075",
+  "gameNameEn": "Queen of The Sun",
+  "img": "https://stage.gis-static.com/games/ThreeOaks/aa7f8a2739ef47c09a58180443405c25.png",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1076",
+  "gameNameEn": "Space Coins",
+  "img": "https://static.slot7hub.com/providers/threeoaks/assets/logos/games/space_coins/main_logo.jpg",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1077",
+  "gameNameEn": "Lava Coins",
+  "img": "https://static.slot7hub.com/providers/threeoaks/assets/logos/games/lava_coins/main_logo.jpg",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1078",
+  "gameNameEn": "777 Coins",
+  "img": "https://stage.gis-static.com/games/3962be5e18b1e84fdd95613e87dfda1a/Hacksaw/4286df1e9d3544109f5d367023767b5b.png",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1079",
+  "gameNameEn": "Power Sun",
+  "img": "https://stage.gis-static.com/games/ThreeOaks/bf48f157ab3844a8a916e8c0741ba572.jpg",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1080",
+  "gameNameEn": "Lion Coins",
+  "img": "https://stage.gis-static.com/games/ThreeOaks/cf1ea4d4d6a44245b6f2b99e3f55a56e.jpg",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1081",
+  "gameNameEn": "Coin Volcano",
+  "img": "https://stage.gis-static.com/games/ThreeOaks/b9a3594ff7bc47f9871fdccf201ac0cd.jpg",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1082",
+  "gameNameEn": "Lamp Of Wonder",
+  "img": "https://stage.gis-static.com/games/29628fd19bc622c686edbbe39f7a01ba/Booongo/1e70acc9644e401da510c47093733af5.jpg",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1083",
+  "gameNameEn": "Storm Of Olympus",
+  "img": "https://stage.gis-static.com/games/ThreeOaks/41191faad640aaee9b9b336e9b181054459a3684.jpg",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1084",
+  "gameNameEn": "Rio Gems",
+  "img": "https://stage.gis-static.com/games/ThreeOaks/82806fb79449489f946ff6dcd1296f7c.png",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1085",
+  "gameNameEn": "Sun Of Egypt 4",
+  "img": "https://stage.gis-static.com/games/ThreeOaks/b7716cc4a92bc91739e76dfc8c02cff420454595.jpg",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1086",
+  "gameNameEn": "3 Hot Chillies",
+  "img": "https://stage.gis-static.com/games/ThreeOaks/13475d8ae79a47b9ab864b8c99d1c41f.png",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1087",
+  "gameNameEn": "3 African Drums",
+  "img": "https://static.slot7hub.com/providers/threeoaks/assets/logos/games/3_african_drums/main_logo.jpg",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1133",
+  "gameNameEn": "3 China Pots",
+  "img": "https://stage.gis-static.com/games/29628fd19bc622c686edbbe39f7a01ba/Booongo/13557c5e71bc424a8cfe7d8e39ad4990.jpg",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1142",
+  "gameNameEn": "3 Hot Teapots",
+  "img": "https://static.slot7hub.com/providers/threeoaks/assets/logos/games/3_hot_teapots/main_logo.jpg",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1179",
+  "gameNameEn": "Lucky Penny",
+  "img": "https://stage.gis-static.com/games/ThreeOaks/621560b88d9b45f68a17a77ddb80b4c4.jpg",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1180",
+  "gameNameEn": "Lucky Penny 2",
+  "img": "https://stage.gis-static.com/games/ThreeOaks/621560b88d9b45f68a17a77ddb80b4c4.jpg",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1181",
+  "gameNameEn": "Lady Fortune",
+  "img": "https://stage.gis-static.com/games/ThreeOaks/ce3f367fda473f6100fd7cdd10c3d9c507c22367.png",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1182",
+  "gameNameEn": "Power Sun XXL",
+  "img": "https://stage.gis-static.com/games/ThreeOaks/bf48f157ab3844a8a916e8c0741ba572.jpg",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1183",
+  "gameNameEn": "Must Drop JACKPOT™ 777 Fruity Classic",
+  "img": "https://lh3.googleusercontent.com/d/1fHJzNNRfnW41KxDkvbdxHDW254N_tLaV",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1184",
+  "gameNameEn": "Coin Princess x1000",
+  "img": "https://stage.gis-static.com/games/ThreeOaks/1a85c91800b54403af02dc7da58ecf5e.jpg",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1185",
+  "gameNameEn": "Super Hot Teapots",
+  "img": "https://stage.gis-static.com/games/ThreeOaks/6061055772400687ff9cd4981c0865eb6e614c70.jpg",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1186",
+  "gameNameEn": "Coin Volcano 2",
+  "img": "https://stage.gis-static.com/games/ThreeOaks/b9a3594ff7bc47f9871fdccf201ac0cd.jpg",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1187",
+  "gameNameEn": "777 Fruity Coins",
+  "img": "https://static.slot7hub.com/providers/threeoaks/assets/logos/games/777_fruity_coins/main_logo.jpg",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1188",
+  "gameNameEn": "Book Of Sun Choice",
+  "img": "https://stage.gis-static.com/games/ThreeOaks/faa6bf3527654560bdc105cab19dfe8d.png",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1189",
+  "gameNameEn": "Book Of Sun Multichance",
+  "img": "https://stage.gis-static.com/games/ThreeOaks/6f12a231efbf436a9e4822027fd7e46c.png",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1190",
+  "gameNameEn": "Must Drop JACKPOT™ Flame Fruits",
+  "img": "https://stage.gis-static.com/games/ThreeOaks/e5cb9b9a8a707aca8428a509fa5559138b96abcc.jpg",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1191",
+  "gameNameEn": "Must Drop JACKPOT™ Hot Fire Fruits",
+  "img": "https://stage.gis-static.com/games/ThreeOaks/e5cb9b9a8a707aca8428a509fa5559138b96abcc.jpg",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1192",
+  "gameNameEn": "Sticky Piggy",
+  "img": "https://stage.gis-static.com/games/29628fd19bc622c686edbbe39f7a01ba/Booongo/6f144ac3b39a494d93028ac0c720b123.png",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1194",
+  "gameNameEn": "Maya Sun",
+  "img": "https://stage.gis-static.com/games/ThreeOaks/0c4490fe1bd3bd2381d81308c6731d4ef1bb2ba6.png",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1195",
+  "gameNameEn": "Super Sticky Piggy",
+  "img": "https://stage.gis-static.com/games/ThreeOaks/c1ed24aee9ec4fa8b7da020c14bd968f.png",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1196",
+  "gameNameEn": "Pearl Diver 2: Treasure Chest",
+  "img": "https://stage.gis-static.com/games/ThreeOaks/34271c37c40d40c593c508869ce0beae.png",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1198",
+  "gameNameEn": "Gold Express",
+  "img": "https://stage.gis-static.com/games/ThreeOaks/9322d42c543b4ae2bea31c57c22644e3.png",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1199",
+  "gameNameEn": "Candy Boom",
+  "img": "https://stage.gis-static.com/games/ThreeOaks/c3756e22e9d64bdfbc4021924d818591.png",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1200",
+  "gameNameEn": "Super Marble",
+  "img": "https://stage.gis-static.com/games/ThreeOaks/e92a1cbcb392424793e48659772b065c.png",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1201",
+  "gameNameEn": "Lava Coins 2",
+  "img": "https://static.slot7hub.com/providers/threeoaks/assets/logos/games/lava_coins/main_logo.jpg",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1229",
+  "gameNameEn": "Buddha Megaways",
+  "img": "https://media.ohxeeshei2eigooji3ey8nah9bah7r.site/399/3oaksP/450x345/63015.jpg",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1230",
+  "gameNameEn": "Black Wolf",
+  "img": "https://stage.gis-static.com/games/ThreeOaks/cfa4f2692fbe48fd8adf21f309dfe8a4.png",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1231",
+  "gameNameEn": "Black Wolf 2",
+  "img": "https://stage.gis-static.com/games/ThreeOaks/cfa4f2692fbe48fd8adf21f309dfe8a4.png",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1232",
+  "gameNameEn": "Fishin Bear",
+  "img": "https://stage.gis-static.com/games/29628fd19bc622c686edbbe39f7a01ba/Booongo/d94f0a2802304a008305d0ca1682d7ea.jpg",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1233",
+  "gameNameEn": "Egypt Power x1000",
+  "img": "https://media.ohxeeshei2eigooji3ey8nah9bah7r.site/399/3oaks/450x345/63136.jpg",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1234",
+  "gameNameEn": "Tiger Gems",
+  "img": "https://stage.gis-static.com/games/29628fd19bc622c686edbbe39f7a01ba/Booongo/1d044a41219b4e4eb19eb9ff402792b0.png",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1235",
+  "gameNameEn": "Maya Lock",
+  "img": "https://stage.gis-static.com/games/ThreeOaks/562ef1be05ef40cea46b735eb6056a45.jpg",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1236",
+  "gameNameEn": "Dancing Joker",
+  "img": "https://media.ohxeeshei2eigooji3ey8nah9bah7r.site/399/3oaks/450x345/63114.jpg",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1275",
+  "gameNameEn": "Super China Pots",
+  "img": "https://stage.gis-static.com/games/29628fd19bc622c686edbbe39f7a01ba/Booongo/a4c2f1dfe153d5e974805c990701f0c30aa5d83e.jpg",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1289",
+  "gameNameEn": "Lord of Thunder",
+  "img": "https://media.ohxeeshei2eigooji3ey8nah9bah7r.site/399/3oaks/450x345/63141.jpg",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1290",
+  "gameNameEn": "Chili Coins",
+  "img": "https://media.ohxeeshei2eigooji3ey8nah9bah7r.site/399/3oaks/450x345/63140.jpg",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:3oaks:1291",
+  "gameNameEn": "DJ Tiger x1000",
+  "img": "https://media.ohxeeshei2eigooji3ey8nah9bah7r.site/399/3oaks/450x345/63143.jpg",
+  "customGameType": 0,
+  "vendorCode": "3oaks",
+  "provider": "3oaks",
+  "category": "Slot"
+ }
+]

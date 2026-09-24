@@ -1,0 +1,38 @@
+[
+ {
+  "gameID": "magic-slots:rplslots:833007",
+  "gameNameEn": "Hot Fruits 100",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/rplslots/images_288_210/hotfruits100.png",
+  "customGameType": 0,
+  "vendorCode": "rplslots",
+  "provider": "rplslots",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:rplslots:833008",
+  "gameNameEn": "Tweety Birds",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/rplslots/images_288_210/tweetybirds.png",
+  "customGameType": 0,
+  "vendorCode": "rplslots",
+  "provider": "rplslots",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:rplslots:833009",
+  "gameNameEn": "Sizzling Hot Deluxe",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/rplslots/images_288_210/sizzlinghotdeluxe.png",
+  "customGameType": 0,
+  "vendorCode": "rplslots",
+  "provider": "rplslots",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:rplslots:833010",
+  "gameNameEn": "Fruit Cocktail",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/rplslots/images_288_210/fruitcocktail.png",
+  "customGameType": 0,
+  "vendorCode": "rplslots",
+  "provider": "rplslots",
+  "category": "Slot"
+ }
+]

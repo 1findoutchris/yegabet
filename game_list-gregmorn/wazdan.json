@@ -1,0 +1,785 @@
+[
+ {
+  "gameID": "black:wazdan:399",
+  "gameNameEn": "Magic of the Ring",
+  "img": "https://stage.gis-static.com/games/5cc985252d9ed98c062178805efdb16b/VoltEnt/42df8e69bac74beca8444a3c18525dde.png",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:400",
+  "gameNameEn": "105 Magic",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/Magic27.jpg",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:418",
+  "gameNameEn": "Extra Bingo",
+  "img": "https://static.slot7hub.com/providers/bingo/linked_data/logos/ExtraBingo.jpg",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:419",
+  "gameNameEn": "Magic Fruits",
+  "img": "https://static.slot7hub.com/providers/wazdan/linked_data/logos/MagicFruits81.jpg",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:420",
+  "gameNameEn": "Magic Stars 3",
+  "img": "https://stage.gis-static.com/games/5cc985252d9ed98c062178805efdb16b/VoltEnt/d50fa998b0104f5e9d25225d3862bfec.png",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:421",
+  "gameNameEn": "Fruit Mania Deluxe",
+  "img": "https://static.slot7hub.com/providers/wazdan/linked_data/logos/FruitMania.jpg",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:422",
+  "gameNameEn": "Casino Roulette",
+  "img": "https://stage.gis-static.com/games/5cc985252d9ed98c062178805efdb16b/VoltEnt/c5982b7780504d899bcacd35177b7cd5.png",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:423",
+  "gameNameEn": "Football Mania",
+  "img": "https://stage.gis-static.com/games/5cc985252d9ed98c062178805efdb16b/VoltEnt/6f5e4e7114364c3386299f5ea06a14a5.png",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:424",
+  "gameNameEn": "Wins and Replay",
+  "img": "https://static.slot7hub.com/providers/wazdan/linked_data/logos/WinsReplay.jpg",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:425",
+  "gameNameEn": "Triple Star",
+  "img": "https://static.slot7hub.com/providers/wazdan/linked_data/logos/TripleStar.jpg",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:426",
+  "gameNameEn": "Joker Explosion",
+  "img": "https://static.slot7hub.com/providers/wazdan/linked_data/logos/JokerExplosion.jpg",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:427",
+  "gameNameEn": "Jackpot Builders",
+  "img": "https://stage.gis-static.com/games/5cc985252d9ed98c062178805efdb16b/VoltEnt/598cb5da2a614523b8c181b58eb0d3be.png",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:428",
+  "gameNameEn": "Burning Stars",
+  "img": "https://stage.gis-static.com/games/5cc985252d9ed98c062178805efdb16b/VoltEnt/2913c2b99ada4a1da0be05ec5be43a89.png",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:429",
+  "gameNameEn": "Fruit Fiesta",
+  "img": "https://static.slot7hub.com/providers/wazdan/linked_data/logos/FruitFiesta.jpg",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:430",
+  "gameNameEn": "Jacks Ride",
+  "img": "https://static.slot7hub.com/providers/wazdan/linked_data/logos/JacksRide.jpg",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:431",
+  "gameNameEn": "Jack On Hold",
+  "img": "https://stage.gis-static.com/games/5cc985252d9ed98c062178805efdb16b/VoltEnt/1ae439dec3734cd6a35f2e6b96c58984.png",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:432",
+  "gameNameEn": "Hot 777",
+  "img": "https://stage.gis-static.com/games/ZeusPlay/fb880afb41884a0dadc2767f45c70d9a.png",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:433",
+  "gameNameEn": "Highway To Hell",
+  "img": "https://stage.gis-static.com/games/5cc985252d9ed98c062178805efdb16b/VoltEnt/be750b9ca1f34bd1b387903d35401839.png",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:434",
+  "gameNameEn": "Bars&7s",
+  "img": "https://stage.gis-static.com/games/5cc985252d9ed98c062178805efdb16b/VoltEnt/8f7242b440d647f695d97c0a0dc3c4b0.png",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:436",
+  "gameNameEn": "Super hot",
+  "img": "https://static.slot7hub.com/providers/wazdan/linked_data/logos/Superhot.jpg",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:437",
+  "gameNameEn": "Sizzling 777",
+  "img": "https://static.slot7hub.com/providers/wazdan/linked_data/logos/Sizzling777.jpg",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:438",
+  "gameNameEn": "Magic Fruits 27",
+  "img": "https://static.slot7hub.com/providers/wazdan/linked_data/logos/MagicFruits81.jpg",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:439",
+  "gameNameEn": "Magic Fruits 4 Deluxe",
+  "img": "https://static.slot7hub.com/providers/wazdan/linked_data/logos/MagicFruits81.jpg",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:441",
+  "gameNameEn": "Demon Jack 27",
+  "img": "https://stage.gis-static.com/games/5cc985252d9ed98c062178805efdb16b/VoltEnt/185ce51f99814d40a9e45d3b70c81444.png",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:442",
+  "gameNameEn": "Wild Jack",
+  "img": "https://static.slot7hub.com/providers/wazdan/linked_data/logos/WildJack81.jpg",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:443",
+  "gameNameEn": "Fenix Play 27",
+  "img": "https://stage.gis-static.com/games/5cc985252d9ed98c062178805efdb16b/VoltEnt/27b5cb1ef9ef4377bd65617f72a37d3b.png",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:444",
+  "gameNameEn": "Vegas Hot",
+  "img": "https://static.slot7hub.com/providers/wazdan/linked_data/logos/VegasHot.jpg",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:445",
+  "gameNameEn": "Black Horse",
+  "img": "https://stage.gis-static.com/games/5cc985252d9ed98c062178805efdb16b/VoltEnt/185ef14048e44e53bb437ebc29efd575.png",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:446",
+  "gameNameEn": "Magic Fruits 4",
+  "img": "https://static.slot7hub.com/providers/wazdan/linked_data/logos/MagicFruits81.jpg",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:447",
+  "gameNameEn": "Fire Bird",
+  "img": "https://static.slot7hub.com/providers/wazdan/linked_data/logos/FireBird.jpg",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:448",
+  "gameNameEn": "Tetri Mania",
+  "img": "https://static.slot7hub.com/providers/wazdan/linked_data/logos/TetriMania.jpg",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:449",
+  "gameNameEn": "Magic Stars",
+  "img": "https://stage.gis-static.com/games/5cc985252d9ed98c062178805efdb16b/VoltEnt/d50fa998b0104f5e9d25225d3862bfec.png",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:450",
+  "gameNameEn": "Hell 81",
+  "img": "https://static.slot7hub.com/providers/wazdan/linked_data/logos/WelcomeToHell81.jpg",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:451",
+  "gameNameEn": "Vegas Hot 81",
+  "img": "https://static.slot7hub.com/providers/wazdan/linked_data/logos/VegasHot.jpg",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:452",
+  "gameNameEn": "Criss Cross 81",
+  "img": "https://stage.gis-static.com/games/5cc985252d9ed98c062178805efdb16b/VoltEnt/c839352f6f164519b946a9ebba799808.png",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:453",
+  "gameNameEn": "Night 81 Club",
+  "img": "https://static.slot7hub.com/providers/wazdan/linked_data/logos/NightClub81.jpg",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:454",
+  "gameNameEn": "Wild Jack 81",
+  "img": "https://static.slot7hub.com/providers/wazdan/linked_data/logos/WildJack81.jpg",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:455",
+  "gameNameEn": "Magic Fruits 81",
+  "img": "https://static.slot7hub.com/providers/wazdan/linked_data/logos/MagicFruits81.jpg",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:456",
+  "gameNameEn": "Dino Reels 81",
+  "img": "https://stage.gis-static.com/games/5cc985252d9ed98c062178805efdb16b/VoltEnt/ef9c994bdf0a4fcf80259f26ce01f62d.png",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:457",
+  "gameNameEn": "Wild Girls",
+  "img": "https://static.slot7hub.com/providers/wazdan/linked_data/logos/WildGirls.jpg",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:458",
+  "gameNameEn": "Colin the Cat",
+  "img": "https://stage.gis-static.com/games/5cc985252d9ed98c062178805efdb16b/VoltEnt/035739cd6b03487296d8bcc51a4d9550.png",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:459",
+  "gameNameEn": "Haunted Hospital",
+  "img": "https://static.slot7hub.com/providers/wazdan/linked_data/logos/HauntedHospital.jpg",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:460",
+  "gameNameEn": "Magic Hot",
+  "img": "https://static.slot7hub.com/providers/wazdan/linked_data/logos/MagicHot4.jpg",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:461",
+  "gameNameEn": "Mystery Jack",
+  "img": "https://static.slot7hub.com/providers/wazdan/linked_data/logos/MysteryJackDeluxe.jpg",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:462",
+  "gameNameEn": "Magic Target Deluxe",
+  "img": "https://static.slot7hub.com/providers/wazdan/linked_data/logos/MagicTargetDeluxe.jpg",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:463",
+  "gameNameEn": "Double Tigers",
+  "img": "https://stage.gis-static.com/games/5cc985252d9ed98c062178805efdb16b/VoltEnt/3150eea9a845473fae5576ca9fb23581.png",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:464",
+  "gameNameEn": "Burning Reels",
+  "img": "https://stage.gis-static.com/games/5cc985252d9ed98c062178805efdb16b/VoltEnt/fc3809cf28584dde8c20d7827b302eb2.png",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:465",
+  "gameNameEn": "Valhalla",
+  "img": "https://stage.gis-static.com/games/ChilliGames/baf512a1161d40ba9c2e91fa673d3512.png",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:466",
+  "gameNameEn": "Lucky Fish",
+  "img": "https://static.slot7hub.com/providers/wazdan/linked_data/logos/LuckyFish.jpg",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:467",
+  "gameNameEn": "Lucky Reels",
+  "img": "https://stage.gis-static.com/games/5cc985252d9ed98c062178805efdb16b/VoltEnt/1bd2bee0a16041209a3e6e1f02cde352.png",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:469",
+  "gameNameEn": "Magic Hot 4",
+  "img": "https://static.slot7hub.com/providers/wazdan/linked_data/logos/MagicHot4.jpg",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:470",
+  "gameNameEn": "Juicy Reels",
+  "img": "https://stage.gis-static.com/games/5cc985252d9ed98c062178805efdb16b/VoltEnt/7deeef707c424bbf9a1280d82fb63ff0.png",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:471",
+  "gameNameEn": "Fenix Play 27 Deluxe",
+  "img": "https://stage.gis-static.com/games/5cc985252d9ed98c062178805efdb16b/VoltEnt/27b5cb1ef9ef4377bd65617f72a37d3b.png",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:472",
+  "gameNameEn": "Lucky Fortune",
+  "img": "https://static.slot7hub.com/providers/wazdan/linked_data/logos/LuckyFortune.jpg",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:473",
+  "gameNameEn": "Highschool Manga",
+  "img": "https://static.slot7hub.com/providers/wazdan/linked_data/logos/HighschoolManga.jpg",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:474",
+  "gameNameEn": "In The Forest",
+  "img": "https://stage.gis-static.com/games/5cc985252d9ed98c062178805efdb16b/VoltEnt/72f251fc0ec240c4918874a31174f611.png",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:475",
+  "gameNameEn": "Arcade",
+  "img": "https://static.slot7hub.com/providers/wazdan/linked_data/logos/Arcade.jpg",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:476",
+  "gameNameEn": "Turbo Play",
+  "img": "https://static.slot7hub.com/providers/wazdan/linked_data/logos/TurboPlay.jpg",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:477",
+  "gameNameEn": "Jumping Fruits",
+  "img": "https://static.slot7hub.com/providers/wazdan/linked_data/logos/JumpingFruits.jpg",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:478",
+  "gameNameEn": "Black Hawk",
+  "img": "https://stage.gis-static.com/games/5cc985252d9ed98c062178805efdb16b/VoltEnt/d955ab2c0e8e4bb9b702f7af8cc7e097.png",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:479",
+  "gameNameEn": "Hungry Shark",
+  "img": "https://stage.gis-static.com/games/5cc985252d9ed98c062178805efdb16b/VoltEnt/4effcb99cbec41deb13cc5c831cd20a4.png",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:480",
+  "gameNameEn": "Dracula Castle",
+  "img": "https://static.slot7hub.com/providers/wazdan/linked_data/logos/DraculaCastle.jpg",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:485",
+  "gameNameEn": "Magic Hot 4 Deluxe",
+  "img": "https://static.slot7hub.com/providers/wazdan/linked_data/logos/MagicHot4.jpg",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:486",
+  "gameNameEn": "Magic Target",
+  "img": "https://static.slot7hub.com/providers/wazdan/linked_data/logos/MagicTargetDeluxe.jpg",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:487",
+  "gameNameEn": "Magic Fruits Deluxe",
+  "img": "https://static.slot7hub.com/providers/wazdan/linked_data/logos/MagicFruits81.jpg",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:488",
+  "gameNameEn": "Beach Party Hot",
+  "img": "https://static.slot7hub.com/providers/wazdan/linked_data/logos/BeachPartyHot.jpg",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:489",
+  "gameNameEn": "Crazy Cars",
+  "img": "https://static.slot7hub.com/providers/wazdan/linked_data/logos/CrazyCars.jpg",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:490",
+  "gameNameEn": "Good Luck 40",
+  "img": "https://stage.gis-static.com/games/5cc985252d9ed98c062178805efdb16b/VoltEnt/9e126cd12bdf410896b83ed1ac3f0897.png",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:491",
+  "gameNameEn": "Mystery Jack Deluxe",
+  "img": "https://static.slot7hub.com/providers/wazdan/linked_data/logos/MysteryJackDeluxe.jpg",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:492",
+  "gameNameEn": "Corrida Romance",
+  "img": "https://stage.gis-static.com/games/5cc985252d9ed98c062178805efdb16b/VoltEnt/af03eab4b3ca4e99bf0456a495b732b7.png",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:493",
+  "gameNameEn": "Captain Shark",
+  "img": "https://stage.gis-static.com/games/5cc985252d9ed98c062178805efdb16b/VoltEnt/7861d8a07cf9431db5dffd6d3b76408c.png",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:494",
+  "gameNameEn": "Hot Party",
+  "img": "https://stage.gis-static.com/games/ZeusPlay/fb880afb41884a0dadc2767f45c70d9a.png",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:495",
+  "gameNameEn": "Golden Sphinx",
+  "img": "https://static.slot7hub.com/providers/wazdan/linked_data/logos/GoldenSphinx.jpg",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:509",
+  "gameNameEn": "Lucky Queen",
+  "img": "https://static.slot7hub.com/providers/wazdan/linked_data/logos/LuckyQueen.jpg",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:510",
+  "gameNameEn": "Fenix Play",
+  "img": "https://stage.gis-static.com/games/5cc985252d9ed98c062178805efdb16b/VoltEnt/27b5cb1ef9ef4377bd65617f72a37d3b.png",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:511",
+  "gameNameEn": "Miami Beach",
+  "img": "https://static.slot7hub.com/providers/wazdan/linked_data/logos/MiamiBeach.jpg",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:512",
+  "gameNameEn": "Back to the 70`s",
+  "img": "https://stage.gis-static.com/games/5cc985252d9ed98c062178805efdb16b/VoltEnt/8d87cf3ac535405abc529144b5ad5578.png",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:513",
+  "gameNameEn": "Lost Treasure",
+  "img": "https://static.slot7hub.com/providers/wazdan/linked_data/logos/LostTreasure.jpg",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:514",
+  "gameNameEn": "Fenix Play Deluxe",
+  "img": "https://stage.gis-static.com/games/5cc985252d9ed98c062178805efdb16b/VoltEnt/27b5cb1ef9ef4377bd65617f72a37d3b.png",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:520",
+  "gameNameEn": "Wild Guns",
+  "img": "https://static.slot7hub.com/providers/wazdan/linked_data/logos/WildGuns.jpg",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:521",
+  "gameNameEn": "Gold Roulette",
+  "img": "https://static.slot7hub.com/providers/wazdan/linked_data/logos/GoldRoulette.jpg",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:522",
+  "gameNameEn": "Vegas Reels II",
+  "img": "https://stage.gis-static.com/games/5cc985252d9ed98c062178805efdb16b/VoltEnt/1657af4b1504417ab32ad342470d54cf.png",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:885",
+  "gameNameEn": "15 Coins™",
+  "img": "https://stage.gis-static.com/games/3962be5e18b1e84fdd95613e87dfda1a/Hacksaw/4286df1e9d3544109f5d367023767b5b.png",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:890",
+  "gameNameEn": "12 Coins™",
+  "img": "https://stage.gis-static.com/games/3962be5e18b1e84fdd95613e87dfda1a/Hacksaw/4286df1e9d3544109f5d367023767b5b.png",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:891",
+  "gameNameEn": "16 Coins™",
+  "img": "https://stage.gis-static.com/games/3962be5e18b1e84fdd95613e87dfda1a/Hacksaw/4286df1e9d3544109f5d367023767b5b.png",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:892",
+  "gameNameEn": "20 Coins™",
+  "img": "https://stage.gis-static.com/games/3962be5e18b1e84fdd95613e87dfda1a/Hacksaw/4286df1e9d3544109f5d367023767b5b.png",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:wazdan:906",
+  "gameNameEn": "Black Horse Deluxe",
+  "img": "https://stage.gis-static.com/games/5cc985252d9ed98c062178805efdb16b/VoltEnt/185ef14048e44e53bb437ebc29efd575.png",
+  "customGameType": 0,
+  "vendorCode": "wazdan",
+  "provider": "wazdan",
+  "category": "Slot"
+ }
+]

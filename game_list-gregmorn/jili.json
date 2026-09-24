@@ -1,0 +1,83 @@
+[
+ {
+  "gameID": "magic-slots:jili:840001",
+  "gameNameEn": "Super Ace",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/jili/images_288_210/superace.png",
+  "customGameType": 0,
+  "vendorCode": "jili",
+  "provider": "jili",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:jili:840002",
+  "gameNameEn": "Fortune Gems",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/jili/images_288_210/fortunegems.png",
+  "customGameType": 0,
+  "vendorCode": "jili",
+  "provider": "jili",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:jili:840003",
+  "gameNameEn": "Fortune Gems 2",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/jili/images_288_210/fortunegems2.png",
+  "customGameType": 0,
+  "vendorCode": "jili",
+  "provider": "jili",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:jili:840004",
+  "gameNameEn": "Aztec Priestess",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/jili/images_288_210/aztecpriestess.png",
+  "customGameType": 0,
+  "vendorCode": "jili",
+  "provider": "jili",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:jili:840005",
+  "gameNameEn": "Golden Empire",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/jili/images_288_210/goldenempire.png",
+  "customGameType": 0,
+  "vendorCode": "jili",
+  "provider": "jili",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:jili:840006",
+  "gameNameEn": "Ali Baba",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/jili/images_288_210/alibaba.png",
+  "customGameType": 0,
+  "vendorCode": "jili",
+  "provider": "jili",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:jili:840007",
+  "gameNameEn": "Mega Ace",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/jili/images_288_210/megaace.png",
+  "customGameType": 0,
+  "vendorCode": "jili",
+  "provider": "jili",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:jili:840008",
+  "gameNameEn": "Boxing King",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/jili/images_288_210/boxingking.png",
+  "customGameType": 0,
+  "vendorCode": "jili",
+  "provider": "jili",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:jili:840009",
+  "gameNameEn": "Roma X",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/jili/images_288_210/romax.png",
+  "customGameType": 0,
+  "vendorCode": "jili",
+  "provider": "jili",
+  "category": "Slot"
+ }
+]

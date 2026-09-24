@@ -1,0 +1,92 @@
+[
+ {
+  "gameID": "magic-slots:kajot:70001",
+  "gameNameEn": "Joker Dream",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/kajot/images_288_210/jokerdream.png",
+  "customGameType": 0,
+  "vendorCode": "kajot",
+  "provider": "kajot",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:kajot:70002",
+  "gameNameEn": "Lucky Dragon",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/kajot/images_288_210/luckydragon.png",
+  "customGameType": 0,
+  "vendorCode": "kajot",
+  "provider": "kajot",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:kajot:70003",
+  "gameNameEn": "Simply the Best 27 Go",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/kajot/images_288_210/simplythebest27go.png",
+  "customGameType": 0,
+  "vendorCode": "kajot",
+  "provider": "kajot",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:kajot:70004",
+  "gameNameEn": "Turbo 27",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/kajot/images_288_210/turbo27.png",
+  "customGameType": 0,
+  "vendorCode": "kajot",
+  "provider": "kajot",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:kajot:70005",
+  "gameNameEn": "Vegas 27",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/kajot/images_288_210/vegas27.png",
+  "customGameType": 0,
+  "vendorCode": "kajot",
+  "provider": "kajot",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:kajot:70006",
+  "gameNameEn": "Joker 81",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/kajot/images_288_210/joker81.png",
+  "customGameType": 0,
+  "vendorCode": "kajot",
+  "provider": "kajot",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:kajot:70007",
+  "gameNameEn": "Kajot Lines",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/kajot/images_288_210/kajotlines.png",
+  "customGameType": 0,
+  "vendorCode": "kajot",
+  "provider": "kajot",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:kajot:70008",
+  "gameNameEn": "Joker Strong",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/kajot/images_288_210/jokerstrong.png",
+  "customGameType": 0,
+  "vendorCode": "kajot",
+  "provider": "kajot",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:kajot:70009",
+  "gameNameEn": "Ring Of Fire",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/kajot/images_288_210/ringoffire.png",
+  "customGameType": 0,
+  "vendorCode": "kajot",
+  "provider": "kajot",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:kajot:70010",
+  "gameNameEn": "Joker 27",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/kajot/images_288_210/joker27.png",
+  "customGameType": 0,
+  "vendorCode": "kajot",
+  "provider": "kajot",
+  "category": "Slot"
+ }
+]

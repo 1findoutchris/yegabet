@@ -1,0 +1,488 @@
+[
+ {
+  "gameID": "black:microgaming:1000",
+  "gameNameEn": "Adventure Palace",
+  "img": "https://static.slot7hub.com/providers/microgaming/linked_data/logos/AdventurePalace.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:1001",
+  "gameNameEn": "5 Reel Drive",
+  "img": "https://static.slot7hub.com/providers/microgaming/linked_data/logos/5ReelDrive.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:1002",
+  "gameNameEn": "Treasure Palace",
+  "img": "https://static.slot7hub.com/providers/microgaming/linked_data/logos/TreasurePalace.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:1003",
+  "gameNameEn": "Rugby Star",
+  "img": "https://static.slot7hub.com/providers/microgaming/linked_data/logos/RugbyStar.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:1004",
+  "gameNameEn": "Fish Party",
+  "img": "https://static.slot7hub.com/providers/microgaming/linked_data/logos/FishParty.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:1026",
+  "gameNameEn": "Centre Court",
+  "img": "https://static.slot7hub.com/providers/microgaming/linked_data/logos/CentreCourt.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:277",
+  "gameNameEn": "Game Of Thrones",
+  "img": "https://static.slot7hub.com/providers/microgaming/linked_data/logos/GameOfThrones.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:314",
+  "gameNameEn": "Immortal Romance",
+  "img": "https://static.slot7hub.com/providers/microgaming/linked_data/logos/ImmortalRomance.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:325",
+  "gameNameEn": "Thunder Struck",
+  "img": "https://static.slot7hub.com/providers/microgaming/linked_data/logos/ThunderStruck.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:326",
+  "gameNameEn": "Silver Fang",
+  "img": "https://static.slot7hub.com/providers/microgaming/linked_data/logos/SilverFang.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:327",
+  "gameNameEn": "Sweet Harvest",
+  "img": "https://lh3.googleusercontent.com/d/1e2377Bj2AgmwsKwexbpjU5Kq49LfO_2y",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:347",
+  "gameNameEn": "Thunderstruck 2",
+  "img": "https://static.slot7hub.com/providers/microgaming/linked_data/logos/Thunderstruck2.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:348",
+  "gameNameEn": "Game Of Thrones Ways",
+  "img": "https://static.slot7hub.com/providers/microgaming/linked_data/logos/GameOfThrones.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:351",
+  "gameNameEn": "Deck the Halls",
+  "img": "https://static.slot7hub.com/providers/microgaming/linked_data/logos/DecktheHalls.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:352",
+  "gameNameEn": "Tomb Raider",
+  "img": "https://static.slot7hub.com/providers/microgaming/linked_data/logos/TombRaider.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:353",
+  "gameNameEn": "Hot As Hades",
+  "img": "https://lh3.googleusercontent.com/d/1b22Iltaee5-Oz2qUO3aF4rMol90YQ_6N",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:356",
+  "gameNameEn": "Mermaids Millions",
+  "img": "https://static.slot7hub.com/providers/microgaming/linked_data/logos/MermaidsMillions.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:357",
+  "gameNameEn": "Agent Jane Blonde",
+  "img": "https://static.slot7hub.com/providers/microgaming/linked_data/logos/AgentJaneBlonde.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:358",
+  "gameNameEn": "Alaskan Fishing",
+  "img": "https://static.slot7hub.com/providers/microgaming/linked_data/logos/AlaskanFishing.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:359",
+  "gameNameEn": "Burning Desire",
+  "img": "https://static.slot7hub.com/providers/microgaming/linked_data/logos/BurningDesire.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:360",
+  "gameNameEn": "Jungle Jim",
+  "img": "https://static.slot7hub.com/providers/microgaming/linked_data/logos/JungleJim.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:369",
+  "gameNameEn": "Secret Romance",
+  "img": "https://static.slot7hub.com/providers/microgaming/linked_data/logos/SecretRomance.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:481",
+  "gameNameEn": "Break Away",
+  "img": "https://static.slot7hub.com/providers/microgaming/linked_data/logos/BreakAway.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:525",
+  "gameNameEn": "retro Reels",
+  "img": "https://media.ohxeeshei2eigooji3ey8nah9bah7r.site/397/micro-gaming/450x345/52329.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:565",
+  "gameNameEn": "Emperor of the Sea",
+  "img": "https://static.slot7hub.com/providers/microgaming/linked_data/logos/EmperoroftheSea.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:566",
+  "gameNameEn": "Tarzan Jewels of Opar",
+  "img": "https://static.slot7hub.com/providers/microgaming/linked_data/logos/TarzanJewelsofOpar.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:600",
+  "gameNameEn": "Aliyas Wishes",
+  "img": "https://static.slot7hub.com/providers/microgaming/linked_data/logos/AliyasWishes.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:601",
+  "gameNameEn": "Augustus",
+  "img": "https://static.slot7hub.com/providers/microgaming/linked_data/logos/Augustus.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:602",
+  "gameNameEn": "Age Of Conquest",
+  "img": "https://static.slot7hub.com/providers/microgaming/linked_data/logos/AgeOfConquest.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:638",
+  "gameNameEn": "titans Of The Sun Theia",
+  "img": "https://static.slot7hub.com/providers/microgaming/linked_data/logos/TitansoftheSunTheia.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:639",
+  "gameNameEn": "avalon",
+  "img": "https://static.slot7hub.com/providers/microgaming/linked_data/logos/Avalon.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:663",
+  "gameNameEn": "9 Masks of Fire",
+  "img": "https://static.slot7hub.com/providers/microgaming/linked_data/logos/9MasksofFire.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:664",
+  "gameNameEn": "9 Pots of Gold",
+  "img": "https://static.slot7hub.com/providers/microgaming/linked_data/logos/9PotsofGold.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:675",
+  "gameNameEn": "assassin Moon",
+  "img": "https://static.slot7hub.com/providers/microgaming/linked_data/logos/AssassinMoon.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:689",
+  "gameNameEn": "10 000 Wishes",
+  "img": "https://static.slot7hub.com/providers/microgaming/linked_data/logos/10000Wishes.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:85",
+  "gameNameEn": "Beautiful Bones",
+  "img": "https://media.ohxeeshei2eigooji3ey8nah9bah7r.site/397/micro-gaming/450x345/52073.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:86",
+  "gameNameEn": "Six Acrobats",
+  "img": "https://static.slot7hub.com/providers/microgaming/linked_data/logos/SixAcrobats.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:87",
+  "gameNameEn": "Fortune Girl",
+  "img": "https://effective-cdn.com/storage/static/CasinoMobule/amatic/287-193/fortunegirl.png",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:88",
+  "gameNameEn": "Cool Buck",
+  "img": "https://static.slot7hub.com/providers/microgaming/linked_data/logos/CoolBuck5Reel.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:89",
+  "gameNameEn": "Cool Wolf",
+  "img": "https://static.slot7hub.com/providers/microgaming/linked_data/logos/CoolWolf.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:9",
+  "gameNameEn": "Ancient Fortunes Zeus",
+  "img": "https://static.slot7hub.com/providers/microgaming/linked_data/logos/AncientFortunesZeus.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:90",
+  "gameNameEn": "lucky Twins",
+  "img": "https://media.ohxeeshei2eigooji3ey8nah9bah7r.site/397/micro-gaming/450x345/52261.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:91",
+  "gameNameEn": "High Lander",
+  "img": "https://lh3.googleusercontent.com/d/133cyYC_eAwPUMLFrmole4E1KYGSoTdF4",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:92",
+  "gameNameEn": "King Tusk",
+  "img": "https://static.slot7hub.com/providers/microgaming/linked_data/logos/KingTusk.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:93",
+  "gameNameEn": "Monster Wheels",
+  "img": "https://static.slot7hub.com/providers/microgaming/linked_data/logos/MonsterWheels.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:991",
+  "gameNameEn": "football Star",
+  "img": "https://static.slot7hub.com/providers/microgaming/linked_data/logos/FootballStar.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:992",
+  "gameNameEn": "Tally Ho",
+  "img": "https://static.slot7hub.com/providers/microgaming/linked_data/logos/TallyHo.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:993",
+  "gameNameEn": "Spring Break",
+  "img": "https://static.slot7hub.com/providers/microgaming/linked_data/logos/SpringBreak.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:994",
+  "gameNameEn": "Reel Thunder",
+  "img": "https://static.slot7hub.com/providers/microgaming/linked_data/logos/ReelThunder.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:995",
+  "gameNameEn": "Ladies Nite",
+  "img": "https://static.slot7hub.com/providers/microgaming/linked_data/logos/LadiesNite.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:996",
+  "gameNameEn": "Сricket Star",
+  "img": "https://media.ohxeeshei2eigooji3ey8nah9bah7r.site/397/micro-gaming/450x345/52130.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:997",
+  "gameNameEn": "Carnaval",
+  "img": "https://static.slot7hub.com/providers/microgaming/linked_data/logos/CarnavalMg.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:998",
+  "gameNameEn": "Вreak Da Bank Again",
+  "img": "https://static.slot7hub.com/providers/microgaming/linked_data/logos/BreakDaBankAgain.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:microgaming:999",
+  "gameNameEn": "Basketball Star",
+  "img": "https://static.slot7hub.com/providers/microgaming/linked_data/logos/BasketballStar.jpg",
+  "customGameType": 0,
+  "vendorCode": "microgaming",
+  "provider": "microgaming",
+  "category": "Slot"
+ }
+]

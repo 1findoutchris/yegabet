@@ -1,0 +1,47 @@
+[
+ {
+  "gameID": "magic-slots:dlv:830001",
+  "gameNameEn": "Mushroom Fable",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/dlv/images_288_210/mashroomfable.png",
+  "customGameType": 0,
+  "vendorCode": "dlv",
+  "provider": "dlv",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:dlv:830002",
+  "gameNameEn": "Skeletons Fortune",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/dlv/images_288_210/skeletonfortune.png",
+  "customGameType": 0,
+  "vendorCode": "dlv",
+  "provider": "dlv",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:dlv:830003",
+  "gameNameEn": "Cool Cracker",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/dlv/images_288_210/coolcracker.png",
+  "customGameType": 0,
+  "vendorCode": "dlv",
+  "provider": "dlv",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:dlv:830004",
+  "gameNameEn": "Snow Luck",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/dlv/images_288_210/snowluck.png",
+  "customGameType": 0,
+  "vendorCode": "dlv",
+  "provider": "dlv",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:dlv:830005",
+  "gameNameEn": "Brick Fruits",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/dlv/images_288_210/brickfruits.png",
+  "customGameType": 0,
+  "vendorCode": "dlv",
+  "provider": "dlv",
+  "category": "Slot"
+ }
+]

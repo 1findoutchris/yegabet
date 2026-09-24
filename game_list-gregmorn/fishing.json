@@ -1,0 +1,245 @@
+[
+ {
+  "gameID": "magic-firekirin:fishing:510001",
+  "gameNameEn": "Golden Toad",
+  "img": "https://static.cdns-stat.com/resources/thumbnails/xgames/games/firekirin/golden_toad.png",
+  "customGameType": 0,
+  "vendorCode": "fishing",
+  "provider": "fishing",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-firekirin:fishing:510002",
+  "gameNameEn": "Deepsea Volcamon",
+  "img": "https://static.cdns-stat.com/resources/thumbnails/xgames/games/firekirin/deepsea_volcamon.png",
+  "customGameType": 0,
+  "vendorCode": "fishing",
+  "provider": "fishing",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-firekirin:fishing:510003",
+  "gameNameEn": "Fire Kirin",
+  "img": "https://static.cdns-stat.com/resources/thumbnails/xgames/games/firekirin/firekirin.png",
+  "customGameType": 0,
+  "vendorCode": "fishing",
+  "provider": "fishing",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-firekirin:fishing:510004",
+  "gameNameEn": "Crab King",
+  "img": "https://static.cdns-stat.com/resources/thumbnails/xgames/games/firekirin/crabking.png",
+  "customGameType": 0,
+  "vendorCode": "fishing",
+  "provider": "fishing",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-firekirin:fishing:510005",
+  "gameNameEn": "Fish Chopper",
+  "img": "https://static.cdns-stat.com/resources/thumbnails/xgames/games/firekirin/fishchopper.png",
+  "customGameType": 0,
+  "vendorCode": "fishing",
+  "provider": "fishing",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-firekirin:fishing:510006",
+  "gameNameEn": "Money Tree",
+  "img": "https://static.cdns-stat.com/resources/thumbnails/xgames/games/firekirin/moneytree.png",
+  "customGameType": 0,
+  "vendorCode": "fishing",
+  "provider": "fishing",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-firekirin:fishing:510007",
+  "gameNameEn": "Ocean Monsters",
+  "img": "https://static.cdns-stat.com/resources/thumbnails/xgames/games/firekirin/oceanmonsters.png",
+  "customGameType": 0,
+  "vendorCode": "fishing",
+  "provider": "fishing",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-firekirin:fishing:510008",
+  "gameNameEn": "Baby Octopus",
+  "img": "https://static.cdns-stat.com/resources/thumbnails/xgames/games/firekirin/babyoctopus.png",
+  "customGameType": 0,
+  "vendorCode": "fishing",
+  "provider": "fishing",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-firekirin:fishing:510009",
+  "gameNameEn": "Crocodile Adventure",
+  "img": "https://static.cdns-stat.com/resources/thumbnails/xgames/games/firekirin/crocodileadventure.png",
+  "customGameType": 0,
+  "vendorCode": "fishing",
+  "provider": "fishing",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-firekirin:fishing:510010",
+  "gameNameEn": "Circus Circus",
+  "img": "https://static.cdns-stat.com/resources/thumbnails/xgames/games/firekirin/circuscircus.png",
+  "customGameType": 0,
+  "vendorCode": "fishing",
+  "provider": "fishing",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-firekirin:fishing:510011",
+  "gameNameEn": "Magical Ship",
+  "img": "https://static.cdns-stat.com/resources/thumbnails/xgames/games/firekirin/magicalship.png",
+  "customGameType": 0,
+  "vendorCode": "fishing",
+  "provider": "fishing",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-firekirin:fishing:510012",
+  "gameNameEn": "Eagle Eyes",
+  "img": "https://static.cdns-stat.com/resources/thumbnails/xgames/games/firekirin/eagleeyes.png",
+  "customGameType": 0,
+  "vendorCode": "fishing",
+  "provider": "fishing",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-firekirin:fishing:510013",
+  "gameNameEn": "Dragon vs Phoenix",
+  "img": "https://static.cdns-stat.com/resources/thumbnails/xgames/games/firekirin/dragonvsphoenix.png",
+  "customGameType": 0,
+  "vendorCode": "fishing",
+  "provider": "fishing",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-firekirin:fishing:510014",
+  "gameNameEn": "Meteor Shower",
+  "img": "https://static.cdns-stat.com/resources/thumbnails/xgames/games/firekirin/meteorshower.png",
+  "customGameType": 0,
+  "vendorCode": "fishing",
+  "provider": "fishing",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-firekirin:fishing:510015",
+  "gameNameEn": "Spirit Stallion",
+  "img": "https://static.cdns-stat.com/resources/thumbnails/xgames/games/firekirin/spiritstallion.png",
+  "customGameType": 0,
+  "vendorCode": "fishing",
+  "provider": "fishing",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-firekirin:fishing:510016",
+  "gameNameEn": "Arc of Templar",
+  "img": "https://static.cdns-stat.com/resources/thumbnails/xgames/games/firekirin/arcoftemplar.png",
+  "customGameType": 0,
+  "vendorCode": "fishing",
+  "provider": "fishing",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-firekirin:fishing:510017",
+  "gameNameEn": "Crab King 2",
+  "img": "https://static.cdns-stat.com/resources/thumbnails/xgames/games/firekirin/crabking2.png",
+  "customGameType": 0,
+  "vendorCode": "fishing",
+  "provider": "fishing",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-firekirin:fishing:510018",
+  "gameNameEn": "Fire kirin 3",
+  "img": "https://static.cdns-stat.com/resources/thumbnails/xgames/games/firekirin/firekirin3.png",
+  "customGameType": 0,
+  "vendorCode": "fishing",
+  "provider": "fishing",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-firekirin:fishing:510019",
+  "gameNameEn": "Dancing Skeleton 3d",
+  "img": "https://static.cdns-stat.com/resources/thumbnails/xgames/games/firekirin/dancingskeleton3d.png",
+  "customGameType": 0,
+  "vendorCode": "fishing",
+  "provider": "fishing",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-firekirin:fishing:510020",
+  "gameNameEn": "Panda vs Alien",
+  "img": "https://static.cdns-stat.com/resources/thumbnails/xgames/games/firekirin/pandavsalien.png",
+  "customGameType": 0,
+  "vendorCode": "fishing",
+  "provider": "fishing",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-firekirin:fishing:510021",
+  "gameNameEn": "Ocean monster 3",
+  "img": "https://static.cdns-stat.com/resources/thumbnails/xgames/games/firekirin/oceanmonster3.png",
+  "customGameType": 0,
+  "vendorCode": "fishing",
+  "provider": "fishing",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-firekirin:fishing:510022",
+  "gameNameEn": "Air Strike 3",
+  "img": "https://static.cdns-stat.com/resources/thumbnails/xgames/games/firekirin/airstrike3.png",
+  "customGameType": 0,
+  "vendorCode": "fishing",
+  "provider": "fishing",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-firekirin:fishing:510023",
+  "gameNameEn": "Warrior Mermaid 3",
+  "img": "https://static.cdns-stat.com/resources/thumbnails/xgames/games/firekirin/warriormermaid3.png",
+  "customGameType": 0,
+  "vendorCode": "fishing",
+  "provider": "fishing",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-firekirin:fishing:510024",
+  "gameNameEn": "Crab King 3",
+  "img": "https://static.cdns-stat.com/resources/thumbnails/xgames/games/firekirin/crabking3.png",
+  "customGameType": 0,
+  "vendorCode": "fishing",
+  "provider": "fishing",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-firekirin:fishing:510025",
+  "gameNameEn": "Raging Kingdom 3d",
+  "img": "https://static.cdns-stat.com/resources/thumbnails/xgames/games/firekirin/ragingkingdom3d.png",
+  "customGameType": 0,
+  "vendorCode": "fishing",
+  "provider": "fishing",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-firekirin:fishing:510026",
+  "gameNameEn": "St. Patrik's Treasure 3d",
+  "img": "https://static.cdns-stat.com/resources/thumbnails/xgames/games/firekirin/stpatrikstreasure3d.png",
+  "customGameType": 0,
+  "vendorCode": "fishing",
+  "provider": "fishing",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-firekirin:fishing:510027",
+  "gameNameEn": "Dragon Master",
+  "img": "https://static.cdns-stat.com/resources/thumbnails/xgames/games/firekirin/dragonmaster.png",
+  "customGameType": 0,
+  "vendorCode": "fishing",
+  "provider": "fishing",
+  "category": "Slot"
+ }
+]

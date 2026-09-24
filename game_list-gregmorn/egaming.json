@@ -1,0 +1,83 @@
+[
+ {
+  "gameID": "magic-slots:egaming:831001",
+  "gameNameEn": "Hunters dream 2",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/egaming/hunters2dream.png",
+  "customGameType": 0,
+  "vendorCode": "egaming",
+  "provider": "egaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:egaming:831002",
+  "gameNameEn": "Multiplay 81",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/egaming/multiplay81.png",
+  "customGameType": 0,
+  "vendorCode": "egaming",
+  "provider": "egaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:egaming:831003",
+  "gameNameEn": "Multi 5",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/egaming/multi5.png",
+  "customGameType": 0,
+  "vendorCode": "egaming",
+  "provider": "egaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:egaming:831004",
+  "gameNameEn": "Space Adventure",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/egaming/spaceadventure.png",
+  "customGameType": 0,
+  "vendorCode": "egaming",
+  "provider": "egaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:egaming:831005",
+  "gameNameEn": "Mountain Legends",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/egaming/mountainlegends.png",
+  "customGameType": 0,
+  "vendorCode": "egaming",
+  "provider": "egaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:egaming:831006",
+  "gameNameEn": "Savanna Sunrise Deluxe",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/egaming/savannasunrisedeluxe.png",
+  "customGameType": 0,
+  "vendorCode": "egaming",
+  "provider": "egaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:egaming:831007",
+  "gameNameEn": "Double Game 2",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/egaming/doublegame2.png",
+  "customGameType": 0,
+  "vendorCode": "egaming",
+  "provider": "egaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:egaming:831008",
+  "gameNameEn": "Pirate Adventures",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/egaming/pirateadventures.png",
+  "customGameType": 0,
+  "vendorCode": "egaming",
+  "provider": "egaming",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:egaming:831009",
+  "gameNameEn": "Treasures of Asgard",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/egaming/treasuresofasgard.png",
+  "customGameType": 0,
+  "vendorCode": "egaming",
+  "provider": "egaming",
+  "category": "Slot"
+ }
+]

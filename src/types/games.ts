@@ -9,7 +9,10 @@ export interface Game {
 
 // The Betby sportsbook launches through the shared game-launch endpoint, but it
 // is not a casino game — exclude it from recently-played / recommendations.
-export const SPORTSBOOK_GAME_UID = "8a704858d5deb4af1ddc722092ac7614";
+// Provider-specific: Silent's UID is the default; Gregmorn's BetBy entry is
+// "nova:sports-betby:sports" — set NEXT_PUBLIC_SPORTSBOOK_GAME_UID on cutover.
+export const SPORTSBOOK_GAME_UID =
+  process.env.NEXT_PUBLIC_SPORTSBOOK_GAME_UID || "8a704858d5deb4af1ddc722092ac7614";
 
 export interface Provider {
   slug: string;
@@ -87,4 +90,50 @@ export const PROVIDER_META: Record<string, { name: string; logo?: string }> = {
   ezugi:              { name: "Ezugi" },
   // Sports / other
   betby:              { name: "BetBy" },
+  // Gregmorn catalog slugs (scripts/sync-gregmorn-games.mjs slugifies the
+  // feed's provider names). Shared slugs (jili, netent, habanero,
+  // microgaming) reuse the entries above.
+  "evolution-gaming": { name: "Evolution" },
+  pragmatic:          { name: "Pragmatic Play" },
+  "pg-soft":          { name: "PG Soft" },
+  "play-ngo":         { name: "Play'n GO" },
+  "3oaks":            { name: "3 Oaks" },
+  amatic:             { name: "Amatic" },
+  aristocrat:         { name: "Aristocrat" },
+  novomatic:          { name: "Novomatic" },
+  wazdan:             { name: "Wazdan" },
+  egt:                { name: "EGT" },
+  "egt-digital":      { name: "EGT Digital" },
+  igt:                { name: "IGT" },
+  inbet:              { name: "InBet" },
+  apollo:             { name: "Apollo" },
+  rubyplay:           { name: "RubyPlay" },
+  hacksaw:            { name: "Hacksaw" },
+  fishing:            { name: "Fishing" },
+  algnet:             { name: "AlgNET" },
+  quickspin:          { name: "Quickspin" },
+  booming:            { name: "Booming Games" },
+  bally:              { name: "Bally" },
+  ainsworthanywhere:  { name: "Ainsworth" },
+  vegas:              { name: "Vegas" },
+  "vegas-bb":         { name: "Vegas BB" },
+  igrosoft:           { name: "Igrosoft" },
+  firekirin:          { name: "Fire Kirin" },
+  wms:                { name: "WMS" },
+  sg:                 { name: "SG" },
+  royal:              { name: "Royal" },
+  kajot:              { name: "Kajot" },
+  egaming:            { name: "eGaming" },
+  dlv:                { name: "DLV" },
+  sgx:                { name: "SGX" },
+  rplslots:           { name: "RPL Slots" },
+  tomhorn:            { name: "Tom Horn" },
+  agt:                { name: "AGT" },
+  zitro:              { name: "Zitro" },
+  vibragaming:        { name: "Vibra Gaming" },
+  blueprintgaming:    { name: "Blueprint" },
+  spinomenal:         { name: "Spinomenal" },
+  fish:               { name: "Fish" },
+  yggdrasil:          { name: "Yggdrasil" },
+  "scientific-games": { name: "Scientific Games" },
 };

@@ -1,0 +1,182 @@
+[
+ {
+  "gameID": "magic-slots:bally:20089",
+  "gameNameEn": "Michael Jackson",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/bally/images_288_210/mj.jpg",
+  "customGameType": 0,
+  "vendorCode": "bally",
+  "provider": "bally",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:bally:20106",
+  "gameNameEn": "Lucky Tree",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/bally/images_288_210/lucky-tree.jpg",
+  "customGameType": 0,
+  "vendorCode": "bally",
+  "provider": "bally",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:bally:20135",
+  "gameNameEn": "Fu Dao Le",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/bally/images_288_210/fu-dao-le.jpg",
+  "customGameType": 0,
+  "vendorCode": "bally",
+  "provider": "bally",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:bally:20172",
+  "gameNameEn": "Wacky Races",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/bally/images_288_210/wacky-races.png",
+  "customGameType": 0,
+  "vendorCode": "bally",
+  "provider": "bally",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:bally:20174",
+  "gameNameEn": "Acorn Pixie",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/bally/images_288_210/acorn-pixie.png",
+  "customGameType": 0,
+  "vendorCode": "bally",
+  "provider": "bally",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:bally:20191",
+  "gameNameEn": "Triple Cash Wheel",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/bally/images_288_210/triple-cash-wheel.png",
+  "customGameType": 0,
+  "vendorCode": "bally",
+  "provider": "bally",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:bally:20207",
+  "gameNameEn": "Dancing Drums",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/bally/images_288_210/dancing-drums.png",
+  "customGameType": 0,
+  "vendorCode": "bally",
+  "provider": "bally",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:bally:20210",
+  "gameNameEn": "Celestial King",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/bally/images_288_210/celestial-king.jpg",
+  "customGameType": 0,
+  "vendorCode": "bally",
+  "provider": "bally",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:bally:20268",
+  "gameNameEn": "Hot Shot Progressive",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/bally/images_288_210/hot-shot-progressive.png",
+  "customGameType": 0,
+  "vendorCode": "bally",
+  "provider": "bally",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:bally:20285",
+  "gameNameEn": "LuckyLinkBeats",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/bally/images_288_210/lucky-link-beats.png",
+  "customGameType": 0,
+  "vendorCode": "bally",
+  "provider": "bally",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:bally:20291",
+  "gameNameEn": "Quick Hit Super Wheel Wild Red",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/bally/images_288_210/quick-hit-super-wheel-wild-red.jpg",
+  "customGameType": 0,
+  "vendorCode": "bally",
+  "provider": "bally",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:bally:20292",
+  "gameNameEn": "Quick Hit Sun Dragon",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/bally/images_288_210/sun-dragon.jpg",
+  "customGameType": 0,
+  "vendorCode": "bally",
+  "provider": "bally",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:bally:20306",
+  "gameNameEn": "Lady Robin Hood",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/bally/images_288_210/lady-robin-hood-slot.jpg",
+  "customGameType": 0,
+  "vendorCode": "bally",
+  "provider": "bally",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:bally:20311",
+  "gameNameEn": "Pharaohs Dream",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/bally/images_288_210/pharaohsdream.jpg",
+  "customGameType": 0,
+  "vendorCode": "bally",
+  "provider": "bally",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:bally:20322",
+  "gameNameEn": "Jin Ji Bao Xi: Endless Treasure",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/bally/images_288_210/jin-ji-bao-xi-endless-treasure.png",
+  "customGameType": 0,
+  "vendorCode": "bally",
+  "provider": "bally",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:bally:20363",
+  "gameNameEn": "Blazing X",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/bally/images_288_210/blazing-x.jpg",
+  "customGameType": 0,
+  "vendorCode": "bally",
+  "provider": "bally",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:bally:20376",
+  "gameNameEn": "Texas Hold'em Plus",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/bally/images_288_210/texasholdemplus.png",
+  "customGameType": 0,
+  "vendorCode": "bally",
+  "provider": "bally",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:bally:20401",
+  "gameNameEn": "Jinse Dao Dragon",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/bally/images_288_210/jinsedaodragon.png",
+  "customGameType": 0,
+  "vendorCode": "bally",
+  "provider": "bally",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:bally:20423",
+  "gameNameEn": "Golden Asia",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/bally/images_288_210/golden_asia.png",
+  "customGameType": 0,
+  "vendorCode": "bally",
+  "provider": "bally",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:bally:20442",
+  "gameNameEn": "5 Treasures",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/bally/images_288_210/5-treasures.png",
+  "customGameType": 0,
+  "vendorCode": "bally",
+  "provider": "bally",
+  "category": "Slot"
+ }
+]

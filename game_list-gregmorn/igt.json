@@ -1,0 +1,668 @@
+[
+ {
+  "gameID": "black:igt:102",
+  "gameNameEn": "Diamond Queen",
+  "img": "https://lh3.googleusercontent.com/d/1yjoOAKIwJGOzxHqo34IvAA_n-m6m-c47",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:103",
+  "gameNameEn": "Siberian Storm",
+  "img": "https://static.slot7hub.com/providers/igt/linked_data/logos/SiberianStorm.jpg",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:104",
+  "gameNameEn": "Coyote Moon",
+  "img": "https://lh3.googleusercontent.com/d/1q6AaqvORaA5vLsOWdL_6RpUVzpStgu-G",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:105",
+  "gameNameEn": "Wild Wolf",
+  "img": "https://lh3.googleusercontent.com/d/1psnGgZlDa8noKzM3A5rXVPl6NWU-plqU",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:106",
+  "gameNameEn": "Fire Opals",
+  "img": "https://lh3.googleusercontent.com/d/1XH4txlhjdjzNw4NpZzIZB8P4QbyYOn38",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:109",
+  "gameNameEn": "Miss Red",
+  "img": "https://lh3.googleusercontent.com/d/1ODaK4eBL0P_dxptkiinHL2FfAL9bMkAz",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:113",
+  "gameNameEn": "Day of the Dead",
+  "img": "https://static.slot7hub.com/providers/pragmatic/gs2c/lobby/icons/vs20daydead/vs20daydead_800x600_NB.jpg",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:114",
+  "gameNameEn": "Jewel of the Arts",
+  "img": "https://lh3.googleusercontent.com/d/1S3IAJJnbLXQ4wwTUmtR18pEOiqRWs5XA",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:115",
+  "gameNameEn": "Pamplona",
+  "img": "https://lh3.googleusercontent.com/d/1V_2CAN17p4k_7_EsFW7Cds_ohNeiONUF",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:116",
+  "gameNameEn": "Garden Party",
+  "img": "https://lh3.googleusercontent.com/d/1POnJvvygzMe-KTt0DwObdkopM9taeJXi",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:117",
+  "gameNameEn": "Cleopatra",
+  "img": "https://static.slot7hub.com/providers/igt/linked_data/logos/Cleopatra.jpg",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:118",
+  "gameNameEn": "Grand Monarch",
+  "img": "https://lh3.googleusercontent.com/d/1rSCa9wmMYgYXzpqGAoRqGWTt6W_lsPBE",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:119",
+  "gameNameEn": "Prowling Panther",
+  "img": "https://lh3.googleusercontent.com/d/1nYfqBOMWxekbcbZQrIAZDiVa3Fo0L5wb",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:120",
+  "gameNameEn": "Mayan Riches",
+  "img": "https://stage.gis-static.com/games/Mascot/ea602f5091021bbec57ffb250a783ce2eae1bbc8.png",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:121",
+  "gameNameEn": "Golden Goddess",
+  "img": "https://static.slot7hub.com/providers/igt/linked_data/logos/GoldenGodness.jpg",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:122",
+  "gameNameEn": "Sumatran Storm",
+  "img": "https://lh3.googleusercontent.com/d/1ht_3rnzBvoDdZaqLdU286_GXzGiR-cRx",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:123",
+  "gameNameEn": "Shamrockers Eire to Rock",
+  "img": "https://lh3.googleusercontent.com/d/1h1-TywXI_wQ9JXa6sNnCrMNBrG47edxJ",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:124",
+  "gameNameEn": "Dungeons and Dragons: Treasures of Icewind Dale",
+  "img": "https://lh3.googleusercontent.com/d/1kjzjCfTjueqMqlzOazRNxgRkI2cphuK8",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:125",
+  "gameNameEn": "Tokidoki Lucky Town",
+  "img": "https://lh3.googleusercontent.com/d/1j5Yj1Cl0GDJ4I3H70XjxN8E3k4z7U8XW",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:126",
+  "gameNameEn": "Fire horse",
+  "img": "https://stage.gis-static.com/games/TripleCherry/0fdea04072f44c3ca20ca9a9bc9608cc.jpg",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:127",
+  "gameNameEn": "Treasures Of The Pyramids",
+  "img": "https://static.slot7hub.com/providers/igt/linked_data/logos/TreasuresOfThePyramids.jpg",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:128",
+  "gameNameEn": "Black Widow",
+  "img": "https://lh3.googleusercontent.com/d/1F55ekFiik9MBjfAvHMUzaBZCkDRJDgCE",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:129",
+  "gameNameEn": "Miss White",
+  "img": "https://lh3.googleusercontent.com/d/1fjT7t_bbz8dXk0a1AfAAwhBqlicDKp7r",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:135",
+  "gameNameEn": "Dragons Temple",
+  "img": "https://lh3.googleusercontent.com/d/1i841YpTOMVEQ7gTugnrgh01TUGV4WeGV",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:157",
+  "gameNameEn": "Hexbreaker 2",
+  "img": "https://lh3.googleusercontent.com/d/1TayCe-seqca6Af9yX5_IMwTKOQng5Hr4",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:158",
+  "gameNameEn": "Kitty Glitter",
+  "img": "https://lh3.googleusercontent.com/d/1TJttD3rK1OfBrIUbkiIJiwF7zarvpACo",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:159",
+  "gameNameEn": "Rich Girl",
+  "img": "https://static.slot7hub.com/providers/igt/linked_data/logos/ShesARichGirl.jpg",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:163",
+  "gameNameEn": "1421 Voyages of Zheng He",
+  "img": "https://lh3.googleusercontent.com/d/1fs13dlyE0cphVzYjq6VkYaDmy4Wr7o9-",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:164",
+  "gameNameEn": "Pacific Paradise",
+  "img": "https://lh3.googleusercontent.com/d/1ommJWSGWQHr5IkCwvP1FHHNylrNBRSyX",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:165",
+  "gameNameEn": "Samba De Frutas",
+  "img": "https://lh3.googleusercontent.com/d/1iZXIIEg5lFtffFwDkOeViZKVdk3xKo1t",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:166",
+  "gameNameEn": "Apollo Rising",
+  "img": "https://lh3.googleusercontent.com/d/19YYKPtfzDdk6Fxc3IoQr42B3ZTOJsFsw",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:167",
+  "gameNameEn": "Wolf Rising",
+  "img": "https://static.slot7hub.com/providers/igt/linked_data/logos/WolfRising.jpg",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:171",
+  "gameNameEn": "Goldify",
+  "img": "https://lh3.googleusercontent.com/d/1xU3AGfx161Lbw8mBtXr8jFgvRQgzAD9v",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:172",
+  "gameNameEn": "Balloonies",
+  "img": "https://lh3.googleusercontent.com/d/1dxMlj4k-fXYn2V0sVLkuoEonW4oGQYQl",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:178",
+  "gameNameEn": "Golden Jungle",
+  "img": "https://lh3.googleusercontent.com/d/1V_iEOP2QsIrLrSm2m4lGNZ1sk_WKdU3_",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:179",
+  "gameNameEn": "100 Ladies",
+  "img": "https://lh3.googleusercontent.com/d/12Ff2DozwzETOBW17jbRh--kgIpb7oh5k",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:180",
+  "gameNameEn": "100 Pandas",
+  "img": "https://lh3.googleusercontent.com/d/11a6HtHWwV1Ppw2ccibZGPi5VUYnn-NVv",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:181",
+  "gameNameEn": "Nouveau Riche",
+  "img": "https://lh3.googleusercontent.com/d/1OOWzEm4QvSSwd8r06PSsNuLIN4GNrc_F",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:185",
+  "gameNameEn": "Cats",
+  "img": "https://static.slot7hub.com/providers/igt/linked_data/logos/Cats.jpg",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:186",
+  "gameNameEn": "Vegas Baby",
+  "img": "https://stage.gis-static.com/games/Caleta/4ee4eb33ebff4dbcbae6181912badb85.png",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:187",
+  "gameNameEn": "Noahs Ark",
+  "img": "https://lh3.googleusercontent.com/d/1LeGRdzkW_QLgkoy99ZJ6Bfjh76XiL9wP",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:188",
+  "gameNameEn": "Water Dragons",
+  "img": "https://lh3.googleusercontent.com/d/1E8C56Eocf1PYVcChS3YjtP1fZ_cRmp-3",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:189",
+  "gameNameEn": "Pharaohs Fortune",
+  "img": "https://static.slot7hub.com/providers/igt/linked_data/logos/PharaohsFortune.jpg",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:190",
+  "gameNameEn": "Natural Powers",
+  "img": "https://lh3.googleusercontent.com/d/1jidJ8dotf5H4wTRdnX2K3RbQ97Eexjnk",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:263",
+  "gameNameEn": "Double Diamond",
+  "img": "https://static.slot7hub.com/providers/igt/linked_data/logos/DoubleDiamond.jpg",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:264",
+  "gameNameEn": "White Orchid",
+  "img": "https://static.slot7hub.com/providers/igt/linked_data/logos/WhiteOrchid.jpg",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:265",
+  "gameNameEn": "Western Belles",
+  "img": "https://lh3.googleusercontent.com/d/18XY8wSY__aUn4Lz6n3cWFmRHOyfObyJh",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:266",
+  "gameNameEn": "Triple Diamond",
+  "img": "https://static.slot7hub.com/providers/igt/linked_data/logos/TripleDiamond.jpg",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:267",
+  "gameNameEn": "Pixies of the Forest",
+  "img": "https://lh3.googleusercontent.com/d/1n2XUlpyCv6RAVwLRFtI0nfXk0mzyPHJ5",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:268",
+  "gameNameEn": "Da Vinci Diamonds Dual Play",
+  "img": "https://lh3.googleusercontent.com/d/1305745ODU5btMFpBs3sY-ntzw6kz5jYO",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:269",
+  "gameNameEn": "Red Mansions",
+  "img": "https://lh3.googleusercontent.com/d/1EPfa1twRuN9AYxh16HHrXLfdV7FME-KX",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:270",
+  "gameNameEn": "Da Vinci Diamonds",
+  "img": "https://lh3.googleusercontent.com/d/1305745ODU5btMFpBs3sY-ntzw6kz5jYO",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:271",
+  "gameNameEn": "LilLady",
+  "img": "https://lh3.googleusercontent.com/d/1nKQvgopvMGy7Ify0kACgc2Rwt4NTWdN_",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:272",
+  "gameNameEn": "Crown Of Egypt",
+  "img": "https://static.slot7hub.com/providers/igt/linked_data/logos/CrownOfEgypt.jpg",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:273",
+  "gameNameEn": "Masques Of San Marco",
+  "img": "https://lh3.googleusercontent.com/d/1bIafcbNCRK7mykDpEnB_TtzRmGm15mQN",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:274",
+  "gameNameEn": "Star Lanterns MegaJackpots",
+  "img": "https://lh3.googleusercontent.com/d/1NIwezEnhwT2FOXc-5zVv8B8I5ypZRku6",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:275",
+  "gameNameEn": "Cleopatra MegaJackpots",
+  "img": "https://lh3.googleusercontent.com/d/1TQPa8hV8X1tWS3r6D3b5i31TOtdx3Jcp",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:276",
+  "gameNameEn": "Captain Quid",
+  "img": "https://lh3.googleusercontent.com/d/1nkrPp2-fjaKiyvB0-WwQZ1VCEI9d6wz5",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:305",
+  "gameNameEn": "Stinkin Rich",
+  "img": "https://lh3.googleusercontent.com/d/1Z9iw6GscLOu6Ozrz0fNnOmvSsk0UZX2E",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:361",
+  "gameNameEn": "The Wild Life",
+  "img": "https://static.slot7hub.com/providers/igt/linked_data/logos/TheWildLife.jpg",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:48",
+  "gameNameEn": "Wolf Run",
+  "img": "https://static.slot7hub.com/providers/igt/linked_data/logos/WolfRun.jpg",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:539",
+  "gameNameEn": "The Big Easy",
+  "img": "https://static.slot7hub.com/providers/igt/linked_data/logos/TheBigEasy.jpg",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:541",
+  "gameNameEn": "Action Jack",
+  "img": "https://static.slot7hub.com/providers/igt/linked_data/logos/ActionJack.jpg",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:542",
+  "gameNameEn": "Sphinx Wild",
+  "img": "https://static.slot7hub.com/providers/igt/linked_data/logos/SphinxWild.jpg",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:551",
+  "gameNameEn": "Ocean Magic",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/LordoftheOceanMagic.jpg",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:553",
+  "gameNameEn": "Wolf Ridge",
+  "img": "https://static.slot7hub.com/providers/igt/linked_data/logos/WolfRidge.jpg",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:603",
+  "gameNameEn": "Enchanted Lamp",
+  "img": "https://static.slot7hub.com/providers/igt/linked_data/logos/EnchantedLamp.jpg",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:604",
+  "gameNameEn": "Solar Disc",
+  "img": "https://static.slot7hub.com/providers/igt/linked_data/logos/SolarDisc.jpg",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:605",
+  "gameNameEn": "Elephant King",
+  "img": "https://static.slot7hub.com/providers/igt/linked_data/logos/ElephantKing.jpg",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:606",
+  "gameNameEn": "Mistress Of Egypt",
+  "img": "https://static.slot7hub.com/providers/igt/linked_data/logos/MistressOfEgypt.jpg",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:607",
+  "gameNameEn": "Electric Tiger",
+  "img": "https://static.slot7hub.com/providers/igt/linked_data/logos/ElectricTiger.jpg",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:643",
+  "gameNameEn": "Treasures Of Troy",
+  "img": "https://static.slot7hub.com/providers/igt/linked_data/logos/TreasuresOfTroy.jpg",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:688",
+  "gameNameEn": "Cleopatra 2",
+  "img": "https://static.slot7hub.com/providers/igt/linked_data/logos/Cleopatra.jpg",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:igt:825",
+  "gameNameEn": "Treasure Hunt",
+  "img": "https://media.ohxeeshei2eigooji3ey8nah9bah7r.site/1030/vimplay/450x345/12823.jpg",
+  "customGameType": 0,
+  "vendorCode": "igt",
+  "provider": "igt",
+  "category": "Slot"
+ }
+]

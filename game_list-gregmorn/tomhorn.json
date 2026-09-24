@@ -1,0 +1,38 @@
+[
+ {
+  "gameID": "magic-slots:tomhorn:60001",
+  "gameNameEn": "Book Of Spells",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/tomhorn/images_288_210/bookofspells.png",
+  "customGameType": 0,
+  "vendorCode": "tomhorn",
+  "provider": "tomhorn",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:tomhorn:60002",
+  "gameNameEn": "Black Mummy",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/tomhorn/images_288_210/blackmummy.png",
+  "customGameType": 0,
+  "vendorCode": "tomhorn",
+  "provider": "tomhorn",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:tomhorn:60003",
+  "gameNameEn": "Dragon Egg",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/tomhorn/images_288_210/dragonegg.png",
+  "customGameType": 0,
+  "vendorCode": "tomhorn",
+  "provider": "tomhorn",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:tomhorn:60004",
+  "gameNameEn": "Savannah King",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/tomhorn/images_288_210/savannahking.png",
+  "customGameType": 0,
+  "vendorCode": "tomhorn",
+  "provider": "tomhorn",
+  "category": "Slot"
+ }
+]

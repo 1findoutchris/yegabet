@@ -18,6 +18,10 @@ COPY . .
 RUN npx prisma generate
 
 ENV NEXT_TELEMETRY_DISABLED=1
+# NEXT_PUBLIC_* is inlined at build time; Railway only passes service
+# variables into a Docker build when they're declared as ARG.
+ARG NEXT_PUBLIC_SPORTSBOOK_GAME_UID
+ENV NEXT_PUBLIC_SPORTSBOOK_GAME_UID=$NEXT_PUBLIC_SPORTSBOOK_GAME_UID
 RUN npm run build
 
 # ── Stage 3: Production runner ─────────────────────────────────────────────
@@ -41,6 +45,7 @@ COPY --from=builder --chown=nextjs:nodejs /app/.next/static    ./.next/static
 
 # Game data — read at runtime by src/lib/games.ts via fs
 COPY --from=builder --chown=nextjs:nodejs /app/game_list ./game_list
+COPY --from=builder --chown=nextjs:nodejs /app/game_list-gregmorn ./game_list-gregmorn
 
 # Prisma schema (needed for migrate commands run via Railway CLI)
 COPY --from=builder --chown=nextjs:nodejs /app/prisma ./prisma

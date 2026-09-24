@@ -1,0 +1,29 @@
+[
+ {
+  "gameID": "black:agt:667",
+  "gameNameEn": "Nine balls",
+  "img": "https://lh3.googleusercontent.com/d/1xN0nqFWgo6MtF5p7cWkdvw_7P6HERx23",
+  "customGameType": 0,
+  "vendorCode": "agt",
+  "provider": "agt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:agt:668",
+  "gameNameEn": "Show Ball 3",
+  "img": "https://gis-static.com/games/VibraGaming/987e088a5b2d4fb69c7195a64175afa6.png",
+  "customGameType": 0,
+  "vendorCode": "agt",
+  "provider": "agt",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:agt:669",
+  "gameNameEn": "Pachinko 3",
+  "img": "https://stage.gis-static.com/games/VibraGaming/fc64b2f1a82a4f27aaf80fd3ee2e33d8.png",
+  "customGameType": 0,
+  "vendorCode": "agt",
+  "provider": "agt",
+  "category": "Slot"
+ }
+]

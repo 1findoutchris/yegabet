@@ -1,0 +1,38 @@
+[
+ {
+  "gameID": "magic-slots:sgx:70950",
+  "gameNameEn": "Ultimate Fire Link North Shore",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/sgx/uflnorthshore.png",
+  "customGameType": 0,
+  "vendorCode": "sgx",
+  "provider": "sgx",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:sgx:70951",
+  "gameNameEn": "Ultimate Fire Link Glacier Gold",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/sgx/uflglaciergold.png",
+  "customGameType": 0,
+  "vendorCode": "sgx",
+  "provider": "sgx",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:sgx:70952",
+  "gameNameEn": "Ultimate Fire Link Route 66",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/sgx/uflroute66.png",
+  "customGameType": 0,
+  "vendorCode": "sgx",
+  "provider": "sgx",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:sgx:70953",
+  "gameNameEn": "Ultimate Fire Link By The Bay",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/sgx/uflbythebay.png",
+  "customGameType": 0,
+  "vendorCode": "sgx",
+  "provider": "sgx",
+  "category": "Slot"
+ }
+]

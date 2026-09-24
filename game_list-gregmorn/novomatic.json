@@ -1,0 +1,866 @@
+[
+ {
+  "gameID": "black:novomatic:1",
+  "gameNameEn": "Always Hot deluxe",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/AlwaysHotdeluxe.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:10",
+  "gameNameEn": "Fabulous Fruits",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/FabulousFruits.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:11",
+  "gameNameEn": "Magic 27",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/Magic27.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:12",
+  "gameNameEn": "Totally Wild",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/TotallyWild.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:13",
+  "gameNameEn": "dolphins pearl deluxe",
+  "img": "https://media.ohxeeshei2eigooji3ey8nah9bah7r.site/369/novomatic-pl/450x345/42668.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:14",
+  "gameNameEn": "Book of Ra Bingo",
+  "img": "https://lh3.googleusercontent.com/d/1D4VGp0VaowK7zJgQdXs5IRHE-buVkIML",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:15",
+  "gameNameEn": "Lotus Flower",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/LotusFlower.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:16",
+  "gameNameEn": "Heart of Egypt",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/HeartofEgypt.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:17",
+  "gameNameEn": "Phoenix Fortune",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/PhoenixFortune.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:18",
+  "gameNameEn": "Garden of Riches",
+  "img": "https://lh3.googleusercontent.com/d/1M-EyatI4EE_qjUSZ4JmDuRvXwT6VOWac",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:19",
+  "gameNameEn": "lucky lady scharmd eluxe",
+  "img": "https://media.ohxeeshei2eigooji3ey8nah9bah7r.site/369/novomaticP-pl/450x345/42714.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:2",
+  "gameNameEn": "helena",
+  "img": "https://lh3.googleusercontent.com/d/1oJ0iS2rY6bO92c9rDrCfqndxAgMv1CWI",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:20",
+  "gameNameEn": "Secret Treasure",
+  "img": "https://stage.gis-static.com/games/da481495311e13bed8405e0fcc115357/JiliGames/7d8fe763e3bf47da9bbe89c52681e185.png",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:21",
+  "gameNameEn": "book of ra classic",
+  "img": "https://stage.gis-static.com/games/Playson/7e5dd657f2c02b17191dfc2f934d3561a75e59fd.png",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:22",
+  "gameNameEn": "book of ra deluxe",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/BookofRadeluxe10.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:23",
+  "gameNameEn": "dolphins pear lclassic",
+  "img": "https://media.ohxeeshei2eigooji3ey8nah9bah7r.site/369/novomatic-pl/450x345/42669.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:25",
+  "gameNameEn": "American gangster",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/AmericanGangster.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:27",
+  "gameNameEn": "Queen Cleopatra",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/QueenCleopatra.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:28",
+  "gameNameEn": "golden ark",
+  "img": "https://stage.gis-static.com/games/2d90c08b7b6927b4a04aa1b58f6bc336/Novomatic/ec72b34261574164b1eb1158d483a5b1.png",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:29",
+  "gameNameEn": "Lucky Ladys Charm Deluxe 10",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/LuckyLadysCharmDeluxe10.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:30",
+  "gameNameEn": "columbus deluxe",
+  "img": "https://stage.gis-static.com/games/2d90c08b7b6927b4a04aa1b58f6bc336/Novomatic/9a840d5876c04366abebfe5303b71ac2.png",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:31",
+  "gameNameEn": "dazzling diamonds",
+  "img": "https://lh3.googleusercontent.com/d/1YsIn2uqBv27QNTFHkqPLZWi22t87BAQU",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:32",
+  "gameNameEn": "lord of the ocean",
+  "img": "https://stage.gis-static.com/games/2d90c08b7b6927b4a04aa1b58f6bc336/Novomatic/7bf33f39e8024498b1fabd1fdc278db8.png",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:33",
+  "gameNameEn": "Pyramid Fortunes",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/PyramidFortunes.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:35",
+  "gameNameEn": "Vampire Fortunes",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/VampireFortunes.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:36",
+  "gameNameEn": "gorilla",
+  "img": "https://stage.gis-static.com/games/2d90c08b7b6927b4a04aa1b58f6bc336/Novomatic/2c687f32260b4de28f0d082995a0dcc4.png",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:37",
+  "gameNameEn": "orca",
+  "img": "https://lh3.googleusercontent.com/d/10dPHf0lHkpTbuKYItkDP0xe3MoB7UMY7",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:39",
+  "gameNameEn": "River Queen",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/RiverQueen.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:397",
+  "gameNameEn": "Jaguar Moon",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/JaguarMoon.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:398",
+  "gameNameEn": "Legend of the Seas",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/LegendoftheSeas.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:4",
+  "gameNameEn": "just jewels deluxe",
+  "img": "https://stage.gis-static.com/games/2d90c08b7b6927b4a04aa1b58f6bc336/Novomatic/7630b538c688464dac856cd04715b71a.png",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:401",
+  "gameNameEn": "faust",
+  "img": "https://stage.gis-static.com/games/2d90c08b7b6927b4a04aa1b58f6bc336/Novomatic/b8901ff3969e47bda3203812227e488d.png",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:406",
+  "gameNameEn": "Gangster Paradise",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/GangsterParadise.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:408",
+  "gameNameEn": "dynasty of ra",
+  "img": "https://lh3.googleusercontent.com/d/13WhqpvNF-B3alwvZ2XMrtlZwIlHb3SuB",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:410",
+  "gameNameEn": "Wild Country",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/WildCountry.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:415",
+  "gameNameEn": "Asian Fortunes Eco",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/AsianFortunesEco.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:440",
+  "gameNameEn": "Royal Dynasty",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/RoyalDynasty.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:468",
+  "gameNameEn": "Magic 81",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/Magic27.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:5",
+  "gameNameEn": "Apollo God of the Sun",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/ApolloGodoftheSun.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:543",
+  "gameNameEn": "Buffalo Magic",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/BuffaloMagic.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:544",
+  "gameNameEn": "African Stampede",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/AfricanStampede.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:554",
+  "gameNameEn": "Island Heat",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/IslandHeat.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:575",
+  "gameNameEn": "Bars and Sevens",
+  "img": "https://static.slot7hub.com/providers/apex/linked_data/logos/BarsandSevens.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:576",
+  "gameNameEn": "Red Hot Fruits",
+  "img": "https://stage.gis-static.com/games/TripleCherry/5ea4787e13f4421d9d27fc30941257a9.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:577",
+  "gameNameEn": "Leonardos Code",
+  "img": "https://static.slot7hub.com/providers/apex/linked_data/logos/LeonardosCode.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:578",
+  "gameNameEn": "Hypno Hippo",
+  "img": "https://static.slot7hub.com/providers/apex/linked_data/logos/HypnoHippo.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:579",
+  "gameNameEn": "Ocean Tale",
+  "img": "https://static.slot7hub.com/providers/apex/linked_data/logos/OceanTale.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:580",
+  "gameNameEn": "Arriva Arriva",
+  "img": "https://static.slot7hub.com/providers/apex/linked_data/logos/ArrivaArriva.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:581",
+  "gameNameEn": "Pirates",
+  "img": "https://static.slot7hub.com/providers/apex/linked_data/logos/Pirates.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:582",
+  "gameNameEn": "Legend of the Sphinx",
+  "img": "https://static.slot7hub.com/providers/apex/linked_data/logos/LegendoftheSphinx.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:593",
+  "gameNameEn": "The Real King Gold Records",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/TheRealKingGoldRecords.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:594",
+  "gameNameEn": "Eye Of The Dragon",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/EyeOfTheDragon.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:595",
+  "gameNameEn": "Indian Spirit Deluxe",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/IndianSpiritDeluxe.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:6",
+  "gameNameEn": "sizzling hot deluxe",
+  "img": "https://stage.gis-static.com/games/2d90c08b7b6927b4a04aa1b58f6bc336/Novomatic/82d5d1d8dc3c4b11901506805ea16254.png",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:613",
+  "gameNameEn": "Ultra Hot Deluxe",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/UltraHotDeluxe.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:62",
+  "gameNameEn": "gryphons gold deluxe",
+  "img": "https://plvqoc2irsrc.mhjbneijrtonline.org/lobby/gryphon's-gold-deluxe.png",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:625",
+  "gameNameEn": "Asian Diamonds",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/AsianDiamonds.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:648",
+  "gameNameEn": "book of ra magic",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/BookofRaMagic.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:649",
+  "gameNameEn": "Lord of the Ocean Magic",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/LordoftheOceanMagic.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:656",
+  "gameNameEn": "Reel King",
+  "img": "https://lh3.googleusercontent.com/d/13kptQ2Zx_kYR829wE31gHZD0x_MhLlqn",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:682",
+  "gameNameEn": "sizzling gems",
+  "img": "https://stage.gis-static.com/games/2d90c08b7b6927b4a04aa1b58f6bc336/Novomatic/996abb713ce949a8b5eb03b6cd1237d2.png",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:683",
+  "gameNameEn": "fruits and royals",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/FruitsandRoyals.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:690",
+  "gameNameEn": "Lucky Ladyʼs Charm™ deluxe 6",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/LuckyLadysCharmdeluxe6.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:691",
+  "gameNameEn": "Dolphin`s Pearl™ deluxe 10",
+  "img": "https://stage.gis-static.com/games/2d90c08b7b6927b4a04aa1b58f6bc336/Novomatic/799754f0f45b45548a39756f333f2783.png",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:692",
+  "gameNameEn": "Book of Ra™ deluxe 10",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/BookofRadeluxe10.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:693",
+  "gameNameEn": "Cash Connection Sizzling Hot Linked",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/CashConnectionSizzlingHot.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:694",
+  "gameNameEn": "Cash Connection Charming Lady",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/CashConnectionCharmingLady.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:695",
+  "gameNameEn": "Cash Connection Book of Ra",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/CashConnectionBookofRa.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:784",
+  "gameNameEn": "Cash Connection  Voodoo Magic",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/CashConnectionVoodooMagic.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:785",
+  "gameNameEn": "Cash Connection Dolphin`s Pearl",
+  "img": "https://stage.gis-static.com/games/2d90c08b7b6927b4a04aa1b58f6bc336/Novomatic/51af550e9e784703afb96687352b27f7.png",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:786",
+  "gameNameEn": "Cash Connection Golden Book Of Ra",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/CashConnectionGoldenBookOfRa.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:787",
+  "gameNameEn": "Diamond Link : Mighty Elephant",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/DiamondLinkMightyElephant.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:788",
+  "gameNameEn": "Diamond Link : Mighty Buffalo",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/DiamondLinkMightyBuffalo.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:789",
+  "gameNameEn": "Diamond Link : Mighty Emperor",
+  "img": "https://lh3.googleusercontent.com/d/1Db87OavrE7kW-tYO4eVuSyUxIIx6RU_r",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:790",
+  "gameNameEn": "Diamond Link : Mighty Santa",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/DiamondLinkMightySanta.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:791",
+  "gameNameEn": "Diamond Link : Oasis Riches",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/DiamondLinkOasisRiches.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:792",
+  "gameNameEn": "Diamond Link : Mighty Sevens",
+  "img": "https://stage.gis-static.com/games/2d90c08b7b6927b4a04aa1b58f6bc336/Novomatic/135cf0776a644a2ca3bce4378cd277a3.png",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:793",
+  "gameNameEn": "Diamond Link : Almighty Wolf",
+  "img": "https://plvqoc2irsrc.mhjbneijrtonline.org/lobby/diamond-link-almighty-wolf-linked-.png",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:794",
+  "gameNameEn": "Feelin` Fruity™: Win Ways™",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/FeelinFruityWinWays.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:795",
+  "gameNameEn": "Strike It Gold™: Win Ways™",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/StrikeItGoldWinWays.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:796",
+  "gameNameEn": "Stars Inferno",
+  "img": "https://lh3.googleusercontent.com/d/1c54WXLcz7Frqsrz-XHiQimOKG_g0ErW6",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:797",
+  "gameNameEn": "50 Extreme Hot",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/50ExtremeHot.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:798",
+  "gameNameEn": "40 Ferocious Fruits",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/40FerociousFruits.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:799",
+  "gameNameEn": "40 Imperial Crown",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/40ImperialCrown.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:8",
+  "gameNameEn": "Red Lady",
+  "img": "https://lh3.googleusercontent.com/d/1GcvOZXPdCkt-kEfRY_Z8iRZHlsGitCLs",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:800",
+  "gameNameEn": "10 Imperial Crown deluxe",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/40ImperialCrown.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:801",
+  "gameNameEn": "40 Wild Fire 6",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/40WildFire6.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:802",
+  "gameNameEn": "Smoking Hot 7`s",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/SmokingHot7s.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:803",
+  "gameNameEn": "Joker Party 6",
+  "img": "https://stage.gis-static.com/games/KajotGames/237d17e4b38e461f979843071ccd863c.png",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:804",
+  "gameNameEn": "Rising Joker",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/RisingJoker.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:805",
+  "gameNameEn": "40 Supreme Fruits",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/40SupremeFruits.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:806",
+  "gameNameEn": "Chilli El Toro",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/ChilliElToro.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:986",
+  "gameNameEn": "25 Red Hot Clover Link",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/25RedHotCloverLink.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:987",
+  "gameNameEn": "50 Red Hot Clover Link",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/25RedHotCloverLink.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:988",
+  "gameNameEn": "25 Red Hot Burning Clover Link",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/25RedHotBurningCloverLink.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:novomatic:989",
+  "gameNameEn": "50 Red Hot Burning Clover Link",
+  "img": "https://static.slot7hub.com/providers/novomatic/linked_data/logos/25RedHotBurningCloverLink.jpg",
+  "customGameType": 0,
+  "vendorCode": "novomatic",
+  "provider": "novomatic",
+  "category": "Slot"
+ }
+]

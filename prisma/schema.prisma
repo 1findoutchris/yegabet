@@ -137,6 +137,7 @@ model User {
   bonuses         UserBonus[]
   sessions        Session[]
   recentGames     RecentGame[]
+  gameSessions    GameSession[]
   favoriteGames   FavoriteGame[]
   depositRequests     DepositRequest[]
   withdrawalRequests  WithdrawalRequest[]
@@ -355,6 +356,24 @@ model RecentGame {
   @@index([userId, lastPlayedAt])
   @@map("recent_games")
 }
+// Provider game session (Gregmorn). openGame returns a sessionId which their
+// wallet callbacks echo back as `sessionid` — we validate it here so a
+// getBalance/writeBet for an unknown session is rejected, and so the session
+// can stand in for roundId when a provider omits it.
+model GameSession {
+  id        String   @id @default(cuid())
+  sessionId String   @unique
+  userId    String
+  gameId    String
+  provider  String   @default("gregmorn")
+  createdAt DateTime @default(now())
+
+  user      User @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@map("game_sessions")
+}
+
 
 model FavoriteGame {
   id        String   @id @default(cuid())

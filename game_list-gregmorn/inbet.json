@@ -1,0 +1,506 @@
+[
+ {
+  "gameID": "magic-slots:inbet:833001",
+  "gameNameEn": "Lutino Eggs",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/inbet/images_288_210/lutinoeggs.png",
+  "customGameType": 0,
+  "vendorCode": "inbet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:inbet:833002",
+  "gameNameEn": "Chilli Bonus Jackpot",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/inbet/images_288_210/chillibonusjackpot.png",
+  "customGameType": 0,
+  "vendorCode": "inbet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:inbet:833003",
+  "gameNameEn": "Chilliomatic",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/inbet/images_288_210/chilliomatic.png",
+  "customGameType": 0,
+  "vendorCode": "inbet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:inbet:833004",
+  "gameNameEn": "Crazy Carousel",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/inbet/images_288_210/crazycarousel.png",
+  "customGameType": 0,
+  "vendorCode": "inbet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:inbet:833005",
+  "gameNameEn": "Neon Vertex",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/inbet/images_288_210/neonvertex.png",
+  "customGameType": 0,
+  "vendorCode": "inbet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "magic-slots:inbet:833006",
+  "gameNameEn": "Fruit Scapes",
+  "img": "https://cdn.cdnpin.com/resources/thumbnails/xgames/games/inbet/images_288_210/fruitscapes.png",
+  "customGameType": 0,
+  "vendorCode": "inbet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:1088",
+  "gameNameEn": "Clover Fortune Frenzy",
+  "img": "https://static.slot7hub.com/providers/ibgames/linked_data/logos/CloverFortuneFrenzy.jpg",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:1089",
+  "gameNameEn": "Brilliant Dash",
+  "img": "https://static.slot7hub.com/providers/ibgames/linked_data/logos/BrilliantDash.jpg",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:1090",
+  "gameNameEn": "Lutino Eggs",
+  "img": "https://static.slot7hub.com/providers/ibgames/linked_data/logos/LutinoEggs.jpg",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:1091",
+  "gameNameEn": "Ghost of Zeus",
+  "img": "https://static.slot7hub.com/providers/ibgames/linked_data/logos/GhostofZeus.jpg",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:1092",
+  "gameNameEn": "Paw Park Party",
+  "img": "https://static.slot7hub.com/providers/ibgames/linked_data/logos/PawParkParty.jpg",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:1093",
+  "gameNameEn": "The Irish Game",
+  "img": "https://static.slot7hub.com/providers/ibgames/linked_data/logos/TheIrishGame.jpg",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:1094",
+  "gameNameEn": "Radiant Flash",
+  "img": "https://static.slot7hub.com/providers/ibgames/linked_data/logos/RadiantFlash.jpg",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:1095",
+  "gameNameEn": "Happy Parrot",
+  "img": "https://static.slot7hub.com/providers/ibgames/linked_data/logos/HappyParrot.jpg",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:1096",
+  "gameNameEn": "Wolf`s Fortune",
+  "img": "https://cdn.inbetgames.com/thumb/ib_wlf.png",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:1097",
+  "gameNameEn": "Neon Berry Burst",
+  "img": "https://static.slot7hub.com/providers/ibgames/linked_data/logos/NeonBerryBurst.jpg",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:1098",
+  "gameNameEn": "Hotverse",
+  "img": "https://static.slot7hub.com/providers/ibgames/linked_data/logos/Hotverse.jpg",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:1099",
+  "gameNameEn": "Birds Deluxe",
+  "img": "https://static.slot7hub.com/providers/ibgames/linked_data/logos/BirdsDeluxe.jpg",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:1100",
+  "gameNameEn": "Fruittastic",
+  "img": "https://static.slot7hub.com/providers/ibgames/linked_data/logos/Fruittastic.jpg",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:1101",
+  "gameNameEn": "Firing Hot",
+  "img": "https://static.slot7hub.com/providers/ibgames/linked_data/logos/FiringHot.jpg",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:1111",
+  "gameNameEn": "Charm of Fruits",
+  "img": "https://static.slot7hub.com/providers/ibgames/linked_data/logos/CharmofFruits.jpg",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:1112",
+  "gameNameEn": "Leprechaun Bounty",
+  "img": "https://lh3.googleusercontent.com/d/17mtCnx1BvBF4OVi9BsZMhkwQPe6sbzKr",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:1113",
+  "gameNameEn": "Mr. Cactus",
+  "img": "https://static.slot7hub.com/providers/ibgames/linked_data/logos/MrCactus.jpg",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:1114",
+  "gameNameEn": "Sheriff`s Gun",
+  "img": "https://cdn.inbetgames.com/thumb/ib_shg.png",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:1115",
+  "gameNameEn": "Gold Fever Dynamite",
+  "img": "https://static.slot7hub.com/providers/ibgames/linked_data/logos/GoldFeverDynamite.jpg",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:1116",
+  "gameNameEn": "Pup Prize Playtime",
+  "img": "https://static.slot7hub.com/providers/ibgames/linked_data/logos/PupPrizePlaytime.jpg",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:1117",
+  "gameNameEn": "Fruit Scapes",
+  "img": "https://static.slot7hub.com/providers/ibgames/linked_data/logos/FruitScapes.jpg",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:1118",
+  "gameNameEn": "Hot Fruits Wheel",
+  "img": "https://static.slot7hub.com/providers/amatic/linked_data/logos/HotFruitsWheel.jpg",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:1119",
+  "gameNameEn": "Fruit Yard",
+  "img": "https://static.slot7hub.com/providers/ibgames/linked_data/logos/FruitYard.jpg",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:1120",
+  "gameNameEn": "Crazy Carnival Wheel",
+  "img": "https://static.slot7hub.com/providers/ibgames/linked_data/logos/CrazyCarnivalWheel.jpg",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:1121",
+  "gameNameEn": "Chilli Lucky Wheel",
+  "img": "https://static.slot7hub.com/providers/ibgames/linked_data/logos/ChilliLuckyWheel.jpg",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:1122",
+  "gameNameEn": "Fruits Fortune Wheel",
+  "img": "https://static.slot7hub.com/providers/ibgames/linked_data/logos/FruitsFortuneWheel.jpg",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:1134",
+  "gameNameEn": "Bright Circus Stars",
+  "img": "https://static.slot7hub.com/providers/ibgames/linked_data/logos/BrightCircusStars.jpg",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:1135",
+  "gameNameEn": "20 Candies",
+  "img": "https://static.slot7hub.com/providers/ibgames/linked_data/logos/20Candies.jpg",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:1136",
+  "gameNameEn": "20 Peppers",
+  "img": "https://static.slot7hub.com/providers/ibgames/linked_data/logos/20Peppers.jpg",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:1137",
+  "gameNameEn": "Clovernesity",
+  "img": "https://static.slot7hub.com/providers/ibgames/linked_data/logos/Clovernesity.jpg",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:1138",
+  "gameNameEn": "Clover`s Treasure Quest",
+  "img": "https://static.slot7hub.com/providers/ibgames/linked_data/logos/CloversTreasureQuest.jpg",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:1139",
+  "gameNameEn": "Dwarf`s Cave Treasures",
+  "img": "https://static.slot7hub.com/providers/ibgames/linked_data/logos/DwarfsCaveTreasures.jpg",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:1140",
+  "gameNameEn": "Gold Coins Barrel",
+  "img": "https://static.slot7hub.com/providers/ibgames/linked_data/logos/GoldCoinsBarrel.jpg",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:1141",
+  "gameNameEn": "Enchanted Expedition",
+  "img": "https://static.slot7hub.com/providers/ibgames/linked_data/logos/EnchantedExpedition.jpg",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:1143",
+  "gameNameEn": "Dwarf`s Treasure Cavern",
+  "img": "https://static.slot7hub.com/providers/ibgames/linked_data/logos/DwarfsTreasureCavern.jpg",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:1144",
+  "gameNameEn": "Jewel Night",
+  "img": "https://static.slot7hub.com/providers/ibgames/linked_data/logos/JewelNight.jpg",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:1145",
+  "gameNameEn": "Chilli Winnings",
+  "img": "https://static.slot7hub.com/providers/ibgames/linked_data/logos/ChilliWinnings.jpg",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:1146",
+  "gameNameEn": "Chilliomatic",
+  "img": "https://static.slot7hub.com/providers/ibgames/linked_data/logos/Chilliomatic.jpg",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:1147",
+  "gameNameEn": "Crazy Carousel",
+  "img": "https://static.slot7hub.com/providers/ibgames/linked_data/logos/CrazyCarousel.jpg",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:1149",
+  "gameNameEn": "Wolf`s Valor",
+  "img": "https://cdn.inbetgames.com/thumb/ib_wv.png",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:696",
+  "gameNameEn": "The Dollar Game",
+  "img": "https://cdn.inbetgames.com/thumb/ib_tdg.png",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:708",
+  "gameNameEn": "The Pesos Game",
+  "img": "https://cdn.inbetgames.com/thumb/ib_tpg.png",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:759",
+  "gameNameEn": "The Euro Game",
+  "img": "https://stage.gis-static.com/games/2d90c08b7b6927b4a04aa1b58f6bc336/Novomatic/36e0b062f91f48e28ba8ce7cdaef742a.png",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:760",
+  "gameNameEn": "Phoenix`s Fruits",
+  "img": "https://cdn.inbetgames.com/thumb/a_phf.png",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:761",
+  "gameNameEn": "Havana Club",
+  "img": "https://lh3.googleusercontent.com/d/1Mm5w7b9TQK7G5HJQg1C3pZhIfvXwDwop",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:762",
+  "gameNameEn": "Habichuelas - Skill Pick",
+  "img": "https://lh3.googleusercontent.com/d/1ilL19x5f3ry4GB4yUOvWxB6IYuLp6c6N",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:763",
+  "gameNameEn": "Habichuelas",
+  "img": "https://lh3.googleusercontent.com/d/1mQEbz5At5im9Q3r--280KlOSsCfp4M4k",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:764",
+  "gameNameEn": "SuperBall Keno",
+  "img": "https://lh3.googleusercontent.com/d/1Gw7gi0IJBBZnKsZywqdtZTlIkP46oLUI",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:765",
+  "gameNameEn": "Kickers Keno",
+  "img": "https://lh3.googleusercontent.com/d/1Dh38sIMTplW97uJiHM_twW9mWYcFgTcu",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ },
+ {
+  "gameID": "black:ib:766",
+  "gameNameEn": "Heart Of Princess",
+  "img": "https://cdn.inbetgames.com/thumb/a_hp.png",
+  "customGameType": 0,
+  "vendorCode": "InBet",
+  "provider": "inbet",
+  "category": "Slot"
+ }
+]

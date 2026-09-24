@@ -1,0 +1,209 @@
+[
+ {
+  "gameID": "oliver:oliver:1",
+  "gameNameEn": "Real Casino Roulette",
+  "img": "https://cdn.wingene.games/1/tables/desktop/1.png",
+  "customGameType": 1,
+  "vendorCode": "algNET",
+  "provider": "algnet",
+  "category": "Croupier roulette"
+ },
+ {
+  "gameID": "oliver:oliver:14",
+  "gameNameEn": "Absolute RNG",
+  "img": "https://cdn.wingene.games/1/tables/desktop/14.png",
+  "customGameType": 1,
+  "vendorCode": "algNET",
+  "provider": "algnet",
+  "category": "RNG Roulette"
+ },
+ {
+  "gameID": "oliver:oliver:15",
+  "gameNameEn": "MSC Casino",
+  "img": "https://cdn.wingene.games/1/tables/desktop/15.png",
+  "customGameType": 1,
+  "vendorCode": "algNET",
+  "provider": "algnet",
+  "category": "Croupier roulette"
+ },
+ {
+  "gameID": "oliver:oliver:18",
+  "gameNameEn": "Absolute Bright",
+  "img": "https://cdn.wingene.games/1/tables/desktop/18.png",
+  "customGameType": 1,
+  "vendorCode": "algNET",
+  "provider": "algnet",
+  "category": "Automatic Roulette"
+ },
+ {
+  "gameID": "oliver:oliver:2",
+  "gameNameEn": "Absolute Black",
+  "img": "https://cdn.wingene.games/1/tables/desktop/2.png",
+  "customGameType": 1,
+  "vendorCode": "algNET",
+  "provider": "algnet",
+  "category": "Automatic Roulette"
+ },
+ {
+  "gameID": "oliver:oliver:28",
+  "gameNameEn": "Casino de Guadalajara",
+  "img": "https://cdn.wingene.games/1/tables/desktop/28.png",
+  "customGameType": 1,
+  "vendorCode": "algNET",
+  "provider": "algnet",
+  "category": "Croupier roulette"
+ },
+ {
+  "gameID": "oliver:oliver:3",
+  "gameNameEn": "Oracle Blaze",
+  "img": "https://cdn.wingene.games/1/tables/desktop/3.png",
+  "customGameType": 1,
+  "vendorCode": "algNET",
+  "provider": "algnet",
+  "category": "Croupier roulette"
+ },
+ {
+  "gameID": "oliver:oliver:30",
+  "gameNameEn": "American Roulette",
+  "img": "https://cdn.wingene.games/1/tables/desktop/30.png",
+  "customGameType": 1,
+  "vendorCode": "algNET",
+  "provider": "algnet",
+  "category": "Automatic Roulette"
+ },
+ {
+  "gameID": "oliver:oliver:31",
+  "gameNameEn": "Las Vegas Roulette",
+  "img": "https://cdn.wingene.games/1/tables/desktop/31.png",
+  "customGameType": 1,
+  "vendorCode": "algNET",
+  "provider": "algnet",
+  "category": "Automatic Roulette"
+ },
+ {
+  "gameID": "oliver:oliver:36",
+  "gameNameEn": "Casino de Guadalajara Auto",
+  "img": "https://cdn.wingene.games/1/tables/desktop/36.png",
+  "customGameType": 1,
+  "vendorCode": "algNET",
+  "provider": "algnet",
+  "category": "Automatic Roulette"
+ },
+ {
+  "gameID": "oliver:oliver:37",
+  "gameNameEn": "Roulette 360",
+  "img": "https://cdn.wingene.games/1/tables/desktop/37.png",
+  "customGameType": 1,
+  "vendorCode": "algNET",
+  "provider": "algnet",
+  "category": "Croupier roulette"
+ },
+ {
+  "gameID": "oliver:oliver:39",
+  "gameNameEn": "Bond La Partage",
+  "img": "https://cdn.wingene.games/1/tables/desktop/39.png",
+  "customGameType": 1,
+  "vendorCode": "algNET",
+  "provider": "algnet",
+  "category": "Automatic Roulette"
+ },
+ {
+  "gameID": "oliver:oliver:4",
+  "gameNameEn": " VIP Roulette",
+  "img": "https://cdn.wingene.games/1/tables/desktop/4.png",
+  "customGameType": 1,
+  "vendorCode": "algNET",
+  "provider": "algnet",
+  "category": "Croupier roulette"
+ },
+ {
+  "gameID": "oliver:oliver:415",
+  "gameNameEn": "Endless BlackJack",
+  "img": "https://cdn.wingene.games/1/tables/desktop/415.png",
+  "customGameType": 1,
+  "vendorCode": "algNET",
+  "provider": "algnet",
+  "category": "BlackJack"
+ },
+ {
+  "gameID": "oliver:oliver:425",
+  "gameNameEn": "Endless BlackJack 2",
+  "img": "https://cdn.wingene.games/1/tables/desktop/425.png",
+  "customGameType": 1,
+  "vendorCode": "algNET",
+  "provider": "algnet",
+  "category": "BlackJack"
+ },
+ {
+  "gameID": "oliver:oliver:5",
+  "gameNameEn": "Absolute Brown",
+  "img": "https://cdn.wingene.games/1/tables/desktop/5.png",
+  "customGameType": 1,
+  "vendorCode": "algNET",
+  "provider": "algnet",
+  "category": "Croupier roulette"
+ },
+ {
+  "gameID": "oliver:oliver:55",
+  "gameNameEn": "Genies prize roulette",
+  "img": "https://cdn.wingene.games/1/tables/desktop/55.png",
+  "customGameType": 1,
+  "vendorCode": "algNET",
+  "provider": "algnet",
+  "category": "Automatic Roulette"
+ },
+ {
+  "gameID": "oliver:oliver:811",
+  "gameNameEn": "Portal Roulette",
+  "img": "https://cdn.wingene.games/1/tables/desktop/811.png",
+  "customGameType": 1,
+  "vendorCode": "algNET",
+  "provider": "algnet",
+  "category": "Croupier roulette"
+ },
+ {
+  "gameID": "oliver:oliver:820",
+  "gameNameEn": "Deep Space Roulette",
+  "img": "https://cdn.wingene.games/1/tables/desktop/820.png",
+  "customGameType": 1,
+  "vendorCode": "algNET",
+  "provider": "algnet",
+  "category": "Automatic Roulette"
+ },
+ {
+  "gameID": "oliver:oliver:821",
+  "gameNameEn": "Starlight Roulette",
+  "img": "https://cdn.wingene.games/1/tables/desktop/821.png",
+  "customGameType": 1,
+  "vendorCode": "algNET",
+  "provider": "algnet",
+  "category": "Automatic Roulette"
+ },
+ {
+  "gameID": "oliver:oliver:85",
+  "gameNameEn": "Desert Roulette",
+  "img": "https://cdn.wingene.games/1/tables/desktop/85.png",
+  "customGameType": 1,
+  "vendorCode": "algNET",
+  "provider": "algnet",
+  "category": "Automatic Roulette"
+ },
+ {
+  "gameID": "oliver:oliver:880",
+  "gameNameEn": "Blue Wave Roulette",
+  "img": "https://cdn.wingene.games/1/tables/desktop/880.png",
+  "customGameType": 1,
+  "vendorCode": "algNET",
+  "provider": "algnet",
+  "category": "Croupier roulette"
+ },
+ {
+  "gameID": "oliver:oliver:99",
+  "gameNameEn": "Roulette Prague",
+  "img": "https://cdn.wingene.games/1/tables/desktop/99.png",
+  "customGameType": 1,
+  "vendorCode": "algNET",
+  "provider": "algnet",
+  "category": "Croupier roulette"
+ }
+]

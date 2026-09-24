@@ -20,6 +20,7 @@ const CRASH_PROVIDERS = new Set([
 
 // Live casino providers
 const LIVE_PROVIDERS = new Set([
+  "evolution-gaming", // Gregmorn catalog
   "evolutionlive",
   "pragmaticplaylive-eu",
   "pragmaticplaylive-asia",
@@ -31,9 +32,22 @@ const LIVE_PROVIDERS = new Set([
   "ezugi",
 ]);
 
-// Disabled providers — hidden everywhere (they don't accept our currency /
-// aren't working). Their games are filtered out of every list.
-const HIDDEN_PROVIDERS = new Set([
+// Which catalog is loaded — hidden lists are provider-account specific.
+const CATALOG_DIR = process.env.GAME_LIST_DIR || "game_list";
+const IS_GREGMORN_CATALOG = CATALOG_DIR.includes("gregmorn");
+
+// Gregmorn: sportsbooks launch through the sports pane, never as casino tiles.
+// Everything else in their ETB feed is enabled for our account.
+const GREGMORN_HIDDEN_PROVIDERS = new Set([
+  "sports-betby",
+  "sportslab",
+  "sportshub",
+  "altenar",
+]);
+
+// Silent: disabled providers — hidden everywhere (they don't accept our
+// currency / aren't working). Their games are filtered out of every list.
+const SILENT_HIDDEN_PROVIDERS = new Set([
   "jili",
   "hacksaw-asia",
   "cq9",
@@ -60,6 +74,8 @@ const HIDDEN_PROVIDERS = new Set([
   "ygrgaming",
   "ws168_en",
 ]);
+
+const HIDDEN_PROVIDERS = IS_GREGMORN_CATALOG ? GREGMORN_HIDDEN_PROVIDERS : SILENT_HIDDEN_PROVIDERS;
 
 // ── Shuffle helpers ───────────────────────────────────────────────────────────
 
@@ -115,8 +131,9 @@ function parseGameFile(raw: string, providerSlug: string): Game[] {
 }
 
 function loadAllGames(): Game[] {
-  // Read directly from the game_list folder at the project root
-  const dir = path.join(process.cwd(), "game_list");
+  // Catalog dir is switchable: game_list (Silent) is the default;
+  // game_list-gregmorn is written by scripts/sync-gregmorn-games.mjs.
+  const dir = path.join(process.cwd(), CATALOG_DIR);
   if (!fs.existsSync(dir)) return [];
   const files = fs.readdirSync(dir).filter((f) => f.endsWith(".json"));
   const all: Game[] = [];
