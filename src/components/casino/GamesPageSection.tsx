@@ -19,11 +19,12 @@ interface Props {
 export function GamesPageSection({ popularGames, crashGames, slotGames, newGames }: Props) {
   // Tabs only exist when they have games — a catalog with no crash
   // providers (e.g. Gregmorn) must not default onto an empty tab.
-  const tabs: { id: Filter; label: string; icon: React.ElementType; games: Game[] }[] = [
+  const allTabs: { id: Filter; label: string; icon: React.ElementType; games: Game[] }[] = [
     { id: "crash", label: "Crash & Instant", icon: Rocket,   games: crashGames },
     { id: "slots", label: "Slots",           icon: Gamepad2, games: slotGames  },
     { id: "new",   label: "New Games",       icon: Sparkles, games: newGames   },
-  ].filter((t) => t.games.length > 0);
+  ];
+  const tabs = allTabs.filter((t) => t.games.length > 0);
 
   const [selected, setSelected] = useState<Filter | null>(null);
   const active = tabs.find((t) => t.id === selected) ?? tabs[0];
