@@ -192,6 +192,14 @@ export default function AgentTicketDetailPage() {
   const fileRef = useRef<HTMLInputElement>(null);
   const printed = useRef(false);
 
+  // Browser print headers show the document title — keep it short so the
+  // long site title doesn't print at the top of the ticket.
+  useEffect(() => {
+    const prev = document.title;
+    document.title = "VinnaBet";
+    return () => { document.title = prev; };
+  }, []);
+
   const load = useCallback(async () => {
     const res = await fetch(`/api/agent/tickets/${id}`);
     if (!res.ok) { setError("Ticket not found"); return; }
@@ -233,8 +241,10 @@ export default function AgentTicketDetailPage() {
       {/* Printable ticket body */}
       <div className="bg-[var(--bg-surface)] border border-[color:var(--border-muted)] rounded-2xl p-5 print:border-black print:bg-white print:text-black">
         <div className="text-center border-b border-dashed border-[color:var(--border-muted)] pb-3 mb-3">
-          <p className="font-display text-2xl font-extrabold tracking-wide">Vinna<span className="text-gold-grad print:text-black">Bet</span></p>
-          <p className="text-[11px] text-[color:var(--text-muted)]">Bet Ticket</p>
+          <p className="font-display text-2xl font-extrabold tracking-wide flex items-baseline justify-center gap-2">
+            Vinna<span className="text-gold-grad print:text-black">Bet</span>
+            <span className="text-[11px] font-normal tracking-normal text-[color:var(--text-muted)] print:text-black">Bet Ticket</span>
+          </p>
         </div>
 
         <p className="text-center font-mono text-xl font-bold tracking-widest mb-3">{ticket.publicId}</p>
