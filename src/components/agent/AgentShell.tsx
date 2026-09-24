@@ -95,12 +95,12 @@ export function AgentShell({ children }: { children: React.ReactNode }) {
   );
 
   return (
-    <div className="min-h-screen flex bg-[var(--bg-base)]">
-      <aside className="hidden md:flex flex-col w-56 shrink-0 border-r border-[color:var(--border-muted)] bg-[var(--bg-surface)] fixed inset-y-0 left-0 z-30">
+    <div className="min-h-screen flex bg-[var(--bg-base)] print:block print:min-h-0">
+      <aside className="hidden md:flex print:hidden flex-col w-56 shrink-0 border-r border-[color:var(--border-muted)] bg-[var(--bg-surface)] fixed inset-y-0 left-0 z-30">
         {sidebarContent}
       </aside>
 
-      <div className="md:hidden fixed top-0 left-0 right-0 z-50 h-12 flex items-center justify-between px-4 bg-[var(--bg-surface)] border-b border-[color:var(--border-muted)]">
+      <div className="md:hidden print:hidden fixed top-0 left-0 right-0 z-50 h-12 flex items-center justify-between px-4 bg-[var(--bg-surface)] border-b border-[color:var(--border-muted)]">
         <p className="font-display text-[14px] font-extrabold text-[color:var(--text-primary)]">
           Vinna<span className="text-gold-grad">Bet</span>{" "}
           <span className="text-[color:var(--text-muted)] font-normal text-[12px]">Agent</span>
@@ -111,7 +111,7 @@ export function AgentShell({ children }: { children: React.ReactNode }) {
       </div>
 
       {sidebarOpen && (
-        <div className="md:hidden fixed inset-0 z-40 bg-black/60" onClick={() => setSidebarOpen(false)}>
+        <div className="md:hidden print:hidden fixed inset-0 z-40 bg-black/60" onClick={() => setSidebarOpen(false)}>
           <div className="w-56 h-full bg-[var(--bg-surface)] border-r border-[color:var(--border-muted)] flex flex-col" onClick={(e) => e.stopPropagation()}>
             <div className="h-12" />
             {sidebarContent}
@@ -119,7 +119,7 @@ export function AgentShell({ children }: { children: React.ReactNode }) {
         </div>
       )}
 
-      <main className="flex-1 min-w-0 pt-12 md:pt-0 md:pl-56 overflow-auto">{children}</main>
+      <main className="flex-1 min-w-0 pt-12 md:pt-0 md:pl-56 overflow-auto print:p-0 print:overflow-visible">{children}</main>
 
       {/* Open-ticket draft bar — visible on /sports while betting for a customer */}
       <AgentTicketPanel />

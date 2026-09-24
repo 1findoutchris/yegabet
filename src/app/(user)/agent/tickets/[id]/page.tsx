@@ -235,13 +235,12 @@ export default function AgentTicketDetailPage() {
   if (!ticket) return <div className="flex justify-center py-16"><Loader2 className="w-6 h-6 animate-spin text-[color:var(--gold)]" /></div>;
 
   return (
-    <div className="p-4 md:p-6 max-w-md mx-auto">
+    <div className="p-4 md:p-6 max-w-md mx-auto print:p-0">
       {/* Printable ticket body */}
-      <div className="bg-[var(--bg-surface)] border border-[color:var(--border-muted)] rounded-2xl p-5 print:border-black print:bg-white print:text-black">
-        <div className="text-center border-b border-dashed border-[color:var(--border-muted)] pb-3 mb-3">
-          <p className="font-display text-2xl font-extrabold tracking-wide flex items-baseline justify-center gap-2">
-            Vinna<span className="text-gold-grad print:text-black">Bet</span>
-            <span className="text-[11px] font-normal tracking-normal text-[color:var(--text-muted)] print:text-black">Bet Ticket</span>
+      <div className="ticket-print bg-[var(--bg-surface)] border border-[color:var(--border-muted)] rounded-2xl p-5 print:rounded-none print:border-0 print:p-0 print:bg-white print:text-black print:[&_*]:!text-black print:[&_*]:!border-black">
+        <div className="border-b border-dashed border-[color:var(--border-muted)] pb-3 mb-3">
+          <p className="font-display text-4xl font-extrabold leading-none text-center">
+            Vinna<span className="text-gold-grad print:[background:none]">Bet</span>
           </p>
         </div>
 
@@ -261,7 +260,7 @@ export default function AgentTicketDetailPage() {
                 {slip.selections.length > 0 ? (
                   <>
                     {slip.selections.map((s, j) => (
-                      <div key={j} className="py-2 border-b border-[color:var(--border-muted)]">
+                      <div key={j} className="py-2 border-b border-[color:var(--border-muted)] break-inside-avoid">
                         <p className="font-semibold">{s.match}</p>
                         {s.marketPick && <p>{s.marketPick}</p>}
                         {s.odds && <p>Odds: {s.odds}</p>}
@@ -269,11 +268,11 @@ export default function AgentTicketDetailPage() {
                     ))}
                     {(slip.totalOdds || slip.betType) && (
                       <div className="flex justify-between py-2 border-b border-[color:var(--border-muted)]">
-                        {slip.totalOdds && <span>Total Odds: {slip.totalOdds}</span>}
+                        {slip.totalOdds && <span>Total Odds: {Number(slip.totalOdds).toLocaleString(undefined, { maximumFractionDigits: 2 })}</span>}
                         {slip.betType && <span className="ml-auto">{slip.betType}</span>}
                       </div>
                     )}
-                    <div className="py-2 text-right space-y-0.5">
+                    <div className="py-2 text-right space-y-0.5 break-inside-avoid">
                       <p>Stake: {Number(b.betAmount).toLocaleString()} ETB</p>
                       {potential !== null && !b.settled && (
                         <p>Potential Win: {potential.toLocaleString(undefined, { maximumFractionDigits: 2 })} ETB</p>
@@ -310,7 +309,7 @@ export default function AgentTicketDetailPage() {
           })}
         </div>
 
-        <div className="border-t border-dashed border-[color:var(--border-muted)] pt-3 flex justify-between text-[13px] font-bold">
+        <div className="border-t border-dashed border-[color:var(--border-muted)] pt-3 flex justify-between text-[13px] font-bold break-inside-avoid">
           <span>Total stake</span><span>{Number(ticket.totalStake).toLocaleString()} ETB</span>
         </div>
         {Number(ticket.totalWin) > 0 && (

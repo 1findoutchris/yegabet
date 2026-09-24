@@ -65,7 +65,7 @@ export function SportsPane({ agentMode = false }: { agentMode?: boolean }) {
      * display:none keeps the element alive (iframe state preserved) but off-screen.
      */
     <div
-      className={
+      className={"print:hidden " + (
         isActive
           ? agentMode
             // Agent shell: mobile top bar (h-12), desktop sidebar (w-56), and
@@ -73,7 +73,7 @@ export function SportsPane({ agentMode = false }: { agentMode?: boolean }) {
             ? "fixed left-0 right-0 top-12 bottom-16 md:top-0 md:left-56 z-10 bg-[var(--bg-base)]"
             : "fixed left-0 right-0 top-14 bottom-[calc(4rem+env(safe-area-inset-bottom))] md:bottom-0 z-10 bg-[var(--bg-base)]"
           : "hidden"
-      }
+      )}
     >
       {/* Loading — stays up until the iframe has loaded AND rendered */}
       {(status === "loading" || (url && !frameReady)) && (

@@ -186,6 +186,16 @@ body::before {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
+/* Printing (agent tickets): plain black-on-white, no dark theme fills. */
+@media print {
+  @page { margin: 0; }
+  html, body { background: #fff !important; color: #000 !important; }
+  body { padding: 8mm !important; }
+  body::before { display: none !important; }
+  body * { background: transparent !important; box-shadow: none !important; }
+  .ticket-print, .ticket-print * { color: #000 !important; border-color: #000 !important; }
+}
+
 /* ── Vegas Luxe utility helpers ───────────────────────────────────────────── */
 .font-display    { font-family: var(--font-display), var(--font-outfit), sans-serif; }
 .text-gold-grad  { background: var(--grad-gold); -webkit-background-clip: text; background-clip: text; color: transparent; }
