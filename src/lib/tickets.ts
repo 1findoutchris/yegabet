@@ -58,7 +58,9 @@ export async function attachBetToOpenTicket(
   transactionId: string,
   betAmount: number,
   gameRound: string | null,
-  winAmount = 0
+  winAmount = 0,
+  gameId: string | null = null,
+  info: unknown = undefined
 ): Promise<string | null> {
   const ticket = await tx.ticket.findFirst({
     where: { agentId, status: "OPEN" },
@@ -72,6 +74,9 @@ export async function attachBetToOpenTicket(
       ticketId: ticket.id,
       transactionId,
       gameRound,
+      gameId,
+      // undefined → column stays NULL; null → JSON null. Only store real payloads.
+      info: info === undefined || info === null ? undefined : (info as Prisma.InputJsonValue),
       betAmount,
       winAmount: roundETB(winAmount),
       settled,

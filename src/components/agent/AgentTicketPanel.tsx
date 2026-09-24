@@ -2,15 +2,20 @@
 
 import { usePathname, useRouter } from "next/navigation";
 import { useState, useEffect, useCallback } from "react";
-import { Ticket, Plus, X, Printer, Loader2 } from "lucide-react";
+import { Ticket, Plus, Printer, Loader2 } from "lucide-react";
 
 /*
- * The open-ticket draft bar. Lives at the bottom of /sports for in-person
- * agents: start a draft (customer name + phone), watch BET transactions attach
- * as the wallet callback lands them, then issue + print or cancel.
+ * The open-ticket draft bar + ticket gate. Lives on /sports for in-person
+ * agents.
  *
- * Polls while a draft is open — the callback attaches bets asynchronously, so
- * the stake total updates a beat after the customer sees the bet placed.
+ * GATE: with no OPEN ticket the whole sportsbook is covered by a blocking
+ * create-ticket form — an agent cannot reach the betslip without a customer
+ * ticket, so no bet can ever land unticketed. The iframe stays mounted behind
+ * the overlay (no reload when the gate lifts).
+ *
+ * BAR: with an OPEN ticket it shrinks to the bottom bar — watch BET
+ * transactions attach as the wallet callback lands them, then issue + print
+ * or cancel. Polls while on /sports since attaches are asynchronous.
  */
 
 interface OpenTicket {
@@ -26,7 +31,7 @@ export function AgentTicketPanel() {
   const pathname = usePathname();
   const router = useRouter();
   const [open, setOpen] = useState<OpenTicket | null>(null);
-  const [starting, setStarting] = useState(false);
+  const [loaded, setLoaded] = useState(false);
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [busy, setBusy] = useState(false);
@@ -36,9 +41,11 @@ export function AgentTicketPanel() {
 
   const refresh = useCallback(async () => {
     const res = await fetch("/api/agent/tickets?status=OPEN").catch(() => null);
-    if (!res?.ok) return;
-    const data = await res.json();
-    setOpen(data.tickets?.[0] ?? null);
+    if (res?.ok) {
+      const data = await res.json();
+      setOpen(data.tickets?.[0] ?? null);
+    }
+    setLoaded(true);
   }, []);
 
   useEffect(() => {
@@ -63,7 +70,7 @@ export function AgentTicketPanel() {
       setError(d.error ?? "Could not open ticket");
       return;
     }
-    setStarting(false); setName(""); setPhone("");
+    setName(""); setPhone("");
     refresh();
   }
 
@@ -88,32 +95,40 @@ export function AgentTicketPanel() {
     setOpen(null);
   }
 
+  // Gate — no open ticket: cover the sportsbook until one is created.
+  // `loaded` avoids flashing the gate before the first poll returns.
+  if (!open) {
+    if (!loaded) return null;
+    return (
+      <div className="fixed inset-0 md:left-56 z-30 bg-[var(--bg-base)] flex items-center justify-center p-6">
+        <div className="w-full max-w-sm bg-[var(--bg-surface)] border border-[color:var(--border-muted)] rounded-2xl p-6 space-y-4">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-[var(--bg-accent-dim)] flex items-center justify-center">
+              <Ticket className="w-5 h-5 text-[color:var(--gold)]" />
+            </div>
+            <div>
+              <h2 className="text-[15px] font-bold text-[color:var(--text-primary)]">Open a ticket first</h2>
+              <p className="text-[12px] text-[color:var(--text-secondary)]">Every bet must go on a customer ticket.</p>
+            </div>
+          </div>
+          {error && <p className="text-[12px] text-[color:var(--red)]">{error}</p>}
+          <input value={name} onChange={(e) => setName(e.target.value)} placeholder="Customer name" autoFocus
+            className="w-full px-3 py-2.5 rounded-lg bg-[var(--bg-elevated)] text-[13px] text-[color:var(--text-primary)] border border-[color:var(--border-muted)]" />
+          <input value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Customer phone"
+            className="w-full px-3 py-2.5 rounded-lg bg-[var(--bg-elevated)] text-[13px] text-[color:var(--text-primary)] border border-[color:var(--border-muted)]" />
+          <button onClick={start} disabled={busy || name.trim().length < 2 || phone.trim().length < 7}
+            className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-[var(--gold)] text-black text-[13px] font-bold disabled:opacity-40">
+            {busy ? <Loader2 className="w-4 h-4 animate-spin" /> : <Plus className="w-4 h-4" />}
+            Open ticket & continue
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="fixed bottom-0 left-0 right-0 md:left-56 z-20 bg-[var(--bg-surface)] border-t border-[color:var(--border-muted)] px-4 py-3">
       {error && <p className="text-[12px] text-[color:var(--red)] mb-2">{error}</p>}
-
-      {!open && !starting && (
-        <button onClick={() => setStarting(true)}
-          className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[var(--bg-accent-dim)] text-[color:var(--gold)] text-[13px] font-semibold border border-[color:var(--border-accent)]">
-          <Plus className="w-4 h-4" /> New ticket
-        </button>
-      )}
-
-      {!open && starting && (
-        <div className="flex flex-wrap items-center gap-2">
-          <input value={name} onChange={(e) => setName(e.target.value)} placeholder="Customer name"
-            className="px-3 py-2 rounded-lg bg-[var(--bg-elevated)] text-[13px] text-[color:var(--text-primary)] border border-[color:var(--border-muted)] w-40" />
-          <input value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Phone"
-            className="px-3 py-2 rounded-lg bg-[var(--bg-elevated)] text-[13px] text-[color:var(--text-primary)] border border-[color:var(--border-muted)] w-36" />
-          <button onClick={start} disabled={busy || name.trim().length < 2 || phone.trim().length < 7}
-            className="px-4 py-2 rounded-lg bg-[var(--gold)] text-black text-[13px] font-bold disabled:opacity-40">
-            {busy ? <Loader2 className="w-4 h-4 animate-spin" /> : "Open"}
-          </button>
-          <button onClick={() => setStarting(false)} className="p-2 text-[color:var(--text-muted)]">
-            <X className="w-4 h-4" />
-          </button>
-        </div>
-      )}
 
       {open && (
         <div className="flex flex-wrap items-center gap-3">

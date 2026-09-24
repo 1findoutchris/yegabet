@@ -239,7 +239,10 @@ async function handleWriteBet(payload: CallbackPayload, userId: string) {
       }
       if (user.role === "IN_PERSON_AGENT") {
         if (betETB > 0) {
-          await attachBetToOpenTicket(tx, user.id, txn.id, betETB, roundRef, winETB);
+          await attachBetToOpenTicket(
+            tx, user.id, txn.id, betETB, roundRef, winETB,
+            payload.gameId ?? null, payload.info
+          );
         } else if (winETB > 0) {
           await settleTicketBet(tx, user.id, roundRef, winETB);
         }

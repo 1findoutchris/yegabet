@@ -172,7 +172,10 @@ export async function POST(req: NextRequest) {
       if (user.role === "IN_PERSON_AGENT") {
         if (betETB > 0) {
           // Pure bet or combined round — attach to the open ticket draft.
-          await attachBetToOpenTicket(tx, user.id, txn.id, betETB, payload.game_round ?? null, winETB);
+          await attachBetToOpenTicket(
+            tx, user.id, txn.id, betETB, payload.game_round ?? null, winETB,
+            payload.game_uid ?? null, payload.data
+          );
         } else if (winETB > 0) {
           // Pure win — settle the matching ticket bet by provider round id.
           await settleTicketBet(tx, user.id, payload.game_round ?? null, winETB);

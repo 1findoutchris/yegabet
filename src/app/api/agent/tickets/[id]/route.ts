@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { requireInPersonAgent, isAgentAuthError } from "@/lib/agentAuth";
+import { getGamesByIds } from "@/lib/games";
 
 /**
  * GET — one ticket with its bets. The agent uses this for the printable view
@@ -23,5 +24,17 @@ export async function GET(_req: NextRequest, { params }: { params: Promise<{ id:
   });
 
   if (!ticket) return NextResponse.json({ error: "Ticket not found" }, { status: 404 });
-  return NextResponse.json({ ticket });
+
+  // Resolve provider game uids to display names for the printed slip.
+  // Sportsbook bets carry the sportsbook uid — label it directly.
+  const gameIds = ticket.bets.map((b) => b.gameId).filter((g): g is string => !!g);
+  const catalog = new Map(getGamesByIds(gameIds).map((g) => [g.gameID, g.gameNameEn]));
+  const bets = ticket.bets.map((b) => ({
+    ...b,
+    gameName: b.gameId
+      ? b.gameId.includes("sports") ? "Sportsbook" : (catalog.get(b.gameId) ?? b.gameId)
+      : null,
+  }));
+
+  return NextResponse.json({ ticket: { ...ticket, bets } });
 }

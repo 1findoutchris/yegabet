@@ -753,6 +753,12 @@ model TicketBet {
   ticketId      String
   transactionId String   @unique // the BET Transaction row (reference = serial_number)
   gameRound     String?
+  // Provider game uid ("black:3oaks:1040", "nova:sports-betby:sports") — maps
+  // to catalog gameID for display. NULL on old rows.
+  gameId        String?
+  // Raw provider payload extras (Gregmorn `info`, Silent `data`) — carries the
+  // bet-slip detail (matches, odds, provider ticket id) for sportsbook bets.
+  info          Json?
   betAmount     Decimal  @db.Decimal(12, 2)
   winAmount     Decimal  @default(0) @db.Decimal(12, 2)
   settled       Boolean  @default(false)
