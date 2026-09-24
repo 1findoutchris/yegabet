@@ -47,11 +47,13 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ skip: true });
   }
 
-  const existing = await prisma.user.findUnique({ where: { phone }, select: { id: true } });
+  const existing = await prisma.user.findUnique({ where: { phone }, select: { id: true, role: true } });
   if (purpose === "register" && existing) {
     return NextResponse.json({ error: "Phone number already registered" }, { status: 409 });
   }
-  if (purpose === "reset" && !existing) {
+  // In-person agents can't self-reset from the public site — admin manages
+  // their passwords. Same answer as an unknown number so it reveals nothing.
+  if (purpose === "reset" && (!existing || existing.role === "IN_PERSON_AGENT")) {
     return NextResponse.json({ error: "No account found for this number." }, { status: 404 });
   }
 

@@ -7,7 +7,15 @@ import { z } from "zod";
 const loginSchema = z.object({
   phone: z.string().min(1),
   password: z.string().min(1),
+  // Sent only by the in-person agent portal (/in-person-agent/<secret>/login).
+  portalSecret: z.string().optional(),
 });
+
+// Inlined rather than imported from agentAuth.ts, which imports this module.
+function isAgentPortal(secret: string | undefined): boolean {
+  const expected = process.env.IN_PERSON_AGENT_SECRET;
+  return !!expected && secret === expected;
+}
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   providers: [
@@ -15,6 +23,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       credentials: {
         phone: { label: "Phone", type: "text" },
         password: { label: "Password", type: "password" },
+        portalSecret: { label: "Portal secret", type: "text" },
       },
       async authorize(credentials) {
         const parsed = loginSchema.safeParse(credentials);
@@ -28,6 +37,12 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
 
         const passwordMatch = await bcrypt.compare(parsed.data.password, user.passwordHash);
         if (!passwordMatch) return null;
+
+        // In-person agents sign in ONLY through their secret portal, and the
+        // portal signs in ONLY in-person agents. Same null (generic "incorrect"
+        // error) either way, so neither login screen reveals the other exists.
+        const isAgent = user.role === "IN_PERSON_AGENT";
+        if (isAgent !== isAgentPortal(parsed.data.portalSecret)) return null;
 
         return {
           id: user.id,

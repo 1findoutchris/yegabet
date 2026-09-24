@@ -5,7 +5,7 @@ import { getGamesByIds } from "@/lib/games";
 
 /**
  * GET — one ticket with its bets. The agent uses this for the printable view
- * and to double-check name/phone when a customer comes back to collect.
+ * and to look up the ticket code when a customer comes back to collect.
  */
 export async function GET(_req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const auth = await requireInPersonAgent();

@@ -33,14 +33,15 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const user = await prisma.user.findUnique({ where: { phone }, select: { id: true, isActive: true } });
+    const user = await prisma.user.findUnique({ where: { phone }, select: { id: true, isActive: true, role: true } });
 
     // Verify the code before checking the account so a wrong code always burns
     // an attempt — otherwise this becomes a phone-number oracle.
     const otp = await verifyOtp(phone, code);
     if (!otp.ok) return NextResponse.json({ error: otp.error }, { status: otp.status });
 
-    if (!user || !user.isActive) {
+    // In-person agents' passwords are admin-managed (see otp/send).
+    if (!user || !user.isActive || user.role === "IN_PERSON_AGENT") {
       return NextResponse.json({ error: "No account found for this number." }, { status: 404 });
     }
 

@@ -1,18 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
-import { z } from "zod";
 import { prisma } from "@/lib/prisma";
 import { requireInPersonAgent, isAgentAuthError } from "@/lib/agentAuth";
 import { generateTicketCode } from "@/lib/tickets";
 
-const createSchema = z.object({
-  customerName: z.string().trim().min(2).max(80),
-  customerPhone: z.string().trim().min(7).max(20),
-});
-
 /**
- * GET — the agent's tickets, newest first. `?search=` matches the ticket code,
- * customer name, or customer phone (what the agent types when a customer
- * walks back in holding a ticket).
+ * GET — the agent's tickets, newest first. `?search=` matches the ticket code
+ * (what the agent types when a customer walks back in holding a ticket).
  */
 export async function GET(req: NextRequest) {
   const auth = await requireInPersonAgent();
@@ -26,13 +19,7 @@ export async function GET(req: NextRequest) {
       agentId: auth.userId,
       ...(status ? { status } : {}),
       ...(search
-        ? {
-            OR: [
-              { publicId: { contains: search, mode: "insensitive" } },
-              { customerName: { contains: search, mode: "insensitive" } },
-              { customerPhone: { contains: search, mode: "insensitive" } },
-            ],
-          }
+        ? { publicId: { contains: search, mode: "insensitive" as const } }
         : {}),
     },
     include: { bets: { select: { id: true, betAmount: true, winAmount: true, settled: true } } },
@@ -53,11 +40,6 @@ export async function POST(req: NextRequest) {
   const auth = await requireInPersonAgent();
   if (isAgentAuthError(auth)) return auth;
 
-  const parsed = createSchema.safeParse(await req.json().catch(() => null));
-  if (!parsed.success) {
-    return NextResponse.json({ error: "Customer name and phone are required" }, { status: 400 });
-  }
-
   const ticket = await prisma.$transaction(async (tx) => {
     const open = await tx.ticket.findFirst({
       where: { agentId: auth.userId, status: "OPEN" },
@@ -67,12 +49,7 @@ export async function POST(req: NextRequest) {
 
     const publicId = await generateTicketCode(tx);
     const created = await tx.ticket.create({
-      data: {
-        publicId,
-        agentId: auth.userId,
-        customerName: parsed.data.customerName,
-        customerPhone: parsed.data.customerPhone,
-      },
+      data: { publicId, agentId: auth.userId },
     });
     return { created };
   });

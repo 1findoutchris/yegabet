@@ -8,15 +8,13 @@ import { Loader2, Printer, CheckCircle2, Upload } from "lucide-react";
  * Ticket detail — doubles as the printable receipt the customer carries.
  * ?print=1 auto-opens the browser print dialog (thermal printers just work —
  * they print the page). When the customer returns to collect a win, the agent
- * verifies name/phone against this view, pays cash, attaches the receipt
- * photo, and marks it paid.
+ * verifies the ticket code, pays cash, attaches the receipt photo, and marks
+ * it paid.
  */
 
 interface TicketDetail {
   id: string;
   publicId: string;
-  customerName: string;
-  customerPhone: string;
   status: string;
   totalStake: string;
   totalWin: string;
@@ -250,8 +248,6 @@ export default function AgentTicketDetailPage() {
         <p className="text-center font-mono text-xl font-bold tracking-widest mb-3">{ticket.publicId}</p>
 
         <div className="text-[12px] space-y-1 mb-3">
-          <div className="flex justify-between"><span className="text-[color:var(--text-muted)]">Customer</span><span className="font-semibold">{ticket.customerName}</span></div>
-          <div className="flex justify-between"><span className="text-[color:var(--text-muted)]">Phone</span><span>{ticket.customerPhone}</span></div>
           <div className="flex justify-between"><span className="text-[color:var(--text-muted)]">Placed</span><span>{new Date(ticket.createdAt).toLocaleString()}</span></div>
           <div className="flex justify-between"><span className="text-[color:var(--text-muted)]">Status</span><span className="font-bold uppercase">{ticket.status}</span></div>
         </div>

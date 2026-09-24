@@ -14,8 +14,6 @@ import { useAdminFetch } from "../../useAdmin";
 interface TicketRow {
   id: string;
   publicId: string;
-  customerName: string;
-  customerPhone: string;
   status: string;
   totalStake: string;
   totalWin: string;
@@ -142,8 +140,8 @@ export default function InPersonAgentDetailPage() {
           {tickets.map((t) => (
             <div key={t.id} className="flex items-center gap-3 px-4 py-3 text-[12px]">
               <div className="min-w-0 flex-1">
-                <p className="font-bold text-[color:var(--text-primary)]">{t.publicId} <span className="font-normal text-[color:var(--text-secondary)]">· {t.customerName}</span></p>
-                <p className="text-[color:var(--text-muted)]">{t.customerPhone} · {t.bets.length} bet{t.bets.length === 1 ? "" : "s"} · {new Date(t.createdAt).toLocaleString()}</p>
+                <p className="font-bold text-[color:var(--text-primary)]">{t.publicId}</p>
+                <p className="text-[color:var(--text-muted)]">{t.bets.length} bet{t.bets.length === 1 ? "" : "s"} · {new Date(t.createdAt).toLocaleString()}</p>
               </div>
               <div className="text-right shrink-0">
                 <p className="font-bold text-[color:var(--text-primary)]">{fmt(Number(t.totalStake))} ETB</p>

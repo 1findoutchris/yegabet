@@ -6,15 +6,13 @@ import { Search, Ticket, Loader2 } from "lucide-react";
 
 /*
  * Ticket history + lookup. The search bar is what the agent uses when a
- * customer walks back in: type the ticket code, name, or phone and the row
- * surfaces. Clicking a row opens the detail/print view.
+ * customer walks back in: type the ticket code and the row surfaces.
+ * Clicking a row opens the detail/print view.
  */
 
 interface TicketRow {
   id: string;
   publicId: string;
-  customerName: string;
-  customerPhone: string;
   status: string;
   totalStake: string;
   totalWin: string;
@@ -80,10 +78,10 @@ export default function AgentTicketsPage() {
               className="flex items-center gap-3 px-4 py-3 rounded-xl bg-[var(--bg-surface)] border border-[color:var(--border-muted)] hover:border-[color:var(--border-accent)] transition-colors">
               <div className="min-w-0 flex-1">
                 <p className="text-[13px] font-bold text-[color:var(--text-primary)]">
-                  {t.publicId} <span className="font-normal text-[color:var(--text-secondary)]">· {t.customerName}</span>
+                  {t.publicId}
                 </p>
                 <p className="text-[11px] text-[color:var(--text-muted)]">
-                  {t.customerPhone} · {t.bets.length} bet{t.bets.length === 1 ? "" : "s"} · {new Date(t.createdAt).toLocaleString()}
+                  {t.bets.length} bet{t.bets.length === 1 ? "" : "s"} · {new Date(t.createdAt).toLocaleString()}
                 </p>
               </div>
               <div className="text-right shrink-0">

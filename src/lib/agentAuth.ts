@@ -2,6 +2,13 @@ import "server-only";
 import { NextResponse } from "next/server";
 import { auth } from "./auth";
 
+/** Secret URL segment gating the in-person agent portal: /in-person-agent/<IN_PERSON_AGENT_SECRET>. */
+export function verifyAgentSecret(secret: string): boolean {
+  const expected = process.env.IN_PERSON_AGENT_SECRET;
+  if (!expected) return false;
+  return secret === expected;
+}
+
 /**
  * Session gate for the in-person betting agent APIs. The agent is a normal
  * User (NextAuth credentials session) whose role is IN_PERSON_AGENT — the

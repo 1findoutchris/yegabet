@@ -6,18 +6,20 @@ bets on behalf of walk-in customers against printed tickets.
 ## The model
 
 The agent is a **normal `User` row** with `role = IN_PERSON_AGENT` and a
-`commissionRate` (percent of each stake, set by admin). He logs in with the
-normal phone + password credentials flow, deposits and withdraws through the
-existing user rails — the only differences are the restricted UI and the
-ticket machinery.
+`commissionRate` (percent of each stake, set by admin). He signs in ONLY via
+the secret portal `/in-person-agent/<IN_PERSON_AGENT_SECRET>` — the normal
+site login rejects agent accounts (and the portal rejects non-agents) inside
+`authorize()` via the `portalSecret` credential. Password reset is
+admin-managed; the public forgot-password flow refuses agent numbers.
+Deposits and withdrawals use the existing user rails.
 
 ```
-customer walks in → agent opens ticket draft (name + phone)
+customer walks in → agent opens a ticket draft (no customer info — anonymous)
 → places bet in the BetBy iframe (his own balance is debited)
 → wallet callback attaches the BET transaction to the open ticket
 → agent issues + prints the ticket (code T-XXXXXX)
 → win settles via callback → ticket flips to WON
-→ customer returns → agent verifies name/phone → pays cash → marks PAID + receipt
+→ customer returns → agent verifies the ticket code → pays cash → marks PAID + receipt
 ```
 
 ## Schema (migration `20260919181004_in_person_agent`)
@@ -26,8 +28,9 @@ customer walks in → agent opens ticket draft (name + phone)
 - `User.commissionRate` — Decimal(5,2), NULL for non-agents
 - `User.agentTickets` — relation to Ticket
 - `Transaction.ticketBet` — set when a BET/WIN row belongs to a ticket
-- **`Ticket`** — `publicId` (T-XXXXXX), `agentId`, `customerName`,
-  `customerPhone`, `status`, `totalStake`, `totalWin`, `paidAt`, `proofKey`
+- **`Ticket`** — `publicId` (T-XXXXXX), `agentId`, `status`, `totalStake`,
+  `totalWin`, `paidAt`, `proofKey` — anonymous; the code is the only
+  customer-facing identifier
 - **`TicketBet`** — links `ticketId` ↔ `transactionId`, stores `gameRound`,
   `betAmount`, `winAmount`, `settled`
 
@@ -63,8 +66,8 @@ Agent (session + `IN_PERSON_AGENT` role, via `requireInPersonAgent`):
 
 | Route | Purpose |
 |---|---|
-| `POST /api/agent/tickets` | open draft `{customerName, customerPhone}` — one open per agent |
-| `GET /api/agent/tickets?search=` | list + search by code/name/phone |
+| `POST /api/agent/tickets` | open draft (no body) — one open per agent |
+| `GET /api/agent/tickets?search=` | list + search by ticket code |
 | `GET /api/agent/tickets/[id]` | detail with bets (print view source) |
 | `POST /api/agent/tickets/[id]/issue` | OPEN → PLACED (or WON/LOST if settled) |
 | `POST /api/agent/tickets/[id]/pay` | WON → PAID, multipart `file` → S3 `proofKey` |

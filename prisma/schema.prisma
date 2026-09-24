@@ -717,8 +717,6 @@ model Ticket {
   // Same reasoning as WithdrawalRequest.publicId.
   publicId      String   @unique
   agentId       String
-  customerName  String
-  customerPhone String
 
   // OPEN    — draft; BET transactions attach while open
   // PLACED  — issued/printed; waiting for results
@@ -741,7 +739,6 @@ model Ticket {
   updatedAt DateTime @updatedAt
 
   @@index([agentId, status])
-  @@index([customerPhone])
   @@map("tickets")
 }
 

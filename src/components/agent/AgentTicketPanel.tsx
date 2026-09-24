@@ -21,8 +21,6 @@ import { Ticket, Plus, Printer, Loader2 } from "lucide-react";
 interface OpenTicket {
   id: string;
   publicId: string;
-  customerName: string;
-  customerPhone: string;
   totalStake: string;
   bets: { id: string; betAmount: string; settled: boolean }[];
 }
@@ -32,8 +30,6 @@ export function AgentTicketPanel() {
   const router = useRouter();
   const [open, setOpen] = useState<OpenTicket | null>(null);
   const [loaded, setLoaded] = useState(false);
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
 
@@ -59,18 +55,13 @@ export function AgentTicketPanel() {
 
   async function start() {
     setBusy(true); setError("");
-    const res = await fetch("/api/agent/tickets", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ customerName: name, customerPhone: phone }),
-    });
+    const res = await fetch("/api/agent/tickets", { method: "POST" });
     setBusy(false);
     if (!res.ok) {
       const d = await res.json().catch(() => ({}));
       setError(d.error ?? "Could not open ticket");
       return;
     }
-    setName(""); setPhone("");
     refresh();
   }
 
@@ -112,11 +103,7 @@ export function AgentTicketPanel() {
             </div>
           </div>
           {error && <p className="text-[12px] text-[color:var(--red)]">{error}</p>}
-          <input value={name} onChange={(e) => setName(e.target.value)} placeholder="Customer name" autoFocus
-            className="w-full px-3 py-2.5 rounded-lg bg-[var(--bg-elevated)] text-[13px] text-[color:var(--text-primary)] border border-[color:var(--border-muted)]" />
-          <input value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Customer phone"
-            className="w-full px-3 py-2.5 rounded-lg bg-[var(--bg-elevated)] text-[13px] text-[color:var(--text-primary)] border border-[color:var(--border-muted)]" />
-          <button onClick={start} disabled={busy || name.trim().length < 2 || phone.trim().length < 7}
+          <button onClick={start} disabled={busy} autoFocus
             className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-[var(--gold)] text-black text-[13px] font-bold disabled:opacity-40">
             {busy ? <Loader2 className="w-4 h-4 animate-spin" /> : <Plus className="w-4 h-4" />}
             Open ticket & continue
@@ -135,7 +122,6 @@ export function AgentTicketPanel() {
           <Ticket className="w-4 h-4 text-[color:var(--gold)]" />
           <div className="text-[13px]">
             <span className="font-bold text-[color:var(--text-primary)]">{open.publicId}</span>
-            <span className="text-[color:var(--text-secondary)]"> · {open.customerName} · {open.customerPhone}</span>
           </div>
           <div className="text-[12px] text-[color:var(--text-muted)]">
             {open.bets.length} bet{open.bets.length === 1 ? "" : "s"} · {Number(open.totalStake).toLocaleString()} ETB
