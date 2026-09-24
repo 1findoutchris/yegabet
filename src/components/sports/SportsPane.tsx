@@ -17,13 +17,15 @@ export function SportsPane({ agentMode = false }: { agentMode?: boolean }) {
   const { data: session } = useSession();
   const { openLogin, openRegister } = useAuthModal();
 
-  const [status,  setStatus]  = useState<Status>("idle");
-  const [url,     setUrl]     = useState<string | null>(null);
-  const [errMsg,  setErrMsg]  = useState("");
+  const [status,     setStatus]     = useState<Status>("idle");
+  const [url,        setUrl]        = useState<string | null>(null);
+  const [errMsg,     setErrMsg]     = useState("");
+  const [frameReady, setFrameReady] = useState(false);
 
   const launch = useCallback(async () => {
     setStatus("loading");
     setUrl(null);
+    setFrameReady(false);
     try {
       const res = await fetch("/api/games/launch", {
         method:  "POST",
@@ -73,9 +75,9 @@ export function SportsPane({ agentMode = false }: { agentMode?: boolean }) {
           : "hidden"
       }
     >
-      {/* Loading */}
-      {status === "loading" && (
-        <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
+      {/* Loading — stays up until the iframe has loaded AND rendered */}
+      {(status === "loading" || (url && !frameReady)) && (
+        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 bg-[var(--bg-base)]">
           <Loader2 className="w-8 h-8 text-[color:var(--gold)] animate-spin" />
           <p className="text-[color:var(--text-secondary)] text-sm">Loading sportsbook…</p>
         </div>
@@ -88,6 +90,11 @@ export function SportsPane({ agentMode = false }: { agentMode?: boolean }) {
           className="w-full h-full border-0"
           allow="fullscreen"
           title="VinnaBet Sports"
+          onLoad={() => {
+            // onLoad fires when the shell HTML arrives — the BetBy SPA still
+            // needs a moment to boot, so hold the overlay a bit longer.
+            setTimeout(() => setFrameReady(true), 1500);
+          }}
           style={{ display: status === "ready" ? "block" : "none" }}
         />
       )}

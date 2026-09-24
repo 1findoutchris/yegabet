@@ -38,6 +38,8 @@ export function CategoryGrid({ counts }: { counts: Counts }) {
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 sm:gap-3">
         {LOBBY_TILES.map((t, i) => {
           const count = counts[t.countKey];
+          // A tile advertising "0+ games" is a dead end — hide it.
+          if (count === 0) return null;
           return (
             <Link
               key={t.title}

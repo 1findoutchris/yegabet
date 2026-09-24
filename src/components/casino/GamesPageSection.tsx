@@ -9,12 +9,6 @@ import type { Game } from "@/types/games";
 
 type Filter = "crash" | "slots" | "new";
 
-const FILTERS: { id: Filter; label: string; icon: React.ElementType }[] = [
-  { id: "crash", label: "Crash & Instant", icon: Rocket   },
-  { id: "slots", label: "Slots",           icon: Gamepad2 },
-  { id: "new",   label: "New Games",       icon: Sparkles },
-];
-
 interface Props {
   popularGames: Game[];
   crashGames:   Game[];
@@ -23,12 +17,17 @@ interface Props {
 }
 
 export function GamesPageSection({ popularGames, crashGames, slotGames, newGames }: Props) {
-  const [active, setActive] = useState<Filter>("crash");
+  // Tabs only exist when they have games — a catalog with no crash
+  // providers (e.g. Gregmorn) must not default onto an empty tab.
+  const tabs: { id: Filter; label: string; icon: React.ElementType; games: Game[] }[] = [
+    { id: "crash", label: "Crash & Instant", icon: Rocket,   games: crashGames },
+    { id: "slots", label: "Slots",           icon: Gamepad2, games: slotGames  },
+    { id: "new",   label: "New Games",       icon: Sparkles, games: newGames   },
+  ].filter((t) => t.games.length > 0);
 
-  const gridGames =
-    active === "crash" ? crashGames :
-    active === "slots" ? slotGames  :
-    newGames;
+  const [selected, setSelected] = useState<Filter | null>(null);
+  const active = tabs.find((t) => t.id === selected) ?? tabs[0];
+  const gridGames = active?.games ?? [];
 
   return (
     <div className="space-y-8">
@@ -46,13 +45,13 @@ export function GamesPageSection({ popularGames, crashGames, slotGames, newGames
       {/* Category filter + full grid */}
       <div>
         <div className="flex gap-2 overflow-x-auto pb-1 mb-5 scrollbar-hide">
-          {FILTERS.map(({ id, label, icon: Icon }) => (
+          {tabs.map(({ id, label, icon: Icon }) => (
             <button
               key={id}
-              onClick={() => setActive(id)}
+              onClick={() => setSelected(id)}
               className={cn(
                 "flex items-center gap-1.5 whitespace-nowrap px-4 py-1.5 rounded-full text-xs font-medium transition-colors",
-                active === id
+                active?.id === id
                   ? "bg-amber-500 text-black"
                   : "border border-zinc-700 text-zinc-400 hover:border-zinc-500 hover:text-zinc-300"
               )}

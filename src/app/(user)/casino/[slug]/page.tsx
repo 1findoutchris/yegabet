@@ -37,6 +37,9 @@ export default async function CategoryPage({ params }: Props) {
   const getter = CATEGORY_GETTERS[slug];
   if (getter) {
     const games = getter();
+    // Same rule as provider pages below: an empty category 404s rather
+    // than rendering a themed page with "No games found".
+    if (!games.length) notFound();
     const theme = CATEGORY_THEMES[slug] ?? DEFAULT_THEME;
     const subcats = SUBCATEGORIES[slug] ?? [];
     return (
