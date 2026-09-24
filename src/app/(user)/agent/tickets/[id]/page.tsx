@@ -82,14 +82,50 @@ function parseSlip(info: unknown): Slip {
   };
 
   const NAME_KEYS = ["match", "event", "eventName", "game", "gameName", "title", "name", "teams", "fixture"];
-  const MARKET_KEYS = ["market", "marketName", "betType", "type"];
-  const PICK_KEYS = ["pick", "selection", "outcome", "choice", "bet", "outcomeName", "selectionName"];
+  const MARKET_KEYS = ["market", "marketName", "market_type_name", "betType", "type"];
+  const PICK_KEYS = ["pick", "selection", "outcome", "choice", "bet", "outcomeName", "selectionName", "outcome_display_name"];
   // Handicap/total line values ("-1.5", "2.5") — may arrive separately from
   // the pick text; without them a handicap bet reads wrong.
-  const LINE_KEYS = ["line", "param", "parameter", "handicap", "total", "points", "value", "lineValue"];
-  const ODDS_KEYS = ["odds", "odd", "price", "coefficient", "coef"];
+  const LINE_KEYS = ["line", "param", "parameter", "handicap", "base", "total", "points", "value", "lineValue"];
+  const ODDS_KEYS = ["odds", "odd", "price", "coefficient", "coef", "coeficient"];
   const TOTAL_ODDS_KEYS = ["totalOdds", "total_odds", "combinedOdds", "accOdds"];
   const TYPE_KEYS = ["type", "betType", "slipType", "mode"];
+
+  /*
+   * Real Gregmorn/BetBy shape (verified against prod): `info` arrives as a
+   * JSON string; its `detail` field is ANOTHER JSON string carrying
+   * `legs[]` — team1/team2, market_type_name, outcome_display_name,
+   * coeficient (their typo), handicap/base for line values. `k` = total odds.
+   */
+  const root = data as Record<string, unknown>;
+  let detail: unknown = root.detail;
+  if (typeof detail === "string") {
+    try { detail = JSON.parse(detail); } catch { detail = null; }
+  }
+  const legs = (detail as Record<string, unknown> | null)?.legs;
+  if (Array.isArray(legs) && legs.length > 0) {
+    const d = detail as Record<string, unknown>;
+    return {
+      selections: legs.map((leg) => {
+        const l = leg as Record<string, unknown>;
+        const match =
+          [text(l.team1), text(l.team2)].filter(Boolean).join(" - ") ||
+          pick(l, NAME_KEYS) ||
+          "Selection";
+        const market = text(l.market_type_name) ?? pick(l, MARKET_KEYS);
+        const sel = text(l.outcome_display_name) ?? pick(l, PICK_KEYS);
+        const line = text(l.handicap) ?? text(l.base);
+        const pickText = line && !(sel ?? "").includes(line) ? `(${line}) ${sel ?? ""}`.trim() : sel;
+        return {
+          match,
+          marketPick: [market, pickText].filter(Boolean).join(" ") || null,
+          odds: text(l.coeficient) ?? pick(l, ODDS_KEYS),
+        };
+      }),
+      totalOdds: text(d.k) ?? pick(d, TOTAL_ODDS_KEYS),
+      betType: legs.length > 1 ? "Combo" : "Single",
+    };
+  }
 
   function looksLikeSelection(o: Record<string, unknown>): boolean {
     return NAME_KEYS.some((k) => text(o[k])) && (ODDS_KEYS.some((k) => text(o[k])) || PICK_KEYS.some((k) => text(o[k])));
@@ -124,6 +160,27 @@ function parseSlip(info: unknown): Slip {
   }
   walk(data, 0);
   return { selections, totalOdds, betType };
+}
+
+/*
+ * Last-resort rendering for an unrecognized payload: prefer the nested
+ * `detail` blob (that's where the bet data lives), else the whole thing.
+ * Keeps the printout useful — and the failure visible — instead of blank.
+ */
+function rawInfoText(info: unknown): string {
+  let data = info;
+  if (typeof data === "string") {
+    const raw = data;
+    try { data = JSON.parse(raw); } catch { return raw; }
+  }
+  if (data && typeof data === "object") {
+    let detail = (data as Record<string, unknown>).detail;
+    if (typeof detail === "string") {
+      try { detail = JSON.parse(detail); } catch { /* keep raw string */ }
+    }
+    return JSON.stringify(detail ?? data, null, 1).slice(0, 2000);
+  }
+  return String(data);
 }
 
 export default function AgentTicketDetailPage() {
@@ -222,14 +279,24 @@ export default function AgentTicketDetailPage() {
                     </div>
                   </>
                 ) : (
-                  <div className="flex justify-between py-1">
-                    <span className="font-semibold">{b.gameName ?? `Bet ${i + 1}`}</span>
-                    <span>
-                      {Number(b.betAmount).toLocaleString()} ETB
-                      {b.settled && Number(b.winAmount) > 0 && (
-                        <span className="text-emerald-500"> → {Number(b.winAmount).toLocaleString()}</span>
-                      )}
-                    </span>
+                  <div className="py-1">
+                    <div className="flex justify-between">
+                      <span className="font-semibold">{b.gameName ?? `Bet ${i + 1}`}</span>
+                      <span>
+                        {Number(b.betAmount).toLocaleString()} ETB
+                        {b.settled && Number(b.winAmount) > 0 && (
+                          <span className="text-emerald-500"> → {Number(b.winAmount).toLocaleString()}</span>
+                        )}
+                      </span>
+                    </div>
+                    {/* Never print a blank bet: if the provider payload has an
+                        unrecognized shape, dump it so the slip still shows what
+                        was bet (and the failure is visible, not silent). */}
+                    {b.info != null && (
+                      <pre className="mt-1 text-[10px] leading-tight text-[color:var(--text-muted)] whitespace-pre-wrap break-all font-mono">
+                        {rawInfoText(b.info)}
+                      </pre>
+                    )}
                   </div>
                 )}
               </div>

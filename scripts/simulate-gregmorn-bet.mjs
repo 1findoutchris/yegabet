@@ -64,17 +64,25 @@ const session = await prisma.gameSession.create({
   },
 });
 
-// BetBy-flavoured slip — mirrors the real printout shape (matches/odds/stake).
-const info = {
-  ticketId: "34699",
-  type: "Combo",
-  selections: [
-    { match: "Netherlands - Germany", market: "1x2", pick: "Netherlands", odds: 2.54 },
-    { match: "Norway - Denmark", market: "1x2", pick: "Denmark", odds: 4.3 },
-    { match: "Serbia - Greece", market: "1x2", pick: "Serbia", odds: 2.74 },
-  ],
-  totalOdds: 31.423,
-};
+// Real Gregmorn/BetBy shape (verified on prod): info is a JSON STRING whose
+// `detail` field is ANOTHER JSON string carrying legs[] — team1/team2,
+// market_type_name, outcome_display_name, coeficient (their typo), k = total.
+const info = JSON.stringify({
+  method: "ChangeBalance",
+  vendorCode: "sports-betby",
+  gameRoundId: "34737",
+  detail: JSON.stringify({
+    bet_id: 0,
+    type: 0,
+    amount: BET,
+    k: 31.423,
+    legs: [
+      { team1: "Netherlands", team2: "Germany", sport: "Soccer", tournament_name: "UEFA Nations League A", market_type_name: "1x2", outcome_display_name: "Netherlands", coeficient: 2.54, handicap: null, base: null },
+      { team1: "Norway", team2: "Denmark", sport: "Soccer", tournament_name: "UEFA Nations League A", market_type_name: "1x2", outcome_display_name: "Denmark", coeficient: 4.3, handicap: null, base: null },
+      { team1: "Serbia", team2: "Greece", sport: "Basketball", tournament_name: "Euroleague", market_type_name: "Winner (incl. overtime)", outcome_display_name: "Serbia", coeficient: 2.74, handicap: null, base: null },
+    ],
+  }),
+});
 
 const payload = {
   cmd: "writeBet",
