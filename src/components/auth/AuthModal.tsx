@@ -425,7 +425,7 @@ export function AuthModal() {
         {/* Logo */}
         <div className="pt-8 pb-4 flex flex-col items-center gap-2">
           <span className="w-12 h-12 bg-gold-grad glow-gold rounded-full flex items-center justify-center font-display text-[#09090B] font-extrabold text-xl leading-none">
-            F
+            V
           </span>
           <span className="font-display text-[color:var(--text-primary)] font-extrabold text-lg tracking-[-0.03em]">
             Vinna<span className="text-gold-grad">Bet</span>
