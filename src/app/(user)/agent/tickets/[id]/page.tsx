@@ -281,8 +281,10 @@ export default function AgentTicketDetailPage() {
                   <>
                     {slip.selections.map((s, j) => (
                       <div key={j} className="py-2 border-b border-[color:var(--border-muted)] break-inside-avoid">
-                        <p className="font-semibold">{s.match}</p>
-                        {s.kickoff && <p className="text-[color:var(--text-muted)]">{s.kickoff}</p>}
+                        <div className="flex justify-between items-baseline gap-3">
+                          <p className="font-semibold min-w-0">{s.match}</p>
+                          {s.kickoff && <p className="shrink-0 whitespace-nowrap text-right text-[color:var(--text-muted)]">{s.kickoff}</p>}
+                        </div>
                         {s.marketPick && <p>{s.marketPick}</p>}
                         {s.odds && <p>Odds: {s.odds}</p>}
                       </div>
