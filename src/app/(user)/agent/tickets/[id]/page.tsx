@@ -49,6 +49,22 @@ interface SlipSelection {
   match: string;
   marketPick: string | null;
   odds: string | null;
+  kickoff: string | null;
+}
+
+/* start_ts is Unix seconds; a plain date string is shown as-is. */
+function formatKickoff(raw: string | null): string | null {
+  if (!raw) return null;
+  const n = Number(raw);
+  if (Number.isFinite(n) && n > 1e9) {
+    const d = new Date(n * 1000);
+    if (!isNaN(d.getTime()))
+      return d.toLocaleString(undefined, { day: "2-digit", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" });
+  }
+  const d = new Date(raw);
+  if (!isNaN(d.getTime()))
+    return d.toLocaleString(undefined, { day: "2-digit", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" });
+  return raw;
 }
 
 interface Slip {
@@ -88,6 +104,8 @@ function parseSlip(info: unknown): Slip {
   const ODDS_KEYS = ["odds", "odd", "price", "coefficient", "coef", "coeficient"];
   const TOTAL_ODDS_KEYS = ["totalOdds", "total_odds", "combinedOdds", "accOdds"];
   const TYPE_KEYS = ["type", "betType", "slipType", "mode"];
+  // Kickoff/match start — BetBy legs carry it as `start_ts` (Unix seconds).
+  const DATE_KEYS = ["start_ts", "startTime", "start_time", "event_time", "event_date", "kickoff", "date"];
 
   /*
    * Real Gregmorn/BetBy shape (verified against prod): `info` arrives as a
@@ -118,6 +136,7 @@ function parseSlip(info: unknown): Slip {
           match,
           marketPick: [market, pickText].filter(Boolean).join(" ") || null,
           odds: text(l.coeficient) ?? pick(l, ODDS_KEYS),
+          kickoff: formatKickoff(text(l.start_ts) ?? pick(l, DATE_KEYS)),
         };
       }),
       totalOdds: text(d.k) ?? pick(d, TOTAL_ODDS_KEYS),
@@ -145,6 +164,7 @@ function parseSlip(info: unknown): Slip {
         match: pick(o, NAME_KEYS)!,
         marketPick: [market, pickText].filter(Boolean).join(" ") || null,
         odds: pick(o, ODDS_KEYS),
+        kickoff: formatKickoff(pick(o, DATE_KEYS)),
       });
       return; // don't double-count nested dupes of the same selection
     }
@@ -262,6 +282,7 @@ export default function AgentTicketDetailPage() {
                     {slip.selections.map((s, j) => (
                       <div key={j} className="py-2 border-b border-[color:var(--border-muted)] break-inside-avoid">
                         <p className="font-semibold">{s.match}</p>
+                        {s.kickoff && <p className="text-[color:var(--text-muted)]">{s.kickoff}</p>}
                         {s.marketPick && <p>{s.marketPick}</p>}
                         {s.odds && <p>Odds: {s.odds}</p>}
                       </div>
