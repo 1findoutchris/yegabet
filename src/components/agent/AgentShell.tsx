@@ -6,9 +6,10 @@ import { useState, useEffect } from "react";
 import { useSession, signOut } from "next-auth/react";
 import {
   Trophy, Ticket, BarChart3, ArrowDownToLine, ArrowUpFromLine,
-  Menu, X, LogOut, Loader2,
+  Menu, X, LogOut, Loader2, Wallet,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useBalance } from "@/contexts/BalanceContext";
 import { AgentTicketPanel } from "./AgentTicketPanel";
 
 /*
@@ -36,6 +37,10 @@ export function AgentShell({ children }: { children: React.ReactNode }) {
   const router = useRouter();
   const { data: session } = useSession();
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  // Live wallet balance from the shared BalanceProvider (SSE-updated), so the
+  // agent sees it while betting on /sports, not just on deposit/withdraw.
+  const { balance, refresh } = useBalance();
+  const shownBalance = Number(balance).toFixed(2);
 
   const allowed = ALLOWED_PREFIXES.some((p) => pathname === p || pathname.startsWith(`${p}/`));
   useEffect(() => {
@@ -77,6 +82,16 @@ export function AgentShell({ children }: { children: React.ReactNode }) {
           Vinna<span className="text-gold-grad">Bet</span>
         </p>
         <p className="text-[11px] text-[color:var(--text-muted)] mt-0.5">Betting Agent</p>
+        <button onClick={refresh} title="Click to refresh balance"
+          className="mt-3 w-full flex items-center gap-2 px-3 py-2 rounded-xl bg-[var(--bg-elevated)] border border-[color:var(--border-base)] hover:border-[color:var(--border-accent)] transition-colors text-left">
+          <Wallet className="w-4 h-4 text-[color:var(--gold)] shrink-0" />
+          <span className="min-w-0">
+            <span className="block text-[10px] uppercase tracking-[0.06em] text-[color:var(--text-muted)]">Balance</span>
+            <span className="block text-[14px] font-bold text-[color:var(--gold)] tabular-nums truncate">
+              {shownBalance} <span className="text-[11px] text-[color:var(--text-muted)] font-semibold">ETB</span>
+            </span>
+          </span>
+        </button>
       </div>
       {nav}
       <div className="p-3 border-t border-[color:var(--border-muted)]">
@@ -105,9 +120,17 @@ export function AgentShell({ children }: { children: React.ReactNode }) {
           Vinna<span className="text-gold-grad">Bet</span>{" "}
           <span className="text-[color:var(--text-muted)] font-normal text-[12px]">Agent</span>
         </p>
-        <button onClick={() => setSidebarOpen((v) => !v)} className="p-1.5 rounded-lg text-[color:var(--text-secondary)]">
-          {sidebarOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-        </button>
+        <div className="flex items-center gap-2 min-w-0">
+          <button onClick={refresh} title="Click to refresh balance"
+            className="flex items-center gap-1.5 h-8 px-2.5 rounded-lg bg-[var(--bg-elevated)] border border-[color:var(--border-base)] min-w-0">
+            <Wallet className="w-3.5 h-3.5 text-[color:var(--gold)] shrink-0" />
+            <span className="text-[13px] font-bold text-[color:var(--gold)] tabular-nums truncate">{shownBalance}</span>
+            <span className="text-[11px] text-[color:var(--text-muted)] shrink-0">ETB</span>
+          </button>
+          <button onClick={() => setSidebarOpen((v) => !v)} className="p-1.5 rounded-lg text-[color:var(--text-secondary)]">
+            {sidebarOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+        </div>
       </div>
 
       {sidebarOpen && (
