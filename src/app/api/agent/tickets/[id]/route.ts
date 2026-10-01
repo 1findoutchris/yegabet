@@ -2,16 +2,10 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { requireInPersonAgent, isAgentAuthError } from "@/lib/agentAuth";
 import { getGamesByIds } from "@/lib/games";
-import { compareRebet } from "@/lib/ticketSlip";
 
 /**
  * GET — one ticket with its bets. The agent uses this for the printable view
  * and to look up the ticket code when a customer comes back to collect.
- *
- * A "Bet this ticket" copy also gets `copiedFrom` (the original's code) and
- * `rebet` — the original's selections compared against what's been placed on
- * this ticket so far. Only parsed selection text and the reference stake leave
- * the original; its raw provider payload does not.
  */
 export async function GET(_req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const auth = await requireInPersonAgent();
@@ -42,18 +36,5 @@ export async function GET(_req: NextRequest, { params }: { params: Promise<{ id:
       : null,
   }));
 
-  let copiedFrom: { id: string; publicId: string; totalStake: unknown } | null = null;
-  let rebet = null;
-  if (ticket.copiedFromTicketId) {
-    const original = await prisma.ticket.findFirst({
-      where: { id: ticket.copiedFromTicketId, agentId: auth.userId },
-      select: { id: true, publicId: true, totalStake: true, bets: { select: { info: true } } },
-    });
-    if (original) {
-      copiedFrom = { id: original.id, publicId: original.publicId, totalStake: original.totalStake };
-      rebet = compareRebet(original.bets, ticket.bets, Date.now());
-    }
-  }
-
-  return NextResponse.json({ ticket: { ...ticket, bets, copiedFrom, rebet } });
+  return NextResponse.json({ ticket: { ...ticket, bets } });
 }
