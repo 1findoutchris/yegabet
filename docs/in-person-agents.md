@@ -96,6 +96,28 @@ Admin (`requireAdminAuth`):
 - Admin: `/admin/[secret]/in-person-agents` (+ `[agentId]` detail) — sidebar
   link "In-Person Agents".
 
+## Player Ticket History / Find Ticket
+
+Normal players get the same ticket pages, built from the same components:
+`TicketList` (history + search) and `TicketReceipt` (the printable card) in
+`src/components/tickets/`, with bet-slip parsing in `src/lib/ticketSlip.ts`.
+
+Players have no `Ticket` rows. Their "tickets" are their own sportsbook bets:
+`Transaction` rows whose metadata is the provider callback (slip `info`,
+`roundId`, stake, win). `src/lib/userTickets.ts` maps them to the agent
+ticket shape. Status: CANCELLED (rolled back), WON (round paid), LOST (round
+settled with no win), PLACED (waiting).
+
+| Route | Purpose |
+|---|---|
+| `GET /api/user/tickets?search=` | the caller's own sportsbook bets; search by ticket id or team name |
+| `GET /api/user/tickets/[id]` | one of the caller's own bets; anyone else's id is a 404 |
+
+Pages: `/tickets` (Ticket History; `?find=1` = Find Ticket) and
+`/tickets/[id]`, linked from the account menu. Every query is scoped to the
+session's user id. The agent APIs and their `IN_PERSON_AGENT` check are
+unchanged.
+
 ## Route guard
 
 `AgentShell` client-side redirects agents off any path outside

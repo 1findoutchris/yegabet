@@ -40,6 +40,7 @@ const USER_ROUTES = [
   ["leaderboards", () => import("@/app/api/user/leaderboards/route")],
   ["spin", () => import("@/app/api/user/spin/route")],
   ["streak", () => import("@/app/api/user/streak/route")],
+  ["tickets", () => import("@/app/api/user/tickets/route")],
   ["withdraw", () => import("@/app/api/user/withdraw/route")],
 ] as const;
 
