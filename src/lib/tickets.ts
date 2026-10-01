@@ -46,6 +46,16 @@ export async function generateTicketCode(tx: Tx): Promise<string> {
 }
 
 /**
+ * Serialise draft-opening per agent for the rest of the transaction. The
+ * "one OPEN draft per agent" rule is a read-then-insert; without this, two
+ * fast clicks (or "Open ticket" racing "Bet this ticket") both see no draft
+ * and both create one, and bets would then attach to whichever comes first.
+ */
+export async function lockAgentTickets(tx: Tx, agentId: string): Promise<void> {
+  await tx.$executeRaw`SELECT pg_advisory_xact_lock(hashtext(${"ticket-open:" + agentId}))`;
+}
+
+/**
  * Attach a just-created BET transaction to the agent's open ticket, if any.
  * Called inside the wallet-callback transaction so the link is atomic with the
  * balance update. Combined rounds (bet+win in one callback) attach already

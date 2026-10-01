@@ -3,6 +3,8 @@
 import { usePathname, useRouter } from "next/navigation";
 import { useState, useEffect, useCallback } from "react";
 import { Ticket, Plus, Printer, Loader2 } from "lucide-react";
+import type { RebetComparison } from "@/lib/ticketSlip";
+import { RebetChecklist } from "./RebetChecklist";
 
 /*
  * The open-ticket draft bar + ticket gate. Lives on /sports for in-person
@@ -16,6 +18,9 @@ import { Ticket, Plus, Printer, Loader2 } from "lucide-react";
  * BAR: with an OPEN ticket it shrinks to the bottom bar — watch BET
  * transactions attach as the wallet callback lands them, then issue + print
  * or cancel. Polls while on /sports since attaches are asynchronous.
+ *
+ * COPY: when the draft came from "Bet this ticket" the same poll also pulls
+ * the original-vs-new comparison and shows RebetChecklist above the bar.
  */
 
 interface OpenTicket {
@@ -23,12 +28,20 @@ interface OpenTicket {
   publicId: string;
   totalStake: string;
   bets: { id: string; betAmount: string; settled: boolean }[];
+  copiedFromTicketId: string | null;
+}
+
+interface CopyState {
+  originalCode: string;
+  previousStake: number;
+  rebet: RebetComparison;
 }
 
 export function AgentTicketPanel() {
   const pathname = usePathname();
   const router = useRouter();
   const [open, setOpen] = useState<OpenTicket | null>(null);
+  const [copy, setCopy] = useState<CopyState | null>(null);
   const [loaded, setLoaded] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
@@ -39,7 +52,21 @@ export function AgentTicketPanel() {
     const res = await fetch("/api/agent/tickets?status=OPEN").catch(() => null);
     if (res?.ok) {
       const data = await res.json();
-      setOpen(data.tickets?.[0] ?? null);
+      const draft: OpenTicket | null = data.tickets?.[0] ?? null;
+      setOpen(draft);
+      if (draft?.copiedFromTicketId) {
+        // Keep the last good checklist on a failed poll rather than flicker it away.
+        const d = await fetch(`/api/agent/tickets/${draft.id}`).then((r) => (r.ok ? r.json() : null)).catch(() => null);
+        if (d?.ticket?.rebet && d.ticket.copiedFrom) {
+          setCopy({
+            originalCode: d.ticket.copiedFrom.publicId,
+            previousStake: Number(d.ticket.copiedFrom.totalStake),
+            rebet: d.ticket.rebet,
+          });
+        }
+      } else {
+        setCopy(null);
+      }
     }
     setLoaded(true);
   }, []);
@@ -84,6 +111,7 @@ export function AgentTicketPanel() {
     await fetch(`/api/agent/tickets/${open.id}/cancel`, { method: "POST" });
     setBusy(false);
     setOpen(null);
+    setCopy(null);
   }
 
   // Gate — no open ticket: cover the sportsbook until one is created.
@@ -114,6 +142,8 @@ export function AgentTicketPanel() {
   }
 
   return (
+    <>
+    {copy && <RebetChecklist {...copy} />}
     <div className="fixed bottom-0 left-0 right-0 md:left-56 z-20 bg-[var(--bg-surface)] border-t border-[color:var(--border-muted)] px-4 py-3">
       {error && <p className="text-[12px] text-[color:var(--red)] mb-2">{error}</p>}
 
@@ -138,5 +168,6 @@ export function AgentTicketPanel() {
         </div>
       )}
     </div>
+    </>
   );
 }

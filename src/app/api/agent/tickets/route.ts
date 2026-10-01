@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { requireInPersonAgent, isAgentAuthError } from "@/lib/agentAuth";
-import { generateTicketCode } from "@/lib/tickets";
+import { generateTicketCode, lockAgentTickets } from "@/lib/tickets";
 
 /**
  * GET — the agent's tickets, newest first. `?search=` matches the ticket code
@@ -41,6 +41,7 @@ export async function POST(req: NextRequest) {
   if (isAgentAuthError(auth)) return auth;
 
   const ticket = await prisma.$transaction(async (tx) => {
+    await lockAgentTickets(tx, auth.userId);
     const open = await tx.ticket.findFirst({
       where: { agentId: auth.userId, status: "OPEN" },
       select: { id: true, publicId: true },

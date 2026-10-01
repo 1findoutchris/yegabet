@@ -732,13 +732,21 @@ model Ticket {
   paidAt        DateTime?
   proofKey      String?  // S3 key of the payout receipt the agent uploads
 
+  // "Bet this ticket": the ticket whose selections this one was copied from.
+  // Audit link only — the two are separate bets with separate money, and the
+  // original is never written to by the copy. NULL for ordinary tickets.
+  copiedFromTicketId String?
+
   agent         User        @relation(fields: [agentId], references: [id])
   bets          TicketBet[]
+  copiedFrom    Ticket?     @relation("TicketCopies", fields: [copiedFromTicketId], references: [id], onDelete: SetNull)
+  copies        Ticket[]    @relation("TicketCopies")
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   @@index([agentId, status])
+  @@index([copiedFromTicketId])
   @@map("tickets")
 }
 

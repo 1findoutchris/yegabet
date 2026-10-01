@@ -72,6 +72,7 @@ Agent (session + `IN_PERSON_AGENT` role, via `requireInPersonAgent`):
 | `POST /api/agent/tickets/[id]/issue` | OPEN → PLACED (or WON/LOST if settled) |
 | `POST /api/agent/tickets/[id]/pay` | WON → PAID, multipart `file` → S3 `proofKey` |
 | `POST /api/agent/tickets/[id]/cancel` | void an empty OPEN draft |
+| `POST /api/agent/tickets/[id]/rebet` | "Bet this ticket" — open a new draft copied from an issued ticket (places nothing) |
 | `GET /api/agent/stats` | commission earned, wallet, ticket totals |
 
 Admin (`requireAdminAuth`):
@@ -95,6 +96,46 @@ Admin (`requireAdminAuth`):
 - `/agent/stats` — commission, balance, ticket totals.
 - Admin: `/admin/[secret]/in-person-agents` (+ `[agentId]` detail) — sidebar
   link "In-Person Agents".
+
+## "Bet this ticket" (copy a ticket)
+
+On an issued ticket (`PLACED`/`WON`/`LOST`/`PAID`) the detail page shows
+**Bet this ticket** beside **Print ticket**. It uses the old ticket's
+selections as a template for a brand-new, separate bet.
+
+Why it isn't a one-click copy: the bet slip, live odds, market status and bet
+placement all live inside the BetBy iframe. Gregmorn exposes no odds feed and
+no placement or slip-prefill API, and the callback's legs carry display text
+only (no event/market/outcome ids). See `docs/provider-request-rebet.md` for
+what we've asked the provider for.
+
+Flow:
+
+1. `POST /api/agent/tickets/[id]/rebet` (agent role + ticket ownership,
+   enforced server-side) opens a new OPEN draft with
+   `Ticket.copiedFromTicketId` = the original. Nothing is placed and no stake
+   is copied. The original is only read. The open is serialised per agent
+   (`lockAgentTickets`), so a double click returns the same draft (200), never
+   a second one.
+2. The agent lands on `/sports`. `RebetChecklist` (above the draft bar) lists
+   the original's selections with old odds, kickoff, and the previous stake as
+   reference only. Legs whose kickoff has passed show as **Already started —
+   skip**. Repeat selections are merged.
+3. The agent adds the selections in BetBy, enters the customer's new stake and
+   confirms there. BetBy shows current odds and potential payout, refuses
+   closed or suspended markets, and checks the balance.
+4. As the new bet attaches (wallet callback), `compareRebet` matches its legs
+   to the template by match + market/pick text: **On new bet** (same odds),
+   **Odds changed old → new**, or still **Add in sportsbook**. Extra
+   selections not on the original are counted.
+5. Issue & print as usual. The printed copy shows "Copy of T-XXXXXX".
+
+Rejections: unknown or other agent's ticket 404, cancelled or draft original
+409, every leg already started 409, no parseable selections 422, another draft
+open 409 (with a link to it).
+
+Pure logic: `src/lib/ticketSlip.ts` (+ `ticketSlip.check.ts`).
+Endpoint tests: `tests/db/ticketRebet.test.ts`.
 
 ## Route guard
 
