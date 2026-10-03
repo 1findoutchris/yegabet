@@ -67,7 +67,7 @@ export function GameCard({ game, className, badge }: GameCardProps) {
   const [hovered, setHovered] = useState(false);
   const [showLoginPrompt, setShowLoginPrompt] = useState(false);
 
-  const providerName = PROVIDER_META[game.provider]?.name ?? game.provider.toUpperCase();
+  const providerName = PROVIDER_META[game.provider]?.name ?? game.providerName ?? game.provider.toUpperCase();
   const [gradFrom, gradTo] = providerGradient(game.provider);
   const initials = providerInitials(providerName);
   const fav = isFavorite(game.gameID);

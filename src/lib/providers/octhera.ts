@@ -21,6 +21,7 @@ import crypto from "crypto";
  *                              on /octhera-test; unset = nobody (the off switch)
  *   OCTHERA_BASE_URL         — optional, default https://api.octhera.org/api/v1
  *   OCTHERA_AVIATOR_GAME_UID — optional; else looked up via GET /games?q=Aviator
+ *   OCTHERA_GAMES_PUBLIC     — "true" = Octhera's whole catalog on the site (lib/games)
  */
 
 const baseUrl = () => (process.env.OCTHERA_BASE_URL || "https://api.octhera.org/api/v1").replace(/\/+$/, "");
@@ -89,12 +90,52 @@ export async function getBalance(username: string): Promise<{ balance: number; c
 
 // ── Games ─────────────────────────────────────────────────────────────────────
 
-interface OctheraGame {
+export interface OctheraGame {
   gameUid: string;
   name: string;
   provider: string;
   providerName: string;
   type: string;
+  image?: string;
+  imageUrl?: string;
+  enabled?: boolean;
+  isEnabled?: boolean;
+}
+
+/** Octhera serves artwork for every game at /media/games/<gameUid>. */
+export function gameImageUrl(gameUid: string): string {
+  return `${new URL(baseUrl()).origin}/media/games/${encodeURIComponent(gameUid)}`;
+}
+
+/**
+ * Every game on our Octhera account. The portal docs only show `q` and
+ * `limit`, so paging is defensive: ask page 2, 3, … (also sending `offset`)
+ * and stop at an empty page, a page with nothing new (pagination ignored), or
+ * whatever end marker the response carries (`hasMore` / `totalPages` / `total`).
+ */
+export async function listGames(): Promise<OctheraGame[]> {
+  const LIMIT = 100;
+  const byUid = new Map<string, OctheraGame>();
+  for (let page = 1; page <= 200; page++) {
+    const qs = page === 1 ? `limit=${LIMIT}` : `limit=${LIMIT}&page=${page}&offset=${(page - 1) * LIMIT}`;
+    const d = await call<{
+      games?: OctheraGame[]; hasMore?: boolean; totalPages?: number; total?: number;
+      pagination?: { hasMore?: boolean; totalPages?: number; total?: number };
+    }>("GET", `/games?${qs}`);
+    const games = Array.isArray(d.games) ? d.games : [];
+    let added = 0;
+    for (const g of games) {
+      if (!g?.gameUid || !g.name || byUid.has(g.gameUid)) continue;
+      if (g.enabled === false || g.isEnabled === false) continue;
+      byUid.set(g.gameUid, g);
+      added++;
+    }
+    const p = { ...d, ...d.pagination };
+    if (added === 0 || p.hasMore === false) break;
+    if (p.totalPages !== undefined && page >= p.totalPages) break;
+    if (p.total !== undefined && byUid.size >= p.total) break;
+  }
+  return [...byUid.values()];
 }
 
 let aviatorCache: { uid: string; at: number } | null = null;

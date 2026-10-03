@@ -59,6 +59,32 @@ Remove the variable to hide it again.
 - **Artwork:** if you set `OCTHERA_AVIATOR_GAME_UID`, the tile uses
   Octhera's own image for it.
 
+## All Octhera games on the site
+
+Set **`OCTHERA_GAMES_PUBLIC=true`** in Railway to add **Octhera's whole
+catalog** to the site for every player. Remove the variable to hide them again.
+
+- **Where they show:** in search, on provider pages, and in the Slots, Crash
+  & Instant, Live, Hot and New lists. Octhera's game type decides the list
+  (Slots, Crash/Instant, Live). A provider we already have, such as Spribe,
+  joins its existing page (`/casino/spribe`). A new provider gets its own
+  page under Octhera's provider name.
+- **No duplicates:** if a game is already on the site from the main provider
+  (same provider, same name), the existing tile stays. It plays with the
+  VinnaBet balance. Octhera only adds the games we don't have yet.
+- **Same separate balance as Aviator:** every Octhera game plays against the
+  player's one Octhera balance. When a game opens, the player sees that
+  balance, or that it's 0 and they should contact support.
+- **Loading:** the list is fetched from Octhera (`GET /games`, page by page)
+  when the server starts, then refreshed every hour. If Octhera can't be
+  reached, the site keeps working without those games and tries again 5
+  minutes later. Railway's logs show `[octhera] catalog loaded: N games`.
+  Check that N matches the game count in the Octhera portal. The portal
+  docs don't describe paging, so a low number means the paging guess needs
+  adjusting.
+- Launches use `game_uid` `octhera:<gameUid>`. Only games in the loaded
+  catalog can be launched.
+
 ## Testing
 
 1. Log in on vinna.bet with an account from `OCTHERA_TEST_USERS` and open

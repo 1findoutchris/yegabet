@@ -9,7 +9,7 @@ export function GamePlayer() {
 
   if (!current) return null;
 
-  const providerName = PROVIDER_META[current.provider]?.name ?? current.provider;
+  const providerName = PROVIDER_META[current.provider]?.name ?? current.providerName ?? current.provider;
 
   return (
     <div className="fixed inset-0 z-[300] bg-black flex flex-col">

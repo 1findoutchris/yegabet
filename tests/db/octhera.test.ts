@@ -206,3 +206,56 @@ describe("Aviator on the normal casino page (/api/games/launch, game_uid octhera
     expect((await json(await open())).status).toBe(401);
   });
 });
+
+describe("Octhera's whole catalog (OCTHERA_GAMES_PUBLIC, game_uid octhera:<gameUid>)", () => {
+  const open = (game_uid: string) =>
+    gamesLaunch(req("POST", "/api/games/launch", { body: { game_uid }, headers: { "user-agent": "Mozilla/5.0 (Windows)" } }));
+  const catalog = () => {
+    reply({ status: "ok", games: [{ gameUid: "mines-x", name: "Octhera Mines X", provider: "NEWPROV", providerName: "New Provider", type: "Crash" }] });
+    reply({ status: "ok", games: [] });
+  };
+
+  beforeEach(() => {
+    delete (globalThis as { __octheraCatalog?: unknown }).__octheraCatalog;
+    delete process.env.OCTHERA_GAMES_PUBLIC;
+  });
+  afterEach(() => {
+    delete (globalThis as { __octheraCatalog?: unknown }).__octheraCatalog;
+  });
+
+  test("switch off → unavailable, Octhera never called", async () => {
+    asUser({ id: tester.id });
+    const { status: code, body } = await json<{ unavailable: boolean }>(await open("octhera:mines-x"));
+    expect(code).toBe(502);
+    expect(body.unavailable).toBe(true);
+    expect(fetchMock).not.toHaveBeenCalled();
+  });
+
+  test("switch on → any player launches a catalog game with its Octhera gameUid", async () => {
+    process.env.OCTHERA_GAMES_PUBLIC = "true";
+    const player = await makeUser();
+    asUser({ id: player.id });
+    catalog();
+    reply({ status: "ok", player: { username: "x", balance: 0, currency: "ETB" } }, 201);
+    reply({ status: "ok", launchUrl: "https://api.octhera.org/wrapper?token=m", transferId: "t" });
+    reply({ status: "ok", username: "x", balance: 12, currency: "ETB" });
+
+    const { status: code, body } = await json<{ game_launch_url: string; notice: string }>(await open("octhera:mines-x"));
+    expect(code).toBe(200);
+    expect(body.game_launch_url).toBe("https://api.octhera.org/wrapper?token=m");
+    expect(body.notice).toBe("Octhera Mines X balance: 12.00 ETB (separate from your VinnaBet balance)");
+    const login = fetchMock.mock.calls.find((c) => String(c[0]).endsWith("/players/login"))!;
+    expect(JSON.parse(login[1].body)).toMatchObject({ username: `vb_${player.id}`, gameUid: "mines-x", device: "desktop" });
+    expect(await prisma.recentGame.count({ where: { userId: player.id, gameId: "octhera:mines-x" } })).toBe(1);
+  });
+
+  test("a gameUid that isn't in the catalog → unavailable, never launched", async () => {
+    process.env.OCTHERA_GAMES_PUBLIC = "true";
+    asUser({ id: tester.id });
+    catalog();
+    const { status: code, body } = await json<{ unavailable: boolean }>(await open("octhera:something-else"));
+    expect(code).toBe(502);
+    expect(body.unavailable).toBe(true);
+    expect(fetchMock.mock.calls.some((c) => String(c[0]).endsWith("/players/login"))).toBe(false);
+  });
+});
