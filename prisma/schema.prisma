@@ -210,6 +210,8 @@ model Transaction {
 
   // Set when this BET/WIN row was placed through an in-person agent's ticket.
   ticketBet     TicketBet?
+  // Public "Check Ticket" code for a player's sportsbook bet (see TicketCheckCode).
+  checkCode     TicketCheckCode?
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -767,4 +769,20 @@ model TicketBet {
 
   @@index([gameRound])
   @@map("ticket_bets")
+}
+
+// Public "Check Ticket" code for a PLAYER's sportsbook bet (the BET Transaction).
+// Agent tickets already have an unguessable public code (Ticket.publicId,
+// T-XXXXXX); players' bets only have the provider's sequential transaction
+// number, which can't be public — counting it up would walk every player's
+// bets. So each bet gets a random P-XXXXXXXX code, assigned the first time its
+// owner views it, and that is the code anyone can check.
+model TicketCheckCode {
+  code          String      @id
+  transactionId String      @unique
+  transaction   Transaction @relation(fields: [transactionId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+
+  @@map("ticket_check_codes")
 }

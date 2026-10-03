@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useSession, signOut } from "next-auth/react";
-import { Wallet, User, LogOut, Settings, Download, Ticket, Search } from "lucide-react";
+import { Wallet, User, LogOut, Settings, Download, Ticket, Search, SearchCheck } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useAuthModal } from "@/contexts/AuthModalContext";
 import { useInstallPrompt } from "@/hooks/useInstallPrompt";
@@ -164,6 +164,14 @@ export function CasinoNav() {
                     >
                       <Search className="w-4 h-4" />
                       Find Ticket
+                    </Link>
+                    <Link
+                      href="/check"
+                      onClick={() => setUserMenuOpen(false)}
+                      className="w-full flex items-center gap-3 px-4 py-2.5 text-[13px] text-[color:var(--text-secondary)] hover:text-[color:var(--text-primary)] hover:bg-[var(--bg-elevated)] transition-colors"
+                    >
+                      <SearchCheck className="w-4 h-4" />
+                      Check Ticket
                     </Link>
                     <Link
                       href="/account/settings"

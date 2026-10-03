@@ -3,6 +3,7 @@ import { Prisma } from "@prisma/client";
 import { prisma } from "./prisma";
 import { SPORTSBOOK_GAME_UID } from "@/types/games";
 import { parseSlip } from "./ticketSlip";
+import { randomCode } from "./tickets";
 
 /*
  * A player's own sportsbook bets, presented as tickets.
@@ -97,7 +98,10 @@ export function buildTickets(rows: Row[], rolledBack: Set<string>) {
       const resultInfo = lastSettle ? fields(lastSettle.metadata).info : f.roundFinished ? f.info : null;
       return {
         id: b.id,
+        // Replaced by the bet's random check code before it leaves this
+        // module (attachCheckCodes); the provider number stays searchable.
         publicId: betCode(b.reference),
+        betRef: betCode(b.reference),
         status,
         totalStake: String(f.bet),
         totalWin: String(cancelled ? 0 : win),
@@ -131,7 +135,7 @@ async function rolledBackRefs(userId: string, refs: string[]): Promise<Set<strin
 
 function matches(t: UserTicket, q: string): boolean {
   const needle = q.toLowerCase();
-  if (t.publicId.toLowerCase().includes(needle)) return true;
+  if (t.publicId.toLowerCase().includes(needle) || t.betRef.toLowerCase().includes(needle)) return true;
   return t.bets.some((b) =>
     parseSlip(b.info).selections.some((s) =>
       `${s.match} ${s.marketPick ?? ""}`.toLowerCase().includes(needle)
@@ -149,6 +153,7 @@ export async function listUserTickets(userId: string, search = "", take = 100): 
   });
   const tickets = buildTickets(rows, await rolledBackRefs(userId, rows.map((r) => r.reference)));
   const q = search.trim();
+  await attachCheckCodes(tickets);
   return (q ? tickets.filter((t) => matches(t, q)) : tickets).slice(0, take);
 }
 
@@ -177,7 +182,9 @@ export async function getUserTicket(userId: string, id: string): Promise<UserTic
     : [bet];
   const rows = related.some((r) => r.id === bet.id) ? related : [...related, bet];
   const tickets = buildTickets(rows, await rolledBackRefs(userId, rows.map((r) => r.reference)));
-  return tickets.find((t) => t.id === bet.id) ?? null;
+  const ticket = tickets.find((t) => t.id === bet.id) ?? null;
+  if (ticket) await attachCheckCodes([ticket]);
+  return ticket;
 }
 
 /**
@@ -206,4 +213,32 @@ export async function settleInfoByRound(userId: string, rounds: string[]): Promi
     if (f.round && f.bet === 0 && f.info != null) out.set(f.round, f.info); // later rows overwrite
   }
   return out;
+}
+
+/*
+ * Public check codes (TicketCheckCode). A player's ticket number is a random
+ * P-XXXXXXXX, not the provider's sequential transaction number — that one
+ * would let anyone count through every player's bets on the public checker.
+ * Assigned lazily, the first time the owner lists or opens the bet.
+ */
+const newCheckCode = () => `P-${randomCode(8)}`;
+
+async function attachCheckCodes(tickets: UserTicket[]): Promise<void> {
+  if (tickets.length === 0) return;
+  const ids = tickets.map((t) => t.id);
+  const read = () =>
+    prisma.ticketCheckCode.findMany({ where: { transactionId: { in: ids } }, select: { code: true, transactionId: true } });
+
+  let rows = await read();
+  for (let attempt = 0; attempt < 3 && rows.length < ids.length; attempt++) {
+    const have = new Set(rows.map((r) => r.transactionId));
+    // skipDuplicates: a concurrent request (or a code clash) just loses the race; re-read below.
+    await prisma.ticketCheckCode.createMany({
+      data: ids.filter((id) => !have.has(id)).map((transactionId) => ({ code: newCheckCode(), transactionId })),
+      skipDuplicates: true,
+    });
+    rows = await read();
+  }
+  const byTx = new Map(rows.map((r) => [r.transactionId, r.code]));
+  for (const t of tickets) t.publicId = byTx.get(t.id) ?? t.publicId;
 }

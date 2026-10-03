@@ -28,7 +28,7 @@ type Tx = Prisma.TransactionClient;
 
 const CODE_ALPHABET = "ABCDEFGHJKMNPQRSTUVWXYZ23456789"; // no 0/O/1/I/L — read aloud safely
 
-function randomCode(length: number): string {
+export function randomCode(length: number): string {
   const bytes = crypto.randomBytes(length);
   let out = "";
   for (let i = 0; i < length; i++) out += CODE_ALPHABET[bytes[i] % CODE_ALPHABET.length];

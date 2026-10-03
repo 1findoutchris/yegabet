@@ -118,6 +118,26 @@ Pages: `/tickets` (Ticket History; `?find=1` = Find Ticket) and
 session's user id. The agent APIs and their `IN_PERSON_AGENT` check are
 unchanged.
 
+## Public Check Ticket
+
+`/check` (and `/check?code=…` as a shareable link): anyone, logged in or not,
+enters a ticket code and sees that ticket's matches, per-match results,
+stake and status. Served by `GET /api/tickets/check?code=` (no auth,
+30 checks a minute per IP), with the logic in `src/lib/ticketCheck.ts`.
+
+- **Agent tickets:** checked by their existing `T-XXXXXX` code. OPEN and
+  CANCELLED tickets aren't checkable.
+- **Player bets:** checked by a random `P-XXXXXXXX` code (`TicketCheckCode`,
+  migration `20261003090000_ticket_check_codes`), assigned the first time
+  the owner lists or opens the bet, and shown as the ticket number. The
+  provider's sequential transaction number is never a public key, because
+  counting it up would walk every player's bets.
+- **Privacy:** nothing identifying the owner is returned. Slip data is
+  rebuilt by `publicSlipInfo()` from match fields only, and the raw payload's
+  session token, provider user code and wallet balance never leave the server.
+
+Linked from the player account menu and the agent sidebar.
+
 ## Route guard
 
 `AgentShell` client-side redirects agents off any path outside

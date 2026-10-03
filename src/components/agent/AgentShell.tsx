@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import { useSession, signOut } from "next-auth/react";
 import {
   Trophy, Ticket, BarChart3, ArrowDownToLine, ArrowUpFromLine,
-  Menu, X, LogOut, Loader2, Wallet,
+  Menu, X, LogOut, Loader2, Wallet, SearchCheck,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useBalance } from "@/contexts/BalanceContext";
@@ -22,11 +22,12 @@ import { AgentTicketPanel } from "./AgentTicketPanel";
  * themselves for non-agents in (user)/agent/layout.tsx.
  */
 
-const ALLOWED_PREFIXES = ["/sports", "/agent", "/deposit", "/withdraw", "/withdrawals"];
+const ALLOWED_PREFIXES = ["/sports", "/agent", "/check", "/deposit", "/withdraw", "/withdrawals"];
 
 const LINKS = [
   { href: "/sports", label: "Sports", icon: Trophy },
   { href: "/agent/tickets", label: "Tickets", icon: Ticket },
+  { href: "/check", label: "Check Ticket", icon: SearchCheck },
   { href: "/agent/stats", label: "Stats", icon: BarChart3 },
   { href: "/deposit", label: "Deposit", icon: ArrowDownToLine },
   { href: "/withdraw", label: "Withdraw", icon: ArrowUpFromLine },

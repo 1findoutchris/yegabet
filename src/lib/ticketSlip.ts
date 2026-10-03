@@ -205,3 +205,40 @@ export function rawInfoText(info: unknown): string {
   }
   return String(data);
 }
+
+/*
+ * What a PUBLIC ticket check may see of a provider payload: the legs' match
+ * fields and the total odds, rebuilt from scratch. The raw payload also holds
+ * a session token, the player's provider user code and their wallet balance —
+ * none of that may leave the server for someone who merely knows the code.
+ * Unrecognised shapes give null (the public view never dumps raw payloads).
+ */
+const PUBLIC_LEG_FIELDS = [
+  "team1", "team2", "sport", "tournament_name", "market_type_name", "outcome_display_name",
+  "coeficient", "handicap", "base", "start_ts", "outcome",
+] as const;
+
+export function publicSlipInfo(info: unknown): string | null {
+  let data = info;
+  if (typeof data === "string") {
+    try { data = JSON.parse(data); } catch { return null; }
+  }
+  if (!data || typeof data !== "object") return null;
+  let detail: unknown = (data as Record<string, unknown>).detail;
+  if (typeof detail === "string") {
+    try { detail = JSON.parse(detail); } catch { return null; }
+  }
+  const d = detail as Record<string, unknown> | null;
+  if (!d || !Array.isArray(d.legs) || d.legs.length === 0) return null;
+  const legs = d.legs.map((leg) => {
+    const l = (leg ?? {}) as Record<string, unknown>;
+    const out: Record<string, unknown> = {};
+    for (const k of PUBLIC_LEG_FIELDS) {
+      const v = l[k];
+      if (v === null || typeof v === "string" || typeof v === "number") out[k] = v;
+    }
+    return out;
+  });
+  const k = typeof d.k === "number" || typeof d.k === "string" ? d.k : null;
+  return JSON.stringify({ detail: JSON.stringify({ k, legs }) });
+}
