@@ -3,7 +3,10 @@ import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { launchGame, GameUnavailableError } from "@/lib/providers/silent-api";
 import { openGame, GregmornError } from "@/lib/providers/gregmorn";
-import { SPORTSBOOK_GAME_UID } from "@/types/games";
+import { SPORTSBOOK_GAME_UID, OCTHERA_AVIATOR_ID } from "@/types/games";
+import {
+  OctheraError, aviatorGameUid, ensurePlayer, getBalance, launchGame as launchOcthera, octheraUsername,
+} from "@/lib/providers/octhera";
 import { z } from "zod";
 
 const launchSchema = z.object({
@@ -27,6 +30,35 @@ export async function POST(req: NextRequest) {
 
     if (!user) {
       return NextResponse.json({ error: "User not found" }, { status: 404 });
+    }
+
+    // Aviator via Octhera — its own aggregator and its own per-player wallet
+    // (funded by hand in the Octhera portal), whatever GAME_PROVIDER is.
+    if (game_uid === OCTHERA_AVIATOR_ID) {
+      if (process.env.OCTHERA_AVIATOR_PUBLIC !== "true") {
+        return NextResponse.json({ error: "This game is temporarily unavailable", unavailable: true }, { status: 502 });
+      }
+      const username = octheraUsername(session.user.id);
+      await ensurePlayer(username);
+      const device = /Mobi|Android|iPhone|iPad/i.test(req.headers.get("user-agent") ?? "") ? "mobile" : "desktop";
+      const url = await launchOcthera({ username, gameUid: await aviatorGameUid(), device });
+      // Tell the player which balance Aviator plays with — it isn't their VinnaBet balance.
+      const wallet = await getBalance(username).catch(() => null);
+      const notice = wallet
+        ? wallet.balance > 0
+          ? `Aviator balance: ${wallet.balance.toFixed(2)} ${wallet.currency} (separate from your VinnaBet balance)`
+          : "Your Aviator balance is 0 ETB — it's separate from your VinnaBet balance. Contact support to add funds."
+        : null;
+      try {
+        await prisma.recentGame.upsert({
+          where: { userId_gameId: { userId: session.user.id, gameId: game_uid } },
+          create: { userId: session.user.id, gameId: game_uid },
+          update: { playCount: { increment: 1 }, lastPlayedAt: new Date() },
+        });
+      } catch (e) {
+        console.error("[games/launch] recent upsert failed", e);
+      }
+      return NextResponse.json({ game_launch_url: url, notice });
     }
 
     // Provider switch: unset/anything-else keeps Silent as the default so
@@ -88,6 +120,13 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ game_launch_url: result.payload.game_launch_url });
   } catch (error) {
+    if (error instanceof OctheraError) {
+      console.warn("[games/launch] octhera unavailable:", error.status, error.providerMessage);
+      return NextResponse.json(
+        { error: "This game is temporarily unavailable", unavailable: true },
+        { status: 502 }
+      );
+    }
     if (error instanceof GregmornError) {
       console.warn("[games/launch] gregmorn unavailable:", error.status, error.providerMessage);
       return NextResponse.json(

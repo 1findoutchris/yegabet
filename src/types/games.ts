@@ -14,6 +14,11 @@ export interface Game {
 export const SPORTSBOOK_GAME_UID =
   process.env.NEXT_PUBLIC_SPORTSBOOK_GAME_UID || "8a704858d5deb4af1ddc722092ac7614";
 
+// Spribe Aviator served through the Octhera aggregator (not the main game
+// provider). A catalog entry like any other, but /api/games/launch routes this
+// id to Octhera. Shown only while OCTHERA_AVIATOR_PUBLIC=true (see lib/games).
+export const OCTHERA_AVIATOR_ID = "octhera:aviator";
+
 export interface Provider {
   slug: string;
   name: string;

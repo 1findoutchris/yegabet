@@ -2,7 +2,7 @@ import "server-only";
 import fs from "fs";
 import path from "path";
 import type { Game, Provider } from "@/types/games";
-import { PROVIDER_META } from "@/types/games";
+import { PROVIDER_META, OCTHERA_AVIATOR_ID } from "@/types/games";
 
 export type { Game, Provider };
 export { PROVIDER_META };
@@ -145,10 +145,33 @@ function loadAllGames(): Game[] {
   return all;
 }
 
+/*
+ * Spribe Aviator via Octhera — appended to whichever catalog is loaded, while
+ * OCTHERA_AVIATOR_PUBLIC=true and an API key is configured. Octhera keeps its
+ * own per-player balance (funded by hand in the Octhera portal), so turning
+ * this on is a business decision, not just a deploy.
+ */
+function octheraAviator(): Game | null {
+  if (process.env.OCTHERA_AVIATOR_PUBLIC !== "true" || !process.env.OCTHERA_API_KEY) return null;
+  return {
+    gameID: OCTHERA_AVIATOR_ID,
+    gameNameEn: "Aviator",
+    // Octhera serves artwork for every game at /media/games/<gameUid>.
+    img: process.env.OCTHERA_AVIATOR_IMG ||
+      (process.env.OCTHERA_AVIATOR_GAME_UID
+        ? `https://api.octhera.org/media/games/${process.env.OCTHERA_AVIATOR_GAME_UID}`
+        : "https://ossimg.forpicstore777.top/rajalottery/gamelogo/TB_Chess/800_20250421220338955.png"),
+    customGameType: 0,
+    vendorCode: "SPRIBE",
+    provider: "spribe",
+  };
+}
+
 let _cache: Game[] | null = null;
 function getAllGames(): Game[] {
   if (_cache) return _cache;
-  const all = loadAllGames();
+  const aviator = octheraAviator();
+  const all = [...(aviator ? [aviator] : []), ...loadAllGames()];
   const seen = new Set<string>();
   _cache = all.filter((g) => {
     if (HIDDEN_PROVIDERS.has(g.provider)) return false; // disabled providers
@@ -163,6 +186,7 @@ function getAllGames(): Game[] {
 
 // Popular crash/instant games — fixed order, shown first on Games page
 const POPULAR_GAME_IDS = [
+  OCTHERA_AVIATOR_ID,                 // Aviator        — Spribe via Octhera (when enabled)
   "a04d1f3eb8ccec8a4823bdf18e3f0e84", // Aviator        — Spribe
   "2e815f80a5a87b0255c130c00d95a71e", // JetX           — SmartSoft
   "66d311ff6cf531e40b61c483dd34c5c9", // Penalty Unlimited — InOut

@@ -57,6 +57,8 @@ export function GamePlayerProvider({ children }: { children: React.ReactNode }) 
 
       setGameUrl(data.game_launch_url);
       setStatus("ready");
+      // e.g. Octhera games play from a separate balance — say so up front.
+      if (data.notice) toast.info(game.gameNameEn, { description: data.notice, duration: 8000 });
     } catch {
       setCurrent(null);
       setStatus("idle");

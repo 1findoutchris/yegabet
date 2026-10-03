@@ -40,6 +40,25 @@ test.
 4. **IP allowlist:** if you turn on Octhera's IP allowlist, add Railway's
    outbound IP, or every call returns 403.
 
+## Aviator on the normal Games page
+
+Set **`OCTHERA_AVIATOR_PUBLIC=true`** in Railway to show Aviator to **every
+player**, as a normal game tile. It's first under **Popular Games** on the
+Games page, and also appears in **Crash & Instant**, in search and on the
+Spribe provider page. Tapping it opens Aviator through Octhera (`game_uid`
+`octhera:aviator` in `/api/games/launch`), whatever `GAME_PROVIDER` is.
+Remove the variable to hide it again.
+
+- **Separate balance:** each player's Aviator balance lives at Octhera and
+  starts at 0. You fund it by hand in the Octhera portal (Players →
+  `vb_<user id>` → Deposit). When the game opens, the player sees a message
+  with their Aviator balance, or that it's 0 and they should contact support.
+- **Wins stay at Octhera:** they don't reach the VinnaBet balance
+  automatically. Paying out means Octhera's withdraw flow plus a manual
+  VinnaBet credit, until Octhera offers a deposit API to connect the wallets.
+- **Artwork:** if you set `OCTHERA_AVIATOR_GAME_UID`, the tile uses
+  Octhera's own image for it.
+
 ## Testing
 
 1. Log in on vinna.bet with an account from `OCTHERA_TEST_USERS` and open

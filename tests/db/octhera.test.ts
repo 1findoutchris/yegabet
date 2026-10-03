@@ -4,6 +4,7 @@ import { prisma } from "@/lib/prisma";
 import { POST as launch } from "@/app/api/octhera/launch/route";
 import { GET as status } from "@/app/api/octhera/status/route";
 import { POST as webhook } from "@/app/api/provider/octhera/callback/route";
+import { POST as gamesLaunch } from "@/app/api/games/launch/route";
 import { makeUser, truncateAll } from "../factories";
 import { json, req } from "../helpers/req";
 import { asAnon, asUser } from "../helpers/session";
@@ -14,7 +15,7 @@ import { asAnon, asUser } from "../helpers/session";
  */
 
 const SECRET = "test-octhera-callback-secret";
-const ENV = ["OCTHERA_API_KEY", "OCTHERA_CALLBACK_SECRET", "OCTHERA_TEST_USERS", "OCTHERA_AVIATOR_GAME_UID", "OCTHERA_BASE_URL"] as const;
+const ENV = ["OCTHERA_API_KEY", "OCTHERA_CALLBACK_SECRET", "OCTHERA_TEST_USERS", "OCTHERA_AVIATOR_GAME_UID", "OCTHERA_BASE_URL", "OCTHERA_AVIATOR_PUBLIC"] as const;
 const saved: Record<string, string | undefined> = {};
 const fetchMock = vi.fn();
 
@@ -40,6 +41,7 @@ beforeEach(async () => {
   process.env.OCTHERA_CALLBACK_SECRET = SECRET;
   delete process.env.OCTHERA_AVIATOR_GAME_UID;
   delete process.env.OCTHERA_BASE_URL;
+  delete process.env.OCTHERA_AVIATOR_PUBLIC;
   fetchMock.mockReset();
   vi.stubGlobal("fetch", fetchMock);
   await truncateAll();
@@ -152,5 +154,55 @@ describe("status", () => {
     const { body } = await json<{ balance: { balance: number }; events: { txnId: string }[] }>(await status());
     expect(body.balance.balance).toBe(118.5);
     expect(body.events.map((e) => e.txnId)).toEqual(["mine"]);
+  });
+});
+
+describe("Aviator on the normal casino page (/api/games/launch, game_uid octhera:aviator)", () => {
+  const open = (ua = "Mozilla/5.0 (iPhone)") =>
+    gamesLaunch(req("POST", "/api/games/launch", { body: { game_uid: "octhera:aviator" }, headers: { "user-agent": ua } }));
+
+  test("switch off (OCTHERA_AVIATOR_PUBLIC unset) → unavailable, Octhera never called", async () => {
+    const player = await makeUser();
+    asUser({ id: player.id });
+    const { status: code, body } = await json<{ unavailable: boolean }>(await open());
+    expect(code).toBe(502);
+    expect(body.unavailable).toBe(true);
+    expect(fetchMock).not.toHaveBeenCalled();
+  });
+
+  test("switch on → ANY logged-in player gets a launch URL and their Aviator balance notice", async () => {
+    process.env.OCTHERA_AVIATOR_PUBLIC = "true";
+    process.env.OCTHERA_AVIATOR_GAME_UID = "aviator-uid";
+    const player = await makeUser(); // not a tester
+    asUser({ id: player.id });
+    reply({ status: "ok", player: { username: "x", balance: 0, currency: "ETB" } }, 201);
+    reply({ status: "ok", launchUrl: "https://api.octhera.org/wrapper?token=xyz", transferId: "t" });
+    reply({ status: "ok", username: "x", balance: 0, currency: "ETB" });
+
+    const { status: code, body } = await json<{ game_launch_url: string; notice: string }>(await open());
+    expect(code).toBe(200);
+    expect(body.game_launch_url).toBe("https://api.octhera.org/wrapper?token=xyz");
+    expect(body.notice).toMatch(/Aviator balance is 0 ETB/);
+    const login = JSON.parse(fetchMock.mock.calls[1][1].body);
+    expect(login).toMatchObject({ username: `vb_${player.id}`, gameUid: "aviator-uid", device: "mobile" });
+    // VinnaBet balance untouched
+    expect(Number((await prisma.user.findUniqueOrThrow({ where: { id: player.id } })).balance)).toBe(0);
+  });
+
+  test("Octhera refusing the launch → friendly 'unavailable'", async () => {
+    process.env.OCTHERA_AVIATOR_PUBLIC = "true";
+    process.env.OCTHERA_AVIATOR_GAME_UID = "aviator-uid";
+    asUser({ id: tester.id });
+    reply({ code: 409, status: "fail", message: "username already registered" }, 409);
+    reply({ code: 403, status: "fail", message: "game launches are paused" }, 403);
+    const { status: code, body } = await json<{ unavailable: boolean }>(await open());
+    expect(code).toBe(502);
+    expect(body.unavailable).toBe(true);
+  });
+
+  test("anonymous → 401", async () => {
+    process.env.OCTHERA_AVIATOR_PUBLIC = "true";
+    asAnon();
+    expect((await json(await open())).status).toBe(401);
   });
 });
