@@ -786,3 +786,31 @@ model TicketCheckCode {
 
   @@map("ticket_check_codes")
 }
+
+// Octhera (aggregator) webhook log. Octhera runs the wallet for its games —
+// player balances live there, funded in the Octhera portal — so these events
+// are a RECORD of money that already moved on their side; they never touch
+// User.balance. Keyed on (txnId, action): Octhera's docs say txnId is unique
+// per event, but their withdrawal examples reuse one txnId across the
+// requested / confirmed / rejected steps, so txnId alone could drop real ones.
+model OctheraEvent {
+  id          String   @id @default(cuid())
+  txnId       String
+  action      String   // bet | win | bet_win | refund | deposit_required | withdraw_*
+  username    String   // the Octhera player id we registered (see providers/octhera.ts)
+  betAmount   Decimal  @db.Decimal(12, 2)
+  winAmount   Decimal  @db.Decimal(12, 2)
+  amount      Decimal? @db.Decimal(12, 2) // withdrawal events only
+  balance     Decimal  @db.Decimal(12, 2) // player's Octhera balance after the event
+  currency    String
+  gameRound   String?
+  gameUid     String?
+  gameName    String?
+  payload     Json     // the full signed body, as received
+
+  createdAt DateTime @default(now())
+
+  @@unique([txnId, action])
+  @@index([username, createdAt])
+  @@map("octhera_events")
+}
