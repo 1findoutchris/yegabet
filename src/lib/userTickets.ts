@@ -91,6 +91,10 @@ export function buildTickets(rows: Row[], rolledBack: Set<string>) {
       const settled = !cancelled && (win > 0 || settles.length > 0 || f.roundFinished);
       const status = cancelled ? "CANCELLED" : win > 0 ? "WON" : settled ? "LOST" : "PLACED";
       const createdAt = b.createdAt.toISOString();
+      // Latest settle payload carries the legs' per-match results; a single
+      // bet+win call that finished the round carries them itself.
+      const lastSettle = settles.length > 0 ? settles[settles.length - 1] : null;
+      const resultInfo = lastSettle ? fields(lastSettle.metadata).info : f.roundFinished ? f.info : null;
       return {
         id: b.id,
         publicId: betCode(b.reference),
@@ -106,6 +110,7 @@ export function buildTickets(rows: Row[], rolledBack: Set<string>) {
           settled,
           gameName: "Sportsbook",
           info: f.info,
+          resultInfo,
           transaction: { createdAt },
         }],
       };
@@ -173,4 +178,32 @@ export async function getUserTicket(userId: string, id: string): Promise<UserTic
   const rows = related.some((r) => r.id === bet.id) ? related : [...related, bet];
   const tickets = buildTickets(rows, await rolledBackRefs(userId, rows.map((r) => r.reference)));
   return tickets.find((t) => t.id === bet.id) ?? null;
+}
+
+/**
+ * The latest settle payload (bet = 0 row) per provider round for one user —
+ * where the per-match results live. Used for agent tickets, whose TicketBet
+ * only keeps the placement payload.
+ */
+export async function settleInfoByRound(userId: string, rounds: string[]): Promise<Map<string, unknown>> {
+  const unique = [...new Set(rounds.filter(Boolean))];
+  if (unique.length === 0) return new Map();
+  const rows = await prisma.transaction.findMany({
+    where: {
+      userId,
+      type: { in: ["BET", "WIN"] },
+      OR: unique.flatMap((round) => [
+        { metadata: { path: ["roundId"], equals: round } },
+        { metadata: { path: ["game_round"], equals: round } },
+      ]),
+    },
+    select: SELECT,
+    orderBy: { createdAt: "asc" },
+  });
+  const out = new Map<string, unknown>();
+  for (const r of rows) {
+    const f = fields(r.metadata);
+    if (f.round && f.bet === 0 && f.info != null) out.set(f.round, f.info); // later rows overwrite
+  }
+  return out;
 }

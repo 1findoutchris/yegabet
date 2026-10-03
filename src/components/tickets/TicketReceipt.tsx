@@ -1,13 +1,24 @@
 "use client";
 
-import { parseSlip, rawInfoText } from "@/lib/ticketSlip";
+import { CheckCircle2, XCircle, Clock } from "lucide-react";
+import { parseSlip, rawInfoText, withResults, type LegResult } from "@/lib/ticketSlip";
 
 /*
  * The printable ticket body — games, odds, stake, potential win, status.
  * Shared by the in-person agent's ticket page and a player's own ticket
  * history; both APIs return this same shape. Print styles flatten it to
  * black-on-white for thermal printers.
+ *
+ * Each match shows its own result (Won / Lost / Open) when the provider has
+ * reported it — `resultInfo` is the settle payload that carries the legs'
+ * outcomes. Labels are text, not just colour, so they survive a mono print.
  */
+
+const RESULT: Record<LegResult, { label: string; icon: typeof Clock; tone: string }> = {
+  won: { label: "Won", icon: CheckCircle2, tone: "text-emerald-500" },
+  lost: { label: "Lost", icon: XCircle, tone: "text-[color:var(--red)]" },
+  open: { label: "Open", icon: Clock, tone: "text-[color:var(--text-muted)]" },
+};
 
 export interface TicketView {
   id: string;
@@ -24,6 +35,8 @@ export interface TicketView {
     settled: boolean;
     gameName: string | null;
     info: unknown;
+    /** Settle payload with per-match results, once the ticket is decided. */
+    resultInfo?: unknown;
     transaction: { createdAt: string };
   }[];
 }
@@ -47,19 +60,33 @@ export function TicketReceipt({ ticket }: { ticket: TicketView }) {
       <div className="border-t border-dashed border-[color:var(--border-muted)] pt-3 mb-3">
         {ticket.bets.map((b, i) => {
           const slip = parseSlip(b.info);
+          const selections = withResults(slip, b.resultInfo, b.settled);
           const potential = slip.totalOdds ? Number(b.betAmount) * Number(slip.totalOdds) : null;
           return (
             <div key={b.id} className="text-[12px] mb-3 last:mb-0">
               {slip.selections.length > 0 ? (
                 <>
-                  {slip.selections.map((s, j) => (
+                  {selections.map((s, j) => (
                     <div key={j} className="py-2 border-b border-[color:var(--border-muted)] break-inside-avoid">
                       <div className="flex justify-between items-baseline gap-3">
                         <p className="font-semibold min-w-0">{s.match}</p>
                         {s.kickoff && <p className="shrink-0 whitespace-nowrap text-right text-[color:var(--text-muted)]">{s.kickoff}</p>}
                       </div>
                       {s.marketPick && <p>{s.marketPick}</p>}
-                      {s.odds && <p>Odds: {s.odds}</p>}
+                      {(s.odds || s.result) && (
+                        <div className="flex justify-between items-center gap-3">
+                          {s.odds ? <p>Odds: {s.odds}</p> : <span />}
+                          {s.result && (() => {
+                            const r = RESULT[s.result];
+                            const Icon = r.icon;
+                            return (
+                              <span className={`inline-flex items-center gap-1 font-bold uppercase text-[11px] ${r.tone}`}>
+                                <Icon className="w-3.5 h-3.5 print:hidden" /> {r.label}
+                              </span>
+                            );
+                          })()}
+                        </div>
+                      )}
                     </div>
                   ))}
                   {(slip.totalOdds || slip.betType) && (

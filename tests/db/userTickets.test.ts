@@ -151,3 +151,39 @@ describe("in-person agent ticket APIs are unchanged", () => {
     expect((await json<{ ticket: { publicId: string } }>(one)).body.ticket.publicId).toBe("T-AGENT1");
   });
 });
+
+describe("per-match results (real ticket 41649 shape)", () => {
+  const combo = (betId: number, legOutcomes: number[]) =>
+    JSON.stringify({ detail: JSON.stringify({ bet_id: betId, k: 19.05, legs: [
+      { team1: "Denmark", team2: "Portugal", market_type_name: "1x2", outcome_display_name: "Denmark", coeficient: 3.55, outcome: legOutcomes[0] },
+      { team1: "Greece", team2: "Netherlands", market_type_name: "1x2", outcome_display_name: "Greece", coeficient: 3.55, outcome: legOutcomes[1] },
+      { team1: "Wales", team2: "Norway", market_type_name: "1x2", outcome_display_name: "Norway", coeficient: 1.44, outcome: legOutcomes[2] },
+    ] }) });
+  const outcomes = (resultInfo: unknown) =>
+    (JSON.parse(JSON.parse(String(resultInfo)).detail).legs as { outcome: number }[]).map((l) => l.outcome);
+
+  test("player ticket: LOST, with the settle payload carrying each match's result", async () => {
+    const player = await makeUser();
+    const bet = await txn(player.id, "BET", { gameId: SPORTS, roundId: "41649-p", bet: 20, win: 0, info: combo(0, [0, 0, 0]) });
+    await txn(player.id, "WIN", { gameId: SPORTS, roundId: "41649-p", bet: 0, win: 0, round_finished: true, info: combo(41649, [0, 2, 0]) });
+
+    asUser({ id: player.id });
+    const { body } = await json<{ ticket: { status: string; bets: { resultInfo: unknown }[] } }>(
+      await getUser(req("GET", `/api/user/tickets/${bet.id}`), { params: Promise.resolve({ id: bet.id }) })
+    );
+    expect(body.ticket.status).toBe("LOST");
+    expect(outcomes(body.ticket.bets[0].resultInfo)).toEqual([0, 2, 0]);
+  });
+
+  test("agent ticket: each bet gets its round's settle payload", async () => {
+    const tx = await txn(agent.id, "BET", { gameId: SPORTS, roundId: "41649-a", bet: 20, win: 0, info: combo(0, [0, 0, 0]) });
+    await txn(agent.id, "WIN", { gameId: SPORTS, roundId: "41649-a", bet: 0, win: 0, info: combo(41649, [0, 2, 0]) });
+    const t = await prisma.ticket.create({ data: { publicId: "T-RES001", agentId: agent.id, status: "PLACED", totalStake: 20 } });
+    await prisma.ticketBet.create({ data: { ticketId: t.id, transactionId: tx.id, betAmount: 20, gameRound: "41649-a", gameId: SPORTS, info: combo(0, [0, 0, 0]) } });
+
+    asUser({ id: agent.id, role: "IN_PERSON_AGENT" });
+    const r = await getAgent(req("GET", `/api/agent/tickets/${t.id}`), { params: Promise.resolve({ id: t.id }) });
+    const { body } = await json<{ ticket: { bets: { resultInfo: unknown }[] } }>(r);
+    expect(outcomes(body.ticket.bets[0].resultInfo)).toEqual([0, 2, 0]);
+  });
+});

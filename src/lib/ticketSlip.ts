@@ -21,6 +21,20 @@ export interface SlipSelection {
   marketPick: string | null;
   odds: string | null;
   kickoff: string | null;
+  /** This match's own result, when the provider reports it (BetBy legs only). */
+  result: LegResult | null;
+}
+
+export type LegResult = "open" | "won" | "lost";
+
+/*
+ * BetBy leg `outcome` codes. 0 and 2 verified against a real settled ticket
+ * (open / lost legs on a lost combo); 1 = won is BetBy's convention. Any other
+ * code (void, half-win, …) shows no mark rather than a guessed one.
+ */
+function legResult(outcome: unknown): LegResult | null {
+  const n = typeof outcome === "number" ? outcome : typeof outcome === "string" && outcome !== "" ? Number(outcome) : NaN;
+  return n === 0 ? "open" : n === 1 ? "won" : n === 2 ? "lost" : null;
 }
 
 /* start_ts is Unix seconds; a plain date string is shown as-is. */
@@ -108,6 +122,7 @@ export function parseSlip(info: unknown): Slip {
           marketPick: [market, pickText].filter(Boolean).join(" ") || null,
           odds: text(l.coeficient) ?? pick(l, ODDS_KEYS),
           kickoff: formatKickoff(text(l.start_ts) ?? pick(l, DATE_KEYS)),
+          result: legResult(l.outcome),
         };
       }),
       totalOdds: text(d.k) ?? pick(d, TOTAL_ODDS_KEYS),
@@ -136,6 +151,7 @@ export function parseSlip(info: unknown): Slip {
         marketPick: [market, pickText].filter(Boolean).join(" ") || null,
         odds: pick(o, ODDS_KEYS),
         kickoff: formatKickoff(pick(o, DATE_KEYS)),
+        result: null,
       });
       return; // don't double-count nested dupes of the same selection
     }
@@ -149,6 +165,24 @@ export function parseSlip(info: unknown): Slip {
   }
   walk(data, 0);
   return { selections, totalOdds, betType };
+}
+
+const selectionKey = (s: SlipSelection) => `${s.match}|${s.marketPick ?? ""}`.toLowerCase();
+
+/**
+ * Per-match results for a bet. The placement payload carries every leg as
+ * open; once the ticket is decided the provider re-sends the legs with their
+ * results (`resultInfo`, from the settle callback). Results come from that
+ * when present. A settled bet with no settle payload gets no marks — the
+ * placement's "open" would be stale.
+ */
+export function withResults(slip: Slip, resultInfo: unknown, settled: boolean): SlipSelection[] {
+  const results = resultInfo != null ? parseSlip(resultInfo).selections : [];
+  if (results.length === 0) {
+    return settled ? slip.selections.map((s) => ({ ...s, result: null })) : slip.selections;
+  }
+  const byKey = new Map(results.map((r) => [selectionKey(r), r.result]));
+  return slip.selections.map((s) => ({ ...s, result: byKey.get(selectionKey(s)) ?? null }));
 }
 
 /*
