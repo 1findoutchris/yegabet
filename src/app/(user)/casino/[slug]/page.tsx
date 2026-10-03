@@ -9,6 +9,7 @@ import {
   getCrashGames,
   getLiveCasinoGames,
   getGamesByProvider,
+  loadOctheraGames,
 } from "@/lib/games";
 import { PROVIDER_META } from "@/types/games";
 import {
@@ -32,6 +33,7 @@ interface Props {
 
 export default async function CategoryPage({ params }: Props) {
   const { slug } = await params;
+  await loadOctheraGames();
 
   // Built-in category
   const getter = CATEGORY_GETTERS[slug];
@@ -50,9 +52,9 @@ export default async function CategoryPage({ params }: Props) {
   }
 
   // Provider page (e.g. /casino/pgsoft, /casino/cq9)
-  const providerName = PROVIDER_META[slug]?.name;
   const games = getGamesByProvider(slug, 500);
   if (!games.length) notFound();
+  const providerName = PROVIDER_META[slug]?.name ?? games[0].providerName;
 
   return (
     <ThemedPage

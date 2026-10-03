@@ -2,7 +2,8 @@ import "server-only";
 import fs from "fs";
 import path from "path";
 import type { Game, Provider } from "@/types/games";
-import { PROVIDER_META, OCTHERA_AVIATOR_ID } from "@/types/games";
+import { PROVIDER_META, OCTHERA_AVIATOR_ID, OCTHERA_ID_PREFIX } from "@/types/games";
+import { listGames as listOctheraGames, gameImageUrl as octheraImageUrl } from "@/lib/providers/octhera";
 
 export type { Game, Provider };
 export { PROVIDER_META };
@@ -76,6 +77,9 @@ const SILENT_HIDDEN_PROVIDERS = new Set([
 ]);
 
 const HIDDEN_PROVIDERS = IS_GREGMORN_CATALOG ? GREGMORN_HIDDEN_PROVIDERS : SILENT_HIDDEN_PROVIDERS;
+
+const isCrash = (g: Game) => g.kind === "crash" || CRASH_PROVIDERS.has(g.provider);
+const isLive = (g: Game) => g.kind === "live" || LIVE_PROVIDERS.has(g.provider);
 
 // ── Shuffle helpers ───────────────────────────────────────────────────────────
 
@@ -167,14 +171,102 @@ function octheraAviator(): Game | null {
   };
 }
 
+/*
+ * Octhera's whole catalog — "octhera:<gameUid>" tiles, while
+ * OCTHERA_GAMES_PUBLIC=true and an API key is configured. Same separate
+ * per-player Octhera balance as Aviator above.
+ *
+ * Fetched from Octhera at runtime (not a JSON file) and refreshed hourly.
+ * Pages and routes that read the catalog `await loadOctheraGames()` first;
+ * the getters below stay synchronous and use whatever was last loaded.
+ * Kept on globalThis so every route bundle shares one copy.
+ */
+const OCTHERA_TTL_MS = 60 * 60 * 1000;
+const OCTHERA_RETRY_MS = 5 * 60 * 1000;
+const OCTHERA_FIRST_LOAD_WAIT_MS = 8_000;
+
+type OctheraCatalog = { games: Game[]; at: number; loading: Promise<void> | null };
+const octheraCatalog: OctheraCatalog = ((globalThis as { __octheraCatalog?: OctheraCatalog }).__octheraCatalog ??= {
+  games: [], at: 0, loading: null,
+});
+
+const octheraGamesOn = () => process.env.OCTHERA_GAMES_PUBLIC === "true" && !!process.env.OCTHERA_API_KEY;
+
+/** Octhera's provider → one of our slugs when it matches one (so "SPRIBE" joins /casino/spribe). */
+function octheraProviderSlug(provider: string, providerName: string, known: Set<string>): string {
+  const candidates = [provider, providerName].filter(Boolean).flatMap((s) => {
+    const lower = s.toLowerCase();
+    return [lower.replace(/[^a-z0-9]/g, ""), lower.replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")];
+  });
+  return candidates.find((c) => known.has(c)) ?? candidates[candidates.length - 1] ?? "octhera";
+}
+
+async function fetchOctheraGames(): Promise<Game[]> {
+  const known = new Set([...Object.keys(PROVIDER_META), ...loadAllGames().map((g) => g.provider)]);
+  return (await listOctheraGames()).map((g) => ({
+    gameID: `${OCTHERA_ID_PREFIX}${g.gameUid}`,
+    gameNameEn: g.name.trim(),
+    img: g.image || g.imageUrl || octheraImageUrl(g.gameUid),
+    customGameType: /slot/i.test(g.type ?? "") ? 0 : 1,
+    vendorCode: g.provider || "OCTHERA",
+    provider: octheraProviderSlug(g.provider ?? "", g.providerName ?? "", known),
+    providerName: g.providerName || g.provider || undefined,
+    kind: /crash|instant/i.test(g.type ?? "") ? "crash" : /live/i.test(g.type ?? "") ? "live" : undefined,
+  }));
+}
+
+/** Make sure the Octhera catalog is loaded (first call waits up to 8s; later ones refresh in the background). */
+export async function loadOctheraGames(): Promise<void> {
+  if (!octheraGamesOn()) {
+    if (octheraCatalog.games.length) {
+      octheraCatalog.games = [];
+      octheraCatalog.at = 0;
+      _cache = null;
+    }
+    return;
+  }
+  if (Date.now() - octheraCatalog.at < OCTHERA_TTL_MS) return;
+
+  octheraCatalog.loading ??= fetchOctheraGames()
+    .then((games) => {
+      octheraCatalog.games = games;
+      octheraCatalog.at = Date.now();
+      _cache = null;
+      console.log(`[octhera] catalog loaded: ${games.length} games`);
+    })
+    .catch((e) => {
+      // Keep whatever we had; try again in 5 minutes.
+      octheraCatalog.at = Date.now() - OCTHERA_TTL_MS + OCTHERA_RETRY_MS;
+      console.warn("[octhera] catalog load failed:", e instanceof Error ? e.message : e);
+    })
+    .finally(() => {
+      octheraCatalog.loading = null;
+    });
+
+  // Something already loaded → serve it and refresh behind the scenes.
+  if (octheraCatalog.games.length) return;
+  await Promise.race([
+    octheraCatalog.loading,
+    new Promise((r) => setTimeout(r, OCTHERA_FIRST_LOAD_WAIT_MS)),
+  ]);
+}
+
+const nameKey = (g: Game) => `${g.provider}|${g.gameNameEn.trim().toLowerCase()}`;
+
 let _cache: Game[] | null = null;
 function getAllGames(): Game[] {
   if (_cache) return _cache;
   const aviator = octheraAviator();
-  const all = [...(aviator ? [aviator] : []), ...loadAllGames()];
+  // Disabled providers apply to the main catalog only — Octhera is its own account.
+  const own = [...(aviator ? [aviator] : []), ...loadAllGames()].filter((g) => !HIDDEN_PROVIDERS.has(g.provider));
+  // A game we already have from the main provider stays there (it plays with
+  // the VinnaBet balance); Octhera only adds what's missing.
+  const ownNames = new Set(own.map(nameKey));
+  const octhera = octheraGamesOn()
+    ? octheraCatalog.games.filter((g) => !ownNames.has(nameKey(g)))
+    : [];
   const seen = new Set<string>();
-  _cache = all.filter((g) => {
-    if (HIDDEN_PROVIDERS.has(g.provider)) return false; // disabled providers
+  _cache = [...own, ...octhera].filter((g) => {
     if (seen.has(g.gameID)) return false;
     seen.add(g.gameID);
     return true;
@@ -239,7 +331,7 @@ export function getPopularGames(): Game[] {
 // Hot: non-live, non-crash — shuffled daily (prefer games that have images)
 export function getHotGames(limit = 18): Game[] {
   const all = getAllGames().filter(
-    (g) => !LIVE_PROVIDERS.has(g.provider) && !CRASH_PROVIDERS.has(g.provider)
+    (g) => !isLive(g) && !isCrash(g)
   );
   const withImg = shuffle(all.filter((g) => g.img));
   const noImg   = shuffle(all.filter((g) => !g.img));
@@ -251,7 +343,7 @@ export function getNewGames(limit = 18): Game[] {
   const rng = daySeededRng();
   for (let i = 0; i < 50; i++) rng();
   const pool = getAllGames().filter(
-    (g) => !LIVE_PROVIDERS.has(g.provider) && !CRASH_PROVIDERS.has(g.provider)
+    (g) => !isLive(g) && !isCrash(g)
   );
   const withImg = [...pool.filter((g) => g.img)];
   for (let i = withImg.length - 1; i > 0; i--) {
@@ -305,8 +397,8 @@ export function getSlotGames(limit = 18): Game[] {
   // SmartSoft is a CRASH_PROVIDER, so the shuffled pool can't duplicate these.
   const pool = getAllGames().filter(
     (g) =>
-      !CRASH_PROVIDERS.has(g.provider) &&
-      !LIVE_PROVIDERS.has(g.provider) &&
+      !isCrash(g) &&
+      !isLive(g) &&
       g.customGameType === 0
   );
   return [...featured, ...shuffle(pool.filter((g) => g.img))].slice(0, limit);
@@ -318,7 +410,7 @@ export function getCrashGames(limit = 500): Game[] {
   const popularIds = new Set(popular.map((g) => g.gameID));
   const rest = shuffle(
     getAllGames().filter(
-      (g) => CRASH_PROVIDERS.has(g.provider) && !popularIds.has(g.gameID)
+      (g) => isCrash(g) && !popularIds.has(g.gameID)
     )
   );
   return [...popular, ...rest].slice(0, limit);
@@ -331,7 +423,7 @@ export function getLiveCasinoGames(limit = 18): Game[] {
   );
   const others = getAllGames().filter(
     (g) =>
-      LIVE_PROVIDERS.has(g.provider) &&
+      isLive(g) &&
       g.provider !== "evolutionlive"
   );
 
@@ -371,7 +463,7 @@ export function getRecommendedFrom(
         providers.has(g.provider) &&
         !exclude.has(g.gameID) &&
         g.img &&
-        !LIVE_PROVIDERS.has(g.provider)
+        !isLive(g)
     )
   );
 
@@ -395,11 +487,13 @@ export function getGamesByProvider(providerSlug: string, limit = 500): Game[] {
 
 export function getProviderStats(): { slug: string; name: string; count: number }[] {
   const counts = new Map<string, number>();
+  const names = new Map<string, string>();
   for (const g of getAllGames()) {
     counts.set(g.provider, (counts.get(g.provider) ?? 0) + 1);
+    if (g.providerName && !names.has(g.provider)) names.set(g.provider, g.providerName);
   }
   return Array.from(counts.entries())
-    .map(([slug, count]) => ({ slug, name: PROVIDER_META[slug]?.name ?? slug, count }))
+    .map(([slug, count]) => ({ slug, name: PROVIDER_META[slug]?.name ?? names.get(slug) ?? slug, count }))
     .filter((p) => p.count >= 5)
     .sort((a, b) => b.count - a.count);
 }
@@ -411,8 +505,8 @@ export function getCategoryCounts(): {
   const all = getAllGames();
   let slots = 0, live = 0, crash = 0, lobby = 0;
   for (const g of all) {
-    if (LIVE_PROVIDERS.has(g.provider)) { live++; continue; }
-    if (CRASH_PROVIDERS.has(g.provider)) { crash++; continue; }
+    if (isLive(g)) { live++; continue; }
+    if (isCrash(g)) { crash++; continue; }
     lobby++;
     if (g.customGameType === 0 && g.img) slots++;
   }

@@ -40,7 +40,7 @@ export function MyCasino({ recent, bigWin, stats, tiers = TIERS }: Props) {
 
   const winAmount = stats.biggestWin;
   const showBigWin = !!bigWin && winAmount > 0;
-  const bigWinProvider = bigWin ? PROVIDER_META[bigWin.provider]?.name ?? bigWin.provider : "";
+  const bigWinProvider = bigWin ? PROVIDER_META[bigWin.provider]?.name ?? bigWin.providerName ?? bigWin.provider : "";
 
   function playBig() {
     if (!bigWin) return;

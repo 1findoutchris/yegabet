@@ -1,4 +1,4 @@
-import { getCrashGames, getSlotGames, getNewGames, getPopularGames } from "@/lib/games";
+import { getCrashGames, getSlotGames, getNewGames, getPopularGames, loadOctheraGames } from "@/lib/games";
 import { GamesPageSection } from "@/components/casino/GamesPageSection";
 import { AdBoard } from "@/components/ads/AdBoard";
 import { getActiveAds } from "@/lib/ads";
@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 };
 
 export default async function GamesPage() {
+  await loadOctheraGames();
   const popularGames = getPopularGames();
   const crashGames   = getCrashGames(500);
   const slotGames    = getSlotGames(48);

@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { searchGames } from "@/lib/games";
+import { searchGames, loadOctheraGames } from "@/lib/games";
 
 /**
  * Game name search for the lobby field.
@@ -14,5 +14,6 @@ export async function GET(req: NextRequest) {
   // searchGames already refuses anything under 2 characters — a single letter
   // matches thousands of games and is nobody's actual query. Game is exactly
   // the six fields GameCard needs, so there is nothing to strip.
+  await loadOctheraGames();
   return NextResponse.json({ games: searchGames(q) });
 }

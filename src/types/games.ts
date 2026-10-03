@@ -5,6 +5,10 @@ export interface Game {
   customGameType: number;
   vendorCode: string | number;
   provider: string;
+  /** Display name when the provider isn't in PROVIDER_META (Octhera games). */
+  providerName?: string;
+  /** Category from the feed, for providers not in the crash/live lists (Octhera games). */
+  kind?: "crash" | "live";
 }
 
 // The Betby sportsbook launches through the shared game-launch endpoint, but it
@@ -18,6 +22,10 @@ export const SPORTSBOOK_GAME_UID =
 // provider). A catalog entry like any other, but /api/games/launch routes this
 // id to Octhera. Shown only while OCTHERA_AVIATOR_PUBLIC=true (see lib/games).
 export const OCTHERA_AVIATOR_ID = "octhera:aviator";
+
+// Every other Octhera game is "octhera:<gameUid>" — shown while
+// OCTHERA_GAMES_PUBLIC=true, and launched through Octhera the same way.
+export const OCTHERA_ID_PREFIX = "octhera:";
 
 export interface Provider {
   slug: string;

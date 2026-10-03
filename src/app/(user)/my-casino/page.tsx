@@ -2,7 +2,7 @@ import { Sparkles, Heart, Flame } from "lucide-react";
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import {
-  getGamesByIds, getRecommendedFrom, getLiveCasinoGames,
+  getGamesByIds, getRecommendedFrom, getLiveCasinoGames, loadOctheraGames,
 } from "@/lib/games";
 import { effectiveStreak } from "@/lib/loyalty";
 import { getRewardConfig } from "@/lib/rewardConfig";
@@ -39,6 +39,7 @@ export default async function MyCasinoPage() {
   let bigWin: Game | null = null;
 
   if (userId) {
+    await loadOctheraGames();
     const [recentRows, favRows, betAgg, topWin, user] = await Promise.all([
       prisma.recentGame.findMany({
         where: { userId }, orderBy: { lastPlayedAt: "desc" }, take: 12, select: { gameId: true },

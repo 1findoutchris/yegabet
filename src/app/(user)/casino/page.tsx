@@ -4,7 +4,7 @@ import { getRewardConfig } from "@/lib/rewardConfig";
 import {
   getHotGames, getNewGames, getSlotGames,
   getLiveCasinoGames, getGamesByProvider, getProviderStats,
-  getCategoryCounts,
+  getCategoryCounts, loadOctheraGames,
 } from "@/lib/games";
 import { GameSearch }       from "@/components/casino/GameSearch";
 import { CategoryGrid }       from "@/components/casino/CategoryGrid";
@@ -75,6 +75,7 @@ export default async function CasinoPage() {
     });
   }
 
+  await loadOctheraGames();
   const hotGames  = getHotGames(24);
   const newGames  = getNewGames(24);
   const slotGames = getSlotGames(24);
