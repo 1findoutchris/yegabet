@@ -82,6 +82,11 @@ catalog** to the site for every player. Remove the variable to hide them again.
   Check that N matches the game count in the Octhera portal. The portal
   docs don't describe paging, so a low number means the paging guess needs
   adjusting.
+- **Is it working?** Open `vinna.bet/octhera-test` with a tester account.
+  The **All Octhera games on the site** box says whether the switch is on,
+  how many games came from Octhera, how many are shown, and the last error
+  if loading failed (for example a wrong API key, or a 403 from the IP
+  allowlist).
 - Launches use `game_uid` `octhera:<gameUid>`. Only games in the loaded
   catalog can be launched.
 

@@ -2,11 +2,13 @@ import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { requireOctheraTester } from "@/lib/octheraAccess";
 import { OctheraError, getBalance } from "@/lib/providers/octhera";
+import { octheraCatalogStatus } from "@/lib/games";
 
 /**
  * GET — the tester's Octhera balance (null until first launch registers
  * them) and their latest webhook events, so a test round can be checked
- * end to end from the page.
+ * end to end from the page. `catalog` says whether Octhera's game list
+ * (OCTHERA_GAMES_PUBLIC) loaded, how many games, and the last error.
  */
 export async function GET() {
   const access = await requireOctheraTester();
@@ -32,5 +34,7 @@ export async function GET() {
     },
   });
 
-  return NextResponse.json({ username: access.username, balance, balanceError, events });
+  const catalog = await octheraCatalogStatus();
+
+  return NextResponse.json({ username: access.username, balance, balanceError, events, catalog });
 }

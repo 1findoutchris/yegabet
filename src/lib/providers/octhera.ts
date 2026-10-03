@@ -112,30 +112,44 @@ export function gameImageUrl(gameUid: string): string {
  * `limit`, so paging is defensive: ask page 2, 3, … (also sending `offset`)
  * and stop at an empty page, a page with nothing new (pagination ignored), or
  * whatever end marker the response carries (`hasMore` / `totalPages` / `total`).
+ *
+ * 50 per page — the size the Aviator lookup has always used, so we know
+ * Octhera accepts it. Only page 1 failing is an error: if Octhera refuses a
+ * later page (say, it rejects `page`/`offset`), we keep what we already have.
  */
 export async function listGames(): Promise<OctheraGame[]> {
-  const LIMIT = 100;
-  const byUid = new Map<string, OctheraGame>();
-  for (let page = 1; page <= 200; page++) {
+  const LIMIT = 50;
+  const seen = new Set<string>();
+  const enabled: OctheraGame[] = [];
+  for (let page = 1; page <= 400; page++) {
     const qs = page === 1 ? `limit=${LIMIT}` : `limit=${LIMIT}&page=${page}&offset=${(page - 1) * LIMIT}`;
-    const d = await call<{
+    type Page = {
       games?: OctheraGame[]; hasMore?: boolean; totalPages?: number; total?: number;
       pagination?: { hasMore?: boolean; totalPages?: number; total?: number };
-    }>("GET", `/games?${qs}`);
+    };
+    let d: Page;
+    try {
+      d = await call<Page>("GET", `/games?${qs}`);
+    } catch (e) {
+      if (page === 1) throw e;
+      console.warn(`[octhera] games page ${page} refused, keeping ${enabled.length} games:`, e instanceof Error ? e.message : e);
+      break;
+    }
     const games = Array.isArray(d.games) ? d.games : [];
     let added = 0;
     for (const g of games) {
-      if (!g?.gameUid || !g.name || byUid.has(g.gameUid)) continue;
-      if (g.enabled === false || g.isEnabled === false) continue;
-      byUid.set(g.gameUid, g);
+      if (!g?.gameUid || !g.name || seen.has(g.gameUid)) continue;
+      seen.add(g.gameUid);
       added++;
+      if (g.enabled === false || g.isEnabled === false) continue;
+      enabled.push(g);
     }
     const p = { ...d, ...d.pagination };
     if (added === 0 || p.hasMore === false) break;
     if (p.totalPages !== undefined && page >= p.totalPages) break;
-    if (p.total !== undefined && byUid.size >= p.total) break;
+    if (p.total !== undefined && seen.size >= p.total) break;
   }
-  return [...byUid.values()];
+  return enabled;
 }
 
 let aviatorCache: { uid: string; at: number } | null = null;

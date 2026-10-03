@@ -21,6 +21,10 @@ interface Status {
     txnId: string; action: string; betAmount: string; winAmount: string; amount: string | null;
     balance: string; currency: string; gameName: string | null; createdAt: string;
   }[];
+  catalog?: {
+    switchOn: boolean; apiKeySet: boolean; gamesFromOcthera: number; gamesShown: number;
+    loadedAt: string | null; lastError: string | null;
+  };
 }
 
 export default function OctheraTestPage() {
@@ -112,6 +116,25 @@ export default function OctheraTestPage() {
           <RefreshCw className="w-4 h-4" />
         </button>
       </div>
+
+      {status?.catalog && (
+        <div className="p-4 rounded-2xl bg-[var(--bg-surface)] border border-[color:var(--border-muted)] text-[12px] space-y-1">
+          <p className="text-[11px] uppercase tracking-[0.06em] text-[color:var(--text-muted)]">All Octhera games on the site</p>
+          {!status.catalog.switchOn ? (
+            <p className="text-[color:var(--text-secondary)]">Off — set <span className="font-mono">OCTHERA_GAMES_PUBLIC=true</span> in Railway to turn it on.</p>
+          ) : !status.catalog.apiKeySet ? (
+            <p className="text-[color:var(--red)]"><span className="font-mono">OCTHERA_API_KEY</span> is not set in Railway.</p>
+          ) : (
+            <p className="text-[color:var(--text-primary)]">
+              <b>{status.catalog.gamesFromOcthera}</b> games from Octhera, <b>{status.catalog.gamesShown}</b> shown on the site
+              {status.catalog.loadedAt && <span className="text-[color:var(--text-muted)]"> · loaded {new Date(status.catalog.loadedAt).toLocaleTimeString()}</span>}
+            </p>
+          )}
+          {status.catalog.switchOn && status.catalog.lastError && (
+            <p className="text-[color:var(--red)]">Last load failed: {status.catalog.lastError}</p>
+          )}
+        </div>
+      )}
 
       {error && <p className="text-[13px] text-[color:var(--red)]">{error}</p>}
 

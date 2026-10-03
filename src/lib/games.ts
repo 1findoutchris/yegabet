@@ -185,7 +185,10 @@ const OCTHERA_TTL_MS = 60 * 60 * 1000;
 const OCTHERA_RETRY_MS = 5 * 60 * 1000;
 const OCTHERA_FIRST_LOAD_WAIT_MS = 8_000;
 
-type OctheraCatalog = { games: Game[]; at: number; loading: Promise<void> | null };
+type OctheraCatalog = {
+  games: Game[]; at: number; loading: Promise<void> | null;
+  loadedAt?: number; error?: string | null;
+};
 const octheraCatalog: OctheraCatalog = ((globalThis as { __octheraCatalog?: OctheraCatalog }).__octheraCatalog ??= {
   games: [], at: 0, loading: null,
 });
@@ -231,13 +234,16 @@ export async function loadOctheraGames(): Promise<void> {
     .then((games) => {
       octheraCatalog.games = games;
       octheraCatalog.at = Date.now();
+      octheraCatalog.loadedAt = octheraCatalog.at;
+      octheraCatalog.error = null;
       _cache = null;
       console.log(`[octhera] catalog loaded: ${games.length} games`);
     })
     .catch((e) => {
       // Keep whatever we had; try again in 5 minutes.
       octheraCatalog.at = Date.now() - OCTHERA_TTL_MS + OCTHERA_RETRY_MS;
-      console.warn("[octhera] catalog load failed:", e instanceof Error ? e.message : e);
+      octheraCatalog.error = e instanceof Error ? e.message : String(e);
+      console.warn("[octhera] catalog load failed:", octheraCatalog.error);
     })
     .finally(() => {
       octheraCatalog.loading = null;
@@ -249,6 +255,20 @@ export async function loadOctheraGames(): Promise<void> {
     octheraCatalog.loading,
     new Promise((r) => setTimeout(r, OCTHERA_FIRST_LOAD_WAIT_MS)),
   ]);
+}
+
+/** For /api/octhera/status: is the catalog on, how many games came back, and why not. */
+export async function octheraCatalogStatus() {
+  await loadOctheraGames();
+  const shown = getAllGames().filter((g) => g.gameID.startsWith(OCTHERA_ID_PREFIX) && g.gameID !== OCTHERA_AVIATOR_ID).length;
+  return {
+    switchOn: process.env.OCTHERA_GAMES_PUBLIC === "true",
+    apiKeySet: !!process.env.OCTHERA_API_KEY,
+    gamesFromOcthera: octheraCatalog.games.length,
+    gamesShown: shown, // minus the ones the main provider already has
+    loadedAt: octheraCatalog.loadedAt ? new Date(octheraCatalog.loadedAt).toISOString() : null,
+    lastError: octheraCatalog.error ?? null,
+  };
 }
 
 const nameKey = (g: Game) => `${g.provider}|${g.gameNameEn.trim().toLowerCase()}`;

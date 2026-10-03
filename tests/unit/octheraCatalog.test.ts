@@ -57,7 +57,7 @@ describe("Octhera catalog", () => {
     await games.loadOctheraGames();
 
     expect(fetchMock).toHaveBeenCalledTimes(3);
-    expect(String(fetchMock.mock.calls[0][0])).toBe("https://api.octhera.org/api/v1/games?limit=100");
+    expect(String(fetchMock.mock.calls[0][0])).toBe("https://api.octhera.org/api/v1/games?limit=50");
     expect(String(fetchMock.mock.calls[1][0])).toContain("page=2");
     expect(fetchMock.mock.calls[0][1].headers.Authorization).toBe("Bearer test-key");
 
@@ -105,5 +105,22 @@ describe("Octhera catalog", () => {
     await games.loadOctheraGames();
     expect(games.searchGames("octhera only")).toEqual([]);
     expect(games.getGamesByProvider("spribe").length).toBeGreaterThan(0);
+    const status = await games.octheraCatalogStatus();
+    expect(status).toMatchObject({ switchOn: true, gamesFromOcthera: 0, lastError: "network" });
+  });
+
+  test("Octhera refusing page 2 keeps page 1's games", async () => {
+    reply({ status: "ok", games: [game("u1", "Octhera Only Fruits"), game("u2", "Octhera Only Gems")] });
+    reply({ code: 400, status: "fail", message: "unknown parameter page" }, 400);
+    const games = await load();
+    await games.loadOctheraGames();
+    expect(games.searchGames("octhera only")).toHaveLength(2);
+    expect(await games.octheraCatalogStatus()).toMatchObject({ gamesFromOcthera: 2, gamesShown: 2, lastError: null });
+  });
+
+  test("status shows a duplicate of a main-catalog game as loaded but not shown", async () => {
+    reply({ status: "ok", games: [game("dup", "Aviator", "SPRIBE", "Spribe", "Crash"), game("u1", "Octhera Only Fruits")], hasMore: false });
+    const games = await load();
+    expect(await games.octheraCatalogStatus()).toMatchObject({ gamesFromOcthera: 2, gamesShown: 1 });
   });
 });
