@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { ChevronLeft, Info } from "lucide-react";
+import { ChevronLeft } from "lucide-react";
 import { CategoryBrowser } from "@/components/casino/CategoryBrowser";
 import { DEFAULT_THEME, SUBCATEGORIES } from "@/components/casino/categoryThemes";
 import { loadOctheraPage } from "@/lib/games";
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
  * /octhera — every game on our Octhera account, for everyone. Tapping one
  * launches it through Octhera (/api/games/launch, game_uid octhera:<gameUid>).
  * On whenever OCTHERA_API_KEY is set; OCTHERA_PAGE=off hides it (404).
- * The games play with the player's separate Octhera balance, not VinnaBet's.
+ * The games play with the player's normal VinnaBet balance.
  */
 export default async function OctheraPage() {
   const { on, games, error } = await loadOctheraPage();
@@ -34,7 +34,7 @@ export default async function OctheraPage() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-6">
         <div
-          className="relative overflow-hidden rounded-3xl mb-5 px-6 sm:px-8 py-7 sm:py-9 border border-white/15"
+          className="relative overflow-hidden rounded-3xl mb-7 px-6 sm:px-8 py-7 sm:py-9 border border-white/15"
           style={{ background: theme.grad, boxShadow: `0 18px 44px rgba(0,0,0,0.45), 0 0 40px ${theme.glow}` }}
         >
           <theme.Art className="pointer-events-none absolute -bottom-4 right-2 sm:right-8 w-[120px] sm:w-[150px] drop-shadow-[0_6px_12px_rgba(0,0,0,0.4)]" />
@@ -54,11 +54,6 @@ export default async function OctheraPage() {
             </span>
           </div>
         </div>
-
-        <p className="flex items-start gap-2 mb-6 text-[12px] text-[color:var(--text-secondary)]">
-          <Info className="w-4 h-4 shrink-0 mt-px text-[color:var(--gold)]" />
-          These games play with a separate balance, not your VinnaBet balance. Contact support to add funds.
-        </p>
 
         {games.length > 0 ? (
           <CategoryBrowser games={games} subcats={subcats} accent={theme.accent} />

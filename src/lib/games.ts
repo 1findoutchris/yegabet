@@ -151,9 +151,8 @@ function loadAllGames(): Game[] {
 
 /*
  * Spribe Aviator via Octhera — appended to whichever catalog is loaded, while
- * OCTHERA_AVIATOR_PUBLIC=true and an API key is configured. Octhera keeps its
- * own per-player balance (funded by hand in the Octhera portal), so turning
- * this on is a business decision, not just a deploy.
+ * OCTHERA_AVIATOR_PUBLIC=true and an API key is configured. Plays with the
+ * normal VinnaBet balance, like every Octhera game.
  */
 function octheraAviator(): Game | null {
   if (process.env.OCTHERA_AVIATOR_PUBLIC !== "true" || !process.env.OCTHERA_API_KEY) return null;
@@ -172,8 +171,9 @@ function octheraAviator(): Game | null {
 }
 
 /*
- * Octhera's whole catalog — "octhera:<gameUid>" games. Same separate
- * per-player Octhera balance as Aviator above. Two places show it:
+ * Octhera's whole catalog — "octhera:<gameUid>" games, played with the
+ * normal VinnaBet balance (Octhera API v2 calls /api/provider/octhera/wallet).
+ * Two places show it:
  *   - /octhera: every Octhera game, for everyone, whenever an API key is set
  *     (OCTHERA_PAGE=off hides the page)
  *   - the normal lists (lobby, search, provider pages), only while
@@ -214,7 +214,7 @@ async function fetchOctheraGames(): Promise<Game[]> {
   return (await listOctheraGames()).map((g) => ({
     gameID: `${OCTHERA_ID_PREFIX}${g.gameUid}`,
     gameNameEn: g.name.trim(),
-    img: g.image || g.imageUrl || octheraImageUrl(g.gameUid),
+    img: g.img || octheraImageUrl(g.gameUid),
     customGameType: /slot/i.test(g.type ?? "") ? 0 : 1,
     vendorCode: g.provider || "OCTHERA",
     provider: octheraProviderSlug(g.provider ?? "", g.providerName ?? "", known),
@@ -269,20 +269,6 @@ async function refreshOcthera(): Promise<void> {
   ]);
 }
 
-/** For /api/octhera/status: is the catalog on, how many games came back, and why not. */
-export async function octheraCatalogStatus() {
-  await loadOctheraGames();
-  const shown = getAllGames().filter((g) => g.gameID.startsWith(OCTHERA_ID_PREFIX) && g.gameID !== OCTHERA_AVIATOR_ID).length;
-  return {
-    switchOn: process.env.OCTHERA_GAMES_PUBLIC === "true",
-    apiKeySet: !!process.env.OCTHERA_API_KEY,
-    gamesFromOcthera: octheraCatalog.games.length,
-    gamesShown: shown, // minus the ones the main provider already has
-    loadedAt: octheraCatalog.loadedAt ? new Date(octheraCatalog.loadedAt).toISOString() : null,
-    lastError: octheraCatalog.error ?? null,
-  };
-}
-
 const nameKey = (g: Game) => `${g.provider}|${g.gameNameEn.trim().toLowerCase()}`;
 
 let _cache: Game[] | null = null;
@@ -291,8 +277,8 @@ function getAllGames(): Game[] {
   const aviator = octheraAviator();
   // Disabled providers apply to the main catalog only — Octhera is its own account.
   const own = [...(aviator ? [aviator] : []), ...loadAllGames()].filter((g) => !HIDDEN_PROVIDERS.has(g.provider));
-  // A game we already have from the main provider stays there (it plays with
-  // the VinnaBet balance); Octhera only adds what's missing.
+  // A game we already have from the main provider stays there; Octhera only
+  // adds what's missing, so no game shows up twice.
   const ownNames = new Set(own.map(nameKey));
   const octhera = octheraGamesOn()
     ? octheraCatalog.games.filter((g) => !ownNames.has(nameKey(g)))

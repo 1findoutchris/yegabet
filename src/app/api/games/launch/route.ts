@@ -5,9 +5,7 @@ import { launchGame, GameUnavailableError } from "@/lib/providers/silent-api";
 import { openGame, GregmornError } from "@/lib/providers/gregmorn";
 import { SPORTSBOOK_GAME_UID, OCTHERA_AVIATOR_ID, OCTHERA_ID_PREFIX } from "@/types/games";
 import { loadOctheraPage } from "@/lib/games";
-import {
-  OctheraError, aviatorGameUid, ensurePlayer, getBalance, launchGame as launchOcthera, octheraUsername,
-} from "@/lib/providers/octhera";
+import { OctheraError, aviatorGameUid, launchGame as launchOcthera } from "@/lib/providers/octhera";
 import { z } from "zod";
 
 const launchSchema = z.object({
@@ -33,13 +31,13 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "User not found" }, { status: 404 });
     }
 
-    // Octhera games (Aviator, and the whole Octhera catalog) — their own
-    // aggregator and their own per-player wallet (funded by hand in the
-    // Octhera portal), whatever GAME_PROVIDER is.
+    // Octhera games (Aviator, and the whole Octhera catalog), whatever
+    // GAME_PROVIDER is. API v2 company wallet: they play with the normal
+    // VinnaBet balance — Octhera calls /api/provider/octhera/wallet for every
+    // bet and win. The launch URL must be opened by redirect, not an iframe.
     if (game_uid.startsWith(OCTHERA_ID_PREFIX)) {
       const unavailable = () =>
         NextResponse.json({ error: "This game is temporarily unavailable", unavailable: true }, { status: 502 });
-      let name = "Aviator";
       let resolveUid = aviatorGameUid;
       if (game_uid === OCTHERA_AVIATOR_ID) {
         if (process.env.OCTHERA_AVIATOR_PUBLIC !== "true") return unavailable();
@@ -47,22 +45,16 @@ export async function POST(req: NextRequest) {
         // Any game in Octhera's catalog (shown on /octhera, and in the normal
         // lists while OCTHERA_GAMES_PUBLIC=true) — nothing outside it.
         const { games } = await loadOctheraPage();
-        const game = games.find((g) => g.gameID === game_uid);
-        if (!game) return unavailable();
-        name = game.gameNameEn;
+        if (!games.some((g) => g.gameID === game_uid)) return unavailable();
         resolveUid = async () => game_uid.slice(OCTHERA_ID_PREFIX.length);
       }
-      const username = octheraUsername(session.user.id);
-      await ensurePlayer(username);
       const device = /Mobi|Android|iPhone|iPad/i.test(req.headers.get("user-agent") ?? "") ? "mobile" : "desktop";
-      const url = await launchOcthera({ username, gameUid: await resolveUid(), device });
-      // Tell the player which balance the game plays with — it isn't their VinnaBet balance.
-      const wallet = await getBalance(username).catch(() => null);
-      const notice = wallet
-        ? wallet.balance > 0
-          ? `${name} balance: ${wallet.balance.toFixed(2)} ${wallet.currency} (separate from your VinnaBet balance)`
-          : `Your ${name} balance is 0 ETB — it's separate from your VinnaBet balance. Contact support to add funds.`
-        : null;
+      const url = await launchOcthera({
+        playerId: session.user.id,
+        balance: Number(user.balance),
+        gameUid: await resolveUid(),
+        device,
+      });
       try {
         await prisma.recentGame.upsert({
           where: { userId_gameId: { userId: session.user.id, gameId: game_uid } },
@@ -72,7 +64,7 @@ export async function POST(req: NextRequest) {
       } catch (e) {
         console.error("[games/launch] recent upsert failed", e);
       }
-      return NextResponse.json({ game_launch_url: url, notice });
+      return NextResponse.json({ game_launch_url: url, open: "redirect" });
     }
 
     // Provider switch: unset/anything-else keeps Silent as the default so

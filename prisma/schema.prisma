@@ -814,3 +814,30 @@ model OctheraEvent {
   @@index([username, createdAt])
   @@map("octhera_events")
 }
+
+// Octhera API v2 wallet calls (debit / credit / rollback), one row per
+// (type, txnId) — Octhera's idempotency key (a rollback reuses its debit's
+// txnId). `response` is exactly what we answered, replayed on any retry.
+// A rollback row with no applied debit is the "rollback before debit" marker
+// that makes a late debit answer TXN_ROLLED_BACK. Money moves are also
+// written as normal Transaction rows (reference "oc:<type>:<txnId>").
+model OctheraWalletTxn {
+  id         String   @id @default(cuid())
+  type       String   // debit | credit | rollback
+  txnId      String
+  playerId   String   // = User.id (the playerId we launch with)
+  action     String?  // bet | bet_win | win | refund (rollback: null)
+  betAmount  Decimal  @default(0) @db.Decimal(12, 2)
+  winAmount  Decimal  @default(0) @db.Decimal(12, 2)
+  applied    Boolean  // true = money moved
+  response   Json
+  gameUid    String?
+  gameRound  String?
+  payload    Json
+
+  createdAt DateTime @default(now())
+
+  @@unique([type, txnId])
+  @@index([playerId, createdAt])
+  @@map("octhera_wallet_txns")
+}

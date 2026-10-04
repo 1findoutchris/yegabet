@@ -49,49 +49,48 @@ describe("Octhera catalog", () => {
     expect(games.searchGames("octhera only")).toEqual([]);
   });
 
-  test("pages through the catalog until a page brings nothing new", async () => {
-    reply({ status: "ok", games: [game("u1", "Octhera Only Fruits"), game("u2", "Octhera Only Gems")] });
-    reply({ status: "ok", games: [game("u3", "Octhera Only Stars")] });
-    reply({ status: "ok", games: [] });
+  test("pages through the v2 catalog, 200 at a time, until a short page", async () => {
+    const full = Array.from({ length: 200 }, (_, i) => game(`p1-${i}`, `Octhera Only Slot ${i}`));
+    reply({ status: "ok", page: 1, limit: 200, total: 201, count: 200, games: full });
+    reply({ status: "ok", page: 2, limit: 200, total: 201, count: 1, games: [
+      { ...game("u3", "Octhera Only Stars"), img: "https://api.octhera.org/media/games/u3.webp" },
+    ] });
     const games = await load();
     await games.loadOctheraGames();
 
-    expect(fetchMock).toHaveBeenCalledTimes(3);
-    expect(String(fetchMock.mock.calls[0][0])).toBe("https://api.octhera.org/api/v1/games?limit=50");
-    expect(String(fetchMock.mock.calls[1][0])).toContain("page=2");
+    expect(fetchMock).toHaveBeenCalledTimes(2);
+    expect(String(fetchMock.mock.calls[0][0])).toBe("https://api.octhera.org/api/v2/games?page=1&limit=200");
+    expect(String(fetchMock.mock.calls[1][0])).toBe("https://api.octhera.org/api/v2/games?page=2&limit=200");
     expect(fetchMock.mock.calls[0][1].headers.Authorization).toBe("Bearer test-key");
 
-    const found = games.searchGames("octhera only");
-    expect(found.map((g) => g.gameID).sort()).toEqual(["octhera:u1", "octhera:u2", "octhera:u3"]);
-    expect(found[0]).toMatchObject({
+    expect(games.getGamesByProvider("new-provider")).toHaveLength(201);
+    // Octhera's own `img` when given, else the /media fallback
+    expect(games.getGamesByIds(["octhera:u3"])[0].img).toBe("https://api.octhera.org/media/games/u3.webp");
+    expect(games.getGamesByIds(["octhera:p1-0"])[0]).toMatchObject({
       provider: "new-provider",
       providerName: "New Provider",
       customGameType: 0,
-      img: expect.stringMatching(/^https:\/\/api\.octhera\.org\/media\/games\/u\d$/),
+      img: "https://api.octhera.org/media/games/p1-0",
     });
-    expect(games.getGamesByProvider("new-provider")).toHaveLength(3);
   });
 
-  test("stops when pagination is ignored (same page again)", async () => {
-    const page = { status: "ok", games: [game("u1", "Octhera Only Fruits")] };
-    reply(page);
-    reply(page);
+  test("stops at `total` without asking for an empty page", async () => {
+    const full = Array.from({ length: 200 }, (_, i) => game(`p1-${i}`, `Octhera Only Slot ${i}`));
+    reply({ status: "ok", total: 200, games: full });
     const games = await load();
     await games.loadOctheraGames();
-    expect(fetchMock).toHaveBeenCalledTimes(2);
-    expect(games.searchGames("octhera only")).toHaveLength(1);
+    expect(fetchMock).toHaveBeenCalledTimes(1);
   });
 
   test("games we already have stay on the main provider; new ones from a known provider join its page", async () => {
     reply({ status: "ok", games: [
       game("dup", "Aviator", "SPRIBE", "Spribe", "Crash"),         // already in game_list/spribe.json
       game("new", "Octhera Only Rocket", "SPRIBE", "Spribe", "Crash"),
-      game("live", "Octhera Only Roulette", "LIVEPROV", "Live Prov", "Live Casino"),
-    ], hasMore: false });
+      game("live", "Octhera Only Roulette", "LIVEPROV", "Live Prov", "Casino Live"),
+    ] });
     const games = await load();
     await games.loadOctheraGames();
 
-    expect(fetchMock).toHaveBeenCalledTimes(1); // hasMore: false
     const ids = games.getGamesByProvider("spribe").map((g) => g.gameID);
     expect(ids).toContain("octhera:new");
     expect(ids).not.toContain("octhera:dup");
@@ -105,30 +104,22 @@ describe("Octhera catalog", () => {
     await games.loadOctheraGames();
     expect(games.searchGames("octhera only")).toEqual([]);
     expect(games.getGamesByProvider("spribe").length).toBeGreaterThan(0);
-    const status = await games.octheraCatalogStatus();
-    expect(status).toMatchObject({ switchOn: true, gamesFromOcthera: 0, lastError: "network" });
   });
 
   test("Octhera refusing page 2 keeps page 1's games", async () => {
-    reply({ status: "ok", games: [game("u1", "Octhera Only Fruits"), game("u2", "Octhera Only Gems")] });
-    reply({ code: 400, status: "fail", message: "unknown parameter page" }, 400);
+    const full = Array.from({ length: 200 }, (_, i) => game(`p1-${i}`, `Octhera Only Slot ${i}`));
+    reply({ status: "ok", games: full });
+    reply({ code: 429, status: "fail", message: "rate limited" }, 429);
     const games = await load();
     await games.loadOctheraGames();
-    expect(games.searchGames("octhera only")).toHaveLength(2);
-    expect(await games.octheraCatalogStatus()).toMatchObject({ gamesFromOcthera: 2, gamesShown: 2, lastError: null });
-  });
-
-  test("status shows a duplicate of a main-catalog game as loaded but not shown", async () => {
-    reply({ status: "ok", games: [game("dup", "Aviator", "SPRIBE", "Spribe", "Crash"), game("u1", "Octhera Only Fruits")], hasMore: false });
-    const games = await load();
-    expect(await games.octheraCatalogStatus()).toMatchObject({ gamesFromOcthera: 2, gamesShown: 1 });
+    expect(games.getGamesByProvider("new-provider")).toHaveLength(200);
   });
 });
 
 describe("/octhera page catalog (loadOctheraPage)", () => {
   test("loads every Octhera game even with OCTHERA_GAMES_PUBLIC off — but keeps them out of the normal lists", async () => {
     delete process.env.OCTHERA_GAMES_PUBLIC;
-    reply({ status: "ok", games: [game("dup", "Aviator", "SPRIBE", "Spribe", "Crash"), game("u1", "Octhera Only Fruits")], hasMore: false });
+    reply({ status: "ok", games: [game("dup", "Aviator", "SPRIBE", "Spribe", "Crash"), game("u1", "Octhera Only Fruits")] });
     const games = await load();
     const page = await games.loadOctheraPage();
     expect(page).toMatchObject({ on: true, error: null });
