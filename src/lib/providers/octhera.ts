@@ -2,29 +2,28 @@ import "server-only";
 import crypto from "crypto";
 
 /**
- * Octhera aggregator — TEST integration (Spribe Aviator only, behind
- * /octhera-test). Built from the company portal docs (octhera.org/portal/docs).
+ * Octhera aggregator — API v2, "company wallet" mode.
  *
- * Octhera RUNS THE WALLET: each player has a balance on Octhera, funded in
- * their portal (Players → player → Deposit). Launching a game plays against
- * that balance, and Octhera sends a signed webhook for every bet / win /
- * refund / withdrawal step as a record. Nothing here touches User.balance.
+ * Players play with their normal VinnaBet balance: Octhera launches the game,
+ * then calls our Wallet URL (/api/provider/octhera/wallet) to authorize every
+ * bet (debit) and pay every win/refund (credit). Our database is the source
+ * of truth; Octhera only keeps the last reported balance for display.
  *
- * Auth: `Authorization: Bearer OCTHERA_API_KEY` on every call.
- * Webhooks: `x-octhera-signature: sha256=<hex HMAC-SHA256(raw body)>` keyed
- * with OCTHERA_CALLBACK_SECRET.
+ * API calls: `Authorization: Bearer OCTHERA_API_KEY`.
+ * Wallet calls Octhera makes to us: `X-Octhera-Signature: v1=<hex>` =
+ * HMAC-SHA256(OCTHERA_WALLET_SECRET, timestamp + "." + raw body).
  *
  * Env (Railway → Variables):
- *   OCTHERA_API_KEY          — API keys page
- *   OCTHERA_CALLBACK_SECRET  — API keys page
- *   OCTHERA_TEST_USERS       — comma-separated VinnaBet phones/usernames allowed
- *                              on /octhera-test; unset = nobody (the off switch)
- *   OCTHERA_BASE_URL         — optional, default https://api.octhera.org/api/v1
+ *   OCTHERA_API_KEY          — company-wallet account's API key
+ *   OCTHERA_WALLET_SECRET    — wallet signing secret (API keys page)
+ *   OCTHERA_BASE_URL         — optional, default https://api.octhera.org/api/v2
  *   OCTHERA_AVIATOR_GAME_UID — optional; else looked up via GET /games?q=Aviator
- *   OCTHERA_GAMES_PUBLIC     — "true" = Octhera's whole catalog on the site (lib/games)
+ *   OCTHERA_AVIATOR_PUBLIC   — "true" = Aviator tile first in Popular Games
+ *   OCTHERA_GAMES_PUBLIC     — "true" = Octhera's catalog in the normal lists (lib/games)
+ *   OCTHERA_PAGE             — "off" hides /octhera
  */
 
-const baseUrl = () => (process.env.OCTHERA_BASE_URL || "https://api.octhera.org/api/v1").replace(/\/+$/, "");
+const baseUrl = () => (process.env.OCTHERA_BASE_URL || "https://api.octhera.org/api/v2").replace(/\/+$/, "");
 
 export class OctheraError extends Error {
   status: number;
@@ -56,36 +55,10 @@ async function call<T>(method: "GET" | "POST", path: string, body?: unknown): Pr
   } catch {
     throw new OctheraError(res.status, `non-JSON response: ${text.slice(0, 120)}`);
   }
-  if (!res.ok || data.status === "fail") {
+  if (!res.ok || data.status === "fail" || data.status === "error") {
     throw new OctheraError(res.status, typeof data.message === "string" ? data.message : `HTTP ${res.status}`);
   }
   return data as T;
-}
-
-// ── Players ───────────────────────────────────────────────────────────────────
-
-/**
- * Our Octhera player id for a VinnaBet user. Octhera wants 6–34 letters,
- * numbers or underscore; user ids are cuids (25 lowercase alphanumerics), so
- * "vb_" + id fits and maps back to exactly one user.
- */
-export function octheraUsername(userId: string): string {
-  return `vb_${userId.replace(/[^A-Za-z0-9_]/g, "")}`.slice(0, 34);
-}
-
-/** Register once; "already registered" (409) counts as success. */
-export async function ensurePlayer(username: string): Promise<void> {
-  try {
-    await call("POST", "/players/register", { username });
-  } catch (e) {
-    if (e instanceof OctheraError && e.status === 409) return;
-    throw e;
-  }
-}
-
-export async function getBalance(username: string): Promise<{ balance: number; currency: string }> {
-  const d = await call<{ balance: number; currency: string }>("GET", `/players/${encodeURIComponent(username)}/balance`);
-  return { balance: Number(d.balance), currency: d.currency };
 }
 
 // ── Games ─────────────────────────────────────────────────────────────────────
@@ -96,60 +69,44 @@ export interface OctheraGame {
   provider: string;
   providerName: string;
   type: string;
-  image?: string;
-  imageUrl?: string;
-  enabled?: boolean;
-  isEnabled?: boolean;
+  img?: string;
+  hasArtwork?: boolean;
 }
 
-/** Octhera serves artwork for every game at /media/games/<gameUid>. */
+/** Fallback artwork URL when a game comes without `img`. */
 export function gameImageUrl(gameUid: string): string {
   return `${new URL(baseUrl()).origin}/media/games/${encodeURIComponent(gameUid)}`;
 }
 
 /**
- * Every game on our Octhera account. The portal docs only show `q` and
- * `limit`, so paging is defensive: ask page 2, 3, … (also sending `offset`)
- * and stop at an empty page, a page with nothing new (pagination ignored), or
- * whatever end marker the response carries (`hasMore` / `totalPages` / `total`).
- *
- * 50 per page — the size the Aviator lookup has always used, so we know
- * Octhera accepts it. Only page 1 failing is an error: if Octhera refuses a
- * later page (say, it rejects `page`/`offset`), we keep what we already have.
+ * Every game on our Octhera account: GET /games?page=N&limit=200 (pages start
+ * at 1, limit is capped at 200), until `total` is reached or a page comes back
+ * short. Only page 1 failing is an error — a refused later page keeps what we
+ * already have.
  */
 export async function listGames(): Promise<OctheraGame[]> {
-  const LIMIT = 50;
-  const seen = new Set<string>();
-  const enabled: OctheraGame[] = [];
-  for (let page = 1; page <= 400; page++) {
-    const qs = page === 1 ? `limit=${LIMIT}` : `limit=${LIMIT}&page=${page}&offset=${(page - 1) * LIMIT}`;
-    type Page = {
-      games?: OctheraGame[]; hasMore?: boolean; totalPages?: number; total?: number;
-      pagination?: { hasMore?: boolean; totalPages?: number; total?: number };
-    };
-    let d: Page;
+  const LIMIT = 200;
+  const byUid = new Map<string, OctheraGame>();
+  for (let page = 1; page <= 200; page++) {
+    let d: { games?: OctheraGame[]; total?: number };
     try {
-      d = await call<Page>("GET", `/games?${qs}`);
+      d = await call("GET", `/games?page=${page}&limit=${LIMIT}`);
     } catch (e) {
       if (page === 1) throw e;
-      console.warn(`[octhera] games page ${page} refused, keeping ${enabled.length} games:`, e instanceof Error ? e.message : e);
+      console.warn(`[octhera] games page ${page} refused, keeping ${byUid.size} games:`, e instanceof Error ? e.message : e);
       break;
     }
     const games = Array.isArray(d.games) ? d.games : [];
     let added = 0;
     for (const g of games) {
-      if (!g?.gameUid || !g.name || seen.has(g.gameUid)) continue;
-      seen.add(g.gameUid);
+      if (!g?.gameUid || !g.name || byUid.has(g.gameUid)) continue;
+      byUid.set(g.gameUid, g);
       added++;
-      if (g.enabled === false || g.isEnabled === false) continue;
-      enabled.push(g);
     }
-    const p = { ...d, ...d.pagination };
-    if (added === 0 || p.hasMore === false) break;
-    if (p.totalPages !== undefined && page >= p.totalPages) break;
-    if (p.total !== undefined && seen.size >= p.total) break;
+    if (games.length < LIMIT || added === 0) break;
+    if (typeof d.total === "number" && byUid.size >= d.total) break;
   }
-  return enabled;
+  return [...byUid.values()];
 }
 
 let aviatorCache: { uid: string; at: number } | null = null;
@@ -169,41 +126,61 @@ export async function aviatorGameUid(): Promise<string> {
   return game.gameUid;
 }
 
-/** One-time launch URL (open in an iframe or new tab). */
+// ── Launch ────────────────────────────────────────────────────────────────────
+
+/**
+ * POST /players/launch → single-use launch URL (open within 60 s, by redirect
+ * or new tab — not an iframe). The first launch creates the Octhera player
+ * from `playerId`, which must never change: we use the VinnaBet user id, and
+ * the wallet calls send it back.
+ */
 export async function launchGame(params: {
-  username: string;
+  playerId: string;
+  balance: number;
   gameUid: string;
   device: "mobile" | "desktop";
 }): Promise<string> {
-  const d = await call<{ launchUrl: string }>("POST", "/players/login", {
-    username: params.username,
+  const d = await call<{ launchUrl?: string }>("POST", "/players/launch", {
+    playerId: params.playerId,
+    balance: Math.max(0, Math.round(params.balance * 100) / 100),
     gameUid: params.gameUid,
     lang: "en",
     device: params.device,
   });
+  if (!d.launchUrl) throw new OctheraError(502, "no launchUrl in response");
   return d.launchUrl;
 }
 
-// ── Webhooks ──────────────────────────────────────────────────────────────────
+// ── Wallet signature ──────────────────────────────────────────────────────────
 
-/** Timing-safe check of `x-octhera-signature` against the raw body. */
-export function verifyWebhookSignature(rawBody: string, header: string): boolean {
-  const secret = process.env.OCTHERA_CALLBACK_SECRET;
-  if (!secret) return false;
-  const expected = "sha256=" + crypto.createHmac("sha256", secret).update(rawBody).digest("hex");
-  const a = Buffer.from(header);
-  const b = Buffer.from(expected);
-  return a.length === b.length && crypto.timingSafeEqual(a, b);
-}
+/** Max clock skew Octhera allows on a wallet call's timestamp. */
+export const WALLET_MAX_SKEW_S = 300;
 
-// ── Test access ───────────────────────────────────────────────────────────────
+/**
+ * Verify a wallet call: X-Octhera-Timestamp within 300 s of now, and any of
+ * the comma-separated `v1=<hex>` values in X-Octhera-Signature matching
+ * HMAC-SHA256(secret, timestamp + "." + raw body). Two signatures arrive
+ * during a secret rotation; either may match.
+ */
+export function verifyWalletSignature(
+  rawBody: string,
+  timestamp: string,
+  signatureHeader: string,
+  nowS = Math.floor(Date.now() / 1000)
+): boolean {
+  const secret = process.env.OCTHERA_WALLET_SECRET;
+  if (!secret || !/^\d{1,12}$/.test(timestamp)) return false;
+  if (Math.abs(nowS - Number(timestamp)) > WALLET_MAX_SKEW_S) return false;
 
-/** Is this VinnaBet account on OCTHERA_TEST_USERS? Unset/empty = nobody. */
-export function isOctheraTester(user: { phone?: string | null; username?: string | null }): boolean {
-  const list = (process.env.OCTHERA_TEST_USERS ?? "")
+  const expected = Buffer.from(
+    crypto.createHmac("sha256", secret).update(`${timestamp}.${rawBody}`).digest("hex")
+  );
+  return signatureHeader
     .split(",")
-    .map((s) => s.trim().toLowerCase())
-    .filter(Boolean);
-  if (list.length === 0) return false;
-  return [user.phone, user.username].some((v) => !!v && list.includes(v.toLowerCase()));
+    .map((s) => s.trim())
+    .filter((s) => s.startsWith("v1="))
+    .some((s) => {
+      const got = Buffer.from(s.slice(3).toLowerCase());
+      return got.length === expected.length && crypto.timingSafeEqual(got, expected);
+    });
 }

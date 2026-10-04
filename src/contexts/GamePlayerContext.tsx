@@ -55,10 +55,15 @@ export function GamePlayerProvider({ children }: { children: React.ReactNode }) 
         return;
       }
 
+      // Octhera's launch URLs refuse to run in an iframe — go to the game; its
+      // exit button comes back to the site.
+      if (data.open === "redirect") {
+        window.location.assign(data.game_launch_url);
+        return;
+      }
+
       setGameUrl(data.game_launch_url);
       setStatus("ready");
-      // e.g. Octhera games play from a separate balance — say so up front.
-      if (data.notice) toast.info(game.gameNameEn, { description: data.notice, duration: 8000 });
     } catch {
       setCurrent(null);
       setStatus("idle");
