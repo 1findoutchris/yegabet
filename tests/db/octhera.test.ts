@@ -15,7 +15,7 @@ import { asAnon, asUser } from "../helpers/session";
  */
 
 const SECRET = "test-octhera-callback-secret";
-const ENV = ["OCTHERA_API_KEY", "OCTHERA_CALLBACK_SECRET", "OCTHERA_TEST_USERS", "OCTHERA_AVIATOR_GAME_UID", "OCTHERA_BASE_URL", "OCTHERA_AVIATOR_PUBLIC"] as const;
+const ENV = ["OCTHERA_API_KEY", "OCTHERA_CALLBACK_SECRET", "OCTHERA_TEST_USERS", "OCTHERA_AVIATOR_GAME_UID", "OCTHERA_BASE_URL", "OCTHERA_AVIATOR_PUBLIC", "OCTHERA_GAMES_PUBLIC", "OCTHERA_PAGE"] as const;
 const saved: Record<string, string | undefined> = {};
 const fetchMock = vi.fn();
 
@@ -207,7 +207,7 @@ describe("Aviator on the normal casino page (/api/games/launch, game_uid octhera
   });
 });
 
-describe("Octhera's whole catalog (OCTHERA_GAMES_PUBLIC, game_uid octhera:<gameUid>)", () => {
+describe("Octhera's whole catalog (/octhera page + launch, game_uid octhera:<gameUid>)", () => {
   const open = (game_uid: string) =>
     gamesLaunch(req("POST", "/api/games/launch", { body: { game_uid }, headers: { "user-agent": "Mozilla/5.0 (Windows)" } }));
   const catalog = () => {
@@ -218,12 +218,14 @@ describe("Octhera's whole catalog (OCTHERA_GAMES_PUBLIC, game_uid octhera:<gameU
   beforeEach(() => {
     delete (globalThis as { __octheraCatalog?: unknown }).__octheraCatalog;
     delete process.env.OCTHERA_GAMES_PUBLIC;
+    delete process.env.OCTHERA_PAGE;
   });
   afterEach(() => {
     delete (globalThis as { __octheraCatalog?: unknown }).__octheraCatalog;
   });
 
-  test("switch off → unavailable, Octhera never called", async () => {
+  test("no API key → unavailable, Octhera never called", async () => {
+    delete process.env.OCTHERA_API_KEY;
     asUser({ id: tester.id });
     const { status: code, body } = await json<{ unavailable: boolean }>(await open("octhera:mines-x"));
     expect(code).toBe(502);
@@ -231,8 +233,14 @@ describe("Octhera's whole catalog (OCTHERA_GAMES_PUBLIC, game_uid octhera:<gameU
     expect(fetchMock).not.toHaveBeenCalled();
   });
 
-  test("switch on → any player launches a catalog game with its Octhera gameUid", async () => {
-    process.env.OCTHERA_GAMES_PUBLIC = "true";
+  test("OCTHERA_PAGE=off → unavailable, Octhera never called", async () => {
+    process.env.OCTHERA_PAGE = "off";
+    asUser({ id: tester.id });
+    expect((await json(await open("octhera:mines-x"))).status).toBe(502);
+    expect(fetchMock).not.toHaveBeenCalled();
+  });
+
+  test("any player launches a catalog game with its Octhera gameUid (no OCTHERA_GAMES_PUBLIC needed)", async () => {
     const player = await makeUser();
     asUser({ id: player.id });
     catalog();
@@ -250,7 +258,6 @@ describe("Octhera's whole catalog (OCTHERA_GAMES_PUBLIC, game_uid octhera:<gameU
   });
 
   test("a gameUid that isn't in the catalog → unavailable, never launched", async () => {
-    process.env.OCTHERA_GAMES_PUBLIC = "true";
     asUser({ id: tester.id });
     catalog();
     const { status: code, body } = await json<{ unavailable: boolean }>(await open("octhera:something-else"));

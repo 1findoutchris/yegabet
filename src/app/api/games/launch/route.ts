@@ -4,7 +4,7 @@ import { prisma } from "@/lib/prisma";
 import { launchGame, GameUnavailableError } from "@/lib/providers/silent-api";
 import { openGame, GregmornError } from "@/lib/providers/gregmorn";
 import { SPORTSBOOK_GAME_UID, OCTHERA_AVIATOR_ID, OCTHERA_ID_PREFIX } from "@/types/games";
-import { getGamesByIds, loadOctheraGames } from "@/lib/games";
+import { loadOctheraPage } from "@/lib/games";
 import {
   OctheraError, aviatorGameUid, ensurePlayer, getBalance, launchGame as launchOcthera, octheraUsername,
 } from "@/lib/providers/octhera";
@@ -44,10 +44,10 @@ export async function POST(req: NextRequest) {
       if (game_uid === OCTHERA_AVIATOR_ID) {
         if (process.env.OCTHERA_AVIATOR_PUBLIC !== "true") return unavailable();
       } else {
-        if (process.env.OCTHERA_GAMES_PUBLIC !== "true") return unavailable();
-        // Only games actually in the catalog we show.
-        await loadOctheraGames();
-        const game = getGamesByIds([game_uid])[0];
+        // Any game in Octhera's catalog (shown on /octhera, and in the normal
+        // lists while OCTHERA_GAMES_PUBLIC=true) — nothing outside it.
+        const { games } = await loadOctheraPage();
+        const game = games.find((g) => g.gameID === game_uid);
         if (!game) return unavailable();
         name = game.gameNameEn;
         resolveUid = async () => game_uid.slice(OCTHERA_ID_PREFIX.length);

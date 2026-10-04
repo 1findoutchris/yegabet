@@ -59,6 +59,18 @@ Remove the variable to hide it again.
 - **Artwork:** if you set `OCTHERA_AVIATOR_GAME_UID`, the tile uses
   Octhera's own image for it.
 
+## The /octhera page
+
+**`vinna.bet/octhera`** shows **every game on our Octhera account**, for
+everyone (logged out visitors see the games, and are asked to log in when they
+tap one). It's on whenever `OCTHERA_API_KEY` is set. No other variable is
+needed. Set **`OCTHERA_PAGE=off`** to hide it.
+
+- Games play with the player's separate Octhera balance, and the page says so.
+- If Octhera can't be reached, the page says "Octhera games aren't available
+  right now" with the reason (for example `Octhera 401: …` = wrong API key,
+  `Octhera 403: …` = IP allowlist).
+
 ## All Octhera games on the site
 
 Set **`OCTHERA_GAMES_PUBLIC=true`** in Railway to add **Octhera's whole
@@ -82,6 +94,11 @@ catalog** to the site for every player. Remove the variable to hide them again.
   Check that N matches the game count in the Octhera portal. The portal
   docs don't describe paging, so a low number means the paging guess needs
   adjusting.
+- **Is it working?** Open `vinna.bet/octhera-test` with a tester account.
+  The **All Octhera games on the site** box says whether the switch is on,
+  how many games came from Octhera, how many are shown, and the last error
+  if loading failed (for example a wrong API key, or a 403 from the IP
+  allowlist).
 - Launches use `game_uid` `octhera:<gameUid>`. Only games in the loaded
   catalog can be launched.
 

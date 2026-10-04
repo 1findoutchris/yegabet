@@ -6,7 +6,7 @@ import { afterEach, beforeEach, describe, expect, test, vi } from "vitest";
  * game_list/ catalog on disk, which has Spribe (Aviator, Mines, …).
  */
 
-const ENV = ["OCTHERA_API_KEY", "OCTHERA_GAMES_PUBLIC", "OCTHERA_AVIATOR_PUBLIC", "OCTHERA_BASE_URL"] as const;
+const ENV = ["OCTHERA_API_KEY", "OCTHERA_GAMES_PUBLIC", "OCTHERA_AVIATOR_PUBLIC", "OCTHERA_BASE_URL", "OCTHERA_PAGE"] as const;
 const saved: Record<string, string | undefined> = {};
 const fetchMock = vi.fn();
 const reply = (body: unknown, status = 200) =>
@@ -57,7 +57,7 @@ describe("Octhera catalog", () => {
     await games.loadOctheraGames();
 
     expect(fetchMock).toHaveBeenCalledTimes(3);
-    expect(String(fetchMock.mock.calls[0][0])).toBe("https://api.octhera.org/api/v1/games?limit=100");
+    expect(String(fetchMock.mock.calls[0][0])).toBe("https://api.octhera.org/api/v1/games?limit=50");
     expect(String(fetchMock.mock.calls[1][0])).toContain("page=2");
     expect(fetchMock.mock.calls[0][1].headers.Authorization).toBe("Bearer test-key");
 
@@ -105,5 +105,52 @@ describe("Octhera catalog", () => {
     await games.loadOctheraGames();
     expect(games.searchGames("octhera only")).toEqual([]);
     expect(games.getGamesByProvider("spribe").length).toBeGreaterThan(0);
+    const status = await games.octheraCatalogStatus();
+    expect(status).toMatchObject({ switchOn: true, gamesFromOcthera: 0, lastError: "network" });
+  });
+
+  test("Octhera refusing page 2 keeps page 1's games", async () => {
+    reply({ status: "ok", games: [game("u1", "Octhera Only Fruits"), game("u2", "Octhera Only Gems")] });
+    reply({ code: 400, status: "fail", message: "unknown parameter page" }, 400);
+    const games = await load();
+    await games.loadOctheraGames();
+    expect(games.searchGames("octhera only")).toHaveLength(2);
+    expect(await games.octheraCatalogStatus()).toMatchObject({ gamesFromOcthera: 2, gamesShown: 2, lastError: null });
+  });
+
+  test("status shows a duplicate of a main-catalog game as loaded but not shown", async () => {
+    reply({ status: "ok", games: [game("dup", "Aviator", "SPRIBE", "Spribe", "Crash"), game("u1", "Octhera Only Fruits")], hasMore: false });
+    const games = await load();
+    expect(await games.octheraCatalogStatus()).toMatchObject({ gamesFromOcthera: 2, gamesShown: 1 });
+  });
+});
+
+describe("/octhera page catalog (loadOctheraPage)", () => {
+  test("loads every Octhera game even with OCTHERA_GAMES_PUBLIC off — but keeps them out of the normal lists", async () => {
+    delete process.env.OCTHERA_GAMES_PUBLIC;
+    reply({ status: "ok", games: [game("dup", "Aviator", "SPRIBE", "Spribe", "Crash"), game("u1", "Octhera Only Fruits")], hasMore: false });
+    const games = await load();
+    const page = await games.loadOctheraPage();
+    expect(page).toMatchObject({ on: true, error: null });
+    // the page shows ALL of them, including one the main catalog also has
+    expect(page.games.map((g) => g.gameID)).toEqual(["octhera:dup", "octhera:u1"]);
+    expect(games.searchGames("octhera only")).toEqual([]);
+  });
+
+  test("OCTHERA_PAGE=off or no API key → off, Octhera never called", async () => {
+    process.env.OCTHERA_PAGE = "off";
+    let games = await load();
+    expect(await games.loadOctheraPage()).toEqual({ on: false, games: [], error: null });
+    delete process.env.OCTHERA_PAGE;
+    delete process.env.OCTHERA_API_KEY;
+    games = await load();
+    expect((await games.loadOctheraPage()).on).toBe(false);
+    expect(fetchMock).not.toHaveBeenCalled();
+  });
+
+  test("Octhera refusing → no games and the reason", async () => {
+    reply({ code: 401, status: "fail", message: "invalid api key" }, 401);
+    const games = await load();
+    expect(await games.loadOctheraPage()).toEqual({ on: true, games: [], error: "Octhera 401: invalid api key" });
   });
 });

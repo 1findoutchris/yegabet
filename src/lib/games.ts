@@ -172,25 +172,33 @@ function octheraAviator(): Game | null {
 }
 
 /*
- * Octhera's whole catalog — "octhera:<gameUid>" tiles, while
- * OCTHERA_GAMES_PUBLIC=true and an API key is configured. Same separate
- * per-player Octhera balance as Aviator above.
+ * Octhera's whole catalog — "octhera:<gameUid>" games. Same separate
+ * per-player Octhera balance as Aviator above. Two places show it:
+ *   - /octhera: every Octhera game, for everyone, whenever an API key is set
+ *     (OCTHERA_PAGE=off hides the page)
+ *   - the normal lists (lobby, search, provider pages), only while
+ *     OCTHERA_GAMES_PUBLIC=true
  *
  * Fetched from Octhera at runtime (not a JSON file) and refreshed hourly.
- * Pages and routes that read the catalog `await loadOctheraGames()` first;
- * the getters below stay synchronous and use whatever was last loaded.
- * Kept on globalThis so every route bundle shares one copy.
+ * Pages and routes that read the catalog `await loadOctheraGames()` (or
+ * `loadOctheraPage()`) first; the getters below stay synchronous and use
+ * whatever was last loaded. Kept on globalThis so every route bundle shares
+ * one copy.
  */
 const OCTHERA_TTL_MS = 60 * 60 * 1000;
 const OCTHERA_RETRY_MS = 5 * 60 * 1000;
 const OCTHERA_FIRST_LOAD_WAIT_MS = 8_000;
 
-type OctheraCatalog = { games: Game[]; at: number; loading: Promise<void> | null };
+type OctheraCatalog = {
+  games: Game[]; at: number; loading: Promise<void> | null;
+  loadedAt?: number; error?: string | null;
+};
 const octheraCatalog: OctheraCatalog = ((globalThis as { __octheraCatalog?: OctheraCatalog }).__octheraCatalog ??= {
   games: [], at: 0, loading: null,
 });
 
 const octheraGamesOn = () => process.env.OCTHERA_GAMES_PUBLIC === "true" && !!process.env.OCTHERA_API_KEY;
+const octheraPageOn = () => process.env.OCTHERA_PAGE !== "off" && !!process.env.OCTHERA_API_KEY;
 
 /** Octhera's provider → one of our slugs when it matches one (so "SPRIBE" joins /casino/spribe). */
 function octheraProviderSlug(provider: string, providerName: string, known: Set<string>): string {
@@ -215,29 +223,39 @@ async function fetchOctheraGames(): Promise<Game[]> {
   }));
 }
 
-/** Make sure the Octhera catalog is loaded (first call waits up to 8s; later ones refresh in the background). */
+/** For the normal lists: load the catalog only while OCTHERA_GAMES_PUBLIC is on. */
 export async function loadOctheraGames(): Promise<void> {
-  if (!octheraGamesOn()) {
-    if (octheraCatalog.games.length) {
-      octheraCatalog.games = [];
-      octheraCatalog.at = 0;
-      _cache = null;
-    }
-    return;
-  }
+  if (octheraGamesOn()) await refreshOcthera();
+}
+
+/**
+ * For /octhera and launching from it: load the catalog whenever the page is
+ * on, and say what came back (the games, or why there are none).
+ */
+export async function loadOctheraPage(): Promise<{ on: boolean; games: Game[]; error: string | null }> {
+  if (!octheraPageOn()) return { on: false, games: [], error: null };
+  await refreshOcthera();
+  return { on: true, games: octheraCatalog.games, error: octheraCatalog.games.length ? null : octheraCatalog.error ?? null };
+}
+
+/** Make sure the catalog is loaded (first call waits up to 8s; later ones refresh in the background). */
+async function refreshOcthera(): Promise<void> {
   if (Date.now() - octheraCatalog.at < OCTHERA_TTL_MS) return;
 
   octheraCatalog.loading ??= fetchOctheraGames()
     .then((games) => {
       octheraCatalog.games = games;
       octheraCatalog.at = Date.now();
+      octheraCatalog.loadedAt = octheraCatalog.at;
+      octheraCatalog.error = null;
       _cache = null;
       console.log(`[octhera] catalog loaded: ${games.length} games`);
     })
     .catch((e) => {
       // Keep whatever we had; try again in 5 minutes.
       octheraCatalog.at = Date.now() - OCTHERA_TTL_MS + OCTHERA_RETRY_MS;
-      console.warn("[octhera] catalog load failed:", e instanceof Error ? e.message : e);
+      octheraCatalog.error = e instanceof Error ? e.message : String(e);
+      console.warn("[octhera] catalog load failed:", octheraCatalog.error);
     })
     .finally(() => {
       octheraCatalog.loading = null;
@@ -249,6 +267,20 @@ export async function loadOctheraGames(): Promise<void> {
     octheraCatalog.loading,
     new Promise((r) => setTimeout(r, OCTHERA_FIRST_LOAD_WAIT_MS)),
   ]);
+}
+
+/** For /api/octhera/status: is the catalog on, how many games came back, and why not. */
+export async function octheraCatalogStatus() {
+  await loadOctheraGames();
+  const shown = getAllGames().filter((g) => g.gameID.startsWith(OCTHERA_ID_PREFIX) && g.gameID !== OCTHERA_AVIATOR_ID).length;
+  return {
+    switchOn: process.env.OCTHERA_GAMES_PUBLIC === "true",
+    apiKeySet: !!process.env.OCTHERA_API_KEY,
+    gamesFromOcthera: octheraCatalog.games.length,
+    gamesShown: shown, // minus the ones the main provider already has
+    loadedAt: octheraCatalog.loadedAt ? new Date(octheraCatalog.loadedAt).toISOString() : null,
+    lastError: octheraCatalog.error ?? null,
+  };
 }
 
 const nameKey = (g: Game) => `${g.provider}|${g.gameNameEn.trim().toLowerCase()}`;
