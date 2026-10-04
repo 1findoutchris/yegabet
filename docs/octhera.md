@@ -59,6 +59,18 @@ Remove the variable to hide it again.
 - **Artwork:** if you set `OCTHERA_AVIATOR_GAME_UID`, the tile uses
   Octhera's own image for it.
 
+## The /octhera page
+
+**`vinna.bet/octhera`** shows **every game on our Octhera account**, for
+everyone (logged out visitors see the games, and are asked to log in when they
+tap one). It's on whenever `OCTHERA_API_KEY` is set. No other variable is
+needed. Set **`OCTHERA_PAGE=off`** to hide it.
+
+- Games play with the player's separate Octhera balance, and the page says so.
+- If Octhera can't be reached, the page says "Octhera games aren't available
+  right now" with the reason (for example `Octhera 401: …` = wrong API key,
+  `Octhera 403: …` = IP allowlist).
+
 ## All Octhera games on the site
 
 Set **`OCTHERA_GAMES_PUBLIC=true`** in Railway to add **Octhera's whole
