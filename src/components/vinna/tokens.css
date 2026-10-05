@@ -136,6 +136,9 @@ body {
 }
 ::selection { background: var(--v-teal-a24); color: #fff; }
 
+/* Component classes sit in the components layer so a Tailwind utility on the
+   same element (h-12, rounded-full …) still wins. */
+@layer components {
 /* ── Surfaces ───────────────────────────────────────────────────────────── */
 .v-surface {
   background: var(--v-bg-2);
@@ -238,6 +241,7 @@ body {
   background: linear-gradient(90deg, transparent, rgba(148, 170, 210, 0.07), transparent);
   animation: v-shimmer 1.3s ease-in-out infinite;
 }
+}
 
 /* ── Motion ─────────────────────────────────────────────────────────────── */
 @keyframes v-shimmer { to { transform: translateX(100%); } }
@@ -261,10 +265,16 @@ body {
 .v-fade-in  { animation: v-fade-in var(--v-dur-2) ease both; }
 .v-sheet-up { animation: v-sheet-up var(--v-dur-3) var(--v-ease) both; }
 .v-drop-in  { animation: v-drop-in var(--v-dur-2) var(--v-ease) both; transform-origin: top right; }
+.v-sheet    { animation: v-sheet-up var(--v-dur-3) var(--v-ease) both; }
+@media (min-width: 640px) { .v-sheet { animation-name: v-fade-up; } }
 .v-heart    { animation: v-heart var(--v-dur-3) var(--v-ease); }
 .v-bump     { animation: v-bump var(--v-dur-3) var(--v-ease); }
 
 @media (prefers-reduced-motion: reduce) {
   .v-skel::after, .vinna-skeleton::after { animation: none; }
-  .v-fade-up, .v-fade-in, .v-sheet-up, .v-drop-in, .v-heart, .v-bump { animation-duration: 1ms; }
+  .v-fade-up, .v-fade-in, .v-sheet-up, .v-sheet, .v-drop-in, .v-heart, .v-bump { animation-duration: 1ms; }
 }
+
+/* If scripts never take the splash down, CSS does. */
+@keyframes v-splash-out { to { opacity: 0; visibility: hidden; } }
+.v-splash { animation: v-splash-out 300ms ease 4s forwards; }

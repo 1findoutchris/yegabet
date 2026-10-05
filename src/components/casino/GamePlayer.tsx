@@ -1,6 +1,8 @@
 "use client";
 
-import { X, Loader2 } from "lucide-react";
+import { X } from "lucide-react";
+import { VMark } from "@/components/vinna/VMark";
+import { LaunchOverlay } from "@/components/vinna/LaunchOverlay";
 import { useGamePlayer } from "@/contexts/GamePlayerContext";
 import { PROVIDER_META } from "@/types/games";
 
@@ -15,19 +17,21 @@ export function GamePlayer() {
     <div className="fixed inset-0 z-[300] bg-black flex flex-col">
       {/* Top bar */}
       <div
-        className="flex items-center justify-between px-4 bg-[#0C2027]/95 backdrop-blur-xl border-b border-[color:var(--border-muted)] shrink-0"
+        className="flex items-center justify-between px-3 sm:px-4 bg-[var(--v-bg-1)] border-b border-[color:var(--v-line)] shrink-0"
         style={{ paddingTop: "env(safe-area-inset-top)", minHeight: 48 }}
       >
-        <div className="flex items-center gap-2 min-w-0">
-          <span className="font-display text-gold-grad font-bold text-sm shrink-0">Vinna</span>
-          <span className="text-[color:var(--text-primary)] font-semibold text-sm truncate">{current.gameNameEn}</span>
-          <span className="text-[color:var(--text-muted)] text-xs shrink-0">· {providerName}</span>
+        <div className="flex items-center gap-2.5 min-w-0">
+          <VMark size={26} />
+          <div className="min-w-0 leading-tight">
+            <p className="text-white font-bold text-[14px] truncate">{current.gameNameEn}</p>
+            <p className="text-[color:var(--v-text-3)] text-[11px] font-semibold uppercase tracking-[0.08em] truncate">{providerName}</p>
+          </div>
         </div>
 
         <div className="flex items-center gap-1">
           <button
             onClick={close}
-            className="p-2.5 rounded-lg text-[color:var(--text-secondary)] hover:text-[color:var(--text-primary)] hover:bg-[var(--bg-elevated)] transition-colors"
+            className="w-9 h-9 grid place-items-center rounded-full bg-[var(--v-bg-3)] text-[color:var(--v-text-2)] hover:text-white transition-colors"
             title="Close"
           >
             <X className="w-5 h-5" />
@@ -38,10 +42,7 @@ export function GamePlayer() {
       {/* Content */}
       <div className="flex-1 relative bg-black">
         {status === "loading" && (
-          <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-[var(--bg-base)]">
-            <Loader2 className="w-9 h-9 text-[color:var(--gold)] animate-spin" />
-            <p className="text-[color:var(--text-secondary)] text-sm">Loading {current.gameNameEn}…</p>
-          </div>
+          <LaunchOverlay name={current.gameNameEn} provider={providerName} />
         )}
 
         {status === "ready" && gameUrl && (
