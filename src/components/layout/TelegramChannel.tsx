@@ -24,7 +24,7 @@ import { usePathname } from "next/navigation";
  */
 export function TelegramChannel() {
   const pathname = usePathname();
-  if (pathname.startsWith("/sports")) return null;
+  if (pathname.startsWith("/sports") || pathname.startsWith("/game/")) return null;
 
   return (
     <a

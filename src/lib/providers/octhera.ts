@@ -159,8 +159,10 @@ export async function aviatorGameUid(): Promise<string> {
 // ── Launch ────────────────────────────────────────────────────────────────────
 
 /**
- * POST /players/launch → single-use launch URL (open within 60 s, by redirect
- * or new tab — not an iframe). The first launch creates the Octhera player
+ * POST /players/launch → single-use launch URL, to open within 60 s. The site
+ * loads it in an iframe on /game/[id]; that only works while Octhera's game
+ * pages allow vinna.bet to frame them (no X-Frame-Options: DENY/SAMEORIGIN, and
+ * a CSP frame-ancestors that includes the site). The first launch creates the Octhera player
  * from `playerId`, which must never change: we use the VinnaBet user id, and
  * the wallet calls send it back.
  */

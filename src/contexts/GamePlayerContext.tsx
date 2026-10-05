@@ -1,8 +1,13 @@
 "use client";
 
 import { createContext, useContext, useState, useCallback } from "react";
+import { useRouter } from "next/navigation";
 import { toast } from "sonner";
-import type { Game } from "@/types/games";
+import { OCTHERA_ID_PREFIX, type Game } from "@/types/games";
+
+/** The site's own player page for an Octhera game (/game/[id]). */
+export const gamePagePath = (gameID: string) =>
+  `/game/${encodeURIComponent(gameID.slice(OCTHERA_ID_PREFIX.length))}`;
 
 interface GamePlayerContextType {
   open: (game: Game) => void;
@@ -24,8 +29,16 @@ export function GamePlayerProvider({ children }: { children: React.ReactNode }) 
   const [current, setCurrent] = useState<Game | null>(null);
   const [gameUrl, setGameUrl] = useState<string | null>(null);
   const [status, setStatus] = useState<"idle" | "loading" | "ready">("idle");
+  const router = useRouter();
 
   const open = useCallback(async (game: Game) => {
+    // Octhera games play on their own page, inside the site, in an iframe.
+    // That page asks /api/games/launch for the launch URL itself.
+    if (game.gameID.startsWith(OCTHERA_ID_PREFIX)) {
+      router.push(gamePagePath(game.gameID));
+      return;
+    }
+
     setCurrent(game);
     setGameUrl(null);
     setStatus("loading");
@@ -55,13 +68,6 @@ export function GamePlayerProvider({ children }: { children: React.ReactNode }) 
         return;
       }
 
-      // Octhera's launch URLs refuse to run in an iframe — go to the game; its
-      // exit button comes back to the site.
-      if (data.open === "redirect") {
-        window.location.assign(data.game_launch_url);
-        return;
-      }
-
       setGameUrl(data.game_launch_url);
       setStatus("ready");
     } catch {
@@ -71,7 +77,7 @@ export function GamePlayerProvider({ children }: { children: React.ReactNode }) 
         description: "Network error — check your connection and try again",
       });
     }
-  }, []);
+  }, [router]);
 
   const close = useCallback(() => {
     setCurrent(null);

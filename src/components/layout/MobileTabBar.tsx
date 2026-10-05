@@ -52,6 +52,8 @@ export function MobileTabBar() {
   const { data: session } = useSession();
   const { openRegister } = useAuthModal();
   const isActive = (m: string) => pathname.startsWith(m);
+  // The game player takes the whole screen under the header on phones.
+  if (pathname.startsWith("/game/")) return null;
 
   return (
     <nav
