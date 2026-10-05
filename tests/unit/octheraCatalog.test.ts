@@ -1,12 +1,14 @@
 import { afterEach, beforeEach, describe, expect, test, vi } from "vitest";
 
 /*
- * Octhera's whole catalog on the site (OCTHERA_GAMES_PUBLIC=true).
+ * The LEGACY catalog (GAME_CATALOG=legacy, the rollback path) with Octhera's
+ * games mixed in (OCTHERA_GAMES_PUBLIC=true). The default Octhera catalog is
+ * tested in tests/db/catalog.test.ts.
  * `fetch` is stubbed — nothing here reaches Octhera. Runs against the default
  * game_list/ catalog on disk, which has Spribe (Aviator, Mines, …).
  */
 
-const ENV = ["OCTHERA_API_KEY", "OCTHERA_GAMES_PUBLIC", "OCTHERA_AVIATOR_PUBLIC", "OCTHERA_BASE_URL", "OCTHERA_PAGE"] as const;
+const ENV = ["OCTHERA_API_KEY", "OCTHERA_GAMES_PUBLIC", "OCTHERA_AVIATOR_PUBLIC", "OCTHERA_BASE_URL", "OCTHERA_PAGE", "GAME_CATALOG"] as const;
 const saved: Record<string, string | undefined> = {};
 const fetchMock = vi.fn();
 const reply = (body: unknown, status = 200) =>
@@ -26,6 +28,7 @@ beforeEach(() => {
   for (const k of ENV) saved[k] = process.env[k];
   process.env.OCTHERA_API_KEY = "test-key";
   process.env.OCTHERA_GAMES_PUBLIC = "true";
+  process.env.GAME_CATALOG = "legacy";
   delete process.env.OCTHERA_AVIATOR_PUBLIC;
   delete process.env.OCTHERA_BASE_URL;
   fetchMock.mockReset();

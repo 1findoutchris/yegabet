@@ -4,8 +4,9 @@ import { getRewardConfig } from "@/lib/rewardConfig";
 import {
   getHotGames, getNewGames, getSlotGames,
   getLiveCasinoGames, getGamesByProvider, getProviderStats,
-  getCategoryCounts, loadOctheraGames,
+  getCategoryCounts, getSectionGames, catalogMode, loadGames,
 } from "@/lib/games";
+import { CatalogNotice }      from "@/components/casino/CatalogNotice";
 import { GameSearch }       from "@/components/casino/GameSearch";
 import { CategoryGrid }       from "@/components/casino/CategoryGrid";
 import { MyCasinoEntry }      from "@/components/casino/MyCasinoEntry";
@@ -24,7 +25,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Online Casino & Sports Betting in Ethiopia",
   description:
-    "Play 1000+ slots, crash and live casino games at VinnaBet. Instant telebirr, CBE Birr and eBirr deposits, fast withdrawals in ETB.",
+    "Play slots, live casino, table and crash games at VinnaBet. Instant telebirr, CBE Birr and eBirr deposits, fast withdrawals in ETB.",
   alternates: { canonical: "/casino" },
 };
 
@@ -75,14 +76,19 @@ export default async function CasinoPage() {
     });
   }
 
-  await loadOctheraGames();
+  await loadGames();
   const hotGames  = getHotGames(24);
   const newGames  = getNewGames(24);
   const slotGames = getSlotGames(24);
   const liveGames = getLiveCasinoGames(24);
-  const pgGames   = getGamesByProvider("pgsoft", 24);
-  const providers = getProviderStats();
+  const tableGames = catalogMode() === "octhera" ? getSectionGames("casino", "table").slice(0, 24) : [];
+  // Casino providers only — crash/instant and sports have their own sections.
+  const providers = getProviderStats(catalogMode() === "octhera" ? "casino" : undefined);
+  // A rail for the biggest casino provider (was PG Soft in the old catalog).
+  const featured  = catalogMode() === "octhera" ? providers[0] : { slug: "pgsoft", name: "PG Soft" };
+  const featuredGames = featured ? getGamesByProvider(featured.slug, 24) : [];
   const catCounts = getCategoryCounts();
+  const empty     = catalogMode() === "octhera" && catCounts.all === 0;
 
   return (
     <>
@@ -91,8 +97,10 @@ export default async function CasinoPage() {
             search is the only way to reach the other ~8,000 from here. */}
         <GameSearch />
 
+        {empty && <CatalogNotice />}
+
         {/* Vibrant category tiles — top of the lobby, primary navigation */}
-        <CategoryGrid counts={catCounts} />
+        {!empty && <CategoryGrid counts={catCounts} />}
 
         {/* Gamified portal into the personal player hub */}
         <MyCasinoEntry />
@@ -102,7 +110,8 @@ export default async function CasinoPage() {
           newGames={newGames}
           slotGames={slotGames}
           liveGames={liveGames}
-          pgGames={pgGames}
+          tableGames={tableGames}
+          featured={featured && featuredGames.length ? { ...featured, games: featuredGames } : null}
           providers={providers}
         />
 

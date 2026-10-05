@@ -1,10 +1,10 @@
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { ChevronLeft } from "lucide-react";
 import { CategoryBrowser } from "@/components/casino/CategoryBrowser";
 import { DEFAULT_THEME, SUBCATEGORIES } from "@/components/casino/categoryThemes";
-import { loadOctheraPage } from "@/lib/games";
+import { catalogMode, loadOctheraPage } from "@/lib/games";
 
 export const metadata: Metadata = {
   title: "Octhera Games",
@@ -12,12 +12,17 @@ export const metadata: Metadata = {
 };
 
 /*
- * /octhera — every game on our Octhera account, for everyone. Tapping one
+ * /octhera — Octhera's catalog IS the site's catalog now, organized into
+ * Casino / Sports / Games, so this sends players to the lobby. It stays a
+ * valid URL because it's the Lobby URL set in Octhera's portal (where a
+ * game's exit button goes). With GAME_CATALOG=legacy it is the old page:
+ * every game on our Octhera account, for everyone. Tapping one
  * launches it through Octhera (/api/games/launch, game_uid octhera:<gameUid>).
  * On whenever OCTHERA_API_KEY is set; OCTHERA_PAGE=off hides it (404).
  * The games play with the player's normal VinnaBet balance.
  */
 export default async function OctheraPage() {
+  if (catalogMode() === "octhera") redirect("/casino");
   const { on, games, error } = await loadOctheraPage();
   if (!on) notFound();
 

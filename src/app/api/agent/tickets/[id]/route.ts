@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { requireInPersonAgent, isAgentAuthError } from "@/lib/agentAuth";
-import { getGamesByIds, loadOctheraGames } from "@/lib/games";
+import { getGameNamesForHistory, loadGames } from "@/lib/games";
 import { settleInfoByRound } from "@/lib/userTickets";
 
 /**
@@ -31,8 +31,9 @@ export async function GET(_req: NextRequest, { params }: { params: Promise<{ id:
   // Resolve provider game uids to display names for the printed slip.
   // Sportsbook bets carry the sportsbook uid — label it directly.
   const gameIds = ticket.bets.map((b) => b.gameId).filter((g): g is string => !!g);
-  await loadOctheraGames();
-  const catalog = new Map(getGamesByIds(gameIds).map((g) => [g.gameID, g.gameNameEn]));
+  // Names come from the catalog, or the old one for games no longer offered.
+  await loadGames();
+  const catalog = getGameNamesForHistory(gameIds);
   const results = await settleInfoByRound(
     auth.userId,
     ticket.bets.map((b) => b.gameRound).filter((r): r is string => !!r)

@@ -29,6 +29,14 @@ export default auth((req) => {
       : NextResponse.redirect(new URL("/casino", req.url));
   }
 
+  // Octhera's catalog is the site's catalog (lib/games). /octhera, the Lobby
+  // URL in Octhera's portal, goes to the lobby, and crash games moved to the
+  // Games section. Done here so it's a real 307, not a streamed one.
+  if (process.env.GAME_CATALOG !== "legacy") {
+    if (pathname === "/octhera") return NextResponse.redirect(new URL("/casino", req.url));
+    if (pathname === "/casino/crash") return NextResponse.redirect(new URL("/games?tab=crash", req.url));
+  }
+
   // All other routes (including /dashboard, /casino) are public
   return NextResponse.next();
 });

@@ -4,7 +4,7 @@ import { prisma } from "@/lib/prisma";
 import { launchGame, GameUnavailableError } from "@/lib/providers/silent-api";
 import { openGame, GregmornError } from "@/lib/providers/gregmorn";
 import { SPORTSBOOK_GAME_UID, OCTHERA_AVIATOR_ID, OCTHERA_ID_PREFIX } from "@/types/games";
-import { loadOctheraPage } from "@/lib/games";
+import { catalogMode, getGamesByIds, loadGames, loadOctheraPage } from "@/lib/games";
 import { OctheraError, aviatorGameUid, launchGame as launchOcthera } from "@/lib/providers/octhera";
 import { z } from "zod";
 
@@ -31,6 +31,17 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "User not found" }, { status: 404 });
     }
 
+    // The site's catalog is Octhera's (lib/catalog). The old provider's games
+    // are off the site; only its sportsbook still launches here, for the
+    // Sports pane when Octhera has no sportsbook and for the agents' tickets.
+    // GAME_CATALOG=legacy puts the old catalog back.
+    if (catalogMode() === "octhera" && !game_uid.startsWith(OCTHERA_ID_PREFIX) && game_uid !== SPORTSBOOK_GAME_UID) {
+      return NextResponse.json(
+        { error: "This game is no longer available", unavailable: true },
+        { status: 410 }
+      );
+    }
+
     // Octhera games (Aviator, and the whole Octhera catalog), whatever
     // GAME_PROVIDER is. API v2 company wallet: they play with the normal
     // VinnaBet balance — Octhera calls /api/provider/octhera/wallet for every
@@ -39,11 +50,19 @@ export async function POST(req: NextRequest) {
       const unavailable = () =>
         NextResponse.json({ error: "This game is temporarily unavailable", unavailable: true }, { status: 502 });
       let resolveUid = aviatorGameUid;
+      let isSportsbook = false;
       if (game_uid === OCTHERA_AVIATOR_ID) {
         if (process.env.OCTHERA_AVIATOR_PUBLIC !== "true") return unavailable();
+      } else if (catalogMode() === "octhera") {
+        // Any game on the site: an active row of the imported catalog.
+        await loadGames();
+        const [game] = getGamesByIds([game_uid]);
+        if (!game) return unavailable();
+        isSportsbook = game.section === "sports";
+        resolveUid = async () => game_uid.slice(OCTHERA_ID_PREFIX.length);
       } else {
-        // Any game in Octhera's catalog (shown on /octhera, and in the normal
-        // lists while OCTHERA_GAMES_PUBLIC=true) — nothing outside it.
+        // Legacy catalog: any game in Octhera's catalog (shown on /octhera, and
+        // in the normal lists while OCTHERA_GAMES_PUBLIC=true) — nothing outside it.
         const { games } = await loadOctheraPage();
         if (!games.some((g) => g.gameID === game_uid)) return unavailable();
         resolveUid = async () => game_uid.slice(OCTHERA_ID_PREFIX.length);
@@ -55,7 +74,8 @@ export async function POST(req: NextRequest) {
         gameUid: await resolveUid(),
         device,
       });
-      try {
+      // Like the old sportsbook, Octhera's sports content isn't a "recent game".
+      if (!isSportsbook) try {
         await prisma.recentGame.upsert({
           where: { userId_gameId: { userId: session.user.id, gameId: game_uid } },
           create: { userId: session.user.id, gameId: game_uid },

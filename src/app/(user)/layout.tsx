@@ -14,6 +14,7 @@ import { InstallBanner } from "@/components/layout/InstallBanner";
 import { SportsPane } from "@/components/sports/SportsPane";
 import { AgentShell } from "@/components/agent/AgentShell";
 import { auth } from "@/lib/auth";
+import { catalogMode, getSectionGames, loadGames } from "@/lib/games";
 
 export default async function UserLayout({ children }: { children: React.ReactNode }) {
   const session = await auth();
@@ -35,6 +36,15 @@ export default async function UserLayout({ children }: { children: React.ReactNo
     );
   }
 
+  // Octhera's sportsbook content replaces the old sportsbook pane on /sports
+  // when the catalog has any (sports/page.tsx renders it). Agents keep the
+  // old pane: their ticket flow is built on it.
+  let octheraSports = false;
+  if (catalogMode() === "octhera") {
+    await loadGames();
+    octheraSports = getSectionGames("sports").length > 0;
+  }
+
   return (
     <AuthModalProvider>
       <FavoritesProvider>
@@ -48,7 +58,7 @@ export default async function UserLayout({ children }: { children: React.ReactNo
             {children}
           </div>
           {/* SportsPane stays mounted at all times so the iframe never reloads */}
-          <SportsPane />
+          {!octheraSports && <SportsPane />}
           <MobileTabBar />
           <TelegramChannel />
           <AuthModal />

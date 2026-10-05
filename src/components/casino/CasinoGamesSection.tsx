@@ -1,34 +1,38 @@
 "use client";
 
 import { useState } from "react";
-import { Flame, Sparkles, Gamepad2, Tv2, Zap } from "lucide-react";
+import { Flame, Sparkles, Gamepad2, Tv2, Zap, Spade } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { GameRow } from "./GameRow";
 import { ProviderSelect } from "./ProviderSelect";
 import type { Game } from "@/types/games";
 
-type Filter = "all" | "new" | "slots" | "live";
-
-const FILTERS: { id: Filter; label: string }[] = [
-  { id: "all",   label: "All Games"   },
-  { id: "slots", label: "Slots"       },
-  { id: "live",  label: "Live Casino" },
-  { id: "new",   label: "New Games"   },
-];
+type Filter = "all" | "new" | "slots" | "live" | "table";
 
 interface Props {
-  hotGames:  Game[];
-  newGames:  Game[];
-  slotGames: Game[];
-  liveGames: Game[];
-  pgGames:   Game[];
-  providers: { slug: string; name: string; count: number }[];
+  hotGames:   Game[];
+  newGames:   Game[];
+  slotGames:  Game[];
+  liveGames:  Game[];
+  tableGames: Game[];
+  /** Rail for one provider (the biggest in the catalog). */
+  featured:   { slug: string; name: string; games: Game[] } | null;
+  providers:  { slug: string; name: string; count: number }[];
 }
 
 export function CasinoGamesSection({
-  hotGames, newGames, slotGames, liveGames, pgGames, providers,
+  hotGames, newGames, slotGames, liveGames, tableGames, featured, providers,
 }: Props) {
   const [active, setActive] = useState<Filter>("all");
+
+  // A tab with nothing behind it is a dead end — only show the ones with games.
+  const FILTERS: { id: Filter; label: string; has: boolean }[] = [
+    { id: "all",   label: "All Games",   has: true },
+    { id: "slots", label: "Slots",       has: slotGames.length > 0 },
+    { id: "live",  label: "Live Casino", has: liveGames.length > 0 },
+    { id: "table", label: "Table Games", has: tableGames.length > 0 },
+    { id: "new",   label: "New Games",   has: newGames.length > 0 },
+  ];
 
   const show = (id: Filter) => active === "all" || active === id;
 
@@ -37,7 +41,7 @@ export function CasinoGamesSection({
       {/* Filter pills + provider dropdown */}
       <div className="flex items-center gap-2 mb-6">
         <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
-          {FILTERS.map((f) => (
+          {FILTERS.filter((f) => f.has).map((f) => (
             <button
               key={f.id}
               onClick={() => setActive(f.id)}
@@ -84,10 +88,16 @@ export function CasinoGamesSection({
             viewAllHref="/casino/live" badge="live" />
         )}
 
-        {active === "all" && pgGames.length > 0 && (
-          <GameRow title="PG Soft" icon={<Gamepad2 className="w-[18px] h-[18px]" />}
-            games={pgGames} accentColor="text-[color:var(--gold)]"
-            viewAllHref="/casino/pgsoft" />
+        {show("table") && tableGames.length > 0 && (
+          <GameRow title="Table Games" icon={<Spade className="w-[18px] h-[18px]" />}
+            games={tableGames} accentColor="text-[color:var(--gold)]"
+            viewAllHref="/casino/table" />
+        )}
+
+        {active === "all" && featured && (
+          <GameRow title={featured.name} icon={<Gamepad2 className="w-[18px] h-[18px]" />}
+            games={featured.games} accentColor="text-[color:var(--gold)]"
+            viewAllHref={`/casino/${featured.slug}`} />
         )}
       </div>
     </div>

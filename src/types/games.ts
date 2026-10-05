@@ -9,6 +9,12 @@ export interface Game {
   providerName?: string;
   /** Category from the feed, for providers not in the crash/live lists (Octhera games). */
   kind?: "crash" | "live";
+  /** Octhera catalog: site section (Casino / Sports / Games) — lib/catalogClassify. */
+  section?: "casino" | "sports" | "games";
+  /** Octhera catalog: the section's tab (slots, live, crash, sportsbook, …). */
+  category?: string;
+  /** Octhera's own game type, as sent. */
+  type?: string;
 }
 
 // The Betby sportsbook launches through the shared game-launch endpoint, but it
@@ -23,8 +29,8 @@ export const SPORTSBOOK_GAME_UID =
 // id to Octhera. Shown only while OCTHERA_AVIATOR_PUBLIC=true (see lib/games).
 export const OCTHERA_AVIATOR_ID = "octhera:aviator";
 
-// Every other Octhera game is "octhera:<gameUid>" — shown while
-// OCTHERA_GAMES_PUBLIC=true, and launched through Octhera the same way.
+// Every other Octhera game is "octhera:<gameUid>" — the site's whole catalog
+// (lib/catalog), launched through Octhera the same way.
 export const OCTHERA_ID_PREFIX = "octhera:";
 
 export interface Provider {

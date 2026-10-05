@@ -9,6 +9,10 @@ import { asUser, asAnon } from "../helpers/session";
 /*
  * /api/games/launch with GAME_PROVIDER=gregmorn.
  *
+ * Runs on the legacy catalog (GAME_CATALOG=legacy): with the default Octhera
+ * catalog, only the sportsbook still launches through the main provider —
+ * tests/db/catalog.test.ts covers that.
+ *
  * `fetch` is stubbed for every test — nothing here can reach Gregmorn, so no
  * session is ever created on their side and nothing can bill.
  */
@@ -18,7 +22,7 @@ const USER_ID = "00000000-0000-0000-0000-00000000test";
 
 const ENV_KEYS = [
   "GAME_PROVIDER", "GREGMORN_LIVE", "GREGMORN_DEMO", "GREGMORN_USER_ID",
-  "GREGMORN_SECRET_KEY", "SILENT_API_LIVE", "NEXT_PUBLIC_APP_URL",
+  "GREGMORN_SECRET_KEY", "SILENT_API_LIVE", "NEXT_PUBLIC_APP_URL", "GAME_CATALOG",
 ] as const;
 const saved: Record<string, string | undefined> = {};
 
@@ -41,6 +45,7 @@ beforeAll(async () => {
 beforeEach(async () => {
   for (const k of ENV_KEYS) saved[k] = process.env[k];
   process.env.GAME_PROVIDER = "gregmorn";
+  process.env.GAME_CATALOG = "legacy";
   process.env.GREGMORN_USER_ID = USER_ID;
   process.env.GREGMORN_SECRET_KEY = SECRET;
   process.env.NEXT_PUBLIC_APP_URL = "http://localhost:3000";
