@@ -16,7 +16,8 @@ import { makeCatalog, pages, type FixtureGame } from "../fixtures/octheraCatalog
 
 /*
  * The site's catalog = everything on our Octhera account (lib/catalog),
- * organized into Casino / Sports / Games. `fetch` is stubbed with a made-up
+ * organized into Casino and Games. Octhera's sports content is classified but
+ * never shown: the sportsbook stays the original one. `fetch` is stubbed with a made-up
  * 456-game catalog (tests/fixtures/octheraCatalog.ts) — nothing reaches Octhera.
  */
 
@@ -139,11 +140,13 @@ describe("the site's lists", () => {
     await imported();
     expect(getSectionGames("casino")).toHaveLength(370);
     expect(getSectionGames("games")).toHaveLength(76);
-    expect(getSectionGames("sports")).toHaveLength(10);
+    // Classified as sports, but not on the site: the sportsbook is the original one.
+    expect(getSectionGames("sports")).toEqual([]);
+    expect(searchGames("betting")).toEqual([]);
     expect(getSectionCategories("games").map((c) => [c.id, c.count])).toEqual([
       ["crash", 35], ["fishing", 20], ["lottery", 15], ["arcade", 5], ["other", 1],
     ]);
-    expect(getSectionCategories("sports").map((c) => c.label)).toEqual(["Sportsbook", "Virtual Sports"]);
+    expect(getSectionCategories("sports")).toEqual([]);
 
     // The old catalog is off the site…
     expect(getGamesByIds([LEGACY_AVIATOR])).toEqual([]);
@@ -155,14 +158,15 @@ describe("the site's lists", () => {
 
     // Lobby rails are casino titles only — no sportsbook, crash or fishing games.
     expect(getHotGames(1000).every((g) => g.section === "casino" && g.category !== "live")).toBe(true);
-    expect(getCategoryCounts()).toMatchObject({ all: 456, slots: 300, live: 40, table: 30, crash: 35 });
+    expect(getCategoryCounts()).toMatchObject({ all: 446, slots: 300, live: 40, table: 30, crash: 35 });
     expect(getPopularGames().slice(0, 2).map((g) => g.gameNameEn)).toEqual(["Aviator", "Mines"]);
   });
 
   test("providers: names, ids and per-section filters", async () => {
     await imported();
     expect(getProviderStats("casino").map((p) => p.slug).sort()).toEqual(["evolution", "jili", "pragmatic", "spribe"]);
-    expect(getProviderStats("sports")).toEqual([{ slug: "betby", name: "BetBy", count: 10 }]);
+    expect(getProviderStats("sports")).toEqual([]);
+    expect(getGamesByProvider("betby")).toEqual([]);
     // A provider we already had a page for keeps its slug (/casino/spribe).
     expect(getGamesByProvider("spribe").some((g) => g.gameNameEn === "Aviator")).toBe(true);
     // Search by provider name.
@@ -178,7 +182,7 @@ describe("the site's lists", () => {
 
   test("every game has an image: Octhera's own, else its /media artwork", async () => {
     await imported();
-    const all = [...getSectionGames("casino"), ...getSectionGames("games"), ...getSectionGames("sports")];
+    const all = [...getSectionGames("casino"), ...getSectionGames("games")];
     expect(all.every((g) => /^https:\/\//.test(g.img))).toBe(true);
     expect(getGamesByIds(["octhera:fishing-0"])[0].img).toBe("https://api.octhera.org/media/games/fishing-0");
   });
@@ -228,13 +232,11 @@ describe("launch", () => {
     expect(await prisma.recentGame.count({ where: { userId: player.id, gameId: "octhera:slots-7" } })).toBe(1);
   });
 
-  test("sportsbook content launches too, but isn't a 'recent game'", async () => {
+  test("Octhera's sports content can't be launched (the sportsbook is the original one)", async () => {
     await imported();
-    const player = await makeUser();
-    asUser({ id: player.id });
-    reply({ status: "ok", launchUrl: "https://api.octhera.org/play?token=s" });
-    expect((await open("octhera:sportsbook-0")).status).toBe(200);
-    expect(await prisma.recentGame.count({ where: { userId: player.id } })).toBe(0);
+    asUser({ id: (await makeUser()).id });
+    expect((await open("octhera:sportsbook-0")).status).toBe(502);
+    expect(fetchMock.mock.calls.some((c) => String(c[0]).endsWith("/players/launch"))).toBe(false);
   });
 
   test("an old-catalog game → 'no longer available', never launched", async () => {
@@ -246,7 +248,7 @@ describe("launch", () => {
     expect(fetchMock.mock.calls.some((c) => String(c[0]).endsWith("/players/launch"))).toBe(false);
   });
 
-  test("the old sportsbook still opens (Sports falls back to it; agents' tickets use it)", async () => {
+  test("the sportsbook still opens through the main provider, as before", async () => {
     await imported();
     process.env.GAME_PROVIDER = "gregmorn"; // kill switch off by default → mock URL, provider never called
     process.env.GREGMORN_USER_ID = "00000000-0000-0000-0000-00000000test";
