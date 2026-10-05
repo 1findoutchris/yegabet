@@ -44,7 +44,13 @@ export default async function GamesPage({
       ].filter((t) => t.games.length > 0);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex flex-col gap-6">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-4 sm:pt-6 pb-16 flex flex-col gap-7">
+      <header>
+        <p className="v-eyebrow text-[color:var(--v-teal)]">Instant games</p>
+        <h1 className="mt-1.5 text-[length:var(--v-fs-page)] font-extrabold tracking-[-0.03em] leading-none text-white">Games</h1>
+        <p className="mt-2 text-[14px] text-[color:var(--v-text-3)]">Quick rounds and instant results, away from the casino floor.</p>
+      </header>
+
       <AdBoard ads={boardAds} />
 
       {tabs.length === 0 && catalogMode() === "octhera" ? (

@@ -8,12 +8,12 @@ import type { SubCat } from "./categoryThemes";
 import type { Game } from "@/types/games";
 import { PROVIDER_META } from "@/types/games";
 import { CATEGORY_LABEL, type Category } from "@/lib/catalogClassify";
-import { cn } from "@/lib/utils";
 
 interface Props {
   games: Game[];
   subcats: SubCat[];
-  accent: string; // solid hex
+  /** Kept for callers; the redesign uses the VinnaBet accent everywhere. */
+  accent?: string;
   /** Show the provider filter when the set has more than one provider (default on). */
   providerFilter?: boolean;
 }
@@ -27,7 +27,7 @@ function matches(game: Game, keywords: string[]): boolean {
   return keywords.some((k) => n.includes(k));
 }
 
-export function CategoryBrowser({ games, subcats, accent, providerFilter = true }: Props) {
+export function CategoryBrowser({ games, subcats, providerFilter = true }: Props) {
   const [active, setActive] = useState("all");
   const [search, setSearch] = useState("");
   const [provider, setProvider] = useState("");
@@ -83,27 +83,19 @@ export function CategoryBrowser({ games, subcats, accent, providerFilter = true 
 
   return (
     <div>
-      {/* Sub-category tiles */}
+      {/* Sub-category pills */}
       {available.length > 0 && (
-        <div className="flex flex-nowrap sm:flex-wrap gap-x-5 gap-y-4 overflow-x-auto scrollbar-hide pb-1 -mx-4 px-4 sm:mx-0 sm:px-0 mb-6">
-          <SubTile
-            label="All"
-            icon={<AllIcon className="w-6 h-6" />}
-            active={active === "all"}
-            accent={accent}
-            onClick={() => setActive("all")}
-          />
+        <div className="v-rail gap-2 mb-4 py-0.5">
+          <button data-active={active === "all"} onClick={() => setActive("all")} className="v-pill shrink-0">
+            <AllIcon className="w-4 h-4" /> All
+          </button>
           {available.map((s) => {
             const Icon = SUBCAT_ICONS[s.icon] ?? AllIcon;
             return (
-              <SubTile
-                key={s.id}
-                label={s.label}
-                icon={<Icon className="w-6 h-6" />}
-                active={active === s.id}
-                accent={accent}
-                onClick={() => setActive(s.id)}
-              />
+              <button key={s.id} data-active={active === s.id} onClick={() => setActive(s.id)} className="v-pill shrink-0">
+                <Icon className="w-4 h-4" /> {s.label}
+                <span className="text-[11px] tabular-nums opacity-60">{s.count}</span>
+              </button>
             );
           })}
         </div>
@@ -111,35 +103,31 @@ export function CategoryBrowser({ games, subcats, accent, providerFilter = true 
 
       {/* Type pills — only when this set mixes game types */}
       {types.length > 1 && (
-        <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-1 mb-4 -mx-4 px-4 sm:mx-0 sm:px-0">
+        <div className="v-rail gap-2 mb-4 py-0.5">
           {[{ id: "", label: "All types", count: games.length }, ...types].map((t) => (
             <button
               key={t.id || "all"}
               onClick={() => setType(t.id)}
-              className={cn(
-                "whitespace-nowrap px-3.5 py-[6px] rounded-lg text-[12px] transition-colors",
-                type === t.id
-                  ? "bg-[var(--bg-accent-dim)] border border-[color:var(--gold)] text-[color:var(--gold)] font-semibold"
-                  : "bg-[var(--bg-surface)] border border-[color:var(--border-base)] text-[color:var(--text-secondary)] font-medium hover:border-[color:var(--border-accent)] hover:text-[color:var(--text-primary)]"
-              )}
+              data-active={type === t.id}
+              className="v-pill shrink-0 h-8 text-[12px]"
             >
-              {t.label} <span className="tabular-nums opacity-70">{t.count}</span>
+              {t.label} <span className="tabular-nums opacity-60">{t.count}</span>
             </button>
           ))}
         </div>
       )}
 
       {/* Search + provider filter */}
-      <div className="flex flex-col sm:flex-row gap-2 mb-5">
-        <div className="relative w-full sm:max-w-xs">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[color:var(--text-muted)] pointer-events-none" />
+      <div className="flex flex-col sm:flex-row gap-2 mb-6">
+        <div className="relative w-full sm:max-w-sm">
+          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[color:var(--text-muted)] pointer-events-none" />
           <input
             type="text"
             placeholder="Search games…"
             aria-label="Search games"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full h-9 pl-9 pr-8 rounded-lg bg-[var(--bg-surface)] border border-[color:var(--border-base)] text-[color:var(--text-primary)] text-sm placeholder:text-[color:var(--text-muted)] focus:outline-none focus:border-[color:var(--border-accent)] transition-colors"
+            className="w-full h-11 pl-10 pr-9 rounded-full bg-[var(--v-bg-2)] border border-[color:var(--v-line-2)] text-white text-[14px] placeholder:text-[color:var(--v-text-3)] focus:outline-none focus:border-[color:var(--v-teal)] transition-colors"
           />
           {search && (
             <button
@@ -154,12 +142,12 @@ export function CategoryBrowser({ games, subcats, accent, providerFilter = true 
 
         {providerFilter && providers.length > 1 && (
           <div className="relative w-full sm:w-60">
-            <Layers className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-[color:var(--gold)] pointer-events-none" />
+            <Layers className="absolute left-3.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-[color:var(--gold)] pointer-events-none" />
             <select
               value={provider}
               onChange={(e) => setProvider(e.target.value)}
               aria-label="Filter by provider"
-              className="w-full h-9 pl-8 pr-3 rounded-lg bg-[var(--bg-surface)] border border-[color:var(--border-base)] text-[color:var(--text-primary)] text-sm focus:outline-none focus:border-[color:var(--border-accent)] transition-colors appearance-none"
+              className="w-full h-11 pl-9 pr-4 rounded-full bg-[var(--v-bg-2)] border border-[color:var(--v-line-2)] text-white text-[14px] focus:outline-none focus:border-[color:var(--v-teal)] transition-colors appearance-none"
             >
               <option value="">All providers ({providers.length})</option>
               {providers.map((p) => (
@@ -171,11 +159,14 @@ export function CategoryBrowser({ games, subcats, accent, providerFilter = true 
       </div>
 
       {filtered.length === 0 ? (
-        <div className="py-16 text-center text-[color:var(--text-muted)] text-sm">No games found</div>
+        <div className="py-16 text-center">
+          <p className="text-[15px] font-semibold text-white">No games found</p>
+          <p className="mt-1 text-[13px] text-[color:var(--v-text-3)]">Try another filter or search term.</p>
+        </div>
       ) : (
         <>
-          <p className="text-[color:var(--text-muted)] text-xs mb-3">{filtered.length} games</p>
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 gap-2 sm:gap-3">
+          <p className="v-eyebrow mb-3 tabular-nums">{filtered.length.toLocaleString()} games</p>
+          <div className="grid grid-cols-2 min-[540px]:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
             {filtered.slice(0, shown).map((game) => (
               <GameCard key={game.gameID} game={game} className="w-full" />
             ))}
@@ -184,49 +175,14 @@ export function CategoryBrowser({ games, subcats, accent, providerFilter = true 
             <div className="flex justify-center mt-6">
               <button
                 onClick={() => setShown((n) => n + PAGE * 2)}
-                className="h-10 px-6 rounded-xl bg-[var(--bg-surface)] border border-[color:var(--border-base)] hover:border-[color:var(--border-accent)] text-[13px] font-semibold text-[color:var(--text-primary)] transition-colors"
+                className="v-btn v-btn-ghost rounded-full px-6"
               >
-                Show more <span className="text-[color:var(--text-muted)] tabular-nums">({filtered.length - shown} left)</span>
+                Show more <span className="text-[color:var(--v-text-3)] tabular-nums">{(filtered.length - shown).toLocaleString()} left</span>
               </button>
             </div>
           )}
         </>
       )}
     </div>
-  );
-}
-
-function SubTile({
-  label, icon, active, accent, onClick,
-}: {
-  label: string;
-  icon: React.ReactNode;
-  active: boolean;
-  accent: string;
-  onClick: () => void;
-}) {
-  return (
-    <button
-      onClick={onClick}
-      className="group shrink-0 flex flex-col items-center gap-1.5 w-[60px] text-center transition-transform duration-150 hover:-translate-y-0.5"
-    >
-      {/* Logo — colour-tinted in the category accent */}
-      <span
-        className="transition-colors"
-        style={{ color: active ? accent : "var(--text-secondary)" }}
-      >
-        {icon}
-      </span>
-
-      <span
-        className={cn(
-          "text-[11px] font-semibold leading-tight line-clamp-2",
-          active ? "" : "text-[color:var(--text-secondary)] group-hover:text-[color:var(--text-primary)]"
-        )}
-        style={active ? { color: accent } : undefined}
-      >
-        {label}
-      </span>
-    </button>
   );
 }

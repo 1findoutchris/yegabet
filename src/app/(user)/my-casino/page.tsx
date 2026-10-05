@@ -8,13 +8,12 @@ import { effectiveStreak } from "@/lib/loyalty";
 import { getRewardConfig } from "@/lib/rewardConfig";
 import { SPORTSBOOK_GAME_UID } from "@/types/games";
 import { MyCasino, type MyCasinoStats } from "@/components/casino/MyCasino";
-import { GameSearch }       from "@/components/casino/GameSearch";
+import { SearchTrigger }    from "@/components/vinna/SearchTrigger";
 import { LoginRequired } from "@/components/auth/LoginRequired";
 import { GameRow }       from "@/components/casino/GameRow";
-import { RankProgress }  from "@/components/retention/RankProgress";
+import { RewardProgress } from "@/components/vinna/RewardProgress";
 import { ChallengeCard } from "@/components/retention/ChallengeCard";
 import type { Game } from "@/types/games";
-import "@/components/casino/casino.css";
 
 export default async function MyCasinoPage() {
   const session = await auth();
@@ -83,10 +82,10 @@ export default async function MyCasinoPage() {
   const { tiers } = await getRewardConfig();
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex flex-col gap-8 pb-16">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-4 sm:pt-6 flex flex-col gap-9 pb-16">
       <MyCasino recent={recent} bigWin={bigWin} stats={stats} tiers={tiers} />
 
-      <GameSearch placeholder="Search all games…" />
+      <SearchTrigger />
 
       {recommended.length > 0 && (
         <GameRow title="Recommended for you" icon={<Sparkles className="w-[18px] h-[18px]" />}
@@ -104,7 +103,7 @@ export default async function MyCasinoPage() {
       )}
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        <RankProgress points={stats.points} tiers={tiers} />
+        <RewardProgress points={stats.points} tiers={tiers} />
         <ChallengeCard />
       </div>
     </div>

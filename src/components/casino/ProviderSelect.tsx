@@ -50,16 +50,12 @@ export function ProviderSelect({ providers, activeSlug }: Props) {
         onClick={() => setOpen((v) => !v)}
         aria-haspopup="listbox"
         aria-expanded={open}
-        className={cn(
-          "flex items-center gap-2 whitespace-nowrap px-3.5 py-[7px] rounded-lg text-[12px] font-medium transition-all duration-150",
-          "bg-[var(--bg-surface)] border",
-          open || active
-            ? "border-[color:var(--border-accent)] text-[color:var(--text-primary)]"
-            : "border-[color:var(--border-base)] text-[color:var(--text-secondary)] hover:border-[color:var(--border-accent)] hover:text-[color:var(--text-primary)]"
-        )}
+        aria-label="Select provider"
+        data-active={!!active}
+        className={cn("v-pill", open && "border-[color:var(--v-teal-a24)] text-white")}
       >
-        <Layers className="w-3.5 h-3.5 text-[color:var(--gold)]" />
-        {active ? active.name : "Select provider"}
+        <Layers className="w-3.5 h-3.5 text-[color:var(--v-teal)]" />
+        <span className="hidden sm:inline">{active ? active.name : "Providers"}</span>
         <ChevronDown
           className={cn("w-3.5 h-3.5 transition-transform duration-150", open && "rotate-180")}
         />
@@ -67,11 +63,11 @@ export function ProviderSelect({ providers, activeSlug }: Props) {
 
       {open && (
         <div
-          className="absolute right-0 z-50 mt-2 w-[260px] rounded-xl border border-[color:var(--border-base)] bg-[var(--bg-elevated)] shadow-[0_18px_40px_rgba(0,0,0,0.55)] overflow-hidden animate-pop origin-top-right"
+          className="absolute right-0 z-50 mt-2 w-[260px] max-w-[calc(100vw-32px)] rounded-[18px] v-glass shadow-[var(--v-shadow-3)] overflow-hidden v-drop-in"
         >
           {/* Search */}
-          <div className="p-2 border-b border-[color:var(--border-muted)]">
-            <div className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg bg-[var(--bg-surface)] border border-[color:var(--border-base)]">
+          <div className="p-2 border-b border-[color:var(--v-line)]">
+            <div className="flex items-center gap-2 px-3 h-9 rounded-full bg-[var(--v-bg-2)] border border-[color:var(--v-line-2)]">
               <Search className="w-3.5 h-3.5 text-[color:var(--text-muted)]" />
               <input
                 autoFocus
