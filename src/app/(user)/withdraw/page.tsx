@@ -142,7 +142,7 @@ export default function WithdrawPage() {
       <div className="max-w-xl mx-auto px-4 sm:px-6 py-6 pb-24">
         <div
           className="relative overflow-hidden rounded-3xl border border-[color:var(--border-base)] p-7 text-center"
-          style={{ background: "linear-gradient(150deg,#12303C,#12303C 60%)" }}
+          style={{ background: "linear-gradient(150deg,#0F1A2E,#0F1A2E 60%)" }}
         >
           <span aria-hidden className="pointer-events-none absolute -top-16 left-1/2 -translate-x-1/2 w-64 h-64 rounded-full" style={{ background: "radial-gradient(circle,rgba(43,217,116,0.18),transparent 65%)" }} />
           <div className="relative z-10 flex flex-col items-center gap-3">
@@ -178,7 +178,7 @@ export default function WithdrawPage() {
 
         <div
           className="relative overflow-hidden rounded-3xl border border-[#F59E0B55] p-7 text-center"
-          style={{ background: "linear-gradient(150deg,#1A4252,#12303C 60%)" }}
+          style={{ background: "linear-gradient(150deg,#15233B,#0F1A2E 60%)" }}
         >
           <span aria-hidden className="pointer-events-none absolute -top-16 left-1/2 -translate-x-1/2 w-64 h-64 rounded-full"
             style={{ background: "radial-gradient(circle,rgba(245,158,11,0.18),transparent 65%)" }} />

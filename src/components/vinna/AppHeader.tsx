@@ -56,7 +56,8 @@ export function AppHeader() {
       <header className="fixed top-0 inset-x-0 z-50 h-14 v-glass border-x-0 border-t-0">
         <div className="max-w-7xl mx-auto h-full px-3 sm:px-6 flex items-center gap-2 sm:gap-4">
           <Link href="/casino" aria-label="VinnaBet home" className="shrink-0">
-            <VLogo className="max-[359px]:[&>span:last-child]:hidden" />
+            {/* Logged in, phones keep just the mark so the balance never truncates. */}
+            <VLogo className={session ? "max-[439px]:[&>span:last-child]:hidden" : "max-[359px]:[&>span:last-child]:hidden"} />
           </Link>
 
           {/* Section switcher — desktop */}

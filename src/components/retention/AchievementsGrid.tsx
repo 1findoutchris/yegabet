@@ -1,5 +1,6 @@
 "use client";
 
+import { SectionHeader } from "@/components/vinna/SectionHeader";
 import { useEffect, useState, useCallback } from "react";
 import { useSession } from "next-auth/react";
 import { ACHIEVEMENTS, type Achievement } from "@/lib/retention";
@@ -7,7 +8,14 @@ import { ACHIEVEMENTS, type Achievement } from "@/lib/retention";
 /** Permanent achievement badges, unlocked from real lifetime activity.
  *  `achievements` defaults to the built-in catalog; the server page passes the
  *  admin-configured catalog. */
-export function AchievementsGrid({ achievements = ACHIEVEMENTS }: { achievements?: Achievement[] }) {
+export function AchievementsGrid({
+  achievements = ACHIEVEMENTS,
+  limit,
+}: {
+  achievements?: Achievement[];
+  /** Show only the first N (earned first) with a "View all" link. */
+  limit?: number;
+}) {
   const { status } = useSession();
   const [earned, setEarned] = useState<Set<string>>(new Set());
 
@@ -32,40 +40,39 @@ export function AchievementsGrid({ achievements = ACHIEVEMENTS }: { achievements
 
   const earnedCount = achievements.filter((a) => earned.has(a.id)).length;
 
+  const list = limit
+    ? [...achievements].sort((x, y) => Number(earned.has(y.id)) - Number(earned.has(x.id))).slice(0, limit)
+    : achievements;
+
   return (
     <section>
-      <div className="flex items-center justify-between mb-4">
-        <h3 className="text-[16px] font-semibold tracking-[-0.01em] text-[color:var(--text-primary)]">Achievements</h3>
-        <span className="text-[12px] text-[color:var(--text-muted)]">{earnedCount} / {achievements.length} unlocked</span>
-      </div>
+      <SectionHeader
+        title="Achievements"
+        description={`${earnedCount} of ${achievements.length} unlocked`}
+        href={limit ? "/rewards/achievements" : undefined}
+      />
 
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-        {achievements.map((a) => {
+        {list.map((a) => {
           const isEarned = earned.has(a.id);
           return (
-            <div
-              key={a.id}
-              className="bg-[var(--bg-surface)] border border-[color:var(--border-base)] rounded-xl p-4 flex flex-col items-center text-center"
-              style={isEarned ? undefined : { opacity: 0.55 }}
-            >
+            <div key={a.id} className={"v-surface p-4 flex items-center gap-3 " + (isEarned ? "" : "opacity-60")}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={a.badge}
                 alt={a.name}
-                width={56}
-                height={56}
-                style={{ width: 56, height: 56, filter: isEarned ? undefined : "grayscale(1)" }}
+                width={40}
+                height={40}
+                className="shrink-0"
+                style={{ width: 40, height: 40, filter: isEarned ? undefined : "grayscale(1)" }}
               />
-              <p className="mt-2 text-[12px] font-semibold text-[color:var(--text-primary)]">{a.name}</p>
-              <p className="mt-0.5 text-[11px] text-[color:var(--text-muted)] leading-snug">{a.desc}</p>
-              <span
-                className="mt-2 text-[10px] font-bold uppercase tracking-[0.06em] rounded px-2 py-0.5"
-                style={isEarned
-                  ? { color: "#09090B", background: "var(--gold)" }
-                  : { color: "var(--text-muted)", background: "var(--bg-elevated)" }}
-              >
-                {isEarned ? "Earned" : "Locked"}
-              </span>
+              <div className="min-w-0">
+                <p className="text-[13px] font-semibold text-white truncate">{a.name}</p>
+                <p className="mt-0.5 text-[11px] text-[color:var(--v-text-3)] leading-snug line-clamp-2">{a.desc}</p>
+                <p className={"mt-1 text-[10px] font-bold uppercase tracking-[0.1em] " + (isEarned ? "text-[color:var(--v-teal)]" : "text-[color:var(--v-text-3)]")}>
+                  {isEarned ? "Unlocked" : "Locked"}
+                </p>
+              </div>
             </div>
           );
         })}
