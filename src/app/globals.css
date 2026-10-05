@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
+@import "../components/vinna/tokens.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -84,107 +85,43 @@
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --background: #0A1222;
+  --foreground: #FFFFFF;
+  --card: #0F1A2E;
+  --card-foreground: #FFFFFF;
+  --popover: #0F1A2E;
+  --popover-foreground: #FFFFFF;
+  --primary: #19D3C5;
+  --primary-foreground: #03211F;
+  --secondary: #15233B;
+  --secondary-foreground: #FFFFFF;
+  --muted: #15233B;
+  --muted-foreground: #7D8DAA;
+  --accent: #15233B;
+  --accent-foreground: #FFFFFF;
+  --destructive: #F43F5E;
+  --border: rgba(148, 170, 210, 0.12);
+  --input: rgba(148, 170, 210, 0.18);
+  --ring: #19D3C5;
+  --chart-1: #19D3C5;
+  --chart-2: #5CE1F0;
+  --chart-3: #F5B83D;
+  --chart-4: #34D399;
+  --chart-5: #7D8DAA;
+  --radius: 0.75rem;
+  --sidebar: #0F1A2E;
+  --sidebar-foreground: #FFFFFF;
+  --sidebar-primary: #19D3C5;
+  --sidebar-primary-foreground: #03211F;
+  --sidebar-accent: #15233B;
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: rgba(148, 170, 210, 0.12);
+  --sidebar-ring: #19D3C5;
 }
 
-/* ── VinnaBet · "Neon Depths" design tokens ───────────────────────────────
-   Abyssal navy velvet, electric cyan energy, violet depth. Cyber, not flat.
-   Shared globally because CasinoNav lives in the user layout. Token NAMES are
-   kept stable so existing components keep working; only the values changed. */
-:root {
-  /* Surfaces */
-  --bg-deep:        #081820;
-  --bg-base:        #0C2027;
-  --bg-surface:     #12303C;
-  --bg-elevated:    #1A4252;
-  --bg-accent-dim:  #2DD4BF18;
-  --bg-royal-dim:   #C07AFF18;
-
-  /* Borders */
-  --border-base:    #1E4A58;
-  --border-muted:   #1A4252;
-  --border-accent:  #2DD4BF59;
-  --border-royal:   #C07AFF59;
-
-  /* Electric cyan (primary energy — token name kept as --gold) */
-  --gold:           #2DD4BF;
-  --gold-2:         #7DE8D8;
-  --gold-deep:      #0D9488;
-  --gold-hover:     #5EEAD4;
-  --gold-dim:       #2DD4BF80;
-
-  /* Violet (secondary energy — token name kept as --purple) */
-  --purple:         #C07AFF;
-  --purple-2:       #D8B4FF;
-  --purple-deep:    #9D4AEC;
-
-  /* Signals */
-  --green:          #2BD974;
-  --red:            #FF3B5C;
-  --live:           #FF3B5C;
-
-  /* Text */
-  --text-primary:   #FFFFFF;
-  --text-secondary: #F0FDFB;
-  --text-muted:     #E2F2EF;
-
-  /* Gradients + glows */
-  --grad-gold:   linear-gradient(135deg, #7DE8D8, #2DD4BF 45%, #0D9488);
-  --grad-royal:  linear-gradient(135deg, #D8B4FF, #C07AFF 50%, #9D4AEC);
-  --grad-jackpot:linear-gradient(120deg, #D8B4FF, #2DD4BF 55%, #7DE8D8);
-  --glow-gold:   0 0 28px rgba(45, 212, 191, 0.45);
-  --glow-purple: 0 0 28px rgba(192, 122, 255, 0.45);
-}
-/* --font-display is provided on <html> by next/font (Sora) in the root layout. */
-
-/* Velvet backdrop with layered sky + indigo blooms and a fixed noise grain. */
-body {
-  background:
-    radial-gradient(1200px 620px at 12% -8%, rgba(192, 122, 255, 0.16), transparent 60%),
-    radial-gradient(1100px 560px at 100% -4%, rgba(45, 212, 191, 0.10), transparent 55%),
-    var(--bg-base);
-  background-attachment: fixed;
-  color: var(--text-primary);
-}
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  opacity: 0.05;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
+/* Brand tokens (colours, spacing, radius, type, shadows, motion) live in
+   components/vinna/tokens.css, imported above. --font-display and
+   --font-outfit both resolve to Manrope (root layout). */
 
 /* Printing (agent tickets): plain black-on-white, no dark theme fills. */
 @media print {
@@ -196,8 +133,8 @@ body::before {
   .ticket-print, .ticket-print * { color: #000 !important; border-color: #000 !important; }
 }
 
-/* ── Vegas Luxe utility helpers ───────────────────────────────────────────── */
-.font-display    { font-family: var(--font-display), var(--font-outfit), sans-serif; }
+/* ── Legacy utility helpers (restyled through the tokens) ───────────────────────────────────────────── */
+.font-display    { font-family: var(--font-display), var(--font-outfit), sans-serif; letter-spacing: -0.02em; }
 .text-gold-grad  { background: var(--grad-gold); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .bg-gold-grad    { background: var(--grad-gold); }
 .bg-royal-grad   { background: var(--grad-royal); }
@@ -217,7 +154,7 @@ body::before {
   width: 60%; height: 100%;
   background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.35), transparent);
   transform: skewX(-20deg);
-  animation: shine 4.5s ease-in-out infinite;
+  display: none; /* the redesign drops the casino light sweep */
 }
 
 @layer base {
@@ -319,19 +256,6 @@ body::before {
 .vinna-shimmer-gold { background-image: linear-gradient(110deg, #155E75 0%, #155E75 36%, #7DE8D8 50%, #155E75 64%, #155E75 100%); }
 .vinna-dot { animation: vinnaDot 1s ease-in-out infinite; }
 
-.vinna-skeleton {
-  position: relative;
-  overflow: hidden;
-  background: var(--bg-surface);
-}
-.vinna-skeleton::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  transform: translateX(-100%);
-  background: linear-gradient(90deg, transparent, rgba(45, 212, 191, 0.10), transparent);
-  animation: vinnaShimmer 1.4s linear infinite;
-}
 
 @media (prefers-reduced-motion: reduce) {
   .vinna-spin, .vinna-shimmer, .vinna-shimmer-gold, .vinna-dot, .vinna-skeleton::after { animation: none !important; }
