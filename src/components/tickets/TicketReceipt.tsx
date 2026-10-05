@@ -2,12 +2,14 @@
 
 import { CheckCircle2, XCircle, Clock } from "lucide-react";
 import { parseSlip, rawInfoText, withResults, type LegResult } from "@/lib/ticketSlip";
+import { PrintTicket } from "./PrintTicket";
 
 /*
- * The printable ticket body — games, odds, stake, potential win, status.
+ * The ticket body — games, odds, stake, potential win, status.
  * Shared by the in-person agent's ticket page and a player's own ticket
- * history; both APIs return this same shape. Print styles flatten it to
- * black-on-white for thermal printers.
+ * history; both APIs return this same shape. This is the screen version
+ * only: printing switches to PrintTicket, a plain thermal receipt built from
+ * the same data.
  *
  * Each match shows its own result (Won / Lost / Open) when the provider has
  * reported it — `resultInfo` is the settle payload that carries the legs'
@@ -43,10 +45,11 @@ export interface TicketView {
 
 export function TicketReceipt({ ticket }: { ticket: TicketView }) {
   return (
-    <div className="ticket-print bg-[var(--bg-surface)] border border-[color:var(--border-muted)] rounded-2xl p-5 print:rounded-none print:border-0 print:p-0 print:bg-white print:text-black print:[&_*]:!text-black print:[&_*]:!border-black">
+    <>
+    <div className="bg-[var(--bg-surface)] border border-[color:var(--border-muted)] rounded-2xl p-5 print:hidden">
       <div className="border-b border-dashed border-[color:var(--border-muted)] pb-3 mb-3">
         <p className="font-display text-4xl font-extrabold leading-none text-center">
-          Vinna<span className="text-gold-grad print:[background:none]">Bet</span>
+          Vinna<span className="text-gold-grad">Bet</span>
         </p>
       </div>
 
@@ -81,7 +84,7 @@ export function TicketReceipt({ ticket }: { ticket: TicketView }) {
                             const Icon = r.icon;
                             return (
                               <span className={`inline-flex items-center gap-1 font-bold uppercase text-[11px] ${r.tone}`}>
-                                <Icon className="w-3.5 h-3.5 print:hidden" /> {r.label}
+                                <Icon className="w-3.5 h-3.5" /> {r.label}
                               </span>
                             );
                           })()}
@@ -144,5 +147,7 @@ export function TicketReceipt({ ticket }: { ticket: TicketView }) {
         <p className="text-[11px] text-[color:var(--text-muted)] mt-2">Paid {new Date(ticket.paidAt).toLocaleString()}</p>
       )}
     </div>
+    <PrintTicket ticket={ticket} />
+    </>
   );
 }
