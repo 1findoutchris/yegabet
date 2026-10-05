@@ -199,18 +199,53 @@ describe("wallet — debit", () => {
 
 describe("wallet — credit", () => {
   test("win adds once per txnId; refund writes a REFUND transaction", async () => {
-    const p = await makeUser({ balance: 10 });
-    expect((await credit(p.id, { txnId: "w-1", winAmount: 25 })).body).toEqual({ status: "ok", balance: 35 });
-    expect((await credit(p.id, { txnId: "w-1", winAmount: 25 })).body).toEqual({ status: "ok", balance: 35 });
+    const p = await makeUser({ balance: 20 });
+    await debit(p.id, { txnId: "b-1", betAmount: 10, gameRound: "r-w" });
+    expect((await credit(p.id, { txnId: "w-1", winAmount: 25, gameRound: "r-w" })).body).toEqual({ status: "ok", balance: 35 });
+    expect((await credit(p.id, { txnId: "w-1", winAmount: 25, gameRound: "r-w" })).body).toEqual({ status: "ok", balance: 35 });
     expect(await balanceOf(p.id)).toBe(35);
-    expect((await credit(p.id, { txnId: "rf-1", action: "refund", winAmount: 5 })).body).toEqual({ status: "ok", balance: 40 });
+    expect((await credit(p.id, { txnId: "rf-1", action: "refund", winAmount: 5, gameRound: "r-w" })).body).toEqual({ status: "ok", balance: 40 });
     expect((await prisma.transaction.findUniqueOrThrow({ where: { reference: "oc:credit:rf-1" } })).type).toBe("REFUND");
     expect((await prisma.transaction.findUniqueOrThrow({ where: { reference: "oc:credit:w-1" } })).type).toBe("WIN");
   });
 
-  test("a blocked player still gets their win", async () => {
-    const p = await makeUser({ balance: 0, isActive: false });
-    expect((await credit(p.id, { winAmount: 12.5 })).body).toEqual({ status: "ok", balance: 12.5 });
+  test("a player blocked after betting still gets their win", async () => {
+    const p = await makeUser({ balance: 5 });
+    await debit(p.id, { txnId: "blk-b", betAmount: 5, gameRound: "blk-r" });
+    await prisma.user.update({ where: { id: p.id }, data: { isActive: false } });
+    expect((await credit(p.id, { winAmount: 12.5, gameRound: "blk-r" })).body).toEqual({ status: "ok", balance: 12.5 });
+  });
+
+  test("a win with no bet of ours in that round → TXN_NOT_FOUND, stored unpaid, retries pay nothing", async () => {
+    const p = await makeUser({ balance: 10 });
+    const other = await makeUser({ balance: 10 });
+    await debit(other.id, { txnId: "o-b", betAmount: 1, gameRound: "theirs" });
+    await debit(p.id, { txnId: "rolled", betAmount: 1, gameRound: "rolled-r" });
+    await rollback(p.id, "rolled");
+    for (const w of [
+      { txnId: "u-1", gameRound: "never-bet" },     // stake taken elsewhere
+      { txnId: "u-2", gameRound: "theirs" },        // someone else's round
+      { txnId: "u-3", gameRound: "rolled-r" },      // our bet was rolled back
+      { txnId: "u-4", gameRound: null },            // nothing to match
+    ]) {
+      for (let i = 0; i < 2; i++) {
+        expect((await credit(p.id, { ...w, winAmount: 50 })).body).toEqual({ status: "error", code: "TXN_NOT_FOUND", balance: 10 });
+      }
+    }
+    expect(await balanceOf(p.id)).toBe(10);
+    expect(await prisma.transaction.count({ where: { userId: p.id, type: "WIN" } })).toBe(0);
+    expect(await prisma.octheraWalletTxn.count({ where: { type: "credit", playerId: p.id, applied: false } })).toBe(4);
+  });
+
+  test("10 backed wins, each retried 3× in parallel and once more, are paid exactly once", async () => {
+    const p = await makeUser({ balance: 60 });
+    const rounds = Array.from({ length: 10 }, (_, i) => i);
+    for (const i of rounds) await debit(p.id, { txnId: `av-b-${i}`, betAmount: 1, gameRound: `av-${i}` });
+    const win = (i: number) => credit(p.id, { txnId: `av-w-${i}`, winAmount: i + 1, gameRound: `av-${i}` });
+    await Promise.all(rounds.flatMap((i) => [win(i), win(i), win(i)]));
+    for (const i of rounds) await win(i);
+    expect(await balanceOf(p.id)).toBe(60 - 10 + 55);
+    expect(await prisma.transaction.count({ where: { userId: p.id, type: "WIN" } })).toBe(10);
   });
 
   test("unknown player → PLAYER_NOT_FOUND, not stored, so a later retry can succeed", async () => {
@@ -251,8 +286,9 @@ describe("wallet — rollback", () => {
   });
 
   test("a credit then rollback of an unrelated txnId doesn't touch the credit", async () => {
-    const p = await makeUser({ balance: 0 });
-    await credit(p.id, { txnId: "c-1", winAmount: 20 });
+    const p = await makeUser({ balance: 1 });
+    await debit(p.id, { txnId: "c-b", betAmount: 1, gameRound: "c-r" });
+    await credit(p.id, { txnId: "c-1", winAmount: 20, gameRound: "c-r" });
     expect((await rollback(p.id, "c-1")).body).toEqual({ status: "ok", balance: 20 });
   });
 });

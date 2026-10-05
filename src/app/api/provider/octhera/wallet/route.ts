@@ -18,8 +18,10 @@ import { OCTHERA_ID_PREFIX } from "@/types/games";
  *   ping     — connectivity test from the portal. Moves nothing.
  *   debit    — bet / bet_win. Authorize within 3 s: needs
  *              max(0, bet − win) available; balance moves by win − bet.
- *   credit   — win / refund. Add winAmount once. Never refused for a blocked
- *              player (Octhera retries non-ok credits for 72 h).
+ *   credit   — win / refund. Add winAmount once, but only for a round whose
+ *              bet we took (an applied, not rolled back debit with the same
+ *              gameRound); anything else is TXN_NOT_FOUND, stored, never paid
+ *              automatically. Never refused for a blocked player.
  *   rollback — undo a debit that may or may not have reached us. Reuses the
  *              debit's txnId. If the debit never arrived, the rollback row
  *              is a marker and a late debit gets TXN_ROLLED_BACK.
@@ -315,6 +317,20 @@ async function debit(c: WalletCall, raw: unknown): Promise<Result> {
 
 // ── credit: win / refund ─────────────────────────────────────────────────────
 
+/** This player has an applied debit in the credit's gameRound that wasn't rolled back. */
+async function roundIsBacked(tx: Tx, c: WalletCall): Promise<boolean> {
+  if (!c.gameRound) return false;
+  const debits = await tx.octheraWalletTxn.findMany({
+    where: { type: "debit", playerId: c.playerId, gameRound: c.gameRound, applied: true },
+    select: { txnId: true },
+  });
+  if (debits.length === 0) return false;
+  const rolledBack = await tx.octheraWalletTxn.count({
+    where: { type: "rollback", applied: true, txnId: { in: debits.map((d) => d.txnId) } },
+  });
+  return rolledBack < debits.length;
+}
+
 async function credit(c: WalletCall, raw: unknown): Promise<Result> {
   return once(c, () =>
     prisma.$transaction(async (tx): Promise<Result> => {
@@ -326,8 +342,19 @@ async function credit(c: WalletCall, raw: unknown): Promise<Result> {
       const prior = await stored(tx, "credit", c.txnId);
       if (prior) return { response: prior };
 
-      // Credits are never refused — not even for a blocked player.
       const before = walletOf(user);
+
+      // Only pay a round we took the stake for. A win with no debit here was
+      // staked somewhere else (e.g. while Octhera couldn't reach this wallet),
+      // so paying it would hand out money the bet never cost. It is stored
+      // (applied = false) as the list to reconcile by hand, and retries
+      // replay the refusal. A blocked player still gets a backed win.
+      if (!(await roundIsBacked(tx, c))) {
+        const response = error("TXN_NOT_FOUND", before.balance);
+        await record(tx, c, false, response, raw);
+        return { response };
+      }
+
       const win = c.winAmount;
       const after = win > 0 ? settleRound(before, 0, win) : before;
       if (win > 0) {

@@ -50,10 +50,25 @@ Play one small round, then look at Railway's logs for `[octhera-wallet]`:
 | no `[octhera-wallet]` line at all | Octhera never called us, so it bet on its own balance. The portal's Wallet URL is missing or wrong, or the key isn't from the company wallet (v2) account. Fix steps 1–2 and run Test wallet. |
 | `debit/bet … → ok balance=…` | Working: the bet came off the VinnaBet balance. |
 | `→ INVALID_SIGNATURE (…)` | `OCTHERA_WALLET_SECRET` is missing or doesn't match the portal. |
+| `credit/win … → TXN_NOT_FOUND` | A win for a round whose bet never reached us (staked elsewhere). Not paid; see Reconciling unbacked wins. |
 | `→ INVALID_REQUEST (currency …)` | Octhera's currency isn't ETB. Set `OCTHERA_CURRENCY` to match the account, or change the account's currency. |
 
 Each bet and win is also a `Transaction` row with reference `oc:debit:…` /
 `oc:credit:…` on the player's admin page.
+
+### Reconciling unbacked wins
+
+Wins Octhera sends for rounds we never took a stake for are refused and kept:
+
+```sql
+select "createdAt", "playerId", "txnId", "gameRound", "winAmount", payload->>'gameName' as game
+from octhera_wallet_txns where type = 'credit' and applied = false order by "createdAt";
+```
+
+Settle each round with Octhera (their round report says where the stake came
+from). If you decide to honour one, credit the player **win − stake** with an
+admin balance adjustment: that is what the round would have done had the bet
+reached us. Paying the full win overpays by the stake.
 
 ## The catalog
 
@@ -145,7 +160,7 @@ our side blocks the iframe; the site sends no CSP or X-Frame-Options.
 | Octhera sends | We do |
 |---|---|
 | `debit` (bet / bet_win) | Check `max(0, bet − win)` is available, apply `win − bet`, answer the new balance. Too little → `INSUFFICIENT_FUNDS`. Blocked account → `PLAYER_BLOCKED`. |
-| `credit` (win / refund) | Add the win. Never refused, even for a blocked account. |
+| `credit` (win / refund) | Add the win, once, if we took a bet from this player in the same `gameRound` (and didn't roll it back). Otherwise `TXN_NOT_FOUND`: nothing is paid, and the call is kept in `octhera_wallet_txns` with `applied = false` for reconciliation. A blocked account still gets a backed win. |
 | `rollback` | Undo the debit with the same txnId. If the debit never arrived, remember the rollback, so a late debit gets `TXN_ROLLED_BACK`. |
 | `ping` | Answer ok. |
 
