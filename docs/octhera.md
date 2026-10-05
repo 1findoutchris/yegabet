@@ -1,8 +1,9 @@
 # Octhera (aggregator): API v2, company wallet
 
 **Octhera's catalog is the site's catalog.** Everything on our Octhera account
-is imported and organized into Casino, Sports and Games; the old `game_list/`
-games are off the site (see [The catalog](#the-catalog)).
+is imported and organized into Casino and Games; the old `game_list/` games
+are off the site (see [The catalog](#the-catalog)). **The sportsbook is not
+part of this:** Sports is the original sportsbook, unchanged.
 
 Octhera games play with the player's **normal VinnaBet balance**. Octhera
 launches the game, then calls our **Wallet URL** before every bet and after
@@ -79,7 +80,7 @@ Each game's section and tab come from Octhera's `type`
 |---|---|
 | **Casino** (`/casino`) | Slots, Live Casino, Table Games, plus Popular and New rails |
 | **Games** (`/games`) | Crash & Instant, Fishing, Lottery & Keno, Arcade, More Games |
-| **Sports** (`/sports`) | Sportsbook, Virtual Sports, Esports |
+| **Sports** (`/sports`) | unchanged: the original sportsbook. Octhera games typed as sports are classified (`section = sports`) but never shown or launchable. |
 | **Rewards** | unchanged: VinnaBet's own bonuses and promotions. Octhera's API has no rewards to import. |
 
 - A type nothing matches goes to **Games → More Games** and is listed in the
@@ -89,10 +90,8 @@ Each game's section and tab come from Octhera's `type`
 - Provider pages: `/casino/<provider>`. A provider we already had a page for
   keeps its address (e.g. `/casino/spribe`).
 - Images: Octhera's `img`, else its `/media/games/<gameUid>` artwork.
-- **Sports:** when Octhera's catalog has sportsbook content, `/sports` lists
-  it and each one opens through Octhera. When it has none, `/sports` keeps
-  the old sportsbook so the tab never goes blank. In-person agents always
-  use the old sportsbook (their tickets are built on it).
+- **Sports:** the original sportsbook (SportsPane, BetBy), exactly as before.
+  Nothing in this catalog work changes it.
 - Tapping a game opens it full-screen (Octhera's game URLs don't run inside
   the site's game window). Exit returns to the lobby.
 - Old-catalog game ids are refused at launch ("no longer available").

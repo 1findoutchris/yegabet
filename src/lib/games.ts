@@ -209,9 +209,21 @@ async function refreshOcthera(): Promise<void> {
 
 const nameKey = (g: Game) => `${g.provider}|${g.gameNameEn.trim().toLowerCase()}`;
 
+/*
+ * The sportsbook stays the original one (SportsPane on /sports, untouched).
+ * Octhera's sports content is imported and classified (section "sports") but
+ * not shown or launchable anywhere on the site.
+ */
+let _shown: { from: Game[]; games: Game[] } | null = null;
+function shownCatalog(): Game[] {
+  const all = catalogGames();
+  if (_shown?.from !== all) _shown = { from: all, games: all.filter((g) => g.section !== "sports") };
+  return _shown.games;
+}
+
 let _cache: Game[] | null = null;
 function getAllGames(): Game[] {
-  if (catalogMode() === "octhera") return catalogGames();
+  if (catalogMode() === "octhera") return shownCatalog();
   if (_cache) return _cache;
   const aviator = octheraAviator();
   // Disabled providers apply to the main catalog only — Octhera is its own account.

@@ -32,8 +32,8 @@ export async function POST(req: NextRequest) {
     }
 
     // The site's catalog is Octhera's (lib/catalog). The old provider's games
-    // are off the site; only its sportsbook still launches here, for the
-    // Sports pane when Octhera has no sportsbook and for the agents' tickets.
+    // are off the site; only its sportsbook still launches here — the
+    // sportsbook (Sports pane, agents' tickets) is unchanged.
     // GAME_CATALOG=legacy puts the old catalog back.
     if (catalogMode() === "octhera" && !game_uid.startsWith(OCTHERA_ID_PREFIX) && game_uid !== SPORTSBOOK_GAME_UID) {
       return NextResponse.json(
@@ -50,15 +50,12 @@ export async function POST(req: NextRequest) {
       const unavailable = () =>
         NextResponse.json({ error: "This game is temporarily unavailable", unavailable: true }, { status: 502 });
       let resolveUid = aviatorGameUid;
-      let isSportsbook = false;
       if (game_uid === OCTHERA_AVIATOR_ID) {
         if (process.env.OCTHERA_AVIATOR_PUBLIC !== "true") return unavailable();
       } else if (catalogMode() === "octhera") {
         // Any game on the site: an active row of the imported catalog.
         await loadGames();
-        const [game] = getGamesByIds([game_uid]);
-        if (!game) return unavailable();
-        isSportsbook = game.section === "sports";
+        if (!getGamesByIds([game_uid]).length) return unavailable();
         resolveUid = async () => game_uid.slice(OCTHERA_ID_PREFIX.length);
       } else {
         // Legacy catalog: any game in Octhera's catalog (shown on /octhera, and
@@ -74,8 +71,7 @@ export async function POST(req: NextRequest) {
         gameUid: await resolveUid(),
         device,
       });
-      // Like the old sportsbook, Octhera's sports content isn't a "recent game".
-      if (!isSportsbook) try {
+      try {
         await prisma.recentGame.upsert({
           where: { userId_gameId: { userId: session.user.id, gameId: game_uid } },
           create: { userId: session.user.id, gameId: game_uid },
