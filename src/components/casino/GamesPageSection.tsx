@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Star, Rocket, Gamepad2, Sparkles, Fish, Ticket, Joystick } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { CategoryTabs } from "@/components/vinna/CategoryTabs";
 import { CategoryBrowser } from "./CategoryBrowser";
 import { GameRow } from "./GameRow";
 import { SUBCATEGORIES } from "./categoryThemes";
@@ -43,10 +43,10 @@ export function GamesPageSection({ popularGames, tabs, initialTab }: Props) {
       {/* Popular games row — always visible */}
       {popularGames.length > 0 && (
         <GameRow
-          title="Popular Games"
+          title="Popular right now"
+          description="Crash and instant favourites"
           icon={<Star className="w-5 h-5" />}
           games={popularGames}
-          accentColor="text-amber-400"
           badge="hot"
         />
       )}
@@ -54,33 +54,21 @@ export function GamesPageSection({ popularGames, tabs, initialTab }: Props) {
       {/* Category tabs + full grid */}
       {active && (
         <div>
-          <div className="flex gap-2 overflow-x-auto pb-1 mb-5 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
-            {tabs.map(({ id, label, games }) => {
+          <CategoryTabs
+            className="mb-5"
+            label="Game types"
+            active={active.id}
+            onSelect={pick}
+            tabs={tabs.map(({ id, label, games }) => {
               const Icon = ICONS[id] ?? Gamepad2;
-              return (
-                <button
-                  key={id}
-                  onClick={() => pick(id)}
-                  className={cn(
-                    "flex items-center gap-1.5 whitespace-nowrap px-4 py-1.5 rounded-full text-xs font-medium transition-colors",
-                    active.id === id
-                      ? "bg-amber-500 text-black"
-                      : "border border-zinc-700 text-zinc-400 hover:border-zinc-500 hover:text-zinc-300"
-                  )}
-                >
-                  <Icon className="w-3.5 h-3.5" />
-                  {label}
-                  <span className="tabular-nums opacity-70">{games.length}</span>
-                </button>
-              );
+              return { id, label, count: games.length, icon: <Icon className="w-4 h-4" /> };
             })}
-          </div>
+          />
 
           <CategoryBrowser
             key={active.id}
             games={active.games}
             subcats={active.id === "crash" ? SUBCATEGORIES.crash : active.id === "slots" || active.id === "new" ? SUBCATEGORIES.default : []}
-            accent="#F59E0B"
           />
         </div>
       )}

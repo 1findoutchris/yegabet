@@ -1,21 +1,15 @@
 import type { Metadata, Viewport } from "next";
-import { Outfit, Sora } from "next/font/google";
+import { Manrope } from "next/font/google";
 import { Providers } from "@/components/Providers";
 import { Toaster } from "sonner";
 import "./globals.css";
 
-const outfit = Outfit({
+// One typeface for the whole product. tokens.css points the older
+// --font-outfit / --font-display names at it.
+const manrope = Manrope({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
-  variable: "--font-outfit",
-  display: "swap",
-});
-
-// Expressive display face for headings, jackpots, and big numbers.
-const sora = Sora({
-  subsets: ["latin"],
-  weight: ["600", "700", "800"],
-  variable: "--font-display",
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-vinna",
   display: "swap",
 });
 
@@ -73,14 +67,14 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0C2027",
+  themeColor: "#0A1222",
   // viewport-fit=cover lets env(safe-area-inset-*) reach the mobile tab bar.
   viewportFit: "cover",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${outfit.variable} ${sora.variable} dark h-full antialiased`}>
+    <html lang="en" className={`${manrope.variable} dark h-full antialiased`}>
       <body className="min-h-full flex flex-col font-[family-name:var(--font-outfit)]">
         {/* Organization + WebSite structured data → brand SERP result & sitelinks search box. */}
         <script
@@ -111,9 +105,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Providers>{children}</Providers>
         <Toaster
           theme="dark"
-          position="top-right"
+          position="top-center"
+          offset={68}
           toastOptions={{
-            style: { background: "#12303C", border: "1px solid #2A2236", color: "#F6F2FA" },
+            style: {
+              background: "rgba(15, 26, 46, 0.92)",
+              backdropFilter: "blur(16px)",
+              border: "1px solid rgba(148, 170, 210, 0.18)",
+              borderRadius: "14px",
+              color: "#FFFFFF",
+              boxShadow: "0 18px 48px rgba(2, 6, 18, 0.6)",
+            },
           }}
         />
       </body>

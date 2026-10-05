@@ -15,7 +15,7 @@ import { useAuthModal } from "@/contexts/AuthModalContext";
 import { getPaymentMethod } from "@/components/account/paymentMethods";
 import { DEFAULT_LIMITS, limitError } from "@/lib/paymentLimits";
 
-const QUICK = [100, 250, 500, 1000, 2500, 5000];
+const QUICK = [100, 500, 1000, 2000, 5000];
 // Poll for approval for up to 10 minutes before giving up
 
 type DepositState =
@@ -197,7 +197,7 @@ export default function DepositMethodPage() {
       <div className="max-w-xl mx-auto px-4 sm:px-6 py-6 pb-24">
         <div
           className="relative overflow-hidden rounded-3xl border border-[color:var(--border-base)] p-7 text-center"
-          style={{ background: "linear-gradient(150deg,#12303C,#12303C 60%)" }}
+          style={{ background: "linear-gradient(150deg,#0F1A2E,#0F1A2E 60%)" }}
         >
           <span aria-hidden className="pointer-events-none absolute -top-16 left-1/2 -translate-x-1/2 w-64 h-64 rounded-full"
             style={{ background: "radial-gradient(circle,rgba(43,217,116,0.18),transparent 65%)" }} />
@@ -227,10 +227,10 @@ export default function DepositMethodPage() {
       <div className="max-w-xl mx-auto px-4 sm:px-6 py-6 pb-24">
         <div
           className="relative overflow-hidden rounded-3xl border border-[color:var(--border-base)] p-7 text-center"
-          style={{ background: "linear-gradient(150deg,#12303C,#12303C 60%)" }}
+          style={{ background: "linear-gradient(150deg,#0F1A2E,#0F1A2E 60%)" }}
         >
           <span aria-hidden className="pointer-events-none absolute -top-16 left-1/2 -translate-x-1/2 w-64 h-64 rounded-full"
-            style={{ background: "radial-gradient(circle,rgba(45,212,191,0.14),transparent 65%)" }} />
+            style={{ background: "radial-gradient(circle,rgba(25,211,197,0.14),transparent 65%)" }} />
           <div className="relative z-10 flex flex-col items-center gap-3">
             <div className="w-14 h-14 rounded-full border-2 border-[color:var(--gold)] grid place-items-center">
               <Loader2 className="w-7 h-7 text-[color:var(--gold)] animate-spin" />
@@ -260,7 +260,7 @@ export default function DepositMethodPage() {
       <div className="max-w-xl mx-auto px-4 sm:px-6 py-6 pb-24">
         <div
           className="relative overflow-hidden rounded-3xl border border-[color:var(--border-base)] p-7 text-center"
-          style={{ background: "linear-gradient(150deg,#12303C,#12303C 60%)" }}
+          style={{ background: "linear-gradient(150deg,#0F1A2E,#0F1A2E 60%)" }}
         >
           <div className="flex flex-col items-center gap-3">
             <Clock className="w-14 h-14 text-[color:var(--text-muted)]" />
@@ -282,39 +282,35 @@ export default function DepositMethodPage() {
     <div className="max-w-xl mx-auto px-4 sm:px-6 py-6 pb-24">
       {/* Header */}
       <div className="flex items-center gap-3 mb-6">
-        <Link href="/deposit" className="p-1.5 rounded-lg text-[color:var(--text-muted)] hover:text-[color:var(--text-primary)] hover:bg-[var(--bg-elevated)] transition-colors">
+        <Link href="/deposit" aria-label="Back" className="w-9 h-9 grid place-items-center rounded-full bg-[var(--v-bg-3)] text-[color:var(--v-text-2)] hover:text-white transition-colors">
           <ChevronLeft className="w-5 h-5" />
         </Link>
         <span className="w-9 h-9 shrink-0 rounded-xl bg-white grid place-items-center p-1 ring-1 ring-black/5">
           <Image src={method.logo} alt={method.name} width={32} height={32} className="w-full h-full object-contain" unoptimized />
         </span>
-        <h1 className="font-display text-[20px] font-extrabold tracking-[-0.02em] text-[color:var(--text-primary)]">{method.name} deposit</h1>
+        <h1 className="text-[22px] font-extrabold tracking-[-0.02em] text-white">{method.name} deposit</h1>
       </div>
 
       {/* Step 1 — Amount */}
       <Section step={1} title="Enter amount" accent={method.accent}>
         <div className="relative mb-3">
-          <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[color:var(--text-muted)] font-bold text-[15px]">ETB</span>
+          <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[color:var(--v-text-3)] font-bold text-[14px]">ETB</span>
           <input
             type="number"
             inputMode="numeric"
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
             placeholder="0"
-            className="w-full h-14 pl-14 pr-4 rounded-2xl bg-[var(--bg-surface)] border border-[color:var(--border-base)] text-[color:var(--text-primary)] text-[22px] font-extrabold tabular-nums focus:outline-none focus:border-[color:var(--border-accent)] transition-colors"
+            className="w-full h-16 pl-16 pr-4 rounded-[16px] bg-[var(--v-bg-1)] border border-[color:var(--v-line-2)] text-white text-[28px] font-extrabold tabular-nums focus:outline-none focus:border-[color:var(--v-teal)] transition-colors"
           />
         </div>
-        <div className="flex flex-wrap gap-2">
+        <div className="grid grid-cols-5 gap-2">
           {QUICK.filter((q) => q >= limits.min && q <= limits.max).map((q) => (
             <button
               key={q}
               onClick={() => setAmount(String(q))}
-              className={cn(
-                "px-3.5 py-2 rounded-lg text-[13px] font-semibold transition-all duration-150 border",
-                numAmount === q
-                  ? "bg-[var(--bg-accent-dim)] border-[color:var(--gold)] text-[color:var(--gold)]"
-                  : "bg-[var(--bg-surface)] border-[color:var(--border-base)] text-[color:var(--text-secondary)] hover:border-[color:var(--border-accent)] hover:text-[color:var(--text-primary)]"
-              )}
+              data-active={numAmount === q}
+              className="v-pill justify-center px-0 h-10 tabular-nums"
             >
               {q.toLocaleString()}
             </button>
@@ -403,10 +399,10 @@ export default function DepositMethodPage() {
         onClick={confirm}
         disabled={!!session && !canConfirm}
         className={cn(
-          "w-full py-4 rounded-2xl font-bold text-[15px] transition-all duration-150 flex items-center justify-center gap-2",
+          "v-btn w-full h-14 rounded-[16px] text-[15px]",
           session && !canConfirm
-            ? "bg-[var(--bg-elevated)] text-[color:var(--text-muted)] cursor-not-allowed"
-            : "bg-gold-grad text-[#09090B] glow-gold hover:scale-[1.01]"
+            ? "bg-[var(--v-bg-3)] text-[color:var(--v-text-3)] cursor-not-allowed"
+            : "v-btn-primary"
         )}
       >
         {submitting ? (
@@ -431,15 +427,15 @@ function Section({ step, title, accent, children }: {
   step: number; title: string; accent: string; children: React.ReactNode;
 }) {
   return (
-    <div className="mb-6">
-      <div className="flex items-center gap-2.5 mb-3">
+    <div className="mb-4 v-surface p-4 sm:p-5">
+      <div className="flex items-center gap-2.5 mb-4">
         <span
-          className="w-6 h-6 shrink-0 grid place-items-center rounded-full text-[12px] font-bold text-white"
+          className="w-6 h-6 shrink-0 grid place-items-center rounded-full text-[11px] font-extrabold text-white"
           style={{ background: accent }}
         >
           {step}
         </span>
-        <p className="text-[13px] font-bold text-[color:var(--text-primary)]">{title}</p>
+        <p className="text-[14px] font-bold text-white">{title}</p>
       </div>
       {children}
     </div>

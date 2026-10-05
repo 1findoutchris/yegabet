@@ -17,10 +17,14 @@ export default async function RewardsLayout({ children }: { children: React.Reac
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 pb-16">
+    <div className="max-w-5xl mx-auto px-4 sm:px-6 pt-4 sm:pt-6 pb-16">
+      <header className="mb-5">
+        <p className="v-eyebrow text-[color:var(--v-teal)]">Progression</p>
+        <h1 className="mt-1.5 text-[length:var(--v-fs-page)] font-extrabold tracking-[-0.03em] leading-none text-white">Rewards</h1>
+      </header>
       <RewardsNav />
 
-      <div className="mt-8 flex flex-col gap-10">{children}</div>
+      <div className="mt-6 flex flex-col gap-9">{children}</div>
     </div>
   );
 }

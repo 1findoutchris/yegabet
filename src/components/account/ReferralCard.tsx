@@ -37,10 +37,10 @@ export function ReferralCard({ code }: { code: string }) {
   return (
     <section
       className="relative overflow-hidden rounded-2xl border border-[color:var(--border-royal)] p-5"
-      style={{ background: "linear-gradient(135deg,#1E1633 0%,#171022 55%,#140E1D 100%)" }}
+      style={{ background: "linear-gradient(135deg,#0A1222 0%,#0A1222 55%,#0A1222 100%)" }}
     >
       <span aria-hidden className="pointer-events-none absolute -top-16 right-8 w-48 h-48 rounded-full"
-        style={{ background: "radial-gradient(circle,rgba(192,122,255,0.22),transparent 65%)" }} />
+        style={{ background: "radial-gradient(circle,rgba(245,184,61,0.22),transparent 65%)" }} />
 
       <div className="relative z-10">
         <div className="flex items-center gap-2">

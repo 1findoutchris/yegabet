@@ -19,7 +19,7 @@ function uniqueLocalPhone(): string {
 
 async function openRegister(page: import("@playwright/test").Page) {
   await page.goto("/casino");
-  await page.getByRole("button", { name: "Register" }).click();
+  await page.getByRole("button", { name: "Join", exact: true }).click();
   await expect(page.getByPlaceholder(/full name/i)).toBeVisible();
 }
 

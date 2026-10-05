@@ -3,9 +3,10 @@
 import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
-import { ArrowLeft, Loader2, Maximize2, RotateCw } from "lucide-react";
+import { ArrowLeft, Maximize2, RotateCw } from "lucide-react";
 import { useAuthModal } from "@/contexts/AuthModalContext";
 import { useBalance } from "@/contexts/BalanceContext";
+import { LaunchOverlay } from "@/components/vinna/LaunchOverlay";
 
 /** How long a game may take to load before the player offers a reload. */
 const SLOW_MS = 20_000;
@@ -132,17 +133,18 @@ export function OctheraPlayer({
 
   return (
     <div className="fixed inset-x-0 top-14 bottom-0 z-40 flex flex-col bg-black">
-      <div className="flex items-center gap-2 h-11 px-2 sm:px-4 shrink-0 bg-[#0C2027]/95 border-b border-[color:var(--border-muted)]">
+      <div className="flex items-center gap-2 h-12 px-2 sm:px-4 shrink-0 bg-[var(--v-bg-1)] border-b border-[color:var(--v-line)]">
         <button
           onClick={back}
-          className="flex items-center gap-1 h-9 pl-1.5 pr-2.5 rounded-lg text-[13px] font-medium text-[color:var(--text-secondary)] hover:text-[color:var(--text-primary)] hover:bg-[var(--bg-elevated)] transition-colors"
+          aria-label="Back"
+          className="w-9 h-9 grid place-items-center rounded-full bg-[var(--v-bg-3)] text-[color:var(--v-text-2)] hover:text-white transition-colors"
         >
-          <ArrowLeft className="w-4 h-4" /> Back
+          <ArrowLeft className="w-4 h-4" />
         </button>
-        <div className="flex items-baseline gap-1.5 min-w-0 flex-1">
-          <span className="text-[color:var(--text-primary)] font-semibold text-sm truncate">{title}</span>
+        <div className="min-w-0 flex-1 leading-tight">
+          <p className="text-white font-bold text-[14px] truncate">{title}</p>
           {providerName && (
-            <span className="hidden sm:inline text-[color:var(--text-muted)] text-xs shrink-0">· {providerName}</span>
+            <p className="text-[color:var(--v-text-3)] text-[11px] font-semibold uppercase tracking-[0.08em] truncate">{providerName}</p>
           )}
         </div>
         {url && (
@@ -150,7 +152,7 @@ export function OctheraPlayer({
             onClick={launch}
             title="Reload game"
             aria-label="Reload game"
-            className="p-2 rounded-lg text-[color:var(--text-secondary)] hover:text-[color:var(--text-primary)] hover:bg-[var(--bg-elevated)] transition-colors"
+            className="w-9 h-9 grid place-items-center rounded-full text-[color:var(--v-text-2)] hover:text-white hover:bg-[var(--v-bg-3)] transition-colors"
           >
             <RotateCw className="w-[18px] h-[18px]" />
           </button>
@@ -160,7 +162,7 @@ export function OctheraPlayer({
             onClick={fullscreen}
             title="Fullscreen"
             aria-label="Fullscreen"
-            className="p-2 rounded-lg text-[color:var(--text-secondary)] hover:text-[color:var(--text-primary)] hover:bg-[var(--bg-elevated)] transition-colors"
+            className="w-9 h-9 grid place-items-center rounded-full text-[color:var(--v-text-2)] hover:text-white hover:bg-[var(--v-bg-3)] transition-colors"
           >
             <Maximize2 className="w-[18px] h-[18px]" />
           </button>
@@ -181,12 +183,10 @@ export function OctheraPlayer({
         )}
 
         {(shown.kind === "launching" || shown.kind === "loading") && (
-          <Panel>
-            <Loader2 className="w-9 h-9 text-[color:var(--gold)] animate-spin" />
-            <p className="text-[color:var(--text-secondary)] text-sm">Loading {label}…</p>
+          <LaunchOverlay name={name} provider={providerName}>
             {slow && (
-              <div className="flex flex-col items-center gap-3 mt-2">
-                <p className="text-[color:var(--text-muted)] text-xs text-center max-w-xs">
+              <div className="flex flex-col items-center gap-3 mt-6 v-fade-up">
+                <p className="text-[color:var(--v-text-3)] text-xs text-center max-w-xs">
                   This is taking longer than usual.
                 </p>
                 <div className="flex gap-2">
@@ -195,7 +195,7 @@ export function OctheraPlayer({
                 </div>
               </div>
             )}
-          </Panel>
+          </LaunchOverlay>
         )}
 
         {shown.kind === "login" && (
@@ -227,7 +227,7 @@ const noSubscribe = () => () => {};
 
 function Panel({ children }: { children: React.ReactNode }) {
   return (
-    <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 px-6 bg-[var(--bg-base)]">
+    <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 px-6 bg-[var(--v-bg-0)] v-fade-in">
       {children}
     </div>
   );
@@ -246,10 +246,7 @@ function PanelButton({
     <button
       onClick={onClick}
       className={
-        "h-9 px-4 rounded-lg text-[13px] font-semibold transition-colors " +
-        (primary
-          ? "bg-[var(--gold)] text-black hover:brightness-110"
-          : "bg-[var(--bg-elevated)] text-[color:var(--text-primary)] hover:bg-[var(--bg-surface)]")
+        "v-btn h-10 text-[13px] " + (primary ? "v-btn-primary" : "v-btn-ghost")
       }
     >
       {children}

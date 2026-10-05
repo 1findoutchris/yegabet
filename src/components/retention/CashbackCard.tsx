@@ -65,17 +65,14 @@ export function CashbackCard() {
   const canClaim = !!info && info.claimable > 0 && !info.claimedThisWeek;
 
   return (
-    <section
-      className="relative overflow-hidden rounded-[14px] border border-[color:var(--green)]/30 p-5 sm:p-6"
-      style={{ background: "linear-gradient(135deg,rgba(43,217,116,0.10),var(--bg-surface) 70%)" }}
-    >
-      <div className="flex items-start gap-4">
-        <span className="w-11 h-11 shrink-0 rounded-xl grid place-items-center bg-[var(--green)]/15 border border-[color:var(--green)]/30">
-          <Coins className="w-5 h-5 text-[color:var(--green)]" />
+    <section className="v-surface p-5">
+      <div className="flex items-start gap-3.5">
+        <span className="w-10 h-10 shrink-0 rounded-[12px] grid place-items-center bg-[rgba(52,211,153,0.12)]">
+          <Coins className="w-5 h-5 text-[color:var(--v-green)]" />
         </span>
         <div className="min-w-0 flex-1">
-          <h3 className="text-[16px] font-semibold text-[color:var(--text-primary)]">Weekly cashback</h3>
-          <p className="text-[12px] text-[color:var(--text-muted)] mt-0.5">
+          <h3 className="text-[16px] font-bold text-white">Cashback</h3>
+          <p className="text-[12px] text-[color:var(--v-text-3)] mt-0.5">
             {info
               ? `${info.tierName} tier · ${info.ratePct} of your last-7-day net losses · up to ${formatCurrency(info.cap)}/week`
               : "A share of your net losses, back in your balance every week."}
@@ -88,7 +85,7 @@ export function CashbackCard() {
         {status !== "authenticated" ? (
           <button
             onClick={openLogin}
-            className="h-10 px-5 rounded-lg bg-gold-grad shine text-[#09090B] text-[13px] font-bold transition-transform hover:scale-[1.03]"
+            className="v-btn v-btn-primary h-10 rounded-full"
           >
             Log in to claim
           </button>
@@ -99,15 +96,15 @@ export function CashbackCard() {
         ) : (
           <div className="flex items-end justify-between gap-4 flex-wrap">
             <div>
-              <p className="text-[11px] uppercase tracking-[0.06em] text-[color:var(--text-muted)]">
+              <p className="v-eyebrow">
                 {info?.claimedThisWeek ? "Claimed this week" : "Available to claim"}
               </p>
-              <p className="font-display text-[28px] sm:text-[34px] font-extrabold tabular-nums leading-none mt-1 text-[color:var(--green)]">
+              <p className="text-[28px] sm:text-[32px] font-extrabold tabular-nums leading-none mt-1.5 text-white">
                 {formatCurrency(info?.claimable ?? 0)}
               </p>
               {info && info.netLoss <= 0 && !info.claimedThisWeek && (
                 <p className="text-[11px] text-[color:var(--text-muted)] mt-1.5">
-                  No net losses in the last 7 days — nothing to refund. 🎉
+                  No net losses in the last 7 days, so nothing to refund.
                 </p>
               )}
               <p className="text-[11px] text-[color:var(--text-muted)] mt-1.5">
@@ -118,7 +115,7 @@ export function CashbackCard() {
             <button
               onClick={claim}
               disabled={!canClaim || claiming}
-              className="h-10 px-5 rounded-lg text-[13px] font-bold transition-transform enabled:hover:scale-[1.03] disabled:opacity-45 disabled:cursor-not-allowed bg-[var(--green)] text-[#09090B] inline-flex items-center gap-2"
+              className="v-btn v-btn-primary h-10 rounded-full"
             >
               {claiming && <Loader2 className="w-4 h-4 animate-spin" />}
               {info?.claimedThisWeek ? "Claimed" : canClaim ? `Claim ${formatCurrency(info!.claimable)}` : "Nothing to claim"}

@@ -1,47 +1,33 @@
-/* Single source of truth for casino category styling.
-   Both the lobby tiles (CategoryGrid) and the destination category pages
-   (/casino/[slug]) read from here so a tile and the page it opens share the
-   exact same gradient, glow, and artwork. */
-
-import {
-  ArtFlame, ArtCherries, ArtCards, ArtRocket, ArtGift, ArtCrown,
-} from "./CategoryArt";
-
-const G = {
-  orange:  "linear-gradient(150deg,#FF9D2E 0%,#FB6107 55%,#C2410C 100%)",
-  gold:    "linear-gradient(150deg,#FFE07A 0%,#2DD4BF 50%,#0D9488 100%)",
-  crimson: "linear-gradient(150deg,#FF6B8A 0%,#F0285A 55%,#A8123E 100%)",
-  blue:    "linear-gradient(150deg,#4FD0FF 0%,#2B7FFF 55%,#3730D8 100%)",
-  violet:  "linear-gradient(150deg,#C29BFF 0%,#C07AFF 50%,#6620C9 100%)",
-  emerald: "linear-gradient(150deg,#3BE6A6 0%,#10B57E 55%,#067A53 100%)",
-} as const;
-
-type Art = React.ComponentType<{ className?: string }>;
+/* Single source of truth for casino category copy. Both the lobby pills and
+   the destination category pages (/casino/[slug]) read from here. The old
+   per-category gradients and clip-art are gone with the redesign; every
+   category shares the VinnaBet accent. */
 
 export interface CategoryTheme {
   title: string;
+  /** Eyebrow above the title. */
   tag: string;
-  grad: string;      // face / banner gradient
-  glow: string;      // strong colour — hover + header glow
-  tint: string;      // soft colour — page background bloom
-  accent: string;    // solid hex — active sub-category chips
-  Art: Art;
+  /** One line under the title. */
+  description: string;
+  /** Solid hex — active sub-category pill. */
+  accent: string;
 }
+
+const ACCENT = "#19D3C5";
 
 /* Keyed by the route slug used in /casino/[slug]. */
 export const CATEGORY_THEMES: Record<string, CategoryTheme> = {
-  hot:   { title: "Popular",         tag: "Trending now",  grad: G.orange,  glow: "rgba(251,97,7,0.55)",   tint: "rgba(251,97,7,0.16)",   accent: "#FB6107", Art: ArtFlame    },
-  slots: { title: "Slots",           tag: "Spin to win",   grad: G.gold,    glow: "rgba(45,212,191,0.55)",  tint: "rgba(45,212,191,0.16)",  accent: "#2DD4BF", Art: ArtCherries },
-  live:  { title: "Live Casino",     tag: "Real dealers",  grad: G.crimson, glow: "rgba(240,40,90,0.55)",  tint: "rgba(240,40,90,0.16)",  accent: "#F0285A", Art: ArtCards    },
-  crash: { title: "Crash & Instant", tag: "Cash out fast", grad: G.blue,    glow: "rgba(43,127,255,0.55)", tint: "rgba(43,127,255,0.16)", accent: "#3B82F6", Art: ArtRocket   },
-  new:   { title: "New Games",       tag: "Fresh drops",   grad: G.violet,  glow: "rgba(192,122,255,0.55)", tint: "rgba(192,122,255,0.16)", accent: "#C07AFF", Art: ArtGift     },
-  table: { title: "Table Games",     tag: "Classic tables", grad: G.emerald, glow: "rgba(16,181,126,0.55)", tint: "rgba(16,181,126,0.16)", accent: "#10B57E", Art: ArtCrown    },
+  hot:   { title: "Popular",         tag: "Casino",          description: "The most played titles in the lobby.",        accent: ACCENT },
+  slots: { title: "Slots",           tag: "Casino",          description: "Every slot, from classics to megaways.",      accent: ACCENT },
+  live:  { title: "Live Casino",     tag: "Real dealers",    description: "Roulette, blackjack, baccarat and game shows.", accent: ACCENT },
+  crash: { title: "Crash & Instant", tag: "Instant games",   description: "Fast rounds, cash out any time.",             accent: ACCENT },
+  new:   { title: "New Games",       tag: "New releases",    description: "The latest additions to the lobby.",          accent: ACCENT },
+  table: { title: "Table Games",     tag: "Casino",          description: "Classic tables, digital and fast.",           accent: ACCENT },
 };
 
-/* Neutral theme for provider pages (no dedicated category art). */
+/* Neutral theme for provider pages. */
 export const DEFAULT_THEME: CategoryTheme = {
-  title: "", tag: "Game provider", grad: G.gold,
-  glow: "rgba(45,212,191,0.5)", tint: "rgba(45,212,191,0.14)", accent: "#2DD4BF", Art: ArtCherries,
+  title: "", tag: "Game provider", description: "Every title from this studio.", accent: ACCENT,
 };
 
 /* ── Sub-categories ────────────────────────────────────────────────────────
@@ -95,26 +81,3 @@ export const SUBCATEGORIES: Record<string, SubCat[]> = {
   new:   SLOT_SUBS,
   default: SLOT_SUBS,
 };
-
-/* Ordered tiles for the lobby grid. `countKey` selects the live count. */
-export interface LobbyTile {
-  slug: string;
-  title: string;
-  tag: string;
-  grad: string;
-  glow: string;
-  Art: Art;
-  countKey: "all" | "hot" | "slots" | "live" | "crash" | "new" | "table";
-  /** Where the tile goes, when not /casino/<slug>. */
-  href?: string;
-}
-
-export const LOBBY_TILES: LobbyTile[] = [
-  { slug: "hot",   title: "Popular",         tag: "Trending now",  grad: G.orange,  glow: "rgba(251,97,7,0.55)",   Art: ArtFlame,    countKey: "hot"   },
-  { slug: "slots", title: "Slots",           tag: "Spin to win",   grad: G.gold,    glow: "rgba(45,212,191,0.55)",  Art: ArtCherries, countKey: "slots" },
-  { slug: "live",  title: "Live Casino",     tag: "Real dealers",  grad: G.crimson, glow: "rgba(240,40,90,0.55)",  Art: ArtCards,    countKey: "live"  },
-  { slug: "table", title: "Table Games",     tag: "Classic tables", grad: G.emerald, glow: "rgba(16,181,126,0.55)", Art: ArtCrown,   countKey: "table" },
-  { slug: "new",   title: "New Games",       tag: "Fresh drops",   grad: G.violet,  glow: "rgba(192,122,255,0.55)", Art: ArtGift,     countKey: "new"   },
-  // Crash & instant games live in the Games section.
-  { slug: "crash", title: "Crash & Instant", tag: "Cash out fast", grad: G.blue,    glow: "rgba(43,127,255,0.55)", Art: ArtRocket,   countKey: "crash", href: "/games?tab=crash" },
-];
