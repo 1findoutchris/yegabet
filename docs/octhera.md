@@ -41,6 +41,20 @@ No manual deposits in the Octhera portal.
 6. **IP allowlist:** if you turn it on, add Railway's outbound IP, or every
    call returns 403.
 
+### Is Octhera using the VinnaBet balance?
+
+Play one small round, then look at Railway's logs for `[octhera-wallet]`:
+
+| Log | Meaning |
+|---|---|
+| no `[octhera-wallet]` line at all | Octhera never called us, so it bet on its own balance. The portal's Wallet URL is missing or wrong, or the key isn't from the company wallet (v2) account. Fix steps 1–2 and run Test wallet. |
+| `debit/bet … → ok balance=…` | Working: the bet came off the VinnaBet balance. |
+| `→ INVALID_SIGNATURE (…)` | `OCTHERA_WALLET_SECRET` is missing or doesn't match the portal. |
+| `→ INVALID_REQUEST (currency …)` | Octhera's currency isn't ETB. Set `OCTHERA_CURRENCY` to match the account, or change the account's currency. |
+
+Each bet and win is also a `Transaction` row with reference `oc:debit:…` /
+`oc:credit:…` on the player's admin page.
+
 ## The catalog
 
 **Order matters:** set `OCTHERA_API_KEY` on Railway *before* deploying this.

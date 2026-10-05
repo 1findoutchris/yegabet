@@ -6,7 +6,7 @@ import { getRewardConfig } from "@/lib/rewardConfig";
 import { dayIndexUtc, awardPoints } from "@/lib/loyalty";
 import { settleRound, withdrawable, type Wallet } from "@/lib/wallet";
 import { publishBalanceEvent } from "@/lib/balanceEvents";
-import { verifyWalletSignature } from "@/lib/providers/octhera";
+import { WALLET_MAX_SKEW_S, verifyWalletSignature } from "@/lib/providers/octhera";
 import { OCTHERA_ID_PREFIX } from "@/types/games";
 
 /**
@@ -151,35 +151,63 @@ const txnMeta = (c: WalletCall, raw: unknown, extra: object) => ({
   ...extra,
 });
 
+/**
+ * One Railway log line per wallet call, so "is Octhera calling our wallet, and
+ * what do we answer?" can be read from the logs. No line at all after playing
+ * a round means Octhera never called us (portal Wallet URL / account mode).
+ */
+function log(what: string, response: WalletResponse, detail = "") {
+  const answer = response.status === "ok" ? "ok" : response.code;
+  const balance = response.balance === undefined ? "" : ` balance=${response.balance}`;
+  console.info(`[octhera-wallet] ${what} → ${answer}${balance}${detail ? ` (${detail})` : ""}`);
+}
+
 export async function POST(req: NextRequest) {
   try {
     const rawBody = await req.text();
-    if (
-      !verifyWalletSignature(
-        rawBody,
-        req.headers.get("x-octhera-timestamp") ?? "",
-        req.headers.get("x-octhera-signature") ?? ""
-      )
-    ) {
-      return reply(error("INVALID_SIGNATURE"));
+    const timestamp = req.headers.get("x-octhera-timestamp") ?? "";
+    if (!verifyWalletSignature(rawBody, timestamp, req.headers.get("x-octhera-signature") ?? "")) {
+      const response = error("INVALID_SIGNATURE");
+      const why = !process.env.OCTHERA_WALLET_SECRET
+        ? "OCTHERA_WALLET_SECRET is not set"
+        : /^\d{1,12}$/.test(timestamp) && Math.abs(Date.now() / 1000 - Number(timestamp)) > WALLET_MAX_SKEW_S
+          ? `timestamp ${timestamp} is more than ${WALLET_MAX_SKEW_S}s off`
+          : "signature doesn't match OCTHERA_WALLET_SECRET";
+      log("call", response, why);
+      return reply(response);
     }
 
     let raw: unknown;
     try {
       raw = JSON.parse(rawBody);
     } catch {
+      log("call", error("INVALID_REQUEST"), "body is not JSON");
       return reply(error("INVALID_REQUEST"));
     }
-    if ((raw as { type?: unknown })?.type === "ping") return reply(ok());
+    if ((raw as { type?: unknown })?.type === "ping") {
+      log("ping", ok());
+      return reply(ok());
+    }
 
     const call = parseCall(raw);
-    if (!call || call.currency !== CURRENCY()) return reply(error("INVALID_REQUEST"));
+    if (!call || call.currency !== CURRENCY()) {
+      const b = raw as Record<string, unknown>;
+      const why = call
+        ? `currency ${call.currency}, this site uses ${CURRENCY()} (OCTHERA_CURRENCY)`
+        : `unrecognized call: type=${String(b?.type)} action=${String(b?.action)}`;
+      log("call", error("INVALID_REQUEST"), why);
+      return reply(error("INVALID_REQUEST"));
+    }
 
     const result =
       call.type === "debit" ? await debit(call, raw)
       : call.type === "credit" ? await credit(call, raw)
       : await rollback(call, raw);
 
+    log(
+      `${call.type}${call.action ? `/${call.action}` : ""} txn=${call.txnId} player=${call.playerId} bet=${call.betAmount} win=${call.winAmount}`,
+      result.response
+    );
     if (result.event) await publishBalanceEvent(call.playerId, result.event).catch(() => {});
     return reply(result.response);
   } catch (e) {
