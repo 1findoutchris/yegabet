@@ -226,7 +226,7 @@ describe("launch", () => {
 
     const { status, body } = await json<{ game_launch_url: string; open: string }>(await open("octhera:slots-7"));
     expect(status).toBe(200);
-    expect(body).toEqual({ game_launch_url: "https://api.octhera.org/play?token=x", open: "redirect" });
+    expect(body).toEqual({ game_launch_url: "https://api.octhera.org/play?token=x" });
     const launch = fetchMock.mock.calls.find((c) => String(c[0]).endsWith("/players/launch"))!;
     expect(JSON.parse(launch[1].body)).toEqual({ playerId: player.id, balance: 120, gameUid: "slots-7", lang: "en", device: "desktop" });
     expect(await prisma.recentGame.count({ where: { userId: player.id, gameId: "octhera:slots-7" } })).toBe(1);

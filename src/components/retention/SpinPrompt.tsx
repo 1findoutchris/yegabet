@@ -25,6 +25,8 @@ export function SpinPrompt() {
     if (spinCredits <= 0) return;
     // Already on the wheel — nothing to prompt.
     if (pathname?.startsWith("/rewards/spin")) return;
+    // Mid-game on the player page — don't cover the game.
+    if (pathname?.startsWith("/game/")) return;
     try {
       if (sessionStorage.getItem(SEEN_KEY)) return;
     } catch { /* private mode — just show it */ }

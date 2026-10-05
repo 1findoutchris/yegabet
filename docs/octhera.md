@@ -101,6 +101,31 @@ Each game's section and tab come from Octhera's `type`
 Set `GAME_CATALOG=legacy` on Railway and redeploy: the old catalog and pages
 come back exactly as before. The imported tables stay, unused.
 
+## Playing a game (in-site player)
+
+Tapping an Octhera game opens `/game/<gameUid>` on VinnaBet. The site header
+stays on top, with a bar under it (Back, game name, Reload, Fullscreen), and
+the game runs in an iframe that fills the rest of the screen. On phones the
+bottom tab bar is hidden so the game gets the whole screen below the header.
+The page asks `/api/games/launch` for a fresh single-use launch URL each time
+it opens or reloads; the URL is never put in the page's HTML.
+
+**This only works if Octhera lets vinna.bet frame its game pages.** If a
+game shows the browser's grey "refused to connect" page, open the browser
+console (F12) on `/game/...`: it names the header that blocked it.
+
+- `Refused to display '…' in a frame because it set 'X-Frame-Options' to
+  'deny'` (or `'sameorigin'`): Octhera must remove `X-Frame-Options` from
+  its game/launch responses (it can't allow a single other site).
+- `Refused to frame '…' because an ancestor violates the following Content
+  Security Policy directive: "frame-ancestors …"`: Octhera must add
+  `https://vinna.bet` (and `https://www.vinna.bet` if used) to
+  `frame-ancestors`.
+
+Ask Octhera to allow `https://vinna.bet` for **every** response in the chain,
+the launch URL and any redirect or game-provider page it leads to. Nothing on
+our side blocks the iframe; the site sends no CSP or X-Frame-Options.
+
 ## How the money works
 
 | Octhera sends | We do |
@@ -134,6 +159,8 @@ come back exactly as before. The imported tables stay, unused.
 - `POST /api/cron/catalog-sync`: import now.
 - `/api/games/launch`: `game_uid` `octhera:<gameUid>` (an active catalog
   game) launches through Octhera with the player's id and balance.
+- `/game/[id]` (`src/app/(user)/game/[id]/page.tsx`) and
+  `src/components/casino/OctheraPlayer.tsx`: the in-site player.
 - `OctheraWalletTxn` (`octhera_wallet_txns`), migration
   `20261004120000_octhera_wallet_txns`. The old v1 `octhera_events` table is
   kept for history.

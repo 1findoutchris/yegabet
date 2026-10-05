@@ -263,15 +263,15 @@ describe("launch (/api/games/launch, game_uid octhera:<gameUid>)", () => {
   const catalog = () =>
     reply({ status: "ok", total: 1, games: [{ gameUid: "mines-x", name: "Octhera Mines X", provider: "NEWPROV", providerName: "New Provider", type: "Crash" }] });
 
-  test("v2 launch with the player's id and their normal balance; opened by redirect", async () => {
+  test("v2 launch with the player's id and their normal balance; the URL goes to the in-site player", async () => {
     const player = await makeUser({ balance: 42.5 });
     asUser({ id: player.id });
     catalog();
     reply({ status: "ok", launchUrl: "https://api.octhera.org/play?token=abc", transferId: "t" });
 
-    const { status, body } = await json<{ game_launch_url: string; open: string }>(await open("octhera:mines-x"));
+    const { status, body } = await json<{ game_launch_url: string }>(await open("octhera:mines-x"));
     expect(status).toBe(200);
-    expect(body).toEqual({ game_launch_url: "https://api.octhera.org/play?token=abc", open: "redirect" });
+    expect(body).toEqual({ game_launch_url: "https://api.octhera.org/play?token=abc" });
 
     const launch = fetchMock.mock.calls.find((c) => String(c[0]).endsWith("/players/launch"))!;
     expect(launch[0]).toBe("https://api.octhera.org/api/v2/players/launch");

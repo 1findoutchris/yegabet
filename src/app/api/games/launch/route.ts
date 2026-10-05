@@ -45,7 +45,7 @@ export async function POST(req: NextRequest) {
     // Octhera games (Aviator, and the whole Octhera catalog), whatever
     // GAME_PROVIDER is. API v2 company wallet: they play with the normal
     // VinnaBet balance — Octhera calls /api/provider/octhera/wallet for every
-    // bet and win. The launch URL must be opened by redirect, not an iframe.
+    // bet and win. The site's /game/[id] page loads the URL in an iframe.
     if (game_uid.startsWith(OCTHERA_ID_PREFIX)) {
       const unavailable = () =>
         NextResponse.json({ error: "This game is temporarily unavailable", unavailable: true }, { status: 502 });
@@ -80,7 +80,7 @@ export async function POST(req: NextRequest) {
       } catch (e) {
         console.error("[games/launch] recent upsert failed", e);
       }
-      return NextResponse.json({ game_launch_url: url, open: "redirect" });
+      return NextResponse.json({ game_launch_url: url });
     }
 
     // Provider switch: unset/anything-else keeps Silent as the default so
