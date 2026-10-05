@@ -53,7 +53,7 @@ enum LoyaltyTier {
 }
 
 model User {
-  id            String   @id @default(cuid())
+  id String @id @default(cuid())
 
   // The player-facing account number, quoted in support chats and printed on
   // the profile and admin screens. `id` is a cuid — unreadable over the phone —
@@ -75,17 +75,17 @@ model User {
   // over their counter, so it comes out over the same one. Cleared by an admin,
   // and ignored entirely once the agent is deactivated, so a player is never
   // stranded behind an agent who has stopped working.
-  cashAgentId   String?
-  accountNo     Int      @unique @default(dbgenerated("(((100000000)::double precision + floor((random() * (900000000)::double precision))))::integer"))
+  cashAgentId String?
+  accountNo   Int     @unique @default(dbgenerated("(((100000000)::double precision + floor((random() * (900000000)::double precision))))::integer"))
 
-  phone         String   @unique
-  email         String?  @unique
-  username      String   @unique
-  name          String?
-  passwordHash  String
-  role          Role     @default(USER)
-  isActive      Boolean  @default(true)
-  isVerified    Boolean  @default(false)
+  phone        String  @unique
+  email        String? @unique
+  username     String  @unique
+  name         String?
+  passwordHash String
+  role         Role    @default(USER)
+  isActive     Boolean @default(true)
+  isVerified   Boolean @default(false)
 
   // Total playable funds — the figure the game provider sees and settles against.
   // It is the sum of three pots:
@@ -111,37 +111,37 @@ model User {
   // Prize-wheel "coupons". Earned by referring a verified signup (see
   // SpinCreditGrant), spent one per spin. Same shape as pointsBalance: the
   // atomic compare-and-set on this column is what makes over-spend impossible.
-  spinCredits   Int         @default(0)
+  spinCredits Int @default(0)
 
   // Daily-login streak (My Casino)
-  streakDays    Int       @default(0)
-  lastSeenAt    DateTime?
+  streakDays Int       @default(0)
+  lastSeenAt DateTime?
 
-  referralCode  String?  @unique
-  referredById  String?
-  referredBy    User?    @relation("Referrals", fields: [referredById], references: [id])
-  referrals     User[]   @relation("Referrals")
+  referralCode String? @unique
+  referredById String?
+  referredBy   User?   @relation("Referrals", fields: [referredById], references: [id])
+  referrals    User[]  @relation("Referrals")
 
-  agentId       String?
-  affiliateId   String?
-  agent         Agent?       @relation(fields: [agentId], references: [id])
-  affiliate     Affiliate?   @relation(fields: [affiliateId], references: [id])
+  agentId     String?
+  affiliateId String?
+  agent       Agent?     @relation(fields: [agentId], references: [id])
+  affiliate   Affiliate? @relation(fields: [affiliateId], references: [id])
 
   // In-person betting agent (role = IN_PERSON_AGENT): percent of each bet's
   // stake earned as commission, set by admin. NULL for everyone else.
   commissionRate Decimal? @db.Decimal(5, 2)
   agentTickets   Ticket[]
 
-  transactions    Transaction[]
-  bets            Bet[]
-  bonuses         UserBonus[]
-  sessions        Session[]
-  recentGames     RecentGame[]
-  gameSessions    GameSession[]
-  favoriteGames   FavoriteGame[]
-  depositRequests     DepositRequest[]
-  withdrawalRequests  WithdrawalRequest[]
-  pushSubscriptions   PushSubscription[]
+  transactions       Transaction[]
+  bets               Bet[]
+  bonuses            UserBonus[]
+  sessions           Session[]
+  recentGames        RecentGame[]
+  gameSessions       GameSession[]
+  favoriteGames      FavoriteGame[]
+  depositRequests    DepositRequest[]
+  withdrawalRequests WithdrawalRequest[]
+  pushSubscriptions  PushSubscription[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -171,8 +171,8 @@ model Agent {
   isActive       Boolean @default(true)
   commissionRate Int     @default(500)
 
-  users          User[]
-  deposits       AgentDeposit[]
+  users    User[]
+  deposits AgentDeposit[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -187,7 +187,7 @@ model Affiliate {
   isActive       Boolean @default(true)
   commissionRate Int     @default(300)
 
-  users          User[]
+  users User[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -206,12 +206,12 @@ model Transaction {
   reference     String            @unique @default(cuid())
   metadata      Json?
 
-  user          User @relation(fields: [userId], references: [id])
+  user User @relation(fields: [userId], references: [id])
 
   // Set when this BET/WIN row was placed through an in-person agent's ticket.
-  ticketBet     TicketBet?
+  ticketBet TicketBet?
   // Public "Check Ticket" code for a player's sportsbook bet (see TicketCheckCode).
-  checkCode     TicketCheckCode?
+  checkCode TicketCheckCode?
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -232,7 +232,7 @@ model Bet {
   reference    String    @unique @default(cuid())
   metadata     Json?
 
-  user         User @relation(fields: [userId], references: [id])
+  user User @relation(fields: [userId], references: [id])
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -244,7 +244,7 @@ model Bonus {
   id          String  @id @default(cuid())
   name        String
   description String?
-  amount      Decimal  @db.Decimal(12, 2)
+  amount      Decimal @db.Decimal(12, 2)
   isActive    Boolean @default(true)
   minDeposit  Int     @default(0)
   wagerReq    Int     @default(1)
@@ -265,8 +265,8 @@ model UserBonus {
   remaining Int
   isUsed    Boolean @default(false)
 
-  user      User  @relation(fields: [userId], references: [id])
-  bonus     Bonus @relation(fields: [bonusId], references: [id])
+  user  User  @relation(fields: [userId], references: [id])
+  bonus Bonus @relation(fields: [bonusId], references: [id])
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -275,13 +275,13 @@ model UserBonus {
 }
 
 model AgentDeposit {
-  id        String @id @default(cuid())
+  id        String  @id @default(cuid())
   agentId   String
-  amount    Decimal  @db.Decimal(12, 2)
-  reference String @unique
+  amount    Decimal @db.Decimal(12, 2)
+  reference String  @unique
   smsData   Json?
 
-  agent     Agent @relation(fields: [agentId], references: [id])
+  agent Agent @relation(fields: [agentId], references: [id])
 
   createdAt DateTime @default(now())
 
@@ -289,16 +289,16 @@ model AgentDeposit {
 }
 
 model WithdrawalRequest {
-  id          String   @id @default(cuid())
-  userId      String
-  amount      Decimal  @db.Decimal(12, 2)
-  method      String
-  account     String
-  accountName String
-  status      String   @default("PENDING")
-  adminNote   String?
-  proofKey       String?                     // ETB: S3 key of the payment proof shown to the user
-  proofExpiresAt DateTime?                    // proof hidden + deleted from bucket after this (2 days)
+  id             String    @id @default(cuid())
+  userId         String
+  amount         Decimal   @db.Decimal(12, 2)
+  method         String
+  account        String
+  accountName    String
+  status         String    @default("PENDING")
+  adminNote      String?
+  proofKey       String? // ETB: S3 key of the payment proof shown to the user
+  proofExpiresAt DateTime? // proof hidden + deleted from bucket after this (2 days)
 
   // Short human-readable code (e.g. "W-3F9K2A") the admin quotes when asking a
   // payout agent why a request was delayed. Stable for the life of the row.
@@ -327,16 +327,16 @@ model WithdrawalRequest {
 }
 
 model DepositRequest {
-  id          String   @id @default(cuid())
+  id          String  @id @default(cuid())
   userId      String
-  amount      Decimal  @db.Decimal(12, 2)
+  amount      Decimal @db.Decimal(12, 2)
   method      String
   receiptText String
   smsRef      String?
-  status      String   @default("PENDING")
+  status      String  @default("PENDING")
   adminNote   String?
 
-  user        User     @relation(fields: [userId], references: [id])
+  user User @relation(fields: [userId], references: [id])
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -352,12 +352,13 @@ model RecentGame {
   playCount    Int      @default(1)
   lastPlayedAt DateTime @default(now())
 
-  user         User @relation(fields: [userId], references: [id])
+  user User @relation(fields: [userId], references: [id])
 
   @@unique([userId, gameId])
   @@index([userId, lastPlayedAt])
   @@map("recent_games")
 }
+
 // Provider game session (Gregmorn). openGame returns a sessionId which their
 // wallet callbacks echo back as `sessionid` — we validate it here so a
 // getBalance/writeBet for an unknown session is rejected, and so the session
@@ -370,12 +371,11 @@ model GameSession {
   provider  String   @default("gregmorn")
   createdAt DateTime @default(now())
 
-  user      User @relation(fields: [userId], references: [id])
+  user User @relation(fields: [userId], references: [id])
 
   @@index([userId])
   @@map("game_sessions")
 }
-
 
 model FavoriteGame {
   id        String   @id @default(cuid())
@@ -383,7 +383,7 @@ model FavoriteGame {
   gameId    String
   createdAt DateTime @default(now())
 
-  user      User @relation(fields: [userId], references: [id])
+  user User @relation(fields: [userId], references: [id])
 
   @@unique([userId, gameId])
   @@index([userId])
@@ -403,7 +403,7 @@ model AdminUser {
 }
 
 model AdminLog {
-  id         String   @id @default(cuid())
+  id         String  @id @default(cuid())
   action     String
   targetId   String?
   targetType String?
@@ -463,8 +463,8 @@ model WithdrawalAgent {
   // listening on two agents' queues.
   telegramChatId String? @unique
 
-  withdrawals WithdrawalRequest[]
-  ledger      WithdrawalAgentTxn[]
+  withdrawals    WithdrawalRequest[]
+  ledger         WithdrawalAgentTxn[]
   payoutRequests AgentPayoutRequest[]
 
   createdAt DateTime @default(now())
@@ -481,9 +481,9 @@ model WithdrawalAgent {
 // only when an admin marks this PAID — same split as WithdrawalRequest and the
 // player's ledger Transaction.
 model AgentPayoutRequest {
-  id          String  @id @default(cuid())
-  agentId     String
-  amount      Decimal @db.Decimal(12, 2)
+  id      String  @id @default(cuid())
+  agentId String
+  amount  Decimal @db.Decimal(12, 2)
 
   // How the agent wants the money: rail, account number, name on the account.
   method      String
@@ -524,7 +524,7 @@ model WithdrawalAgentTxn {
 }
 
 model PaymentAgent {
-  id          String   @id // method id: telebirr | cbebirr | ebirr | uae_bank
+  id          String @id // method id: telebirr | cbebirr | ebirr | uae_bank
   agentNumber String
   agentName   String
 
@@ -581,7 +581,7 @@ model Session {
   ipAddress String?
   userAgent String?
 
-  user      User @relation(fields: [userId], references: [id])
+  user User @relation(fields: [userId], references: [id])
 
   createdAt DateTime @default(now())
 
@@ -593,9 +593,9 @@ model Session {
 // no admin action — `isActive` is the manual pause.
 model Ad {
   id        String   @id @default(cuid())
-  placement String   // "BOARD" | "POPUP"
-  imageKey  String   // S3 object key, served via /api/ads/[id]/image
-  linkUrl   String?  // optional click-through
+  placement String // "BOARD" | "POPUP"
+  imageKey  String // S3 object key, served via /api/ads/[id]/image
+  linkUrl   String? // optional click-through
   expiresAt DateTime
   isActive  Boolean  @default(true)
   // Carousel position within a placement, ascending. Ties fall back to newest
@@ -619,26 +619,26 @@ model Ad {
 // out the same physical prize twice.
 
 model SpinPrize {
-  id        String  @id @default(cuid())
-  label     String
+  id             String  @id @default(cuid())
+  label          String
   // CASH → credits money · PHYSICAL → admin hands it over · SPIN → awards more
   // coupons · NONE → a "try again" wedge, so a loss has somewhere to land.
-  kind      String  // "CASH" | "PHYSICAL" | "SPIN" | "NONE"
-  cashEtb   Decimal @default(0) @db.Decimal(12, 2)
+  kind           String // "CASH" | "PHYSICAL" | "SPIN" | "NONE"
+  cashEtb        Decimal @default(0) @db.Decimal(12, 2)
   // Spin coupons awarded when kind = SPIN.
-  creditsAwarded Int @default(0)
+  creditsAwarded Int     @default(0)
   // Which pot a cash win lands in. "bonus" is playable-not-withdrawable (the
   // default everywhere else); "withdrawable" is real cash out the door.
-  payoutPot String  @default("bonus") // "bonus" | "withdrawable"
+  payoutPot      String  @default("bonus") // "bonus" | "withdrawable"
   // Win chance in basis points (10000 = 100%). Integer so the cumulative-sum
   // walk in spinCore is exact — no float drift across a long prize list.
-  weightBps Int     @default(0)
+  weightBps      Int     @default(0)
   // 0 = unwinnable regardless of chance. Always finite: a nullable "unlimited"
   // adds a branch to the atomic decrement, which is where such guards go wrong.
-  stock     Int     @default(0)
-  imageKey  String? // S3 key `prizes/<id>`, served via /api/rewards/prize/[id]/image
-  sortOrder Int     @default(0)
-  isActive  Boolean @default(true)
+  stock          Int     @default(0)
+  imageKey       String? // S3 key `prizes/<id>`, served via /api/rewards/prize/[id]/image
+  sortOrder      Int     @default(0)
+  isActive       Boolean @default(true)
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -666,9 +666,9 @@ model SpinCreditGrant {
 model SpinResult {
   id        String   @id @default(cuid())
   userId    String
-  prizeId   String?  // null = no win
+  prizeId   String? // null = no win
   label     String
-  kind      String   // "CASH" | "PHYSICAL" | "NONE"
+  kind      String // "CASH" | "PHYSICAL" | "NONE"
   cashEtb   Decimal  @default(0) @db.Decimal(12, 2)
   reference String   @unique // equals Transaction.reference for cash wins
   metadata  Json?
@@ -687,9 +687,9 @@ model SpinResult {
 model SpinLink {
   id              String    @id @default(cuid())
   code            String    @unique
-  prizeId         String    // breadcrumb, deliberately NOT a foreign key
-  prizeLabel      String    // snapshot — survives the prize being renamed or deleted
-  note            String?   // admin's "who is this for"
+  prizeId         String // breadcrumb, deliberately NOT a foreign key
+  prizeLabel      String // snapshot — survives the prize being renamed or deleted
+  note            String? // admin's "who is this for"
   claimedByUserId String?
   claimedAt       DateTime?
   // Set to the winning SpinResult.reference. Does double duty: the atomic
@@ -714,11 +714,11 @@ model SpinLink {
 // Money truth stays in Transaction — a ticket never moves funds, it only
 // groups the agent's own BET/WIN rows under a customer-facing code.
 model Ticket {
-  id            String   @id @default(cuid())
+  id       String @id @default(cuid())
   // Short human-readable code the customer quotes at the counter ("T-3F9K2A").
   // Same reasoning as WithdrawalRequest.publicId.
-  publicId      String   @unique
-  agentId       String
+  publicId String @unique
+  agentId  String
 
   // OPEN    — draft; BET transactions attach while open
   // PLACED  — issued/printed; waiting for results
@@ -726,16 +726,16 @@ model Ticket {
   // LOST    — all bets settled, totalWin = 0
   // PAID    — agent paid the customer, receipt in proofKey
   // CANCELLED — draft voided before any bet attached
-  status        String   @default("OPEN")
+  status String @default("OPEN")
 
-  totalStake    Decimal  @default(0) @db.Decimal(12, 2)
-  totalWin      Decimal  @default(0) @db.Decimal(12, 2)
+  totalStake Decimal @default(0) @db.Decimal(12, 2)
+  totalWin   Decimal @default(0) @db.Decimal(12, 2)
 
-  paidAt        DateTime?
-  proofKey      String?  // S3 key of the payout receipt the agent uploads
+  paidAt   DateTime?
+  proofKey String? // S3 key of the payout receipt the agent uploads
 
-  agent         User        @relation(fields: [agentId], references: [id])
-  bets          TicketBet[]
+  agent User        @relation(fields: [agentId], references: [id])
+  bets  TicketBet[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -748,9 +748,9 @@ model Ticket {
 // id from the callback payload — the WIN callback carries the same value, which
 // is how a settling win finds its way back to the ticket.
 model TicketBet {
-  id            String   @id @default(cuid())
+  id            String  @id @default(cuid())
   ticketId      String
-  transactionId String   @unique // the BET Transaction row (reference = serial_number)
+  transactionId String  @unique // the BET Transaction row (reference = serial_number)
   gameRound     String?
   // Provider game uid ("black:3oaks:1040", "nova:sports-betby:sports") — maps
   // to catalog gameID for display. NULL on old rows.
@@ -758,12 +758,12 @@ model TicketBet {
   // Raw provider payload extras (Gregmorn `info`, Silent `data`) — carries the
   // bet-slip detail (matches, odds, provider ticket id) for sportsbook bets.
   info          Json?
-  betAmount     Decimal  @db.Decimal(12, 2)
-  winAmount     Decimal  @default(0) @db.Decimal(12, 2)
-  settled       Boolean  @default(false)
+  betAmount     Decimal @db.Decimal(12, 2)
+  winAmount     Decimal @default(0) @db.Decimal(12, 2)
+  settled       Boolean @default(false)
 
-  ticket        Ticket      @relation(fields: [ticketId], references: [id])
-  transaction   Transaction @relation(fields: [transactionId], references: [id])
+  ticket      Ticket      @relation(fields: [ticketId], references: [id])
+  transaction Transaction @relation(fields: [transactionId], references: [id])
 
   createdAt DateTime @default(now())
 
@@ -794,19 +794,19 @@ model TicketCheckCode {
 // per event, but their withdrawal examples reuse one txnId across the
 // requested / confirmed / rejected steps, so txnId alone could drop real ones.
 model OctheraEvent {
-  id          String   @id @default(cuid())
-  txnId       String
-  action      String   // bet | win | bet_win | refund | deposit_required | withdraw_*
-  username    String   // the Octhera player id we registered (see providers/octhera.ts)
-  betAmount   Decimal  @db.Decimal(12, 2)
-  winAmount   Decimal  @db.Decimal(12, 2)
-  amount      Decimal? @db.Decimal(12, 2) // withdrawal events only
-  balance     Decimal  @db.Decimal(12, 2) // player's Octhera balance after the event
-  currency    String
-  gameRound   String?
-  gameUid     String?
-  gameName    String?
-  payload     Json     // the full signed body, as received
+  id        String   @id @default(cuid())
+  txnId     String
+  action    String // bet | win | bet_win | refund | deposit_required | withdraw_*
+  username  String // the Octhera player id we registered (see providers/octhera.ts)
+  betAmount Decimal  @db.Decimal(12, 2)
+  winAmount Decimal  @db.Decimal(12, 2)
+  amount    Decimal? @db.Decimal(12, 2) // withdrawal events only
+  balance   Decimal  @db.Decimal(12, 2) // player's Octhera balance after the event
+  currency  String
+  gameRound String?
+  gameUid   String?
+  gameName  String?
+  payload   Json // the full signed body, as received
 
   createdAt DateTime @default(now())
 
@@ -822,22 +822,85 @@ model OctheraEvent {
 // that makes a late debit answer TXN_ROLLED_BACK. Money moves are also
 // written as normal Transaction rows (reference "oc:<type>:<txnId>").
 model OctheraWalletTxn {
-  id         String   @id @default(cuid())
-  type       String   // debit | credit | rollback
-  txnId      String
-  playerId   String   // = User.id (the playerId we launch with)
-  action     String?  // bet | bet_win | win | refund (rollback: null)
-  betAmount  Decimal  @default(0) @db.Decimal(12, 2)
-  winAmount  Decimal  @default(0) @db.Decimal(12, 2)
-  applied    Boolean  // true = money moved
-  response   Json
-  gameUid    String?
-  gameRound  String?
-  payload    Json
+  id        String  @id @default(cuid())
+  type      String // debit | credit | rollback
+  txnId     String
+  playerId  String // = User.id (the playerId we launch with)
+  action    String? // bet | bet_win | win | refund (rollback: null)
+  betAmount Decimal @default(0) @db.Decimal(12, 2)
+  winAmount Decimal @default(0) @db.Decimal(12, 2)
+  applied   Boolean // true = money moved
+  response  Json
+  gameUid   String?
+  gameRound String?
+  payload   Json
 
   createdAt DateTime @default(now())
 
   @@unique([type, txnId])
   @@index([playerId, createdAt])
   @@map("octhera_wallet_txns")
+}
+
+// The site's game catalog, imported from Octhera (lib/catalog.ts). One row per
+// Octhera game; `id` is the id the site and /api/games/launch use
+// ("octhera:<gameUid>"). A game that leaves Octhera's list is deactivated,
+// never deleted, so favorites, recent games and history keep resolving.
+// `section` / `category` are derived from Octhera's `type` (lib/catalogClassify.ts).
+model CatalogGame {
+  id            String    @id
+  source        String // "octhera"
+  externalId    String // Octhera gameUid
+  name          String
+  providerCode  String // Octhera's `provider`
+  providerName  String // Octhera's `providerName`
+  providerSlug  String // our slug: /casino/<providerSlug>
+  rawType       String // Octhera's `type`, as sent
+  section       String // casino | sports | games
+  category      String // slots | live | table | crash | fishing | lottery | arcade | sportsbook | virtual | esports | other
+  img           String
+  active        Boolean   @default(true)
+  firstSeenAt   DateTime  @default(now())
+  lastSeenAt    DateTime  @default(now())
+  deactivatedAt DateTime?
+
+  @@unique([source, externalId])
+  @@index([active, section, category])
+  @@map("catalog_games")
+}
+
+// One row per catalog import run, so "is the whole catalog in?" has an answer.
+model CatalogSync {
+  id           String    @id @default(cuid())
+  source       String
+  startedAt    DateTime  @default(now())
+  finishedAt   DateTime?
+  ok           Boolean   @default(false)
+  complete     Boolean   @default(false) // every page fetched and `total` reached
+  pages        Int       @default(0)
+  total        Int? // Octhera's `total`, when sent
+  fetched      Int       @default(0)
+  added        Int       @default(0)
+  updated      Int       @default(0)
+  reactivated  Int       @default(0)
+  deactivated  Int       @default(0)
+  sections     Json? // { casino: { slots: 120, … }, games: {…}, sports: {…} }
+  unknownTypes Json? // Octhera types we filed under games/other
+  error        String?
+
+  @@index([source, startedAt])
+  @@map("catalog_syncs")
+}
+
+// Snapshots of a catalog before it was taken off the site. The pre-Octhera
+// catalog (game_list/ files) is written here once, by the first import.
+model CatalogBackup {
+  id        String   @id @default(cuid())
+  label     String
+  source    String // e.g. "legacy:game_list"
+  gameCount Int
+  data      Json // [{ gameID, name, provider, img, hidden }]
+  createdAt DateTime @default(now())
+
+  @@map("catalog_backups")
 }

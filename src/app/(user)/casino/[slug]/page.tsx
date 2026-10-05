@@ -1,4 +1,4 @@
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
 import { ChevronLeft } from "lucide-react";
 import { CategoryBrowser } from "@/components/casino/CategoryBrowser";
@@ -9,7 +9,9 @@ import {
   getCrashGames,
   getLiveCasinoGames,
   getGamesByProvider,
-  loadOctheraGames,
+  getSectionGames,
+  catalogMode,
+  loadGames,
 } from "@/lib/games";
 import { PROVIDER_META } from "@/types/games";
 import {
@@ -24,7 +26,16 @@ const CATEGORY_GETTERS: Record<string, () => ReturnType<typeof getHotGames>> = {
   new:   () => getNewGames(500),
   slots: () => getSlotGames(500),
   crash: () => getCrashGames(500),
-  live:  () => getLiveCasinoGames(500),
+  live:  () => getLiveCasinoGames(catalogMode() === "octhera" ? 100_000 : 500),
+  table: () => getSectionGames("casino", "table"),
+};
+
+// The Octhera catalog's Casino tabs list every game; the legacy ones kept the 500 cap.
+const ALL = 100_000;
+const OCTHERA_GETTERS: Record<string, () => ReturnType<typeof getHotGames>> = {
+  slots: () => getSlotGames(ALL),
+  hot:   () => getHotGames(ALL),
+  new:   () => getNewGames(ALL),
 };
 
 interface Props {
@@ -33,10 +44,12 @@ interface Props {
 
 export default async function CategoryPage({ params }: Props) {
   const { slug } = await params;
-  await loadOctheraGames();
+  // Crash & instant games are in the Games section now.
+  if (slug === "crash" && catalogMode() === "octhera") redirect("/games?tab=crash");
+  await loadGames();
 
   // Built-in category
-  const getter = CATEGORY_GETTERS[slug];
+  const getter = (catalogMode() === "octhera" && OCTHERA_GETTERS[slug]) || CATEGORY_GETTERS[slug];
   if (getter) {
     const games = getter();
     // Same rule as provider pages below: an empty category 404s rather
@@ -52,7 +65,7 @@ export default async function CategoryPage({ params }: Props) {
   }
 
   // Provider page (e.g. /casino/pgsoft, /casino/cq9)
-  const games = getGamesByProvider(slug, 500);
+  const games = getGamesByProvider(slug, catalogMode() === "octhera" ? ALL : 500);
   if (!games.length) notFound();
   const providerName = PROVIDER_META[slug]?.name ?? games[0].providerName;
 

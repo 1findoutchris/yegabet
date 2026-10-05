@@ -1,12 +1,24 @@
 import "server-only";
-import fs from "fs";
-import path from "path";
 import type { Game, Provider } from "@/types/games";
 import { PROVIDER_META, OCTHERA_AVIATOR_ID, OCTHERA_ID_PREFIX } from "@/types/games";
 import { listGames as listOctheraGames, gameImageUrl as octheraImageUrl } from "@/lib/providers/octhera";
+import { loadCatalog, catalogGames } from "@/lib/catalog";
+import { SECTION_CATEGORIES, type Section } from "@/lib/catalogClassify";
+import { HIDDEN_PROVIDERS, loadLegacyFiles, legacyGameNames } from "@/lib/legacyCatalog";
 
 export type { Game, Provider };
 export { PROVIDER_META };
+
+/*
+ * Which catalog the site shows.
+ *   octhera (default) — everything on our Octhera account, imported into the
+ *                       database and organized into Casino / Sports / Games
+ *                       (lib/catalog). The old game_list/ games are off the site.
+ *   legacy            — GAME_CATALOG=legacy: the old game_list/ catalog, as
+ *                       before the Octhera import. Rollback only.
+ */
+export const catalogMode = (): "octhera" | "legacy" =>
+  process.env.GAME_CATALOG === "legacy" ? "legacy" : "octhera";
 
 // Crash / instant-win providers
 const CRASH_PROVIDERS = new Set([
@@ -33,53 +45,16 @@ const LIVE_PROVIDERS = new Set([
   "ezugi",
 ]);
 
-// Which catalog is loaded — hidden lists are provider-account specific.
-const CATALOG_DIR = process.env.GAME_LIST_DIR || "game_list";
-const IS_GREGMORN_CATALOG = CATALOG_DIR.includes("gregmorn");
+// Octhera catalog games carry their own category; legacy ones go by provider.
+const isCrash = (g: Game) => g.category ? g.category === "crash" : g.kind === "crash" || CRASH_PROVIDERS.has(g.provider);
+const isLive = (g: Game) => g.category ? g.category === "live" : g.kind === "live" || LIVE_PROVIDERS.has(g.provider);
 
-// Gregmorn: sportsbooks launch through the sports pane, never as casino tiles.
-// Everything else in their ETB feed is enabled for our account.
-const GREGMORN_HIDDEN_PROVIDERS = new Set([
-  "sports-betby",
-  "sportslab",
-  "sportshub",
-  "altenar",
-]);
-
-// Silent: disabled providers — hidden everywhere (they don't accept our
-// currency / aren't working). Their games are filtered out of every list.
-const SILENT_HIDDEN_PROVIDERS = new Set([
-  "jili",
-  "hacksaw-asia",
-  "cq9",
-  "jdb",
-  "2j",
-  "btgaming",
-  "5ggaming",
-  "wonwon",
-  "evolutionlive-asia",
-  "playtech",
-  "microgaming",
-  "playngo",
-  "mac88_en",
-  "bgaming",
-  "skywind",
-  "relaxgaming",
-  "bng",
-  "bng-asia",
-  "nolimitcity",
-  "nolimitcity-asia",
-  "gameart",
-  "ace",
-  "pgsgaming",
-  "ygrgaming",
-  "ws168_en",
-]);
-
-const HIDDEN_PROVIDERS = IS_GREGMORN_CATALOG ? GREGMORN_HIDDEN_PROVIDERS : SILENT_HIDDEN_PROVIDERS;
-
-const isCrash = (g: Game) => g.kind === "crash" || CRASH_PROVIDERS.has(g.provider);
-const isLive = (g: Game) => g.kind === "live" || LIVE_PROVIDERS.has(g.provider);
+/** Site section of a game. Legacy games: crash/instant → Games, the rest → Casino. */
+export const sectionOf = (g: Game): Section => g.section ?? (isCrash(g) ? "games" : "casino");
+/** The section's tab a game sits in. Legacy games are inferred the same way the old lists did. */
+export const categoryOf = (g: Game): string =>
+  g.category ?? (isLive(g) ? "live" : isCrash(g) ? "crash" : g.customGameType === 0 ? "slots" : "table");
+const isCasino = (g: Game) => sectionOf(g) === "casino";
 
 // ── Shuffle helpers ───────────────────────────────────────────────────────────
 
@@ -99,54 +74,6 @@ function shuffle<T>(arr: T[]): T[] {
     [out[i], out[j]] = [out[j], out[i]];
   }
   return out;
-}
-
-// ── File loading ──────────────────────────────────────────────────────────────
-
-function parseGameFile(raw: string, providerSlug: string): Game[] {
-  try {
-    const parsed = JSON.parse(raw);
-    const list: unknown[] = Array.isArray(parsed)
-      ? parsed
-      : Array.isArray(parsed?.gameLists)
-      ? parsed.gameLists
-      : [];
-
-    return list
-      .filter((g: unknown) => {
-        const game = g as Record<string, unknown>;
-        // Only skip if the entry has no ID or name — images optional
-        return !!(game.gameID && game.gameNameEn);
-      })
-      .map((g: unknown) => {
-        const game = g as Record<string, unknown>;
-        return {
-          gameID: game.gameID as string,
-          gameNameEn: game.gameNameEn as string,
-          img: (game.img as string) || "",
-          customGameType: Number(game.customGameType ?? 0),
-          vendorCode: (game.vendorCode ?? providerSlug) as string | number,
-          provider: providerSlug,
-        };
-      });
-  } catch {
-    return [];
-  }
-}
-
-function loadAllGames(): Game[] {
-  // Catalog dir is switchable: game_list (Silent) is the default;
-  // game_list-gregmorn is written by scripts/sync-gregmorn-games.mjs.
-  const dir = path.join(process.cwd(), CATALOG_DIR);
-  if (!fs.existsSync(dir)) return [];
-  const files = fs.readdirSync(dir).filter((f) => f.endsWith(".json"));
-  const all: Game[] = [];
-  for (const file of files) {
-    const slug = file.replace(".json", "");
-    const raw = fs.readFileSync(path.join(dir, file), "utf-8");
-    all.push(...parseGameFile(raw, slug));
-  }
-  return all;
 }
 
 /*
@@ -210,7 +137,7 @@ function octheraProviderSlug(provider: string, providerName: string, known: Set<
 }
 
 async function fetchOctheraGames(): Promise<Game[]> {
-  const known = new Set([...Object.keys(PROVIDER_META), ...loadAllGames().map((g) => g.provider)]);
+  const known = new Set([...Object.keys(PROVIDER_META), ...loadLegacyFiles().map((g) => g.provider)]);
   return (await listOctheraGames()).map((g) => ({
     gameID: `${OCTHERA_ID_PREFIX}${g.gameUid}`,
     gameNameEn: g.name.trim(),
@@ -223,10 +150,21 @@ async function fetchOctheraGames(): Promise<Game[]> {
   }));
 }
 
-/** For the normal lists: load the catalog only while OCTHERA_GAMES_PUBLIC is on. */
-export async function loadOctheraGames(): Promise<void> {
-  if (octheraGamesOn()) await refreshOcthera();
+/**
+ * Pages and routes await this before using the getters below.
+ * octhera mode: the imported catalog (lib/catalog). legacy mode: the Octhera
+ * games mixed into the old lists, only while OCTHERA_GAMES_PUBLIC is on.
+ */
+export async function loadGames(): Promise<void> {
+  if (catalogMode() === "octhera") {
+    await loadCatalog();
+    _cache = null;
+  } else if (octheraGamesOn()) {
+    await refreshOcthera();
+  }
 }
+/** Old name, kept for callers that predate the Octhera catalog. */
+export const loadOctheraGames = loadGames;
 
 /**
  * For /octhera and launching from it: load the catalog whenever the page is
@@ -273,10 +211,11 @@ const nameKey = (g: Game) => `${g.provider}|${g.gameNameEn.trim().toLowerCase()}
 
 let _cache: Game[] | null = null;
 function getAllGames(): Game[] {
+  if (catalogMode() === "octhera") return catalogGames();
   if (_cache) return _cache;
   const aviator = octheraAviator();
   // Disabled providers apply to the main catalog only — Octhera is its own account.
-  const own = [...(aviator ? [aviator] : []), ...loadAllGames()].filter((g) => !HIDDEN_PROVIDERS.has(g.provider));
+  const own = [...(aviator ? [aviator] : []), ...loadLegacyFiles()].filter((g) => !HIDDEN_PROVIDERS.has(g.provider));
   // A game we already have from the main provider stays there; Octhera only
   // adds what's missing, so no game shows up twice.
   const ownNames = new Set(own.map(nameKey));
@@ -328,17 +267,45 @@ export function searchGames(query: string, limit = 24): Game[] {
 
   const starts: Game[] = [];
   const contains: Game[] = [];
+  const byProvider: Game[] = [];
   for (const g of getAllGames()) {
     const name = g.gameNameEn.toLowerCase();
     if (name.startsWith(q)) starts.push(g);
     else if (name.includes(q)) contains.push(g);
+    // "pragmatic" finds Pragmatic Play's games, after any name matches.
+    else if (providerLabel(g).toLowerCase().includes(q)) byProvider.push(g);
   }
 
   const byArtwork = (a: Game, b: Game) => Number(Boolean(b.img)) - Number(Boolean(a.img));
-  return [...starts.sort(byArtwork), ...contains.sort(byArtwork)].slice(0, limit);
+  return [...starts.sort(byArtwork), ...contains.sort(byArtwork), ...byProvider.sort(byArtwork)].slice(0, limit);
 }
 
+/*
+ * Octhera catalog: the crash/instant games players look for first, by name.
+ * A name's first match wins (Spribe's Aviator before any other "Aviator").
+ */
+const POPULAR_NAMES: RegExp[] = [
+  /^aviator$/, /^jet ?x$/, /^spaceman$/, /^mines$/, /^plinko$/, /^chicken road/, /^penalty/,
+  /^dice$/, /^keno$/, /^limbo$/, /^balloon$/, /^hi-?lo$/, /^goal$/, /^aviatrix$/, /crash/,
+];
+
 export function getPopularGames(): Game[] {
+  if (catalogMode() === "octhera") {
+    const crash = getAllGames().filter(isCrash);
+    const out: Game[] = [];
+    const taken = new Set<string>();
+    for (const re of POPULAR_NAMES) {
+      const matches = crash
+        .filter((g) => !taken.has(g.gameID) && re.test(g.gameNameEn.trim().toLowerCase()))
+        .sort((a, b) => Number(b.provider === "spribe") - Number(a.provider === "spribe"));
+      // One per name for exact names; up to three for the loose patterns.
+      for (const g of matches.slice(0, re.source.startsWith("^") && re.source.endsWith("$") ? 1 : 3)) {
+        out.push(g);
+        taken.add(g.gameID);
+      }
+    }
+    return out.slice(0, 18);
+  }
   const byId = new Map(getAllGames().map((g) => [g.gameID, g]));
   return POPULAR_GAME_IDS.flatMap((id) => {
     const g = byId.get(id);
@@ -349,7 +316,7 @@ export function getPopularGames(): Game[] {
 // Hot: non-live, non-crash — shuffled daily (prefer games that have images)
 export function getHotGames(limit = 18): Game[] {
   const all = getAllGames().filter(
-    (g) => !isLive(g) && !isCrash(g)
+    (g) => isCasino(g) && !isLive(g) && !isCrash(g)
   );
   const withImg = shuffle(all.filter((g) => g.img));
   const noImg   = shuffle(all.filter((g) => !g.img));
@@ -361,7 +328,7 @@ export function getNewGames(limit = 18): Game[] {
   const rng = daySeededRng();
   for (let i = 0; i < 50; i++) rng();
   const pool = getAllGames().filter(
-    (g) => !isLive(g) && !isCrash(g)
+    (g) => isCasino(g) && !isLive(g) && !isCrash(g)
   );
   const withImg = [...pool.filter((g) => g.img)];
   for (let i = withImg.length - 1; i > 0; i--) {
@@ -415,9 +382,10 @@ export function getSlotGames(limit = 18): Game[] {
   // SmartSoft is a CRASH_PROVIDER, so the shuffled pool can't duplicate these.
   const pool = getAllGames().filter(
     (g) =>
+      isCasino(g) &&
       !isCrash(g) &&
       !isLive(g) &&
-      g.customGameType === 0
+      categoryOf(g) === "slots"
   );
   return [...featured, ...shuffle(pool.filter((g) => g.img))].slice(0, limit);
 }
@@ -481,7 +449,8 @@ export function getRecommendedFrom(
         providers.has(g.provider) &&
         !exclude.has(g.gameID) &&
         g.img &&
-        !isLive(g)
+        !isLive(g) &&
+        sectionOf(g) !== "sports"
     )
   );
 
@@ -503,30 +472,75 @@ export function getGamesByProvider(providerSlug: string, limit = 500): Game[] {
   return [...withImg, ...noImg].slice(0, limit);
 }
 
-export function getProviderStats(): { slug: string; name: string; count: number }[] {
+const providerLabel = (g: Game) => PROVIDER_META[g.provider]?.name ?? g.providerName ?? g.provider;
+
+/**
+ * Providers with their game counts, for the provider filters. Optionally
+ * limited to one section. Octhera's catalog lists every provider (even with
+ * a single game); the legacy one hides providers with fewer than five.
+ */
+export function getProviderStats(section?: Section): { slug: string; name: string; count: number }[] {
   const counts = new Map<string, number>();
   const names = new Map<string, string>();
   for (const g of getAllGames()) {
+    if (section && sectionOf(g) !== section) continue;
     counts.set(g.provider, (counts.get(g.provider) ?? 0) + 1);
-    if (g.providerName && !names.has(g.provider)) names.set(g.provider, g.providerName);
+    if (!names.has(g.provider)) names.set(g.provider, providerLabel(g));
   }
+  const min = catalogMode() === "octhera" ? 1 : 5;
   return Array.from(counts.entries())
-    .map(([slug, count]) => ({ slug, name: PROVIDER_META[slug]?.name ?? names.get(slug) ?? slug, count }))
-    .filter((p) => p.count >= 5)
-    .sort((a, b) => b.count - a.count);
+    .map(([slug, count]) => ({ slug, name: names.get(slug) ?? slug, count }))
+    .filter((p) => p.count >= min)
+    .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
+}
+
+/** Every game in a section (optionally one category), games with artwork first. */
+export function getSectionGames(section: Section, category?: string): Game[] {
+  const order = SECTION_CATEGORIES[section].map((c) => c.id as string);
+  const rank = (g: Game) => order.indexOf(categoryOf(g));
+  const games = getAllGames()
+    .filter((g) => sectionOf(g) === section && (!category || categoryOf(g) === category))
+    // Tab order (e.g. sportsbook before virtual sports); stable within a tab.
+    .sort((a, b) => rank(a) - rank(b));
+  return [...games.filter((g) => g.img), ...games.filter((g) => !g.img)];
+}
+
+/** A section's tabs that have games, in display order, with counts. */
+export function getSectionCategories(section: Section): { id: string; label: string; count: number }[] {
+  const counts = new Map<string, number>();
+  for (const g of getAllGames()) {
+    if (sectionOf(g) === section) counts.set(categoryOf(g), (counts.get(categoryOf(g)) ?? 0) + 1);
+  }
+  return SECTION_CATEGORIES[section]
+    .map((c) => ({ id: c.id as string, label: c.label, count: counts.get(c.id) ?? 0 }))
+    .filter((c) => c.count > 0);
 }
 
 // Lobby category tile counts — computed once over the in-memory game set.
 export function getCategoryCounts(): {
-  all: number; slots: number; live: number; crash: number; new: number; hot: number;
+  all: number; slots: number; live: number; crash: number; new: number; hot: number; table: number;
 } {
   const all = getAllGames();
-  let slots = 0, live = 0, crash = 0, lobby = 0;
+  let slots = 0, live = 0, crash = 0, lobby = 0, table = 0;
   for (const g of all) {
     if (isLive(g)) { live++; continue; }
     if (isCrash(g)) { crash++; continue; }
+    if (!isCasino(g)) continue;
     lobby++;
-    if (g.customGameType === 0 && g.img) slots++;
+    const cat = categoryOf(g);
+    if (cat === "slots" && g.img) slots++;
+    if (cat === "table" && g.category) table++;
   }
-  return { all: all.length, slots, live, crash, new: lobby, hot: lobby };
+  return { all: all.length, slots, live, crash, new: lobby, hot: lobby, table };
+}
+
+/**
+ * Display names for games in history (tickets, bets): the catalog first, then
+ * the old catalog, so bets on games no longer offered keep their names.
+ */
+export function getGameNamesForHistory(ids: string[]): Map<string, string> {
+  const out = new Map(getGamesByIds(ids).map((g) => [g.gameID, g.gameNameEn]));
+  const missing = ids.filter((id) => !out.has(id));
+  for (const [id, name] of legacyGameNames(missing)) out.set(id, name);
+  return out;
 }

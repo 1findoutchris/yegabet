@@ -3,6 +3,7 @@ import { afterEach, beforeEach, describe, expect, test, vi } from "vitest";
 import { prisma } from "@/lib/prisma";
 import { POST as wallet } from "@/app/api/provider/octhera/wallet/route";
 import { POST as gamesLaunch } from "@/app/api/games/launch/route";
+import { resetCatalogCache } from "@/lib/catalog";
 import { makeUser, truncateAll } from "../factories";
 import { json, req } from "../helpers/req";
 import { asAnon, asUser } from "../helpers/session";
@@ -16,7 +17,7 @@ import { asAnon, asUser } from "../helpers/session";
 const SECRET = "test-octhera-wallet-secret";
 const ENV = [
   "OCTHERA_API_KEY", "OCTHERA_WALLET_SECRET", "OCTHERA_AVIATOR_GAME_UID", "OCTHERA_BASE_URL",
-  "OCTHERA_AVIATOR_PUBLIC", "OCTHERA_GAMES_PUBLIC", "OCTHERA_PAGE", "OCTHERA_CURRENCY",
+  "OCTHERA_AVIATOR_PUBLIC", "OCTHERA_GAMES_PUBLIC", "OCTHERA_PAGE", "OCTHERA_CURRENCY", "GAME_CATALOG",
 ] as const;
 const saved: Record<string, string | undefined> = {};
 const fetchMock = vi.fn();
@@ -64,10 +65,11 @@ beforeEach(async () => {
   for (const k of ENV) saved[k] = process.env[k];
   process.env.OCTHERA_API_KEY = "test-key";
   process.env.OCTHERA_WALLET_SECRET = SECRET;
-  for (const k of ["OCTHERA_AVIATOR_GAME_UID", "OCTHERA_BASE_URL", "OCTHERA_AVIATOR_PUBLIC", "OCTHERA_GAMES_PUBLIC", "OCTHERA_PAGE", "OCTHERA_CURRENCY"]) {
+  for (const k of ["OCTHERA_AVIATOR_GAME_UID", "OCTHERA_BASE_URL", "OCTHERA_AVIATOR_PUBLIC", "OCTHERA_GAMES_PUBLIC", "OCTHERA_PAGE", "OCTHERA_CURRENCY", "GAME_CATALOG"]) {
     delete process.env[k];
   }
   delete (globalThis as { __octheraCatalog?: unknown }).__octheraCatalog;
+  resetCatalogCache();
   fetchMock.mockReset();
   vi.stubGlobal("fetch", fetchMock);
   await truncateAll();
@@ -298,12 +300,17 @@ describe("launch (/api/games/launch, game_uid octhera:<gameUid>)", () => {
     expect(fetchMock.mock.calls.some((c) => String(c[0]).endsWith("/players/launch"))).toBe(false);
   });
 
-  test("no API key or OCTHERA_PAGE=off → unavailable, Octhera never called", async () => {
+  test("no API key → unavailable, Octhera never called", async () => {
+    asUser({ id: (await makeUser()).id });
+    delete process.env.OCTHERA_API_KEY;
+    expect((await open("octhera:mines-x")).status).toBe(502);
+    expect(fetchMock).not.toHaveBeenCalled();
+  });
+
+  test("legacy catalog (GAME_CATALOG=legacy): OCTHERA_PAGE=off → unavailable, Octhera never called", async () => {
+    process.env.GAME_CATALOG = "legacy";
     asUser({ id: (await makeUser()).id });
     process.env.OCTHERA_PAGE = "off";
-    expect((await open("octhera:mines-x")).status).toBe(502);
-    delete process.env.OCTHERA_PAGE;
-    delete process.env.OCTHERA_API_KEY;
     expect((await open("octhera:mines-x")).status).toBe(502);
     expect(fetchMock).not.toHaveBeenCalled();
   });

@@ -18,6 +18,9 @@ import crypto from "crypto";
  *   OCTHERA_WALLET_SECRET    — wallet signing secret (API keys page)
  *   OCTHERA_BASE_URL         — optional, default https://api.octhera.org/api/v2
  *   OCTHERA_AVIATOR_GAME_UID — optional; else looked up via GET /games?q=Aviator
+ *
+ * The site's catalog is imported from GET /games (lib/catalog). With
+ * GAME_CATALOG=legacy only (the rollback to the old game_list/ catalog):
  *   OCTHERA_AVIATOR_PUBLIC   — "true" = Aviator tile first in Popular Games
  *   OCTHERA_GAMES_PUBLIC     — "true" = Octhera's catalog in the normal lists (lib/games)
  *   OCTHERA_PAGE             — "off" hides /octhera
@@ -78,24 +81,43 @@ export function gameImageUrl(gameUid: string): string {
   return `${new URL(baseUrl()).origin}/media/games/${encodeURIComponent(gameUid)}`;
 }
 
+export interface OctheraCatalogFetch {
+  games: OctheraGame[];
+  pages: number;
+  /** Octhera's `total`, when it sends one. */
+  total: number | null;
+  /** Every page came back and (when sent) `total` was reached. */
+  complete: boolean;
+  /** Why the fetch stopped early, when it did. */
+  error: string | null;
+}
+
 /**
- * Every game on our Octhera account: GET /games?page=N&limit=200 (pages start
- * at 1, limit is capped at 200), until `total` is reached or a page comes back
- * short. Only page 1 failing is an error — a refused later page keeps what we
- * already have.
+ * Every game on our Octhera account: GET /games?page=N&limit=200 (v2: pages
+ * start at 1, limit is capped at 200, the reply carries `total`), until
+ * `total` is reached or a page comes back short. Duplicate gameUids across
+ * pages are dropped. Only page 1 failing throws — a refused later page keeps
+ * what we already have and reports the fetch as incomplete.
  */
-export async function listGames(): Promise<OctheraGame[]> {
+export async function fetchCatalog(): Promise<OctheraCatalogFetch> {
   const LIMIT = 200;
   const byUid = new Map<string, OctheraGame>();
+  let total: number | null = null;
+  let pages = 0;
+  let error: string | null = null;
+  let shortPage = false;
   for (let page = 1; page <= 200; page++) {
     let d: { games?: OctheraGame[]; total?: number };
     try {
       d = await call("GET", `/games?page=${page}&limit=${LIMIT}`);
     } catch (e) {
       if (page === 1) throw e;
-      console.warn(`[octhera] games page ${page} refused, keeping ${byUid.size} games:`, e instanceof Error ? e.message : e);
+      error = e instanceof Error ? e.message : String(e);
+      console.warn(`[octhera] games page ${page} refused, keeping ${byUid.size} games:`, error);
       break;
     }
+    pages = page;
+    if (typeof d.total === "number") total = d.total;
     const games = Array.isArray(d.games) ? d.games : [];
     let added = 0;
     for (const g of games) {
@@ -103,10 +125,18 @@ export async function listGames(): Promise<OctheraGame[]> {
       byUid.set(g.gameUid, g);
       added++;
     }
-    if (games.length < LIMIT || added === 0) break;
-    if (typeof d.total === "number" && byUid.size >= d.total) break;
+    if (games.length < LIMIT) { shortPage = true; break; }
+    if (added === 0) { error = `page ${page} repeated earlier games`; break; }
+    if (total !== null && byUid.size >= total) break;
   }
-  return [...byUid.values()];
+  const reachedEnd = total !== null ? byUid.size >= total : shortPage;
+  if (!error && !reachedEnd) error = total !== null ? `got ${byUid.size} of ${total} games` : "stopped before the last page";
+  return { games: [...byUid.values()], pages, total, complete: !error && reachedEnd, error };
+}
+
+/** Every game on our Octhera account (see fetchCatalog). */
+export async function listGames(): Promise<OctheraGame[]> {
+  return (await fetchCatalog()).games;
 }
 
 let aviatorCache: { uid: string; at: number } | null = null;

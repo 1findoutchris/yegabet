@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { LOBBY_TILES } from "./categoryThemes";
 
 interface Counts {
-  all: number; slots: number; live: number; crash: number; new: number; hot: number;
+  all: number; slots: number; live: number; crash: number; new: number; hot: number; table: number;
 }
 
 function fmt(n: number): string {
@@ -43,7 +43,7 @@ export function CategoryGrid({ counts }: { counts: Counts }) {
           return (
             <Link
               key={t.title}
-              href={`/casino/${t.slug}`}
+              href={t.href ?? `/casino/${t.slug}`}
               className="cat-tile group press relative overflow-hidden rounded-2xl aspect-[4/3] sm:aspect-[5/6] p-3 flex flex-col justify-between select-none"
               style={{
                 background: t.grad,
