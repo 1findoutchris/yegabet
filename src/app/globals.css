@@ -130,7 +130,50 @@
   body { padding: 8mm !important; }
   body::before { display: none !important; }
   body * { background: transparent !important; box-shadow: none !important; }
-  .ticket-print, .ticket-print * { color: #000 !important; border-color: #000 !important; }
+}
+
+/* ── Print receipt (components/tickets/PrintTicket) ─────────────────────────
+   On screen the receipt never shows. While a ticket page is open, PrintTicket
+   sits directly under <body> and marks <html data-print-receipt>; printing
+   then drops every other child of <body> (header, wallet, install banner,
+   bottom nav, Telegram button, sports pane, modals, toasts) with
+   display:none — not visibility — so nothing hidden still takes up paper or
+   adds blank pages. The :has() rule is the same thing without the attribute. */
+.print-ticket { display: none; }
+@media print {
+  html[data-print-receipt], html[data-print-receipt] body {
+    background: #fff !important; margin: 0 !important; padding: 0 !important;
+    height: auto !important; min-height: 0 !important; display: block !important;
+  }
+  html[data-print-receipt] body > *:not(#print-ticket) { display: none !important; }
+  body:has(> #print-ticket) > *:not(#print-ticket) { display: none !important; }
+
+  /* Fills a 58mm roll, caps at 80mm, centred on A4/Letter and phone previews. */
+  .print-ticket {
+    display: block !important;
+    box-sizing: border-box; width: 100%; max-width: 80mm; margin: 0 auto; padding: 3mm 2.5mm 4mm;
+    background: #fff !important; color: #000 !important;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, "Courier New", monospace;
+    font-size: 9pt; line-height: 1.35;
+    overflow-wrap: anywhere; word-break: break-word;
+    -webkit-text-size-adjust: 100%; text-size-adjust: 100%;
+  }
+  .print-ticket * { color: #000 !important; background: transparent !important; box-shadow: none !important; }
+  .print-ticket p { margin: 0; }
+  .print-ticket .pt-head { text-align: center; padding-bottom: 2mm; }
+  .print-ticket .pt-brand { font-size: 12pt; font-weight: 800; letter-spacing: 0.2em; }
+  .print-ticket .pt-sub { font-size: 8pt; text-transform: uppercase; letter-spacing: 0.08em; }
+  .print-ticket .pt-id { font-size: 14pt; font-weight: 800; letter-spacing: 0.06em; margin-top: 2mm; }
+  .print-ticket .pt-block { border-top: 1px dashed #000; padding: 1.8mm 0; }
+  .print-ticket .pt-match { font-weight: 700; }
+  .print-ticket .pt-row { display: flex; flex-wrap: wrap; justify-content: space-between; column-gap: 2mm; }
+  .print-ticket .pt-val { margin-left: auto; text-align: right; }
+  .print-ticket .pt-strong { font-weight: 800; font-size: 10pt; }
+  .print-ticket .pt-total { border-top: 3px double #000; border-bottom: 3px double #000; padding: 1.8mm 0; margin-top: 1mm; }
+  .print-ticket .pt-raw { font: inherit; font-size: 7pt; white-space: pre-wrap; margin: 1mm 0 0; }
+  .print-ticket .pt-foot { text-align: center; font-size: 8pt; padding-top: 2.5mm; }
+  /* A selection, the totals and the footer never split across pages. */
+  .print-ticket .pt-keep { break-inside: avoid; page-break-inside: avoid; }
 }
 
 /* ── Legacy utility helpers (restyled through the tokens) ───────────────────────────────────────────── */
