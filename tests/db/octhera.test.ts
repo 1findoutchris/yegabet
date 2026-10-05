@@ -329,3 +329,73 @@ describe("launch (/api/games/launch, game_uid octhera:<gameUid>)", () => {
     expect((await open("octhera:mines-x")).status).toBe(401);
   });
 });
+
+describe("one player, start to finish (launch → bet → win → refresh)", () => {
+  test("Octhera plays on the player's real VinnaBet balance, and nothing else moves", async () => {
+    const { GET: balanceRoute } = await import("@/app/api/user/balance/route");
+    const player = await makeUser({ balance: 100, depositBalance: 100 });
+    const bystander = await makeUser({ balance: 100 });
+    asUser({ id: player.id });
+    const shown = async () => Number((await json<{ balance: string }>(await balanceRoute())).body.balance);
+
+    // 1. Starting balance, as the site shows it.
+    expect(await shown()).toBe(100);
+
+    // 2. Open a game: Octhera gets the player's own id and that same balance.
+    reply({ status: "ok", total: 1, games: [{ gameUid: "mines-x", name: "Mines X", provider: "P", providerName: "P", type: "Crash" }] });
+    reply({ status: "ok", launchUrl: "https://api.octhera.org/play?token=1" });
+    await gamesLaunch(req("POST", "/api/games/launch", { body: { game_uid: "octhera:mines-x" } }));
+    const launch = JSON.parse(fetchMock.mock.calls.find((c) => String(c[0]).endsWith("/players/launch"))![1].body);
+    expect(launch).toMatchObject({ playerId: player.id, balance: 100 });
+
+    // 3–4. A 2.50 bet comes off the real balance; Octhera is told the new one.
+    const bet = await debit(player.id, { txnId: "seq-bet", betAmount: 2.5, gameRound: "seq-r" });
+    expect(bet.body).toEqual({ status: "ok", balance: 97.5 });
+    expect(await shown()).toBe(97.5);
+
+    // 5. It is in the player's transaction history.
+    const betRow = await prisma.transaction.findUniqueOrThrow({ where: { reference: "oc:debit:seq-bet" } });
+    expect(betRow).toMatchObject({ userId: player.id, type: "BET", status: "COMPLETED" });
+    expect([Number(betRow.amount), Number(betRow.balanceBefore), Number(betRow.balanceAfter)]).toEqual([2.5, 100, 97.5]);
+
+    // 6. The win credits the real balance.
+    const win = await credit(player.id, { txnId: "seq-win", winAmount: 6, gameRound: "seq-r" });
+    expect(win.body).toEqual({ status: "ok", balance: 103.5 });
+    const winRow = await prisma.transaction.findUniqueOrThrow({ where: { reference: "oc:credit:seq-win" } });
+    expect(winRow).toMatchObject({ userId: player.id, type: "WIN", status: "COMPLETED" });
+
+    // Octhera retrying either call changes nothing.
+    expect((await debit(player.id, { txnId: "seq-bet", betAmount: 2.5, gameRound: "seq-r" })).body).toEqual(bet.body);
+    expect((await credit(player.id, { txnId: "seq-win", winAmount: 6, gameRound: "seq-r" })).body).toEqual(win.body);
+
+    // 7–8. A refresh shows what Octhera was last told.
+    expect(await shown()).toBe(103.5);
+    expect(await balanceOf(player.id)).toBe(win.body.balance);
+
+    // 9. No other balance moved, and there is no second wallet: the only
+    // Octhera rows are this player's call log.
+    expect(await balanceOf(bystander.id)).toBe(100);
+    expect(await prisma.transaction.count({ where: { userId: player.id } })).toBe(2);
+    const logged = await prisma.octheraWalletTxn.findMany({ select: { playerId: true, applied: true } });
+    expect(logged).toEqual([{ playerId: player.id, applied: true }, { playerId: player.id, applied: true }]);
+  });
+
+  test("every wallet call leaves one log line saying what we answered", async () => {
+    const info = vi.spyOn(console, "info").mockImplementation(() => {});
+    try {
+      const p = await makeUser({ balance: 5 });
+      await debit(p.id, { txnId: "log-1", betAmount: 2 });
+      await debit(p.id, { txnId: "log-2", betAmount: 50 });
+      await debit(p.id, { currency: "USD" });
+      await send(call(p.id), { signature: "v1=deadbeef" });
+      const lines = info.mock.calls.map((c) => String(c[0]));
+      expect(lines[0]).toBe(`[octhera-wallet] debit/bet txn=log-1 player=${p.id} bet=2 win=0 → ok balance=3`);
+      expect(lines[1]).toContain("txn=log-2");
+      expect(lines[1]).toContain("→ INSUFFICIENT_FUNDS balance=3");
+      expect(lines[2]).toContain("→ INVALID_REQUEST (currency USD, this site uses ETB");
+      expect(lines[3]).toBe("[octhera-wallet] call → INVALID_SIGNATURE (signature doesn't match OCTHERA_WALLET_SECRET)");
+    } finally {
+      info.mockRestore();
+    }
+  });
+});
