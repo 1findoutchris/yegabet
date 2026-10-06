@@ -5,6 +5,7 @@ import { Camera, Flashlight, Loader2, X } from "lucide-react";
 import type { IScannerControls } from "@zxing/browser";
 import type { DecodeHintType as HintType } from "@zxing/library";
 import { normalizeCode } from "@/lib/ticketCode";
+import { useNativeBack } from "@/hooks/useNativeBack";
 
 /*
  * Full-screen camera scanner for the Code 128 barcode on printed tickets.
@@ -23,6 +24,13 @@ export function BarcodeScanner({ onScan, onClose }: { onScan: (code: string) => 
   const [phase, setPhase] = useState<Phase>("starting");
   const [hint, setHint] = useState("");
   const [torch, setTorch] = useState<boolean | null>(null); // null = not supported
+  // Escape (and the app's back button) close the scanner, like the X does.
+  useNativeBack(true, onClose);
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [onClose]);
 
   useEffect(() => {
     let cancelled = false;
@@ -124,7 +132,7 @@ export function BarcodeScanner({ onScan, onClose }: { onScan: (code: string) => 
               </p>
               <p className="text-[12px] text-white/70">
                 {phase === "denied"
-                  ? "Allow camera access for this site in your browser settings, or enter the ticket code instead."
+                  ? "Allow camera access for VinnaBet in your phone or browser settings, or enter the ticket code instead."
                   : "This device or browser can't scan here. Enter the ticket code instead."}
               </p>
               <button onClick={onClose} className="mt-2 px-4 py-2.5 rounded-xl bg-white text-black text-[13px] font-bold">

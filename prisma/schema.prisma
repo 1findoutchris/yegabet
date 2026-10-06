@@ -142,6 +142,7 @@ model User {
   depositRequests    DepositRequest[]
   withdrawalRequests WithdrawalRequest[]
   pushSubscriptions  PushSubscription[]
+  nativePushTokens   NativePushToken[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -162,6 +163,22 @@ model PushSubscription {
 
   @@index([userId])
   @@map("push_subscriptions")
+}
+
+// Push token from the native iOS/Android app (APNs device token on iOS, FCM
+// registration token on Android). Web Push doesn't work inside the app's
+// WebView, so the app registers here instead of in push_subscriptions.
+model NativePushToken {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  token     String   @unique
+  platform  String // "ios" | "android"
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@map("native_push_tokens")
 }
 
 model Agent {

@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { isNativeApp } from "@/lib/native";
 
 // Android/desktop Chrome fires this before showing its native install prompt;
 // capturing it lets us trigger the prompt from our own button. iOS has no
@@ -31,6 +32,8 @@ export function useInstallPrompt() {
 
   useEffect(() => {
     const standalone =
+      // Already the installed native app: nothing to offer.
+      isNativeApp() ||
       window.matchMedia("(display-mode: standalone)").matches ||
       // iOS Safari exposes installed state here instead of display-mode.
       (window.navigator as unknown as { standalone?: boolean }).standalone === true;

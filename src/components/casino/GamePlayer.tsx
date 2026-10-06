@@ -5,9 +5,11 @@ import { VMark } from "@/components/vinna/VMark";
 import { LaunchOverlay } from "@/components/vinna/LaunchOverlay";
 import { useGamePlayer } from "@/contexts/GamePlayerContext";
 import { PROVIDER_META } from "@/types/games";
+import { useNativeBack } from "@/hooks/useNativeBack";
 
 export function GamePlayer() {
   const { current, gameUrl, status, close } = useGamePlayer();
+  useNativeBack(!!current, close);
 
   if (!current) return null;
 

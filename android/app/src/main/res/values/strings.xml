@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">VinnaBet</string>
+    <string name="title_activity_main">VinnaBet</string>
+    <string name="package_name">com.vinnabet.app</string>
+    <string name="custom_url_scheme">com.vinnabet.app</string>
+</resources>
