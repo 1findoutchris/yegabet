@@ -21,7 +21,7 @@ export function TelegramBridge() {
 }
 
 /** Top-level screens: the back button is hidden on these. */
-const ROOTS = new Set(["/tg", "/sports", "/casino", "/casino/live", "/games", "/account"]);
+const ROOTS = new Set(["/sports", "/casino", "/casino/live", "/games", "/account"]);
 
 function TelegramShell() {
   const router = useRouter();
@@ -58,7 +58,7 @@ function TelegramShell() {
       app.BackButton.hide();
       return;
     }
-    const back = () => (window.history.length > 1 ? router.back() : router.push("/tg"));
+    const back = () => (window.history.length > 1 ? router.back() : router.push("/casino"));
     app.BackButton.onClick(back);
     app.BackButton.show();
     return () => app.BackButton.offClick(back);

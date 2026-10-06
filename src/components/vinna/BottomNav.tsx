@@ -2,9 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Trophy, Radio, Spade, Rocket, CircleUserRound, House } from "lucide-react";
+import { Trophy, Radio, Spade, Rocket, CircleUserRound } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useInTelegram } from "@/hooks/useTelegram";
 import { sectionFor, type Section } from "./nav";
 
 const TABS: { id: Section; href: string; label: string; icon: typeof Trophy }[] = [
@@ -15,13 +14,6 @@ const TABS: { id: Section; href: string; label: string; icon: typeof Trophy }[] 
   { id: "account", href: "/account",     label: "Account", icon: CircleUserRound },
 ];
 
-/* In the Telegram Mini App, Home (the /tg hub) takes Live's slot — Live stays
-   one tap away on the Casino page, and the Mini App needs a way home. */
-const TG_TABS = [
-  { id: "home" as const, href: "/tg", label: "Home", icon: House },
-  ...TABS.filter((t) => t.id !== "live"),
-];
-
 /**
  * Phone navigation: five equal tabs and no centre button — deposit lives in
  * the header's balance capsule, the wallet sheet and Account. A turquoise bar
@@ -30,13 +22,11 @@ const TG_TABS = [
  */
 export function BottomNav() {
   const pathname = usePathname();
-  const inTg = useInTelegram();
   // The game player takes the whole screen under the header on phones.
   if (pathname.startsWith("/game/")) return null;
 
-  const tabs = inTg ? TG_TABS : TABS;
   const active = sectionFor(pathname);
-  const idx = tabs.findIndex((t) => t.id === active);
+  const idx = TABS.findIndex((t) => t.id === active);
 
   return (
     <nav
@@ -54,7 +44,7 @@ export function BottomNav() {
             <span className="h-full w-7 rounded-b-full bg-[var(--v-teal)] shadow-[0_0_14px_rgba(25,211,197,0.7)]" />
           </span>
         )}
-        {tabs.map((t) => {
+        {TABS.map((t) => {
           const on = t.id === active;
           const Icon = t.icon;
           return (

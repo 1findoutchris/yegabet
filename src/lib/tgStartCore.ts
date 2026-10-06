@@ -21,7 +21,7 @@
 import { displayCode, normalizeCode } from "./ticketCode";
 
 const SECTIONS: Record<string, string> = {
-  home: "/tg",
+  home: "/casino", // the site's default route, as / redirects
   sports: "/sports",
   casino: "/casino",
   live: "/casino/live",

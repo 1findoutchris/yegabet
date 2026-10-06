@@ -147,7 +147,7 @@ describe("startPath — deep links only navigate, inside our own site", () => {
     ["event_123", "/sports"],
     ["wallet", "/account"],
     ["Sports", "/sports"],
-    ["home", "/tg"],
+    ["home", "/casino"],
   ])("%s → %s", (param, path) => expect(startPath(param)).toBe(path));
 
   test.each([

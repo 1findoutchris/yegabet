@@ -113,21 +113,23 @@ account) is reported back to the page within the poll.
 
 ## Mini App UI
 
-`/tg` (`src/components/telegram/MiniApp.tsx`) is the entry and Home screen:
-wallet (real balance from `BalanceContext`), Deposit/Withdraw, and tiles for
-Sports, Casino, Games, Live, Bet history, Check Ticket, Casino history and
-Rewards. Everything else is the existing pages.
+There is no Telegram-specific interface. `/tg` is only a sign-in gate: it
+shows a loader (or the Connect screen for unlinked users), then replaces
+itself with the site's default route, `/casino` (what `/` redirects to), or
+with a deep-link target. From there it is the website: the same header,
+wallet widget, pages, bottom nav, betslip, tickets and account.
 
-`TelegramBridge` (mounted in `Providers`, inert outside Telegram):
+`TelegramBridge` (mounted in `Providers`, inert outside Telegram) does only
+container plumbing:
 - loads `telegram-web-app.js` only inside Telegram,
 - sets Telegram's header/background to VinnaBet navy,
 - calls `expand()` and `disableVerticalSwipes()` (so scrolling a game doesn't
   close the app),
-- maps Telegram's BackButton to in-app history,
+- maps Telegram's BackButton to in-app history (hidden on the top-level tabs),
 - routes off-site links through `openLink` / `openTelegramLink`.
 
-Inside Telegram, the bottom bar shows Home instead of Live, and the
-install-the-app banner and the "join our channel" button are hidden.
+The only visual difference is that the "add to home screen" banner is hidden,
+because a web app can't be installed from inside Telegram.
 
 ## Deep links
 
@@ -141,7 +143,7 @@ allow-list that only produces paths on our own site:
 | `game_<uid>` | `/game/<uid>` |
 | `promo_<id>` | `/rewards/bonuses` |
 | `event_<id>` | `/sports` (the sportsbook iframe has no event deep link) |
-| `sports` `casino` `live` `games` `wallet` `deposit` `history` `check` `rewards` `account` `profile` | that section |
+| `sports` `casino` `live` `games` `wallet` `deposit` `history` `check` `rewards` `account` `profile` | that section (`home` → `/casino`) |
 
 A deep link only picks the first screen. Every action on it is still
 authorized by the session.
