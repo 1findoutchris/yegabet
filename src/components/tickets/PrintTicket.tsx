@@ -4,6 +4,7 @@ import { useEffect, useState, useSyncExternalStore } from "react";
 import { createPortal, flushSync } from "react-dom";
 import { parseSlip, rawInfoText } from "@/lib/ticketSlip";
 import { code128B } from "@/lib/code128";
+import { displayCode } from "@/lib/ticketCode";
 import type { TicketView } from "./TicketReceipt";
 
 /*
@@ -35,7 +36,7 @@ const money = (v: string | number) =>
 
 /* Printed form of the ticket code: hyphens dropped ("T-UYE25F" → "TUYE25F").
    Display and barcode only; the stored code is unchanged. */
-const printedId = (publicId: string) => publicId.replace(/-/g, "");
+const printedId = displayCode;
 
 /* Code 128 as SVG bars. Runs of bar modules merge into one rect so edges stay
    crisp; 10-module quiet zones either side keep it scannable. */
