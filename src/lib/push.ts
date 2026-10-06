@@ -1,5 +1,6 @@
 import webpush from "web-push";
 import { prisma } from "@/lib/prisma";
+import { sendNativePushToUser } from "@/lib/nativePush";
 
 const publicKey = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY;
 const privateKey = process.env.VAPID_PRIVATE_KEY;
@@ -16,10 +17,15 @@ interface PushPayload {
 }
 
 /**
- * Send a push notification to every device the user has subscribed. Expired
+ * Send a push notification to every device the user has subscribed: browsers
+ * via Web Push, and the native apps via APNs/FCM (lib/nativePush). Expired
  * subscriptions (410/404) are pruned. Fire-and-forget: never throws to the caller.
  */
 export async function sendPushToUser(userId: string, payload: PushPayload): Promise<void> {
+  await Promise.all([sendWebPush(userId, payload), sendNativePushToUser(userId, payload)]);
+}
+
+async function sendWebPush(userId: string, payload: PushPayload): Promise<void> {
   if (!publicKey || !privateKey) return; // push not configured — no-op
 
   const subs = await prisma.pushSubscription.findMany({ where: { userId } });

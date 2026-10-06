@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { Eye, EyeOff, X, Phone, Lock, User, Loader2, CheckCircle, Send } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useAuthModal } from "@/contexts/AuthModalContext";
+import { useNativeBack } from "@/hooks/useNativeBack";
 
 /**
  * Signup attribution from the landing URL (`?ref=` / `?promo=`).
@@ -140,6 +141,8 @@ export function AuthModal() {
   useEffect(() => {
     if (open) setTimeout(() => firstRef.current?.focus(), 80);
   }, [open, tab]);
+
+  useNativeBack(open, close);
 
   useEffect(() => {
     const h = (e: KeyboardEvent) => { if (e.key === "Escape") close(); };

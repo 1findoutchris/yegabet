@@ -3,6 +3,13 @@
 import { useEffect, useState } from "react";
 import { Bell, BellOff, Loader2 } from "lucide-react";
 import { toast } from "sonner";
+import {
+  hasNativePushToken,
+  isNativeApp,
+  nativePushSupported,
+  registerNativePush,
+  unregisterNativePush,
+} from "@/lib/native";
 
 // Convert the base64url VAPID public key into the Uint8Array the Push API wants.
 function urlBase64ToUint8Array(base64String: string) {
@@ -20,6 +27,14 @@ export function PushToggle() {
   const [busy, setBusy] = useState(false);
 
   useEffect(() => {
+    // The native app has no Web Push in its WebView; it uses APNs/FCM instead.
+    if (isNativeApp()) {
+      nativePushSupported().then((ok) => {
+        setSupported(ok);
+        setSubscribed(ok && hasNativePushToken());
+      });
+      return;
+    }
     if (!("serviceWorker" in navigator && "PushManager" in window)) return;
     setSupported(true);
     navigator.serviceWorker
@@ -32,6 +47,15 @@ export function PushToggle() {
   async function subscribe() {
     setBusy(true);
     try {
+      if (isNativeApp()) {
+        if (!(await registerNativePush(true))) {
+          toast.error("Allow notifications for VinnaBet in your phone's settings");
+          return;
+        }
+        setSubscribed(true);
+        toast.success("Notifications enabled");
+        return;
+      }
       const reg = await navigator.serviceWorker.ready;
       const sub = await reg.pushManager.subscribe({
         userVisibleOnly: true,
@@ -57,6 +81,12 @@ export function PushToggle() {
   async function unsubscribe() {
     setBusy(true);
     try {
+      if (isNativeApp()) {
+        await unregisterNativePush(true);
+        setSubscribed(false);
+        toast.success("Notifications disabled");
+        return;
+      }
       const reg = await navigator.serviceWorker.ready;
       const sub = await reg.pushManager.getSubscription();
       if (sub) {
