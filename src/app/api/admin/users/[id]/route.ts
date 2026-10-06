@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { TELEGRAM_CLEARED } from "@/lib/tgLink";
 import { prisma } from "@/lib/prisma";
 import { requireAdminAuth, logAdminAction, getClientIp } from "@/lib/adminAuth";
 import { tierForPoints } from "@/lib/retention";
@@ -23,6 +24,7 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ id: 
         loyaltyPoints: true, loyaltyTier: true, isActive: true, isVerified: true,
         role: true, referralCode: true, createdAt: true, lastSeenAt: true,
         streakDays: true, spinCredits: true,
+        telegramUserId: true, telegramUsername: true, telegramLinkedAt: true,
         _count: { select: { bets: true, depositRequests: true, withdrawalRequests: true } },
       },
     }),
@@ -96,7 +98,7 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ id: 
 }
 
 const adjustSchema = z.object({
-  action: z.enum(["adjust", "ban", "unban", "unlock-funds", "grant-spins", "clear-cash-agent"]),
+  action: z.enum(["adjust", "ban", "unban", "unlock-funds", "grant-spins", "clear-cash-agent", "unlink-telegram"]),
   amount: z.number().optional(),
   // Omitted → "withdrawable", which is exactly the behaviour this route had
   // before buckets existed, so older callers are unaffected.
@@ -169,6 +171,15 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ id:
   if (action === "clear-cash-agent") {
     await prisma.user.update({ where: { id }, data: { cashAgentId: null } });
     await logAdminAction({ action: "CLEAR_CASH_AGENT", targetId: id, targetType: "User", note, ipAddress: ip });
+    return NextResponse.json({ success: true });
+  }
+
+  // Releases the Telegram link so the player can link a different Telegram
+  // account (the bot never moves a link on its own — see tgLinkCore). Touches
+  // only the telegram* columns.
+  if (action === "unlink-telegram") {
+    await prisma.user.update({ where: { id }, data: TELEGRAM_CLEARED });
+    await logAdminAction({ action: "UNLINK_TELEGRAM", targetId: id, targetType: "User", note, ipAddress: ip });
     return NextResponse.json({ success: true });
   }
 

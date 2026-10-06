@@ -87,6 +87,18 @@ model User {
   isActive     Boolean @default(true)
   isVerified   Boolean @default(false)
 
+  // Telegram account linked through the VinnaBet bot (src/lib/tgLink.ts). Set
+  // only after the bot received the user's OWN contact card (contact.user_id ==
+  // sender) whose number matches `phone`. Unique so one Telegram account can
+  // never sign into two VinnaBet accounts. Text, not BigInt: Telegram ids fit a
+  // bigint, but Prisma's BigInt can't be JSON-serialised and several routes
+  // return user rows as they are. Same choice as WithdrawalAgent.telegramChatId.
+  telegramUserId          String?   @unique
+  telegramUsername        String?
+  telegramFirstName       String?
+  telegramLinkedAt        DateTime?
+  telegramPhoneVerifiedAt DateTime?
+
   // Total playable funds — the figure the game provider sees and settles against.
   // It is the sum of three pots:
   //   depositBalance — funded by deposits, playable but NOT withdrawable
