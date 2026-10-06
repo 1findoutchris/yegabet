@@ -27,6 +27,7 @@ interface UserDetail {
   balance: number; depositBalance: number; bonusBalance: number; withdrawable: number;
   loyaltyPoints: number; loyaltyTier: string; isActive: boolean; isVerified: boolean;
   role: string; streakDays: number; spinCredits: number; createdAt: string; lastSeenAt: string | null;
+  telegramUserId: string | null; telegramUsername: string | null; telegramLinkedAt: string | null;
   totalDeposited: number; totalWithdrawn: number;
   _count: { bets: number; depositRequests: number; withdrawalRequests: number };
   transactions: {
@@ -316,6 +317,19 @@ export default function UserDetailPage() {
               className="w-full h-10 rounded-xl bg-[#2BD97420] border border-[#2BD97444] text-[color:var(--green)] font-bold text-[13px] hover:bg-[#2BD97435] transition-colors disabled:opacity-40 flex items-center justify-center gap-2">
               <ShieldCheck className="w-4 h-4" /> Unban user
             </button>
+          )}
+
+          {user.telegramUserId && (
+            <div className="rounded-xl border border-[color:var(--border-base)] p-3 text-[12px] text-[color:var(--text-secondary)] space-y-2">
+              <p>
+                Telegram linked{user.telegramUsername ? ` · @${user.telegramUsername}` : ""} · id {user.telegramUserId}
+                {user.telegramLinkedAt ? ` · since ${fmtDate(user.telegramLinkedAt)}` : ""}
+              </p>
+              <button onClick={() => postAction("unlink-telegram")} disabled={acting}
+                className="w-full h-9 rounded-lg bg-[var(--bg-elevated)] border border-[color:var(--border-base)] font-bold text-[12px] text-[color:var(--text-primary)] disabled:opacity-40">
+                Unlink Telegram (player can then link another Telegram account)
+              </button>
+            </div>
           )}
 
           {user.depositBalance + user.bonusBalance > 0 && (

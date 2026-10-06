@@ -3,10 +3,12 @@
 import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
-import { ArrowLeft, Maximize2, RotateCw } from "lucide-react";
+import { ArrowLeft, ExternalLink, Maximize2, RotateCw } from "lucide-react";
 import { useAuthModal } from "@/contexts/AuthModalContext";
 import { useBalance } from "@/contexts/BalanceContext";
 import { LaunchOverlay } from "@/components/vinna/LaunchOverlay";
+import { useInTelegram } from "@/hooks/useTelegram";
+import { openExternal } from "@/lib/telegramWebApp";
 
 /** How long a game may take to load before the player offers a reload. */
 const SLOW_MS = 20_000;
@@ -16,6 +18,7 @@ type Phase =
   | { kind: "loading"; url: string }
   | { kind: "playing"; url: string }
   | { kind: "login" }
+  | { kind: "external" }
   | { kind: "error"; message: string };
 
 /**
@@ -46,6 +49,7 @@ export function OctheraPlayer({
   const { openLogin } = useAuthModal();
   const { refresh } = useBalance();
   const frameBoxRef = useRef<HTMLDivElement>(null);
+  const inTelegram = useInTelegram();
   const [phase, setPhase] = useState<Phase>({ kind: "launching" });
   const [slow, setSlow] = useState(false);
   // Element fullscreen isn't available on iPhone Safari; the button hides there.
@@ -118,6 +122,33 @@ export function OctheraPlayer({
     };
   }, []);
 
+  /**
+   * Telegram only: play in the phone's browser instead. A provider whose page
+   * refuses to be framed, or needs storage Telegram's WebView blocks, still
+   * fires the iframe's load event — so this can't be detected, only offered.
+   * Asks for a fresh launch URL (they're single-use) and drops the iframe so
+   * the game isn't running twice. The wallet is unchanged: the provider calls
+   * our wallet URL server-to-server either way.
+   */
+  async function playOutside() {
+    try {
+      const res = await fetch("/api/games/launch", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ game_uid: gameID }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.game_launch_url) {
+        setPhase({ kind: "error", message: data.error ?? "Please try again in a moment." });
+        return;
+      }
+      openExternal(data.game_launch_url);
+      setPhase({ kind: "external" });
+    } catch {
+      setPhase({ kind: "error", message: "Network error. Check your connection and try again." });
+    }
+  }
+
   function back() {
     if (window.history.length > 1) router.back();
     else router.push("/casino");
@@ -157,6 +188,16 @@ export function OctheraPlayer({
             <RotateCw className="w-[18px] h-[18px]" />
           </button>
         )}
+        {url && inTelegram && (
+          <button
+            onClick={playOutside}
+            title="Open in browser"
+            aria-label="Open in browser"
+            className="w-9 h-9 grid place-items-center rounded-full text-[color:var(--v-text-2)] hover:text-white hover:bg-[var(--v-bg-3)] transition-colors"
+          >
+            <ExternalLink className="w-[18px] h-[18px]" />
+          </button>
+        )}
         {url && canFullscreen && (
           <button
             onClick={fullscreen}
@@ -191,6 +232,7 @@ export function OctheraPlayer({
                 </p>
                 <div className="flex gap-2">
                   <PanelButton onClick={launch} primary>Reload</PanelButton>
+                  {inTelegram && <PanelButton onClick={playOutside}>Open in browser</PanelButton>}
                   <PanelButton onClick={back}>Back to games</PanelButton>
                 </div>
               </div>
@@ -203,6 +245,19 @@ export function OctheraPlayer({
             <p className="text-[color:var(--text-primary)] font-semibold text-sm">Log in to play {label}</p>
             <div className="flex gap-2">
               <PanelButton onClick={openLogin} primary>Log in</PanelButton>
+              <PanelButton onClick={back}>Back to games</PanelButton>
+            </div>
+          </Panel>
+        )}
+
+        {shown.kind === "external" && (
+          <Panel>
+            <p className="text-[color:var(--text-primary)] font-semibold text-sm">{title} is open in your browser</p>
+            <p className="text-[color:var(--text-muted)] text-xs text-center max-w-xs">
+              Same VinnaBet balance — your bets and wins land in this wallet.
+            </p>
+            <div className="flex gap-2">
+              <PanelButton onClick={launch} primary>Play here instead</PanelButton>
               <PanelButton onClick={back}>Back to games</PanelButton>
             </div>
           </Panel>

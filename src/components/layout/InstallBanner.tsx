@@ -33,7 +33,7 @@ export function InstallBanner() {
     // Deliberately light against the app's near-black chrome. The inversion is
     // what makes it register as a separate app-store-style strip rather than
     // another dark row the eye skims past — the old dim version blended in.
-    <div className="flex items-center gap-2.5 px-3 py-2.5 bg-white border-b border-black/10">
+    <div data-tg-hide className="flex items-center gap-2.5 px-3 py-2.5 bg-white border-b border-black/10">
       <button
         onClick={dismiss}
         aria-label="Dismiss"

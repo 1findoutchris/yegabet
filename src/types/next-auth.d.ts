@@ -7,6 +7,8 @@ declare module "next-auth" {
     name?: string | null;
     phone: string;
     role: string;
+    /** "telegram" when signed in through the Mini App (short-lived session). */
+    via?: string;
   }
 
   interface Session {
@@ -29,5 +31,8 @@ declare module "next-auth/jwt" {
     name?: string | null;
     phone: string;
     role: string;
+    via?: "telegram";
+    /** Unix seconds after which a Telegram session is refused. */
+    viaExp?: number;
   }
 }
