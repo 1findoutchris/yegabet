@@ -163,9 +163,13 @@
   .print-ticket .pt-head { text-align: center; padding-bottom: 2mm; }
   .print-ticket .pt-brand { font-size: 12pt; font-weight: 800; letter-spacing: 0.2em; }
   .print-ticket .pt-sub { font-size: 8pt; text-transform: uppercase; letter-spacing: 0.08em; }
-  .print-ticket .pt-id { font-size: 14pt; font-weight: 800; letter-spacing: 0.06em; margin-top: 2mm; }
+  .print-ticket .pt-barcode { display: block; width: 100%; max-width: 60mm; height: 13mm; margin: 2.5mm auto 1mm; }
+  .print-ticket .pt-id { font-size: 13pt; font-weight: 800; letter-spacing: 0.08em; }
   .print-ticket .pt-block { border-top: 1px dashed #000; padding: 1.8mm 0; }
   .print-ticket .pt-match { font-weight: 700; }
+  /* Market + pick wraps on the left; the odds keep a fixed right column. */
+  .print-ticket .pt-pick { display: grid; grid-template-columns: 1fr auto; column-gap: 3mm; align-items: start; }
+  .print-ticket .pt-odds { text-align: right; white-space: nowrap; }
   .print-ticket .pt-row { display: flex; flex-wrap: wrap; justify-content: space-between; column-gap: 2mm; }
   .print-ticket .pt-val { margin-left: auto; text-align: right; }
   .print-ticket .pt-strong { font-weight: 800; font-size: 10pt; }
