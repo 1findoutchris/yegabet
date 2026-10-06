@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { Search, Ticket, Loader2 } from "lucide-react";
+import { displayCode, normalizeCode } from "@/lib/ticketCode";
 
 /*
  * Ticket history + lookup ("Find Ticket"). Shared by the in-person agent's
@@ -55,6 +56,9 @@ export function TicketList({
 
   const load = useCallback(async (q: string) => {
     setLoading(true);
+    // Codes are shown without their hyphen; a full code typed that way is
+    // sent in its stored form so the search still finds it.
+    q = normalizeCode(q) ?? q;
     const res = await fetch(`${apiPath}${q ? `?search=${encodeURIComponent(q)}` : ""}`);
     if (res.ok) {
       const d = await res.json();
@@ -97,7 +101,7 @@ export function TicketList({
               className="flex items-center gap-3 px-4 py-3 rounded-xl bg-[var(--bg-surface)] border border-[color:var(--border-muted)] hover:border-[color:var(--border-accent)] transition-colors">
               <div className="min-w-0 flex-1">
                 <p className="text-[13px] font-bold text-[color:var(--text-primary)] truncate">
-                  {t.publicId}
+                  {displayCode(t.publicId)}
                 </p>
                 <p className="text-[11px] text-[color:var(--text-muted)]">
                   {t.bets.length} bet{t.bets.length === 1 ? "" : "s"} · {new Date(t.createdAt).toLocaleString()}

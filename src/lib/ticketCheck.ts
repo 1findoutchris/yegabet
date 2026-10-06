@@ -2,6 +2,7 @@ import "server-only";
 import { prisma } from "./prisma";
 import { redis } from "./redis";
 import { publicSlipInfo } from "./ticketSlip";
+import { normalizeCode } from "./ticketCode";
 import { getUserTicket, settleInfoByRound } from "./userTickets";
 
 /*
@@ -11,6 +12,7 @@ import { getUserTicket, settleInfoByRound } from "./userTickets";
  * Two kinds of code, both random so they can't be enumerated:
  *   T-XXXXXX   — an in-person agent's printed ticket (Ticket.publicId)
  *   P-XXXXXXXX — a player's own sportsbook bet (TicketCheckCode)
+ * Either may be typed or scanned without the hyphen (lib/ticketCode).
  *
  * The result never identifies anyone: no user/agent id, name, phone, balance,
  * provider references or raw payloads — slip data goes through publicSlipInfo.
@@ -39,11 +41,7 @@ export interface PublicTicket {
 
 const CHECKABLE_AGENT_STATUSES = new Set(["PLACED", "WON", "LOST", "PAID"]);
 
-/** "t-3f9k2a " → "T-3F9K2A"; anything not shaped like a code → null. */
-export function normalizeCode(raw: string): string | null {
-  const code = raw.replace(/\s+/g, "").toUpperCase();
-  return /^[TP]-[A-Z0-9]{6,10}$/.test(code) ? code : null;
-}
+export { normalizeCode };
 
 async function agentTicket(code: string): Promise<PublicTicket | null> {
   const ticket = await prisma.ticket.findUnique({

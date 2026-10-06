@@ -3,6 +3,7 @@
 import { CheckCircle2, XCircle, Clock } from "lucide-react";
 import { parseSlip, rawInfoText, withResults, type LegResult } from "@/lib/ticketSlip";
 import { PrintTicket } from "./PrintTicket";
+import { displayCode } from "@/lib/ticketCode";
 
 /*
  * The ticket body — games, odds, stake, potential win, status.
@@ -53,7 +54,7 @@ export function TicketReceipt({ ticket }: { ticket: TicketView }) {
         </p>
       </div>
 
-      <p className="text-center font-mono text-xl font-bold tracking-widest mb-3 break-all">{ticket.publicId}</p>
+      <p className="text-center font-mono text-xl font-bold tracking-widest mb-3 break-all">{displayCode(ticket.publicId)}</p>
 
       <div className="text-[12px] space-y-1 mb-3">
         <div className="flex justify-between"><span className="text-[color:var(--text-muted)]">Placed</span><span>{new Date(ticket.createdAt).toLocaleString()}</span></div>
@@ -70,26 +71,29 @@ export function TicketReceipt({ ticket }: { ticket: TicketView }) {
               {slip.selections.length > 0 ? (
                 <>
                   {selections.map((s, j) => (
-                    <div key={j} className="py-2 border-b border-[color:var(--border-muted)] break-inside-avoid">
-                      <div className="flex justify-between items-baseline gap-3">
+                    // Same order as the paper receipt: match, then market + pick
+                    // with the odds right-aligned, then kickoff on the left.
+                    // The per-match result stays on screen, beside the match.
+                    <div key={j} className="py-2 border-b border-[color:var(--border-muted)]">
+                      <div className="flex justify-between items-start gap-3">
                         <p className="font-semibold min-w-0">{s.match}</p>
-                        {s.kickoff && <p className="shrink-0 whitespace-nowrap text-right text-[color:var(--text-muted)]">{s.kickoff}</p>}
+                        {s.result && (() => {
+                          const r = RESULT[s.result];
+                          const Icon = r.icon;
+                          return (
+                            <span className={`shrink-0 inline-flex items-center gap-1 font-bold uppercase text-[11px] leading-[18px] ${r.tone}`}>
+                              <Icon className="w-3.5 h-3.5" /> {r.label}
+                            </span>
+                          );
+                        })()}
                       </div>
-                      {s.marketPick && <p>{s.marketPick}</p>}
-                      {(s.odds || s.result) && (
-                        <div className="flex justify-between items-center gap-3">
-                          {s.odds ? <p>Odds: {s.odds}</p> : <span />}
-                          {s.result && (() => {
-                            const r = RESULT[s.result];
-                            const Icon = r.icon;
-                            return (
-                              <span className={`inline-flex items-center gap-1 font-bold uppercase text-[11px] ${r.tone}`}>
-                                <Icon className="w-3.5 h-3.5" /> {r.label}
-                              </span>
-                            );
-                          })()}
+                      {(s.marketPick || s.odds) && (
+                        <div className="flex justify-between items-start gap-3">
+                          <p className="min-w-0">{s.marketPick}</p>
+                          {s.odds && <p className="shrink-0 font-bold tabular-nums text-[color:var(--text-primary)]">{s.odds}</p>}
                         </div>
                       )}
+                      {s.kickoff && <p className="text-[color:var(--text-muted)]">{s.kickoff}</p>}
                     </div>
                   ))}
                   {(slip.totalOdds || slip.betType) && (

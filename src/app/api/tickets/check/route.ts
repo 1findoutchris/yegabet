@@ -4,7 +4,7 @@ import { allowCheck, checkTicket, normalizeCode } from "@/lib/ticketCheck";
 
 /**
  * GET ?code= — public "Check Ticket". No login: anyone holding a ticket code
- * (T-XXXXXX agent ticket, P-XXXXXXXX player bet) can see its matches,
+ * (T-XXXXXX agent ticket, P-XXXXXXXX player bet; hyphen optional) can see its matches,
  * per-match results, stake and status. Nothing identifying the owner is
  * returned (see lib/ticketCheck). Rate-limited per IP.
  */
@@ -15,7 +15,7 @@ export async function GET(req: NextRequest) {
 
   const raw = req.nextUrl.searchParams.get("code") ?? "";
   if (!normalizeCode(raw)) {
-    return NextResponse.json({ error: "Enter a ticket code like T-3F9K2A or P-7KX2M9QD" }, { status: 400 });
+    return NextResponse.json({ error: "Enter a ticket code like T3F9K2A or P7KX2M9QD" }, { status: 400 });
   }
 
   const ticket = await checkTicket(raw);

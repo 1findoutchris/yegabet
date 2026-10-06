@@ -96,6 +96,15 @@ describe("public Check Ticket", () => {
     expect((await json(await callCheck(" t-chk234 "))).status).toBe(200);
   });
 
+  test("codes without the hyphen (as printed and scanned) find the same ticket", async () => {
+    const agentRes = await json<Body>(await callCheck("TCHK234"));
+    expect(agentRes.status).toBe(200);
+    expect(agentRes.body.ticket!.publicId).toBe("T-CHK234");
+    const playerRes = await json<Body>(await callCheck(playerCode.replace("-", "")));
+    expect(playerRes.status).toBe(200);
+    expect(playerRes.body.ticket!.publicId).toBe(playerCode);
+  });
+
   test.each([
     ["draft agent ticket", "T-DRAFT2", 404],
     ["cancelled agent ticket", "T-CANCL2", 404],
