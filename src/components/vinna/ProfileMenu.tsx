@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { signOut, useSession } from "next-auth/react";
-import { User, Gift, Ticket, Search, SearchCheck, Settings, Download, LogOut } from "lucide-react";
+import { User, Gift, Ticket, SearchCheck, Settings, Download, LogOut } from "lucide-react";
 import { useBalance } from "@/contexts/BalanceContext";
 import { useInstallPrompt } from "@/hooks/useInstallPrompt";
 import { getRankState } from "@/lib/retention";
@@ -72,7 +72,6 @@ export function ProfileMenu() {
             <Item href="/account" icon={User} label="My account" onClick={close} />
             <Item href="/rewards" icon={Gift} label="Rewards" onClick={close} />
             <Item href="/tickets" icon={Ticket} label="Bet history" onClick={close} />
-            <Item href="/tickets?find=1" icon={Search} label="Find ticket" onClick={close} />
             <Item href="/check" icon={SearchCheck} label="Check ticket" onClick={close} />
             <Item href="/account/settings" icon={Settings} label="Settings" onClick={close} />
             {/* Only when a real one-tap install is on offer (no API on iOS). */}
