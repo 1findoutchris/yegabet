@@ -2,7 +2,8 @@
 
 import { useEffect, useState, useSyncExternalStore } from "react";
 import { createPortal, flushSync } from "react-dom";
-import { parseSlip, rawInfoText, withResults } from "@/lib/ticketSlip";
+import { parseSlip, rawInfoText } from "@/lib/ticketSlip";
+import { code128B } from "@/lib/code128";
 import type { TicketView } from "./TicketReceipt";
 
 /*
@@ -31,6 +32,32 @@ function dateTime(iso: string | Date): string {
 }
 const money = (v: string | number) =>
   `${Number(v).toLocaleString(undefined, { maximumFractionDigits: 2 })} ${CURRENCY}`;
+
+/* Printed form of the ticket code: hyphens dropped ("T-UYE25F" → "TUYE25F").
+   Display and barcode only; the stored code is unchanged. */
+const printedId = (publicId: string) => publicId.replace(/-/g, "");
+
+/* Code 128 as SVG bars. Runs of bar modules merge into one rect so edges stay
+   crisp; 10-module quiet zones either side keep it scannable. */
+function Barcode({ value }: { value: string }) {
+  let bits: string;
+  try { bits = code128B(value); } catch { return null; }
+  const quiet = 10;
+  const bars: { x: number; w: number }[] = [];
+  for (let i = 0; i < bits.length; i++) {
+    if (bits[i] !== "1") continue;
+    const last = bars[bars.length - 1];
+    if (last && last.x + last.w === i + quiet) last.w++;
+    else bars.push({ x: i + quiet, w: 1 });
+  }
+  return (
+    <svg className="pt-barcode" viewBox={`0 0 ${bits.length + quiet * 2} 40`} preserveAspectRatio="none"
+      shapeRendering="crispEdges" role="img" aria-label={`Barcode ${value}`}>
+      <rect width="100%" height="100%" fill="#fff" />
+      {bars.map((b) => <rect key={b.x} x={b.x} width={b.w} height="40" fill="#000" />)}
+    </svg>
+  );
+}
 
 function Row({ label, value, strong }: { label: string; value: React.ReactNode; strong?: boolean }) {
   return (
@@ -75,17 +102,16 @@ export function PrintTicket({ ticket }: { ticket: TicketView }) {
       <header className="pt-head">
         <p className="pt-brand">VINNABET</p>
         <p className="pt-sub">Sports Betting Ticket</p>
-        <p className="pt-id">{ticket.publicId}</p>
+        <Barcode value={printedId(ticket.publicId)} />
+        <p className="pt-id">{printedId(ticket.publicId)}</p>
       </header>
 
       <section className="pt-block">
         <Row label="Placed:" value={dateTime(ticket.createdAt)} />
-        <Row label="Status:" value={<b>{ticket.status.toUpperCase()}</b>} />
       </section>
 
       {ticket.bets.map((b, i) => {
         const slip = parseSlip(b.info);
-        const selections = withResults(slip, b.resultInfo, b.settled);
         const potential = slip.totalOdds ? Number(b.betAmount) * Number(slip.totalOdds) : null;
         const won = b.settled && Number(b.winAmount) > 0;
 
@@ -103,13 +129,16 @@ export function PrintTicket({ ticket }: { ticket: TicketView }) {
 
         return (
           <div key={b.id}>
-            {selections.map((s, j) => (
+            {slip.selections.map((s, j) => (
               <section key={j} className="pt-block pt-keep">
                 <p className="pt-match">{s.match}</p>
-                {s.marketPick && <p>{s.marketPick}</p>}
-                {s.odds && <p>Odds: {s.odds}</p>}
+                {(s.marketPick || s.odds) && (
+                  <div className="pt-pick">
+                    <span>{s.marketPick}</span>
+                    {s.odds && <b className="pt-odds">{s.odds}</b>}
+                  </div>
+                )}
                 {s.kickoff && <p>{s.kickoff}</p>}
-                {s.result && <p>Status: {s.result.toUpperCase()}</p>}
               </section>
             ))}
             <section className="pt-block pt-keep">
@@ -133,7 +162,7 @@ export function PrintTicket({ ticket }: { ticket: TicketView }) {
 
       <footer className="pt-foot pt-keep">
         <p>Keep this ticket for reference.</p>
-        <p>Ticket: {ticket.publicId}</p>
+        <p>Ticket: {printedId(ticket.publicId)}</p>
         <p>Printed: {dateTime(printedAt)}</p>
       </footer>
     </div>,
