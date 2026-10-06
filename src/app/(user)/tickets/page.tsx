@@ -9,7 +9,7 @@ import { TicketsLoginPrompt } from "@/components/tickets/TicketsLoginPrompt";
 /*
  * Player "Ticket History" + "Find Ticket" — the in-person agent's ticket
  * page (TicketList), pointed at the player's own sportsbook bets.
- * ?find=1 (the "Find Ticket" menu entry) focuses the search box.
+ * ?find=1 (older "Find Ticket" links) focuses the search box.
  */
 function PlayerTickets() {
   const { data: session, status } = useSession();
