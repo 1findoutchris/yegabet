@@ -4,21 +4,20 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { signIn, useSession } from "next-auth/react";
-import {
-  ArrowDownLeft, ArrowUpRight, ChevronRight, Gamepad2, Gift, Loader2, Radio, Rocket,
-  ScanLine, ShieldCheck, Smartphone, Spade, Ticket, Trophy, UserRound,
-} from "lucide-react";
+import { Loader2, ShieldCheck, Smartphone } from "lucide-react";
 import { VMark } from "@/components/vinna/VMark";
 import { VLoader } from "@/components/vinna/VLoader";
 import { useAuthModal } from "@/contexts/AuthModalContext";
-import { useBalance } from "@/contexts/BalanceContext";
 import { startPath } from "@/lib/tgStartCore";
 import {
   atLeast, loadTelegramSdk, markTelegramSession, openExternal, rawInitData, webApp,
 } from "@/lib/telegramWebApp";
 
 /*
- * The Telegram Mini App's front door (/tg) and home screen.
+ * The Telegram Mini App's front door (/tg). Not a screen of its own: it signs
+ * the user in and then hands over to the normal VinnaBet site — the default
+ * route (/casino, where / redirects) or a deep-link target — so the Mini App
+ * looks and works exactly like vinna.bet.
  *
  *   Telegram → initData → POST /api/telegram/miniapp (validated server-side)
  *     linked   → signIn("telegram", { initData }) → normal VinnaBet session
@@ -30,14 +29,16 @@ import {
  * simply the VinnaBet site — same pages, same API routes, same wallet.
  */
 
+/** Where the website lands too: / redirects here (app/page.tsx). */
+const DEFAULT_PATH = "/casino";
+
 type Phase =
   | { kind: "boot" }
   | { kind: "browser" }
   | { kind: "signing-in" }
   | { kind: "connect"; waiting: boolean; error: string | null }
   | { kind: "stale" }
-  | { kind: "error"; message: string }
-  | { kind: "home" };
+  | { kind: "error"; message: string };
 
 type Status = {
   linked: boolean;
@@ -98,11 +99,7 @@ export function MiniApp({ botUsername }: { botUsername: string | null }) {
       return;
     }
     webApp()?.HapticFeedback?.notificationOccurred("success");
-    if (target && target !== "/tg") router.replace(target);
-    else {
-      setPhase({ kind: "home" });
-      router.refresh();
-    }
+    router.replace(target && target !== "/tg" ? target : DEFAULT_PATH);
   }, [router]);
 
   useEffect(() => {
@@ -176,8 +173,6 @@ export function MiniApp({ botUsername }: { botUsername: string | null }) {
 
   // ── render ────────────────────────────────────────────────────────────────
 
-  if (phase.kind === "home") return <Home firstName={firstName} />;
-
   return (
     <div className="fixed inset-0 z-[150] overflow-y-auto bg-[var(--v-bg-0)] v-fade-in">
       <div className="min-h-full flex flex-col items-center justify-center px-6 py-10 max-w-sm mx-auto text-center"
@@ -213,7 +208,7 @@ export function MiniApp({ botUsername }: { botUsername: string | null }) {
               <button onClick={openLogin} className="v-btn v-btn-ghost h-11 text-[13px]">Log in</button>
             </div>
             {sessionStatus === "authenticated" && session?.user && (
-              <button onClick={() => setPhase({ kind: "home" })} className="mt-4 text-[13px] font-semibold text-[color:var(--v-teal)]">
+              <button onClick={() => router.replace(startPath(toParam) ?? DEFAULT_PATH)} className="mt-4 text-[13px] font-semibold text-[color:var(--v-teal)]">
                 Continue as {session.user.name ?? session.user.username} →
               </button>
             )}
@@ -251,76 +246,6 @@ export function MiniApp({ botUsername }: { botUsername: string | null }) {
           </>
         )}
       </div>
-    </div>
-  );
-}
-
-// ── home hub ────────────────────────────────────────────────────────────────
-
-const TILES = [
-  { href: "/sports", label: "Sports", icon: Trophy },
-  { href: "/casino", label: "Casino", icon: Spade },
-  { href: "/games", label: "Games", icon: Rocket },
-  { href: "/casino/live", label: "Live", icon: Radio },
-  { href: "/tickets", label: "Bet history", icon: Ticket },
-  { href: "/check", label: "Check Ticket", icon: ScanLine },
-  { href: "/my-casino", label: "Casino history", icon: Gamepad2 },
-  { href: "/rewards", label: "Rewards", icon: Gift },
-] as const;
-
-function Home({ firstName }: { firstName: string | null }) {
-  const { data: session } = useSession();
-  const { balance, withdrawable } = useBalance();
-  const name = session?.user?.name ?? firstName ?? "Player";
-  const money = (s: string) => Number(s).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-
-  return (
-    <div className="max-w-2xl mx-auto px-4 pt-4 pb-10 flex flex-col gap-5 v-fade-up">
-      <div className="flex items-center gap-3">
-        <VMark size={40} />
-        <div className="min-w-0">
-          <p className="text-[12px] text-[color:var(--v-text-3)]">Welcome back</p>
-          <h1 className="text-[20px] font-extrabold tracking-[-0.02em] text-white truncate">{name}</h1>
-        </div>
-        <Link href="/account/settings" aria-label="Profile"
-          className="ml-auto w-10 h-10 grid place-items-center rounded-full bg-[var(--v-bg-3)] text-[color:var(--v-text-2)]">
-          <UserRound className="w-[18px] h-[18px]" />
-        </Link>
-      </div>
-
-      {/* Wallet — the real VinnaBet balance, from the same BalanceContext as the site. */}
-      <section className="rounded-[22px] bg-[var(--v-bg-2)] border border-[color:var(--v-line)] p-5">
-        <div className="flex items-center justify-between">
-          <p className="v-eyebrow">Wallet</p>
-          <Link href="/account" className="text-[12px] font-semibold text-[color:var(--v-teal)] flex items-center">
-            Details <ChevronRight className="w-3.5 h-3.5" />
-          </Link>
-        </div>
-        <p className="mt-1.5 text-[32px] font-extrabold text-white tabular-nums leading-none">
-          {money(balance)} <span className="text-[14px] font-bold text-[color:var(--v-text-3)]">ETB</span>
-        </p>
-        <p className="mt-1.5 text-[12px] text-[color:var(--v-text-3)] tabular-nums">{money(withdrawable)} ETB withdrawable</p>
-        <div className="grid grid-cols-2 gap-2.5 mt-4">
-          <Link href="/deposit" className="v-btn v-btn-primary h-11"><ArrowDownLeft className="w-4 h-4" /> Deposit</Link>
-          <Link href="/withdraw" className="v-btn v-btn-ghost h-11"><ArrowUpRight className="w-4 h-4" /> Withdraw</Link>
-        </div>
-      </section>
-
-      <nav className="grid grid-cols-4 gap-2.5" aria-label="VinnaBet">
-        {TILES.map(({ href, label, icon: Icon }) => (
-          <Link key={href} href={href}
-            className="v-press flex flex-col items-center gap-2 rounded-[18px] bg-[var(--v-bg-2)] border border-[color:var(--v-line)] py-3.5 px-1">
-            <span className="w-10 h-10 rounded-[14px] grid place-items-center bg-[var(--v-teal-a12)]">
-              <Icon className="w-[19px] h-[19px] text-[color:var(--v-teal)]" />
-            </span>
-            <span className="text-[11px] font-semibold text-white text-center leading-tight">{label}</span>
-          </Link>
-        ))}
-      </nav>
-
-      <p className="flex items-center justify-center gap-1.5 text-[11px] text-[color:var(--v-text-3)]">
-        <ShieldCheck className="w-3.5 h-3.5" /> Signed in with Telegram · same account and wallet as vinna.bet
-      </p>
     </div>
   );
 }

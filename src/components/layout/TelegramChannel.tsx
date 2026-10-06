@@ -32,7 +32,6 @@ export function TelegramChannel() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Join our Telegram channel"
-      data-tg-hide
       className="press fixed right-4 md:right-6 bottom-[calc(4.5rem+env(safe-area-inset-bottom))] md:bottom-6 z-40
                  flex items-center justify-center gap-2 rounded-full
                  h-12 w-12 md:h-auto md:w-auto md:pl-3 md:pr-4 md:py-2.5

@@ -351,9 +351,10 @@
   .animate-pop { animation-duration: 1ms; }
 }
 /* ── Telegram Mini App ─────────────────────────────────────────────────────
-   html.tg-app is set by TelegramBridge only inside Telegram. Things that make
-   no sense there (the "install the app" banner, the "join our Telegram" FAB)
-   carry data-tg-hide. Telegram draws its own header above the WebView, so the
-   site header stays as is; the bottom bar already pads by the safe area. */
+   html.tg-app is set by TelegramBridge only inside Telegram. The Mini App is
+   the website, unchanged; the only thing hidden is what can't work there —
+   the "add to home screen" banner (data-tg-hide). Telegram draws its own bar
+   above the WebView, and the site's header and bottom nav already pad by the
+   safe area. */
 html.tg-app [data-tg-hide] { display: none !important; }
 html.tg-app { overscroll-behavior: none; }
