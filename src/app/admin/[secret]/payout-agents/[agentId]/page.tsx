@@ -108,7 +108,13 @@ export default function PayoutAgentDetailPage() {
 
   async function remove() {
     if (!d) return;
-    if (!confirm(`Delete ${d.name || d.username}? This can't be undone — deactivate instead if they might come back.`)) return;
+    const typed = prompt(
+      `Permanently delete ${d.name || d.username}? This can't be undone — deactivate instead if they might come back.\n\nType their username (${d.username}) to confirm:`
+    );
+    if (typed?.trim() !== d.username) {
+      if (typed !== null) toast.error("Username didn't match — nothing deleted");
+      return;
+    }
     setActing(true);
     try {
       const res = await adminFetch(`/payout-agents/${agentId}`, { method: "DELETE" });
@@ -282,8 +288,8 @@ export default function PayoutAgentDetailPage() {
             {acting ? <Loader2 className="w-4 h-4 animate-spin" /> : <Trash2 className="w-4 h-4" />} Delete agent
           </button>
           <p className="text-[11px] text-[color:var(--text-muted)] mt-2">
-            Only possible while they have no payout history — their id is what records who paid each
-            withdrawal. Once they&rsquo;ve handled one, deactivate instead.
+            Needs everything settled first: nothing owed to them, no float or unreleased commission,
+            no open withdrawal or settlement request. Players&rsquo; withdrawal records are kept.
           </p>
         </div>
       </div>
