@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { Prisma } from "@prisma/client";
 import { TELEGRAM_CLEARED } from "@/lib/tgLink";
 import { prisma } from "@/lib/prisma";
 import { requireAdminAuth, logAdminAction, getClientIp } from "@/lib/adminAuth";
@@ -289,25 +290,43 @@ export async function DELETE(req: NextRequest, { params }: { params: Promise<{ i
     );
   }
 
-  // Every child row, oldest FK last. push_subscriptions already cascade;
-  // spin_results and spin_credit_grants carry no foreign key, so they'd be
-  // silently orphaned rather than blocking — cleared here for the same reason.
-  await prisma.$transaction([
-    prisma.user.updateMany({ where: { referredById: id }, data: { referredById: null } }),
-    prisma.transaction.deleteMany({ where: { userId: id } }),
-    prisma.bet.deleteMany({ where: { userId: id } }),
-    prisma.userBonus.deleteMany({ where: { userId: id } }),
-    prisma.withdrawalRequest.deleteMany({ where: { userId: id } }),
-    prisma.depositRequest.deleteMany({ where: { userId: id } }),
-    prisma.recentGame.deleteMany({ where: { userId: id } }),
-    prisma.favoriteGame.deleteMany({ where: { userId: id } }),
-    prisma.session.deleteMany({ where: { userId: id } }),
-    prisma.spinResult.deleteMany({ where: { userId: id } }),
-    prisma.spinCreditGrant.deleteMany({
-      where: { OR: [{ referrerId: id }, { refereeId: id }] },
-    }),
-    prisma.user.delete({ where: { id } }),
-  ]);
+  // Every child row, oldest FK last. push_subscriptions and native push
+  // tokens already cascade; spin_results and spin_credit_grants carry no
+  // foreign key, so they'd be silently orphaned rather than blocking — cleared
+  // here for the same reason. game_sessions is RESTRICT: every player who has
+  // opened a provider game has rows there, and missing it made delete fail for
+  // any active player. A new table with a userId belongs here too
+  // (tests/db/deleteUser.test.ts puts a row in each one).
+  try {
+    await prisma.$transaction([
+      prisma.user.updateMany({ where: { referredById: id }, data: { referredById: null } }),
+      prisma.transaction.deleteMany({ where: { userId: id } }),
+      prisma.bet.deleteMany({ where: { userId: id } }),
+      prisma.userBonus.deleteMany({ where: { userId: id } }),
+      prisma.withdrawalRequest.deleteMany({ where: { userId: id } }),
+      prisma.depositRequest.deleteMany({ where: { userId: id } }),
+      prisma.recentGame.deleteMany({ where: { userId: id } }),
+      prisma.favoriteGame.deleteMany({ where: { userId: id } }),
+      prisma.session.deleteMany({ where: { userId: id } }),
+      prisma.spinResult.deleteMany({ where: { userId: id } }),
+      prisma.spinCreditGrant.deleteMany({
+        where: { OR: [{ referrerId: id }, { refereeId: id }] },
+      }),
+      prisma.gameSession.deleteMany({ where: { userId: id } }),
+      prisma.user.delete({ where: { id } }),
+    ]);
+  } catch (e) {
+    // Never a bare 500: the page would only say "Network error". Name what
+    // still references the account so it's fixable (or ban instead).
+    console.error("[admin/users/delete]", e);
+    const detail = e instanceof Prisma.PrismaClientKnownRequestError
+      ? String((e.meta as { field_name?: unknown } | undefined)?.field_name ?? e.code)
+      : "database error";
+    return NextResponse.json(
+      { error: `Couldn't delete: the account is still referenced (${detail}). Ban it instead, or contact support.` },
+      { status: 409 }
+    );
+  }
 
   // The row is gone, so the log line is the only record it ever existed.
   await logAdminAction({
