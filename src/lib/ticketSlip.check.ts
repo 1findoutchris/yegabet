@@ -4,7 +4,7 @@
  * Run: `npx tsx src/lib/ticketSlip.check.ts`
  */
 import assert from "node:assert";
-import { betTotal, parseSlip, ticketTotal, withResults } from "./ticketSlip";
+import { betPayout, betTotal, formatTotal, parseSlip, providerPayout, ticketTotal, withResults } from "./ticketSlip";
 
 const leg = (team1: string, team2: string, pick: string, coeficient: number, outcome: number) => ({
   game_id: 1, team1, team2, sport: "Soccer", market_type_name: "1x2", outcome_display_name: pick,
@@ -67,4 +67,22 @@ const decided = info(41649, 2, [0, 2, 0]); // settle callback: Greece lost
   );
   assert.strictEqual(ticketTotal([{ betAmount: "20", info: placed }, { betAmount: "5", info: null }]), null,
     "one bet without odds → no ticket total rather than an understated one");
+}
+
+// ── Total: provider payout first, else stake × total odds ───────────────────
+{
+  // The user's example: 20 ETB at 346.88.
+  const combo = JSON.stringify({ detail: JSON.stringify({ amount: 20, k: 346.88, legs: [{ team1: "A", team2: "B", coeficient: 346.88 }] }) });
+  assert.strictEqual(providerPayout(combo), null, "BetBy sends no payout field");
+  assert.strictEqual(betPayout({ betAmount: "20", info: combo }), 6937.6);
+  assert.strictEqual(formatTotal(6937.6), "6,937.60");
+
+  // A payout the provider sends wins over the multiplication — root or detail.
+  const withPayout = JSON.stringify({ detail: JSON.stringify({ amount: 20, k: 346.88, potential_win: 6900, legs: [] }) });
+  assert.strictEqual(betPayout({ betAmount: "20", info: withPayout }), 6900);
+  assert.strictEqual(providerPayout({ possibleWin: "123.456" }), 123.46);
+
+  // Settled win amounts are NOT a possible payout (0 while open/lost).
+  assert.strictEqual(providerPayout({ winAmount: 500, totalWin: 500, win_amount: "500" }), null);
+  assert.strictEqual(providerPayout({ payout: 0 }), null, "zero isn't a payout");
 }

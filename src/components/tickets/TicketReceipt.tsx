@@ -1,7 +1,7 @@
 "use client";
 
 import { CheckCircle2, XCircle, Clock } from "lucide-react";
-import { betTotal, parseSlip, rawInfoText, ticketTotal, withResults, type LegResult } from "@/lib/ticketSlip";
+import { betPayout, formatTotal, parseSlip, rawInfoText, ticketTotal, withResults, type LegResult } from "@/lib/ticketSlip";
 import { PrintTicket } from "./PrintTicket";
 import { displayCode } from "@/lib/ticketCode";
 
@@ -65,7 +65,7 @@ export function TicketReceipt({ ticket }: { ticket: TicketView }) {
         {ticket.bets.map((b, i) => {
           const slip = parseSlip(b.info);
           const selections = withResults(slip, b.resultInfo, b.settled);
-          const potential = betTotal(b.betAmount, slip.totalOdds);
+          const potential = betPayout(b);
           return (
             <div key={b.id} className="text-[12px] mb-3 last:mb-0">
               {slip.selections.length > 0 ? (
@@ -105,7 +105,7 @@ export function TicketReceipt({ ticket }: { ticket: TicketView }) {
                   <div className="py-2 text-right space-y-0.5 break-inside-avoid">
                     <p>Stake: {Number(b.betAmount).toLocaleString()} ETB</p>
                     {potential !== null && !b.settled && (
-                      <p>Potential Win: {potential.toLocaleString(undefined, { maximumFractionDigits: 2 })} ETB</p>
+                      <p>Potential Win: {formatTotal(potential)} ETB</p>
                     )}
                     {b.settled && Number(b.winAmount) > 0 && (
                       <p className="text-emerald-500 font-semibold">Won: {Number(b.winAmount).toLocaleString()} ETB</p>
@@ -139,15 +139,19 @@ export function TicketReceipt({ ticket }: { ticket: TicketView }) {
         })}
       </div>
 
-      <div className="border-t border-dashed border-[color:var(--border-muted)] pt-3 flex justify-between text-[13px] font-bold break-inside-avoid">
-        <span>Total stake</span><span>{Number(ticket.totalStake).toLocaleString()} ETB</span>
-      </div>
-      {/* Possible payout of the whole ticket: each bet's stake × total odds. */}
+      {/* Total = the ticket's possible payout: the provider's payout figure if
+          it sent one, else each bet's stake × total odds (lib/ticketSlip).
+          Stake stays in each bet's block above. A ticket with no odds at all
+          (not a sportsbook bet) has no payout to show, so it keeps the stake. */}
       {(() => {
         const total = ticketTotal(ticket.bets);
-        return total !== null && (
-          <div className="flex justify-between text-[14px] font-extrabold text-[color:var(--text-primary)] mt-1">
-            <span>Total:</span><span>{total.toLocaleString(undefined, { maximumFractionDigits: 2 })} ETB</span>
+        return total !== null ? (
+          <div className="border-t border-dashed border-[color:var(--border-muted)] pt-3 flex justify-between text-[14px] font-extrabold text-[color:var(--text-primary)] break-inside-avoid">
+            <span>Total:</span><span>{formatTotal(total)} ETB</span>
+          </div>
+        ) : (
+          <div className="border-t border-dashed border-[color:var(--border-muted)] pt-3 flex justify-between text-[13px] font-bold break-inside-avoid">
+            <span>Total stake</span><span>{Number(ticket.totalStake).toLocaleString()} ETB</span>
           </div>
         );
       })()}
