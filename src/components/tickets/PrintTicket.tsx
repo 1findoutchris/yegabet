@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useSyncExternalStore } from "react";
 import { createPortal, flushSync } from "react-dom";
-import { parseSlip, rawInfoText, ticketTotal } from "@/lib/ticketSlip";
+import { formatTotal, parseSlip, rawInfoText, ticketTotal } from "@/lib/ticketSlip";
 import { code128B } from "@/lib/code128";
 import { displayCode } from "@/lib/ticketCode";
 import type { TicketView } from "./TicketReceipt";
@@ -60,9 +60,9 @@ function Barcode({ value }: { value: string }) {
   );
 }
 
-function Row({ label, value, strong, bold }: { label: string; value: React.ReactNode; strong?: boolean; bold?: boolean }) {
+function Row({ label, value, strong }: { label: string; value: React.ReactNode; strong?: boolean }) {
   return (
-    <div className={strong ? "pt-row pt-strong" : bold ? "pt-row pt-bold" : "pt-row"}>
+    <div className={strong ? "pt-row pt-strong" : "pt-row"}>
       <span>{label}</span>
       <span className="pt-val">{value}</span>
     </div>
@@ -98,9 +98,10 @@ export function PrintTicket({ ticket }: { ticket: TicketView }) {
 
   if (!onClient) return null;
 
-  // Possible payout of the whole ticket (stake × total odds per bet) — the
-  // same figure as "Total" on the screen receipt. Printed once, under
-  // TOTAL STAKE.
+  // Possible payout of the whole ticket — the provider's payout if it sent
+  // one, else stake × total odds per bet. Same figure as "Total" on the
+  // screen receipt. Replaces TOTAL STAKE in the summary; the stake is still
+  // printed in each bet's block above.
   const total = ticketTotal(ticket.bets);
 
   return createPortal(
@@ -159,8 +160,9 @@ export function PrintTicket({ ticket }: { ticket: TicketView }) {
       })}
 
       <section className="pt-total pt-keep">
-        <Row label="TOTAL STAKE:" value={money(ticket.totalStake)} strong />
-        {total !== null && <Row label="Total:" value={money(total)} bold />}
+        {total !== null
+          ? <Row label="TOTAL:" value={`${formatTotal(total)} ${CURRENCY}`} strong />
+          : <Row label="TOTAL STAKE:" value={money(ticket.totalStake)} strong />}
         {Number(ticket.totalWin) > 0 && <Row label="WIN:" value={money(ticket.totalWin)} strong />}
         {ticket.paidAt && <Row label="Paid:" value={dateTime(ticket.paidAt)} />}
       </section>

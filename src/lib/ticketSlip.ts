@@ -168,12 +168,39 @@ export function parseSlip(info: unknown): Slip {
 }
 
 /**
- * A bet's possible payout: stake × total odds — the same figure the slip
- * showed as "Potential Win". The provider sends only the stake (`amount`) and
- * the total odds (`k`) at placement; the actual win arrives on settlement as
- * winAmount. Rounded to cents. Null when the slip carries no total odds
- * (a non-sportsbook bet), since there is nothing to multiply.
+ * Possible-payout fields a provider might send with a bet. BetBy's payload
+ * (verified) carries only the stake (`amount`) and total odds (`k`), so today
+ * these never match — but if the sportsbook starts sending its own figure, it
+ * wins over our multiplication. Deliberately NOT here: winAmount / totalWin /
+ * win_amount — in this system those are the amount actually won on
+ * settlement (0 while open or lost), not what the ticket can pay.
  */
+const PAYOUT_KEYS = [
+  "payout", "possibleWin", "possible_win", "possiblePayout", "possible_payout",
+  "potentialWin", "potential_win", "potentialPayout", "potential_payout",
+  "returnAmount", "return_amount", "totalReturn", "total_return",
+];
+
+/** A payout figure the provider sent, from the payload root or its `detail`. */
+export function providerPayout(info: unknown): number | null {
+  const obj = (v: unknown): Record<string, unknown> | null => {
+    if (typeof v === "string") {
+      try { v = JSON.parse(v); } catch { return null; }
+    }
+    return v && typeof v === "object" && !Array.isArray(v) ? (v as Record<string, unknown>) : null;
+  };
+  const root = obj(info);
+  for (const o of [root, obj(root?.detail)]) {
+    if (!o) continue;
+    for (const k of PAYOUT_KEYS) {
+      const n = typeof o[k] === "number" || typeof o[k] === "string" ? Number(o[k]) : NaN;
+      if (Number.isFinite(n) && n > 0) return Math.round(n * 100) / 100;
+    }
+  }
+  return null;
+}
+
+/** Stake × total odds, rounded to the cent. Null without total odds. */
 export function betTotal(betAmount: string | number, totalOdds: string | null): number | null {
   if (!totalOdds) return null;
   const v = Number(betAmount) * Number(totalOdds);
@@ -181,18 +208,31 @@ export function betTotal(betAmount: string | number, totalOdds: string | null): 
 }
 
 /**
- * The whole ticket's possible payout: the sum of its bets' totals. Null if any
- * bet has no total odds — a partial sum would understate what the ticket pays.
+ * A bet's possible payout ("Total"): the provider's own payout figure when it
+ * sent one, otherwise stake × total odds.
+ */
+export function betPayout(bet: { betAmount: string | number; info: unknown }): number | null {
+  return providerPayout(bet.info) ?? betTotal(bet.betAmount, parseSlip(bet.info).totalOdds);
+}
+
+/**
+ * The whole ticket's possible payout: the sum of its bets'. Null if any bet
+ * has neither a payout nor total odds — a partial sum would understate it.
  */
 export function ticketTotal(bets: { betAmount: string | number; info: unknown }[]): number | null {
   if (bets.length === 0) return null;
   let sum = 0;
   for (const b of bets) {
-    const t = betTotal(b.betAmount, parseSlip(b.info).totalOdds);
+    const t = betPayout(b);
     if (t === null) return null;
     sum += t;
   }
   return Math.round(sum * 100) / 100;
+}
+
+/** "6937.6" → "6,937.60": payout totals always show two decimals. */
+export function formatTotal(n: number): string {
+  return n.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 
 const selectionKey = (s: SlipSelection) => `${s.match}|${s.marketPick ?? ""}`.toLowerCase();
