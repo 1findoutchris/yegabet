@@ -83,6 +83,56 @@ Code: `src/app/api/telegram/verify/route.ts` (webhook), `src/lib/tgBot.ts`
 No account → "No VinnaBet account was found for this phone number." with
 **Create Account** / **Try Another Account Method**.
 
+## Registration through the bot
+
+While the player bot is configured (`TELEGRAM_VERIFY_BOT_TOKEN` +
+`TELEGRAM_VERIFY_BOT_USERNAME`), **no account is created until Telegram has
+verified the phone number.** Code: `src/lib/tgSignup.ts`,
+`src/lib/tgSignupCore.ts`, `src/lib/authHandoff.ts`,
+`src/app/api/auth/register/*`, the webhook.
+
+1. The form posts to `/api/auth/register`. The server checks the number
+   (Ethiopian only, not already registered) and rate limits it (10 per IP per
+   hour, 5 per number per hour). It then stores a **pending request in Redis
+   for 15 minutes**. The password is bcrypt-hashed before it is stored.
+   Response `202 { pending: { token, url } }` plus an httpOnly `vb_signup`
+   cookie that ties the request to this browser.
+2. The page shows **Verify your phone number → Verify with Telegram**.
+3. `url` is `https://t.me/<bot>?start=<32 random hex>`. It carries no phone,
+   name or password.
+4. The bot asks for the user's contact (**Share my phone number**). A typed
+   number, a forwarded contact or someone else's card is refused.
+5. The webhook checks `contact.user_id === from.id` and that the E.164
+   number equals the form's number. On a mismatch, the bot and the page both
+   explain it (showing last 3 digits only), and **Edit details** lets the
+   user fix the form. Resubmitting from the same browser kills the old link.
+6. Only then is the account created, with `telegramUserId` linked in the same
+   insert. Duplicates are prevented by a per-request lock, the
+   `phone`/`telegramUserId` unique indexes, a "phone already taken" check and
+   "one Telegram = one account". Repeated contacts or taps answer "already
+   done" and never create a second account.
+7. The bot sends **Play in Telegram** (the Mini App, already linked, so it
+   signs in by itself) and **Continue on Website**
+   (`/auth/continue?t=<handoff>`).
+8. The registration page polls `/api/auth/register/status`. Only the browser
+   holding the `vb_signup` cookie gets details and, once, a login handoff.
+   Any other browser just sees `pending` / `verified`.
+
+**Login handoffs** are 32 random bytes in Redis, valid for 2 minutes (page)
+or 10 minutes (bot button). They are consumed atomically (`GETDEL`) by the
+`handoff` NextAuth provider and exchanged for the normal session cookie. The
+continue page exchanges the token from JavaScript, not on the GET, so link
+scanners can't burn it. It also wipes the token from the address bar
+immediately.
+
+Someone who finishes verification on a different device either taps
+**Continue on Website** there, or logs in with their phone and password.
+Their original page shows "Account created — log in".
+
+Rollback: `TELEGRAM_SIGNUP_DISABLED=true` restores the previous SMS /
+`AUTH_OTP_CHANNEL` signup. Existing logins, password reset and the bot's
+other features are unchanged.
+
 ## Mini App sign-in
 
 ```

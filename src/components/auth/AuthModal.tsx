@@ -90,6 +90,10 @@ export function AuthModal() {
   const [tgUrl, setTgUrl] = useState("");
   const [tgToken, setTgToken] = useState("");
   const [tgMode, setTgMode] = useState(false);
+  // Telegram-verified registration (server-decided): the account is created
+  // by the bot once the contact matches; this token tracks that request.
+  const [suToken, setSuToken] = useState("");
+  const [suExpired, setSuExpired] = useState(false);
 
   const firstRef = useRef<HTMLInputElement>(null);
 
@@ -105,6 +109,8 @@ export function AuthModal() {
     setTgToken("");
     setTgUrl("");
     setTgMode(false);
+    setSuToken("");
+    setSuExpired(false);
   }, [tab]);
 
   // Resend cooldown countdown (seconds).
@@ -190,6 +196,48 @@ export function AuthModal() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tgToken, tab, open]);
 
+  // Telegram-verified registration: wait for the bot to create the account.
+  // Only this browser (its httpOnly cookie) is told details or handed the
+  // one-time login; same polling trade-off as above.
+  useEffect(() => {
+    if (!suToken || !open) return;
+    let alive = true;
+    const id = setInterval(async () => {
+      try {
+        const res = await fetch("/api/auth/register/status", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ token: suToken }),
+        });
+        const d = await res.json();
+        if (!alive || !res.ok) return;
+
+        if (d.status === "verified") {
+          setSuToken("");
+          if (!d.handoff) { setRegSuccess(true); return; }
+          setRegLoading(true);
+          const result = await signIn("handoff", { token: d.handoff, redirect: false });
+          setRegLoading(false);
+          if (result?.error) { setRegSuccess(true); return; }
+          finishSignedIn(storedParam("promo") || undefined);
+        } else if (d.status === "expired") {
+          setSuToken("");
+          setSuExpired(true);
+          setRegError("This verification link has expired.");
+        } else if (d.status === "failed") {
+          const msg = SIGNUP_FAILURES[d.reason as string]?.(d.phoneEnding, d.sharedEnding) ?? "Verification failed.";
+          setRegError(msg);
+          // Terminal: this request can't succeed any more.
+          if (d.reason === "telegram-in-use" || d.reason === "phone-taken") setSuToken("");
+        } else {
+          setRegError("");
+        }
+      } catch { /* keep polling */ }
+    }, 2000);
+    return () => { alive = false; clearInterval(id); };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [suToken, open]);
+
   if (!open) return null;
 
   async function handleLogin(e: React.FormEvent) {
@@ -234,6 +282,8 @@ export function AuthModal() {
       const data = await res.json();
       if (!res.ok) { setRegError(data.error ?? "Could not send code."); setRegLoading(false); return; }
 
+      if (data.signup === "telegram") { await startTelegramSignup(); return; }
+
       if (data.skip) { await doRegister(); return; }
 
       if (data.telegram) {
@@ -253,6 +303,50 @@ export function AuthModal() {
     } catch {
       setRegError("Network error — please try again.");
       setRegLoading(false);
+    }
+  }
+
+  // Telegram-verified registration: store the request server-side (no account
+  // yet) and send the user to the bot with a one-time link.
+  async function startTelegramSignup() {
+    setRegLoading(true);
+    setRegError("");
+    setSuExpired(false);
+    try {
+      const refCode = regRef.trim().toUpperCase() || storedParam("ref") || undefined;
+      const promoCode = storedParam("promo") || undefined;
+      const res = await fetch("/api/auth/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: regName.trim(),
+          phone: regPhone.trim(),
+          password: regPassword,
+          ...(refCode ? { referralCode: refCode } : {}),
+          ...(promoCode ? { promoCode } : {}),
+        }),
+      });
+      const data = await res.json();
+      setRegLoading(false);
+      if (!res.ok || !data.pending) { setRegError(data.error ?? "Registration failed."); return; }
+      setTgMode(true);
+      setTgUrl(data.pending.url);
+      setSuToken(data.pending.token);
+      setRegStep("telegram");
+    } catch {
+      setRegError("Network error — please try again.");
+      setRegLoading(false);
+    }
+  }
+
+  /** Signed in to a brand-new account: leave the modal and land. */
+  function finishSignedIn(promoCode: string | undefined) {
+    close();
+    if (promoCode) {
+      try { sessionStorage.removeItem("signup:promo"); } catch { /* private mode */ }
+      router.push("/rewards/spin");
+    } else {
+      router.refresh();
     }
   }
 
@@ -588,11 +682,18 @@ export function AuthModal() {
               <TgVerifyStep
                 phone={regPhone.trim()}
                 url={tgUrl}
-                waiting={!!tgToken}
-                busyLabel="Confirmed! Creating your account…"
+                waiting={!!tgToken || !!suToken}
+                busyLabel={regLoading ? "Signing you in…" : "Confirmed! Creating your account…"}
                 error={regError}
                 backLabel="← Edit details"
-                onBack={() => { setTgToken(""); setRegStep("form"); setRegError(""); }}
+                onBack={() => { setTgToken(""); setSuToken(""); setSuExpired(false); setRegStep("form"); setRegError(""); }}
+                {...(suToken || suExpired
+                  ? {
+                      title: "Verify your phone number",
+                      cta: "Verify with Telegram",
+                      onRetry: suExpired ? () => startTelegramSignup() : undefined,
+                    }
+                  : {})}
               />
             ) : regStep === "code" ? (
               <>
@@ -658,7 +759,7 @@ export function AuthModal() {
  * the Telegram app, and a popup opened from an async callback is exactly what
  * mobile browsers block.
  */
-function TgVerifyStep({ phone, url, waiting, busyLabel, error, backLabel, onBack }: {
+function TgVerifyStep({ phone, url, waiting, busyLabel, error, backLabel, onBack, title, cta = "Open Telegram", onRetry }: {
   phone: string;
   url: string;
   waiting: boolean;
@@ -666,23 +767,38 @@ function TgVerifyStep({ phone, url, waiting, busyLabel, error, backLabel, onBack
   error: string;
   backLabel: string;
   onBack: () => void;
+  title?: string;
+  cta?: string;
+  /** Shown instead of the Telegram button once the link has expired. */
+  onRetry?: () => void;
 }) {
   return (
     <>
+      {title && <p className="text-center text-[color:var(--text-primary)] font-bold text-base">{title}</p>}
       <p className="text-center text-[color:var(--text-secondary)] text-sm pb-1">
         Confirm{" "}
         <span className="text-[color:var(--text-primary)] font-semibold">{phone}</span>{" "}
         on Telegram — tap <span className="text-[color:var(--text-primary)] font-semibold">Share my phone number</span> in the chat that opens.
       </p>
-      <a
-        href={url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="shine glow-gold w-full h-11 rounded-xl bg-gold-grad text-[#09090B] font-bold text-sm transition-transform hover:scale-[1.02] flex items-center justify-center gap-2"
-      >
-        <Send className="w-4 h-4" />
-        Open Telegram
-      </a>
+      {onRetry ? (
+        <button
+          type="button"
+          onClick={onRetry}
+          className="shine glow-gold w-full h-11 rounded-xl bg-gold-grad text-[#09090B] font-bold text-sm transition-transform hover:scale-[1.02] flex items-center justify-center gap-2"
+        >
+          Start again
+        </button>
+      ) : (
+        <a
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="shine glow-gold w-full h-11 rounded-xl bg-gold-grad text-[#09090B] font-bold text-sm transition-transform hover:scale-[1.02] flex items-center justify-center gap-2"
+        >
+          <Send className="w-4 h-4" />
+          {cta}
+        </a>
+      )}
       {/* Nothing is in flight once something has failed — a spinner left
           turning under an error message reads as "still trying". */}
       {!error && (
@@ -700,6 +816,17 @@ function TgVerifyStep({ phone, url, waiting, busyLabel, error, backLabel, onBack
     </>
   );
 }
+
+/** What the registration page says when the bot couldn't verify the number. */
+const SIGNUP_FAILURES: Record<string, (entered?: string, shared?: string) => string> = {
+  mismatch: (entered, shared) =>
+    `Your Telegram number ends in ${shared ?? "…"}, but you entered a number ending in ${entered ?? "…"}. ` +
+    "Edit your number, or open the link from the Telegram account that uses it.",
+  "not-own-contact": () => "Share your own contact with the Share my phone number button in the bot.",
+  "not-ethiopian": () => "Your Telegram number isn't an Ethiopian mobile. Use the Telegram account with the number you entered.",
+  "telegram-in-use": () => "This Telegram account already has a VinnaBet account. Log in to it instead.",
+  "phone-taken": () => "This phone number already has an account. Log in instead.",
+};
 
 const FIELD ="w-full h-10 rounded-xl bg-[var(--bg-elevated)] border border-[color:var(--border-base)] text-[color:var(--text-primary)] text-sm placeholder:text-[color:var(--text-muted)] focus:outline-none focus:border-[color:var(--border-accent)] transition-colors";
 

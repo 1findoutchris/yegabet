@@ -4,6 +4,7 @@ import { prisma } from "@/lib/prisma";
 import bcrypt from "bcryptjs";
 import { z } from "zod";
 import { telegramSignIn } from "@/lib/tgLink";
+import { handoffSignIn } from "@/lib/authHandoff";
 
 const loginSchema = z.object({
   phone: z.string().min(1),
@@ -90,6 +91,27 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           email: user.email ?? undefined,
           role: user.role,
           via: "telegram",
+        };
+      },
+    }),
+    // One-time login handoff (lib/authHandoff.ts): issued when a
+    // Telegram-verified registration completes, consumed here exactly once
+    // and exchanged for the normal session cookie.
+    Credentials({
+      id: "handoff",
+      name: "Handoff",
+      credentials: { token: { label: "token", type: "text" } },
+      async authorize(credentials) {
+        const token = typeof credentials?.token === "string" ? credentials.token : "";
+        const user = await handoffSignIn(token);
+        if (!user) return null;
+        return {
+          id: user.id,
+          username: user.username,
+          name: user.name ?? user.username,
+          phone: user.phone,
+          email: user.email ?? undefined,
+          role: user.role,
         };
       },
     }),

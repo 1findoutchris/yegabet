@@ -3,7 +3,12 @@ import { prisma } from "@/lib/prisma";
 import { normalizePhone, isEthiopianAttempt } from "@/lib/sms";
 import { verifyOtp } from "@/lib/otp";
 import { signupOtpDisabled } from "@/lib/otpCore";
-import { getRewardConfig } from "@/lib/rewardConfig";
+import { createUserAccount } from "@/lib/registration";
+import { getClientIp } from "@/lib/adminAuth";
+import { redis } from "@/lib/redis";
+import { phoneVariants } from "@/lib/tgLinkCore";
+import { telegramSignupEnabled } from "@/lib/tgSignupCore";
+import { createPending, newBrowserSecret, PENDING_TTL, SIGNUP_COOKIE, SIGNUP_COOKIE_PATH } from "@/lib/tgSignup";
 import bcrypt from "bcryptjs";
 import { z } from "zod";
 
@@ -20,98 +25,6 @@ const registerSchema = z.object({
   promoCode: z.string().trim().min(1).max(64).optional(),
 });
 
-function generateUsername(phone: string): string {
-  const digits = phone.replace(/\D/g, "");
-  return "user_" + digits.slice(-8);
-}
-
-/**
- * Award the referrer a prize-wheel spin for a genuine signup.
- *
- * Three guards, because a spin is backed by real prizes and registration is
- * free:
- *   1. The referee must have passed SMS OTP — the caller's own gate verdict, so
- *      a signup that skipped verification (foreign number, or OTP_DISABLED)
- *      carries no anti-sybil signal and earns the referrer nothing. They still
- *      get the first-deposit cash bonus, which is gated on money instead.
- *   2. One grant per referee for all time — enforced by the unique index on
- *      SpinCreditGrant.refereeId, not by application code.
- *   3. A rolling 7-day ceiling per referrer. Rolling rather than a calendar
- *      week: no timezone question, and no Monday-midnight reset to front-load.
- *
- * Never allowed to fail the registration — a spin credit is not worth turning a
- * created account into a 500 the user retries with a now-taken phone number.
- */
-async function grantSpinCreditForReferral(
-  referrerId: string | undefined,
-  refereeId: string,
-  otpVerified: boolean,
-): Promise<void> {
-  if (!referrerId) return;
-  if (!otpVerified) return; // guard 1: no OTP, no spin
-
-  try {
-    const { spinWheel } = await getRewardConfig();
-    if (!spinWheel.enabled || spinWheel.creditsPerReferral <= 0) return;
-
-    await prisma.$transaction(async (tx) => {
-      // ponytail: count-then-insert, so two simultaneous signups under one code
-      // can both pass at cap−1. Off-by-one on a cap is not a payout bug.
-      // Upgrade path if it ever matters: SELECT ... FOR UPDATE on the referrer.
-      const weekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
-      const recent = await tx.spinCreditGrant.count({
-        where: { referrerId, createdAt: { gte: weekAgo } },
-      });
-      if (recent >= spinWheel.maxCreditsPerWeek) return; // guard 3
-
-      // guard 2: a repeat referee throws P2002 and aborts the transaction.
-      await tx.spinCreditGrant.create({
-        data: { referrerId, refereeId, credits: spinWheel.creditsPerReferral },
-      });
-      await tx.user.update({
-        where: { id: referrerId },
-        data: { spinCredits: { increment: spinWheel.creditsPerReferral } },
-      });
-    });
-  } catch (e) {
-    console.error("[auth/register] spin credit grant failed", e);
-  }
-}
-
-/**
- * Claim an admin-issued rigged link for this signup. Single-use: the compare-
- * and-set below is the entire mechanism.
- *
- * Two concurrent `UPDATE … WHERE claimedByUserId IS NULL` contend on the row;
- * the loser re-evaluates the predicate against the committed version and
- * updates 0 rows. Exactly one winner, always — same shape as the spinCredits
- * debit and the stock decrement in the spin route.
- *
- * Deliberately NOT gated on OTP, unlike the signup coupons: the link is
- * admin-issued and single-use, so its blast radius is one prize the admin
- * chose — there is nothing to farm.
- */
-async function claimPromoLink(code: string | undefined, userId: string): Promise<void> {
-  if (!code) return;
-  try {
-    await prisma.spinLink.updateMany({
-      where: { code, claimedByUserId: null },
-      data: { claimedByUserId: userId, claimedAt: new Date() },
-    });
-    // Silent on count 0. A dead or wrong code must not tell the caller which it
-    // was — that turns the signup form into an oracle for guessing codes.
-  } catch (e) {
-    console.error("[auth/register] promo link claim failed", e);
-  }
-}
-
-// djb2 hash → 6-char base36 code (same algorithm as in account API)
-function computeReferralCode(id: string): string {
-  let h = 5381;
-  for (const c of id) h = ((h << 5) + h + c.charCodeAt(0)) >>> 0;
-  return h.toString(36).toUpperCase().padStart(6, "0").slice(-6);
-}
-
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
@@ -123,6 +36,14 @@ export async function POST(req: NextRequest) {
     }
 
     const { name, phone, password, referralCode, code, promoCode } = parsed.data;
+
+    // Telegram-verified registration: no account is created here, whatever
+    // the request carries (a `code`, OTP_DISABLED, a foreign number — none of
+    // them skip it). The bot webhook creates the account once the user's own
+    // Telegram contact proves the number. See lib/tgSignup.ts.
+    if (telegramSignupEnabled()) {
+      return startTelegramSignup(req, { name, phone, password, referralCode, promoCode });
+    }
 
     const existing = await prisma.user.findUnique({ where: { phone } });
     if (existing) {
@@ -162,61 +83,75 @@ export async function POST(req: NextRequest) {
       if (!otp.ok) return NextResponse.json({ error: otp.error }, { status: otp.status });
     }
 
-    // Resolve referrer (ignore invalid/expired codes silently)
-    let referredById: string | undefined;
-    if (referralCode) {
-      const referrer = await prisma.user.findUnique({
-        where: { referralCode: referralCode.toUpperCase() },
-        select: { id: true },
-      });
-      if (referrer) referredById = referrer.id;
-    }
-
     const passwordHash = await bcrypt.hash(password, 12);
-    let username = generateUsername(phone);
-
-    const usernameExists = await prisma.user.findUnique({ where: { username } });
-    if (usernameExists) {
-      username = username + "_" + Date.now().toString().slice(-4);
-    }
-
-    // Welcome coupons. Granted inside the create rather than as a follow-up
-    // update: zero extra queries, atomic with the row, and structurally
-    // impossible to double-grant. Foreign numbers still get none — no rail, no
-    // signal — but OTP_DISABLED does not withhold them: with it on, every
-    // Ethiopian signup counts, and the exposure is `signupCredits` per fake
-    // number rather than per referrer. Keep the number small while it's off.
-    // getRewardConfig is React-cached, so the referral helper's later call is
-    // deduped against this one.
-    const { spinWheel } = await getRewardConfig();
-    const signupCredits =
-      ethiopian && spinWheel.enabled ? Math.max(0, spinWheel.signupCredits) : 0;
-
-    const user = await prisma.user.create({
-      data: {
-        name,
-        phone,
-        username,
-        passwordHash,
-        spinCredits: signupCredits,
-        ...(referredById ? { referredById } : {}),
-      },
-      select: { id: true },
+    await createUserAccount({
+      name, phone, passwordHash, referralCode, promoCode, ethiopian, otpVerified,
     });
-
-    // Store the user's own referral code so it's searchable
-    const ownCode = computeReferralCode(user.id);
-    await prisma.user.update({
-      where: { id: user.id },
-      data: { referralCode: ownCode },
-    });
-
-    await grantSpinCreditForReferral(referredById, user.id, otpVerified);
-    await claimPromoLink(promoCode, user.id);
 
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error("[auth/register]", error);
     return NextResponse.json({ error: "Registration failed" }, { status: 500 });
   }
+}
+
+// ── Telegram-verified registration ──────────────────────────────────────────
+
+const PER_IP_PER_HOUR = 10;
+const PER_PHONE_PER_HOUR = 5;
+
+/** Fixed-window counter; true while under `limit`. */
+async function underLimit(key: string, limit: number, windowSec: number): Promise<boolean> {
+  await redis.set(key, "0", "EX", windowSec, "NX");
+  return (await redis.incr(key)) <= limit;
+}
+
+async function startTelegramSignup(
+  req: NextRequest,
+  f: { name: string; phone: string; password: string; referralCode?: string; promoCode?: string },
+) {
+  // The form only takes Ethiopian mobiles, and the contact is matched in E.164,
+  // so anything else could never be verified.
+  const e164 = normalizePhone(f.phone);
+  if (!e164) {
+    return NextResponse.json(
+      { error: "Enter a valid Ethiopian phone number (9XXXXXXXX or 7XXXXXXXX)." },
+      { status: 400 },
+    );
+  }
+
+  if (!(await underLimit(`su:rl:ip:${getClientIp(req)}`, PER_IP_PER_HOUR, 3600))) {
+    return NextResponse.json({ error: "Too many sign-up attempts. Please try again later." }, { status: 429 });
+  }
+  if (!(await underLimit(`su:rl:phone:${e164}`, PER_PHONE_PER_HOUR, 3600))) {
+    return NextResponse.json({ error: "Too many attempts for this number. Please try again later." }, { status: 429 });
+  }
+
+  const existing = await prisma.user.findFirst({ where: { phone: { in: phoneVariants(e164) } }, select: { id: true } });
+  if (existing) {
+    return NextResponse.json({ error: "Phone number already registered" }, { status: 409 });
+  }
+
+  const secret = newBrowserSecret();
+  const { token, url, expiresIn } = await createPending(
+    {
+      name: f.name,
+      phone: e164,
+      passwordHash: await bcrypt.hash(f.password, 12),
+      ...(f.referralCode ? { referralCode: f.referralCode.toUpperCase() } : {}),
+      ...(f.promoCode ? { promoCode: f.promoCode } : {}),
+    },
+    secret,
+    req.cookies.get(SIGNUP_COOKIE)?.value,
+  );
+
+  const res = NextResponse.json({ pending: { token, url, expiresIn } }, { status: 202 });
+  res.cookies.set(SIGNUP_COOKIE, secret, {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "lax",
+    path: SIGNUP_COOKIE_PATH,
+    maxAge: PENDING_TTL,
+  });
+  return res;
 }

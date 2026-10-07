@@ -50,6 +50,26 @@ export function miniAppUrl(to?: string, env: NodeJS.ProcessEnv = process.env): s
   return u.toString();
 }
 
+/**
+ * The bot's "Continue on Website" link: a one-time login handoff, exchanged
+ * on the page by signIn("handoff") (app/(user)/auth/continue). "" when the
+ * site URL isn't HTTPS, so the button is left out rather than broken.
+ */
+export function continueOnWebsiteUrl(handoff: string, env: NodeJS.ProcessEnv = process.env): string {
+  const site = (env.NEXT_PUBLIC_APP_URL ?? "").replace(/\/+$/, "");
+  if (!site.startsWith("https://")) return "";
+  return `${site}/auth/continue?t=${encodeURIComponent(handoff)}`;
+}
+
+export function signupDoneMarkup(handoff: string): Markup | undefined {
+  const site = continueOnWebsiteUrl(handoff);
+  const rows = [
+    webAppButton("🎰 Play in Telegram"),
+    ...(site ? [[{ text: "🌐 Continue on Website", url: site }]] : []),
+  ].filter((r) => r.length);
+  return rows.length ? { inline_keyboard: rows } : undefined;
+}
+
 export function supportUrl(env: NodeJS.ProcessEnv = process.env): string {
   return env.TELEGRAM_SUPPORT_URL || "https://t.me/vinnabet";
 }

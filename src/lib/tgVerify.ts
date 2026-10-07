@@ -110,6 +110,11 @@ export async function bindChat(chatId: number, token: string): Promise<void> {
   await redis.set(chatKey(chatId), token, "EX", TTL_PENDING);
 }
 
+/** Drop this chat's verification binding (a newer flow took over the chat). */
+export async function unbindChat(chatId: number): Promise<void> {
+  await redis.del(chatKey(chatId));
+}
+
 export async function tokenForChat(chatId: number): Promise<string | null> {
   return redis.get(chatKey(chatId));
 }

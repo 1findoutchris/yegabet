@@ -9,6 +9,7 @@ import {
   pendingForToken,
   tokenForChat,
   tgvSend,
+  unbindChat,
   CONTACT_KEYBOARD,
   REMOVE_KEYBOARD,
   type Purpose,
@@ -31,8 +32,19 @@ import {
   mainMenu,
   noAccountMarkup,
   openAppMarkup,
+  signupDoneMarkup,
 } from "@/lib/tgBot";
 import { allowCheck, checkTicket, normalizeCode } from "@/lib/ticketCheck";
+import { BOT_HANDOFF_TTL, issueHandoff } from "@/lib/authHandoff";
+import { lastDigits } from "@/lib/tgSignupCore";
+import {
+  bindSignupChat,
+  completeSignup,
+  getPending,
+  signupTokenForChat,
+  unbindSignupChat,
+  type PendingSignup,
+} from "@/lib/tgSignup";
 import { formatCurrency } from "@/lib/utils";
 
 /*
@@ -158,11 +170,16 @@ async function handleMessage(msg: Msg): Promise<void> {
   const command = parseCommand(text);
 
   if (command?.cmd === "start" && command.arg) {
-    // A signup / reset link — the original job, unchanged.
+    // A registration link (lib/tgSignup) or a password-reset / legacy signup
+    // verification link (lib/tgVerify). Same token shape, separate stores.
     const token = startPayload(text);
     if (token && SIGNUP_TOKEN.test(token)) {
+      const registration = await getPending(token);
+      if (registration) return startRegistration(chatId, from, token, registration);
+
       const pending = await pendingForToken(token);
       if (!pending) return tgvSend(chatId, EXPIRED);
+      await unbindSignupChat(chatId);
       await bindChat(chatId, token);
       return tgvSend(chatId, prompt(pending.purpose, pending.phone), CONTACT_KEYBOARD);
     }
@@ -252,7 +269,11 @@ async function handleCallback(cq: Record<string, unknown>): Promise<void> {
 // ── contact: signup verification or account linking ─────────────────────────
 
 async function handleContact(chatId: number, from: TgSender, contact: Record<string, unknown>): Promise<void> {
-  // A pending signup / reset owns the contact, exactly as before linking existed.
+  // A registration in progress owns the contact first.
+  const regToken = await signupTokenForChat(chatId);
+  if (regToken) return handleRegistrationContact(chatId, from, regToken, contact);
+
+  // A pending reset / legacy signup verification next, exactly as before.
   const token = await tokenForChat(chatId);
   const pending = token ? await pendingForToken(token) : null;
   if (token && pending) {
@@ -370,4 +391,114 @@ async function sendUnlink(chatId: number, from: TgSender): Promise<void> {
       : "This Telegram isn't linked to a VinnaBet account.",
     REMOVE,
   );
+}
+
+// ── Telegram-verified registration (lib/tgSignup.ts) ───────────────────────
+
+async function startRegistration(chatId: number, from: TgSender, token: string, reg: PendingSignup): Promise<void> {
+  if (reg.state === "done" && reg.userId) return sendRegistrationDone(chatId, from, reg.userId, null);
+
+  // This chat now answers the registration, not an older verification.
+  await unbindChat(chatId);
+  await bindSignupChat(chatId, token);
+  return botSend(
+    chatId,
+    "📝 <b>Create your VinnaBet account</b>\n\n" +
+      `You're registering the phone number ending in <b>${lastDigits(reg.phone)}</b>.\n\n` +
+      "Only continue if you just filled in the VinnaBet sign-up form yourself.\n\n" +
+      "Tap <b>Share my phone number</b> below — it has to be this Telegram account's own number. " +
+      "A number typed into the chat can't be accepted.",
+    SHARE_CONTACT_KEYBOARD,
+  );
+}
+
+async function handleRegistrationContact(
+  chatId: number,
+  from: TgSender,
+  token: string,
+  contact: Record<string, unknown>,
+): Promise<void> {
+  const r = await completeSignup(token, contact, from);
+
+  switch (r.kind) {
+    case "busy":
+      return; // a duplicate delivery of the same contact is already being handled
+    case "expired":
+      await unbindSignupChat(chatId);
+      return botSend(
+        chatId,
+        "This sign-up link has expired. Go back to VinnaBet and tap <b>Create Account</b> again.",
+        REMOVE,
+      );
+    case "created":
+      await unbindSignupChat(chatId);
+      return sendRegistrationDone(chatId, from, r.userId, r.accountNo);
+    case "already":
+      await unbindSignupChat(chatId);
+      if (r.sameTelegram) return sendRegistrationDone(chatId, from, r.userId, r.accountNo);
+      return botSend(chatId, "This registration was already completed from another Telegram account.", REMOVE);
+    case "failed":
+      return sendRegistrationFailure(chatId, r.reason, r.pending);
+  }
+}
+
+async function sendRegistrationFailure(chatId: number, reason: string, reg: PendingSignup): Promise<void> {
+  const entered = lastDigits(reg.phone);
+  switch (reason) {
+    case "not-own-contact":
+      return botSend(
+        chatId,
+        "That's someone else's contact card. Use the <b>Share my phone number</b> button below — it has to be your own number.",
+        SHARE_CONTACT_KEYBOARD,
+      );
+    case "mismatch":
+      return botSend(
+        chatId,
+        `❌ <b>The numbers don't match</b>\n\n` +
+          `This Telegram account's number ends in <b>${esc(reg.sharedEnding ?? "")}</b>, ` +
+          `but the sign-up form has a number ending in <b>${entered}</b>.\n\n` +
+          "Go back to the VinnaBet sign-up page and correct your number, or open the link " +
+          "from the Telegram account that uses the number you entered.",
+        REMOVE,
+      );
+    case "not-ethiopian":
+      return botSend(
+        chatId,
+        "This Telegram account's number isn't an Ethiopian mobile, so it can't verify a VinnaBet account. " +
+          "Go back to the sign-up page and use the Telegram account with your Ethiopian number.",
+        REMOVE,
+      );
+    case "telegram-in-use":
+      await botSend(chatId, "This Telegram account already has a VinnaBet account — no new account was created.", REMOVE);
+      return botSend(chatId, "Open VinnaBet to sign in to it:", openAppMarkup());
+    case "phone-taken":
+      return botSend(
+        chatId,
+        "That phone number already has a VinnaBet account, so no new account was created. " +
+          "Log in on VinnaBet with your number and password (or use Forgot password).",
+        REMOVE,
+      );
+  }
+}
+
+/**
+ * The account exists. Offer both ways in: the Mini App (the account is
+ * already linked to this Telegram, so it signs in by itself) and the website
+ * through a fresh one-time login handoff — issued only to the Telegram
+ * account that verified the number.
+ */
+async function sendRegistrationDone(chatId: number, from: TgSender, userId: string, accountNo: number | null): Promise<void> {
+  const user = await linkedUser(from.id);
+  if (!user || user.id !== userId) {
+    return botSend(chatId, "This registration was already completed. Log in on VinnaBet to continue.", REMOVE);
+  }
+  await botSend(
+    chatId,
+    `✅ <b>Number confirmed — welcome to VinnaBet!</b>\n\nYour account <b>#${accountNo ?? user.accountNo}</b> is ready ` +
+      "and linked to this Telegram.",
+    REMOVE,
+  );
+  const handoff = await issueHandoff(userId, BOT_HANDOFF_TTL);
+  const markup = signupDoneMarkup(handoff);
+  return botSend(chatId, "Where would you like to play?", markup);
 }

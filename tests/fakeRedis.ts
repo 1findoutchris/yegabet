@@ -78,6 +78,13 @@ class FakeRedis {
     return "OK";
   }
 
+  /** GETDEL: read and remove in one step — what makes a token single-use. */
+  async getdel(key: string): Promise<string | null> {
+    const v = this.live(key)?.value ?? null;
+    this.store.delete(key);
+    return v;
+  }
+
   async del(...keys: string[]): Promise<number> {
     const flat = keys.flat() as string[];
     let n = 0;
