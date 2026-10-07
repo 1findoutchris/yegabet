@@ -4,6 +4,7 @@ import { normalizePhone, isEthiopianAttempt, sendSms } from "@/lib/sms";
 import { claimCooldown, releaseCooldown, issueOtp } from "@/lib/otp";
 import { signupOtpDisabled, otpChannel } from "@/lib/otpCore";
 import { beginVerification, verifyBotConfigured } from "@/lib/tgVerify";
+import { telegramSignupEnabled } from "@/lib/tgSignupCore";
 import { z } from "zod";
 
 const schema = z.object({
@@ -32,6 +33,21 @@ export async function POST(req: NextRequest) {
       { error: "Enter a valid Ethiopian phone number (9XXXXXXXX or 7XXXXXXXX)." },
       { status: 400 }
     );
+  }
+
+  // Telegram-verified registration: the form submits straight to
+  // /api/auth/register, which stores a pending request and returns the bot
+  // link — nothing is sent from here, and no `skip` (foreign number,
+  // OTP_DISABLED) applies, because the account only ever comes into existence
+  // after the bot has matched the user's own contact.
+  if (purpose === "register" && telegramSignupEnabled()) {
+    if (!e164) {
+      return NextResponse.json(
+        { error: "Enter a valid Ethiopian phone number (9XXXXXXXX or 7XXXXXXXX)." },
+        { status: 400 }
+      );
+    }
+    return NextResponse.json({ signup: "telegram" });
   }
 
   // Genuinely non-Ethiopian number → no SMS rail, so no OTP.
