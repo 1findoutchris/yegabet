@@ -52,6 +52,10 @@ async function giveHistory(userId: string) {
     prisma.spinResult.create({
       data: { userId, label: "No win", kind: "NONE", reference: `spin-${userId}` },
     }),
+    // Every player who has opened a provider game has one — the RESTRICT
+    // foreign key that used to make delete 500 for any active player.
+    prisma.gameSession.create({ data: { userId, sessionId: `gs-${userId}`, gameId: "g1" } }),
+    prisma.nativePushToken.create({ data: { userId, token: `np-${userId}`, platform: "android" } }),
   ]);
 }
 
@@ -84,6 +88,8 @@ describe("DELETE /api/admin/users/[id]", () => {
       prisma.pushSubscription.count({ where: { userId: user.id } }),
       prisma.spinResult.count({ where: { userId: user.id } }),
       prisma.spinCreditGrant.count({ where: { referrerId: user.id } }),
+      prisma.gameSession.count({ where: { userId: user.id } }),
+      prisma.nativePushToken.count({ where: { userId: user.id } }),
     ]);
     expect(counts).toEqual(new Array(counts.length).fill(0));
 
