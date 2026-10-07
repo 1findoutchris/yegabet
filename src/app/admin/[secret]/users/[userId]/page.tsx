@@ -339,6 +339,7 @@ export default function UserDetailPage() {
             </button>
           )}
 
+          {user.role !== "ADMIN" && user.role !== "SUPERADMIN" && (
           <div className="pt-3 border-t border-[color:var(--border-muted)]">
             <button onClick={deleteUser} disabled={acting}
               className="w-full h-10 rounded-xl bg-[#FF3B5C] text-white font-bold text-[13px] hover:bg-[#E02F4E] transition-colors disabled:opacity-40 flex items-center justify-center gap-2">
@@ -346,9 +347,11 @@ export default function UserDetailPage() {
             </button>
             <p className="text-[11px] text-[color:var(--text-muted)] mt-2">
               Erases the account, its bets, requests and ledger. Not reversible —
-              ban instead if you might want it back. Requires a zero balance and no open payout.
+              ban instead if you might want it back. Requires a zero balance and no open payout
+              (and, for an in-person agent, no ticket still in play or won but unpaid).
             </p>
           </div>
+          )}
         </div>
       </div>
 

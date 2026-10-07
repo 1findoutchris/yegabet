@@ -1,7 +1,7 @@
 "use client";
 
 import { CheckCircle2, XCircle, Clock } from "lucide-react";
-import { parseSlip, rawInfoText, withResults, type LegResult } from "@/lib/ticketSlip";
+import { betTotal, parseSlip, rawInfoText, ticketTotal, withResults, type LegResult } from "@/lib/ticketSlip";
 import { PrintTicket } from "./PrintTicket";
 import { displayCode } from "@/lib/ticketCode";
 
@@ -65,7 +65,7 @@ export function TicketReceipt({ ticket }: { ticket: TicketView }) {
         {ticket.bets.map((b, i) => {
           const slip = parseSlip(b.info);
           const selections = withResults(slip, b.resultInfo, b.settled);
-          const potential = slip.totalOdds ? Number(b.betAmount) * Number(slip.totalOdds) : null;
+          const potential = betTotal(b.betAmount, slip.totalOdds);
           return (
             <div key={b.id} className="text-[12px] mb-3 last:mb-0">
               {slip.selections.length > 0 ? (
@@ -142,6 +142,15 @@ export function TicketReceipt({ ticket }: { ticket: TicketView }) {
       <div className="border-t border-dashed border-[color:var(--border-muted)] pt-3 flex justify-between text-[13px] font-bold break-inside-avoid">
         <span>Total stake</span><span>{Number(ticket.totalStake).toLocaleString()} ETB</span>
       </div>
+      {/* Possible payout of the whole ticket: each bet's stake × total odds. */}
+      {(() => {
+        const total = ticketTotal(ticket.bets);
+        return total !== null && (
+          <div className="flex justify-between text-[14px] font-extrabold text-[color:var(--text-primary)] mt-1">
+            <span>Total:</span><span>{total.toLocaleString(undefined, { maximumFractionDigits: 2 })} ETB</span>
+          </div>
+        );
+      })()}
       {Number(ticket.totalWin) > 0 && (
         <div className="flex justify-between text-[13px] font-bold text-emerald-500 mt-1">
           <span>Win</span><span>{Number(ticket.totalWin).toLocaleString()} ETB</span>

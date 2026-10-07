@@ -231,12 +231,19 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ id:
 }
 
 /**
- * Remove an agent entirely — for one created by mistake, or who never started.
+ * Delete a payout or cash agent.
  *
- * Refused the moment they have any history. Their id is what says who paid a
- * given withdrawal and what the platform owed them; deleting the row would
- * either orphan those records or quietly rewrite them, and neither is worth it
- * when deactivating already takes them out of routing for good.
+ * Allowed once nothing about them is still owed or in flight:
+ *   - the platform owes them nothing (payout rail settled),
+ *   - they hold no cash float and no unreleased cash commission,
+ *   - no withdrawal is assigned to them and still pending/processing,
+ *   - no settlement request of theirs is still pending.
+ * Settle, take the float back, or reassign first — the refusal says which.
+ *
+ * Then their ledger and settlement requests go with them. Players' withdrawal
+ * records are kept (the money moved, the player's history must stay), just no
+ * longer attributed to an agent; players bound to them as their cash agent are
+ * freed. The admin log keeps the agent's totals as the record.
  */
 export async function DELETE(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const authError = await requireAdminAuth(req);
@@ -245,31 +252,59 @@ export async function DELETE(req: NextRequest, { params }: { params: Promise<{ i
   const { id } = await params;
   const agent = await prisma.withdrawalAgent.findUnique({
     where: { id },
-    select: { id: true, username: true, name: true },
+    select: { id: true, username: true, name: true, isCashAgent: true },
   });
   if (!agent) return NextResponse.json({ error: "Not found" }, { status: 404 });
 
-  const [requests, ledgerRows] = await Promise.all([
+  const [ledger, openWithdrawals, openSettlements, handled] = await Promise.all([
+    prisma.withdrawalAgentTxn.groupBy({ by: ["type"], where: { agentId: id }, _sum: { amount: true } }),
+    prisma.withdrawalRequest.count({ where: { withdrawalAgentId: id, status: { in: ["PENDING", "PROCESSING"] } } }),
+    prisma.agentPayoutRequest.count({ where: { agentId: id, status: "PENDING" } }),
     prisma.withdrawalRequest.count({ where: { withdrawalAgentId: id } }),
-    prisma.withdrawalAgentTxn.count({ where: { agentId: id } }),
   ]);
+  const pos = agentPosition(ledger);
 
-  if (requests > 0 || ledgerRows > 0) {
-    return NextResponse.json(
-      {
-        error: `This agent has handled ${requests} withdrawal${requests === 1 ? "" : "s"} — deleting would erase who paid them. Deactivate instead.`,
-      },
-      { status: 400 },
-    );
+  const refuse = (error: string) => NextResponse.json({ error }, { status: 400 });
+  if (pos.outstanding !== 0) {
+    return refuse(`The platform still owes this agent ETB ${pos.outstanding.toFixed(2)}. Settle it first.`);
+  }
+  if (pos.float !== 0) {
+    return refuse(`This agent still holds ETB ${pos.float.toFixed(2)} of float. Take it back first.`);
+  }
+  if (pos.pendingCommission !== 0) {
+    return refuse(`This agent has ETB ${pos.pendingCommission.toFixed(2)} of unreleased commission. Settle it first.`);
+  }
+  if (openWithdrawals > 0) {
+    return refuse(`${openWithdrawals} withdrawal${openWithdrawals === 1 ? " is" : "s are"} still assigned to this agent. Complete or reject ${openWithdrawals === 1 ? "it" : "them"} first.`);
+  }
+  if (openSettlements > 0) {
+    return refuse("This agent has a settlement request still pending. Pay or reject it first.");
   }
 
-  await prisma.withdrawalAgent.delete({ where: { id } });
+  await prisma.$transaction([
+    prisma.withdrawalRequest.updateMany({ where: { withdrawalAgentId: id }, data: { withdrawalAgentId: null } }),
+    prisma.user.updateMany({ where: { cashAgentId: id }, data: { cashAgentId: null } }),
+    prisma.withdrawalAgentTxn.deleteMany({ where: { agentId: id } }),
+    prisma.agentPayoutRequest.deleteMany({ where: { agentId: id } }),
+    prisma.withdrawalAgent.delete({ where: { id } }),
+  ]);
+
   await logAdminAction({
     action: "DELETE_PAYOUT_AGENT",
     targetId: id,
     targetType: "WithdrawalAgent",
     ipAddress: getClientIp(req),
-    metadata: { username: agent.username, name: agent.name },
+    metadata: {
+      username: agent.username,
+      name: agent.name,
+      isCashAgent: agent.isCashAgent,
+      withdrawalsHandled: handled,
+      paidOut: pos.paidOut,
+      commission: pos.commission,
+      settled: pos.settled,
+      cashIn: pos.cashIn,
+      cashOut: pos.cashOut,
+    },
   });
 
   return NextResponse.json({ success: true });

@@ -239,13 +239,15 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ id:
 }
 
 /**
- * Erase a player and everything hanging off them. Irreversible — a ban
+ * Erase an account and everything hanging off it. Irreversible — a ban
  * (POST action:"ban") is the reversible option and stays the right tool for
  * anything you might want back.
  *
- * The refusals below are deliberate: an account holding money, with a payout in
- * flight, or wired to an agent/affiliate portal cannot be deleted without
- * losing something that has to reconcile. Settle it first, then delete.
+ * Any account except an admin can be deleted: players, in-person agents, and
+ * AGENT / AFFILIATE accounts (whose portal row goes with them). The refusals
+ * below are the cases where deleting would lose money or a customer's claim:
+ * money on the account, a payout in flight, or — for an in-person agent — a
+ * printed ticket a walk-in customer may still collect on. Settle those first.
  */
 export async function DELETE(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const authError = await requireAdminAuth(req);
@@ -271,14 +273,30 @@ export async function DELETE(req: NextRequest, { params }: { params: Promise<{ i
     );
   }
 
-  // AGENT/AFFILIATE users own a portal row keyed by userId with no foreign key
-  // to enforce it, so deleting them would leave a portal pointing at nobody.
-  if (user.role !== "USER") {
-    return NextResponse.json(
-      { error: `${user.role} accounts can't be deleted here — ban the account instead.` },
-      { status: 400 }
-    );
+  if (user.role === "ADMIN" || user.role === "SUPERADMIN") {
+    return NextResponse.json({ error: "Admin accounts can't be deleted." }, { status: 400 });
   }
+
+  // An in-person agent's printed tickets belong to walk-in customers. One
+  // still in play, or won and not yet paid out, is money someone can still
+  // claim at the counter — deleting it would leave them holding paper that
+  // checks as "not found".
+  if (user.role === "IN_PERSON_AGENT") {
+    const live = await prisma.ticket.count({ where: { agentId: id, status: { in: ["PLACED", "WON"] } } });
+    if (live > 0) {
+      return NextResponse.json(
+        { error: `This agent has ${live} ticket${live === 1 ? "" : "s"} still in play or won but unpaid. Settle or pay them first.` },
+        { status: 400 }
+      );
+    }
+  }
+
+  // AGENT / AFFILIATE portal rows are keyed by userId with no foreign key, so
+  // they're found and removed here rather than cascading.
+  const [agentRow, affiliateRow] = await Promise.all([
+    prisma.agent.findUnique({ where: { userId: id }, select: { id: true } }),
+    prisma.affiliate.findUnique({ where: { userId: id }, select: { id: true } }),
+  ]);
 
   const pending = await prisma.withdrawalRequest.count({
     where: { userId: id, status: { in: ["PENDING", "PROCESSING"] } },
@@ -300,6 +318,24 @@ export async function DELETE(req: NextRequest, { params }: { params: Promise<{ i
   try {
     await prisma.$transaction([
       prisma.user.updateMany({ where: { referredById: id }, data: { referredById: null } }),
+      // Portal rows (AGENT / AFFILIATE): their players stay, just unattached.
+      ...(agentRow
+        ? [
+            prisma.user.updateMany({ where: { agentId: agentRow.id }, data: { agentId: null } }),
+            prisma.agentDeposit.deleteMany({ where: { agentId: agentRow.id } }),
+            prisma.agent.delete({ where: { id: agentRow.id } }),
+          ]
+        : []),
+      ...(affiliateRow
+        ? [
+            prisma.user.updateMany({ where: { affiliateId: affiliateRow.id }, data: { affiliateId: null } }),
+            prisma.affiliate.delete({ where: { id: affiliateRow.id } }),
+          ]
+        : []),
+      // In-person agent tickets (only settled ones remain, see above). Their
+      // bets point at the agent's transactions, so they go first.
+      prisma.ticketBet.deleteMany({ where: { ticket: { agentId: id } } }),
+      prisma.ticket.deleteMany({ where: { agentId: id } }),
       prisma.transaction.deleteMany({ where: { userId: id } }),
       prisma.bet.deleteMany({ where: { userId: id } }),
       prisma.userBonus.deleteMany({ where: { userId: id } }),
@@ -335,7 +371,7 @@ export async function DELETE(req: NextRequest, { params }: { params: Promise<{ i
     targetType: "User",
     note: `@${user.username} · ${user.phone}`,
     ipAddress: getClientIp(req),
-    metadata: { username: user.username, phone: user.phone },
+    metadata: { username: user.username, phone: user.phone, role: user.role },
   });
 
   return NextResponse.json({ success: true });

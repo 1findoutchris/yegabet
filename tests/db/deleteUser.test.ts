@@ -119,16 +119,80 @@ describe("DELETE /api/admin/users/[id]", () => {
     expect(await prisma.user.findUnique({ where: { id: user.id } })).not.toBeNull();
   });
 
-  test("refuses an agent account, whose portal row has no foreign key to cascade", async () => {
-    const user = await makeUser();
-    await prisma.user.update({ where: { id: user.id }, data: { role: "AGENT" } });
-
-    const { status } = await del(user.id);
-    expect(status).toBe(400);
-    expect(await prisma.user.findUnique({ where: { id: user.id } })).not.toBeNull();
-  });
-
   test("404s on an unknown id", async () => {
     expect((await del("nope")).status).toBe(404);
+  });
+});
+
+describe("DELETE /api/admin/users/[id] — every role except admin", () => {
+  const setRole = (id: string, role: "AGENT" | "AFFILIATE" | "IN_PERSON_AGENT" | "ADMIN" | "SUPERADMIN") =>
+    prisma.user.update({ where: { id }, data: { role } });
+
+  test.each(["ADMIN", "SUPERADMIN"] as const)("refuses %s", async (role) => {
+    const u = await makeUser();
+    await setRole(u.id, role);
+    const { status, body } = await del(u.id);
+    expect(status).toBe(400);
+    expect(body.error).toMatch(/Admin accounts/);
+    expect(await prisma.user.findUnique({ where: { id: u.id } })).not.toBeNull();
+  });
+
+  test("AGENT: portal row removed, its players kept and detached", async () => {
+    const u = await makeUser();
+    await setRole(u.id, "AGENT");
+    const agent = await prisma.agent.create({ data: { userId: u.id, code: `AG${u.id.slice(-6)}` } });
+    await prisma.agentDeposit.create({ data: { agentId: agent.id, amount: 10, reference: `ad-${u.id}` } });
+    const player = await makeUser();
+    await prisma.user.update({ where: { id: player.id }, data: { agentId: agent.id } });
+
+    const { status, body } = await del(u.id);
+    expect(status, JSON.stringify(body)).toBe(200);
+    expect(await prisma.agent.findUnique({ where: { id: agent.id } })).toBeNull();
+    expect(await prisma.agentDeposit.count({ where: { agentId: agent.id } })).toBe(0);
+    expect((await prisma.user.findUnique({ where: { id: player.id } }))?.agentId).toBeNull();
+  });
+
+  test("AFFILIATE: portal row removed, its players kept and detached", async () => {
+    const u = await makeUser();
+    await setRole(u.id, "AFFILIATE");
+    const aff = await prisma.affiliate.create({ data: { userId: u.id, code: `AF${u.id.slice(-6)}` } });
+    const player = await makeUser();
+    await prisma.user.update({ where: { id: player.id }, data: { affiliateId: aff.id } });
+
+    const { status } = await del(u.id);
+    expect(status).toBe(200);
+    expect(await prisma.affiliate.findUnique({ where: { id: aff.id } })).toBeNull();
+    expect((await prisma.user.findUnique({ where: { id: player.id } }))?.affiliateId).toBeNull();
+  });
+
+  async function agentWithTicket(status: string) {
+    const u = await makeUser();
+    await setRole(u.id, "IN_PERSON_AGENT");
+    const txn = await prisma.transaction.create({
+      data: { userId: u.id, type: "BET", status: "COMPLETED", amount: 20, balanceBefore: 20, balanceAfter: 0, reference: `t-${u.id}-${status}` },
+    });
+    await prisma.ticketCheckCode.create({ data: { code: `P-${u.id.slice(-8).toUpperCase()}`, transactionId: txn.id } });
+    const ticket = await prisma.ticket.create({
+      data: { publicId: `T-${u.id.slice(-6).toUpperCase()}`, agentId: u.id, status, totalStake: 20 },
+    });
+    await prisma.ticketBet.create({ data: { ticketId: ticket.id, transactionId: txn.id, betAmount: 20 } });
+    return { u, ticket };
+  }
+
+  test.each(["PLACED", "WON"])("IN_PERSON_AGENT with a %s ticket: refused (a customer can still collect)", async (st) => {
+    const { u } = await agentWithTicket(st);
+    const { status, body } = await del(u.id);
+    expect(status).toBe(400);
+    expect(body.error).toMatch(/still in play or won but unpaid/);
+    expect(await prisma.user.findUnique({ where: { id: u.id } })).not.toBeNull();
+  });
+
+  test.each(["LOST", "PAID"])("IN_PERSON_AGENT with only %s tickets: deleted with tickets", async (st) => {
+    const { u, ticket } = await agentWithTicket(st);
+    const { status, body } = await del(u.id);
+    expect(status, JSON.stringify(body)).toBe(200);
+    expect(await prisma.user.findUnique({ where: { id: u.id } })).toBeNull();
+    expect(await prisma.ticket.findUnique({ where: { id: ticket.id } })).toBeNull();
+    expect(await prisma.ticketBet.count({ where: { ticketId: ticket.id } })).toBe(0);
   });
 });

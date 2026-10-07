@@ -1,9 +1,9 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { toast } from "sonner";
-import { Loader2, ShieldOff, ShieldCheck, Save, Receipt } from "lucide-react";
+import { Loader2, ShieldOff, ShieldCheck, Save, Receipt, Trash2 } from "lucide-react";
 import { useAdminFetch } from "../../useAdmin";
 
 /*
@@ -48,7 +48,8 @@ const fmt = (n: number) => n.toLocaleString(undefined, { maximumFractionDigits: 
 
 export default function InPersonAgentDetailPage() {
   const adminFetch = useAdminFetch();
-  const { agentId } = useParams<{ agentId: string }>();
+  const { agentId, secret } = useParams<{ agentId: string; secret: string }>();
+  const router = useRouter();
 
   const [data, setData] = useState<Detail | null>(null);
   const [rate, setRate] = useState("");
@@ -73,7 +74,31 @@ export default function InPersonAgentDetailPage() {
     toast.success("Saved");
     load();
   }
-// Receipts need the x-admin-secret header, so fetch as blob and open an
+  /** Same delete as the Users page. Refused while money is on the account or
+   *  a ticket is still in play / won but unpaid; the toast says which. */
+  async function remove() {
+    if (!data) return;
+    const { username } = data.agent;
+    const typed = prompt(
+      `Permanently delete in-person agent @${username}, their tickets and history?\n\nType the username to confirm:`
+    );
+    if (typed?.trim() !== username) {
+      if (typed !== null) toast.error("Username didn't match — nothing deleted");
+      return;
+    }
+    setSaving(true);
+    try {
+      const res = await adminFetch(`/users/${agentId}`, { method: "DELETE" });
+      const j = await res.json().catch(() => ({}));
+      if (!res.ok) { toast.error(j.error ?? "Delete failed"); return; }
+      toast.success(`@${username} deleted`);
+      router.push(`/admin/${secret}/in-person-agents`);
+    } finally {
+      setSaving(false);
+    }
+  }
+
+  // Receipts need the x-admin-secret header, so fetch as blob and open an
   // object URL — a plain <a href> wouldn't carry the header.
   async function openReceipt(ticketId: string) {
     const res = await adminFetch(`/tickets/${ticketId}/receipt`);
@@ -113,6 +138,10 @@ export default function InPersonAgentDetailPage() {
                 agent.isActive ? "bg-red-950/40 text-[color:var(--red)]" : "bg-emerald-950/40 text-emerald-400"
               }`}>
               {agent.isActive ? <><ShieldOff className="w-3.5 h-3.5" /> Disable</> : <><ShieldCheck className="w-3.5 h-3.5" /> Enable</>}
+            </button>
+            <button onClick={remove} disabled={saving}
+              className="flex items-center gap-1 px-3 py-2 rounded-lg bg-[#FF3B5C] text-white text-[12px] font-bold disabled:opacity-40">
+              <Trash2 className="w-3.5 h-3.5" /> Delete
             </button>
           </div>
         </div>

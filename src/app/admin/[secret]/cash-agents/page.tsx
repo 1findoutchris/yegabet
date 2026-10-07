@@ -4,7 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { toast } from "sonner";
 import {
-  Loader2, Plus, Copy, Check, ShieldOff, ShieldCheck, Wallet, HandCoins,
+  Loader2, Plus, Copy, Check, ShieldOff, ShieldCheck, Wallet, HandCoins, Trash2,
 } from "lucide-react";
 import { useAdminFetch } from "../useAdmin";
 
@@ -165,6 +165,28 @@ export default function CashAgentsPage() {
     }
   }
 
+  /** Same delete as the payout-agent page — refused while float, commission or
+   *  an open withdrawal is still on them; the toast says which. */
+  async function remove(a: CashAgent) {
+    const typed = prompt(
+      `Permanently delete cash agent ${a.name || a.username}?\n\nType their username (${a.username}) to confirm:`
+    );
+    if (typed?.trim() !== a.username) {
+      if (typed !== null) toast.error("Username didn't match — nothing deleted");
+      return;
+    }
+    setBusy(true);
+    try {
+      const res = await adminFetch(`/payout-agents/${a.id}`, { method: "DELETE" });
+      const j = await res.json().catch(() => ({}));
+      if (!res.ok) { toast.error(j.error ?? "Delete failed"); return; }
+      toast.success(`${a.name || a.username} deleted`);
+      await load();
+    } finally {
+      setBusy(false);
+    }
+  }
+
   const totalFloat = agents.reduce((s, a) => s + a.float, 0);
   const totalDue = agents.reduce((s, a) => s + a.pendingCommission, 0);
 
@@ -286,6 +308,11 @@ export default function CashAgentsPage() {
                     className="p-2 rounded-lg text-[color:var(--text-muted)] hover:text-[color:var(--text-primary)] disabled:opacity-40"
                     title={a.isActive ? "Deactivate" : "Activate"}>
                     {a.isActive ? <ShieldCheck className="w-4 h-4 text-[color:var(--green)]" /> : <ShieldOff className="w-4 h-4" />}
+                  </button>
+                  <button onClick={() => remove(a)} disabled={busy}
+                    className="p-2 rounded-lg text-[color:var(--text-muted)] hover:text-[color:var(--red)] disabled:opacity-40"
+                    title="Delete agent" aria-label="Delete agent">
+                    <Trash2 className="w-4 h-4" />
                   </button>
                 </div>
               </div>
