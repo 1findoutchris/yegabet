@@ -167,6 +167,34 @@ export function parseSlip(info: unknown): Slip {
   return { selections, totalOdds, betType };
 }
 
+/**
+ * A bet's possible payout: stake × total odds — the same figure the slip
+ * showed as "Potential Win". The provider sends only the stake (`amount`) and
+ * the total odds (`k`) at placement; the actual win arrives on settlement as
+ * winAmount. Rounded to cents. Null when the slip carries no total odds
+ * (a non-sportsbook bet), since there is nothing to multiply.
+ */
+export function betTotal(betAmount: string | number, totalOdds: string | null): number | null {
+  if (!totalOdds) return null;
+  const v = Number(betAmount) * Number(totalOdds);
+  return Number.isFinite(v) ? Math.round(v * 100) / 100 : null;
+}
+
+/**
+ * The whole ticket's possible payout: the sum of its bets' totals. Null if any
+ * bet has no total odds — a partial sum would understate what the ticket pays.
+ */
+export function ticketTotal(bets: { betAmount: string | number; info: unknown }[]): number | null {
+  if (bets.length === 0) return null;
+  let sum = 0;
+  for (const b of bets) {
+    const t = betTotal(b.betAmount, parseSlip(b.info).totalOdds);
+    if (t === null) return null;
+    sum += t;
+  }
+  return Math.round(sum * 100) / 100;
+}
+
 const selectionKey = (s: SlipSelection) => `${s.match}|${s.marketPick ?? ""}`.toLowerCase();
 
 /**

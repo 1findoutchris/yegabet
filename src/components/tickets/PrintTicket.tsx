@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useSyncExternalStore } from "react";
 import { createPortal, flushSync } from "react-dom";
-import { parseSlip, rawInfoText } from "@/lib/ticketSlip";
+import { betTotal, parseSlip, rawInfoText } from "@/lib/ticketSlip";
 import { code128B } from "@/lib/code128";
 import { displayCode } from "@/lib/ticketCode";
 import type { TicketView } from "./TicketReceipt";
@@ -60,9 +60,9 @@ function Barcode({ value }: { value: string }) {
   );
 }
 
-function Row({ label, value, strong }: { label: string; value: React.ReactNode; strong?: boolean }) {
+function Row({ label, value, strong, bold }: { label: string; value: React.ReactNode; strong?: boolean; bold?: boolean }) {
   return (
-    <div className={strong ? "pt-row pt-strong" : "pt-row"}>
+    <div className={strong ? "pt-row pt-strong" : bold ? "pt-row pt-bold" : "pt-row"}>
       <span>{label}</span>
       <span className="pt-val">{value}</span>
     </div>
@@ -113,7 +113,8 @@ export function PrintTicket({ ticket }: { ticket: TicketView }) {
 
       {ticket.bets.map((b, i) => {
         const slip = parseSlip(b.info);
-        const potential = slip.totalOdds ? Number(b.betAmount) * Number(slip.totalOdds) : null;
+        // Possible payout: stake × total odds (lib/ticketSlip.betTotal).
+        const total = betTotal(b.betAmount, slip.totalOdds);
         const won = b.settled && Number(b.winAmount) > 0;
 
         if (slip.selections.length === 0) {
@@ -148,7 +149,7 @@ export function PrintTicket({ ticket }: { ticket: TicketView }) {
                 <Row label="Total Odds:" value={Number(slip.totalOdds).toLocaleString(undefined, { maximumFractionDigits: 2 })} />
               )}
               <Row label="Stake:" value={money(b.betAmount)} />
-              {potential !== null && !b.settled && <Row label="Potential Win:" value={money(potential)} />}
+              {total !== null && <Row label="Total:" value={money(total)} bold />}
               {won && <Row label="Won:" value={money(b.winAmount)} />}
             </section>
           </div>

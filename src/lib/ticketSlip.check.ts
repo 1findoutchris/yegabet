@@ -4,7 +4,7 @@
  * Run: `npx tsx src/lib/ticketSlip.check.ts`
  */
 import assert from "node:assert";
-import { parseSlip, withResults } from "./ticketSlip";
+import { betTotal, parseSlip, ticketTotal, withResults } from "./ticketSlip";
 
 const leg = (team1: string, team2: string, pick: string, coeficient: number, outcome: number) => ({
   game_id: 1, team1, team2, sport: "Soccer", market_type_name: "1x2", outcome_display_name: pick,
@@ -52,4 +52,19 @@ const decided = info(41649, 2, [0, 2, 0]); // settle callback: Greece lost
 // ── settled with no settle payload: no stale "open" marks ───────────────────
 {
   assert.deepStrictEqual(withResults(parseSlip(placed), null, true).map((s) => s.result), [null, null, null]);
+}
+
+// ── Total (possible payout) = stake × total odds ────────────────────────────
+{
+  assert.strictEqual(betTotal(100, "8.50"), 850, "the example: 100 ETB at 8.50");
+  assert.strictEqual(betTotal("20", parseSlip(placed).totalOdds), 381.1, "20 × 19.05498, to the cent");
+  assert.strictEqual(betTotal(100, null), null, "no odds → no total");
+  assert.strictEqual(ticketTotal([{ betAmount: "20", info: placed }]), 381.1);
+  assert.strictEqual(
+    ticketTotal([{ betAmount: "20", info: placed }, { betAmount: "10", info: placed }]),
+    571.65,
+    "two bets: the totals add up",
+  );
+  assert.strictEqual(ticketTotal([{ betAmount: "20", info: placed }, { betAmount: "5", info: null }]), null,
+    "one bet without odds → no ticket total rather than an understated one");
 }
