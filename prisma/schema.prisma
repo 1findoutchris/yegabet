@@ -933,3 +933,23 @@ model CatalogBackup {
 
   @@map("catalog_backups")
 }
+
+// Provider GGR fee agreements (admin → Provider GGR). Append-only: a change
+// is a new row with its own effective date, never an edit, so a period is
+// always billed at the rate that was in force for it (src/lib/providerGgrCore).
+// providerKey is "<integration>:<provider code>", or "<integration>:*" for the
+// integration-wide default.
+model ProviderFeeRate {
+  id             String   @id @default(cuid())
+  providerKey    String
+  ratePct        Decimal  @db.Decimal(5, 2) // 0.00–100.00
+  // net_floor | net_credit | per_round — how a negative-GGR period is treated
+  negativePolicy String
+  effectiveFrom  DateTime @db.Date // first day it applies, report timezone
+  changedBy      String // admin username from the session
+  note           String?
+  createdAt      DateTime @default(now())
+
+  @@index([providerKey, effectiveFrom])
+  @@map("provider_fee_rates")
+}

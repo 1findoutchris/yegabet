@@ -24,6 +24,11 @@ export async function requireAdminAuth(req: NextRequest): Promise<null | NextRes
   return null; // null = auth passed
 }
 
+/** The signed-in admin's username (already-authenticated requests only). */
+export async function adminUsername(req: NextRequest): Promise<string | null> {
+  return verifyAdminSession(req.cookies.get(ADMIN_COOKIE)?.value ?? "");
+}
+
 export async function logAdminAction(opts: {
   action: string;
   targetId?: string;
