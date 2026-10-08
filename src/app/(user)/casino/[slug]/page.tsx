@@ -14,6 +14,7 @@ import {
   loadGames,
 } from "@/lib/games";
 import { PROVIDER_META } from "@/types/games";
+import { getPlayedPopular, getRecentlyAdded } from "@/lib/homeSections";
 import {
   CATEGORY_THEMES,
   DEFAULT_THEME,
@@ -51,7 +52,11 @@ export default async function CategoryPage({ params }: Props) {
   // Built-in category
   const getter = (catalogMode() === "octhera" && OCTHERA_GETTERS[slug]) || CATEGORY_GETTERS[slug];
   if (getter) {
-    const games = getter();
+    // Popular and New come from real play / catalog dates when there is
+    // enough of it (the lobby's "View all" lands here); otherwise the
+    // category keeps its previous list so the page is never empty.
+    const real = slug === "hot" ? await getPlayedPopular(200) : slug === "new" ? await getRecentlyAdded(200) : [];
+    const games = real.length ? real : getter();
     // Same rule as provider pages below: an empty category 404s rather
     // than rendering a themed page with "No games found".
     if (!games.length) notFound();

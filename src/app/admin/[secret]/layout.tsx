@@ -4,7 +4,7 @@ import { useParams, usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import {
   LayoutDashboard, ArrowDownLeft, ArrowUpRight, Users,
-  Menu, X, LogOut, BarChart3, Loader2, CreditCard, Gift, Send, Megaphone, Disc3,
+  Menu, X, LogOut, BarChart3, Loader2, CreditCard, Gift, Send, Megaphone, LayoutTemplate, Disc3,
   MessageSquareText, Smartphone, HandCoins, Percent, Store,
 } from "lucide-react";
 import { useState, useEffect, useCallback } from "react";
@@ -85,6 +85,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     { href: `${base}/payment-methods`, label: "Payment Agents", icon: CreditCard },
     { href: `${base}/rewards`,     label: "Rewards",     icon: Gift },
     { href: `${base}/ads`,         label: "Ads",         icon: Megaphone },
+    { href: `${base}/home-promos`, label: "Homepage Promos", icon: LayoutTemplate },
     { href: `${base}/spin`,        label: "Prize Wheel", icon: Disc3 },
     { href: `${base}/sms`,         label: "Unmatched SMS", icon: MessageSquareText },
     { href: `${base}/otp-devices`, label: "OTP Devices", icon: Smartphone },

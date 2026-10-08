@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 export function SkeletonCard({ className }: { className?: string }) {
   return (
     <div className={cn("relative rounded-[16px] overflow-hidden aspect-[4/5] v-skel", className)} aria-hidden>
-      <div className="absolute left-3 right-3 bottom-3 space-y-1.5">
+      <div className="absolute left-2 right-2 bottom-2 sm:left-2.5 sm:right-2.5 sm:bottom-2.5 space-y-1.5">
         <div className="h-2 w-1/3 rounded bg-[var(--v-bg-3)]" />
         <div className="h-3 w-3/4 rounded bg-[var(--v-bg-3)]" />
       </div>
@@ -23,9 +23,9 @@ export function SkeletonRail({ count = 7 }: { count?: number }) {
         </div>
         <div className="v-skel h-3 w-14" />
       </div>
-      <div className="flex gap-3 overflow-hidden">
+      <div className="flex gap-2.5 sm:gap-3 overflow-hidden">
         {Array.from({ length: count }).map((_, i) => (
-          <SkeletonCard key={i} className="shrink-0 w-[156px] sm:w-[168px]" />
+          <SkeletonCard key={i} className="shrink-0 w-[29vw] max-w-[128px] sm:w-[136px] sm:max-w-none lg:w-[146px]" />
         ))}
       </div>
     </div>
@@ -37,6 +37,24 @@ export function SkeletonGrid({ count = 8 }: { count?: number }) {
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3" aria-hidden>
       {Array.from({ length: count }).map((_, i) => <SkeletonCard key={i} />)}
+    </div>
+  );
+}
+
+/** A section header + the lobby's two-row game grid (matches GameGrid). */
+export function SkeletonGameGrid() {
+  return (
+    <div aria-hidden>
+      <div className="flex items-end justify-between mb-4">
+        <div className="space-y-2">
+          <div className="v-skel h-4 w-36" />
+          <div className="v-skel h-2.5 w-52" />
+        </div>
+        <div className="v-skel h-3 w-14" />
+      </div>
+      <div className="v-grid2">
+        {Array.from({ length: 16 }).map((_, i) => <SkeletonCard key={i} />)}
+      </div>
     </div>
   );
 }

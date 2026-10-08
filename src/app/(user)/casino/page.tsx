@@ -3,11 +3,12 @@ import { prisma } from "@/lib/prisma";
 import { getUserPoints } from "@/lib/loyalty";
 import { getRewardConfig } from "@/lib/rewardConfig";
 import {
-  getHotGames, getNewGames, getSlotGames, getCrashGames,
-  getLiveCasinoGames, getGamesByProvider, getProviderStats,
+  getSlotGames, getCrashGames, getLiveCasinoGames, getProviderStats,
   getCategoryCounts, getSectionGames, getGamesByIds, getRecommendedFrom,
   catalogMode, loadGames,
 } from "@/lib/games";
+import { getPlayedPopular, getRecentlyAdded, takeFresh } from "@/lib/homeSections";
+import { getHomePromoSlots } from "@/lib/homePromos";
 import { SPORTSBOOK_GAME_UID, type Game } from "@/types/games";
 import { CatalogNotice }      from "@/components/casino/CatalogNotice";
 import { ProviderSelect }     from "@/components/casino/ProviderSelect";
@@ -16,9 +17,10 @@ import { reloadWindowOpen }   from "@/lib/depositBonusCore";
 import { tierForPoints }      from "@/lib/retention";
 import { AdPopup }            from "@/components/ads/AdPopup";
 import { getActiveAds }       from "@/lib/ads";
-import { CasinoHero }         from "@/components/vinna/CasinoHero";
 import { CategoryTabs, type CategoryTab } from "@/components/vinna/CategoryTabs";
 import { GameCarousel }       from "@/components/vinna/GameCarousel";
+import { GameGrid }           from "@/components/vinna/GameGrid";
+import { PromoSlot }          from "@/components/vinna/PromoSlot";
 import { RewardProgress }     from "@/components/vinna/RewardProgress";
 import { SearchTrigger }      from "@/components/vinna/SearchTrigger";
 import type { Metadata } from "next";
@@ -81,22 +83,13 @@ export default async function CasinoPage() {
 
   await loadGames();
   const octhera   = catalogMode() === "octhera";
-  const hotGames  = getHotGames(24);
-  const newGames  = getNewGames(24);
-  const slotGames = getSlotGames(24);
-  const liveGames = getLiveCasinoGames(24);
-  const crashGames = getCrashGames(24);
-  const tableGames = octhera ? getSectionGames("casino", "table").slice(0, 24) : [];
-  // Casino providers only — crash/instant and sports have their own sections.
-  const providers = getProviderStats(octhera ? "casino" : undefined);
-  // A rail for the biggest casino provider (was PG Soft in the old catalog).
-  const featured  = octhera ? providers[0] : { slug: "pgsoft", name: "PG Soft" };
-  const featuredGames = featured ? getGamesByProvider(featured.slug, 24) : [];
   const catCounts = getCategoryCounts();
   const empty     = octhera && catCounts.all === 0;
+  // Casino providers only — crash/instant and sports have their own sections.
+  const providers = getProviderStats(octhera ? "casino" : undefined);
 
-  // Personal rails, from what this player has actually played (as My Casino
-  // does). Logged out, or with no history yet, they simply don't render.
+  // Personal rows, from what this player has actually played. Logged out, or
+  // with no history yet, they simply don't render.
   let recent: Game[] = [];
   let recommended: Game[] = [];
   if (session?.user?.id) {
@@ -105,8 +98,23 @@ export default async function CasinoPage() {
     }).catch(() => []);
     recent = getGamesByIds(rows.map((r) => r.gameId).filter((id) => id !== SPORTSBOOK_GAME_UID));
     const ids = recent.map((g) => g.gameID);
-    recommended = ids.length ? getRecommendedFrom(ids, ids, 18) : [];
+    recommended = ids.length ? getRecommendedFrom(ids, ids, 24) : [];
   }
+
+  // Sections top to bottom. Each takes games not already shown above it, so
+  // scrolling keeps showing new titles. Popular and New are real data
+  // (lib/homeSections) and are hidden when there isn't any.
+  const seen = new Set<string>();
+  const [playedPopular, recentlyAdded, promoSlots] = await Promise.all([
+    getPlayedPopular(32), getRecentlyAdded(24), getHomePromoSlots(),
+  ]);
+  const popular     = takeFresh(playedPopular, 16, seen);
+  const crashGames  = takeFresh(getCrashGames(60), 16, seen);
+  const slotGames   = takeFresh(getSlotGames(60), 16, seen);
+  const liveGames   = takeFresh(getLiveCasinoGames(60), 16, seen);
+  const newGames    = takeFresh(recentlyAdded, 16, seen);
+  const tableGames  = octhera ? takeFresh(getSectionGames("casino", "table"), 16, seen) : [];
+  const forYou      = takeFresh(recommended, 16, seen);
 
   // Quick category pills — only ones with games behind them.
   const tabs: CategoryTab[] = [
@@ -119,13 +127,14 @@ export default async function CasinoPage() {
     { id: "hot",   label: "Popular", href: "/casino/hot",      count: catCounts.hot },
   ].filter((t) => t.id === "all" || (t.count ?? 0) > 0);
 
+  // The first section on the page loads its artwork eagerly; the rest lazily.
+  const firstEager = 6;
+
   return (
     <>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-4 sm:pt-6 pb-16 flex flex-col gap-8 sm:gap-10">
-        <CasinoHero featured={hotGames.slice(0, 3)} totalGames={catCounts.all} />
-
-        {/* Search + quick categories */}
-        <div className="flex flex-col gap-3 -mt-2">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-4 sm:pt-6 pb-16 flex flex-col gap-7 sm:gap-10">
+        {/* Search + quick categories — games start right below */}
+        <div className="flex flex-col gap-3">
           <SearchTrigger />
           {!empty && (
             <div className="flex items-center gap-3">
@@ -139,42 +148,55 @@ export default async function CasinoPage() {
 
         {empty && <CatalogNotice />}
 
-        <div id="stream" className="flex flex-col gap-9 sm:gap-11 scroll-mt-20">
-          <GameCarousel title="Trending games" description="The most popular titles in the lobby"
-            games={hotGames} href="/casino/hot" tag="trending" />
+        <div id="stream" className="flex flex-col gap-7 sm:gap-10 scroll-mt-20">
+          {/* B — what players are actually playing */}
+          <GameGrid title="Popular now" description="Most played by VinnaBet players this month"
+            games={popular} href="/casino/hot" eager={firstEager} />
 
           {recent.length > 0 && (
-            <GameCarousel title="Jump back in" description="Your recently played" games={recent} href="/my-casino" />
+            <GameCarousel title="Jump back in" description="Your recently played" games={recent} href="/my-casino"
+              eager={popular.length ? 0 : firstEager} />
           )}
 
-          {recommended.length > 0 && (
-            <GameCarousel title="Recommended for you" description="Picked from the providers you play"
-              games={recommended} href="/my-casino" />
-          )}
+          {/* C — first promotion slot */}
+          <PromoSlot rows={promoSlots.after_first} />
 
-          <GameCarousel title="Live casino" description="Real dealers, streamed live"
-            games={liveGames} href="/casino/live" tag="live" />
-
+          {/* D — a row */}
           <GameCarousel title="Crash games" description="Cash out before it flies"
-            games={crashGames} href="/games?tab=crash" />
+            games={crashGames} href="/games?tab=crash"
+            eager={popular.length || recent.length ? 0 : firstEager} />
+
+          {/* E — a grid */}
+          <GameGrid title="Slots" games={slotGames} href="/casino/slots" />
 
           <RewardProgress points={points} tiers={tiers} variant="strip" />
 
-          <GameCarousel title="Slots" description="Spin across every provider"
-            games={slotGames} href="/casino/slots" grid />
+          {/* F — middle promotions (usually a pair of posters) */}
+          <PromoSlot rows={promoSlots.middle} />
 
-          <GameCarousel title="New releases" description="The latest additions to the lobby"
+          {/* G — live tables, set apart on their own panel (from tablet up;
+              phones keep the full width for three cards across) */}
+          {liveGames.length > 0 && (
+            <div className="sm:rounded-[22px] sm:bg-[var(--v-bg-1)] sm:border sm:border-[color:var(--v-line)] sm:p-6 sm:overflow-hidden">
+              <GameCarousel title="Live casino" description="Real dealers, streamed live"
+                games={liveGames} href="/casino/live" tag="live" />
+            </div>
+          )}
+
+          {/* H — more categories */}
+          <GameCarousel title="New in the lobby" description="Recently added games"
             games={newGames} href="/casino/new" tag="new" />
 
-          {tableGames.length > 0 && (
-            <GameCarousel title="Table games" description="Blackjack, roulette, baccarat and more"
-              games={tableGames} href="/casino/table" />
+          <GameGrid title="Table games" description="Blackjack, roulette, baccarat and more"
+            games={tableGames} href="/casino/table" />
+
+          {forYou.length > 0 && (
+            <GameCarousel title="Recommended for you" description="From the providers you play"
+              games={forYou} href="/my-casino" />
           )}
 
-          {featured && featuredGames.length > 0 && (
-            <GameCarousel title={featured.name} description="Top provider"
-              games={featuredGames} href={`/casino/${featured.slug}`} />
-          )}
+          {/* I — lower promotions, then the live bonus offers */}
+          <PromoSlot rows={promoSlots.lower} />
 
           <PromotionsSection promos={promos} />
         </div>

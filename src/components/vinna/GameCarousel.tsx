@@ -8,7 +8,7 @@ import type { Game } from "@/types/games";
 
 /**
  * One content-stream section: header with "View all", then a snap-scrolling
- * row of ~160px cards that bleeds to the screen edge on phones. `grid` turns
+ * row of ~140px cards that bleeds to the screen edge on phones. `grid` turns
  * the phone layout into a two-column grid of the first four games.
  */
 export function GameCarousel({
@@ -18,6 +18,7 @@ export function GameCarousel({
   href,
   tag,
   grid = false,
+  eager = 0,
 }: {
   title: React.ReactNode;
   description?: React.ReactNode;
@@ -25,6 +26,8 @@ export function GameCarousel({
   href?: string;
   tag?: GameTag;
   grid?: boolean;
+  /** How many leading cards load eagerly (only for a row near the top). */
+  eager?: number;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   if (!games.length) return null;
@@ -50,12 +53,12 @@ export function GameCarousel({
       <SectionHeader title={title} description={description} href={href} actions={arrows} />
       {grid && (
         <div className="md:hidden grid grid-cols-2 gap-3">
-          {games.slice(0, 4).map((g) => <GameCard key={g.gameID} game={g} tag={tag} />)}
+          {games.slice(0, 4).map((g, i) => <GameCard key={g.gameID} game={g} tag={tag} eager={i < eager} />)}
         </div>
       )}
       <div ref={ref} className={"v-rail pb-1 " + (grid ? "hidden md:flex" : "")}>
-        {games.map((g) => (
-          <GameCard key={g.gameID} game={g} tag={tag} className="w-[156px] sm:w-[164px] lg:w-[172px]" />
+        {games.map((g, i) => (
+          <GameCard key={g.gameID} game={g} tag={tag} eager={i < eager} className="w-[29vw] max-w-[128px] sm:w-[136px] sm:max-w-none lg:w-[146px]" />
         ))}
       </div>
     </section>
