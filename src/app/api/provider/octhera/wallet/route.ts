@@ -20,8 +20,9 @@ import { OCTHERA_ID_PREFIX } from "@/types/games";
  *              max(0, bet − win) available; balance moves by win − bet.
  *   credit   — win / refund. Add winAmount once, but only for a round whose
  *              bet we took (an applied, not rolled back debit with the same
- *              gameRound); anything else is TXN_NOT_FOUND, stored, never paid
- *              automatically. Never refused for a blocked player.
+ *              gameRound, or Octhera's late bet for it); anything else is
+ *              TXN_NOT_FOUND, stored, and paid only by a retry that comes
+ *              once the round is backed. Never refused for a blocked player.
  *   rollback — undo a debit that may or may not have reached us. Reuses the
  *              debit's txnId. If the debit never arrived, the rollback row
  *              is a marker and a late debit gets TXN_ROLLED_BACK.
@@ -30,7 +31,8 @@ import { OCTHERA_ID_PREFIX } from "@/types/games";
  *   - Every mutation runs in one DB transaction holding a row lock on the
  *     player, so parallel calls for one player serialize.
  *   - Idempotency on (type, txnId) in octhera_wallet_txns, checked under the
- *     lock; a retry gets the exact stored response. Failed credits/rollbacks
+ *     lock; a retry gets the exact stored response, except a refused credit
+ *     (TXN_NOT_FOUND), which is checked again. Failed credits/rollbacks
  *     (PLAYER_NOT_FOUND) are NOT stored, so a later retry can succeed.
  *   - Rollback reverses the wallet snapshot recorded on the debit, never the
  *     amounts the rollback claims.
@@ -324,11 +326,26 @@ async function roundIsBacked(tx: Tx, c: WalletCall): Promise<boolean> {
     where: { type: "debit", playerId: c.playerId, gameRound: c.gameRound, applied: true },
     select: { txnId: true },
   });
-  if (debits.length === 0) return false;
+  if (debits.length === 0) return lateBetRefused(tx, c);
   const rolledBack = await tx.octheraWalletTxn.count({
     where: { type: "rollback", applied: true, txnId: { in: debits.map((d) => d.txnId) } },
   });
-  return rolledBack < debits.length;
+  return rolledBack < debits.length || lateBetRefused(tx, c);
+}
+
+/**
+ * Octhera's late bet for this win (a debit with txnId "<win txnId>:stake"),
+ * sent when the game played a bet we never took, was refused for funds or a
+ * blocked account. Octhera then sends the win minus that stake, so the win
+ * no longer costs us money the bet didn't.
+ */
+async function lateBetRefused(tx: Tx, c: WalletCall): Promise<boolean> {
+  const row = await tx.octheraWalletTxn.findUnique({
+    where: { type_txnId: { type: "debit", txnId: `${c.txnId}:stake` } },
+  });
+  if (!row || row.applied || row.playerId !== c.playerId) return false;
+  const response = row.response as WalletResponse;
+  return response.status === "error" && (response.code === "INSUFFICIENT_FUNDS" || response.code === "PLAYER_BLOCKED");
 }
 
 async function credit(c: WalletCall, raw: unknown): Promise<Result> {
@@ -339,19 +356,22 @@ async function credit(c: WalletCall, raw: unknown): Promise<Result> {
       const user = await lockUser(tx, c.playerId);
       if (!user) return { response: error("PLAYER_NOT_FOUND") };
 
-      const prior = await stored(tx, "credit", c.txnId);
-      if (prior) return { response: prior };
+      // An ok is replayed. A refusal is not final: Octhera retries it, and by
+      // then its late bet (see lateBetRefused) may back the round.
+      const priorRow = await tx.octheraWalletTxn.findUnique({ where: { type_txnId: { type: "credit", txnId: c.txnId } } });
+      const prior = priorRow?.response as WalletResponse | undefined;
+      if (prior?.status === "ok") return { response: prior };
 
       const before = walletOf(user);
 
       // Only pay a round we took the stake for. A win with no debit here was
       // staked somewhere else (e.g. while Octhera couldn't reach this wallet),
       // so paying it would hand out money the bet never cost. It is stored
-      // (applied = false) as the list to reconcile by hand, and retries
-      // replay the refusal. A blocked player still gets a backed win.
+      // (applied = false) as the list to reconcile by hand; a retry pays it
+      // once the round is backed. A blocked player still gets a backed win.
       if (!(await roundIsBacked(tx, c))) {
         const response = error("TXN_NOT_FOUND", before.balance);
-        await record(tx, c, false, response, raw);
+        if (!priorRow) await record(tx, c, false, response, raw);
         return { response };
       }
 
@@ -376,7 +396,14 @@ async function credit(c: WalletCall, raw: unknown): Promise<Result> {
         });
       }
       const response = ok(after.balance);
-      await record(tx, c, win > 0, response, raw);
+      if (priorRow) {
+        await tx.octheraWalletTxn.update({
+          where: { id: priorRow.id },
+          data: { applied: win > 0, response: response as object, payload: raw as object },
+        });
+      } else {
+        await record(tx, c, win > 0, response, raw);
+      }
 
       return {
         response,

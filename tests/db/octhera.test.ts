@@ -216,7 +216,7 @@ describe("wallet — credit", () => {
     expect((await credit(p.id, { winAmount: 12.5, gameRound: "blk-r" })).body).toEqual({ status: "ok", balance: 12.5 });
   });
 
-  test("a win with no bet of ours in that round → TXN_NOT_FOUND, stored unpaid, retries pay nothing", async () => {
+  test("a win with no bet of ours in that round → TXN_NOT_FOUND, stored unpaid, unbacked retries pay nothing", async () => {
     const p = await makeUser({ balance: 10 });
     const other = await makeUser({ balance: 10 });
     await debit(other.id, { txnId: "o-b", betAmount: 1, gameRound: "theirs" });
@@ -235,6 +235,30 @@ describe("wallet — credit", () => {
     expect(await balanceOf(p.id)).toBe(10);
     expect(await prisma.transaction.count({ where: { userId: p.id, type: "WIN" } })).toBe(0);
     expect(await prisma.octheraWalletTxn.count({ where: { type: "credit", playerId: p.id, applied: false } })).toBe(4);
+  });
+
+  test("a refused win is paid by a retry once Octhera's late bet backs its round, and only once", async () => {
+    const p = await makeUser({ balance: 10 });
+    const win = () => credit(p.id, { txnId: "w-late", winAmount: 9.96, gameRound: "r-late" });
+    expect((await win()).body).toEqual({ status: "error", code: "TXN_NOT_FOUND", balance: 10 });
+    expect((await debit(p.id, { txnId: "w-late:stake", betAmount: 4, gameRound: "r-late" })).body).toEqual({ status: "ok", balance: 6 });
+    expect((await win()).body).toEqual({ status: "ok", balance: 15.96 });
+    expect((await win()).body).toEqual({ status: "ok", balance: 15.96 });
+    expect(await balanceOf(p.id)).toBe(15.96);
+    expect(await prisma.transaction.count({ where: { userId: p.id, type: "WIN" } })).toBe(1);
+    const row = await prisma.octheraWalletTxn.findUniqueOrThrow({ where: { type_txnId: { type: "credit", txnId: "w-late" } } });
+    expect(row.applied).toBe(true);
+    expect(row.response).toEqual({ status: "ok", balance: 15.96 });
+  });
+
+  test("a late bet refused for funds backs its own win (sent net of the stake), not another", async () => {
+    const p = await makeUser({ balance: 1 });
+    expect((await debit(p.id, { txnId: "w-net:stake", betAmount: 4, gameRound: "r-net" })).body)
+      .toEqual({ status: "error", code: "INSUFFICIENT_FUNDS", balance: 1 });
+    expect((await credit(p.id, { txnId: "w-other", winAmount: 3, gameRound: "r-net" })).body)
+      .toEqual({ status: "error", code: "TXN_NOT_FOUND", balance: 1 });
+    expect((await credit(p.id, { txnId: "w-net", winAmount: 5.96, gameRound: "r-net" })).body).toEqual({ status: "ok", balance: 6.96 });
+    expect(await balanceOf(p.id)).toBe(6.96);
   });
 
   test("10 backed wins, each retried 3× in parallel and once more, are paid exactly once", async () => {
