@@ -205,7 +205,7 @@ body {
 /* Horizontal scrollers that bleed to the screen edge on phones */
 .v-rail {
   display: flex;
-  gap: 12px;
+  gap: 10px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-padding-inline: 16px;
@@ -216,7 +216,36 @@ body {
 .v-rail::-webkit-scrollbar { display: none; }
 .v-rail > * { scroll-snap-align: start; }
 @media (min-width: 640px) {
-  .v-rail { padding-inline: 24px; margin-inline: -24px; scroll-padding-inline: 24px; }
+  .v-rail { gap: 12px; padding-inline: 24px; margin-inline: -24px; scroll-padding-inline: 24px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .v-rail { scroll-behavior: auto; }
+}
+
+/* Lobby game grid: 3 · 4 · 5 · 6 · 8 columns, and exactly two rows at each
+   width (6 · 8 · 10 · 12 · 16 cards). Cards past that are hidden, so server
+   and client render the same markup. */
+.v-grid2 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+.v-grid2 > :nth-child(n+7) { display: none; }
+@media (min-width: 640px) {
+  .v-grid2 { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+  .v-grid2 > :nth-child(-n+8) { display: block; }
+}
+@media (min-width: 768px) {
+  .v-grid2 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .v-grid2 > :nth-child(-n+10) { display: block; }
+}
+@media (min-width: 1024px) {
+  .v-grid2 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .v-grid2 > :nth-child(-n+12) { display: block; }
+}
+@media (min-width: 1280px) {
+  .v-grid2 { grid-template-columns: repeat(8, minmax(0, 1fr)); }
+  .v-grid2 > :nth-child(-n+16) { display: block; }
 }
 
 /* ── Skeletons ──────────────────────────────────────────────────────────── */

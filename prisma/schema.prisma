@@ -953,3 +953,30 @@ model ProviderFeeRate {
   @@index([providerKey, effectiveFrom])
   @@map("provider_fee_rates")
 }
+
+// Homepage promotions (admin → Homepage Promos), placed between game sections
+// on the lobby. Shown only when switched on, inside their dates and complete
+// (src/lib/homePromoCore.ts). Images live in object storage like ads.
+model HomePromo {
+  id             String    @id @default(cuid())
+  title          String // internal name, admins only
+  heading        String?
+  description    String?
+  imageKey       String? // desktop / default image
+  mobileImageKey String? // optional narrow-screen image
+  imageAlt       String?
+  ctaLabel       String?
+  destType       String    @default("internal") // internal | external
+  destUrl        String?
+  layout         String    @default("banner") // banner | poster
+  slot           String    @default("after_first") // after_first | middle | lower
+  sortOrder      Int       @default(0)
+  isActive       Boolean   @default(false)
+  startsAt       DateTime?
+  endsAt         DateTime?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+
+  @@index([slot, isActive])
+  @@map("home_promos")
+}
