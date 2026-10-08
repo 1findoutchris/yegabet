@@ -50,7 +50,7 @@ Play one small round, then look at Railway's logs for `[octhera-wallet]`:
 | no `[octhera-wallet]` line at all | Octhera never called us, so it bet on its own balance. The portal's Wallet URL is missing or wrong, or the key isn't from the company wallet (v2) account. Fix steps 1–2 and run Test wallet. |
 | `debit/bet … → ok balance=…` | Working: the bet came off the VinnaBet balance. |
 | `→ INVALID_SIGNATURE (…)` | `OCTHERA_WALLET_SECRET` is missing or doesn't match the portal. |
-| `credit/win … → TXN_NOT_FOUND` | A win for a round whose bet never reached us (staked elsewhere). Not paid; see Reconciling unbacked wins. |
+| `credit/win … → TXN_NOT_FOUND` | A win for a round whose bet we never took. Not paid yet: Octhera sends the stake as a late bet and retries the win, which is then paid. See Reconciling unbacked wins. |
 | `→ INVALID_REQUEST (currency …)` | Octhera's currency isn't ETB. Set `OCTHERA_CURRENCY` to match the account, or change the account's currency. |
 
 Each bet and win is also a `Transaction` row with reference `oc:debit:…` /
@@ -58,7 +58,14 @@ Each bet and win is also a `Transaction` row with reference `oc:debit:…` /
 
 ### Reconciling unbacked wins
 
-Wins Octhera sends for rounds we never took a stake for are refused and kept:
+The game can play a bet we never took (we refused it, or it never reached
+us). If it wins, Octhera first sends that stake as a **late bet**, a debit
+with txnId `<win txnId>:stake` in the same round, then retries the win. A
+refused win is checked again on every retry, so once the late bet is in, the
+win is paid. If we refuse the late bet (`INSUFFICIENT_FUNDS`,
+`PLAYER_BLOCKED`), Octhera sends the win minus the stake, and we pay that.
+
+Wins still refused (no late bet came for them) are kept:
 
 ```sql
 select "createdAt", "playerId", "txnId", "gameRound", "winAmount", payload->>'gameName' as game
@@ -68,7 +75,9 @@ from octhera_wallet_txns where type = 'credit' and applied = false order by "cre
 Settle each round with Octhera (their round report says where the stake came
 from). If you decide to honour one, credit the player **win − stake** with an
 admin balance adjustment: that is what the round would have done had the bet
-reached us. Paying the full win overpays by the stake.
+reached us. Paying the full win overpays by the stake. Check first that no
+late bet came for it (a debit `<txnId>:stake`): then a retry pays it, and an
+adjustment would pay twice.
 
 ## The catalog
 
@@ -160,7 +169,7 @@ our side blocks the iframe; the site sends no CSP or X-Frame-Options.
 | Octhera sends | We do |
 |---|---|
 | `debit` (bet / bet_win) | Check `max(0, bet − win)` is available, apply `win − bet`, answer the new balance. Too little → `INSUFFICIENT_FUNDS`. Blocked account → `PLAYER_BLOCKED`. |
-| `credit` (win / refund) | Add the win, once, if we took a bet from this player in the same `gameRound` (and didn't roll it back). Otherwise `TXN_NOT_FOUND`: nothing is paid, and the call is kept in `octhera_wallet_txns` with `applied = false` for reconciliation. A blocked account still gets a backed win. |
+| `credit` (win / refund) | Add the win, once, if we took a bet from this player in the same `gameRound` (and didn't roll it back). A late bet (`<win txnId>:stake`) backs its win, even one we refused for funds or a blocked account (the win then comes net of the stake). Otherwise `TXN_NOT_FOUND`: nothing is paid, and the call is kept in `octhera_wallet_txns` with `applied = false` for reconciliation; a retry is checked again and paid once the round is backed. A blocked account still gets a backed win. |
 | `rollback` | Undo the debit with the same txnId. If the debit never arrived, remember the rollback, so a late debit gets `TXN_ROLLED_BACK`. |
 | `ping` | Answer ok. |
 
@@ -168,7 +177,7 @@ our side blocks the iframe; the site sends no CSP or X-Frame-Options.
   `timestamp + "." + body` with the wallet secret). Calls whose timestamp is
   more than 5 minutes off are refused.
 - Each (type, txnId) is processed once. A retry gets exactly the first
-  answer. Parallel calls for one player are serialized with a row lock, so
+  answer, except a refused credit, which is checked again. Parallel calls for one player are serialized with a row lock, so
   a balance can't be overdrawn.
 - Money moves are normal `Transaction` rows (references `oc:debit:…`,
   `oc:credit:…`, `oc:rollback:…`), so they show in history and admin. Every
