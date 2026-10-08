@@ -78,7 +78,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     { href: `${base}/withdrawals`, label: "Withdrawals", icon: ArrowUpRight },
     { href: `${base}/users`,       label: "Users",       icon: Users },
     { href: `${base}/reports`,     label: "Reports",     icon: BarChart3 },
-    { href: `${base}/silent-ggr`,  label: "Silent GGR",  icon: Percent },
+    { href: `${base}/provider-ggr`, label: "Provider GGR", icon: Percent },
     { href: `${base}/payout-agents`, label: "Payout Agents", icon: Send },
     { href: `${base}/cash-agents`, label: "Cash Agents", icon: HandCoins },
     { href: `${base}/in-person-agents`, label: "In-Person Agents", icon: Store },
