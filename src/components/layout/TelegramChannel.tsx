@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
 /**
@@ -17,6 +18,10 @@ import { usePathname } from "next/navigation";
  * md up, where there is room and no tab bar. aria-label carries the meaning at
  * both sizes.
  *
+ * Steps aside while the player scrolls down — it would otherwise sit on top
+ * of game cards and "View all" buttons — and comes back on any scroll up or
+ * at the top of the page.
+ *
  * Hidden on /sports: the sportsbook is a full-bleed third-party iframe with its
  * own controls in that corner, and a button floating over someone else's UI is
  * a misclick waiting to happen. Same pathname test SportsPane uses to decide it
@@ -24,6 +29,20 @@ import { usePathname } from "next/navigation";
  */
 export function TelegramChannel() {
   const pathname = usePathname();
+  const [away, setAway] = useState(false);
+
+  useEffect(() => {
+    let last = window.scrollY;
+    const onScroll = () => {
+      const y = window.scrollY;
+      if (y > last + 6 && y > 120) setAway(true);
+      else if (y < last - 6 || y <= 120) setAway(false);
+      last = y;
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   if (pathname.startsWith("/sports") || pathname.startsWith("/game/")) return null;
 
   return (
@@ -32,11 +51,14 @@ export function TelegramChannel() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Join our Telegram channel"
-      className="press fixed right-4 md:right-6 bottom-[calc(4.5rem+env(safe-area-inset-bottom))] md:bottom-6 z-40
+      tabIndex={away ? -1 : undefined}
+      data-away={away}
+      className="press fixed transition-[transform,opacity] duration-300 motion-reduce:transition-none
+                 data-[away=true]:translate-y-24 data-[away=true]:opacity-0 data-[away=true]:pointer-events-none right-4 md:right-6 bottom-[calc(4.5rem+env(safe-area-inset-bottom))] md:bottom-6 z-40
                  flex items-center justify-center gap-2 rounded-full
-                 h-12 w-12 md:h-auto md:w-auto md:pl-3 md:pr-4 md:py-2.5
+                 h-11 w-11 md:h-auto md:w-auto md:pl-3 md:pr-4 md:py-2.5
                  bg-[#229ED9] text-white shadow-lg shadow-[#229ED9]/25
-                 hover:bg-[#1E8BC0] transition-colors"
+                 hover:bg-[#1E8BC0]"
     >
       <TelegramGlyph className="w-5 h-5 shrink-0" />
       <span className="hidden md:inline text-[13px] font-semibold whitespace-nowrap">Join our channel</span>

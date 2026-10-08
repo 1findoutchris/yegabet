@@ -4,7 +4,7 @@ import { prisma } from "@/lib/prisma";
 import { getClientIp, logAdminAction, requireAdminAuth } from "@/lib/adminAuth";
 import { deleteObject, putObject, storageConfigured } from "@/lib/storage";
 import {
-  hiddenReason, imageProblem, isDestType, isLayout, isSlot, validDestination,
+  hiddenReason, imageProblem, isDestType, isLayout, isPage, isSlot, validDestination,
 } from "@/lib/homePromoCore";
 import { toPublic, toRecord } from "@/lib/homePromos";
 
@@ -51,7 +51,7 @@ const date = (v: FormDataEntryValue | null): Date | null | "invalid" => {
 
 type Fields = {
   title: string; heading: string | null; description: string | null; imageAlt: string | null;
-  ctaLabel: string | null; destType: string; destUrl: string | null; layout: string; slot: string;
+  ctaLabel: string | null; destType: string; destUrl: string | null; layout: string; slot: string; pages: string[];
   sortOrder: number; isActive: boolean; startsAt: Date | null; endsAt: Date | null;
 };
 
@@ -66,6 +66,9 @@ function readFields(form: FormData): Fields | string {
   if (!isDestType(destType)) return "Unknown destination type";
   if (!isLayout(layout)) return "Unknown layout";
   if (!isSlot(slot)) return "Unknown placement";
+  const pages = [...new Set(form.getAll("pages").map(String))];
+  if (!pages.length) return "Choose at least one page";
+  if (!pages.every(isPage)) return "Unknown page";
   if (destUrl && !validDestination(destType, destUrl)) {
     return destType === "external"
       ? "External links must be a full https:// address"
@@ -82,7 +85,7 @@ function readFields(form: FormData): Fields | string {
     description: str(form.get("description"), 200),
     imageAlt: str(form.get("imageAlt"), 200),
     ctaLabel: str(form.get("ctaLabel"), 30),
-    destType, destUrl, layout, slot,
+    destType, destUrl, layout, slot, pages,
     sortOrder: Number.isInteger(sortOrder) && sortOrder >= 0 && sortOrder <= 999 ? sortOrder : 0,
     isActive: form.get("isActive") === "true",
     startsAt, endsAt,

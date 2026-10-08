@@ -970,6 +970,7 @@ model HomePromo {
   destUrl        String?
   layout         String    @default("banner") // banner | poster
   slot           String    @default("after_first") // after_first | middle | lower
+  pages          String[]  @default(["casino"]) // casino | live | games
   sortOrder      Int       @default(0)
   isActive       Boolean   @default(false)
   startsAt       DateTime?

@@ -248,6 +248,20 @@ body {
   .v-grid2 > :nth-child(-n+16) { display: block; }
 }
 
+/* Wide (landscape) variant: 2 · 3 · 3 · 4 · 4 columns, two rows. */
+.v-grid2-wide { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.v-grid2-wide > :nth-child(n+5) { display: none; }
+@media (min-width: 640px) {
+  .v-grid2-wide { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .v-grid2-wide > :nth-child(-n+6) { display: block; }
+  .v-grid2-wide > :nth-child(n+7) { display: none; }
+}
+@media (min-width: 1024px) {
+  .v-grid2-wide { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .v-grid2-wide > :nth-child(-n+8) { display: block; }
+  .v-grid2-wide > :nth-child(n+9) { display: none; }
+}
+
 /* ── Skeletons ──────────────────────────────────────────────────────────── */
 .v-skel {
   position: relative;

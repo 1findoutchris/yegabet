@@ -484,7 +484,7 @@ export function getGamesByProvider(providerSlug: string, limit = 500): Game[] {
   return [...withImg, ...noImg].slice(0, limit);
 }
 
-const providerLabel = (g: Game) => PROVIDER_META[g.provider]?.name ?? g.providerName ?? g.provider;
+export const providerLabel = (g: Game) => PROVIDER_META[g.provider]?.name ?? g.providerName ?? g.provider;
 
 /**
  * Providers with their game counts, for the provider filters. Optionally

@@ -6,6 +6,7 @@ import { CategoryTabs } from "@/components/vinna/CategoryTabs";
 import { CategoryBrowser } from "./CategoryBrowser";
 import { GameRow } from "./GameRow";
 import { SUBCATEGORIES } from "./categoryThemes";
+import { FAST_GROUPS } from "@/lib/gameGroups";
 import type { Game } from "@/types/games";
 
 export interface GamesTab {
@@ -24,9 +25,11 @@ interface Props {
   tabs: GamesTab[];
   /** ?tab= from the URL (e.g. the lobby's Crash & Instant tile). */
   initialTab?: string;
+  /** ?sub= — a group inside the tab (e.g. mines), from a lobby tile. */
+  initialSub?: string;
 }
 
-export function GamesPageSection({ popularGames, tabs, initialTab }: Props) {
+export function GamesPageSection({ popularGames, tabs, initialTab, initialSub }: Props) {
   const [selected, setSelected] = useState<string | undefined>(initialTab);
   const active = tabs.find((t) => t.id === selected) ?? tabs[0];
 
@@ -68,6 +71,8 @@ export function GamesPageSection({ popularGames, tabs, initialTab }: Props) {
           <CategoryBrowser
             key={active.id}
             games={active.games}
+            groups={active.id === "crash" && active.games.some((g) => g.category) ? FAST_GROUPS : undefined}
+            initialSub={active.id === initialTab ? initialSub : undefined}
             subcats={active.id === "crash" ? SUBCATEGORIES.crash : active.id === "slots" || active.id === "new" ? SUBCATEGORIES.default : []}
           />
         </div>

@@ -17,7 +17,8 @@ import { reloadWindowOpen }   from "@/lib/depositBonusCore";
 import { tierForPoints }      from "@/lib/retention";
 import { AdPopup }            from "@/components/ads/AdPopup";
 import { getActiveAds }       from "@/lib/ads";
-import { CategoryTabs, type CategoryTab } from "@/components/vinna/CategoryTabs";
+import { CategoryTiles, type CategoryTile } from "@/components/vinna/CategoryTiles";
+import { ProviderTiles } from "@/components/vinna/ProviderTiles";
 import { GameCarousel }       from "@/components/vinna/GameCarousel";
 import { GameGrid }           from "@/components/vinna/GameGrid";
 import { PromoSlot }          from "@/components/vinna/PromoSlot";
@@ -116,16 +117,16 @@ export default async function CasinoPage() {
   const tableGames  = octhera ? takeFresh(getSectionGames("casino", "table"), 16, seen) : [];
   const forYou      = takeFresh(recommended, 16, seen);
 
-  // Quick category pills — only ones with games behind them.
-  const tabs: CategoryTab[] = [
-    { id: "all",   label: "All",     href: "/casino",          count: catCounts.all },
-    { id: "crash", label: "Crash",   href: "/games?tab=crash", count: catCounts.crash },
-    { id: "slots", label: "Slots",   href: "/casino/slots",    count: catCounts.slots },
-    { id: "live",  label: "Live",    href: "/casino/live",     count: catCounts.live },
-    { id: "table", label: "Table",   href: "/casino/table",    count: catCounts.table },
-    { id: "new",   label: "New",     href: "/casino/new",      count: catCounts.new },
-    { id: "hot",   label: "Popular", href: "/casino/hot",      count: catCounts.hot },
-  ].filter((t) => t.id === "all" || (t.count ?? 0) > 0);
+  // Illustrated category tiles — only ones with games behind them. Popular
+  // and New carry no count: their size isn't a fixed catalog number.
+  const tiles: CategoryTile[] = [
+    { id: "slots", label: "Slots",       icon: "slots",   href: "/casino/slots", count: catCounts.slots },
+    { id: "live",  label: "Live Casino", icon: "live",    href: "/casino/live",  count: catCounts.live },
+    { id: "table", label: "Table Games", icon: "table",   href: "/casino/table", count: catCounts.table },
+    { id: "crash", label: "Crash",       icon: "crash",   href: "/games",        count: catCounts.crash },
+    { id: "hot",   label: "Popular",     icon: "popular", href: "/casino/hot",   count: catCounts.hot > 0 ? undefined : 0 },
+    { id: "new",   label: "New",         icon: "new",     href: "/casino/new",   count: catCounts.new > 0 ? undefined : 0 },
+  ].filter((t) => t.count !== 0);
 
   // The first section on the page loads its artwork eagerly; the rest lazily.
   const firstEager = 6;
@@ -133,17 +134,13 @@ export default async function CasinoPage() {
   return (
     <>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-4 sm:pt-6 pb-16 flex flex-col gap-7 sm:gap-10">
-        {/* Search + quick categories — games start right below */}
+        {/* Search, provider picker and category tiles — games start right below */}
         <div className="flex flex-col gap-3">
-          <SearchTrigger />
-          {!empty && (
-            <div className="flex items-center gap-3">
-              <CategoryTabs tabs={tabs} active="all" className="flex-1 min-w-0" />
-              {providers.length > 1 && (
-                <div className="shrink-0"><ProviderSelect providers={providers} /></div>
-              )}
-            </div>
-          )}
+          <div className="flex items-center gap-2.5">
+            <div className="flex-1 min-w-0"><SearchTrigger /></div>
+            {!empty && providers.length > 1 && <ProviderSelect providers={providers} />}
+          </div>
+          {!empty && <CategoryTiles tiles={tiles} label="Casino categories" />}
         </div>
 
         {empty && <CatalogNotice />}
@@ -194,6 +191,8 @@ export default async function CasinoPage() {
             <GameCarousel title="Recommended for you" description="From the providers you play"
               games={forYou} href="/my-casino" />
           )}
+
+          <ProviderTiles title="Providers" description="Studios in the casino" providers={providers} query={octhera ? "?section=casino" : ""} />
 
           {/* I — lower promotions, then the live bonus offers */}
           <PromoSlot rows={promoSlots.lower} />

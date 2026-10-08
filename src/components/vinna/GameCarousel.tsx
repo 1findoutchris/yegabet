@@ -19,6 +19,7 @@ export function GameCarousel({
   tag,
   grid = false,
   eager = 0,
+  shape = "portrait",
 }: {
   title: React.ReactNode;
   description?: React.ReactNode;
@@ -28,6 +29,8 @@ export function GameCarousel({
   grid?: boolean;
   /** How many leading cards load eagerly (only for a row near the top). */
   eager?: number;
+  /** "wide": landscape cards, about two and a half across on a phone. */
+  shape?: "portrait" | "wide";
 }) {
   const ref = useRef<HTMLDivElement>(null);
   if (!games.length) return null;
@@ -58,7 +61,8 @@ export function GameCarousel({
       )}
       <div ref={ref} className={"v-rail pb-1 " + (grid ? "hidden md:flex" : "")}>
         {games.map((g, i) => (
-          <GameCard key={g.gameID} game={g} tag={tag} eager={i < eager} className="w-[29vw] max-w-[128px] sm:w-[136px] sm:max-w-none lg:w-[146px]" />
+          <GameCard key={g.gameID} game={g} tag={tag} eager={i < eager} shape={shape}
+            className={shape === "wide" ? "w-[42vw] max-w-[190px] sm:w-[220px] sm:max-w-none lg:w-[236px]" : "w-[29vw] max-w-[128px] sm:w-[136px] sm:max-w-none lg:w-[146px]"} />
         ))}
       </div>
     </section>

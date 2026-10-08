@@ -2,7 +2,7 @@ import "server-only";
 import { connection } from "next/server";
 import type { HomePromo } from "@prisma/client";
 import { prisma } from "@/lib/prisma";
-import { hiddenReason, slotRows, type PromoRecord, type PromoSlot } from "@/lib/homePromoCore";
+import { hiddenReason, slotRows, type PromoPage, type PromoRecord, type PromoSlot } from "@/lib/homePromoCore";
 
 /*
  * Homepage promotions: loading what the lobby shows, and the shapes the admin
@@ -28,7 +28,7 @@ export function toRecord(p: HomePromo): PromoRecord {
   return {
     id: p.id, title: p.title, heading: p.heading, description: p.description,
     hasImage: !!p.imageKey, hasMobileImage: !!p.mobileImageKey, imageAlt: p.imageAlt,
-    ctaLabel: p.ctaLabel, destType: p.destType, destUrl: p.destUrl, layout: p.layout, slot: p.slot,
+    ctaLabel: p.ctaLabel, destType: p.destType, destUrl: p.destUrl, layout: p.layout, slot: p.slot, pages: p.pages,
     sortOrder: p.sortOrder, isActive: p.isActive, startsAt: p.startsAt, endsAt: p.endsAt,
   };
 }
@@ -51,13 +51,13 @@ export function toPublic(p: HomePromo): PublicPromo {
   };
 }
 
-/** The lobby's live promotions, laid out per slot. A slot with nothing live
+/** A lobby's live promotions, laid out per slot. A slot with nothing live
  *  is simply absent — no empty space on the page. */
-export async function getHomePromoSlots(): Promise<Partial<Record<PromoSlot, SlotRow[]>>> {
+export async function getHomePromoSlots(page: PromoPage = "casino"): Promise<Partial<Record<PromoSlot, SlotRow[]>>> {
   await connection(); // time-based: never a build-time snapshot
   const now = new Date();
   const rows = await prisma.homePromo
-    .findMany({ where: { isActive: true }, orderBy: [{ sortOrder: "asc" }, { createdAt: "asc" }] })
+    .findMany({ where: { isActive: true, pages: { has: page } }, orderBy: [{ sortOrder: "asc" }, { createdAt: "asc" }] })
     .catch(() => []);
   const live = rows.filter((p) => hiddenReason(toRecord(p), now) === null);
 

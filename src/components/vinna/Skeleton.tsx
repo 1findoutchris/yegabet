@@ -3,10 +3,11 @@ import { cn } from "@/lib/utils";
 /** Placeholder for one game card while its rail or grid loads. */
 export function SkeletonCard({ className }: { className?: string }) {
   return (
-    <div className={cn("relative rounded-[16px] overflow-hidden aspect-[4/5] v-skel", className)} aria-hidden>
-      <div className="absolute left-2 right-2 bottom-2 sm:left-2.5 sm:right-2.5 sm:bottom-2.5 space-y-1.5">
-        <div className="h-2 w-1/3 rounded bg-[var(--v-bg-3)]" />
-        <div className="h-3 w-3/4 rounded bg-[var(--v-bg-3)]" />
+    <div className={className} aria-hidden>
+      <div className="rounded-[16px] aspect-[4/5] v-skel" />
+      <div className="pt-2 px-0.5 space-y-1.5">
+        <div className="v-skel h-3 w-3/4 rounded" />
+        <div className="v-skel h-2 w-1/2 rounded" />
       </div>
     </div>
   );

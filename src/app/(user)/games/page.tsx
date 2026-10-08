@@ -3,9 +3,12 @@ import {
   catalogMode, loadGames,
 } from "@/lib/games";
 import { GamesPageSection, type GamesTab } from "@/components/casino/GamesPageSection";
+import { GamesLobby } from "@/components/lobby/GamesLobby";
 import { CatalogNotice } from "@/components/casino/CatalogNotice";
 import { AdBoard } from "@/components/ads/AdBoard";
 import { getActiveAds } from "@/lib/ads";
+import Link from "next/link";
+import { ChevronLeft } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -25,8 +28,15 @@ export default async function GamesPage({
 }: {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
-  const { tab } = await searchParams;
+  const { tab, sub } = await searchParams;
   await loadGames();
+
+  // No tab: the Games lobby (sections, category tiles, providers). A tab —
+  // from "View all" or a category tile — opens that category's full list.
+  if (typeof tab !== "string" && catalogMode() === "octhera" && getSectionCategories("games").length > 0) {
+    const boardAds = await getActiveAds("BOARD");
+    return <GamesLobby ads={boardAds.length ? <AdBoard ads={boardAds} /> : null} />;
+  }
   const popularGames = getPopularGames();
   const boardAds     = await getActiveAds("BOARD");
 
@@ -46,6 +56,11 @@ export default async function GamesPage({
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-4 sm:pt-6 pb-16 flex flex-col gap-7">
       <header>
+        {typeof tab === "string" && (
+          <Link href="/games" className="inline-flex items-center gap-1 h-8 pl-1.5 pr-3 -ml-1.5 mb-2 rounded-full text-[12px] font-semibold text-[color:var(--v-text-3)] hover:text-white hover:bg-[var(--v-bg-2)] transition-colors">
+            <ChevronLeft className="w-4 h-4" /> Games lobby
+          </Link>
+        )}
         <p className="v-eyebrow text-[color:var(--v-teal)]">Instant games</p>
         <h1 className="mt-1.5 text-[length:var(--v-fs-page)] font-extrabold tracking-[-0.03em] leading-none text-white">Games</h1>
         <p className="mt-2 text-[14px] text-[color:var(--v-text-3)]">Quick rounds and instant results, away from the casino floor.</p>
@@ -60,6 +75,7 @@ export default async function GamesPage({
           popularGames={popularGames}
           tabs={tabs}
           initialTab={typeof tab === "string" ? tab : undefined}
+          initialSub={typeof sub === "string" ? sub : undefined}
         />
       )}
     </div>
