@@ -23,7 +23,7 @@ const now = new Date("2026-10-08T12:00:00Z");
 const base: PromoRecord = {
   id: "p", title: "t", heading: null, description: null, hasImage: true, hasMobileImage: false,
   imageAlt: "Weekend offer", ctaLabel: null, destType: "internal", destUrl: "/deposit",
-  layout: "banner", slot: "middle", sortOrder: 0, isActive: true, startsAt: null, endsAt: null,
+  layout: "banner", slot: "middle", pages: ["casino"], sortOrder: 0, isActive: true, startsAt: null, endsAt: null,
 };
 const r = (o: Partial<PromoRecord>) => hiddenReason({ ...base, ...o }, now);
 assert.equal(r({}), null);
@@ -33,6 +33,9 @@ assert.equal(r({ endsAt: now }), "Ended");
 assert.equal(r({ startsAt: new Date("2026-10-01"), endsAt: new Date("2026-10-30") }), null);
 assert.equal(r({ slot: "top" }), "Invalid placement");
 assert.equal(r({ layout: "popup" }), "Invalid placement");
+assert.equal(r({ pages: [] }), "Choose at least one page");
+assert.equal(r({ pages: ["home"] }), "Choose at least one page");
+assert.equal(r({ pages: ["live", "games"] }), null);
 assert.equal(r({ hasImage: false }), "Needs an image or a heading");
 assert.equal(r({ hasImage: false, heading: "  " }), "Needs an image or a heading");
 assert.equal(r({ hasImage: false, heading: "Deposit bonus", imageAlt: null }), null);

@@ -6,8 +6,8 @@ import { toast } from "sonner";
 import { ArrowDown, ArrowUp, Loader2, Pencil, Plus, Trash2, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
-  DEST_TYPES, PROMO_LAYOUTS, PROMO_SLOTS, QUICK_DESTINATIONS, imageProblem, validDestination,
-  type DestType, type PromoLayout, type PromoSlot,
+  DEST_TYPES, PROMO_LAYOUTS, PROMO_PAGES, PROMO_SLOTS, QUICK_DESTINATIONS, SLOT_POSITIONS, imageProblem, validDestination,
+  type DestType, type PromoLayout, type PromoPage, type PromoSlot,
 } from "@/lib/homePromoCore";
 import { PromoPanel } from "@/components/vinna/PromoSlot";
 import type { PublicPromo } from "@/lib/homePromos";
@@ -16,7 +16,7 @@ import { useAdminFetch } from "../useAdmin";
 type Promo = {
   id: string; title: string; heading: string | null; description: string | null;
   hasImage: boolean; hasMobileImage: boolean; imageAlt: string | null; ctaLabel: string | null;
-  destType: DestType; destUrl: string | null; layout: PromoLayout; slot: PromoSlot;
+  destType: DestType; destUrl: string | null; layout: PromoLayout; slot: PromoSlot; pages: PromoPage[];
   sortOrder: number; isActive: boolean; startsAt: string | null; endsAt: string | null;
   hiddenReason: string | null; preview: PublicPromo;
 };
@@ -81,7 +81,7 @@ export default function HomePromosPage() {
         <div>
           <h1 className="text-[20px] font-bold text-[color:var(--text-primary)]">Homepage Promos</h1>
           <p className="text-[12px] text-[color:var(--text-muted)] mt-0.5">
-            Banners and posters placed between the lobby&apos;s game sections. Only complete, switched-on promotions inside their dates are shown.
+            Banners and posters placed between the game sections of the Casino, Live Casino and Games lobbies. Only complete, switched-on promotions inside their dates are shown.
           </p>
         </div>
         <button onClick={() => setEditing("new")}
@@ -112,7 +112,10 @@ export default function HomePromosPage() {
           return (
             <section key={slot.id} className="rounded-2xl border border-[color:var(--border-base)] bg-[var(--bg-surface)] p-4 space-y-3">
               <h2 className="text-[14px] font-semibold text-[color:var(--text-primary)]">{slot.label}</h2>
-              {list.length === 0 && <p className="text-[12px] text-[color:var(--text-muted)]">Nothing here — this spot is skipped on the homepage.</p>}
+              <ul className="text-[11px] text-[color:var(--text-muted)] space-y-0.5">
+                {PROMO_PAGES.map((pg) => <li key={pg.id}><span className="text-[color:var(--text-secondary)]">{pg.label}:</span> {SLOT_POSITIONS[pg.id][slot.id]}</li>)}
+              </ul>
+              {list.length === 0 && <p className="text-[12px] text-[color:var(--text-muted)]">Nothing here — this spot is skipped on every page.</p>}
               {list.map((p, i) => (
                 <div key={p.id} className="flex flex-col md:flex-row gap-3 border-t border-[color:var(--border-muted)] pt-3">
                   <div className="md:w-[320px] shrink-0 pointer-events-none">
@@ -127,7 +130,7 @@ export default function HomePromosPage() {
                       </span>
                     </div>
                     <p className="text-[12px] text-[color:var(--text-muted)]">
-                      {PROMO_LAYOUTS.find((l) => l.id === p.layout)?.label} · {p.destUrl ?? "no destination"}
+                      {p.pages.map((pg) => PROMO_PAGES.find((x) => x.id === pg)?.label ?? pg).join(", ")} · {PROMO_LAYOUTS.find((l) => l.id === p.layout)?.label} · {p.destUrl ?? "no destination"}
                       {(p.startsAt || p.endsAt) && <> · {p.startsAt ? new Date(p.startsAt).toLocaleString() : "now"} → {p.endsAt ? new Date(p.endsAt).toLocaleString() : "no end"}</>}
                     </p>
                     <div className="flex items-center gap-1.5 pt-1 flex-wrap">
@@ -180,6 +183,7 @@ function PromoEditor({ promo, onClose, onSaved }: { promo: Promo | null; onClose
     destUrl: promo?.destUrl ?? "",
     layout: (promo?.layout ?? "banner") as PromoLayout,
     slot: (promo?.slot ?? "after_first") as PromoSlot,
+    pages: (promo?.pages ?? ["casino"]) as PromoPage[],
     sortOrder: promo?.sortOrder ?? 0,
     isActive: promo?.isActive ?? false,
     startsAt: toLocal(promo?.startsAt ?? null),
@@ -223,12 +227,14 @@ function PromoEditor({ promo, onClose, onSaved }: { promo: Promo | null; onClose
   async function save() {
     if (!f.title.trim()) { toast.error("Internal title is required"); return; }
     if (!destOk) { toast.error("Fix the destination link"); return; }
+    if (!f.pages.length) { toast.error("Choose at least one page"); return; }
     setSaving(true);
     try {
       const fd = new FormData();
       if (promo) fd.set("id", promo.id);
       for (const [k, v] of Object.entries(f)) {
-        if (k === "startsAt" || k === "endsAt") fd.set(k, v ? new Date(String(v)).toISOString() : "");
+        if (k === "pages") (v as PromoPage[]).forEach((pg) => fd.append("pages", pg));
+        else if (k === "startsAt" || k === "endsAt") fd.set(k, v ? new Date(String(v)).toISOString() : "");
         else fd.set(k, String(v));
       }
       if (image) fd.set("image", image);
@@ -264,14 +270,17 @@ function PromoEditor({ promo, onClose, onSaved }: { promo: Promo | null; onClose
       <div className="grid sm:grid-cols-2 gap-3">
         <Field label="Internal title (admins only)"><input className={input} value={f.title} onChange={(e) => set("title", e.target.value)} maxLength={120} /></Field>
         <Field label="Button label (optional)"><input className={input} value={f.ctaLabel} onChange={(e) => set("ctaLabel", e.target.value)} maxLength={30} placeholder="e.g. Deposit now" /></Field>
-        <Field label="Visible heading (text promotions)"><input className={input} value={f.heading} onChange={(e) => set("heading", e.target.value)} maxLength={80} /></Field>
+        <Field label="Heading (beside the artwork, or on its own)"><input className={input} value={f.heading} onChange={(e) => set("heading", e.target.value)} maxLength={80} /></Field>
         <Field label="Short description (optional)"><input className={input} value={f.description} onChange={(e) => set("description", e.target.value)} maxLength={200} /></Field>
 
         <Field label={`Desktop image${promo?.hasImage && !removeImage ? " (uploaded)" : ""}`}>
           <input type="file" accept="image/jpeg,image/png,image/webp,image/avif,image/gif" className="text-[12px] text-[color:var(--text-secondary)]"
             onChange={(e) => pick(setImage, e.target.files?.[0] ?? null)} />
           {promo?.hasImage && <label className="flex items-center gap-1.5 text-[11px] text-[color:var(--text-muted)] mt-1"><input type="checkbox" checked={removeImage} onChange={(e) => setRemoveImage(e.target.checked)} /> Remove current image</label>}
-          <p className="text-[11px] text-[color:var(--text-muted)] mt-1">Banner ≈ 1600×400 (4:1), poster ≈ 1200×600 (2:1). Shown whole, never cropped. Max 4 MB.</p>
+          <p className="text-[11px] text-[color:var(--text-muted)] mt-1">
+            With a heading: the image is the artwork on the right of the panel (a wheel, coins, a gift…), ≈ 800×600, transparent PNG/WebP works best.
+            Without a heading: the image is the whole poster — banner ≈ 1600×400 (4:1), poster ≈ 1200×600 (2:1). Shown whole, never cropped. Max 4 MB.
+          </p>
         </Field>
         <Field label={`Mobile image (optional)${promo?.hasMobileImage && !removeMobile ? " (uploaded)" : ""}`}>
           <input type="file" accept="image/jpeg,image/png,image/webp,image/avif,image/gif" className="text-[12px] text-[color:var(--text-secondary)]"
@@ -303,10 +312,25 @@ function PromoEditor({ promo, onClose, onSaved }: { promo: Promo | null; onClose
             {PROMO_LAYOUTS.map((l) => <option key={l.id} value={l.id}>{l.label}</option>)}
           </select>
         </Field>
+        <Field label="Show on">
+          <div className="flex flex-wrap gap-x-4 gap-y-1.5 min-h-9 items-center">
+            {PROMO_PAGES.map((pg) => (
+              <label key={pg.id} className="flex items-center gap-1.5 text-[13px] text-[color:var(--text-secondary)]">
+                <input type="checkbox" checked={f.pages.includes(pg.id)}
+                  onChange={(e) => set("pages", e.target.checked ? [...f.pages, pg.id] : f.pages.filter((x) => x !== pg.id))} />
+                {pg.label}
+              </label>
+            ))}
+          </div>
+          {!f.pages.length && <p className="text-[11px] text-[color:var(--red)] mt-1">Choose at least one page</p>}
+        </Field>
         <Field label="Placement">
           <select className={input} value={f.slot} onChange={(e) => set("slot", e.target.value as PromoSlot)}>
             {PROMO_SLOTS.map((s) => <option key={s.id} value={s.id}>{s.label}</option>)}
           </select>
+          <ul className="text-[11px] text-[color:var(--text-muted)] mt-1 space-y-0.5">
+            {f.pages.map((pg) => <li key={pg}>{PROMO_PAGES.find((x) => x.id === pg)?.label}: {SLOT_POSITIONS[pg][f.slot]}</li>)}
+          </ul>
         </Field>
         <Field label="Order within placement">
           <input type="number" min={0} max={999} className={input} value={f.sortOrder} onChange={(e) => set("sortOrder", Number(e.target.value))} />

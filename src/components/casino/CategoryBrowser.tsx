@@ -8,6 +8,7 @@ import type { SubCat } from "./categoryThemes";
 import type { Game } from "@/types/games";
 import { PROVIDER_META } from "@/types/games";
 import { CATEGORY_LABEL, type Category } from "@/lib/catalogClassify";
+import { groupOf, type GameGroup } from "@/lib/gameGroups";
 
 interface Props {
   games: Game[];
@@ -16,6 +17,12 @@ interface Props {
   accent?: string;
   /** Show the provider filter when the set has more than one provider (default on). */
   providerFilter?: boolean;
+  /** Provider-type groups (lib/gameGroups) — used instead of `subcats` when given. */
+  groups?: GameGroup[];
+  /** Pre-selected sub-category / group and provider, e.g. from a lobby tile. */
+  initialSub?: string;
+  initialProvider?: string;
+  initialType?: string;
 }
 
 const PAGE = 60;
@@ -27,11 +34,11 @@ function matches(game: Game, keywords: string[]): boolean {
   return keywords.some((k) => n.includes(k));
 }
 
-export function CategoryBrowser({ games, subcats, providerFilter = true }: Props) {
-  const [active, setActive] = useState("all");
+export function CategoryBrowser({ games, subcats, providerFilter = true, groups, initialSub, initialProvider, initialType }: Props) {
+  const [active, setActive] = useState(initialSub || "all");
   const [search, setSearch] = useState("");
-  const [provider, setProvider] = useState("");
-  const [type, setType] = useState("");
+  const [provider, setProvider] = useState(initialProvider ?? "");
+  const [type, setType] = useState(initialType ?? "");
   // Sections hold thousands of games — render a page at a time.
   const [shown, setShown] = useState(PAGE);
   const filterKey = `${active}|${search}|${provider}|${type}`;
@@ -61,19 +68,26 @@ export function CategoryBrowser({ games, subcats, providerFilter = true }: Props
     }));
   }, [games]);
 
-  // Only keep sub-categories that actually have games in this set.
+  // Only keep sub-categories that actually have games in this set. With
+  // `groups`, each game sits in exactly one group (provider type first).
+  const groupIds = useMemo(
+    () => (groups ? new Map(games.map((g) => [g.gameID, groupOf(g, groups)])) : null),
+    [groups, games]
+  );
+  const inSub = (g: Game, s: { id: string; keywords: string[] }) =>
+    groupIds ? groupIds.get(g.gameID) === s.id : matches(g, s.keywords);
   const available = useMemo(
     () =>
-      subcats
-        .map((s) => ({ ...s, count: games.filter((g) => matches(g, s.keywords)).length }))
+      (groups ?? subcats)
+        .map((s) => ({ ...s, count: games.filter((g) => (groupIds ? groupIds.get(g.gameID) === s.id : matches(g, s.keywords))).length }))
         .filter((s) => s.count > 0),
-    [subcats, games]
+    [groups, subcats, games, groupIds]
   );
 
   const activeSub = available.find((s) => s.id === active);
   const q = search.trim().toLowerCase();
   const filtered = games.filter((g) =>
-    (!activeSub || matches(g, activeSub.keywords)) &&
+    (!activeSub || inSub(g, activeSub)) &&
     (!provider || g.provider === provider) &&
     (!type || g.category === type) &&
     (!q || g.gameNameEn.toLowerCase().includes(q))
@@ -90,7 +104,7 @@ export function CategoryBrowser({ games, subcats, providerFilter = true }: Props
             <AllIcon className="w-4 h-4" /> All
           </button>
           {available.map((s) => {
-            const Icon = SUBCAT_ICONS[s.icon] ?? AllIcon;
+            const Icon = SUBCAT_ICONS[s.icon] ?? SUBCAT_ICONS[s.id] ?? AllIcon;
             return (
               <button key={s.id} data-active={active === s.id} onClick={() => setActive(s.id)} className="v-pill shrink-0">
                 <Icon className="w-4 h-4" /> {s.label}

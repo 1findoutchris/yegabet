@@ -1,14 +1,41 @@
 // Homepage promotions — pure rules (validation, visibility, layout), shared by
 // the admin API, the homepage and the self-check. No server-only imports.
 
-/** Where on the homepage a promotion can sit. Promotions never go above the
+/** The lobbies a promotion can appear on. */
+export const PROMO_PAGES = [
+  { id: "casino", label: "Casino" },
+  { id: "live", label: "Live Casino" },
+  { id: "games", label: "Games" },
+] as const;
+export type PromoPage = (typeof PROMO_PAGES)[number]["id"];
+
+/** Where on a lobby a promotion can sit. Promotions never go above the
  *  first game section — games stay visible the moment the page opens. */
 export const PROMO_SLOTS = [
-  { id: "after_first", label: "After the first game section" },
-  { id: "middle", label: "Middle of the page (after Slots)" },
+  { id: "after_first", label: "Upper — after the first sections" },
+  { id: "middle", label: "Middle of the page" },
   { id: "lower", label: "Lower on the page" },
 ] as const;
 export type PromoSlot = (typeof PROMO_SLOTS)[number]["id"];
+
+/** Exactly which sections each placement sits between, per page. */
+export const SLOT_POSITIONS: Record<PromoPage, Record<PromoSlot, string>> = {
+  casino: {
+    after_first: "after Popular now / Jump back in, before Crash games",
+    middle: "after Slots, before Live casino",
+    lower: "after Providers, before Offers",
+  },
+  live: {
+    after_first: "after the category tiles, before Roulette",
+    middle: "after Blackjack & Baccarat, before Game shows",
+    lower: "after Providers, before New live tables",
+  },
+  games: {
+    after_first: "after Crash games, before Instant games",
+    middle: "after Mines, Plinko & Dice, before Providers",
+    lower: "after New games, at the bottom",
+  },
+};
 
 export const PROMO_LAYOUTS = [
   { id: "banner", label: "Wide banner" },
@@ -38,6 +65,7 @@ export const QUICK_DESTINATIONS = [
   { label: "Check ticket", path: "/check" },
 ];
 
+export const isPage = (v: unknown): v is PromoPage => PROMO_PAGES.some((s) => s.id === v);
 export const isSlot = (v: unknown): v is PromoSlot => PROMO_SLOTS.some((s) => s.id === v);
 export const isLayout = (v: unknown): v is PromoLayout => PROMO_LAYOUTS.some((s) => s.id === v);
 export const isDestType = (v: unknown): v is DestType => DEST_TYPES.some((s) => s.id === v);
@@ -74,6 +102,7 @@ export type PromoRecord = {
   destUrl: string | null;
   layout: string;
   slot: string;
+  pages: string[];
   sortOrder: number;
   isActive: boolean;
   startsAt: Date | null;
@@ -91,6 +120,7 @@ export function hiddenReason(p: PromoRecord, now: Date): string | null {
   if (p.startsAt && p.startsAt > now) return "Not started yet";
   if (p.endsAt && p.endsAt <= now) return "Ended";
   if (!isSlot(p.slot) || !isLayout(p.layout)) return "Invalid placement";
+  if (!p.pages.some(isPage)) return "Choose at least one page";
   if (!p.hasImage && !p.heading?.trim()) return "Needs an image or a heading";
   if (p.hasImage && !p.imageAlt?.trim()) return "Image needs alternative text";
   if (!isDestType(p.destType) || !p.destUrl || !validDestination(p.destType, p.destUrl)) return "Needs a valid destination";

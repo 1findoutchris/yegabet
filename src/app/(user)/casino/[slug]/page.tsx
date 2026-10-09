@@ -14,6 +14,9 @@ import {
   loadGames,
 } from "@/lib/games";
 import { PROVIDER_META } from "@/types/games";
+import { LIVE_GROUPS } from "@/lib/gameGroups";
+import { LiveLobby } from "@/components/lobby/LiveLobby";
+import { SECTION_CATEGORIES, type Section } from "@/lib/catalogClassify";
 import { getPlayedPopular, getRecentlyAdded } from "@/lib/homeSections";
 import {
   CATEGORY_THEMES,
@@ -41,13 +44,24 @@ const OCTHERA_GETTERS: Record<string, () => ReturnType<typeof getHotGames>> = {
 
 interface Props {
   params: Promise<{ slug: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }
 
-export default async function CategoryPage({ params }: Props) {
+const one = (v: string | string[] | undefined) => (typeof v === "string" ? v : undefined);
+
+export default async function CategoryPage({ params, searchParams }: Props) {
   const { slug } = await params;
+  const q = await searchParams;
   // Crash & instant games are in the Games section now.
   if (slug === "crash" && catalogMode() === "octhera") redirect("/games?tab=crash");
   await loadGames();
+
+  // Live: the lobby, unless a tile or "View all" asked for the full list
+  // (?view=all, or ?sub=<group> to open it filtered).
+  if (slug === "live" && !one(q.sub) && !one(q.view)) {
+    if (!getLiveCasinoGames(1).length) notFound();
+    return <LiveLobby />;
+  }
 
   // Built-in category
   const getter = (catalogMode() === "octhera" && OCTHERA_GETTERS[slug]) || CATEGORY_GETTERS[slug];
@@ -63,15 +77,24 @@ export default async function CategoryPage({ params }: Props) {
     const theme = CATEGORY_THEMES[slug] ?? DEFAULT_THEME;
     const subcats = SUBCATEGORIES[slug] ?? [];
     return (
-      <ThemedPage theme={theme} title={theme.title} count={games.length}>
-        <CategoryBrowser games={games} subcats={subcats} accent={theme.accent} />
+      <ThemedPage theme={theme} title={theme.title} count={games.length} back={slug === "live" ? { href: "/casino/live", label: "Live lobby" } : undefined}>
+        <CategoryBrowser games={games} subcats={subcats} accent={theme.accent}
+          groups={slug === "live" ? LIVE_GROUPS : undefined} initialSub={one(q.sub)} />
       </ThemedPage>
     );
   }
 
-  // Provider page (e.g. /casino/pgsoft, /casino/cq9)
-  const games = getGamesByProvider(slug, catalogMode() === "octhera" ? ALL : 500);
-  if (!games.length) notFound();
+  // Provider page (e.g. /casino/pgsoft, /casino/cq9). From a lobby's
+  // provider tile: ?type=<category> pre-selects that game type, ?section=games
+  // keeps to that section's games.
+  const everything = getGamesByProvider(slug, catalogMode() === "octhera" ? ALL : 500);
+  if (!everything.length) notFound();
+  const section = one(q.section);
+  const inSection = section && section in SECTION_CATEGORIES
+    ? everything.filter((g) => g.section === (section as Section))
+    : [];
+  const games = inSection.length ? inSection : everything;
+  const type = one(q.type);
   const providerName = PROVIDER_META[slug]?.name ?? games[0].providerName;
 
   return (
@@ -80,7 +103,8 @@ export default async function CategoryPage({ params }: Props) {
       title={providerName ?? slug.toUpperCase()}
       count={games.length}
     >
-      <CategoryBrowser games={games} subcats={SUBCATEGORIES.default} accent={DEFAULT_THEME.accent} />
+      <CategoryBrowser games={games} subcats={SUBCATEGORIES.default} accent={DEFAULT_THEME.accent}
+        initialType={type && games.some((g) => g.category === type) ? type : undefined} />
     </ThemedPage>
   );
 }
@@ -89,21 +113,23 @@ function ThemedPage({
   theme,
   title,
   count,
+  back = { href: "/casino", label: "Casino" },
   children,
 }: {
   theme: CategoryTheme;
   title: string;
   count: number;
+  back?: { href: string; label: string };
   children: React.ReactNode;
 }) {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-4 sm:pt-6 pb-16">
       <header className="mb-6 sm:mb-8 v-fade-up">
         <Link
-          href="/casino"
+          href={back.href}
           className="inline-flex items-center gap-1 h-8 pl-1.5 pr-3 -ml-1.5 rounded-full text-[12px] font-semibold text-[color:var(--v-text-3)] hover:text-white hover:bg-[var(--v-bg-2)] transition-colors"
         >
-          <ChevronLeft className="w-4 h-4" /> Casino
+          <ChevronLeft className="w-4 h-4" /> {back.label}
         </Link>
         <div className="mt-3 flex items-end gap-4">
           <div className="min-w-0">

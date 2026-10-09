@@ -20,6 +20,7 @@ export function GameGrid({
   href,
   tag,
   eager = 0,
+  shape = "portrait",
 }: {
   title: React.ReactNode;
   description?: React.ReactNode;
@@ -27,17 +28,19 @@ export function GameGrid({
   href?: string;
   tag?: GameTag;
   eager?: number;
+  /** "wide": landscape cards in fewer columns (2 · 3 · 3 · 4 · 4). */
+  shape?: "portrait" | "wide";
 }) {
   if (!games.length) return null;
   return (
     <section className="cv-auto">
       <SectionHeader title={title} description={description} href={href} />
-      <div className="v-grid2">
+      <div className={shape === "wide" ? "v-grid2 v-grid2-wide" : "v-grid2"}>
         {/* One wrapper per card: GameCard can render its login prompt as a
             sibling, which must not shift the row counting above. */}
         {games.slice(0, 16).map((g, i) => (
           <div key={g.gameID} className="min-w-0">
-            <GameCard game={g} tag={tag} eager={i < eager} />
+            <GameCard game={g} tag={tag} eager={i < eager} shape={shape} />
           </div>
         ))}
       </div>

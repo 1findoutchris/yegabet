@@ -18,10 +18,10 @@ vi.mock("next/server", async (orig) => ({ ...(await orig<typeof import("next/ser
 
 const PNG = new Uint8Array([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a, 1, 2, 3, 4]);
 
-async function multipart(method: "POST" | "PUT", fields: Record<string, string>, files: Record<string, File> = {}) {
+async function multipart(method: "POST" | "PUT", fields: Record<string, string | string[]>, files: Record<string, File> = {}) {
   const auth = await adminAuth();
   const fd = new FormData();
-  for (const [k, v] of Object.entries(fields)) fd.set(k, v);
+  for (const [k, v] of Object.entries(fields)) for (const x of [v].flat()) fd.append(k, x);
   for (const [k, v] of Object.entries(files)) fd.set(k, v);
   const headers = new Headers(auth.headers);
   headers.set("cookie", Object.entries(auth.cookies).map(([k, v]) => `${k}=${v}`).join("; "));
@@ -30,10 +30,10 @@ async function multipart(method: "POST" | "PUT", fields: Record<string, string>,
 }
 const png = (name = "a.png") => new File([PNG], name, { type: "image/png" });
 
-const text = { title: "Deposit offer", heading: "Top up with telebirr", description: "Instant ETB deposits", destType: "internal", destUrl: "/deposit", layout: "banner", slot: "middle", isActive: "true" };
+const text: Record<string, string | string[]> = { pages: "casino", title: "Deposit offer", heading: "Top up with telebirr", description: "Instant ETB deposits", destType: "internal", destUrl: "/deposit", layout: "banner", slot: "middle", isActive: "true" };
 
 async function list() {
-  const r = await json<{ promos: { id: string; isActive: boolean; slot: string; sortOrder: number; hiddenReason: string | null; hasImage: boolean }[] }>(
+  const r = await json<{ promos: { id: string; isActive: boolean; slot: string; pages: string[]; sortOrder: number; hiddenReason: string | null; hasImage: boolean }[] }>(
     await GET(req("GET", "/api/admin/home-promos", await adminAuth())),
   );
   expect(r.status).toBe(200);
@@ -78,6 +78,17 @@ describe("home promos", () => {
     expect(slots.middle).toBeUndefined();
     expect((await list())[0].hiddenReason).toBe("Switched off");
     expect(await prisma.adminLog.count({ where: { action: { in: ["CREATE_HOME_PROMO", "DISABLE_HOME_PROMO"] } } })).toBe(2);
+  });
+
+  test("pages: a promotion shows only on the lobbies it's set for", async () => {
+    expect((await multipart("POST", { ...text, pages: [] })).body.error).toMatch(/page/i);
+    expect((await multipart("POST", { ...text, pages: ["home"] })).status).toBe(400);
+    const c = await multipart("POST", { ...text, pages: ["live", "games"] });
+    expect(c.status).toBe(200);
+    expect((await getHomePromoSlots("casino")).middle).toBeUndefined();
+    expect((await getHomePromoSlots("live")).middle).toHaveLength(1);
+    expect((await getHomePromoSlots("games")).middle).toHaveLength(1);
+    expect((await list())[0]).toMatchObject({ pages: ["live", "games"] });
   });
 
   test("new promotions start switched off", async () => {
