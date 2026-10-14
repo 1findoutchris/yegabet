@@ -259,7 +259,7 @@ describe("duplicates", () => {
     expect(lastText()).toContain("Where would you like to play");
   });
 
-  test("one Telegram account can't open a second VinnaBet account", async () => {
+  test("one Telegram account can't open a second YegaBet account", async () => {
     const a = await submit("+251922000033");
     await start(7033, a.token);
     await share(7033, "251922000033");

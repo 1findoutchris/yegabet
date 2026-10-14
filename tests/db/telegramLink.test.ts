@@ -6,7 +6,7 @@ import { truncateAll, makeUser } from "../factories";
 import { json, req } from "../helpers/req";
 
 /*
- * The VinnaBet bot's account linking and the Mini App sign-in, end to end
+ * The YegaBet bot's account linking and the Mini App sign-in, end to end
  * through the real webhook route and the real database.
  *
  * What matters most here: a link is only ever made from the sender's OWN
@@ -96,9 +96,9 @@ describe("webhook authentication", () => {
 
   test("/start shows the main menu with all four buttons", async () => {
     await update(textMsg("/start"));
-    expect(lastText()).toContain("Welcome to VinnaBet");
+    expect(lastText()).toContain("Welcome to YegaBet");
     const kb = JSON.stringify(sent.at(-1)?.body.reply_markup);
-    for (const label of ["Verify Phone Number", "Open VinnaBet", "Check Ticket", "Support"]) expect(kb).toContain(label);
+    for (const label of ["Verify Phone Number", "Open YegaBet", "Check Ticket", "Support"]) expect(kb).toContain(label);
     expect(kb).toContain("https://vinna.test/tg");
   });
 
@@ -150,7 +150,7 @@ describe("linking by contact", () => {
   test("no account → the spec's message, and no user is created", async () => {
     const before = await prisma.user.count();
     await update(contactMsg({ user_id: TG, phone_number: "251944999999" }));
-    expect(allText()).toContain("No VinnaBet account was found for this phone number.");
+    expect(allText()).toContain("No YegaBet account was found for this phone number.");
     expect(JSON.stringify(sent.at(-1)?.body.reply_markup)).toContain("Create Account");
     expect(JSON.stringify(sent.at(-1)?.body.reply_markup)).toContain("Try Another Account Method");
     expect(await prisma.user.count()).toBe(before);

@@ -9,7 +9,7 @@ import { json, req } from "../helpers/req";
 import { asAnon, asUser } from "../helpers/session";
 
 /*
- * Octhera API v2 — company wallet. Players play with their normal VinnaBet
+ * Octhera API v2 — company wallet. Players play with their normal YegaBet
  * balance: Octhera calls /api/provider/octhera/wallet for every bet and win.
  * `fetch` is stubbed for the launch tests — nothing here reaches Octhera.
  */
@@ -133,7 +133,7 @@ describe("wallet — signature and ping", () => {
 });
 
 describe("wallet — debit", () => {
-  test("accepted bet moves the normal VinnaBet balance and writes a BET transaction", async () => {
+  test("accepted bet moves the normal YegaBet balance and writes a BET transaction", async () => {
     const p = await makeUser({ balance: 100 });
     const r = await debit(p.id, { txnId: "bet-1", betAmount: 10 });
     expect(r).toEqual({ status: 200, body: { status: "ok", balance: 90 } });
@@ -391,7 +391,7 @@ describe("launch (/api/games/launch, game_uid octhera:<gameUid>)", () => {
 });
 
 describe("one player, start to finish (launch → bet → win → refresh)", () => {
-  test("Octhera plays on the player's real VinnaBet balance, and nothing else moves", async () => {
+  test("Octhera plays on the player's real YegaBet balance, and nothing else moves", async () => {
     const { GET: balanceRoute } = await import("@/app/api/user/balance/route");
     const player = await makeUser({ balance: 100, depositBalance: 100 });
     const bystander = await makeUser({ balance: 100 });
