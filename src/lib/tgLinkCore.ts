@@ -1,4 +1,4 @@
-// Linking a Telegram account to a VinnaBet account — the pure decision table,
+// Linking a Telegram account to a YegaBet account — the pure decision table,
 // split out of tgLink.ts so every branch is testable without a database.
 
 import { normalizePhone } from "./sms";

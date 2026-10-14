@@ -81,7 +81,7 @@ export default function UsersPage() {
                 </thead>
                 <tbody className="divide-y divide-[color:var(--border-muted)]">
                   {data.items.map((u) => {
-                    const tierColor = TIER_COLOR[u.loyaltyTier] ?? "#2DD4BF";
+                    const tierColor = TIER_COLOR[u.loyaltyTier] ?? "#FF7A00";
                     return (
                       <tr key={u.id} onClick={() => router.push(`/admin/${secret}/users/${u.id}`)} className="cursor-pointer hover:bg-[var(--bg-elevated)] transition-colors">
                         <td className="px-4 py-3 whitespace-nowrap">

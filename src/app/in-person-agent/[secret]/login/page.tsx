@@ -67,11 +67,11 @@ export default function AgentLoginPage() {
       <div className="w-full max-w-sm bg-[var(--bg-surface)] border border-[color:var(--border-muted)] rounded-3xl p-8">
         {/* Logo */}
         <div className="flex flex-col items-center gap-2 mb-8">
-          <div className="w-13 h-13 rounded-2xl bg-gradient-to-br from-[#7DE8D8] via-[#2DD4BF] to-[#0D9488] flex items-center justify-center" style={{ width: 52, height: 52 }}>
+          <div className="w-13 h-13 rounded-2xl bg-gradient-to-br from-[#FFB366] via-[#FF7A00] to-[#C25700] flex items-center justify-center" style={{ width: 52, height: 52 }}>
             <span className="font-black text-[#09090B] text-[22px]">V</span>
           </div>
           <p className="font-extrabold text-[22px] text-[color:var(--text-primary)]">
-            Vinna<span className="text-gold-grad">Bet</span>
+            Yega<span className="text-gold-grad">Bet</span>
           </p>
           <p className="text-[12px] text-[color:var(--text-muted)]">Betting agent portal</p>
         </div>
@@ -132,7 +132,7 @@ export default function AgentLoginPage() {
           type="button"
           onClick={handleLogin}
           disabled={loading || localPhone.length !== 9 || !password}
-          className="w-full h-11.5 rounded-xl bg-gradient-to-br from-[#7DE8D8] via-[#2DD4BF] to-[#0D9488] text-[#09090B] font-bold text-[15px] flex items-center justify-center gap-2 disabled:opacity-60"
+          className="w-full h-11.5 rounded-xl bg-gradient-to-br from-[#FFB366] via-[#FF7A00] to-[#C25700] text-[#09090B] font-bold text-[15px] flex items-center justify-center gap-2 disabled:opacity-60"
           style={{ height: 46 }}
         >
           {loading ? (

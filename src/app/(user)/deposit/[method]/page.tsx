@@ -197,7 +197,7 @@ export default function DepositMethodPage() {
       <div className="max-w-xl mx-auto px-4 sm:px-6 py-6 pb-24">
         <div
           className="relative overflow-hidden rounded-3xl border border-[color:var(--border-base)] p-7 text-center"
-          style={{ background: "linear-gradient(150deg,#0F1A2E,#0F1A2E 60%)" }}
+          style={{ background: "linear-gradient(150deg,#141414,#141414 60%)" }}
         >
           <span aria-hidden className="pointer-events-none absolute -top-16 left-1/2 -translate-x-1/2 w-64 h-64 rounded-full"
             style={{ background: "radial-gradient(circle,rgba(43,217,116,0.18),transparent 65%)" }} />
@@ -227,10 +227,10 @@ export default function DepositMethodPage() {
       <div className="max-w-xl mx-auto px-4 sm:px-6 py-6 pb-24">
         <div
           className="relative overflow-hidden rounded-3xl border border-[color:var(--border-base)] p-7 text-center"
-          style={{ background: "linear-gradient(150deg,#0F1A2E,#0F1A2E 60%)" }}
+          style={{ background: "linear-gradient(150deg,#141414,#141414 60%)" }}
         >
           <span aria-hidden className="pointer-events-none absolute -top-16 left-1/2 -translate-x-1/2 w-64 h-64 rounded-full"
-            style={{ background: "radial-gradient(circle,rgba(25,211,197,0.14),transparent 65%)" }} />
+            style={{ background: "radial-gradient(circle,rgba(255, 122, 0,0.14),transparent 65%)" }} />
           <div className="relative z-10 flex flex-col items-center gap-3">
             <div className="w-14 h-14 rounded-full border-2 border-[color:var(--gold)] grid place-items-center">
               <Loader2 className="w-7 h-7 text-[color:var(--gold)] animate-spin" />
@@ -260,7 +260,7 @@ export default function DepositMethodPage() {
       <div className="max-w-xl mx-auto px-4 sm:px-6 py-6 pb-24">
         <div
           className="relative overflow-hidden rounded-3xl border border-[color:var(--border-base)] p-7 text-center"
-          style={{ background: "linear-gradient(150deg,#0F1A2E,#0F1A2E 60%)" }}
+          style={{ background: "linear-gradient(150deg,#141414,#141414 60%)" }}
         >
           <div className="flex flex-col items-center gap-3">
             <Clock className="w-14 h-14 text-[color:var(--text-muted)]" />

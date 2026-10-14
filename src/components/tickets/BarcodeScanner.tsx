@@ -53,7 +53,7 @@ export function BarcodeScanner({ onScan, onClose }: { onScan: (code: string) => 
           (result) => {
             if (!result || doneRef.current) return;
             const text = result.getText();
-            if (!normalizeCode(text)) { setHint("That barcode isn't a VinnaBet ticket"); return; }
+            if (!normalizeCode(text)) { setHint("That barcode isn't a YegaBet ticket"); return; }
             doneRef.current = true;
             navigator.vibrate?.(60);
             controlsRef.current?.stop();
@@ -132,7 +132,7 @@ export function BarcodeScanner({ onScan, onClose }: { onScan: (code: string) => 
               </p>
               <p className="text-[12px] text-white/70">
                 {phase === "denied"
-                  ? "Allow camera access for VinnaBet in your phone or browser settings, or enter the ticket code instead."
+                  ? "Allow camera access for YegaBet in your phone or browser settings, or enter the ticket code instead."
                   : "This device or browser can't scan here. Enter the ticket code instead."}
               </p>
               <button onClick={onClose} className="mt-2 px-4 py-2.5 rounded-xl bg-white text-black text-[13px] font-bold">

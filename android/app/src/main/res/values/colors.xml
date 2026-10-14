@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="vinna_navy">#0A1222</color>
-    <color name="vinna_teal">#19D3C5</color>
+    <color name="vinna_navy">#0A0A0A</color>
+    <color name="vinna_teal">#FF7A00</color>
 </resources>

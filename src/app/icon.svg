@@ -1,20 +1,20 @@
 <svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="azure" x1="120" y1="96" x2="392" y2="416" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#7DE8D8"/>
-      <stop offset="0.5" stop-color="#2DD4BF"/>
-      <stop offset="1" stop-color="#0D9488"/>
+      <stop stop-color="#FFB366"/>
+      <stop offset="0.5" stop-color="#FF7A00"/>
+      <stop offset="1" stop-color="#C25700"/>
     </linearGradient>
     <radialGradient id="glow" cx="0.5" cy="0.38" r="0.7">
-      <stop stop-color="#1A4252"/>
-      <stop offset="1" stop-color="#0C2027"/>
+      <stop stop-color="#2A1A0C"/>
+      <stop offset="1" stop-color="#0A0A0A"/>
     </radialGradient>
   </defs>
-  <!-- Navy rounded tile -->
+  <!-- Black rounded tile -->
   <rect width="512" height="512" rx="116" fill="url(#glow)"/>
-  <rect x="6" y="6" width="500" height="500" rx="112" fill="none" stroke="#2DD4BF" stroke-opacity="0.35" stroke-width="6"/>
-  <!-- Sky-blue "V" monogram -->
+  <rect x="6" y="6" width="500" height="500" rx="112" fill="none" stroke="#FF7A00" stroke-opacity="0.35" stroke-width="6"/>
+  <!-- Orange "Y" monogram -->
   <g fill="url(#azure)">
-    <path d="M132 132 L226 132 L256 296 L286 132 L380 132 L296 380 L216 380 Z"/>
+    <path d="M120 120 L210 120 L256 220 L302 120 L392 120 L292 290 L292 392 L220 392 L220 290 Z"/>
   </g>
 </svg>

@@ -233,7 +233,7 @@ export default function PaymentMethodsPage() {
                       type="text"
                       value={d.agentName}
                       onChange={(e) => setDraft(m.id, "agentName", e.target.value)}
-                      placeholder="e.g. Vinna Agent"
+                      placeholder="e.g. Yega Agent"
                       className="w-full h-11 px-4 rounded-xl bg-[var(--bg-elevated)] border border-[color:var(--border-base)] text-[color:var(--text-primary)] text-[14px] focus:outline-none focus:border-[color:var(--border-accent)] transition-colors"
                     />
                   </div>

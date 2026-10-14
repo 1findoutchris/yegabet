@@ -3,7 +3,7 @@
  * Pure DOM (no deps), self-cleaning, and a no-op under prefers-reduced-motion.
  * Call it from any client event handler, e.g. on a successful claim.
  */
-const COLORS = ["#2DD4BF", "#7DE8D8", "#C07AFF", "#D8B4FF", "#2BD974"];
+const COLORS = ["#FF7A00", "#FFB366", "#C07AFF", "#D8B4FF", "#2BD974"];
 
 export function celebrate(count = 46) {
   if (typeof window === "undefined") return;

@@ -30,15 +30,15 @@ interface Account {
 }
 
 const TIER_COLOR: Record<string, string> = {
-  BRONZE: "#CD7F32", SILVER: "#C7CCD1", GOLD: "#F0A500", PLATINUM: "#9FE7E3", DIAMOND: "#5EE6DA", VIP: "#FAD27E",
+  BRONZE: "#CD7F32", SILVER: "#C7CCD1", GOLD: "#F0A500", PLATINUM: "#9FE7E3", DIAMOND: "#FFA040", VIP: "#FAD27E",
 };
 
 const TXN_META: Record<string, { icon: typeof Wallet; color: string; sign: string }> = {
   DEPOSIT:    { icon: ArrowDownLeft, color: "#34D399", sign: "+" },
   WITHDRAWAL: { icon: ArrowUpRight,  color: "#F43F5E", sign: "−" },
-  BET:        { icon: Dice5,         color: "#7D8DAA", sign: "−" },
+  BET:        { icon: Dice5,         color: "#8C8C8C", sign: "−" },
   WIN:        { icon: Trophy,        color: "#34D399", sign: "+" },
-  BONUS:      { icon: Gift,          color: "#19D3C5", sign: "+" },
+  BONUS:      { icon: Gift,          color: "#FF7A00", sign: "+" },
   COMMISSION: { icon: Receipt,       color: "#F5B83D", sign: "+" },
   REFUND:     { icon: Receipt,       color: "#34D399", sign: "+" },
 };
@@ -97,7 +97,7 @@ export default function AccountPage() {
     );
   }
 
-  const tierColor = data ? (TIER_COLOR[data.loyaltyTier] ?? "#19D3C5") : "#19D3C5";
+  const tierColor = data ? (TIER_COLOR[data.loyaltyTier] ?? "#FF7A00") : "#FF7A00";
   const displayName = data?.name?.trim() || data?.username || "Player";
   const initial = displayName.charAt(0).toUpperCase();
   const money = (n: number | undefined) => Number(n ?? 0).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });

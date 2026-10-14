@@ -38,7 +38,7 @@ export const TIERS: Tier[] = [
   { id: "silver",   name: "Silver",   min: 1000,   max: 4999,   cashback: "4%",  cashbackRate: 0.04, cashbackCap: 250,  color: "#C7CCD1", badge: "/badges/silver.svg"   },
   { id: "gold",     name: "Gold",     min: 5000,   max: 14999,  cashback: "6%",  cashbackRate: 0.06, cashbackCap: 500,  color: "#F0A500", badge: "/badges/gold.svg"     },
   { id: "platinum", name: "Platinum", min: 15000,  max: 39999,  cashback: "8%",  cashbackRate: 0.08, cashbackCap: 1000, color: "#9FE7E3", badge: "/badges/platinum.svg" },
-  { id: "diamond",  name: "Diamond",  min: 40000,  max: 99999,  cashback: "10%", cashbackRate: 0.10, cashbackCap: 1500, color: "#7DE8D8", badge: "/badges/diamond.svg"  },
+  { id: "diamond",  name: "Diamond",  min: 40000,  max: 99999,  cashback: "10%", cashbackRate: 0.10, cashbackCap: 1500, color: "#FFB366", badge: "/badges/diamond.svg"  },
   { id: "vip",      name: "VIP",      min: 100000, max: null,   cashback: "15%", cashbackRate: 0.15, cashbackCap: 2000, color: "#D8B4FF", badge: "/badges/vip.svg" },
 ];
 

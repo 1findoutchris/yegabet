@@ -53,7 +53,7 @@ export function SpinPrompt() {
         onClick={(e) => e.stopPropagation()}
         className="relative w-[min(92vw,360px)] rounded-3xl border border-[color:var(--border-accent)] overflow-hidden text-center"
         style={{
-          background: "linear-gradient(160deg,#1E1129 0%,#140C1E 55%,#0A1222 100%)",
+          background: "linear-gradient(160deg,#1E1129 0%,#140C1E 55%,#0A0A0A 100%)",
           boxShadow: "0 30px 80px rgba(0,0,0,0.7), var(--glow-gold)",
         }}
       >
@@ -61,7 +61,7 @@ export function SpinPrompt() {
         <span
           aria-hidden
           className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-[300px] h-[300px] rounded-full"
-          style={{ background: "radial-gradient(circle,rgba(25,211,197,0.22),transparent 65%)" }}
+          style={{ background: "radial-gradient(circle,rgba(255, 122, 0,0.22),transparent 65%)" }}
         />
 
         <button

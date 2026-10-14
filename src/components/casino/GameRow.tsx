@@ -4,7 +4,7 @@ import { GameCarousel } from "@/components/vinna/GameCarousel";
 import type { GameBadge } from "./GameCard";
 import type { Game } from "@/types/games";
 
-/* Kept for existing call sites (My Casino, Games page): the VinnaBet carousel
+/* Kept for existing call sites (My Casino, Games page): the YegaBet carousel
    under the old props. `icon` and `accentColor` belonged to the old header
    style and are ignored. */
 interface GameRowProps {

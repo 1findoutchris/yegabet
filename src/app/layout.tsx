@@ -14,20 +14,20 @@ const manrope = Manrope({
 });
 
 const SITE_URL = process.env.NEXT_PUBLIC_APP_URL ?? "https://vinnabet.com";
-const SITE_NAME = "VinnaBet";
+const SITE_NAME = "YegaBet";
 const DESCRIPTION =
-  "VinnaBet — the premier online casino and sports betting in Ethiopia. Play 1000+ slots and live casino games, bet on football and live sports, with instant telebirr, CBE Birr and eBirr deposits and fast withdrawals.";
+  "YegaBet — the premier online casino and sports betting in Ethiopia. Play 1000+ slots and live casino games, bet on football and live sports, with instant telebirr, CBE Birr and eBirr deposits and fast withdrawals.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "VinnaBet — Online Casino & Sports Betting in Ethiopia",
-    template: "%s · VinnaBet",
+    default: "YegaBet — Online Casino & Sports Betting in Ethiopia",
+    template: "%s · YegaBet",
   },
   description: DESCRIPTION,
   applicationName: SITE_NAME,
   keywords: [
-    "VinnaBet", "Vinna", "sports betting Ethiopia", "online casino Ethiopia",
+    "YegaBet", "Yega", "sports betting Ethiopia", "online casino Ethiopia",
     "betting Ethiopia", "Ethiopian betting site", "telebirr betting", "CBE Birr betting",
     "football betting", "live casino", "online slots", "ETB betting", "ውርርድ",
   ],
@@ -45,13 +45,13 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: SITE_URL,
     siteName: SITE_NAME,
-    title: "VinnaBet — Online Casino & Sports Betting in Ethiopia",
+    title: "YegaBet — Online Casino & Sports Betting in Ethiopia",
     description: DESCRIPTION,
-    images: [{ url: "/icon.svg", width: 512, height: 512, alt: "VinnaBet" }],
+    images: [{ url: "/icon.svg", width: 512, height: 512, alt: "YegaBet" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "VinnaBet — Online Casino & Sports Betting",
+    title: "YegaBet — Online Casino & Sports Betting",
     description: DESCRIPTION,
     images: ["/icon.svg"],
   },
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0A1222",
+  themeColor: "#0A0A0A",
   // viewport-fit=cover lets env(safe-area-inset-*) reach the mobile tab bar.
   viewportFit: "cover",
 };
@@ -95,8 +95,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 "@type": "WebSite",
                 name: SITE_NAME,
                 // What Google may show instead of the bare domain in a result
-                // header. Without these it only has "VinnaBet" to work with.
-                alternateName: ["VinnaBet", "Vinna", "ቪና ቤት"],
+                // header. Without these it only has "YegaBet" to work with.
+                alternateName: ["YegaBet", "Yega", "የጋ ቤት"],
                 url: SITE_URL,
               },
             ]),
@@ -109,12 +109,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           offset={68}
           toastOptions={{
             style: {
-              background: "rgba(15, 26, 46, 0.92)",
+              background: "rgba(20, 20, 20, 0.92)",
               backdropFilter: "blur(16px)",
-              border: "1px solid rgba(148, 170, 210, 0.18)",
+              border: "1px solid rgba(200, 200, 200, 0.18)",
               borderRadius: "14px",
               color: "#FFFFFF",
-              boxShadow: "0 18px 48px rgba(2, 6, 18, 0.6)",
+              boxShadow: "0 18px 48px rgba(0, 0, 0, 0.6)",
             },
           }}
         />

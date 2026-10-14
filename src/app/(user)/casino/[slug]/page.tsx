@@ -144,7 +144,7 @@ function ThemedPage({
             <span className="text-[11px] font-semibold text-[color:var(--v-text-3)] uppercase tracking-[0.1em]">games</span>
           </span>
         </div>
-        <div className="mt-5 h-px bg-[linear-gradient(90deg,var(--v-teal),rgba(25,211,197,0)_40%)] opacity-60" />
+        <div className="mt-5 h-px bg-[linear-gradient(90deg,var(--v-teal),rgba(255, 122, 0,0)_40%)] opacity-60" />
       </header>
 
       {children}

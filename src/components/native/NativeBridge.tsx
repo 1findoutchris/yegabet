@@ -210,7 +210,7 @@ function NativeShell() {
     return (
       <FullScreen>
         <Download className="w-9 h-9 text-[color:var(--v-teal)]" />
-        <h2 className="text-[20px] font-extrabold text-white">Update VinnaBet</h2>
+        <h2 className="text-[20px] font-extrabold text-white">Update YegaBet</h2>
         <p className="text-[14px] text-[color:var(--v-text-2)] max-w-[300px]">
           This version of the app is no longer supported. Update to keep playing; your balance and bets are safe.
         </p>

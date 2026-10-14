@@ -25,7 +25,7 @@ const TABS: { id: Section; href: string; label: string }[] = [
 ];
 
 /**
- * VinnaBet header. Exactly 56px tall: SportsPane and the game players sit at
+ * YegaBet header. Exactly 56px tall: SportsPane and the game players sit at
  * top-14 under it. Mark + wordmark left, a segmented section switcher in the
  * middle from md up, and search, the balance capsule and the avatar on the
  * right. Logged out, the right side is Log in / Join.
@@ -55,7 +55,7 @@ export function AppHeader() {
     <>
       <header className="fixed top-0 inset-x-0 z-50 h-14 v-glass border-x-0 border-t-0">
         <div className="max-w-7xl mx-auto h-full px-3 sm:px-6 flex items-center gap-2 sm:gap-4">
-          <Link href="/casino" aria-label="VinnaBet home" className="shrink-0">
+          <Link href="/casino" aria-label="YegaBet home" className="shrink-0">
             {/* Logged in, phones keep just the mark so the balance never truncates. */}
             <VLogo className={session ? "max-[439px]:[&>span:last-child]:hidden" : "max-[359px]:[&>span:last-child]:hidden"} />
           </Link>
@@ -104,7 +104,7 @@ export function AppHeader() {
               <button onClick={openLogin} className="h-9 px-3.5 rounded-full text-[13px] font-semibold text-white hover:bg-[var(--v-bg-3)] transition-colors">
                 Log in
               </button>
-              <button onClick={openRegister} className="h-9 px-4 rounded-full text-[13px] font-bold bg-[var(--v-teal)] text-[color:var(--v-teal-ink)] hover:bg-[#3FDECF] active:scale-[0.97] transition-all">
+              <button onClick={openRegister} className="h-9 px-4 rounded-full text-[13px] font-bold bg-[var(--v-teal)] text-[color:var(--v-teal-ink)] hover:bg-[#FF8F26] active:scale-[0.97] transition-all">
                 Join
               </button>
             </div>

@@ -1,7 +1,7 @@
 import { VLoader } from "@/components/vinna/VLoader";
 import { SkeletonGameGrid, SkeletonRail, SkeletonPills } from "@/components/vinna/Skeleton";
 
-/* Route loading state for player pages: the VinnaBet mark over the shape of
+/* Route loading state for player pages: the YegaBet mark over the shape of
    the page that is coming, so nothing ever flashes blank. */
 export function VinnaLoader() {
   return (

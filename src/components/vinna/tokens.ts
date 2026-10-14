@@ -1,27 +1,27 @@
 /**
- * VinnaBet design tokens for code that needs a value in JS (inline SVG fills,
+ * YegaBet design tokens for code that needs a value in JS (inline SVG fills,
  * canvas, computed styles). The source of truth is tokens.css; keep the two in
  * step.
  */
 export const color = {
-  bg0: "#060B16",
-  bg1: "#0A1222",
-  bg2: "#0F1A2E",
-  bg3: "#15233B",
-  bg4: "#1C2D4A",
-  line: "rgba(148, 170, 210, 0.10)",
-  line2: "rgba(148, 170, 210, 0.18)",
-  teal: "#19D3C5",
-  teal2: "#5EE6DA",
-  tealDeep: "#0E9F94",
-  tealInk: "#03211F",
-  cyan: "#5CE1F0",
+  bg0: "#000000",
+  bg1: "#0A0A0A",
+  bg2: "#141414",
+  bg3: "#1C1C1C",
+  bg4: "#262626",
+  line: "rgba(200, 200, 200, 0.10)",
+  line2: "rgba(200, 200, 200, 0.18)",
+  teal: "#FF7A00",
+  teal2: "#FFA040",
+  tealDeep: "#CC5F00",
+  tealInk: "#1A0B00",
+  cyan: "#FFB04D",
   amber: "#F5B83D",
   green: "#34D399",
   red: "#F43F5E",
   text: "#FFFFFF",
-  text2: "#B4C2DA",
-  text3: "#7D8DAA",
+  text2: "#C4C4C4",
+  text3: "#8C8C8C",
 } as const;
 
 export const radius = { sm: 8, md: 12, lg: 16, xl: 22, pill: 999 } as const;

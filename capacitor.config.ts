@@ -1,7 +1,7 @@
 import type { CapacitorConfig } from "@capacitor/cli";
 
 /*
- * Native iOS/Android shell for VinnaBet (see docs/native-apps.md).
+ * Native iOS/Android shell for YegaBet (see docs/native-apps.md).
  *
  * The apps load the live site, so auth, wallet, bets, games and every API
  * route are exactly the ones Railway serves. Only the shell, icons, splash and
@@ -13,11 +13,11 @@ import type { CapacitorConfig } from "@capacitor/cli";
 const SERVER_URL = process.env.CAP_SERVER_URL ?? "https://vinna.bet";
 const cleartext = SERVER_URL.startsWith("http://");
 
-const NAVY = "#0A1222"; // viewport themeColor in src/app/layout.tsx
+const NAVY = "#0A0A0A"; // viewport themeColor in src/app/layout.tsx
 
 const config: CapacitorConfig = {
   appId: "com.vinnabet.app",
-  appName: "VinnaBet",
+  appName: "YegaBet",
   webDir: "native/www",
   backgroundColor: NAVY,
   // Lets the server and analytics tell app traffic from browsers.

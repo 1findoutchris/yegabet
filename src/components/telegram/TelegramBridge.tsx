@@ -12,7 +12,7 @@ import { TG_NAVY, atLeast, loadTelegramSdk, openExternal, webApp } from "@/lib/t
  *
  * Inside Telegram the site is the same site: same pages, same API routes, same
  * session cookie. This only fits it to the WebView — Telegram's header and
- * background in VinnaBet navy, the native back button, no swipe-to-close
+ * background in YegaBet navy, the native back button, no swipe-to-close
  * while scrolling a game, and external links routed through Telegram.
  */
 export function TelegramBridge() {

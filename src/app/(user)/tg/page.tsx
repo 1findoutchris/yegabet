@@ -5,7 +5,7 @@ import { MiniApp } from "@/components/telegram/MiniApp";
 // The Telegram Mini App's entry point — set as the bot's menu button and every
 // web_app button (lib/tgBot.miniAppUrl). Not a page for search engines.
 export const metadata: Metadata = {
-  title: "VinnaBet",
+  title: "YegaBet",
   robots: { index: false, follow: false },
 };
 

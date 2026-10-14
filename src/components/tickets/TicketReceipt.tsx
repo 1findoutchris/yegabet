@@ -50,7 +50,7 @@ export function TicketReceipt({ ticket }: { ticket: TicketView }) {
     <div className="bg-[var(--bg-surface)] border border-[color:var(--border-muted)] rounded-2xl p-5 print:hidden">
       <div className="border-b border-dashed border-[color:var(--border-muted)] pb-3 mb-3">
         <p className="font-display text-4xl font-extrabold leading-none text-center">
-          Vinna<span className="text-gold-grad">Bet</span>
+          Yega<span className="text-gold-grad">Bet</span>
         </p>
       </div>
 

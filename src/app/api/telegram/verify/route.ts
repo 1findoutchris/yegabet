@@ -48,7 +48,7 @@ import {
 import { formatCurrency } from "@/lib/utils";
 
 /*
- * Webhook for the VinnaBet player bot (TELEGRAM_VERIFY_BOT_*). Separate bot
+ * Webhook for the YegaBet player bot (TELEGRAM_VERIFY_BOT_*). Separate bot
  * and separate path from /api/telegram/webhook, which serves the payout agents
  * and runs its own login state machine.
  *
@@ -62,7 +62,7 @@ import { formatCurrency } from "@/lib/utils";
  *      closes it. Whenever a verification is pending for the chat, a contact
  *      belongs to it — exactly as before.
  *   2. Everything else: the main menu, linking this Telegram to an existing
- *      VinnaBet account (lib/tgLink.ts), /account, /ticket and the Mini App.
+ *      YegaBet account (lib/tgLink.ts), /account, /ticket and the Mini App.
  *
  * Only a contact card whose user_id is the sender ever proves a number —
  * typed numbers are refused, forwarded cards are refused.
@@ -78,7 +78,7 @@ const AWAIT_TTL = 5 * 60;
 
 const awaitKey = (chatId: number) => `tgbot:await:${chatId}`;
 
-const EXPIRED = "This link has expired. Go back to VinnaBet and start again.";
+const EXPIRED = "This link has expired. Go back to YegaBet and start again.";
 
 /** Signup tokens are 16 random bytes in hex (tgVerify.TOKEN_BYTES). */
 const SIGNUP_TOKEN = /^[0-9a-f]{32}$/;
@@ -88,11 +88,11 @@ const SIGNUP_TOKEN = /^[0-9a-f]{32}$/;
  *  them into confirming a reset they didn't ask for. */
 function prompt(purpose: Purpose, phone: string): string {
   return purpose === "reset"
-    ? `🔑 <b>VinnaBet password reset</b>\n\n` +
+    ? `🔑 <b>YegaBet password reset</b>\n\n` +
         `A password reset was requested for <b>${phone}</b>.\n\n` +
         `If that wasn't you, just ignore this message — nothing changes.\n\n` +
         `If it was, tap the button below to confirm the number is yours.`
-    : `👋 <b>VinnaBet sign-up</b>\n\n` +
+    : `👋 <b>YegaBet sign-up</b>\n\n` +
         `You're creating an account with <b>${phone}</b>.\n\n` +
         `Tap the button below to confirm this number is yours. Telegram sends us the ` +
         `number on this account — nothing else.`;
@@ -100,8 +100,8 @@ function prompt(purpose: Purpose, phone: string): string {
 
 function done(purpose: Purpose): string {
   return purpose === "reset"
-    ? "✅ Number confirmed.\n\nGo back to VinnaBet to set your new password."
-    : "✅ Number confirmed.\n\nGo back to VinnaBet — your account is being created.";
+    ? "✅ Number confirmed.\n\nGo back to YegaBet to set your new password."
+    : "✅ Number confirmed.\n\nGo back to YegaBet — your account is being created.";
 }
 
 function secretMatches(got: string | null): boolean {
@@ -236,8 +236,8 @@ async function handleStartParam(chatId: number, from: TgSender, param: string): 
 
   // Anything else the Mini App understands (game_…, sports, …) opens it there.
   if (startPath(param)) {
-    const markup = openAppMarkup("🎰 Open VinnaBet", param);
-    if (markup) return botSend(chatId, "Tap below to open VinnaBet.", markup);
+    const markup = openAppMarkup("🎰 Open YegaBet", param);
+    if (markup) return botSend(chatId, "Tap below to open YegaBet.", markup);
   }
   return botSend(chatId, WELCOME, mainMenu());
 }
@@ -298,9 +298,9 @@ async function replyToLink(chatId: number, r: LinkResult): Promise<void> {
     await botSend(
       chatId,
       r.relinked
-        ? `✅ Number re-confirmed. This Telegram is linked to VinnaBet account <b>#${r.accountNo}</b>${who}.`
-        : `✅ <b>Linked!</b>\n\nThis Telegram is now connected to VinnaBet account <b>#${r.accountNo}</b>${who}, ` +
-            `${maskPhone(r.phone)}.\n\nOpen VinnaBet below — you'll be signed in automatically.`,
+        ? `✅ Number re-confirmed. This Telegram is linked to YegaBet account <b>#${r.accountNo}</b>${who}.`
+        : `✅ <b>Linked!</b>\n\nThis Telegram is now connected to YegaBet account <b>#${r.accountNo}</b>${who}, ` +
+            `${maskPhone(r.phone)}.\n\nOpen YegaBet below — you'll be signed in automatically.`,
       REMOVE,
     );
     const markup = openAppMarkup();
@@ -316,22 +316,22 @@ async function replyToLink(chatId: number, r: LinkResult): Promise<void> {
         SHARE_CONTACT_KEYBOARD,
       );
     case "not-ethiopian":
-      await botSend(chatId, "This Telegram account's number isn't an Ethiopian mobile, so it can't match a VinnaBet account.", REMOVE);
+      await botSend(chatId, "This Telegram account's number isn't an Ethiopian mobile, so it can't match a YegaBet account.", REMOVE);
       return botSend(chatId, "What would you like to do?", noAccountMarkup());
     case "no-account":
-      await botSend(chatId, "No VinnaBet account was found for this phone number.", REMOVE);
+      await botSend(chatId, "No YegaBet account was found for this phone number.", REMOVE);
       return botSend(chatId, "What would you like to do?", noAccountMarkup());
     case "telegram-in-use":
       return botSend(
         chatId,
-        "This Telegram account is already linked to a different VinnaBet account.\n\n" +
+        "This Telegram account is already linked to a different YegaBet account.\n\n" +
           "Send /unlink to disconnect it first, then verify again.",
         REMOVE,
       );
     case "account-has-other-telegram":
       return botSend(
         chatId,
-        "That VinnaBet account is already linked to another Telegram account.\n\n" +
+        "That YegaBet account is already linked to another Telegram account.\n\n" +
           "If you no longer use that Telegram account, contact support to move the link.\n" + helpText(),
         REMOVE,
       );
@@ -348,7 +348,7 @@ async function sendAccount(chatId: number, from: TgSender): Promise<void> {
   if (!user) {
     return botSend(
       chatId,
-      "This Telegram isn't linked to a VinnaBet account yet.\n\nTap <b>Verify Phone Number</b> to link it.",
+      "This Telegram isn't linked to a YegaBet account yet.\n\nTap <b>Verify Phone Number</b> to link it.",
       { inline_keyboard: [[{ text: "📱 Verify Phone Number", callback_data: CB.verify }]] },
     );
   }
@@ -379,7 +379,7 @@ async function sendTicket(chatId: number, from: TgSender, raw: string): Promise<
   const ticket = await checkTicket(raw);
   if (!ticket) return botSend(chatId, "Ticket not found. Check the code and try again.");
   const param = ticketStartParam(ticket.publicId);
-  return botSend(chatId, ticketSummary(ticket), param ? openAppMarkup("🔎 View in VinnaBet", param) : undefined);
+  return botSend(chatId, ticketSummary(ticket), param ? openAppMarkup("🔎 View in YegaBet", param) : undefined);
 }
 
 async function sendUnlink(chatId: number, from: TgSender): Promise<void> {
@@ -387,8 +387,8 @@ async function sendUnlink(chatId: number, from: TgSender): Promise<void> {
   return botSend(
     chatId,
     had
-      ? "Disconnected. This Telegram no longer signs in to VinnaBet. Your account, wallet and bets are unchanged."
-      : "This Telegram isn't linked to a VinnaBet account.",
+      ? "Disconnected. This Telegram no longer signs in to YegaBet. Your account, wallet and bets are unchanged."
+      : "This Telegram isn't linked to a YegaBet account.",
     REMOVE,
   );
 }
@@ -403,9 +403,9 @@ async function startRegistration(chatId: number, from: TgSender, token: string, 
   await bindSignupChat(chatId, token);
   return botSend(
     chatId,
-    "📝 <b>Create your VinnaBet account</b>\n\n" +
+    "📝 <b>Create your YegaBet account</b>\n\n" +
       `You're registering the phone number ending in <b>${lastDigits(reg.phone)}</b>.\n\n` +
-      "Only continue if you just filled in the VinnaBet sign-up form yourself.\n\n" +
+      "Only continue if you just filled in the YegaBet sign-up form yourself.\n\n" +
       "Tap <b>Share my phone number</b> below — it has to be this Telegram account's own number. " +
       "A number typed into the chat can't be accepted.",
     SHARE_CONTACT_KEYBOARD,
@@ -427,7 +427,7 @@ async function handleRegistrationContact(
       await unbindSignupChat(chatId);
       return botSend(
         chatId,
-        "This sign-up link has expired. Go back to VinnaBet and tap <b>Create Account</b> again.",
+        "This sign-up link has expired. Go back to YegaBet and tap <b>Create Account</b> again.",
         REMOVE,
       );
     case "created":
@@ -457,25 +457,25 @@ async function sendRegistrationFailure(chatId: number, reason: string, reg: Pend
         `❌ <b>The numbers don't match</b>\n\n` +
           `This Telegram account's number ends in <b>${esc(reg.sharedEnding ?? "")}</b>, ` +
           `but the sign-up form has a number ending in <b>${entered}</b>.\n\n` +
-          "Go back to the VinnaBet sign-up page and correct your number, or open the link " +
+          "Go back to the YegaBet sign-up page and correct your number, or open the link " +
           "from the Telegram account that uses the number you entered.",
         REMOVE,
       );
     case "not-ethiopian":
       return botSend(
         chatId,
-        "This Telegram account's number isn't an Ethiopian mobile, so it can't verify a VinnaBet account. " +
+        "This Telegram account's number isn't an Ethiopian mobile, so it can't verify a YegaBet account. " +
           "Go back to the sign-up page and use the Telegram account with your Ethiopian number.",
         REMOVE,
       );
     case "telegram-in-use":
-      await botSend(chatId, "This Telegram account already has a VinnaBet account — no new account was created.", REMOVE);
-      return botSend(chatId, "Open VinnaBet to sign in to it:", openAppMarkup());
+      await botSend(chatId, "This Telegram account already has a YegaBet account — no new account was created.", REMOVE);
+      return botSend(chatId, "Open YegaBet to sign in to it:", openAppMarkup());
     case "phone-taken":
       return botSend(
         chatId,
-        "That phone number already has a VinnaBet account, so no new account was created. " +
-          "Log in on VinnaBet with your number and password (or use Forgot password).",
+        "That phone number already has a YegaBet account, so no new account was created. " +
+          "Log in on YegaBet with your number and password (or use Forgot password).",
         REMOVE,
       );
   }
@@ -490,11 +490,11 @@ async function sendRegistrationFailure(chatId: number, reason: string, reg: Pend
 async function sendRegistrationDone(chatId: number, from: TgSender, userId: string, accountNo: number | null): Promise<void> {
   const user = await linkedUser(from.id);
   if (!user || user.id !== userId) {
-    return botSend(chatId, "This registration was already completed. Log in on VinnaBet to continue.", REMOVE);
+    return botSend(chatId, "This registration was already completed. Log in on YegaBet to continue.", REMOVE);
   }
   await botSend(
     chatId,
-    `✅ <b>Number confirmed — welcome to VinnaBet!</b>\n\nYour account <b>#${accountNo ?? user.accountNo}</b> is ready ` +
+    `✅ <b>Number confirmed — welcome to YegaBet!</b>\n\nYour account <b>#${accountNo ?? user.accountNo}</b> is ready ` +
       "and linked to this Telegram.",
     REMOVE,
   );

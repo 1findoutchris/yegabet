@@ -15,18 +15,18 @@ import {
 
 /*
  * The Telegram Mini App's front door (/tg). Not a screen of its own: it signs
- * the user in and then hands over to the normal VinnaBet site — the default
+ * the user in and then hands over to the normal YegaBet site — the default
  * route (/casino, where / redirects) or a deep-link target — so the Mini App
  * looks and works exactly like vinna.bet.
  *
  *   Telegram → initData → POST /api/telegram/miniapp (validated server-side)
- *     linked   → signIn("telegram", { initData }) → normal VinnaBet session
- *     unlinked → "Connect your VinnaBet account" → share contact → poll → sign in
+ *     linked   → signIn("telegram", { initData }) → normal YegaBet session
+ *     unlinked → "Connect your YegaBet account" → share contact → poll → sign in
  *
  * Nothing about the user is decided here: the page only forwards the raw
  * initData Telegram gave it, and both the status check and the sign-in
  * validate it on the server with the bot token. After sign-in the Mini App is
- * simply the VinnaBet site — same pages, same API routes, same wallet.
+ * simply the YegaBet site — same pages, same API routes, same wallet.
  */
 
 /** Where the website lands too: / redirects here (app/page.tsx). */
@@ -52,11 +52,11 @@ const POLL_MS = 1500;
 const POLL_FOR_MS = 60_000;
 
 const LINK_ERRORS: Record<string, string> = {
-  "no-account": "No VinnaBet account was found for this phone number.",
-  "not-ethiopian": "This Telegram account's number isn't an Ethiopian mobile, so it can't match a VinnaBet account.",
+  "no-account": "No YegaBet account was found for this phone number.",
+  "not-ethiopian": "This Telegram account's number isn't an Ethiopian mobile, so it can't match a YegaBet account.",
   "not-own-contact": "That wasn't your own contact. Share this Telegram account's number.",
-  "telegram-in-use": "This Telegram is already linked to another VinnaBet account. Send /unlink to the bot first.",
-  "account-has-other-telegram": "That VinnaBet account is linked to a different Telegram account. Contact support to move it.",
+  "telegram-in-use": "This Telegram is already linked to another YegaBet account. Send /unlink to the bot first.",
+  "account-has-other-telegram": "That YegaBet account is linked to a different Telegram account. Contact support to move it.",
   ambiguous: "This account can't be linked from Telegram. Please contact support.",
   unavailable: "This account can't be linked from Telegram. Please contact support.",
 };
@@ -116,7 +116,7 @@ export function MiniApp({ botUsername }: { botUsername: string | null }) {
 
       const status = await fetchStatus(initData);
       if (status === "stale") return setPhase({ kind: "stale" });
-      if (!status) return setPhase({ kind: "error", message: "Couldn't reach VinnaBet. Check your connection and try again." });
+      if (!status) return setPhase({ kind: "error", message: "Couldn't reach YegaBet. Check your connection and try again." });
 
       setFirstName(status.firstName);
       if (status.botUsername) setBot(status.botUsername);
@@ -141,7 +141,7 @@ export function MiniApp({ botUsername }: { botUsername: string | null }) {
         return setPhase({ kind: "connect", waiting: false, error: LINK_ERRORS[s.linkError] ?? LINK_ERRORS.unavailable });
       }
       if (Date.now() > deadline) {
-        return setPhase({ kind: "connect", waiting: false, error: "We didn't receive your number. Try again, or check the VinnaBet chat." });
+        return setPhase({ kind: "connect", waiting: false, error: "We didn't receive your number. Try again, or check the YegaBet chat." });
       }
       pollRef.current = setTimeout(tick, POLL_MS);
     };
@@ -167,7 +167,7 @@ export function MiniApp({ botUsername }: { botUsername: string | null }) {
       openExternal(`https://t.me/${bot}?start=verify`);
       poll(since);
     } else {
-      setPhase({ kind: "connect", waiting: false, error: "Open the VinnaBet bot and tap Verify Phone Number." });
+      setPhase({ kind: "connect", waiting: false, error: "Open the YegaBet bot and tap Verify Phone Number." });
     }
   }
 
@@ -178,15 +178,15 @@ export function MiniApp({ botUsername }: { botUsername: string | null }) {
       <div className="min-h-full flex flex-col items-center justify-center px-6 py-10 max-w-sm mx-auto text-center"
         style={{ paddingBottom: "calc(2.5rem + env(safe-area-inset-bottom))" }}>
         {(phase.kind === "boot" || phase.kind === "signing-in") && (
-          <VLoader size={72} label={phase.kind === "signing-in" ? "Signing you in…" : "Opening VinnaBet…"} />
+          <VLoader size={72} label={phase.kind === "signing-in" ? "Signing you in…" : "Opening YegaBet…"} />
         )}
 
         {phase.kind === "connect" && (
           <>
             <VMark size={64} />
-            <h1 className="mt-6 text-[24px] font-extrabold tracking-[-0.02em] text-white">Connect your VinnaBet Account</h1>
+            <h1 className="mt-6 text-[24px] font-extrabold tracking-[-0.02em] text-white">Connect your YegaBet Account</h1>
             <p className="mt-2 text-[14px] leading-relaxed text-[color:var(--v-text-2)]">
-              {firstName ? `Hi ${firstName}! ` : ""}Verify your phone number once and VinnaBet will sign you in
+              {firstName ? `Hi ${firstName}! ` : ""}Verify your phone number once and YegaBet will sign you in
               automatically every time you open it from Telegram.
             </p>
 
@@ -200,7 +200,7 @@ export function MiniApp({ botUsername }: { botUsername: string | null }) {
             {phase.error && <p className="mt-4 text-[13px] text-[color:var(--red)]">{phase.error}</p>}
 
             <p className="mt-6 flex items-center gap-1.5 text-[11px] text-[color:var(--v-text-3)]">
-              <ShieldCheck className="w-3.5 h-3.5 shrink-0" /> Only your Telegram number is shared — it must match your VinnaBet account.
+              <ShieldCheck className="w-3.5 h-3.5 shrink-0" /> Only your Telegram number is shared — it must match your YegaBet account.
             </p>
 
             <div className="mt-8 w-full grid grid-cols-2 gap-2">
@@ -218,7 +218,7 @@ export function MiniApp({ botUsername }: { botUsername: string | null }) {
         {phase.kind === "browser" && (
           <>
             <VMark size={64} />
-            <h1 className="mt-6 text-[22px] font-extrabold text-white">VinnaBet on Telegram</h1>
+            <h1 className="mt-6 text-[22px] font-extrabold text-white">YegaBet on Telegram</h1>
             <p className="mt-2 text-[14px] text-[color:var(--v-text-2)]">This page opens inside Telegram.</p>
             {bot && (
               <a href={`https://t.me/${bot}`} className="v-btn v-btn-primary h-12 w-full mt-7">Open in Telegram</a>
@@ -230,9 +230,9 @@ export function MiniApp({ botUsername }: { botUsername: string | null }) {
         {phase.kind === "stale" && (
           <>
             <VMark size={64} />
-            <h1 className="mt-6 text-[20px] font-extrabold text-white">Please reopen VinnaBet</h1>
+            <h1 className="mt-6 text-[20px] font-extrabold text-white">Please reopen YegaBet</h1>
             <p className="mt-2 text-[14px] text-[color:var(--v-text-2)]">
-              This session has expired. Close the app and open it again from the VinnaBet bot.
+              This session has expired. Close the app and open it again from the YegaBet bot.
             </p>
             <button onClick={() => webApp()?.close()} className="v-btn v-btn-primary h-12 w-full mt-7">Close</button>
           </>

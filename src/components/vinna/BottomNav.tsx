@@ -41,7 +41,7 @@ export function BottomNav() {
             className="absolute top-0 h-[3px] w-[20%] flex justify-center transition-transform duration-[260ms] ease-[cubic-bezier(0.2,0.8,0.2,1)]"
             style={{ transform: `translateX(${idx * 100}%)` }}
           >
-            <span className="h-full w-7 rounded-b-full bg-[var(--v-teal)] shadow-[0_0_14px_rgba(25,211,197,0.7)]" />
+            <span className="h-full w-7 rounded-b-full bg-[var(--v-teal)] shadow-[0_0_14px_rgba(255, 122, 0,0.7)]" />
           </span>
         )}
         {TABS.map((t) => {

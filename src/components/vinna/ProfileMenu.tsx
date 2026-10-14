@@ -92,7 +92,7 @@ export function ProfileMenu() {
   );
 }
 
-const ROW = "w-full flex items-center gap-3 px-4 h-10 text-[13px] font-medium text-[color:var(--v-text-2)] hover:text-white hover:bg-[rgba(148,170,210,0.06)] transition-colors";
+const ROW = "w-full flex items-center gap-3 px-4 h-10 text-[13px] font-medium text-[color:var(--v-text-2)] hover:text-white hover:bg-[rgba(200, 200, 200,0.06)] transition-colors";
 
 function Item({ href, icon: Icon, label, onClick }: { href: string; icon: typeof User; label: string; onClick: () => void }) {
   return (

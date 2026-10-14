@@ -79,7 +79,7 @@ export async function LiveLobby() {
         <GameCarousel key={o.meta.id} title={`Live ${o.meta.label.toLowerCase()}`} description={n(o.meta.id)} games={o.games} href={`${BASE}?sub=${o.meta.id}`} tag="live" />
       ))}
 
-      <ProviderTiles title="Live providers" description="Studios streaming to VinnaBet" providers={providersIn(live)} query="?type=live" />
+      <ProviderTiles title="Live providers" description="Studios streaming to YegaBet" providers={providersIn(live)} query="?type=live" />
 
       <PromoSlot rows={promos.lower} />
 

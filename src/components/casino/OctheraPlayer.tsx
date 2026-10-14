@@ -254,7 +254,7 @@ export function OctheraPlayer({
           <Panel>
             <p className="text-[color:var(--text-primary)] font-semibold text-sm">{title} is open in your browser</p>
             <p className="text-[color:var(--text-muted)] text-xs text-center max-w-xs">
-              Same VinnaBet balance — your bets and wins land in this wallet.
+              Same YegaBet balance — your bets and wins land in this wallet.
             </p>
             <div className="flex gap-2">
               <PanelButton onClick={launch} primary>Play here instead</PanelButton>

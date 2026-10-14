@@ -13,7 +13,7 @@ import { groupOf, type GameGroup } from "@/lib/gameGroups";
 interface Props {
   games: Game[];
   subcats: SubCat[];
-  /** Kept for callers; the redesign uses the VinnaBet accent everywhere. */
+  /** Kept for callers; the redesign uses the YegaBet accent everywhere. */
   accent?: string;
   /** Show the provider filter when the set has more than one provider (default on). */
   providerFilter?: boolean;

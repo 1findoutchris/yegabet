@@ -84,7 +84,7 @@ export function PrintTicket({ ticket }: { ticket: TicketView }) {
     const before = () => {
       flushSync(() => setPrintedAt(new Date()));
       prevTitle = document.title;
-      document.title = `VinnaBet ${ticket.publicId}`;
+      document.title = `YegaBet ${ticket.publicId}`;
     };
     const after = () => { document.title = prevTitle; };
     window.addEventListener("beforeprint", before);
@@ -107,7 +107,7 @@ export function PrintTicket({ ticket }: { ticket: TicketView }) {
   return createPortal(
     <div id="print-ticket" className="print-ticket" aria-hidden="true">
       <header className="pt-head">
-        <p className="pt-brand">VINNABET</p>
+        <p className="pt-brand">YEGABET</p>
         <p className="pt-sub">Sports Betting Ticket</p>
         <Barcode value={printedId(ticket.publicId)} />
         <p className="pt-id">{printedId(ticket.publicId)}</p>

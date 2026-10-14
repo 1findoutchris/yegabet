@@ -7,7 +7,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-        <string>VinnaBet</string>
+        <string>YegaBet</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -71,7 +71,7 @@
 	<string>UIStatusBarStyleLightContent</string>
 	<!-- Check Ticket barcode scanner (getUserMedia in the WebView). -->
 	<key>NSCameraUsageDescription</key>
-	<string>VinnaBet uses the camera to scan the barcode on your betting ticket.</string>
+	<string>YegaBet uses the camera to scan the barcode on your betting ticket.</string>
 	<!-- vinnabet://… links open the app (universal links use App.entitlements). -->
 	<key>CFBundleURLTypes</key>
 	<array>

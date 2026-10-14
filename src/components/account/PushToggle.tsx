@@ -49,7 +49,7 @@ export function PushToggle() {
     try {
       if (isNativeApp()) {
         if (!(await registerNativePush(true))) {
-          toast.error("Allow notifications for VinnaBet in your phone's settings");
+          toast.error("Allow notifications for YegaBet in your phone's settings");
           return;
         }
         setSubscribed(true);

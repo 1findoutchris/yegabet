@@ -1,4 +1,4 @@
-// The VinnaBet player bot — pure pieces (command parsing, message text), split
+// The YegaBet player bot — pure pieces (command parsing, message text), split
 // out of tgBot.ts so they're testable without a token, redis or a database.
 
 import { parseSlip, withResults } from "./ticketSlip";

@@ -172,7 +172,7 @@ export async function completeSignup(token: string, contact: TgContact, from: Te
 
   if ((await redis.set(lockKey(token), "1", "EX", 30, "NX")) === null) return { kind: "busy" };
   try {
-    // One Telegram account = one VinnaBet account.
+    // One Telegram account = one YegaBet account.
     const holder = await prisma.user.findUnique({ where: { telegramUserId: String(from.id) }, select: { id: true } });
     if (holder) return fail("telegram-in-use");
 

@@ -89,7 +89,7 @@ export function SportsPane({ agentMode = false }: { agentMode?: boolean }) {
           src={url}
           className="w-full h-full border-0"
           allow="fullscreen"
-          title="VinnaBet Sports"
+          title="YegaBet Sports"
           onLoad={() => {
             // onLoad fires when the shell HTML arrives — the BetBy SPA still
             // needs a moment to boot, so hold the overlay a bit longer.

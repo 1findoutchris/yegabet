@@ -41,7 +41,7 @@ interface Props {
 const BOX_RATIO = { portrait: 4 / 5, wide: 16 / 10 };
 
 /**
- * VinnaBet game card: the artwork in a rounded box, the game name below it
+ * YegaBet game card: the artwork in a rounded box, the game name below it
  * and the provider, smaller and muted, under that. A small glass tag sits
  * top-left and the favourite (saved to the player's account) top-right.
  * Artwork whose shape is far from the box's is shown whole over a blurred
@@ -99,7 +99,7 @@ export function GameCard({ game, tag, badge, className, eager = false, shape = "
           )}
         >
           {/* Fallback art: always under the image */}
-          <div className="absolute inset-0 bg-[linear-gradient(160deg,#15233B,#0A1222)]">
+          <div className="absolute inset-0 bg-[linear-gradient(160deg,#1C1C1C,#0A0A0A)]">
             <span className="absolute inset-0 grid place-items-center text-[32px] font-extrabold text-white/[0.06] tracking-tight">
               {initials(providerName)}
             </span>

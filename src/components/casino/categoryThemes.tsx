@@ -1,7 +1,7 @@
 /* Single source of truth for casino category copy. Both the lobby pills and
    the destination category pages (/casino/[slug]) read from here. The old
    per-category gradients and clip-art are gone with the redesign; every
-   category shares the VinnaBet accent. */
+   category shares the YegaBet accent. */
 
 export interface CategoryTheme {
   title: string;
@@ -13,7 +13,7 @@ export interface CategoryTheme {
   accent: string;
 }
 
-const ACCENT = "#19D3C5";
+const ACCENT = "#FF7A00";
 
 /* Keyed by the route slug used in /casino/[slug]. */
 export const CATEGORY_THEMES: Record<string, CategoryTheme> = {

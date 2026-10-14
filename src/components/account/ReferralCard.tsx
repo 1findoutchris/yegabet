@@ -27,7 +27,7 @@ export function ReferralCard({ code }: { code: string }) {
   async function share() {
     if (navigator.share) {
       try {
-        await navigator.share({ title: "Join me on VinnaBet", text: `Use my code ${code}`, url: link });
+        await navigator.share({ title: "Join me on YegaBet", text: `Use my code ${code}`, url: link });
       } catch { /* user cancelled */ }
     } else {
       copy(link, "link");
@@ -37,7 +37,7 @@ export function ReferralCard({ code }: { code: string }) {
   return (
     <section
       className="relative overflow-hidden rounded-2xl border border-[color:var(--border-royal)] p-5"
-      style={{ background: "linear-gradient(135deg,#0A1222 0%,#0A1222 55%,#0A1222 100%)" }}
+      style={{ background: "linear-gradient(135deg,#0A0A0A 0%,#0A0A0A 55%,#0A0A0A 100%)" }}
     >
       <span aria-hidden className="pointer-events-none absolute -top-16 right-8 w-48 h-48 rounded-full"
         style={{ background: "radial-gradient(circle,rgba(245,184,61,0.22),transparent 65%)" }} />

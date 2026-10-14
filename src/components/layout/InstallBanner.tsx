@@ -52,7 +52,7 @@ export function InstallBanner() {
 
       <div className="min-w-0 flex-1">
         <p className="font-display text-[15px] font-extrabold leading-tight text-[#09090B] truncate">
-          VinnaBet
+          YegaBet
         </p>
         {isIOS ? (
           <p className="text-[11px] leading-tight text-black/55 mt-0.5">

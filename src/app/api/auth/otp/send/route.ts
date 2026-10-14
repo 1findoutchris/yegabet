@@ -106,7 +106,7 @@ export async function POST(req: NextRequest) {
 
   const ok = await sendSms(
     e164,
-    `Your VinnaBet code is ${code}. Expires in 5 minutes.`
+    `Your YegaBet code is ${code}. Expires in 5 minutes.`
   );
   if (!ok) {
     // Let the user retry immediately — the send, not the user, failed.

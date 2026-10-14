@@ -7,7 +7,7 @@ import { validateInitData } from "@/lib/tgInitDataCore";
 import { linkDecision, phoneVariants, provenPhone, type LinkRejection } from "@/lib/tgLinkCore";
 
 /*
- * Telegram ↔ VinnaBet account linking.
+ * Telegram ↔ YegaBet account linking.
  *
  * The only way in is the bot receiving the user's own contact card (see
  * tgLinkCore.provenPhone). Linking writes the five telegram* columns and
@@ -71,7 +71,7 @@ export async function linkByContact(contact: TgContact, from: TgSender): Promise
   return { ok: true, userId: user.id, accountNo: user.accountNo, name: user.name, phone: user.phone, relinked: decision.do === "refresh" };
 }
 
-/** The VinnaBet account this Telegram user is linked to, if it may sign in. */
+/** The YegaBet account this Telegram user is linked to, if it may sign in. */
 export async function linkedUser(telegramUserId: number) {
   const user = await prisma.user.findUnique({
     where: { telegramUserId: String(telegramUserId) },
@@ -85,7 +85,7 @@ export async function linkedUser(telegramUserId: number) {
 }
 
 /**
- * The Mini App sign-in: raw initData in, the linked VinnaBet user out — or
+ * The Mini App sign-in: raw initData in, the linked YegaBet user out — or
  * null for a bad signature, a stale launch, an unlinked Telegram, or an
  * account that may not sign in. This is the `authorize` of the "telegram"
  * provider in lib/auth.ts.

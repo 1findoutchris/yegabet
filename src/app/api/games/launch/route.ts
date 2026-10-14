@@ -44,7 +44,7 @@ export async function POST(req: NextRequest) {
 
     // Octhera games (Aviator, and the whole Octhera catalog), whatever
     // GAME_PROVIDER is. API v2 company wallet: they play with the normal
-    // VinnaBet balance — Octhera calls /api/provider/octhera/wallet for every
+    // YegaBet balance — Octhera calls /api/provider/octhera/wallet for every
     // bet and win. The site's /game/[id] page loads the URL in an iframe.
     if (game_uid.startsWith(OCTHERA_ID_PREFIX)) {
       const unavailable = () =>

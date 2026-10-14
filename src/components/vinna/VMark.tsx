@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 /**
- * The VinnaBet mark: a faceted "V" drawn from two strokes meeting at a point,
+ * The YegaBet mark: a faceted "Y" drawn from two arms meeting on a stem,
  * with a small cut diamond above the join. `animated` draws the strokes in and
  * lets the diamond breathe (used by the loaders); static everywhere else.
  */
@@ -28,13 +28,13 @@ export function VMark({
       aria-hidden
       className={cn("shrink-0", className)}
     >
-      <rect x="0.5" y="0.5" width="39" height="39" rx="12" fill="#0F1A2E" stroke="rgba(148,170,210,0.18)" />
-      <path d="M9 11 L20 31" stroke="#19D3C5" strokeWidth="4.2" strokeLinecap="round" style={draw} />
-      <path d="M31 11 L20 31" stroke="#5CE1F0" strokeWidth="4.2" strokeLinecap="round" style={drawLate} />
+      <rect x="0.5" y="0.5" width="39" height="39" rx="12" fill="#141414" stroke="rgba(200, 200, 200,0.18)" />
+      <path d="M9 9 L20 21 L20 32" stroke="#FF7A00" strokeLinejoin="round" strokeWidth="4.2" strokeLinecap="round" style={draw} />
+      <path d="M31 9 L20 21" stroke="#FFB04D" strokeWidth="4.2" strokeLinecap="round" style={drawLate} />
       <path
-        d="M20 9.5 L23 13 L20 16.5 L17 13 Z"
+        d="M20 6.5 L22.5 9.5 L20 12.5 L17.5 9.5 Z"
         fill="#FFFFFF"
-        style={animated ? { transformOrigin: "20px 13px", animation: "v-breathe 1.6s ease-in-out infinite" } : undefined}
+        style={animated ? { transformOrigin: "20px 9.5px", animation: "v-breathe 1.6s ease-in-out infinite" } : undefined}
       />
     </svg>
   );
@@ -47,7 +47,7 @@ export function VLogo({ className, compact = false }: { className?: string; comp
       <VMark size={30} />
       {!compact && (
         <span className="text-[14px] font-extrabold tracking-[0.2em] text-white leading-none">
-          VINNA<span className="text-[color:var(--v-teal)]">BET</span>
+          YEGA<span className="text-[color:var(--v-teal)]">BET</span>
         </span>
       )}
     </span>

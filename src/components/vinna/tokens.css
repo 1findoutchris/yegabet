@@ -1,6 +1,6 @@
-/* ── VinnaBet design tokens ──────────────────────────────────────────────────
+/* ── YegaBet design tokens ──────────────────────────────────────────────────
    One place for the brand: colours, spacing, radius, type, shadows, motion.
-   Midnight navy in layers, turquoise as the single accent, cyan for small
+   Black in layers, orange as the single accent, light orange for small
    highlights, amber only for premium moments (tiers, bonus funds, jackpots).
 
    The legacy names further down (--gold, --bg-surface, --purple …) predate the
@@ -14,25 +14,25 @@
   --font-display: var(--font-vinna), system-ui, sans-serif;
 
   /* Surfaces, darkest to lightest */
-  --v-bg-0: #060B16;
-  --v-bg-1: #0A1222;
-  --v-bg-2: #0F1A2E;
-  --v-bg-3: #15233B;
-  --v-bg-4: #1C2D4A;
-  --v-glass: rgba(13, 22, 40, 0.72);
+  --v-bg-0: #000000;
+  --v-bg-1: #0A0A0A;
+  --v-bg-2: #141414;
+  --v-bg-3: #1C1C1C;
+  --v-bg-4: #262626;
+  --v-glass: rgba(12, 12, 12, 0.72);
 
   /* Lines */
-  --v-line: rgba(148, 170, 210, 0.10);
-  --v-line-2: rgba(148, 170, 210, 0.18);
+  --v-line: rgba(200, 200, 200, 0.10);
+  --v-line-2: rgba(200, 200, 200, 0.18);
 
   /* Accent */
-  --v-teal: #19D3C5;
-  --v-teal-2: #5EE6DA;
-  --v-teal-deep: #0E9F94;
-  --v-teal-ink: #03211F;            /* text on a teal fill */
-  --v-teal-a12: rgba(25, 211, 197, 0.12);
-  --v-teal-a24: rgba(25, 211, 197, 0.24);
-  --v-cyan: #5CE1F0;
+  --v-teal: #FF7A00;
+  --v-teal-2: #FFA040;
+  --v-teal-deep: #CC5F00;
+  --v-teal-ink: #1A0B00;            /* text on an orange fill */
+  --v-teal-a12: rgba(255, 122, 0, 0.12);
+  --v-teal-a24: rgba(255, 122, 0, 0.24);
+  --v-cyan: #FFB04D;
   --v-amber: #F5B83D;
   --v-amber-a12: rgba(245, 184, 61, 0.12);
 
@@ -42,8 +42,8 @@
 
   /* Text */
   --v-text: #FFFFFF;
-  --v-text-2: #B4C2DA;
-  --v-text-3: #7D8DAA;
+  --v-text-2: #C4C4C4;
+  --v-text-3: #8C8C8C;
 
   /* Spacing (4px grid) */
   --v-space-1: 4px;
@@ -71,9 +71,9 @@
 
   /* Shadows */
   --v-shadow-1: 0 1px 2px rgba(0, 0, 0, 0.35);
-  --v-shadow-2: 0 8px 24px rgba(2, 6, 18, 0.45);
-  --v-shadow-3: 0 18px 48px rgba(2, 6, 18, 0.6);
-  --v-ring: 0 0 0 1px var(--v-teal-a24), 0 6px 22px rgba(25, 211, 197, 0.18);
+  --v-shadow-2: 0 8px 24px rgba(0, 0, 0, 0.45);
+  --v-shadow-3: 0 18px 48px rgba(0, 0, 0, 0.6);
+  --v-ring: 0 0 0 1px var(--v-teal-a24), 0 6px 22px rgba(255, 122, 0, 0.18);
 
   /* Motion */
   --v-dur-1: 150ms;
@@ -94,16 +94,16 @@
   --bg-accent-dim:  var(--v-teal-a12);
   --bg-royal-dim:   var(--v-amber-a12);
 
-  --border-base:    #1A2943;
-  --border-muted:   #131F35;
-  --border-accent:  rgba(25, 211, 197, 0.42);
+  --border-base:    #2A2A2A;
+  --border-muted:   #1A1A1A;
+  --border-accent:  rgba(255, 122, 0, 0.42);
   --border-royal:   rgba(245, 184, 61, 0.36);
 
   --gold:           var(--v-teal);
   --gold-2:         var(--v-teal-2);
   --gold-deep:      var(--v-teal-deep);
-  --gold-hover:     #3FDECF;
-  --gold-dim:       rgba(25, 211, 197, 0.5);
+  --gold-hover:     #FF8F26;
+  --gold-dim:       rgba(255, 122, 0, 0.5);
 
   --purple:         var(--v-amber);
   --purple-2:       #FAD27E;
@@ -118,10 +118,10 @@
   --text-muted:     var(--v-text-3);
 
   /* Flat-ish fills: the redesign avoids loud gradients. */
-  --grad-gold:    linear-gradient(180deg, #2ADBCE, #15C6B8);
+  --grad-gold:    linear-gradient(180deg, #FF8A1F, #F06E00);
   --grad-royal:   linear-gradient(180deg, #F8C658, #EDA92A);
   --grad-jackpot: linear-gradient(180deg, #F8C658, #EDA92A);
-  --glow-gold:    0 6px 20px rgba(25, 211, 197, 0.22);
+  --glow-gold:    0 6px 20px rgba(255, 122, 0, 0.22);
   --glow-purple:  0 6px 20px rgba(245, 184, 61, 0.22);
 }
 
@@ -129,7 +129,7 @@
 html { -webkit-tap-highlight-color: transparent; }
 body {
   background:
-    radial-gradient(900px 420px at 50% -260px, rgba(25, 211, 197, 0.08), transparent 70%),
+    radial-gradient(900px 420px at 50% -260px, rgba(255, 122, 0, 0.08), transparent 70%),
     var(--v-bg-1);
   color: var(--v-text);
   font-feature-settings: "tnum" 0, "ss01" 1;
@@ -174,7 +174,7 @@ body {
 }
 .v-btn:active { transform: scale(0.97); }
 .v-btn-primary { background: var(--v-teal); color: var(--v-teal-ink); }
-.v-btn-primary:hover { background: #3FDECF; }
+.v-btn-primary:hover { background: #FF8F26; }
 .v-btn-ghost { background: var(--v-bg-3); color: var(--v-text); border: 1px solid var(--v-line-2); }
 .v-btn-ghost:hover { border-color: var(--v-teal-a24); }
 .v-btn:disabled { opacity: 0.45; cursor: not-allowed; transform: none; }
@@ -274,14 +274,14 @@ body {
   position: absolute;
   inset: 0;
   transform: translateX(-100%);
-  background: linear-gradient(90deg, transparent, rgba(148, 170, 210, 0.07), transparent);
+  background: linear-gradient(90deg, transparent, rgba(200, 200, 200, 0.07), transparent);
   animation: v-shimmer 1.3s ease-in-out infinite;
 }
 /* Older loaders still use this name. */
 .vinna-skeleton { position: relative; overflow: hidden; background: var(--v-bg-2); }
 .vinna-skeleton::after {
   content: ""; position: absolute; inset: 0; transform: translateX(-100%);
-  background: linear-gradient(90deg, transparent, rgba(148, 170, 210, 0.07), transparent);
+  background: linear-gradient(90deg, transparent, rgba(200, 200, 200, 0.07), transparent);
   animation: v-shimmer 1.3s ease-in-out infinite;
 }
 }

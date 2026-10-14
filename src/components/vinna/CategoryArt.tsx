@@ -1,6 +1,6 @@
 /*
  * Illustrated category icons for the lobby tiles. One style for the whole set:
- * 64×64, soft two-tone gradients from the VinnaBet palette (turquoise, cyan,
+ * 64×64, soft two-tone gradients from the YegaBet palette (turquoise, cyan,
  * amber, the signal red), white highlights, no outlines. Drawn for this site —
  * no third-party artwork.
  *
@@ -11,9 +11,9 @@
 type P = { className?: string };
 
 const C = {
-  teal: "#19D3C5", teal2: "#5EE6DA", deep: "#0E9F94", cyan: "#5CE1F0",
+  teal: "#FF7A00", teal2: "#FFA040", deep: "#CC5F00", cyan: "#FFB04D",
   amber: "#F5B83D", amberD: "#C98A16", red: "#F43F5E", redD: "#B4233F",
-  navy: "#15233B", navy2: "#1C2D4A", white: "#FFFFFF",
+  navy: "#1C1C1C", navy2: "#262626", white: "#FFFFFF",
 };
 
 function Svg({ className, children, id }: P & { children: React.ReactNode; id: string }) {
@@ -30,7 +30,7 @@ function Svg({ className, children, id }: P & { children: React.ReactNode; id: s
           <stop offset="0" stopColor="#FF7A93" /><stop offset="1" stopColor={C.redD} />
         </linearGradient>
         <linearGradient id={`${id}-n`} x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#2A4166" /><stop offset="1" stopColor={C.navy} />
+          <stop offset="0" stopColor="#333333" /><stop offset="1" stopColor={C.navy} />
         </linearGradient>
       </defs>
       <ellipse cx="32" cy="58" rx="20" ry="3.2" fill="#000" opacity=".28" />

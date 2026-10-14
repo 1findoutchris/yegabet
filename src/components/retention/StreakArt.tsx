@@ -11,7 +11,7 @@ type P = { className?: string; days?: number; active?: boolean };
 const TIER_GRAD: Record<number, { outer: [string, string, string]; inner: [string, string] }> = {
   0: { outer: ["#9CA3AF", "#6B7280", "#4B5563"], inner: ["#D1D5DB", "#9CA3AF"] }, // grey / inactive
   1: { outer: ["#FFE3A3", "#FBB14B", "#F2741E"], inner: ["#FFF6D8", "#FFC857"] }, // ember
-  2: { outer: ["#7DE8D8", "#FB8B24", "#F0285A"], inner: ["#FFF6D8", "#FFB020"] }, // flame
+  2: { outer: ["#FFB366", "#FB8B24", "#F0285A"], inner: ["#FFF6D8", "#FFB020"] }, // flame
   3: { outer: ["#FFE8A3", "#FF7A1A", "#E01E5A"], inner: ["#FFFBEA", "#FF9E2C"] }, // hot
   4: { outer: ["#BFE3FF", "#5AA9FF", "#2D6BFF"], inner: ["#EAF5FF", "#7FC0FF"] }, // blue
   5: { outer: ["#FFF1C2", "#FF8A1E", "#FF2D6E"], inner: ["#FFFFFF", "#FFD36B"] }, // inferno

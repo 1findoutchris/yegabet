@@ -525,7 +525,7 @@ export function AuthModal() {
             V
           </span>
           <span className="font-display text-[color:var(--text-primary)] font-extrabold text-lg tracking-[-0.03em]">
-            Vinna<span className="text-gold-grad">Bet</span>
+            Yega<span className="text-gold-grad">Bet</span>
           </span>
         </div>
 
@@ -824,7 +824,7 @@ const SIGNUP_FAILURES: Record<string, (entered?: string, shared?: string) => str
     "Edit your number, or open the link from the Telegram account that uses it.",
   "not-own-contact": () => "Share your own contact with the Share my phone number button in the bot.",
   "not-ethiopian": () => "Your Telegram number isn't an Ethiopian mobile. Use the Telegram account with the number you entered.",
-  "telegram-in-use": () => "This Telegram account already has a VinnaBet account. Log in to it instead.",
+  "telegram-in-use": () => "This Telegram account already has a YegaBet account. Log in to it instead.",
   "phone-taken": () => "This phone number already has an account. Log in instead.",
 };
 

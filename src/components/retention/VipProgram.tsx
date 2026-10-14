@@ -28,7 +28,7 @@ export function VipProgram() {
           <Crown className="w-3 h-3 fill-current" /> Invitation only
         </span>
         <h2 className="mt-4 text-[28px] sm:text-[32px] font-bold tracking-[-0.03em] text-[color:var(--text-primary)] leading-tight">
-          The Vinna VIP Club
+          The Yega VIP Club
         </h2>
         <p className="mt-2 text-[14px] text-[color:var(--text-secondary)] max-w-2xl">
           Our top players get a dedicated account manager, the highest cashback, priority withdrawals, and access to real-world events. VIP status is reviewed monthly with a 60-day grace period before any demotion.

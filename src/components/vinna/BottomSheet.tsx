@@ -42,7 +42,7 @@ export function BottomSheet({
       <button
         aria-label="Close"
         onClick={onClose}
-        className="absolute inset-0 bg-[rgba(3,7,16,0.62)] backdrop-blur-[2px] v-fade-in cursor-default"
+        className="absolute inset-0 bg-[rgba(0,0,0,0.62)] backdrop-blur-[2px] v-fade-in cursor-default"
       />
       <div
         className={cn(

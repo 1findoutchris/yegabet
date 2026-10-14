@@ -20,10 +20,10 @@ export function CasinoHero({
     <section className="relative overflow-hidden rounded-[26px] border border-[color:var(--v-line)] bg-[var(--v-bg-0)]">
       {/* beam + hairlines */}
       <div aria-hidden className="absolute inset-0">
-        <div className="absolute -top-1/2 left-[30%] w-[60%] h-[200%] rotate-[24deg] bg-[linear-gradient(90deg,transparent,rgba(25,211,197,0.10),transparent)]" />
+        <div className="absolute -top-1/2 left-[30%] w-[60%] h-[200%] rotate-[24deg] bg-[linear-gradient(90deg,transparent,rgba(255, 122, 0,0.10),transparent)]" />
         <svg className="absolute right-0 top-0 h-full w-2/3 opacity-[0.35]" viewBox="0 0 400 300" preserveAspectRatio="none">
           {Array.from({ length: 7 }).map((_, i) => (
-            <path key={i} d={`M ${40 + i * 52} 300 L ${200 + i * 30} 0`} stroke="rgba(148,170,210,0.12)" strokeWidth="1" fill="none" />
+            <path key={i} d={`M ${40 + i * 52} 300 L ${200 + i * 30} 0`} stroke="rgba(200, 200, 200,0.12)" strokeWidth="1" fill="none" />
           ))}
         </svg>
         <div className="absolute inset-x-0 bottom-0 h-1/2 bg-[linear-gradient(to_top,var(--v-bg-0),transparent)]" />
@@ -31,7 +31,7 @@ export function CasinoHero({
 
       <div className="relative grid md:grid-cols-[1.1fr_1fr] gap-6 items-center p-5 sm:p-8 lg:p-10">
         <div className="v-fade-up">
-          <p className="v-eyebrow text-[color:var(--v-teal)]">VinnaBet Casino</p>
+          <p className="v-eyebrow text-[color:var(--v-teal)]">YegaBet Casino</p>
           <h1 className="mt-3 text-[34px] sm:text-[46px] lg:text-[54px] font-extrabold leading-[0.98] tracking-[-0.035em] text-white">
             Play. Win.<br />
             <span className="text-[color:var(--v-teal)]">Repeat.</span>

@@ -28,7 +28,7 @@ export type SignupFailure =
   | "not-own-contact" // forwarded / address-book / someone else's card
   | "not-ethiopian" // the Telegram number isn't an Ethiopian mobile
   | "mismatch" // the sender's own number, but not the one on the form
-  | "telegram-in-use" // this Telegram already has a VinnaBet account
+  | "telegram-in-use" // this Telegram already has a YegaBet account
   | "phone-taken"; // the number got registered meanwhile
 
 export type SignupVerdict =

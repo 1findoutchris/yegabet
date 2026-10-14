@@ -79,7 +79,7 @@ function shuffle<T>(arr: T[]): T[] {
 /*
  * Spribe Aviator via Octhera — appended to whichever catalog is loaded, while
  * OCTHERA_AVIATOR_PUBLIC=true and an API key is configured. Plays with the
- * normal VinnaBet balance, like every Octhera game.
+ * normal YegaBet balance, like every Octhera game.
  */
 function octheraAviator(): Game | null {
   if (process.env.OCTHERA_AVIATOR_PUBLIC !== "true" || !process.env.OCTHERA_API_KEY) return null;
@@ -99,7 +99,7 @@ function octheraAviator(): Game | null {
 
 /*
  * Octhera's whole catalog — "octhera:<gameUid>" games, played with the
- * normal VinnaBet balance (Octhera API v2 calls /api/provider/octhera/wallet).
+ * normal YegaBet balance (Octhera API v2 calls /api/provider/octhera/wallet).
  * Two places show it:
  *   - /octhera: every Octhera game, for everyone, whenever an API key is set
  *     (OCTHERA_PAGE=off hides the page)

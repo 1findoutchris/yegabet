@@ -80,7 +80,7 @@ export function AgentShell({ children }: { children: React.ReactNode }) {
     <>
       <div className="px-4 py-4 border-b border-[color:var(--border-muted)]">
         <p className="font-display text-[15px] font-extrabold text-[color:var(--text-primary)]">
-          Vinna<span className="text-gold-grad">Bet</span>
+          Yega<span className="text-gold-grad">Bet</span>
         </p>
         <p className="text-[11px] text-[color:var(--text-muted)] mt-0.5">Betting Agent</p>
         <button onClick={refresh} title="Click to refresh balance"
@@ -118,7 +118,7 @@ export function AgentShell({ children }: { children: React.ReactNode }) {
 
       <div className="md:hidden print:hidden fixed top-0 left-0 right-0 z-50 h-12 flex items-center justify-between px-4 bg-[var(--bg-surface)] border-b border-[color:var(--border-muted)]">
         <p className="font-display text-[14px] font-extrabold text-[color:var(--text-primary)]">
-          Vinna<span className="text-gold-grad">Bet</span>{" "}
+          Yega<span className="text-gold-grad">Bet</span>{" "}
           <span className="text-[color:var(--text-muted)] font-normal text-[12px]">Agent</span>
         </p>
         <div className="flex items-center gap-2 min-w-0">

@@ -42,9 +42,9 @@ export function LoadingScreen() {
         className="absolute inset-0 opacity-[0.35]"
         style={{
           background:
-            "radial-gradient(600px 300px at 50% 38%, rgba(25,211,197,0.10), transparent 70%)," +
-            "linear-gradient(rgba(148,170,210,0.05) 1px, transparent 1px) 0 0 / 44px 44px," +
-            "linear-gradient(90deg, rgba(148,170,210,0.05) 1px, transparent 1px) 0 0 / 44px 44px",
+            "radial-gradient(600px 300px at 50% 38%, rgba(255, 122, 0,0.10), transparent 70%)," +
+            "linear-gradient(rgba(200, 200, 200,0.05) 1px, transparent 1px) 0 0 / 44px 44px," +
+            "linear-gradient(90deg, rgba(200, 200, 200,0.05) 1px, transparent 1px) 0 0 / 44px 44px",
           maskImage: "radial-gradient(closest-side, #000, transparent)",
           WebkitMaskImage: "radial-gradient(closest-side, #000, transparent)",
         }}
@@ -52,7 +52,7 @@ export function LoadingScreen() {
       <div className="relative flex flex-col items-center">
         <VLoader size={68} />
         <p className="mt-6 text-[15px] font-extrabold tracking-[0.42em] pl-[0.42em] text-white">
-          VINNA<span className="text-[color:var(--v-teal)]">BET</span>
+          YEGA<span className="text-[color:var(--v-teal)]">BET</span>
         </p>
         <VLine className="mt-5" />
         <p key={msg} className="mt-4 h-4 text-[12px] font-medium text-[color:var(--v-text-3)] v-fade-up">

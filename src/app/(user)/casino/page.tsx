@@ -31,7 +31,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Online Casino & Sports Betting in Ethiopia",
   description:
-    "Play slots, live casino, table and crash games at VinnaBet. Instant telebirr, CBE Birr and eBirr deposits, fast withdrawals in ETB.",
+    "Play slots, live casino, table and crash games at YegaBet. Instant telebirr, CBE Birr and eBirr deposits, fast withdrawals in ETB.",
   alternates: { canonical: "/casino" },
 };
 
@@ -147,7 +147,7 @@ export default async function CasinoPage() {
 
         <div id="stream" className="flex flex-col gap-7 sm:gap-10 scroll-mt-20">
           {/* B — what players are actually playing */}
-          <GameGrid title="Popular now" description="Most played by VinnaBet players this month"
+          <GameGrid title="Popular now" description="Most played by YegaBet players this month"
             games={popular} href="/casino/hot" eager={firstEager} />
 
           {recent.length > 0 && (
@@ -205,7 +205,7 @@ export default async function CasinoPage() {
 
       <footer className="border-t border-[color:var(--v-line)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex flex-wrap items-center gap-x-6 gap-y-2">
-          <span className="text-[12px] font-extrabold tracking-[0.2em] text-[color:var(--v-text-3)]">VINNABET</span>
+          <span className="text-[12px] font-extrabold tracking-[0.2em] text-[color:var(--v-text-3)]">YEGABET</span>
           <span className="text-[12px] text-[color:var(--v-text-3)]">Responsible gaming</span>
           <span className="text-[12px] text-[color:var(--v-text-3)]">Terms &amp; conditions</span>
           <span className="text-[12px] text-[color:var(--v-text-3)]">Help center</span>

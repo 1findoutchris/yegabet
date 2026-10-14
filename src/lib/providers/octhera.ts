@@ -4,7 +4,7 @@ import crypto from "crypto";
 /**
  * Octhera aggregator — API v2, "company wallet" mode.
  *
- * Players play with their normal VinnaBet balance: Octhera launches the game,
+ * Players play with their normal YegaBet balance: Octhera launches the game,
  * then calls our Wallet URL (/api/provider/octhera/wallet) to authorize every
  * bet (debit) and pay every win/refund (credit). Our database is the source
  * of truth; Octhera only keeps the last reported balance for display.
@@ -163,7 +163,7 @@ export async function aviatorGameUid(): Promise<string> {
  * loads it in an iframe on /game/[id]; that only works while Octhera's game
  * pages allow vinna.bet to frame them (no X-Frame-Options: DENY/SAMEORIGIN, and
  * a CSP frame-ancestors that includes the site). The first launch creates the Octhera player
- * from `playerId`, which must never change: we use the VinnaBet user id, and
+ * from `playerId`, which must never change: we use the YegaBet user id, and
  * the wallet calls send it back.
  */
 export async function launchGame(params: {

@@ -38,7 +38,7 @@ export function WalletWidget() {
         <Link
           href="/deposit"
           aria-label="Deposit"
-          className="grid place-items-center w-9 bg-[var(--v-teal)] text-[color:var(--v-teal-ink)] hover:bg-[#3FDECF] transition-colors"
+          className="grid place-items-center w-9 bg-[var(--v-teal)] text-[color:var(--v-teal-ink)] hover:bg-[#FF8F26] transition-colors"
         >
           <Plus className="w-4 h-4" strokeWidth={2.6} />
         </Link>

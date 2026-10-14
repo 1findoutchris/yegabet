@@ -1,4 +1,4 @@
-// VinnaBet service worker — push notifications only (no offline caching:
+// YegaBet service worker — push notifications only (no offline caching:
 // balances are live/real-money, a stale cache is worse than a spinner).
 
 self.addEventListener("push", function (event) {

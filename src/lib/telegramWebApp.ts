@@ -42,8 +42,8 @@ const SDK_URL = "https://telegram.org/js/telegram-web-app.js";
  *  ends with the Mini App. */
 const FLAG_KEY = "vinna:tg";
 
-/** The VinnaBet navy, so Telegram's own chrome blends into the app's. */
-export const TG_NAVY = "#0A1222";
+/** The YegaBet navy, so Telegram's own chrome blends into the app's. */
+export const TG_NAVY = "#0A0A0A";
 
 function hashInitData(): string {
   if (typeof window === "undefined") return "";

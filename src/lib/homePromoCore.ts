@@ -44,7 +44,7 @@ export const PROMO_LAYOUTS = [
 export type PromoLayout = (typeof PROMO_LAYOUTS)[number]["id"];
 
 export const DEST_TYPES = [
-  { id: "internal", label: "Page on VinnaBet" },
+  { id: "internal", label: "Page on YegaBet" },
   { id: "external", label: "External website (https)" },
 ] as const;
 export type DestType = (typeof DEST_TYPES)[number]["id"];

@@ -2,11 +2,11 @@ import "server-only";
 import { tgCall } from "@/lib/telegram";
 
 /*
- * The VinnaBet player bot: main menu, account linking, ticket checks and the
+ * The YegaBet player bot: main menu, account linking, ticket checks and the
  * Mini App launcher.
  *
  * It is the same bot as the signup phone-verification rail (tgVerify.ts) —
- * TELEGRAM_VERIFY_BOT_* — so players have one VinnaBet bot, and the Mini App
+ * TELEGRAM_VERIFY_BOT_* — so players have one YegaBet bot, and the Mini App
  * it launches is validated with that bot's token. It is NOT the payout-agent
  * bot (TELEGRAM_BOT_TOKEN, lib/telegram.ts), whose chats run an agent login
  * state machine.
@@ -87,7 +87,7 @@ export const CB = { verify: "m:verify", ticket: "m:ticket", support: "m:support"
 export function mainMenu(): Markup {
   const rows = [
     [{ text: "📱 Verify Phone Number", callback_data: CB.verify }],
-    webAppButton("🎰 Open VinnaBet"),
+    webAppButton("🎰 Open YegaBet"),
     [{ text: "🎫 Check Ticket", callback_data: CB.ticket }],
     [{ text: "💬 Support", callback_data: CB.support }],
   ];
@@ -108,7 +108,7 @@ export const SHARE_CONTACT_KEYBOARD: Markup = {
 
 export const REMOVE: Markup = { remove_keyboard: true };
 
-export function openAppMarkup(text = "🎰 Open VinnaBet", to?: string): Markup | undefined {
+export function openAppMarkup(text = "🎰 Open YegaBet", to?: string): Markup | undefined {
   const row = webAppButton(text, to);
   return row.length ? { inline_keyboard: [row] } : undefined;
 }
@@ -127,16 +127,16 @@ export function noAccountMarkup(): Markup {
 // ── copy ────────────────────────────────────────────────────────────────────
 
 export const WELCOME =
-  "🏆 <b>Welcome to VinnaBet</b>\n\n" +
-  "Sports, casino and games — with your real VinnaBet wallet, right inside Telegram.\n\n" +
-  "• <b>Verify Phone Number</b> links this Telegram to your VinnaBet account, so the app signs you in automatically.\n" +
-  "• <b>Open VinnaBet</b> launches the app.\n" +
+  "🏆 <b>Welcome to YegaBet</b>\n\n" +
+  "Sports, casino and games — with your real YegaBet wallet, right inside Telegram.\n\n" +
+  "• <b>Verify Phone Number</b> links this Telegram to your YegaBet account, so the app signs you in automatically.\n" +
+  "• <b>Open YegaBet</b> launches the app.\n" +
   "• <b>Check Ticket</b> looks up any ticket code.";
 
 export const VERIFY_PROMPT =
-  "📱 <b>Link your VinnaBet account</b>\n\n" +
+  "📱 <b>Link your YegaBet account</b>\n\n" +
   "Tap <b>Share my phone number</b> below. Telegram sends us the number on <i>this</i> Telegram account " +
-  "and we match it to your VinnaBet account — nothing else is shared.\n\n" +
+  "and we match it to your YegaBet account — nothing else is shared.\n\n" +
   "Typing a number in the chat won't work: it has to come from the button.";
 
 export const TICKET_PROMPT =
@@ -145,12 +145,12 @@ export const TICKET_PROMPT =
 
 export function helpText(): string {
   return (
-    "ℹ️ <b>VinnaBet bot</b>\n\n" +
+    "ℹ️ <b>YegaBet bot</b>\n\n" +
     "/start — main menu\n" +
     "/account — your linked account\n" +
-    "/verify — link this Telegram to your VinnaBet account\n" +
+    "/verify — link this Telegram to your YegaBet account\n" +
     "/ticket — check a ticket\n" +
-    "/unlink — disconnect this Telegram from VinnaBet\n" +
+    "/unlink — disconnect this Telegram from YegaBet\n" +
     "/help — this message\n\n" +
     `Need help? Contact support: ${supportUrl()}`
   );
@@ -158,6 +158,6 @@ export function helpText(): string {
 
 export const ANOTHER_METHOD =
   "🔁 <b>Other ways in</b>\n\n" +
-  "• If your VinnaBet account uses a different phone number, open VinnaBet and log in with that number and your password.\n" +
+  "• If your YegaBet account uses a different phone number, open YegaBet and log in with that number and your password.\n" +
   "• Then come back here from the Telegram account that has that number, and tap <b>Verify Phone Number</b>.\n" +
-  "• New to VinnaBet? Tap <b>Create Account</b>.";
+  "• New to YegaBet? Tap <b>Create Account</b>.";

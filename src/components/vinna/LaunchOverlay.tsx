@@ -16,10 +16,10 @@ export function LaunchOverlay({
   children?: React.ReactNode;
 }) {
   return (
-    <div className="absolute inset-0 z-10 grid place-items-center px-6 bg-[radial-gradient(520px_280px_at_50%_42%,rgba(25,211,197,0.08),transparent_70%),var(--v-bg-0)] v-fade-in">
+    <div className="absolute inset-0 z-10 grid place-items-center px-6 bg-[radial-gradient(520px_280px_at_50%_42%,rgba(255, 122, 0,0.08),transparent_70%),var(--v-bg-0)] v-fade-in">
       <div className="flex flex-col items-center text-center">
         <VLoader size={56} />
-        <p className="mt-6 v-eyebrow">{provider ?? "VinnaBet"}</p>
+        <p className="mt-6 v-eyebrow">{provider ?? "YegaBet"}</p>
         <p className="mt-1.5 text-[18px] font-bold text-white max-w-[280px]">
           Launching {name ?? "your game"}
         </p>

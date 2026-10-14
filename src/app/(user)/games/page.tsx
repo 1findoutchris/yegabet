@@ -14,7 +14,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "All Games — Crash, Instant, Fishing & More",
   description:
-    "Browse every game at VinnaBet: crash and instant games, fishing, lottery, keno and more. Play in ETB with telebirr, CBE Birr and eBirr.",
+    "Browse every game at YegaBet: crash and instant games, fishing, lottery, keno and more. Play in ETB with telebirr, CBE Birr and eBirr.",
   alternates: { canonical: "/games" },
 };
 

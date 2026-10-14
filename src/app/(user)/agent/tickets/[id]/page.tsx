@@ -26,7 +26,7 @@ export default function AgentTicketDetailPage() {
   // long site title doesn't print at the top of the ticket.
   useEffect(() => {
     const prev = document.title;
-    document.title = "VinnaBet";
+    document.title = "YegaBet";
     return () => { document.title = prev; };
   }, []);
 

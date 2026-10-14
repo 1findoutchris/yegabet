@@ -19,7 +19,7 @@ export const metadata: Metadata = {
  * every game on our Octhera account, for everyone. Tapping one
  * launches it through Octhera (/api/games/launch, game_uid octhera:<gameUid>).
  * On whenever OCTHERA_API_KEY is set; OCTHERA_PAGE=off hides it (404).
- * The games play with the player's normal VinnaBet balance.
+ * The games play with the player's normal YegaBet balance.
  */
 export default async function OctheraPage() {
   if (catalogMode() === "octhera") redirect("/casino");
