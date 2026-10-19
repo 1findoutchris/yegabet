@@ -1,3 +1,8 @@
+| Q-22 | ~~Staff/agent login~~ **Answered 2026-10-19:** Telegram login for everyone (players, agents, staff) | — |
+| Q-12 | ~~Staging + prod~~ **Answered 2026-10-19:** yes, separate Railway environments and databases | — |
+| Q-11 | ~~Hosting~~ **Answered 2026-10-19:** Railway | — |
+| Q-10 | ~~Stack~~ **Answered 2026-10-19:** approved with plan 01 (NestJS + Prisma + Postgres + Redis/BullMQ + Next.js) | — |
+
 # Open questions (parked; answer when ready)
 
 Each one says what it blocks and what I'm doing in the meantime.

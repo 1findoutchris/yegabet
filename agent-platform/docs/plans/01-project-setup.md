@@ -1,6 +1,6 @@
 # 01 · Project setup
 
-Status: **built and tested locally; deploy blocked on Q-10 to Q-13 and Q-19/Q-20.**
+Status: **approved 2026-10-19; built and tested locally; deploy next (Day 1).**
 
 ## 1. Goal
 

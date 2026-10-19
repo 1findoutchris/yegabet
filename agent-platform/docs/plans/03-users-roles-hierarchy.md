@@ -1,6 +1,6 @@
 # 03 · Users, roles, hierarchy, company agent
 
-Status: **plan only, awaiting owner approval.** Not built.
+Status: **approved 2026-10-19; build next (Day 1). Login = Telegram (Q-22). Q-17 and Q-23 use the plan's proposals until answered.**
 
 ## 1. Goal
 

@@ -1,6 +1,6 @@
 # 02 · Ledger core + accounts + idempotency + invariants
 
-Status: **built and tested locally; awaiting owner review before deploy.**
+Status: **approved 2026-10-19; built and tested locally; deploy next (Day 1).**
 
 ## 1. Goal
 
