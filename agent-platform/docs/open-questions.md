@@ -24,7 +24,7 @@ Each one says what it blocks and what I'm doing in the meantime.
 | Q-10 | Confirm stack: **NestJS + Prisma + Postgres + Redis/BullMQ + Next.js** (the CLAUDE.md defaults, with Prisma as the ORM since you already use it)                                                                                 | Task 01 sign-off            |
 | Q-11 | Hosting: **Railway** like YegaBet? (one project with prod + staging environments, Postgres + Redis plugins)                                                                                                                      | Task 01 deploy              |
 | Q-12 | Staging and production as separate Railway environments, with separate databases?                                                                                                                                                | Task 01 deploy              |
-| Q-13 | GitHub repo name/owner to push to (I've only created a local repo)                                                                                                                                                               | CI green, deploy            |
+| Q-13 | ~~GitHub repo~~ **Answered:** the yegabet repo, folder `agent-platform/`                                                                                                                                                         | —                           |
 | Q-14 | A new Telegram bot for this platform (token + username)                                                                                                                                                                          | Task 04                     |
 | Q-15 | ~~Platform name + domain~~ **Answered 2026-10-19: YegaBet, yega.bet** (set via `PLATFORM_NAME` / `PLATFORM_DOMAIN`)                                                                                                              | —                           |
 | Q-16 | First provider: Octhera? Separate Octhera account/key from YegaBet's?                                                                                                                                                            | Task 07                     |
@@ -35,14 +35,11 @@ Each one says what it blocks and what I'm doing in the meantime.
 | Q-22 | How do **staff and agent users** log in? Telegram login like players, or password + 2FA?                                                                                                                                         | Task 03 routes going public |
 | Q-23 | Top-level agents: parentless (my plan; parent shares go to the company by rule) or children of the company agent?                                                                                                                | Task 03                     |
 
-## Migration from the old YegaBet (new, because of Q-18)
+## Migration from the old YegaBet: resolved 2026-10-19
 
-| ID   | Question                                                                                                                                                                                                                                      | Blocks  |
-| ---- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| M-01 | When should the migration task run? It can't be before Tasks 03–07 (players, deposits, withdrawals, provider wallet must exist). Proposal: after Task 07, as **Task 07b**. Adding a task changes the roadmap, so it needs your approval (§8). | Roadmap |
-| M-02 | Old players have no agent: assign all of them to the **company agent** (§5.2 direct registrations)? Or do some belong to existing YegaBet agents (cashier / payout / in-person agents in the old app)?                                        | M-01    |
-| M-03 | Old balances are split into balance / deposit / bonus pots. Is a bonus balance real money to migrate, or dropped? (Ties to Q-03.)                                                                                                             | M-01    |
-| M-04 | Cut-over: freeze the old site, migrate, switch the domain in one maintenance window? How long a downtime is acceptable?                                                                                                                       | M-01    |
+The old app has **no real users**, so there is nothing to migrate: no players, balances or history. M-01 to M-04 are closed, Task 07b is dropped, and bonus balances are not a concern. Cut-over is simply pointing yega.bet at the new platform when it is ready.
+
+**Timeline set by the owner: 3 days.** Proposed scope is in `docs/plans/00-master-plan.md` §6.
 
 ## Found while building (no decision needed yet; scheduled)
 

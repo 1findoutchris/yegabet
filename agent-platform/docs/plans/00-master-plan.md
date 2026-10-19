@@ -154,9 +154,8 @@ old Next.js app keeps serving yega.bet unchanged. The brand stays config
 Reuse **knowledge, not code**: the Octhera wallet protocol, signature checks and
 late-bet edge cases from the old app go into the Task 07 adapter.
 
-**Replacing the old app means migrating it** (players, balances, history) into the
-ledger, with a cut-over. That is a new task (proposed **07b**, after the provider
-wallet exists) with its own plan. Open questions M-01 to M-04.
+The old app has **no real users**, so replacing it needs no data migration. Cut-over
+means pointing yega.bet at the new platform once it's live.
 
 ---
 
@@ -167,3 +166,20 @@ wallet exists) with its own plan. Open questions M-01 to M-04.
   CBE / eBirr terms. I'll flag this again at Tasks 05, 06, 08 and 10.
 - **No recruitment rewards anywhere.** The settlement engine only reads player bet
   results. There is no code path that pays for agent sign-ups.
+
+---
+
+## 6. Three-day launch plan (owner deadline set 2026-10-19; proposal, needs approval)
+
+The full 16-task roadmap does not fit in 3 days. This is a launchable cut. Moving
+tasks after launch is a roadmap change (§8), so it needs the owner's OK.
+
+| Day | Tasks                                                                                           | Depends on                                           |
+| --- | ----------------------------------------------------------------------------------------------- | ---------------------------------------------------- |
+| 1   | Deploy 01 + 02; build 03 (users/roles/tree) + 04 (Telegram sign-up, referral)                   | Approve plans 01–03; Q-11/12 (Railway); Q-22 (login) |
+| 2   | 05 deposits (manual confirm), 06 withdrawals (hold, proof, confirm), 07 Octhera on the ledger   | Q-06, Q-07                                           |
+| 3   | 08 agent approval (simplified), 10 settlement engine, basic player/agent/admin screens, go-live | **Q-01 to Q-09 answered by end of day 1**            |
+
+**After launch:** 09 branding (referral links first, per §2), 11/12 full dashboards and exports, 13 limits (self-exclusion only at launch), 14 auto deposit matching, 15 transfers, 16 hardening.
+
+**Not cut, even for the deadline:** money tests, a backup + restore check before real money, the lawyer check (L-01).
