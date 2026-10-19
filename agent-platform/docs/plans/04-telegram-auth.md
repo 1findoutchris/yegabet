@@ -59,6 +59,9 @@ sessions(
 
 signup_intents(                             -- between /start and the contact share
   telegram_user_id TEXT PK,
+  web_code_hash TEXT UNIQUE,                -- website hand-off code (hashed); NULL = started in Telegram
+  player_id BIGINT,                         -- set when registration completes; status endpoint hands out one session
+  consumed_at TIMESTAMPTZ,
   referral_slug TEXT,                       -- NULL = company agent
   age_confirmed_at TIMESTAMPTZ,
   created_at, expires_at TIMESTAMPTZ NOT NULL)   -- 30 min
@@ -94,6 +97,15 @@ The session token comes back in the body (Mini App: `Authorization: Bearer`) **a
 4. Telegram sends the contact. We accept it only if `contact.user_id == from.id` (their **own** number).
 5. The account is created and attached to the agent. The bot replies "Your account is ready", with an **[Open YegaBet]** button that opens the Mini App.
 
+### Sign-up and login from the website
+
+- **Login:** a "Log in with Telegram" button (Telegram Login Widget). Telegram confirms the user, and our server checks the widget hash (`POST /auth/telegram/widget`).
+- **Sign-up:** phone proof must happen in Telegram (§5.5), so the site hands over to the bot and back:
+  1. On `yega.bet/?ref=<agent_slug>` the player clicks **"Sign up with Telegram"**. The site calls `POST /auth/signup/start {ref}`, which returns a one-time code (15 min) and the deep link `t.me/<bot>?start=w_<code>`. The code carries the referral; Telegram's start payload allows 64 chars of `A–Z a–z 0–9 _ -`.
+  2. In the bot: 18+ → share own contact → account created → **[Continue on website]** button.
+  3. The page polls `GET /auth/signup/status?code=…` (rate-limited). Once the bot has finished, it gets a session exactly once, and the code is then used up.
+- **No Telegram account = no sign-up.** This is a consequence of §5.5. SMS sign-up would be a rule change (asked as Q-26).
+
 ## 6. Money flow
 
 **None.** Registration opens the two player accounts at 0 (Task 03). There are no sign-up bonuses (§3).
@@ -125,6 +137,7 @@ The session token comes back in the body (Mini App: `Authorization: Bearer`) **a
 - **Webhook:** wrong or missing secret → 401. `/start agent-b` then 18+ then own contact → player attached to agent B, with a `player.registered` audit row. Someone else's contact → refused, no player. Unknown slug → message, no player. Flag off → nothing written. Same update twice → one player.
 - **Sessions:** login → `/me` works. After expiry → 401. After logout → 401. Token stored only as a hash.
 - **Roles:** the same Telegram id as player and as staff (owner) → `as=staff` gives staff permissions, `as=player` gives player only. A disabled staff member is refused.
+- **Website hand-off:** `signup/start` with ref B → `/start w_<code>` in the bot → contact → `signup/status` returns a session **once**; a second call → used up; an expired code → refused; a wrong code → pending/unknown with no information leak.
 - **Rate limit:** the 11th attempt within a minute → 429.
 - **Audit log:** UPDATE/DELETE rejected by the DB.
 - Coverage: 100% of `src/auth/**`.

@@ -39,6 +39,7 @@ Each one says what it blocks and what I'm doing in the meantime.
 | Q-20 | Backups: Railway's built-in Postgres backups enough, or also a nightly dump to S3/R2?                                                                                                                                            | Task 01 deploy              |
 | Q-22 | How do **staff and agent users** log in? Telegram login like players, or password + 2FA?                                                                                                                                         | Task 03 routes going public |
 | Q-23 | Top-level agents: parentless (my plan; parent shares go to the company by rule) or children of the company agent?                                                                                                                | Task 03                     |
+| Q-26 | Sign-up needs a Telegram account (phone proof = Telegram contact share, §5.5). Also offer **SMS sign-up** for people without Telegram (the old app had AfroMessage)? That would be a rule change.                                | Task 04 follow-up           |
 
 ## Migration from the old YegaBet: resolved 2026-10-19
 
