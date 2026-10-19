@@ -39,10 +39,10 @@ holds that cash for the platform. A reference can be used only once.
 
 **Open questions (answer before building)**
 
-- **Q-27:** minimum and maximum deposit? (Proposal: min 10 ETB, max 100,000 ETB, both config.)
-- **Q-28:** who may override (confirm/reject any deposit)? Proposal: **owner** and **finance**.
+- **Q-27:** minimum and maximum deposit? **Answered: min 15 ETB, max 100,000 ETB** (config).
+- **Q-28:** who may override (confirm/reject any deposit)? **Answered: owner only.**
 - **Q-29:** who adds an agent's payment accounts before Task 09: staff from the console (proposal), or the agent?
-- **Q-30:** how long may a deposit stay pending before it expires? (Proposal: 48 h, then it auto-rejects as "not confirmed".)
+- **Q-30:** how long may a deposit stay pending before it expires? **Answered: 24 h**, then it expires as "not confirmed".
 
 ## 4. Data model (migration `0005_deposits`)
 
@@ -82,7 +82,7 @@ deposits(
 | `GET /agent/deposits?status=pending`                     | agent member (`deposits.review.own`)                          | my agent's queue, with the full reference to match |
 | `POST /agent/deposits/:id/confirm`                       | agent member of that agent, or staff with `deposits.override` | confirm → ledger                                   |
 | `POST /agent/deposits/:id/reject` `{reason}`             | same                                                          | reject                                             |
-| Job (hourly)                                             | system                                                        | pending older than Q-30 → `expired`                |
+| Job (hourly)                                             | system                                                        | pending older than 24 h (Q-30) → `expired`         |
 
 ## 6. Money flow
 
@@ -119,7 +119,7 @@ Only **confirm** moves money. It's one ledger posting:
 ## 8. Security
 
 - References are stored hashed (uniqueness) and encrypted (display), never logged. Masked for players, full for the deciding agent and staff.
-- New permissions (proposal, Q-28): `deposits.review.own` (agent member), `deposits.override` (owner, finance).
+- New permissions (proposal, Q-28): `deposits.review.own` (agent member), `deposits.override` (owner).
 - Every decision writes an audit row: who, before/after status, amount, deposit id. No reference.
 
 ## 9. Test plan
@@ -128,7 +128,7 @@ Only **confirm** moves money. It's one ledger posting:
 - Duplicate reference (exact, different case/spaces, after rejection) → refused
 - 20 parallel confirms → exactly 1 ledger posting; confirm vs reject race → one wins
 - Agent B can't see or decide agent A's deposits; a player sees only their own; staff without override → 403
-- Expiry job: a 49 h old pending deposit → expired; a 47 h one stays pending
+- Expiry job: a 25 h old pending deposit → expired; a 23 h one stays pending
 - Self-excluded / frozen player → refused
 - The status trigger blocks confirmed → pending, rejected → confirmed, etc.
 - `ledger:check` ok after the suite; 100% coverage of `src/deposits/**`

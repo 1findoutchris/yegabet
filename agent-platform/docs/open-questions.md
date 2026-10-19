@@ -1,3 +1,6 @@
+| Q-30 | ~~Pending deposit expiry~~ **Answered 2026-10-19:** **24 h**, then it expires | — |
+| Q-28 | ~~Deposit override~~ **Answered 2026-10-19:** **owner** only (finance can be added later) | — |
+| Q-27 | ~~Deposit limits~~ **Answered 2026-10-19:** min **15 ETB**, max **100,000 ETB** (config) | — |
 | Q-26 | ~~SMS sign-up~~ **Answered 2026-10-19:** no, for now. Telegram only. | — |
 | Q-27 | Deposit minimum / maximum? Proposal: min 10 ETB, max 100,000 ETB (config). | Task 05 |
 | Q-28 | Who may override deposits (confirm/reject any)? Proposal: owner + finance. | Task 05 |
