@@ -2,10 +2,17 @@ import { PrismaClient } from "@prisma/client";
 
 /**
  * DB tests run against TEST_DATABASE_URL (default: the local throwaway server).
- * The setup wipes the schema, so it refuses any database not named *_test.
+ * Like production, the tables live in their own Postgres schema (`?schema=agent`),
+ * next to the old web app's tables in `public`.
+ * The setup wipes that schema, so it refuses any database not named *_test.
  */
 export const TEST_DATABASE_URL =
-  process.env.TEST_DATABASE_URL ?? "postgresql://postgres@localhost:54329/agent_platform_test";
+  process.env.TEST_DATABASE_URL ?? "postgresql://postgres@localhost:54329/agent_platform_test?schema=agent";
+
+/** The Postgres schema Prisma uses for this URL (its `schema` parameter, else `public`). */
+export function schemaOf(url: string): string {
+  return new URL(url).searchParams.get("schema") ?? "public";
+}
 
 export function assertTestDatabase(url: string): void {
   const name = new URL(url).pathname.replace(/^\//, "");
