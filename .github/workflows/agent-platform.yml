@@ -1,13 +1,20 @@
-name: CI
+name: Agent platform CI
 
+# The agent platform API (agent-platform/) is its own Node project with its own
+# package.json and database; this runs only when it changes.
 on:
   push:
-    branches: [main]
+    paths: ["agent-platform/**", ".github/workflows/agent-platform.yml"]
   pull_request:
+    paths: ["agent-platform/**", ".github/workflows/agent-platform.yml"]
 
 jobs:
   test:
+    name: lint · typecheck · tests (real Postgres)
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: agent-platform
     services:
       postgres:
         image: postgres:17-alpine
@@ -26,6 +33,7 @@ jobs:
         with:
           node-version: 20
           cache: npm
+          cache-dependency-path: agent-platform/package-lock.json
       - run: npm ci
       - run: npx prisma generate
       - run: npm run lint

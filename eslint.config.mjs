@@ -30,6 +30,8 @@ const eslintConfig = defineConfig([
     // Native app projects (Capacitor copies generated JS into them).
     "android/**",
     "ios/**",
+    // The agent platform API is its own project with its own lint config.
+    "agent-platform/**",
   ]),
 ]);
 
