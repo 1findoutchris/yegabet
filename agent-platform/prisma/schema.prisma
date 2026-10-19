@@ -1,0 +1,106 @@
+// Schema changes go through migrations only (CLAUDE.md §4). Triggers that
+// Prisma can't express live as raw SQL inside the migration files.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Dated, append-only config: the value in force at time T is the row with the
+// greatest effective_from <= T. A trigger blocks UPDATE/DELETE.
+model ConfigVersion {
+  id            BigInt   @id @default(autoincrement())
+  key           String
+  value         Json
+  effectiveFrom DateTime @map("effective_from") @db.Timestamptz(6)
+  createdBy     String   @map("created_by")
+  createdAt     DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  @@unique([key, effectiveFrom])
+  @@map("config_versions")
+}
+
+// Unfinished-but-deployed features stay dark: an absent row means off.
+model FeatureFlag {
+  key       String   @id
+  enabled   Boolean  @default(false)
+  updatedBy String   @map("updated_by")
+  updatedAt DateTime @default(now()) @map("updated_at") @db.Timestamptz(6)
+
+  @@map("feature_flags")
+}
+
+// ── Ledger (CLAUDE.md §5.1) ──────────────────────────────────────────────────
+
+model Account {
+  id            BigInt   @id @default(autoincrement())
+  type          String
+  ownerKind     String   @map("owner_kind")
+  ownerId       String   @map("owner_id")
+  currency      String   @default("ETB") @db.Char(3)
+  allowNegative Boolean  @map("allow_negative")
+  isTest        Boolean  @default(false) @map("is_test")
+  createdAt     DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  balance AccountBalance?
+  debits  LedgerEntry[]   @relation("debit")
+  credits LedgerEntry[]   @relation("credit")
+
+  @@unique([type, ownerKind, ownerId, currency])
+  @@map("accounts")
+}
+
+// Cache of Σcredits − Σdebits. Writable only inside a ledger posting
+// (a trigger checks the transaction-local setting ledger.posting = 'on').
+model AccountBalance {
+  accountId BigInt   @id @map("account_id")
+  balance   BigInt   @default(0)
+  updatedAt DateTime @default(now()) @map("updated_at") @db.Timestamptz(6)
+
+  account Account @relation(fields: [accountId], references: [id], onDelete: Restrict)
+
+  @@map("account_balances")
+}
+
+// Journal header: one per posting; owns the idempotency key for the whole set.
+model LedgerTransaction {
+  id                    BigInt   @id @default(autoincrement())
+  idempotencyKey        String   @unique @map("idempotency_key")
+  requestHash           String   @map("request_hash")
+  reason                String
+  referenceId           String?  @map("reference_id")
+  reversesTransactionId BigInt?  @unique @map("reverses_transaction_id")
+  createdAt             DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  reverses   LedgerTransaction? @relation("reversal", fields: [reversesTransactionId], references: [id], onDelete: Restrict)
+  reversedBy LedgerTransaction? @relation("reversal")
+  entries    LedgerEntry[]
+
+  @@map("ledger_transactions")
+}
+
+model LedgerEntry {
+  id              BigInt   @id @default(autoincrement())
+  transactionId   BigInt   @map("transaction_id")
+  debitAccountId  BigInt   @map("debit_account_id")
+  creditAccountId BigInt   @map("credit_account_id")
+  amount          BigInt
+  currency        String   @db.Char(3)
+  reason          String
+  referenceId     String?  @map("reference_id")
+  idempotencyKey  String   @unique @map("idempotency_key")
+  createdAt       DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  transaction   LedgerTransaction @relation(fields: [transactionId], references: [id], onDelete: Restrict)
+  debitAccount  Account           @relation("debit", fields: [debitAccountId], references: [id], onDelete: Restrict)
+  creditAccount Account           @relation("credit", fields: [creditAccountId], references: [id], onDelete: Restrict)
+
+  @@index([transactionId])
+  @@index([debitAccountId])
+  @@index([creditAccountId])
+  @@map("ledger_entries")
+}

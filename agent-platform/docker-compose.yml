@@ -1,0 +1,14 @@
+# Local development only: Postgres + Redis. The app runs on the host (npm run dev).
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: agent_platform_dev
+    ports: ["5433:5432"]
+    volumes: [pgdata:/var/lib/postgresql/data]
+  redis:
+    image: redis:7-alpine
+    ports: ["6380:6379"]
+volumes:
+  pgdata:

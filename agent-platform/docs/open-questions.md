@@ -1,0 +1,57 @@
+# Open questions (parked; answer when ready)
+
+Each one says what it blocks and what I'm doing in the meantime.
+**Nothing here has been guessed into money logic.**
+
+## Business rules (from CLAUDE.md §2 "Open decisions")
+
+| ID   | Question                                                                                                                                  | Blocks       | Meanwhile                                                                  |
+| ---- | ----------------------------------------------------------------------------------------------------------------------------------------- | ------------ | -------------------------------------------------------------------------- |
+| Q-01 | Paid parent levels at launch: **2** (as in the split table) or **3** (earlier answer)? If 3, what's level 3's %, and whose share shrinks? | Task 10      | `max_parent_levels` is config. Seed value left **unset** until you answer. |
+| Q-02 | Keep **per-provider, no carry-forward**? This lets the company pay commission even when players won overall.                              | Task 10      | Built as written (per provider).                                           |
+| Q-03 | Are bonuses, promos, refunds and payment-method fees deducted from `G` before the split?                                                  | Task 10      | Not deducted. Task 10 won't start until answered.                          |
+| Q-04 | Same split for every agent, or per-agent overrides?                                                                                       | Task 10      | Config model allows a per-agent override row later.                        |
+| Q-05 | Is the 10% "provider fee" the provider's real fee (often charged on all GGR, even losing periods) or a reserve?                           | Task 10      | Treated as a split line only.                                              |
+| Q-06 | Do withdrawals come out of the agent's own cash or the company float? Who holds the float, and how large must it be at launch?            | Tasks 05, 06 | Accounts for both exist in the ledger. No flow built yet.                  |
+| Q-07 | Withdrawal SLA (default 24h), minimum payout, minimum withdrawal                                                                          | Task 06      | Config with default 24h.                                                   |
+| Q-08 | Responsible-gambling defaults: deposit/loss limit periods, cool-off lengths, minimum age                                                  | Task 13      | Hooks only.                                                                |
+| Q-09 | Rounding: confirm "floor to whole birr, remainder to company"                                                                             | Task 10      | That default is in the plan's worked example.                              |
+
+## Setup / infrastructure (needed for Task 01 DEPLOY)
+
+| ID   | Question                                                                                                                                                                                                                         | Blocks                      |
+| ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------- |
+| Q-10 | Confirm stack: **NestJS + Prisma + Postgres + Redis/BullMQ + Next.js** (the CLAUDE.md defaults, with Prisma as the ORM since you already use it)                                                                                 | Task 01 sign-off            |
+| Q-11 | Hosting: **Railway** like YegaBet? (one project with prod + staging environments, Postgres + Redis plugins)                                                                                                                      | Task 01 deploy              |
+| Q-12 | Staging and production as separate Railway environments, with separate databases?                                                                                                                                                | Task 01 deploy              |
+| Q-13 | GitHub repo name/owner to push to (I've only created a local repo)                                                                                                                                                               | CI green, deploy            |
+| Q-14 | A new Telegram bot for this platform (token + username)                                                                                                                                                                          | Task 04                     |
+| Q-15 | ~~Platform name + domain~~ **Answered 2026-10-19: YegaBet, yega.bet** (set via `PLATFORM_NAME` / `PLATFORM_DOMAIN`)                                                                                                              | —                           |
+| Q-16 | First provider: Octhera? Separate Octhera account/key from YegaBet's?                                                                                                                                                            | Task 07                     |
+| Q-17 | Who are the cofounders/staff in the approval chain (roles, how many approvals needed)?                                                                                                                                           | Task 08                     |
+| Q-18 | ~~Replace or run alongside?~~ **Answered 2026-10-19: the agent platform replaces the old single-site YegaBet web app.** Existing players, balances and history must be migrated into the ledger. That needs its own plan (M-01). | M-01                        |
+| Q-19 | Error tracking: Sentry OK? (needs a DSN)                                                                                                                                                                                         | Task 01 observability       |
+| Q-20 | Backups: Railway's built-in Postgres backups enough, or also a nightly dump to S3/R2?                                                                                                                                            | Task 01 deploy              |
+| Q-22 | How do **staff and agent users** log in? Telegram login like players, or password + 2FA?                                                                                                                                         | Task 03 routes going public |
+| Q-23 | Top-level agents: parentless (my plan; parent shares go to the company by rule) or children of the company agent?                                                                                                                | Task 03                     |
+
+## Migration from the old YegaBet (new, because of Q-18)
+
+| ID   | Question                                                                                                                                                                                                                                      | Blocks  |
+| ---- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| M-01 | When should the migration task run? It can't be before Tasks 03–07 (players, deposits, withdrawals, provider wallet must exist). Proposal: after Task 07, as **Task 07b**. Adding a task changes the roadmap, so it needs your approval (§8). | Roadmap |
+| M-02 | Old players have no agent: assign all of them to the **company agent** (§5.2 direct registrations)? Or do some belong to existing YegaBet agents (cashier / payout / in-person agents in the old app)?                                        | M-01    |
+| M-03 | Old balances are split into balance / deposit / bonus pots. Is a bonus balance real money to migrate, or dropped? (Ties to Q-03.)                                                                                                             | M-01    |
+| M-04 | Cut-over: freeze the old site, migrate, switch the domain in one maintenance window? How long a downtime is acceptable?                                                                                                                       | M-01    |
+
+## Found while building (no decision needed yet; scheduled)
+
+| ID   | Item                                                                                                                                                                                                                                                                                 | When                     |
+| ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------ |
+| H-01 | The DB triggers stop edits and deletes, but the **table owner** can still `DROP TABLE` or `ALTER TABLE … DISABLE TRIGGER`. In production the app should connect as a role that does **not** own the tables (a separate migration role does). Railway's default user owns everything. | Task 01 deploy / Task 16 |
+
+## Legal (§3, flag at every money milestone)
+
+| ID   | Item                                                                                                                                                                 |
+| ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| L-01 | Lawyer confirmation: betting operations, agent-held customer funds, multi-level revenue share in Ethiopia, and Telebirr / CBE Birr / eBirr terms. **Not confirmed.** |

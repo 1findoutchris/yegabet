@@ -1,0 +1,3 @@
+# This project is formatted with LF endings (Prettier); keep them on every OS.
+* text=auto eol=lf
+*.png binary
