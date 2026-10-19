@@ -4,7 +4,7 @@
 | Q-26 | ~~SMS sign-up~~ **Answered 2026-10-19:** no, for now. Telegram only. | — |
 | Q-27 | Deposit minimum / maximum? Proposal: min 10 ETB, max 100,000 ETB (config). | Task 05 |
 | Q-28 | Who may override deposits (confirm/reject any)? Proposal: owner + finance. | Task 05 |
-| Q-29 | Who adds an agent's payment accounts before Task 09: staff from the console (proposal) or the agent? | Task 05 |
+| Q-29 | ~~Who adds payment accounts~~ **Answered 2026-10-19: the agent, themselves** (agent members add and deactivate their own agent's numbers; every change is audited) | — |
 | Q-30 | How long can a deposit stay pending? Proposal: 48 h, then it expires (auto-rejected). | Task 05 |
 | Q-24 | ~~Session lifetime~~ **Answered 2026-10-19:** 12 h | — |
 | Q-25 | ~~First owner~~ **Answered 2026-10-19:** Telegram user id 5347803735 becomes the first owner (`npm run staff:add`) | — |

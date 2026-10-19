@@ -79,6 +79,7 @@ model LedgerTransaction {
   reverses   LedgerTransaction? @relation("reversal", fields: [reversesTransactionId], references: [id], onDelete: Restrict)
   reversedBy LedgerTransaction? @relation("reversal")
   entries    LedgerEntry[]
+  deposit    Deposit?
 
   @@map("ledger_transactions")
 }
@@ -122,11 +123,13 @@ model Agent {
   status      String   @default("active")
   createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
 
-  parent      Agent?            @relation("tree", fields: [parentId], references: [id], onDelete: Restrict, onUpdate: Restrict)
-  children    Agent[]           @relation("tree")
-  players     Player[]
-  assignments AgentAssignment[]
-  members     AgentMember[]
+  parent          Agent?                @relation("tree", fields: [parentId], references: [id], onDelete: Restrict, onUpdate: Restrict)
+  children        Agent[]               @relation("tree")
+  players         Player[]
+  assignments     AgentAssignment[]
+  members         AgentMember[]
+  paymentAccounts AgentPaymentAccount[]
+  deposits        Deposit[]
 
   @@index([parentId])
   @@index([ancestors], type: Gin)
@@ -146,6 +149,7 @@ model Player {
   agent       Agent             @relation(fields: [agentId], references: [id], onDelete: Restrict)
   assignments AgentAssignment[]
   webSignups  WebSignup[]
+  deposits    Deposit[]
 
   @@index([agentId])
   @@map("players")
@@ -270,4 +274,52 @@ model AuditLog {
   @@index([at])
   @@index([action])
   @@map("audit_log")
+}
+
+// ── Deposits (plan 05) ───────────────────────────────────────────────────────
+
+model AgentPaymentAccount {
+  id            BigInt   @id @default(autoincrement())
+  agentId       BigInt   @map("agent_id")
+  method        String
+  accountName   String   @map("account_name")
+  accountNumber String   @map("account_number")
+  active        Boolean  @default(true)
+  createdAt     DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  agent    Agent     @relation(fields: [agentId], references: [id], onDelete: Restrict)
+  deposits Deposit[]
+
+  @@unique([method, accountNumber])
+  @@index([agentId])
+  @@map("agent_payment_accounts")
+}
+
+// Decided once (trigger): pending → confirmed | rejected | expired.
+model Deposit {
+  id                  BigInt    @id @default(autoincrement())
+  playerId            BigInt    @map("player_id")
+  agentId             BigInt    @map("agent_id")
+  paymentAccountId    BigInt    @map("payment_account_id")
+  method              String
+  amount              BigInt
+  referenceHash       String    @map("reference_hash")
+  referenceEnc        String    @map("reference_enc")
+  status              String    @default("pending")
+  decidedByKind       String?   @map("decided_by_kind")
+  decidedById         String?   @map("decided_by_id")
+  decisionReason      String?   @map("decision_reason")
+  decidedAt           DateTime? @map("decided_at") @db.Timestamptz(6)
+  ledgerTransactionId BigInt?   @unique @map("ledger_transaction_id")
+  createdAt           DateTime  @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  player            Player              @relation(fields: [playerId], references: [id], onDelete: Restrict)
+  agent             Agent               @relation(fields: [agentId], references: [id], onDelete: Restrict)
+  paymentAccount    AgentPaymentAccount @relation(fields: [paymentAccountId], references: [id], onDelete: Restrict)
+  ledgerTransaction LedgerTransaction?  @relation(fields: [ledgerTransactionId], references: [id], onDelete: Restrict)
+
+  @@unique([method, referenceHash])
+  @@index([agentId, status])
+  @@index([playerId, createdAt])
+  @@map("deposits")
 }

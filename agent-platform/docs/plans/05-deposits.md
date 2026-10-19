@@ -1,6 +1,6 @@
 # 05 · Deposits (manual verification first)
 
-Status: **plan, awaiting owner approval.** ⚠️ Legal flag L-01: agents hold customer funds. The lawyer's confirmation is still open.
+Status: **approved 2026-10-19; built and tested locally (233 tests in total, 100% coverage of src/deposits); deploy next.** ⚠️ Legal flag L-01: agents hold customer funds. The lawyer's confirmation is still open.
 
 ## 1. Goal
 
@@ -14,7 +14,7 @@ holds that cash for the platform. A reference can be used only once.
 
 **In**
 
-- Agent payment accounts (`agent_payment_accounts`): method, account name, account number. Added from the console for now (**Q-29**).
+- Agent payment accounts (`agent_payment_accounts`): method, account name, account number. **Agent members add and deactivate their own** (Q-29), and every change is audited.
 - Player: list my agent's accounts → submit a deposit → see my deposits
 - Agent member: the queue of pending deposits for **their** agent → confirm / reject (with a reason)
 - Staff with `deposits.override`: confirm or reject any pending deposit (logged as an override)
@@ -41,7 +41,7 @@ holds that cash for the platform. A reference can be used only once.
 
 - **Q-27:** minimum and maximum deposit? **Answered: min 15 ETB, max 100,000 ETB** (config).
 - **Q-28:** who may override (confirm/reject any deposit)? **Answered: owner only.**
-- **Q-29:** who adds an agent's payment accounts before Task 09: staff from the console (proposal), or the agent?
+- **Q-29:** **Answered: agents add their own.**
 - **Q-30:** how long may a deposit stay pending before it expires? **Answered: 24 h**, then it expires as "not confirmed".
 
 ## 4. Data model (migration `0005_deposits`)
@@ -74,15 +74,16 @@ deposits(
 
 ## 5. Endpoints
 
-| Route                                                    | Who                                                           | What                                               |
-| -------------------------------------------------------- | ------------------------------------------------------------- | -------------------------------------------------- |
-| `GET /deposits/accounts`                                 | player                                                        | my agent's active payment accounts                 |
-| `POST /deposits` `{paymentAccountId, amount, reference}` | player (active, not self-excluded), rate-limited              | creates a pending deposit                          |
-| `GET /deposits`                                          | player                                                        | my deposits (reference shown masked: `****1234`)   |
-| `GET /agent/deposits?status=pending`                     | agent member (`deposits.review.own`)                          | my agent's queue, with the full reference to match |
-| `POST /agent/deposits/:id/confirm`                       | agent member of that agent, or staff with `deposits.override` | confirm → ledger                                   |
-| `POST /agent/deposits/:id/reject` `{reason}`             | same                                                          | reject                                             |
-| Job (hourly)                                             | system                                                        | pending older than 24 h (Q-30) → `expired`         |
+| Route                                                                             | Who                                                           | What                                               |
+| --------------------------------------------------------------------------------- | ------------------------------------------------------------- | -------------------------------------------------- |
+| `GET /deposits/accounts`                                                          | player                                                        | my agent's active payment accounts                 |
+| `POST /deposits` `{paymentAccountId, amount, reference}`                          | player (active, not self-excluded), rate-limited              | creates a pending deposit                          |
+| `GET /deposits`                                                                   | player                                                        | my deposits (reference shown masked: `****1234`)   |
+| `GET/POST /agent/payment-accounts`, `POST /agent/payment-accounts/:id/deactivate` | agent member (`payment_accounts.manage.own`)                  | list / add / deactivate their own agent's numbers  |
+| `GET /agent/deposits?status=pending`                                              | agent member (`deposits.review.own`)                          | my agent's queue, with the full reference to match |
+| `POST /agent/deposits/:id/confirm`                                                | agent member of that agent, or staff with `deposits.override` | confirm → ledger                                   |
+| `POST /agent/deposits/:id/reject` `{reason}`                                      | same                                                          | reject                                             |
+| Job (hourly)                                                                      | system                                                        | pending older than 24 h (Q-30) → `expired`         |
 
 ## 6. Money flow
 
@@ -148,3 +149,11 @@ Additive migration, flag `deposits.open` off. After deploy: add one test payment
 - [ ] Q-27 to Q-30 answered
 - [ ] All tests pass; 100% coverage of `src/deposits/**`; `ledger:check` ok
 - [ ] Migration up/down tested; deployed; test deposit end to end on production
+
+## 13. Build notes (2026-10-19)
+
+- **Limits and expiry are dated config** (`deposits.limits` = 15 / 100,000 ETB, `deposits.pending_ttl_hours` = 24), seeded by the migration. A later change is a new config row, never an edit. Without config, deposits are refused (no hidden defaults for money).
+- **`Ledger.postInTransaction`** was added so the deposit status and its posting commit together (as plan §7 requires). It's the same validation, locks and idempotency as `post`, and posting rules are unchanged.
+- References share the phone keys, separated by a hash domain (`deposit-ref:<method>`). So no new secrets, and a phone hash can never collide with a reference hash.
+- The expiry job is an in-process hourly timer (one replica). It moves to a Redis queue when Redis arrives.
+- **One ledger posting per deposit** is also enforced by a unique index on `deposits.ledger_transaction_id`.

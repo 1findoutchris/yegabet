@@ -22,6 +22,9 @@ const MATRIX: Record<Permission, (StaffRole | "agent_member")[]> = {
   "players.read.own": ["agent_member"],
   "agents.children.summary": ["agent_member"],
   "config.write": ["owner"],
+  "deposits.review.own": ["agent_member"],
+  "deposits.override": ["owner"],
+  "payment_accounts.manage.own": ["agent_member"],
 };
 
 describe("permission matrix", () => {

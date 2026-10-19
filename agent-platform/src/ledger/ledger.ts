@@ -170,6 +170,20 @@ export class Ledger {
   }
 
   /**
+   * The same posting, inside the caller's own transaction, so a business row
+   * (e.g. a deposit's status) and its money move commit or roll back together.
+   * Same locks, same idempotency, same refusals. If two callers race on one
+   * key, the loser's transaction fails on the unique key and the caller
+   * retries (a retry then replays).
+   */
+  async postInTransaction(tx: Tx, raw: PostingRequest): Promise<PostingResult> {
+    const req = validatePosting(raw);
+    const hash = requestHash("post", { ...req });
+    await tx.$executeRaw`SELECT set_config('ledger.posting', 'on', true)`;
+    return this.apply(tx, req, hash, null);
+  }
+
+  /**
    * Undo a transaction with a new, opposite transaction (corrections are new
    * entries, never edits). A transaction can be reversed at most once.
    */

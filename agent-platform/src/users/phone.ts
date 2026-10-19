@@ -1,4 +1,4 @@
-import { createCipheriv, createDecipheriv, createHmac, randomBytes } from "node:crypto";
+import { decryptField, encryptField, keyedHash } from "../common/fieldCrypto";
 import { UsersError } from "./errors";
 
 /**
@@ -19,22 +19,16 @@ export function normalizeEthiopianPhone(input: string): string {
 }
 
 export function hashPhone(e164: string, key: string): string {
-  return createHmac("sha256", key).update(e164).digest("hex");
+  return keyedHash(e164, key);
 }
 
-/** Key is 32 bytes, base64. Output: base64(iv | tag | ciphertext). */
+/** Key is 32 bytes, base64 (see common/fieldCrypto). */
 export function encryptPhone(e164: string, keyB64: string): string {
-  const iv = randomBytes(12);
-  const cipher = createCipheriv("aes-256-gcm", Buffer.from(keyB64, "base64"), iv);
-  const ct = Buffer.concat([cipher.update(e164, "utf8"), cipher.final()]);
-  return Buffer.concat([iv, cipher.getAuthTag(), ct]).toString("base64");
+  return encryptField(e164, keyB64);
 }
 
 export function decryptPhone(blob: string, keyB64: string): string {
-  const raw = Buffer.from(blob, "base64");
-  const decipher = createDecipheriv("aes-256-gcm", Buffer.from(keyB64, "base64"), raw.subarray(0, 12));
-  decipher.setAuthTag(raw.subarray(12, 28));
-  return Buffer.concat([decipher.update(raw.subarray(28)), decipher.final()]).toString("utf8");
+  return decryptField(blob, keyB64);
 }
 
 /** For logs and screens: +251912345678 → +251****5678. */
