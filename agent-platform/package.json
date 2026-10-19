@@ -20,7 +20,9 @@
     "test:unit": "jest --runInBand --selectProjects unit",
     "test:db": "jest --runInBand --selectProjects db",
     "test:cov": "jest --runInBand --coverage",
-    "ledger:check": "node dist/scripts/ledgerCheck.js"
+    "ledger:check": "node dist/scripts/ledgerCheck.js",
+    "staff:add": "node dist/scripts/staffAdd.js",
+    "telegram:setup": "node dist/scripts/telegramSetup.js"
   },
   "dependencies": {
     "@nestjs/common": "^11.2.7",

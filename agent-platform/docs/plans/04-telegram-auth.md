@@ -1,6 +1,6 @@
 # 04 · Telegram sign-up and login (players, agents, staff) + referral links
 
-Status: **plan, awaiting owner approval.**
+Status: **approved 2026-10-19; built and tested locally (172 tests, 100% coverage of src/auth and src/telegram); deploy next.**
 
 ## 1. Goal
 
@@ -164,3 +164,11 @@ The session token comes back in the body (Mini App: `Authorization: Bearer`) **a
 - [ ] Migration up/down tested
 - [ ] Deployed; webhook set; smoke test above passes on production
 - [ ] Your owner account works (`/me` shows `staff` + `owner`)
+
+## 13. Build notes (2026-10-19)
+
+- **Website hand-off uses its own table `web_signups`** (code hash → referral → player), instead of a column on `signup_intents`. The site has the code before anyone knows the Telegram user, so the intent row (keyed by Telegram user) can't exist yet. Same behavior as planned.
+- **Telegram settings are optional:** without them the app runs, and auth/webhook routes answer 503. This lets Task 04 deploy before the bot exists.
+- **`npm run telegram:setup`** sets the webhook from the Railway console, using Railway's own public-domain variable, so the bot token is never typed into chat or a laptop.
+- The guard gained **`@Authenticated()`** (any logged-in principal) for `/me` and logout.
+- **`trust proxy`** is on, so `req.ip` is the real caller behind Railway's proxy (rate limits, audit log).

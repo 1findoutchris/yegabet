@@ -36,6 +36,13 @@ describe("permission matrix", () => {
     }
   }
 
+  it("gives a player none of the staff or agent permissions", () => {
+    const player: Principal = { kind: "player", playerId: 7n };
+    for (const p of PERMISSIONS) expect(can(player, p)).toBe(false);
+    expect(() => playerScope(player)).toThrow(ForbiddenError);
+    expect(() => childSummaryScope(player)).toThrow(ForbiddenError);
+  });
+
   it("denies an anonymous caller everything", () => {
     for (const p of PERMISSIONS) expect(can(undefined, p)).toBe(false);
   });

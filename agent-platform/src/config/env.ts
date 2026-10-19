@@ -29,6 +29,39 @@ const schema = z.object({
   PHONE_ENC_KEY: z
     .string()
     .refine((v) => Buffer.from(v, "base64").length === 32, "must be 32 bytes, base64-encoded"),
+  // Telegram (plan 04). Optional: until the bot is set up, auth routes answer
+  // 503 "not configured" instead of the whole app refusing to start.
+  TELEGRAM_BOT_TOKEN: z
+    .string()
+    .optional()
+    .transform((v) => (v ? v : undefined)),
+  TELEGRAM_BOT_USERNAME: z
+    .string()
+    .optional()
+    .transform((v) => (v ? v : undefined)),
+  // Telegram echoes it on every webhook call (A-Z a-z 0-9 _ -, 1-256 chars).
+  TELEGRAM_WEBHOOK_SECRET: z
+    .string()
+    .optional()
+    .transform((v) => (v ? v : undefined))
+    .refine(
+      (v) => v === undefined || /^[A-Za-z0-9_-]{16,256}$/.test(v),
+      "must be 16-256 chars of A-Z a-z 0-9 _ -",
+    ),
+  // Where the bot's [Open YegaBet] button and [Continue on website] link go.
+  WEBAPP_URL: z
+    .string()
+    .optional()
+    .transform((v) => (v ? v : undefined)),
+  PUBLIC_WEB_URL: z
+    .string()
+    .optional()
+    .transform((v) => (v ? v : undefined)),
+  SESSION_TTL_HOURS: z.coerce
+    .number()
+    .positive()
+    .max(24 * 30)
+    .default(12),
 });
 
 export type Env = z.infer<typeof schema>;

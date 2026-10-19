@@ -38,11 +38,15 @@ export const AGENT_MEMBER_PERMISSIONS: readonly Permission[] = [
 /** Set on the request by the login layer (Task 04). Never built from client input. */
 export type Principal =
   | { kind: "staff"; staffId: bigint; roles: StaffRole[] }
-  | { kind: "agent_member"; memberId: bigint; agentId: bigint };
+  | { kind: "agent_member"; memberId: bigint; agentId: bigint }
+  | { kind: "player"; playerId: bigint };
 
 export function can(principal: Principal | undefined, permission: Permission): boolean {
   if (!principal) return false;
   if (principal.kind === "agent_member") return AGENT_MEMBER_PERMISSIONS.includes(permission);
+  // Players act only on their own account, through routes that use their id;
+  // none of the staff/agent permissions apply to them.
+  if (principal.kind === "player") return false;
   return principal.roles.some((role) => ROLE_PERMISSIONS[role]?.includes(permission) ?? false);
 }
 

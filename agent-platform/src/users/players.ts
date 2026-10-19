@@ -28,7 +28,13 @@ export class Players {
    * referral agent, else the company agent) and their two zero-balance
    * accounts. Either all exist or none.
    */
-  async register(input: { phone: string; telegramUserId?: string; referralSlug?: string }): Promise<Player> {
+  async register(input: {
+    phone: string;
+    telegramUserId?: string;
+    referralSlug?: string;
+    /** When the player confirmed they are 18+ (§3 age hook), stored with the account. */
+    ageConfirmedAt?: Date;
+  }): Promise<Player> {
     const e164 = normalizeEthiopianPhone(input.phone);
     const phoneHash = hashPhone(e164, this.keys.hashKey);
 
@@ -49,6 +55,7 @@ export class Players {
             phoneEnc: encryptPhone(e164, this.keys.encKey),
             telegramUserId: input.telegramUserId ?? null,
             agentId: agent.id,
+            ageConfirmedAt: input.ageConfirmedAt ?? null,
           },
         });
         await tx.agentAssignment.create({

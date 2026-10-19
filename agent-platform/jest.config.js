@@ -20,5 +20,6 @@ module.exports = {
     "./src/ledger/": { branches: 100, functions: 100, lines: 100, statements: 100 },
     "./src/users/": { branches: 100, functions: 100, lines: 100, statements: 100 },
     "./src/auth/": { branches: 100, functions: 100, lines: 100, statements: 100 },
+    "./src/telegram/": { branches: 100, functions: 100, lines: 100, statements: 100 },
   },
 };

@@ -1,3 +1,7 @@
+| Q-26 | ~~SMS sign-up~~ **Answered 2026-10-19:** no, for now. Telegram only. | — |
+| Q-24 | ~~Session lifetime~~ **Answered 2026-10-19:** 12 h | — |
+| Q-25 | ~~First owner~~ **Answered 2026-10-19:** Telegram user id 5347803735 becomes the first owner (`npm run staff:add`) | — |
+| Q-14 | ~~Telegram bot~~ **Answered 2026-10-19:** a **new** bot from @BotFather, for the agent platform only (the old site keeps its bot) | — |
 | Q-22 | ~~Staff/agent login~~ **Answered 2026-10-19:** Telegram login for everyone (players, agents, staff) | — |
 | Q-12 | ~~Staging + prod~~ **Answered 2026-10-19:** yes, separate Railway environments and databases | — |
 | Q-11 | ~~Hosting~~ **Answered 2026-10-19:** Railway | — |
