@@ -18,5 +18,7 @@ module.exports = {
   collectCoverageFrom: ["src/**/*.ts", "!src/main.ts", "!src/scripts/**"],
   coverageThreshold: {
     "./src/ledger/": { branches: 100, functions: 100, lines: 100, statements: 100 },
+    "./src/users/": { branches: 100, functions: 100, lines: 100, statements: 100 },
+    "./src/auth/": { branches: 100, functions: 100, lines: 100, statements: 100 },
   },
 };

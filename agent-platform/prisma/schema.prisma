@@ -104,3 +104,109 @@ model LedgerEntry {
   @@index([creditAccountId])
   @@map("ledger_entries")
 }
+
+// ── Users, agents, roles (CLAUDE.md §5.2, plan 03) ───────────────────────────
+// Triggers (in 0003_users): the DB computes ancestors/depth from the parent,
+// refuses any later change to the hierarchy, and never deletes an agent.
+// Partial unique indexes Prisma can't express: one company agent, and one
+// current assignment per player.
+
+model Agent {
+  id          BigInt   @id @default(autoincrement())
+  slug        String   @unique
+  displayName String   @map("display_name")
+  parentId    BigInt?  @map("parent_id")
+  ancestors   BigInt[] @default([])
+  depth       Int      @default(0)
+  isCompany   Boolean  @default(false) @map("is_company")
+  status      String   @default("active")
+  createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  parent      Agent?            @relation("tree", fields: [parentId], references: [id], onDelete: Restrict, onUpdate: Restrict)
+  children    Agent[]           @relation("tree")
+  players     Player[]
+  assignments AgentAssignment[]
+  members     AgentMember[]
+
+  @@index([parentId])
+  @@index([ancestors], type: Gin)
+  @@map("agents")
+}
+
+model Player {
+  id             BigInt   @id @default(autoincrement())
+  phoneHash      String   @unique @map("phone_hash")
+  phoneEnc       String   @map("phone_enc")
+  telegramUserId String?  @unique @map("telegram_user_id")
+  agentId        BigInt   @map("agent_id")
+  status         String   @default("active")
+  createdAt      DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  agent       Agent             @relation(fields: [agentId], references: [id], onDelete: Restrict)
+  assignments AgentAssignment[]
+
+  @@index([agentId])
+  @@map("players")
+}
+
+model AgentAssignment {
+  id            BigInt    @id @default(autoincrement())
+  playerId      BigInt    @map("player_id")
+  agentId       BigInt    @map("agent_id")
+  effectiveFrom DateTime  @default(now()) @map("effective_from") @db.Timestamptz(6)
+  effectiveTo   DateTime? @map("effective_to") @db.Timestamptz(6)
+  reason        String
+
+  player Player @relation(fields: [playerId], references: [id], onDelete: Restrict)
+  agent  Agent  @relation(fields: [agentId], references: [id], onDelete: Restrict)
+
+  @@index([playerId])
+  @@index([agentId])
+  @@map("agent_assignments")
+}
+
+model Staff {
+  id             BigInt   @id @default(autoincrement())
+  displayName    String   @map("display_name")
+  telegramUserId String?  @unique @map("telegram_user_id")
+  status         String   @default("active")
+  createdAt      DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  roles StaffRole[]
+
+  @@map("staff")
+}
+
+model Role {
+  key   String      @id
+  staff StaffRole[]
+
+  @@map("roles")
+}
+
+model StaffRole {
+  staffId   BigInt   @map("staff_id")
+  roleKey   String   @map("role_key")
+  grantedBy String   @map("granted_by")
+  grantedAt DateTime @default(now()) @map("granted_at") @db.Timestamptz(6)
+
+  staff Staff @relation(fields: [staffId], references: [id], onDelete: Restrict)
+  role  Role  @relation(fields: [roleKey], references: [key], onDelete: Restrict)
+
+  @@id([staffId, roleKey])
+  @@map("staff_roles")
+}
+
+model AgentMember {
+  id             BigInt   @id @default(autoincrement())
+  agentId        BigInt   @map("agent_id")
+  displayName    String   @map("display_name")
+  telegramUserId String?  @unique @map("telegram_user_id")
+  status         String   @default("active")
+  createdAt      DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  agent Agent @relation(fields: [agentId], references: [id], onDelete: Restrict)
+
+  @@index([agentId])
+  @@map("agent_members")
+}

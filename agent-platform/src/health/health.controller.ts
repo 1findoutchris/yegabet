@@ -2,10 +2,12 @@ import { Controller, Get, HttpStatus, Inject, Res } from "@nestjs/common";
 import type { Response } from "express";
 import { PrismaService } from "../db/prisma.service";
 import { ENV } from "../tokens";
+import { Public } from "../auth/guard";
 import type { Env } from "../config/env";
 
 const DB_TIMEOUT_MS = 2_000;
 
+@Public()
 @Controller("health")
 export class HealthController {
   constructor(

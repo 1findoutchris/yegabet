@@ -10,6 +10,7 @@ import { isEnabled, setFlag } from "../../src/config/featureFlags";
 import { PrismaService } from "../../src/db/prisma.service";
 import { Ledger } from "../../src/ledger/ledger";
 import { TEST_DATABASE_URL, testPrisma, uid } from "./testDb";
+import { PHONE_KEYS } from "../keys";
 
 describe("GET /health", () => {
   async function boot(databaseUrl: string): Promise<INestApplication> {
@@ -18,6 +19,7 @@ describe("GET /health", () => {
       NODE_ENV: "test",
       LOG_LEVEL: "silent",
       APP_VERSION: "test-1",
+      ...PHONE_KEYS,
     });
     const moduleRef = await Test.createTestingModule({ imports: [AppModule.forRoot(env)] })
       .overrideProvider(PrismaService)

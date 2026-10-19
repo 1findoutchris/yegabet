@@ -1,10 +1,13 @@
 import { DynamicModule, Global, Module } from "@nestjs/common";
+import { APP_GUARD } from "@nestjs/core";
 import { LoggerModule } from "nestjs-pino";
 import type { Env } from "./config/env";
 import { PrismaService } from "./db/prisma.service";
 import { HealthController } from "./health/health.controller";
 import { LedgerModule } from "./ledger/ledger.module";
 import { ENV } from "./tokens";
+import { PermissionGuard } from "./auth/guard";
+import { UsersModule } from "./users/users.module";
 
 /** Never log these in plain text (CLAUDE.md §7). */
 export const REDACT_PATHS = [
@@ -44,8 +47,11 @@ export class AppModule {
           },
         }),
         LedgerModule,
+        UsersModule,
       ],
       controllers: [HealthController],
+      // Deny by default: every route needs @Public() or @Requires(...).
+      providers: [{ provide: APP_GUARD, useClass: PermissionGuard }],
     };
   }
 }

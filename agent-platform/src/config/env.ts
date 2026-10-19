@@ -22,6 +22,13 @@ const schema = z.object({
   PLATFORM_NAME: z.string().min(1).default("Platform"),
   PLATFORM_DOMAIN: z.string().min(1).default("example.com"),
   APP_VERSION: z.string().min(1).default("dev"),
+  // Phone numbers are stored as an HMAC (uniqueness) plus AES-256-GCM ciphertext,
+  // never as plain text (§7). Generate each once and back them up:
+  //   node -e "console.log(require('crypto').randomBytes(32).toString('base64'))"
+  PHONE_HASH_KEY: z.string().min(32, "must be at least 32 characters"),
+  PHONE_ENC_KEY: z
+    .string()
+    .refine((v) => Buffer.from(v, "base64").length === 32, "must be 32 bytes, base64-encoded"),
 });
 
 export type Env = z.infer<typeof schema>;

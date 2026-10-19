@@ -4,11 +4,12 @@ The source of truth for what we build and how is [`CLAUDE.md`](CLAUDE.md).
 Plans live in [`docs/plans/`](docs/plans), and parked questions in
 [`docs/open-questions.md`](docs/open-questions.md).
 
-| Task             | Status                                                   |
-| ---------------- | -------------------------------------------------------- |
-| 00 Master plan   | Draft, awaiting owner review                             |
-| 01 Project setup | Built + tested locally · deploy blocked on Q-10…Q-13     |
-| 02 Ledger core   | Built + tested locally (100% coverage) · awaiting review |
+| Task                  | Status                                            |
+| --------------------- | ------------------------------------------------- |
+| 00 Master plan        | Draft, awaiting owner review                      |
+| 01 Project setup      | Approved · built + tested locally · deploy next   |
+| 02 Ledger core        | Approved · built + tested locally (100% coverage) |
+| 03 Users, roles, tree | Approved · built + tested locally (100% coverage) |
 
 ## Run locally
 

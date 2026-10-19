@@ -1,6 +1,7 @@
 import { ConfigError, loadEnv } from "../../src/config/env";
+import { PHONE_KEYS } from "../keys";
 
-const valid = { DATABASE_URL: "postgresql://u:p@localhost:5432/db" };
+const valid = { DATABASE_URL: "postgresql://u:p@localhost:5432/db", ...PHONE_KEYS };
 
 describe("loadEnv", () => {
   it("accepts a minimal valid env and fills defaults", () => {
@@ -37,12 +38,32 @@ describe("loadEnv", () => {
 
   it("rejects a non-postgres DATABASE_URL, a bad NODE_ENV and a bad PORT together", () => {
     try {
-      loadEnv({ DATABASE_URL: "mysql://x", NODE_ENV: "staging", PORT: "99999" });
+      loadEnv({ ...PHONE_KEYS, DATABASE_URL: "mysql://x", NODE_ENV: "staging", PORT: "99999" });
       throw new Error("should have thrown");
     } catch (e) {
       const problems = (e as ConfigError).problems;
       expect(problems).toHaveLength(3);
       expect((e as Error).message).toContain("Invalid configuration");
     }
+  });
+});
+
+describe("phone keys", () => {
+  it("are required, and the encryption key must be 32 bytes", () => {
+    const problems = (fn: () => unknown) => {
+      try {
+        fn();
+        return [];
+      } catch (e) {
+        return (e as ConfigError).problems;
+      }
+    };
+    expect(problems(() => loadEnv({ DATABASE_URL: valid.DATABASE_URL })).join()).toMatch(
+      /PHONE_HASH_KEY.*PHONE_ENC_KEY|PHONE_ENC_KEY.*PHONE_HASH_KEY/,
+    );
+    expect(problems(() => loadEnv({ ...valid, PHONE_HASH_KEY: "short" })).join()).toContain("at least 32");
+    expect(
+      problems(() => loadEnv({ ...valid, PHONE_ENC_KEY: Buffer.alloc(16).toString("base64") })).join(),
+    ).toContain("32 bytes");
   });
 });

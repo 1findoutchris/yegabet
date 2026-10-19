@@ -112,13 +112,19 @@ export class Ledger {
 
   // ── Accounts ────────────────────────────────────────────────────────────────
 
-  /** Open (or return the existing) account. Idempotent; creates its zero balance row. */
-  async openAccount(input: {
-    type: AccountType;
-    ownerKind: OwnerKind;
-    ownerId: string;
-    isTest?: boolean;
-  }): Promise<Account> {
+  /**
+   * Open (or return the existing) account. Idempotent; creates its zero balance row.
+   * Pass `client` (a transaction) to open it atomically with the caller's own rows.
+   */
+  async openAccount(
+    input: {
+      type: AccountType;
+      ownerKind: OwnerKind;
+      ownerId: string;
+      isTest?: boolean;
+    },
+    client: Tx | PrismaClient = this.db,
+  ): Promise<Account> {
     if (!isAccountType(input.type)) throw new ValidationError(`unknown account type: ${String(input.type)}`);
     if (!isOwnerKind(input.ownerKind))
       throw new ValidationError(`unknown owner kind: ${String(input.ownerKind)}`);
@@ -133,10 +139,10 @@ export class Ledger {
         currency: CURRENCY,
       },
     };
-    const existing = await this.db.account.findUnique({ where });
+    const existing = await client.account.findUnique({ where });
     if (existing) return existing;
     try {
-      return await this.db.account.create({
+      return await client.account.create({
         data: {
           type: input.type,
           ownerKind: input.ownerKind,
@@ -149,7 +155,7 @@ export class Ledger {
       });
     } catch (e) {
       // Opened concurrently by another caller: theirs is the account.
-      if (isUniqueViolation(e, "type")) return this.db.account.findUniqueOrThrow({ where });
+      if (isUniqueViolation(e, "type")) return client.account.findUniqueOrThrow({ where });
       /* istanbul ignore next -- any other DB error propagates unchanged */
       throw e;
     }

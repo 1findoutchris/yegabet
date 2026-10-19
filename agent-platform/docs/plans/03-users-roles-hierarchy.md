@@ -1,6 +1,6 @@
 # 03 · Users, roles, hierarchy, company agent
 
-Status: **approved 2026-10-19; build next (Day 1). Login = Telegram (Q-22). Q-17 and Q-23 use the plan's proposals until answered.**
+Status: **approved 2026-10-19; built and tested locally (124 tests, 100% coverage of src/users and src/auth); deploy with Task 01.**
 
 ## 1. Goal
 
@@ -164,3 +164,14 @@ _Proposed matrix; adjust it with Q-17._
 - [ ] All tests above pass; 100% coverage of hierarchy + RBAC policy code
 - [ ] `ledger:check` ok after the test run
 - [ ] Owner approves the role matrix (Q-17) and answers Q-22/Q-23 before any route goes public
+
+## 13. Build notes (2026-10-19)
+
+Decisions made while building, within the approved plan:
+
+- **Tables live in the Postgres schema `agent`** of the cloned YegaBet database (`DATABASE_URL=…?schema=agent`). The old app keeps `public`, which already has an `agents` table, so there is no collision. Tests run the same way.
+- **The company agent can't be a parent** (DB trigger), following the Q-23 proposal: top-level agents are parentless, and their parent shares go to the company by rule. If Q-23 is answered the other way, this is a one-line trigger change plus a migration.
+- **Agents are never deleted** (DB trigger). Closing is `status = closed`. Ledger accounts and history point at agents.
+- **Two new required secrets:** `PHONE_HASH_KEY` and `PHONE_ENC_KEY` (see `.env.example`). The app won't start without them.
+- `Ledger.openAccount` gained an optional transaction argument, so a player or agent and their accounts are created atomically. It is not a money-logic change: no posting rules changed.
+- **Not built yet** (as planned): login. The guard reads `request.principal`, which Task 04 sets after Telegram login.
