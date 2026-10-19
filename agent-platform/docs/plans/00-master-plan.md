@@ -143,14 +143,18 @@ build → tests → deploy → report.
 
 ---
 
-## 4. Relationship to YegaBet (needs your call: Q-18)
+## 4. Relationship to YegaBet (decided 2026-10-19; one part still open: Q-18)
 
-YegaBet already has agents, a balance-column wallet and a working Octhera
-integration. This platform is built **new and separate**, as the file says
-("new website, name undecided"). I'll **reuse knowledge, not code**: the Octhera
-wallet protocol, signature checks and late-bet edge cases go into the Task 07
-adapter. Migrating YegaBet's players and balances would be its own task with its
-own plan.
+This agent platform **is YegaBet**. Its code lives in the yegabet repo under
+`agent-platform/`, as its own Node project (own package.json, database and CI)
+next to the current Next.js web app, which keeps running unchanged. The brand stays
+config (`PLATFORM_NAME=YegaBet`, `PLATFORM_DOMAIN=yega.bet`), not code.
+
+Reuse **knowledge, not code**: the Octhera wallet protocol, signature checks and
+late-bet edge cases from the web app go into the Task 07 adapter. **Still open
+(Q-18):** whether this replaces the web app's accounts and balance-column wallet
+(then moving existing players and balances needs its own plan) or runs alongside it
+for a while.
 
 ---
 
