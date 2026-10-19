@@ -19,22 +19,21 @@ Each one says what it blocks and what I'm doing in the meantime.
 
 ## Setup / infrastructure (needed for Task 01 DEPLOY)
 
-| ID   | Question                                                                                                                                         | Blocks                |
-| ---- | ------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------- |
-| Q-10 | Confirm stack: **NestJS + Prisma + Postgres + Redis/BullMQ + Next.js** (the CLAUDE.md defaults, with Prisma as the ORM since you already use it) | Task 01 sign-off      |
-| Q-11 | Hosting: **Railway** like YegaBet? (one project with prod + staging environments, Postgres + Redis plugins)                                      | Task 01 deploy        |
-| Q-12 | Staging and production as separate Railway environments, with separate databases?                                                                | Task 01 deploy        |
-| Q-13 | GitHub repo name/owner to push to (I've only created a local repo)                                                                               | CI green, deploy      |
-| Q-14 | A new Telegram bot for this platform (token + username)                                                                                          | Task 04               |
-| Q-15 | Platform name + domain (placeholder `PLATFORM_NAME` / `PLATFORM_DOMAIN` used for now)                                                            | Tasks 04, 09          |
-| Q-16 | First provider: Octhera? Separate Octhera account/key from YegaBet's?                                                                            | Task 07               |
-| Q-17 | Who are the cofounders/staff in the approval chain (roles, how many approvals needed)?                                                           | Task 08               |
-| Q-18 | Is this platform separate from YegaBet, or should YegaBet's players eventually move here?                                                        | Planning              |
-| Q-19 | Error tracking: Sentry OK? (needs a DSN)                                                                                                         | Task 01 observability |
-| Q-20 | Backups: Railway's built-in Postgres backups enough, or also a nightly dump to S3/R2?                                                            | Task 01 deploy        |
-
-| Q-22 | How do **staff and agent users** log in? Telegram login like players, or password + 2FA? | Task 03 routes going public |
-| Q-23 | Top-level agents: parentless (my plan; parent shares go to the company by rule) or children of the company agent? | Task 03 |
+| ID   | Question                                                                                                                                         | Blocks                      |
+| ---- | ------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------- |
+| Q-10 | Confirm stack: **NestJS + Prisma + Postgres + Redis/BullMQ + Next.js** (the CLAUDE.md defaults, with Prisma as the ORM since you already use it) | Task 01 sign-off            |
+| Q-11 | Hosting: **Railway** like YegaBet? (one project with prod + staging environments, Postgres + Redis plugins)                                      | Task 01 deploy              |
+| Q-12 | Staging and production as separate Railway environments, with separate databases?                                                                | Task 01 deploy              |
+| Q-13 | GitHub repo name/owner to push to (I've only created a local repo)                                                                               | CI green, deploy            |
+| Q-14 | A new Telegram bot for this platform (token + username)                                                                                          | Task 04                     |
+| Q-15 | Platform name + domain (placeholder `PLATFORM_NAME` / `PLATFORM_DOMAIN` used for now)                                                            | Tasks 04, 09                |
+| Q-16 | First provider: Octhera? Separate Octhera account/key from YegaBet's?                                                                            | Task 07                     |
+| Q-17 | Who are the cofounders/staff in the approval chain (roles, how many approvals needed)?                                                           | Task 08                     |
+| Q-18 | Is this platform separate from YegaBet, or should YegaBet's players eventually move here?                                                        | Planning                    |
+| Q-19 | Error tracking: Sentry OK? (needs a DSN)                                                                                                         | Task 01 observability       |
+| Q-20 | Backups: Railway's built-in Postgres backups enough, or also a nightly dump to S3/R2?                                                            | Task 01 deploy              |
+| Q-22 | How do **staff and agent users** log in? Telegram login like players, or password + 2FA?                                                         | Task 03 routes going public |
+| Q-23 | Top-level agents: parentless (my plan; parent shares go to the company by rule) or children of the company agent?                                | Task 03                     |
 
 ## Found while building (no decision needed yet; scheduled)
 
