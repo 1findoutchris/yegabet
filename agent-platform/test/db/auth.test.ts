@@ -278,6 +278,43 @@ describe("sign-up through the bot, then login", () => {
   });
 });
 
+describe("Login Widget redirect mode (no eval: CSP-safe)", () => {
+  const callback = (fields: Record<string, string>, as: string) =>
+    http()
+      .get(`/auth/telegram/widget/callback?${new URLSearchParams({ as, ...fields }).toString()}`)
+      .set("x-forwarded-for", ip());
+
+  it("signs a player in and sends them home; staff to /#/admin, agents to /#/agent", async () => {
+    const userId = newTgId();
+    await signUpViaBot(userId, newPhone());
+    const res = await callback(signWidget(userId), "player");
+    expect(res.status).toBe(302);
+    expect(res.headers.location).toBe("/#/");
+    expect(res.headers["set-cookie"]?.[0]).toMatch(/ap_session=.*HttpOnly/);
+    const cookie = (res.headers["set-cookie"]?.[0] as string).split(";")[0] as string;
+    expect((await http().get("/me").set("cookie", cookie)).body.kind).toBe("player");
+
+    const staff = await db.staff.create({ data: { displayName: "S", telegramUserId: userId } });
+    await db.staffRole.create({ data: { staffId: staff.id, roleKey: "owner", grantedBy: "test" } });
+    expect((await callback(signWidget(userId), "staff")).headers.location).toBe("/#/admin");
+    const agent = await hierarchy.createAgent({ slug: `auth-cb-${process.pid}`, displayName: "CB" });
+    await db.agentMember.create({ data: { agentId: agent.id, displayName: "m", telegramUserId: userId } });
+    expect((await callback(signWidget(userId), "agent_member")).headers.location).toBe("/#/agent");
+  });
+
+  it("sends a forged or unknown login back to the login screen with the reason", async () => {
+    const forged = await callback({ ...signWidget(newTgId()), first_name: "Mallory" }, "staff");
+    expect(forged.status).toBe(302);
+    const location = forged.headers.location as string;
+    expect(location.startsWith("/?login_error=")).toBe(true);
+    expect(location.endsWith("#/admin")).toBe(true);
+    expect(decodeURIComponent(location)).toContain("Telegram login expired or was invalid");
+    expect(forged.headers["set-cookie"]).toBeUndefined();
+    const unknown = await callback(signWidget(newTgId()), "player");
+    expect(decodeURIComponent(unknown.headers.location as string)).toMatch(/no active player account/);
+  });
+});
+
 describe("website sign-up hand-off", () => {
   it("start → bot → status gives exactly one session", async () => {
     const C = await hierarchy.createAgent({ slug: `auth-c-${process.pid}`, displayName: "C" });
@@ -361,6 +398,7 @@ describe("without Telegram configured", () => {
     const r = request(bare.getHttpServer());
     expect((await r.post("/auth/telegram/miniapp").send({})).status).toBe(503);
     expect((await r.post("/auth/telegram/widget").send({})).status).toBe(503);
+    expect((await r.get("/auth/telegram/widget/callback?as=staff")).status).toBe(503);
     expect((await r.post("/auth/signup/start").send({})).status).toBe(503);
     expect((await r.post("/telegram/webhook").send({})).status).toBe(503);
     expect((await r.get("/health")).status).toBe(200);

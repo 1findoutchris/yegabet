@@ -95,25 +95,23 @@ export function Login() {
         : "player",
   );
   const widget = useRef<HTMLDivElement>(null);
-  const login = useAction();
   const signup = useAction();
   const [waiting, setWaiting] = useState(false);
+  // Set by the server when a widget login came back refused (see widget/callback).
+  const loginError = new URLSearchParams(window.location.search).get("login_error");
 
-  // The official widget: Telegram confirms the user, our server checks the signature.
+  // The official widget in redirect mode: Telegram confirms the user and sends the
+  // browser to our callback, which checks the signature and sets the session.
+  // (Its callback mode needs eval, which our Content-Security-Policy forbids.)
   useEffect(() => {
     if (!info.botUsername || !widget.current) return;
-    (window as unknown as { onTelegramAuth: (u: Record<string, unknown>) => void }).onTelegramAuth = (user) =>
-      void login.run(async () => {
-        await post("/auth/telegram/widget", { ...user, as });
-        await refresh();
-      });
     widget.current.innerHTML = "";
     const s = document.createElement("script");
     s.src = "https://telegram.org/js/telegram-widget.js?22";
     s.async = true;
     s.setAttribute("data-telegram-login", info.botUsername);
     s.setAttribute("data-size", "large");
-    s.setAttribute("data-onauth", "onTelegramAuth(user)");
+    s.setAttribute("data-auth-url", `${window.location.origin}/auth/telegram/widget/callback?as=${as}`);
     s.setAttribute("data-request-access", "write");
     widget.current.appendChild(s);
   }, [info.botUsername, as]);
@@ -188,7 +186,7 @@ export function Login() {
           ) : (
             <p className="muted">Telegram login isn&apos;t configured yet.</p>
           )}
-          <Notice error={login.error} />
+          <Notice error={loginError} />
         </Panel>
       )}
     </div>

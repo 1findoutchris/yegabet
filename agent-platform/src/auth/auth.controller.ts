@@ -118,6 +118,32 @@ export class AuthController {
     return this.login(req, res, verifyLoginWidget(body, token), body.as);
   }
 
+  /**
+   * The Login Widget's redirect mode (`data-auth-url`): Telegram sends the
+   * browser here with the signed fields in the query. The callback mode
+   * (`data-onauth`) needs `eval`, which our Content-Security-Policy forbids.
+   * Same signature check as the POST route; then a session cookie and a
+   * redirect to the role's screens, or back to login with the reason.
+   */
+  @Public()
+  @Get("auth/telegram/widget/callback")
+  async widgetCallback(@Req() req: Request, @Res() res: Response, @Query() q: Record<string, unknown>) {
+    this.loginLimiter.hit(`login:${req.ip}`);
+    const token = this.botToken();
+    const home = q.as === "staff" ? "/#/admin" : q.as === "agent_member" ? "/#/agent" : "/#/";
+    const back = (why: string) =>
+      res.redirect(302, `/?login_error=${encodeURIComponent(why)}${home.slice(1)}`);
+    const identity = verifyLoginWidget(q, token);
+    if (!identity) return back("Telegram login expired or was invalid. Please try again.");
+    try {
+      this.session(res, await this.auth.login(identity, q.as, this.meta(req)));
+    } catch (e) {
+      if (e instanceof AuthError) return back(e.message);
+      throw e;
+    }
+    return res.redirect(302, home);
+  }
+
   @Public()
   @Post("auth/signup/start")
   @HttpCode(200)

@@ -1,6 +1,7 @@
 import { HttpException } from "@nestjs/common";
 import type { PrismaClient } from "@prisma/client";
-import { describe as describePrincipal, toHttp } from "../../src/auth/auth.controller";
+import { AuthController, describe as describePrincipal, toHttp } from "../../src/auth/auth.controller";
+import { BOT_TOKEN, BOT_USERNAME, signWidget } from "../telegramSign";
 import { Auth, AuthError, actorOf } from "../../src/auth/auth.service";
 import { PrincipalMiddleware, sessionToken } from "../../src/auth/principal.middleware";
 import { RateLimiter } from "../../src/auth/rateLimit";
@@ -139,6 +140,20 @@ describe("TelegramApi", () => {
     const fetchImpl = async () => ({ ok: false, status: 400 }) as Response;
     await expect(new TelegramApi("t", fetchImpl as unknown as typeof fetch).call(call)).rejects.toThrow(
       "HTTP 400",
+    );
+  });
+});
+
+describe("widget callback", () => {
+  it("lets an unexpected error through instead of hiding it in a redirect", async () => {
+    const ctl = new AuthController(
+      { login: () => Promise.reject(new Error("db down")) } as unknown as Auth,
+      { TELEGRAM_BOT_TOKEN: BOT_TOKEN, TELEGRAM_BOT_USERNAME: BOT_USERNAME } as never,
+    );
+    const req = { ip: "9.9.9.9", headers: {} } as never;
+    const res = { redirect: jest.fn(), cookie: jest.fn() } as never;
+    await expect(ctl.widgetCallback(req, res, { ...signWidget(42), as: "player" })).rejects.toThrow(
+      "db down",
     );
   });
 });
