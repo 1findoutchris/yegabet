@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState, type ReactNode } from "react";
+import { copyText } from "./lib/clipboard";
 import { formatSantim } from "./lib/money";
 
 /** The current "#/…" route, e.g. "/agent/deposits". */
@@ -111,4 +112,18 @@ export const Panel = ({ title, children }: { title?: string; children: ReactNode
 
 export function Loading({ error }: { error: string | null }) {
   return error ? <Notice error={error} /> : <p className="muted">Loading…</p>;
+}
+
+/** A copy button that says whether it worked; the text is shown too, so it can always be copied by hand. */
+export function CopyButton({ label, text }: { label: string; text: string }) {
+  const [state, setState] = useState<"idle" | "copied" | "failed">("idle");
+  const click = async () => {
+    setState((await copyText(text)) ? "copied" : "failed");
+    setTimeout(() => setState("idle"), 2500);
+  };
+  return (
+    <button className={state === "copied" ? "small" : "small ghost"} onClick={click}>
+      {state === "copied" ? "✓ Copied" : state === "failed" ? "Copy failed: select the link below" : label}
+    </button>
+  );
 }

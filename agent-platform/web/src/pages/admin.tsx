@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { api, post } from "../lib/api";
 import { shortDate } from "../lib/money";
-import { Loading, Notice, Panel, Tag, useAction, useLoad } from "../ui";
+import { CopyButton, Loading, Notice, Panel, Tag, useAction, useLoad } from "../ui";
 import { LinesTable, NettingLine, type Netting } from "./agent";
 
 interface AgentRow {
@@ -17,8 +17,6 @@ interface AgentRow {
   members: number;
   links: { telegram: string | null; website: string };
 }
-
-const copy = (text: string) => void navigator.clipboard?.writeText(text);
 
 export function AgentsAdmin() {
   const [search, setSearch] = useState("");
@@ -102,16 +100,24 @@ export function AgentsAdmin() {
                     {!a.isCompany && (
                       <div className="row" style={{ marginTop: 4 }}>
                         {a.links.telegram && (
-                          <button className="small ghost" onClick={() => copy(a.links.telegram as string)}>
-                            Copy Telegram link
-                          </button>
+                          <CopyButton label="Copy Telegram link" text={a.links.telegram} />
                         )}
-                        <button className="small ghost" onClick={() => copy(a.links.website)}>
-                          Copy website link
-                        </button>
+                        <CopyButton label="Copy website link" text={a.links.website} />
                         <button className="small ghost" onClick={() => setOpen(open === a.id ? null : a.id)}>
                           Members
                         </button>
+                      </div>
+                    )}
+                    {!a.isCompany && (
+                      <div className="muted" style={{ marginTop: 4 }}>
+                        {a.links.telegram && (
+                          <div>
+                            <code>{a.links.telegram}</code>
+                          </div>
+                        )}
+                        <div>
+                          <code>{a.links.website}</code>
+                        </div>
                       </div>
                     )}
                     {open === a.id && <Members agentId={a.id} />}

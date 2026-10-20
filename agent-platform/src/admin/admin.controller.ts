@@ -142,6 +142,33 @@ export class PublicController {
     };
   }
 
+  /**
+   * An agent's public name for its referral link (`/?ref=<slug>`), so the site
+   * can show "YegaBet <agent>". Only active agents; never the company agent.
+   */
+  @Public()
+  @Get("public/agents/:slug")
+  async agent(@Param("slug") slug: string) {
+    const a = await this.db.agent.findUnique({
+      where: { slug },
+      select: { slug: true, displayName: true, status: true, isCompany: true },
+    });
+    if (!a || a.status !== "active" || a.isCompany) throw new NotFoundException("no such agent");
+    return { slug: a.slug, displayName: a.displayName };
+  }
+
+  /** The logged-in player's agent (shown next to the brand; the company agent means a direct player). */
+  @Authenticated()
+  @Get("me/agent")
+  async myAgent(@Req() req: Req_) {
+    if (req.principal.kind !== "player") throw new ForbiddenException("players only");
+    const p = await this.db.player.findUniqueOrThrow({
+      where: { id: req.principal.playerId },
+      select: { agent: { select: { slug: true, displayName: true, isCompany: true } } },
+    });
+    return p.agent;
+  }
+
   /** The player's money: available (wallet) and held for withdrawals. */
   @Authenticated()
   @Get("me/wallet")

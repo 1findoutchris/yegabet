@@ -11,17 +11,14 @@ import {
 } from "./pages/admin";
 import { DepositQueue, PaymentAccounts, Statements, WithdrawalQueue } from "./pages/agent";
 import { AccountPage, DepositPage, PlayerHome, WithdrawPage } from "./pages/player";
-import { Login, SessionProvider, useSession, type Principal } from "./session";
+import { Brand, Login, SessionProvider, useSession, type Principal } from "./session";
 import { Panel, Tabs, useRoute } from "./ui";
 
 function Header({ role }: { role: string }) {
-  const { info, me, logout } = useSession();
+  const { me, logout } = useSession();
   return (
     <header className="top">
-      <div className="logo">
-        <b>{info.name.slice(0, 4)}</b>
-        {info.name.slice(4)} <span className="muted">{role}</span>
-      </div>
+      <Brand role={role} />
       {me && me.kind !== "player" && (
         <button className="small ghost" onClick={logout}>
           Log out

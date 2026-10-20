@@ -289,6 +289,34 @@ describe("public info and wallet", () => {
   });
 });
 
+describe("agent name on the site", () => {
+  it("shows an active agent's name for its link, never the company or a paused agent", async () => {
+    const a = (
+      await http()
+        .post("/admin/agents")
+        .set(as(ownerTok))
+        .send({ slug: `adm-pub-${n}`, displayName: "xyz shop" })
+    ).body;
+    expect((await http().get(`/public/agents/adm-pub-${n}`)).body).toEqual({
+      slug: `adm-pub-${n}`,
+      displayName: "xyz shop",
+    });
+    expect((await http().get("/public/agents/company")).status).toBe(404);
+    expect((await http().get("/public/agents/no-such")).status).toBe(404);
+    await http().post(`/admin/agents/${a.id}/status`).set(as(ownerTok)).send({ status: "paused" });
+    expect((await http().get(`/public/agents/adm-pub-${n}`)).status).toBe(404);
+  });
+
+  it("tells a player their agent", async () => {
+    expect((await http().get("/me/agent").set(as(playerTok))).body).toEqual({
+      slug: "company",
+      displayName: "Company",
+      isCompany: true,
+    });
+    expect((await http().get("/me/agent").set(as(memberTok))).status).toBe(403);
+  });
+});
+
 describe("pieces", () => {
   it("maps admin errors and rethrows others; links without a bot", () => {
     const status = (c: AdminError["code"]) => {

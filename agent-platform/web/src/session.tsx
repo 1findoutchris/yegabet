@@ -18,6 +18,8 @@ export interface Info {
 interface Session {
   me: Principal | null;
   info: Info;
+  /** The agent shown next to the brand ("YegaBet xyz shop"), or null for the company / staff. */
+  agentName: string | null;
   refresh(): Promise<void>;
   logout(): Promise<void>;
 }
@@ -32,6 +34,24 @@ export const useSession = () => useContext(Ctx) as Session;
 export function SessionProvider({ children }: { children: (s: Session) => ReactNode }) {
   const [info, setInfo] = useState<Info | null>(null);
   const [me, setMe] = useState<Principal | null | undefined>(undefined);
+  const [agentName, setAgentName] = useState<string | null>(null);
+
+  // The agent behind this visit: the logged-in player's agent, or the referral link's.
+  useEffect(() => {
+    if (me === undefined) return;
+    const ref = new URLSearchParams(window.location.search).get("ref");
+    const load =
+      me?.kind === "player"
+        ? api<{ displayName: string; isCompany: boolean }>("/me/agent").then((a) =>
+            a.isCompany ? null : a.displayName,
+          )
+        : !me && ref
+          ? api<{ displayName: string }>(`/public/agents/${encodeURIComponent(ref)}`).then(
+              (a) => a.displayName,
+            )
+          : Promise.resolve(null);
+    load.then(setAgentName, () => setAgentName(null));
+  }, [me]);
 
   const refresh = async () => {
     try {
@@ -73,6 +93,7 @@ export function SessionProvider({ children }: { children: (s: Session) => ReactN
   const session: Session = {
     me,
     info,
+    agentName,
     refresh,
     logout: async () => {
       await post("/auth/logout").catch(() => undefined);
@@ -85,6 +106,19 @@ export function SessionProvider({ children }: { children: (s: Session) => ReactN
 }
 
 /** Login (Telegram Login Widget, as player / agent / staff) and sign-up (hand-off to the bot). */
+/** "YegaBet" with the brand colour, plus the agent's name when there is one. */
+export function Brand({ role }: { role?: string }) {
+  const { info, agentName } = useSession();
+  return (
+    <div className="logo">
+      <b>{info.name.slice(0, 4)}</b>
+      {info.name.slice(4)}
+      {agentName && <span className="agent-name"> {agentName}</span>}
+      {role && <span className="muted"> {role}</span>}
+    </div>
+  );
+}
+
 export function Login() {
   const { info, refresh } = useSession();
   const [as, setAs] = useState<"player" | "agent_member" | "staff">(() =>
@@ -140,10 +174,7 @@ export function Login() {
   return (
     <div className="app">
       <header className="top">
-        <div className="logo">
-          <b>{info.name.slice(0, 4)}</b>
-          {info.name.slice(4)}
-        </div>
+        <Brand />
       </header>
       {as === "player" && (
         <Panel title="Create your account">
