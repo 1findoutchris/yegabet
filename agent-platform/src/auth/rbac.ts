@@ -20,6 +20,7 @@ export const PERMISSIONS = [
   "payment_accounts.manage.own",
   "withdrawals.review.own",
   "withdrawals.override",
+  "settlement.manage",
 ] as const;
 export type Permission = (typeof PERMISSIONS)[number];
 
@@ -34,6 +35,7 @@ export const ROLE_PERMISSIONS: Record<StaffRole, readonly Permission[]> = {
     "config.write",
     "deposits.override",
     "withdrawals.override",
+    "settlement.manage",
   ],
   cofounder: ["agents.read.all", "agents.create", "players.read.all"],
   finance: ["agents.read.all", "players.read.all"],

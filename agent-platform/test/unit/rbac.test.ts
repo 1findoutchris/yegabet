@@ -27,6 +27,7 @@ const MATRIX: Record<Permission, (StaffRole | "agent_member")[]> = {
   "payment_accounts.manage.own": ["agent_member"],
   "withdrawals.review.own": ["agent_member"],
   "withdrawals.override": ["owner"],
+  "settlement.manage": ["owner"],
 };
 
 describe("permission matrix", () => {

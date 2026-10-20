@@ -83,6 +83,7 @@ model LedgerTransaction {
   withdrawalHold  Withdrawal?        @relation("hold")
   withdrawalFinal Withdrawal?        @relation("final")
   providerCalls   ProviderCall[]
+  settlementLines SettlementLine[]
 
   @@map("ledger_transactions")
 }
@@ -135,6 +136,7 @@ model Agent {
   deposits        Deposit[]
   withdrawals     Withdrawal[]
   bets            Bet[]
+  settlementLines SettlementLine[]
 
   @@index([parentId])
   @@index([ancestors], type: Gin)
@@ -422,9 +424,10 @@ model Bet {
   placedAt   DateTime  @default(now()) @map("placed_at") @db.Timestamptz(6)
   settledAt  DateTime? @map("settled_at") @db.Timestamptz(6)
 
-  provider Provider @relation(fields: [providerId], references: [id], onDelete: Restrict)
-  player   Player   @relation(fields: [playerId], references: [id], onDelete: Restrict)
-  agent    Agent    @relation(fields: [agentId], references: [id], onDelete: Restrict)
+  provider           Provider            @relation(fields: [providerId], references: [id], onDelete: Restrict)
+  player             Player              @relation(fields: [playerId], references: [id], onDelete: Restrict)
+  agent              Agent               @relation(fields: [agentId], references: [id], onDelete: Restrict)
+  settlementCounteds SettlementCounted[]
 
   @@unique([providerId, debitTxnId])
   @@index([playerId, status])
@@ -449,4 +452,60 @@ model Game {
   @@id([providerId, gameUid])
   @@index([active, type])
   @@map("games")
+}
+
+// ── Settlement (plan 10) ─────────────────────────────────────────────────────
+// Triggers (0008_settlement): approved periods and their lines are frozen.
+
+model SettlementPeriod {
+  id             BigInt    @id @default(autoincrement())
+  startsAt       DateTime  @unique @map("starts_at") @db.Timestamptz(6)
+  endsAt         DateTime  @map("ends_at") @db.Timestamptz(6)
+  status         String    @default("open")
+  config         Json?
+  draftedAt      DateTime? @map("drafted_at") @db.Timestamptz(6)
+  approvedByKind String?   @map("approved_by_kind")
+  approvedById   String?   @map("approved_by_id")
+  approvedAt     DateTime? @map("approved_at") @db.Timestamptz(6)
+  createdAt      DateTime  @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  lines   SettlementLine[]
+  counted SettlementCounted[]
+
+  @@map("settlement_periods")
+}
+
+model SettlementLine {
+  id                  BigInt  @id @default(autoincrement())
+  periodId            BigInt  @map("period_id")
+  agentId             BigInt  @map("agent_id")
+  providerId          String  @map("provider_id")
+  stakes              BigInt
+  winnings            BigInt
+  fees                BigInt
+  result              BigInt
+  beneficiary         String
+  beneficiaryAgentId  BigInt? @map("beneficiary_agent_id")
+  parentLevel         Int?    @map("parent_level")
+  amount              BigInt
+  ledgerTransactionId BigInt? @map("ledger_transaction_id")
+
+  period            SettlementPeriod   @relation(fields: [periodId], references: [id], onDelete: Restrict)
+  agent             Agent              @relation(fields: [agentId], references: [id], onDelete: Restrict)
+  ledgerTransaction LedgerTransaction? @relation(fields: [ledgerTransactionId], references: [id], onDelete: Restrict)
+
+  @@index([periodId, agentId], map: "settlement_lines_period_agent_idx")
+  @@map("settlement_lines")
+}
+
+model SettlementCounted {
+  betId    BigInt @id @map("bet_id")
+  stake    BigInt
+  win      BigInt
+  periodId BigInt @map("period_id")
+
+  bet    Bet              @relation(fields: [betId], references: [id], onDelete: Restrict)
+  period SettlementPeriod @relation(fields: [periodId], references: [id], onDelete: Restrict)
+
+  @@map("settlement_counted")
 }

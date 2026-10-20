@@ -1,5 +1,5 @@
 | Q-37 | ~~Static IPs~~ **Answered 2026-10-20:** yes, enable on the agent-platform service and add them to Octhera's allowlist | — |
-| Q-38 | Settlement periods: every 10 days from launch day (proposal), or 1–10 / 11–20 / 21–end of month? | Task 10 |
+| Q-38 | ~~Period start~~ **Answered 2026-10-20:** every 10 days from launch day, for now (config `settlement.first_period_start` + `settlement.period_days`) | — |
 | Q-36 | ~~Wallet URL switch~~ **Answered 2026-10-20:** yes, on Day 3 | — |
 | Q-35 | ~~Losing bets~~ **Answered 2026-10-20 ("do what is best"):** a bet with no credit 24 h after it was placed is settled as lost; a late credit still pays the win | — |
 | Q-34 | ~~Game money account~~ **Answered 2026-10-20: the player's agent** ("agent or owner wallet, not the company"). Bet: wallet → agent cash position; win: agent cash position → wallet. Changes CLAUDE.md §6 (note added there). **Follow-up for Task 10:** how the split and "no carry-forward" apply when the agent carries the result. | — |

@@ -1,6 +1,6 @@
 # 10 · Settlement engine: 10-day periods, draft statements, approval, cash netting
 
-Status: **plan, awaiting owner approval.** ⚠️ L-01: the multi-level revenue share needs the lawyer's confirmation.
+Status: **approved 2026-10-20; built and tested locally (328 tests in total, 100% coverage of src/settlement); deploy next. On launch day the owner sets `settlement.first_period_start`.** ⚠️ L-01 open.
 
 ## 1. Goal
 
@@ -162,3 +162,12 @@ Additive migration + config seed. `settlement.first_period_start` is set on laun
 - [ ] Q-38 answered (or proposal accepted)
 - [ ] All tests pass; 100% coverage; worked example exact
 - [ ] Deployed; first period configured on launch day
+
+## 13. Build notes (2026-10-20)
+
+- **Every rule is dated config** (owner: "don't hardcode"): `commission.split` (basis points, must add up to 100%), `settlement.max_parent_levels`, `period_days`, `rounding_unit_santim` (1 or 100), `payment_fees` (`none` until Q-03b), `first_period_start`. The owner changes any of them with `POST /admin/config {key, value, effectiveFrom}`. Invalid values are refused, every change is audited, and an approved period never changes.
+- **Periods are drafted and approved strictly in order.** The hourly job creates periods and drafts the next ended one. **Only the owner approves.**
+- **Approval recomputes and refuses a stale draft** (bets changed since the draft), so what was reviewed is exactly what gets posted.
+- **A losing (or zero) result is one statement line** on the agent with the negative G. Nothing is posted.
+- **Netting** = agent cash position + parent payable (current balances): negative → "remit to the company", positive → "the company pays the agent".
+- Migration is `prisma/migrations/0008_settlement` (migration numbers follow build order, not task numbers).

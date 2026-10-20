@@ -12,6 +12,7 @@ import { AuthModule } from "./auth/auth.module";
 import { DepositsModule } from "./deposits/deposits.module";
 import { WithdrawalsModule } from "./withdrawals/withdrawals.module";
 import { ProvidersModule } from "./providers/providers.module";
+import { SettlementModule } from "./settlement/settlement.module";
 
 /** Never log these in plain text (CLAUDE.md §7). */
 export const REDACT_PATHS = [
@@ -56,6 +57,7 @@ export class AppModule {
         DepositsModule,
         WithdrawalsModule,
         ProvidersModule,
+        SettlementModule,
       ],
       controllers: [HealthController],
       // Deny by default: every route needs @Public() or @Requires(...).
