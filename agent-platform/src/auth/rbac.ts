@@ -18,6 +18,8 @@ export const PERMISSIONS = [
   "deposits.review.own",
   "deposits.override",
   "payment_accounts.manage.own",
+  "withdrawals.review.own",
+  "withdrawals.override",
 ] as const;
 export type Permission = (typeof PERMISSIONS)[number];
 
@@ -25,7 +27,14 @@ export const STAFF_ROLES = ["owner", "cofounder", "finance", "support", "staff_r
 export type StaffRole = (typeof STAFF_ROLES)[number];
 
 export const ROLE_PERMISSIONS: Record<StaffRole, readonly Permission[]> = {
-  owner: ["agents.read.all", "agents.create", "players.read.all", "config.write", "deposits.override"],
+  owner: [
+    "agents.read.all",
+    "agents.create",
+    "players.read.all",
+    "config.write",
+    "deposits.override",
+    "withdrawals.override",
+  ],
   cofounder: ["agents.read.all", "agents.create", "players.read.all"],
   finance: ["agents.read.all", "players.read.all"],
   support: ["agents.read.all", "players.read.all"],
@@ -38,6 +47,7 @@ export const AGENT_MEMBER_PERMISSIONS: readonly Permission[] = [
   "agents.children.summary",
   "deposits.review.own",
   "payment_accounts.manage.own",
+  "withdrawals.review.own",
 ];
 
 /** Set on the request by the login layer (Task 04). Never built from client input. */

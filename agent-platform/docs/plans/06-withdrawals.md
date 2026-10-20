@@ -1,6 +1,6 @@
 # 06 · Withdrawals: hold, agent pays, proof, confirmation, SLA escalation
 
-Status: **plan, awaiting owner approval.** ⚠️ L-01 (agent-held funds) still open with the lawyer.
+Status: **approved 2026-10-20; built and tested locally (266 tests in total, 100% coverage of src/withdrawals); deploy next.** ⚠️ L-01 still open.
 
 ## 1. Goal
 
@@ -142,3 +142,12 @@ Additive migration, flag `withdrawals.open` off, the same test-account smoke tes
 - [ ] Q-06b, Q-07, Q-31, Q-32, Q-33 answered
 - [ ] All tests pass; 100% coverage of `src/withdrawals/**`; `ledger:check` ok
 - [ ] Migration up/down tested; deployed; test withdrawal end to end on production
+
+## 13. Build notes (2026-10-20)
+
+- **The hold is posted before the row exists:** the id is reserved first (`nextval`), so the hold's key can be `withdrawal:<id>:hold`. Both happen in one transaction, so an overdraft leaves no row and no money moved.
+- **Limits, SLA and auto-complete are dated config** (`withdrawals.limits` 50 / 100,000 ETB, `withdrawals.sla_hours` 24, `withdrawals.auto_complete_hours` 24), seeded by the migration.
+- **The agent sees the full verified phone** to pay to (Q-31); the player sees it masked.
+- **Owner actions** are audited as `withdrawal.<status>.override`.
+- **The SLA job runs every 15 min** in-process (one replica). The auto-complete re-checks the status under the row lock, so a player answering at the same moment can't be paid twice.
+- **Open-bet check** (§5.8 "respect open bets"): no bets exist until Task 07, which adds the check to `request()`.

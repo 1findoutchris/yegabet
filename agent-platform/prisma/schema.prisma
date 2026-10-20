@@ -76,10 +76,12 @@ model LedgerTransaction {
   reversesTransactionId BigInt?  @unique @map("reverses_transaction_id")
   createdAt             DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
 
-  reverses   LedgerTransaction? @relation("reversal", fields: [reversesTransactionId], references: [id], onDelete: Restrict)
-  reversedBy LedgerTransaction? @relation("reversal")
-  entries    LedgerEntry[]
-  deposit    Deposit?
+  reverses        LedgerTransaction? @relation("reversal", fields: [reversesTransactionId], references: [id], onDelete: Restrict)
+  reversedBy      LedgerTransaction? @relation("reversal")
+  entries         LedgerEntry[]
+  deposit         Deposit?
+  withdrawalHold  Withdrawal?        @relation("hold")
+  withdrawalFinal Withdrawal?        @relation("final")
 
   @@map("ledger_transactions")
 }
@@ -130,6 +132,7 @@ model Agent {
   members         AgentMember[]
   paymentAccounts AgentPaymentAccount[]
   deposits        Deposit[]
+  withdrawals     Withdrawal[]
 
   @@index([parentId])
   @@index([ancestors], type: Gin)
@@ -150,6 +153,7 @@ model Player {
   assignments AgentAssignment[]
   webSignups  WebSignup[]
   deposits    Deposit[]
+  withdrawals Withdrawal[]
 
   @@index([agentId])
   @@map("players")
@@ -322,4 +326,40 @@ model Deposit {
   @@index([agentId, status])
   @@index([playerId, createdAt])
   @@map("deposits")
+}
+
+// ── Withdrawals (plan 06) ────────────────────────────────────────────────────
+// Status moves are enforced by a trigger (0006_withdrawals).
+
+model Withdrawal {
+  id                 BigInt    @id @default(autoincrement())
+  playerId           BigInt    @map("player_id")
+  agentId            BigInt    @map("agent_id")
+  method             String
+  amount             BigInt
+  status             String    @default("requested")
+  paidReferenceHash  String?   @map("paid_reference_hash")
+  paidReferenceEnc   String?   @map("paid_reference_enc")
+  paidAt             DateTime? @map("paid_at") @db.Timestamptz(6)
+  paidByKind         String?   @map("paid_by_kind")
+  paidById           String?   @map("paid_by_id")
+  holdTransactionId  BigInt    @unique @map("hold_transaction_id")
+  finalTransactionId BigInt?   @unique @map("final_transaction_id")
+  closedByKind       String?   @map("closed_by_kind")
+  closedById         String?   @map("closed_by_id")
+  closeReason        String?   @map("close_reason")
+  closedAt           DateTime? @map("closed_at") @db.Timestamptz(6)
+  slaDueAt           DateTime  @map("sla_due_at") @db.Timestamptz(6)
+  createdAt          DateTime  @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  player           Player             @relation(fields: [playerId], references: [id], onDelete: Restrict)
+  agent            Agent              @relation(fields: [agentId], references: [id], onDelete: Restrict)
+  holdTransaction  LedgerTransaction  @relation("hold", fields: [holdTransactionId], references: [id], onDelete: Restrict)
+  finalTransaction LedgerTransaction? @relation("final", fields: [finalTransactionId], references: [id], onDelete: Restrict)
+
+  @@unique([method, paidReferenceHash])
+  @@index([agentId, status])
+  @@index([playerId, createdAt])
+  @@index([status, slaDueAt])
+  @@map("withdrawals")
 }
