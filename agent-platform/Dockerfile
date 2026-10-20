@@ -5,7 +5,7 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci
 COPY . .
-RUN npx prisma generate && npm run build && npm prune --omit=dev
+RUN npx prisma generate && npm run build && npm run build:web && npm prune --omit=dev
 
 # ── Run ───────────────────────────────────────────────────────────────────────
 FROM node:20-alpine AS run
@@ -15,6 +15,7 @@ ENV NODE_ENV=production
 RUN addgroup -S app && adduser -S app -G app
 COPY --from=build --chown=app:app /app/node_modules ./node_modules
 COPY --from=build --chown=app:app /app/dist ./dist
+COPY --from=build --chown=app:app /app/web/dist ./web/dist
 COPY --from=build --chown=app:app /app/prisma ./prisma
 COPY --from=build --chown=app:app /app/package.json ./package.json
 USER app

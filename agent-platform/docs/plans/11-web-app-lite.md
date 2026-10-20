@@ -1,6 +1,6 @@
 # 11 (lite) · Screens: one web app for players, agents and the owner
 
-Status: **approved 2026-10-20. Building.** The owner agreed (2026-10-20) to one mobile-first web app served by the same service, working as both the Telegram Mini App and the website. Polish comes after launch.
+Status: **approved 2026-10-20; built (341 tests pass; web typecheck + build ok; local server smoke test ok); deploying.** Not yet tried in a real browser or inside Telegram: that is the first check after deploy.
 
 ## 1. Goal
 
@@ -92,3 +92,11 @@ None in the UI. Every action is an existing, tested API call.
 
 - [ ] All API tests pass; web builds; smoke run passes
 - [ ] Deployed; the owner logs in as staff, creates an agent, a player signs up through the agent's link, and a test deposit → withdrawal works end to end with the switches on for that test
+
+## 13. Build notes (2026-10-20)
+
+- **Pages use `#/…` routes** (`/#/admin`, `/#/agent`), because `/admin` and `/agent` are API paths, and the Telegram webhook and API stay exactly where they are.
+- **One login screen with Player / Agent / Staff tabs** (Telegram Login Widget). Inside Telegram the Mini App logs the player in automatically.
+- **Every money button runs once at a time** (`useAction`), so a double tap sends one request. The server also refuses duplicates.
+- **Security headers** on every response (`src/web.ts`): a CSP allowing only our scripts + telegram.org, framing only by Telegram, nosniff, referrer policy.
+- **Not done (honest):** the planned Playwright smoke run. Instead: unit tests for the money/format helpers, an HTTP test that the app and its headers are served, and a local smoke run of the built server. The browser/Telegram run happens on the deployed site with the owner.

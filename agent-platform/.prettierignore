@@ -4,3 +4,4 @@ coverage
 package-lock.json
 prisma/migrations
 CLAUDE.md
+web/dist

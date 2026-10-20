@@ -3,7 +3,9 @@ import { NestFactory } from "@nestjs/core";
 import type { NestExpressApplication } from "@nestjs/platform-express";
 import { Logger } from "nestjs-pino";
 import { AppModule } from "./app.module";
+import { join } from "node:path";
 import { ConfigError, loadEnv } from "./config/env";
+import { configureWeb } from "./web";
 
 async function bootstrap(): Promise<void> {
   let env;
@@ -25,6 +27,8 @@ async function bootstrap(): Promise<void> {
   // Railway's proxy sets X-Forwarded-For; trust it so req.ip is the caller (rate limits, audit).
   app.set("trust proxy", 1);
   app.useLogger(app.get(Logger));
+  // The web app, built into web/dist next to dist/ (Dockerfile).
+  configureWeb(app, join(__dirname, "..", "web", "dist"));
   app.enableShutdownHooks();
   await app.listen(env.PORT, "0.0.0.0");
 }
