@@ -1,6 +1,6 @@
 # 07 · First provider: Octhera (seamless wallet) + bets with agent snapshot
 
-Status: **plan, awaiting owner approval.**
+Status: **approved 2026-10-20; built and tested locally (301 tests in total, 100% coverage of src/providers); deploy next. Octhera's Wallet URL switch is Day 3 (Q-36).**
 
 ## 1. Goal
 
@@ -75,7 +75,7 @@ Each player's Octhera `playerId` is `yb_<player id>`, which never changes.
 | `POST /games/:uid/launch`        | player (active)                                              | launch URL                            |
 | Job (hourly)                     | system                                                       | catalog import; Q-35 auto-settle      |
 
-## 6. Money flow (santim; proposal Q-34)
+## 6. Money flow (santim; Q-34 answered: against the player's agent)
 
 | Octhera sends                   | Ledger                                                                        | Bet row                         |
 | ------------------------------- | ----------------------------------------------------------------------------- | ------------------------------- |
@@ -86,8 +86,8 @@ Each player's Octhera `playerId` is `yb_<player id>`, which never changes.
 
 **Worked example.** P has wallet 10,000 (100 ETB). P's agent is A.
 
-1. Bet 20 ETB (round R1): wallet 8,000, float +2,000. Bet open, agent A.
-2. Win 50 ETB on R1: wallet 13,000, float −3,000. Bet settled: stake 2,000, win 5,000.
+1. Bet 20 ETB (round R1): wallet 8,000, A cash **+2,000**. Bet open, agent A.
+2. Win 50 ETB on R1: wallet 13,000, A cash **−3,000**. Bet settled: stake 2,000, win 5,000.
 3. Bet 30 ETB (R2), then Octhera rolls it back: wallet 13,000 again. Bet rolled_back.
 4. The same win call retried: replayed, no change.
 5. P moves to agent B (Task 15). Old bets stay with A: R1 still counts for A in settlement.
@@ -137,3 +137,13 @@ Flag `games.open` off. New env vars: `OCTHERA_API_KEY`, `OCTHERA_WALLET_SECRET`.
 - [ ] Q-34 to Q-37 answered
 - [ ] All tests pass; 100% coverage of `src/providers/**`; `ledger:check` ok
 - [ ] Deployed; Octhera "Test wallet" → ok against the new service (on Day 3)
+
+## 13. Build notes (2026-10-20)
+
+- **Game money moves against the player's agent** (Q-34), not the company float: bet = wallet → agent cash position; win = agent cash position (**the bet's agent**, even after a transfer) → wallet.
+- **Core and adapter are split:** `providers/gameWallet.ts` knows nothing about Octhera, and `providers/octhera/` verifies, parses and formats. Provider #2 = a new adapter folder.
+- **The open-bet check is not added to withdrawals.** Stakes already leave the wallet when a bet is placed, so a withdrawal can never take money that's in play. Blocking withdrawals until rounds settle (up to 24 h) would only hurt players. The check (`GameWallet.openBets`) is ready for player transfers (Task 15), where §5.9 requires it.
+- **A rollback of a `bet_win` the player already spent** takes only what's in the wallet and records the shortfall on the call (`shortfallSantim`) for reconciliation. The old site did the same.
+- **A late-bet-backed win** (no stake taken) is recorded as a bet with stake 0, so settlement sees the winnings.
+- **Raw request body:** the app now keeps it (`rawBody: true`), because Octhera signs the exact bytes.
+- **Octhera playerId** = `yb_<player id>`.

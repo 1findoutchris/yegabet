@@ -1,3 +1,7 @@
+| Q-37 | ~~Static IPs~~ **Answered 2026-10-20:** yes, enable on the agent-platform service and add them to Octhera's allowlist | — |
+| Q-36 | ~~Wallet URL switch~~ **Answered 2026-10-20:** yes, on Day 3 | — |
+| Q-35 | ~~Losing bets~~ **Answered 2026-10-20 ("do what is best"):** a bet with no credit 24 h after it was placed is settled as lost; a late credit still pays the win | — |
+| Q-34 | ~~Game money account~~ **Answered 2026-10-20: the player's agent** ("agent or owner wallet, not the company"). Bet: wallet → agent cash position; win: agent cash position → wallet. Changes CLAUDE.md §6 (note added there). **Follow-up for Task 10:** how the split and "no carry-forward" apply when the agent carries the result. | — |
 | Q-33 | ~~Auto-complete~~ **Answered 2026-10-20 ("continue" = proposals accepted):** 24 h after the agent marks it paid | — |
 | Q-34 | Game money moves against which account? Proposal: COMPANY_FLOAT (bet: wallet → float; win: float → wallet), with provider fees charged at settlement. | Task 07 |
 | Q-35 | When is a losing bet settled if Octhera sends no credit? Proposal: 24 h after the round, as lost (unless their docs say a 0 credit comes). | Task 07 |

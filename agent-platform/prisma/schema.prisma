@@ -82,6 +82,7 @@ model LedgerTransaction {
   deposit         Deposit?
   withdrawalHold  Withdrawal?        @relation("hold")
   withdrawalFinal Withdrawal?        @relation("final")
+  providerCalls   ProviderCall[]
 
   @@map("ledger_transactions")
 }
@@ -133,6 +134,7 @@ model Agent {
   paymentAccounts AgentPaymentAccount[]
   deposits        Deposit[]
   withdrawals     Withdrawal[]
+  bets            Bet[]
 
   @@index([parentId])
   @@index([ancestors], type: Gin)
@@ -154,6 +156,7 @@ model Player {
   webSignups  WebSignup[]
   deposits    Deposit[]
   withdrawals Withdrawal[]
+  bets        Bet[]
 
   @@index([agentId])
   @@map("players")
@@ -362,4 +365,88 @@ model Withdrawal {
   @@index([playerId, createdAt])
   @@index([status, slaDueAt])
   @@map("withdrawals")
+}
+
+// ── Providers, bets, games (plan 07) ─────────────────────────────────────────
+
+model Provider {
+  id     String  @id
+  name   String
+  active Boolean @default(true)
+
+  calls ProviderCall[]
+  bets  Bet[]
+  games Game[]
+
+  @@map("providers")
+}
+
+// One row per (provider, type, txn_id); the stored response is replayed on retries.
+model ProviderCall {
+  id                  BigInt   @id @default(autoincrement())
+  providerId          String   @map("provider_id")
+  type                String
+  txnId               String   @map("txn_id")
+  playerId            BigInt?  @map("player_id")
+  action              String?
+  gameUid             String?  @map("game_uid")
+  gameRound           String?  @map("game_round")
+  betAmount           BigInt   @default(0) @map("bet_amount")
+  winAmount           BigInt   @default(0) @map("win_amount")
+  applied             Boolean
+  response            Json
+  payload             Json
+  ledgerTransactionId BigInt?  @map("ledger_transaction_id")
+  createdAt           DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  provider          Provider           @relation(fields: [providerId], references: [id], onDelete: Restrict)
+  ledgerTransaction LedgerTransaction? @relation(fields: [ledgerTransactionId], references: [id], onDelete: Restrict)
+
+  @@unique([providerId, type, txnId])
+  @@index([providerId, playerId, gameRound], map: "provider_calls_round_idx")
+  @@map("provider_calls")
+}
+
+// §5.6: agent_id is the snapshot at bet time; settlement (Task 10) reads this.
+model Bet {
+  id         BigInt    @id @default(autoincrement())
+  providerId String    @map("provider_id")
+  playerId   BigInt    @map("player_id")
+  agentId    BigInt    @map("agent_id")
+  gameUid    String?   @map("game_uid")
+  gameRound  String?   @map("game_round")
+  debitTxnId String    @map("debit_txn_id")
+  stake      BigInt
+  win        BigInt    @default(0)
+  status     String    @default("open")
+  placedAt   DateTime  @default(now()) @map("placed_at") @db.Timestamptz(6)
+  settledAt  DateTime? @map("settled_at") @db.Timestamptz(6)
+
+  provider Provider @relation(fields: [providerId], references: [id], onDelete: Restrict)
+  player   Player   @relation(fields: [playerId], references: [id], onDelete: Restrict)
+  agent    Agent    @relation(fields: [agentId], references: [id], onDelete: Restrict)
+
+  @@unique([providerId, debitTxnId])
+  @@index([playerId, status])
+  @@index([agentId, providerId, settledAt], map: "bets_agent_settlement_idx")
+  @@index([providerId, playerId, gameRound], map: "bets_round_idx")
+  @@index([status, placedAt])
+  @@map("bets")
+}
+
+model Game {
+  providerId   String   @map("provider_id")
+  gameUid      String   @map("game_uid")
+  name         String
+  providerName String?  @map("provider_name")
+  type         String?
+  img          String?
+  active       Boolean  @default(true)
+  syncedAt     DateTime @default(now()) @map("synced_at") @db.Timestamptz(6)
+
+  provider Provider @relation(fields: [providerId], references: [id], onDelete: Restrict)
+
+  @@id([providerId, gameUid])
+  @@index([active, type])
+  @@map("games")
 }

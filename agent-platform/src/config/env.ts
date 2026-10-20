@@ -57,6 +57,18 @@ const schema = z.object({
     .string()
     .optional()
     .transform((v) => (v ? v : undefined)),
+  // Octhera (plan 07). Optional: without them the wallet answers INVALID_SIGNATURE
+  // and catalog/launch answer 503, while the rest of the app runs.
+  OCTHERA_API_KEY: z
+    .string()
+    .optional()
+    .transform((v) => (v ? v : undefined)),
+  OCTHERA_WALLET_SECRET: z
+    .string()
+    .optional()
+    .transform((v) => (v ? v : undefined)),
+  OCTHERA_BASE_URL: z.string().url().default("https://api.octhera.org/api/v2"),
+  OCTHERA_CURRENCY: z.string().length(3).default("ETB"),
   SESSION_TTL_HOURS: z.coerce
     .number()
     .positive()

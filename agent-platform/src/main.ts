@@ -17,7 +17,11 @@ async function bootstrap(): Promise<void> {
     throw e;
   }
 
-  const app = await NestFactory.create<NestExpressApplication>(AppModule.forRoot(env), { bufferLogs: true });
+  const app = await NestFactory.create<NestExpressApplication>(AppModule.forRoot(env), {
+    bufferLogs: true,
+    // Octhera signs the exact bytes it sends; the wallet checks them (plan 07).
+    rawBody: true,
+  });
   // Railway's proxy sets X-Forwarded-For; trust it so req.ip is the caller (rate limits, audit).
   app.set("trust proxy", 1);
   app.useLogger(app.get(Logger));

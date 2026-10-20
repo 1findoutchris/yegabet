@@ -23,6 +23,7 @@ module.exports = {
     "./src/telegram/": { branches: 100, functions: 100, lines: 100, statements: 100 },
     "./src/deposits/": { branches: 100, functions: 100, lines: 100, statements: 100 },
     "./src/withdrawals/": { branches: 100, functions: 100, lines: 100, statements: 100 },
+    "./src/providers/": { branches: 100, functions: 100, lines: 100, statements: 100 },
     "./src/common/": { branches: 100, functions: 100, lines: 100, statements: 100 },
   },
 };

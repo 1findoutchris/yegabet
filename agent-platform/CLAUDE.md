@@ -215,6 +215,8 @@ For each agent and each provider, for bets **settled within the period**:
 
 **Company float funds winnings; agents only earn revenue share**, with per-agent exposure limits. Agents do not fund payouts. Build the float as a ledger account with balance alerts. Do not build agent-funded payouts unless the owner changes this decision.
 
+> **Owner decision 2026-10-20 (Q-34): changed.** Game money moves against the player's **agent** ("the agent or owner wallet, not the company"); for direct players that is the company agent. A bet moves PLAYER_WALLET → the agent's AGENT_CASH_POSITION, and a win moves it back. The agent therefore carries game results directly. How this combines with the commission split and "no loss carry-forward" must be settled in the Task 10 plan with worked numbers.
+
 ---
 
 ## 7. Security and quality standards
