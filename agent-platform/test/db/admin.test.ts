@@ -332,6 +332,12 @@ describe("pieces", () => {
     expect(() => adminHttp(new Error("raw"))).toThrow("raw");
     const admin = new Admin(db, new Hierarchy(db, new Ledger(db)), { domain: "x.example" });
     expect(admin.referralLinks("abc")).toEqual({ telegram: null, website: "https://x.example/?ref=abc" });
+    // Before launch the links point at the address the new site has now.
+    const beforeLaunch = new Admin(db, new Hierarchy(db, new Ledger(db)), {
+      domain: "yega.bet",
+      webUrl: "https://new.up.railway.app/",
+    });
+    expect(beforeLaunch.referralLinks("xyz").website).toBe("https://new.up.railway.app/?ref=xyz");
   });
 
   it("passes unexpected errors through", async () => {

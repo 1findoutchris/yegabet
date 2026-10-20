@@ -15,7 +15,11 @@ import { AdminController, PublicController } from "./admin.controller";
       provide: Admin,
       inject: [PrismaService, Hierarchy, ENV],
       useFactory: (db: PrismaService, hierarchy: Hierarchy, env: Env) =>
-        new Admin(db, hierarchy, { botUsername: env.TELEGRAM_BOT_USERNAME, domain: env.PLATFORM_DOMAIN }),
+        new Admin(db, hierarchy, {
+          botUsername: env.TELEGRAM_BOT_USERNAME,
+          domain: env.PLATFORM_DOMAIN,
+          webUrl: env.PUBLIC_WEB_URL,
+        }),
     },
   ],
 })

@@ -40,16 +40,15 @@ export function SessionProvider({ children }: { children: (s: Session) => ReactN
   useEffect(() => {
     if (me === undefined) return;
     const ref = new URLSearchParams(window.location.search).get("ref");
-    const load =
-      me?.kind === "player"
+    // A referral link always shows its agent (whoever opens it); otherwise a
+    // player sees their own agent.
+    const load = ref
+      ? api<{ displayName: string }>(`/public/agents/${encodeURIComponent(ref)}`).then((a) => a.displayName)
+      : me?.kind === "player"
         ? api<{ displayName: string; isCompany: boolean }>("/me/agent").then((a) =>
             a.isCompany ? null : a.displayName,
           )
-        : !me && ref
-          ? api<{ displayName: string }>(`/public/agents/${encodeURIComponent(ref)}`).then(
-              (a) => a.displayName,
-            )
-          : Promise.resolve(null);
+        : Promise.resolve(null);
     load.then(setAgentName, () => setAgentName(null));
   }, [me]);
 

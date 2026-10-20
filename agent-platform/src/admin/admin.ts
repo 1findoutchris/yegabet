@@ -51,6 +51,8 @@ const isP2002 = (e: unknown) => e instanceof Prisma.PrismaClientKnownRequestErro
 export interface LinkConfig {
   botUsername?: string;
   domain: string;
+  /** Where the site is reachable now (before launch: the Railway address). Defaults to https://<domain>. */
+  webUrl?: string;
 }
 
 export class Admin {
@@ -63,7 +65,7 @@ export class Admin {
   referralLinks(slug: string) {
     return {
       telegram: this.links.botUsername ? `https://t.me/${this.links.botUsername}?start=${slug}` : null,
-      website: `https://${this.links.domain}/?ref=${slug}`,
+      website: `${(this.links.webUrl ?? `https://${this.links.domain}`).replace(/\/+$/, "")}/?ref=${slug}`,
     };
   }
 
