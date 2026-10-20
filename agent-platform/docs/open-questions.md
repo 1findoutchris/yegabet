@@ -1,4 +1,8 @@
 | Q-33 | ~~Auto-complete~~ **Answered 2026-10-20 ("continue" = proposals accepted):** 24 h after the agent marks it paid | — |
+| Q-34 | Game money moves against which account? Proposal: COMPANY_FLOAT (bet: wallet → float; win: float → wallet), with provider fees charged at settlement. | Task 07 |
+| Q-35 | When is a losing bet settled if Octhera sends no credit? Proposal: 24 h after the round, as lost (unless their docs say a 0 credit comes). | Task 07 |
+| Q-36 | Move Octhera's Wallet URL from the old site to the new service on Day 3? Proposal: yes. | Task 07 |
+| Q-37 | Enable Railway static outbound IPs on the agent-platform service and add them to Octhera's allowlist? Proposal: yes. | Task 07 |
 | Q-32 | ~~Proof~~ **Answered 2026-10-20 ("continue" = proposals accepted):** a typed payment reference; screenshots later | — |
 | Q-31 | ~~Payout destination~~ **Answered 2026-10-20 ("continue" = proposals accepted):** only the player's verified phone number | — |
 | Q-07 | ~~Withdrawal limits and SLA~~ **Answered 2026-10-20 ("continue" = proposals accepted):** min 50 ETB, max 100,000 ETB, SLA 24 h | — |
