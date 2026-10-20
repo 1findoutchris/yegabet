@@ -25,6 +25,7 @@ module.exports = {
     "./src/withdrawals/": { branches: 100, functions: 100, lines: 100, statements: 100 },
     "./src/providers/": { branches: 100, functions: 100, lines: 100, statements: 100 },
     "./src/settlement/": { branches: 100, functions: 100, lines: 100, statements: 100 },
+    "./src/admin/": { branches: 100, functions: 100, lines: 100, statements: 100 },
     "./src/common/": { branches: 100, functions: 100, lines: 100, statements: 100 },
   },
 };

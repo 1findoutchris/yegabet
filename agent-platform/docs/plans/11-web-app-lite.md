@@ -1,6 +1,6 @@
 # 11 (lite) · Screens: one web app for players, agents and the owner
 
-Status: **plan, awaiting owner approval.** The owner agreed (2026-10-20) to one mobile-first web app served by the same service, working as both the Telegram Mini App and the website. Polish comes after launch.
+Status: **approved 2026-10-20. Building.** The owner agreed (2026-10-20) to one mobile-first web app served by the same service, working as both the Telegram Mini App and the website. Polish comes after launch.
 
 ## 1. Goal
 

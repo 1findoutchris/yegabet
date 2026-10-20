@@ -1,6 +1,6 @@
 # 08 (lite) · Admin: create agents, members and staff
 
-Status: **plan, awaiting owner approval.** The full application workflow (staff → owner → cofounder review, §5.3) comes after launch.
+Status: **approved 2026-10-20; built and tested (336 tests in total, 100% coverage of src/admin); deploying.** The full application workflow (§5.3) comes after launch.
 
 ## 1. Goal
 
