@@ -1,0 +1,567 @@
+/* ── YegaBet design tokens ──────────────────────────────────────────────────
+   One place for the brand: colours, spacing, radius, type, shadows, motion.
+   Black in layers, orange as the single accent, light orange for small
+   highlights, amber only for premium moments (tiers, bonus funds, jackpots).
+
+   The legacy names further down (--gold, --bg-surface, --purple …) predate the
+   redesign and are used across ~100 files, admin and agent portals included.
+   They are re-pointed here so every screen follows the new palette; new code
+   uses the --v-* names. JS mirrors live in ./tokens.ts. */
+
+:root {
+  /* Type: Manrope via next/font (--font-vinna on <html>). */
+  --font-outfit: var(--font-vinna), system-ui, sans-serif;
+  --font-display: var(--font-vinna), system-ui, sans-serif;
+
+  /* Surfaces, darkest to lightest */
+  --v-bg-0: #000000;
+  --v-bg-1: #0a0a0a;
+  --v-bg-2: #141414;
+  --v-bg-3: #1c1c1c;
+  --v-bg-4: #262626;
+  --v-glass: rgba(12, 12, 12, 0.72);
+
+  /* Lines */
+  --v-line: rgba(200, 200, 200, 0.1);
+  --v-line-2: rgba(200, 200, 200, 0.18);
+
+  /* Accent */
+  --v-teal: #ff7a00;
+  --v-teal-2: #ffa040;
+  --v-teal-deep: #cc5f00;
+  --v-teal-ink: #1a0b00; /* text on an orange fill */
+  --v-teal-a12: rgba(255, 122, 0, 0.12);
+  --v-teal-a24: rgba(255, 122, 0, 0.24);
+  --v-cyan: #ffb04d;
+  --v-amber: #f5b83d;
+  --v-amber-a12: rgba(245, 184, 61, 0.12);
+
+  /* Signals */
+  --v-green: #34d399;
+  --v-red: #f43f5e;
+
+  /* Text */
+  --v-text: #ffffff;
+  --v-text-2: #c4c4c4;
+  --v-text-3: #8c8c8c;
+
+  /* Spacing (4px grid) */
+  --v-space-1: 4px;
+  --v-space-2: 8px;
+  --v-space-3: 12px;
+  --v-space-4: 16px;
+  --v-space-5: 20px;
+  --v-space-6: 24px;
+  --v-space-8: 32px;
+  --v-space-10: 40px;
+
+  /* Radius */
+  --v-r-sm: 8px;
+  --v-r-md: 12px;
+  --v-r-lg: 16px;
+  --v-r-xl: 22px;
+  --v-r-pill: 999px;
+
+  /* Type scale */
+  --v-fs-page: clamp(26px, 6vw, 32px);
+  --v-fs-section: clamp(18px, 4.6vw, 21px);
+  --v-fs-card: 14px;
+  --v-fs-body: 14px;
+  --v-fs-meta: 12px;
+
+  /* Shadows */
+  --v-shadow-1: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --v-shadow-2: 0 8px 24px rgba(0, 0, 0, 0.45);
+  --v-shadow-3: 0 18px 48px rgba(0, 0, 0, 0.6);
+  --v-ring: 0 0 0 1px var(--v-teal-a24), 0 6px 22px rgba(255, 122, 0, 0.18);
+
+  /* Motion */
+  --v-dur-1: 150ms;
+  --v-dur-2: 220ms;
+  --v-dur-3: 300ms;
+  --v-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  /* Fixed chrome. SportsPane and the game player position themselves against
+     these exact sizes (top-14, bottom 4rem + safe area), so they stay put. */
+  --v-header-h: 56px;
+  --v-nav-h: 64px;
+
+  /* ── Legacy names, re-pointed ── */
+  --bg-deep: var(--v-bg-0);
+  --bg-base: var(--v-bg-1);
+  --bg-surface: var(--v-bg-2);
+  --bg-elevated: var(--v-bg-3);
+  --bg-accent-dim: var(--v-teal-a12);
+  --bg-royal-dim: var(--v-amber-a12);
+
+  --border-base: #2a2a2a;
+  --border-muted: #1a1a1a;
+  --border-accent: rgba(255, 122, 0, 0.42);
+  --border-royal: rgba(245, 184, 61, 0.36);
+
+  --gold: var(--v-teal);
+  --gold-2: var(--v-teal-2);
+  --gold-deep: var(--v-teal-deep);
+  --gold-hover: #ff8f26;
+  --gold-dim: rgba(255, 122, 0, 0.5);
+
+  --purple: var(--v-amber);
+  --purple-2: #fad27e;
+  --purple-deep: #d9961a;
+
+  --green: var(--v-green);
+  --red: var(--v-red);
+  --live: var(--v-red);
+
+  --text-primary: var(--v-text);
+  --text-secondary: var(--v-text-2);
+  --text-muted: var(--v-text-3);
+
+  /* Flat-ish fills: the redesign avoids loud gradients. */
+  --grad-gold: linear-gradient(180deg, #ff8a1f, #f06e00);
+  --grad-royal: linear-gradient(180deg, #f8c658, #eda92a);
+  --grad-jackpot: linear-gradient(180deg, #f8c658, #eda92a);
+  --glow-gold: 0 6px 20px rgba(255, 122, 0, 0.22);
+  --glow-purple: 0 6px 20px rgba(245, 184, 61, 0.22);
+}
+
+/* ── Base ───────────────────────────────────────────────────────────────── */
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  background:
+    radial-gradient(900px 420px at 50% -260px, rgba(255, 122, 0, 0.08), transparent 70%), var(--v-bg-1);
+  color: var(--v-text);
+  font-feature-settings:
+    "tnum" 0,
+    "ss01" 1;
+}
+::selection {
+  background: var(--v-teal-a24);
+  color: #fff;
+}
+
+/* Component classes sit in the components layer so a Tailwind utility on the
+   same element (h-12, rounded-full …) still wins. */
+@layer components {
+  /* ── Surfaces ───────────────────────────────────────────────────────────── */
+  .v-surface {
+    background: var(--v-bg-2);
+    border: 1px solid var(--v-line);
+    border-radius: var(--v-r-lg);
+  }
+  .v-surface-2 {
+    background: var(--v-bg-3);
+    border: 1px solid var(--v-line);
+    border-radius: var(--v-r-md);
+  }
+  .v-glass {
+    background: var(--v-glass);
+    -webkit-backdrop-filter: saturate(140%) blur(18px);
+    backdrop-filter: saturate(140%) blur(18px);
+    border: 1px solid var(--v-line);
+  }
+  .v-eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--v-text-3);
+  }
+
+  /* Buttons */
+  .v-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 44px;
+    padding: 0 18px;
+    border-radius: var(--v-r-md);
+    font-size: 14px;
+    font-weight: 700;
+    transition:
+      transform var(--v-dur-1) var(--v-ease),
+      background-color var(--v-dur-2) ease,
+      border-color var(--v-dur-2) ease,
+      color var(--v-dur-2) ease;
+  }
+  .v-btn:active {
+    transform: scale(0.97);
+  }
+  .v-btn-primary {
+    background: var(--v-teal);
+    color: var(--v-teal-ink);
+  }
+  .v-btn-primary:hover {
+    background: #ff8f26;
+  }
+  .v-btn-ghost {
+    background: var(--v-bg-3);
+    color: var(--v-text);
+    border: 1px solid var(--v-line-2);
+  }
+  .v-btn-ghost:hover {
+    border-color: var(--v-teal-a24);
+  }
+  .v-btn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  /* Press feedback */
+  .v-press {
+    transition: transform var(--v-dur-1) var(--v-ease);
+  }
+  .v-press:active {
+    transform: scale(0.96);
+  }
+
+  /* Pills (category tabs, filters) */
+  .v-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 36px;
+    padding: 0 14px;
+    border-radius: var(--v-r-pill);
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+    color: var(--v-text-2);
+    background: var(--v-bg-2);
+    border: 1px solid var(--v-line);
+    transition:
+      color var(--v-dur-2) ease,
+      background-color var(--v-dur-2) ease,
+      border-color var(--v-dur-2) ease,
+      transform var(--v-dur-1) var(--v-ease);
+  }
+  .v-pill:hover {
+    color: var(--v-text);
+    border-color: var(--v-line-2);
+  }
+  .v-pill:active {
+    transform: scale(0.96);
+  }
+  .v-pill[data-active="true"] {
+    color: var(--v-teal-ink);
+    background: var(--v-teal);
+    border-color: var(--v-teal);
+  }
+
+  /* Horizontal scrollers that bleed to the screen edge on phones */
+  .v-rail {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 16px;
+    padding-inline: 16px;
+    margin-inline: -16px;
+    scrollbar-width: none;
+  }
+  .v-rail::-webkit-scrollbar {
+    display: none;
+  }
+  .v-rail > * {
+    scroll-snap-align: start;
+  }
+  @media (min-width: 640px) {
+    .v-rail {
+      gap: 12px;
+      padding-inline: 24px;
+      margin-inline: -24px;
+      scroll-padding-inline: 24px;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .v-rail {
+      scroll-behavior: auto;
+    }
+  }
+
+  /* Lobby game grid: 3 · 4 · 5 · 6 · 8 columns, and exactly two rows at each
+   width (6 · 8 · 10 · 12 · 16 cards). Cards past that are hidden, so server
+   and client render the same markup. */
+  .v-grid2 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .v-grid2 > :nth-child(n + 7) {
+    display: none;
+  }
+  @media (min-width: 640px) {
+    .v-grid2 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .v-grid2 > :nth-child(-n + 8) {
+      display: block;
+    }
+  }
+  @media (min-width: 768px) {
+    .v-grid2 {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+    .v-grid2 > :nth-child(-n + 10) {
+      display: block;
+    }
+  }
+  @media (min-width: 1024px) {
+    .v-grid2 {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+    .v-grid2 > :nth-child(-n + 12) {
+      display: block;
+    }
+  }
+  @media (min-width: 1280px) {
+    .v-grid2 {
+      grid-template-columns: repeat(8, minmax(0, 1fr));
+    }
+    .v-grid2 > :nth-child(-n + 16) {
+      display: block;
+    }
+  }
+
+  /* Wide (landscape) variant: 2 · 3 · 3 · 4 · 4 columns, two rows. */
+  .v-grid2-wide {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .v-grid2-wide > :nth-child(n + 5) {
+    display: none;
+  }
+  @media (min-width: 640px) {
+    .v-grid2-wide {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .v-grid2-wide > :nth-child(-n + 6) {
+      display: block;
+    }
+    .v-grid2-wide > :nth-child(n + 7) {
+      display: none;
+    }
+  }
+  @media (min-width: 1024px) {
+    .v-grid2-wide {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+    .v-grid2-wide > :nth-child(-n + 8) {
+      display: block;
+    }
+    .v-grid2-wide > :nth-child(n + 9) {
+      display: none;
+    }
+  }
+
+  /* ── Skeletons ──────────────────────────────────────────────────────────── */
+  .v-skel {
+    position: relative;
+    overflow: hidden;
+    background: var(--v-bg-2);
+    border-radius: var(--v-r-md);
+  }
+  .v-skel::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(90deg, transparent, rgba(200, 200, 200, 0.07), transparent);
+    animation: v-shimmer 1.3s ease-in-out infinite;
+  }
+  /* Older loaders still use this name. */
+  .vinna-skeleton {
+    position: relative;
+    overflow: hidden;
+    background: var(--v-bg-2);
+  }
+  .vinna-skeleton::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(90deg, transparent, rgba(200, 200, 200, 0.07), transparent);
+    animation: v-shimmer 1.3s ease-in-out infinite;
+  }
+}
+
+/* ── Motion ─────────────────────────────────────────────────────────────── */
+@keyframes v-shimmer {
+  to {
+    transform: translateX(100%);
+  }
+}
+@keyframes v-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes v-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes v-sheet-up {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: none;
+  }
+}
+@keyframes v-drop-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes v-heart {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.35);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes v-bump {
+  0% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-2px);
+    color: var(--v-teal-2);
+  }
+  100% {
+    transform: none;
+  }
+}
+@keyframes v-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes v-draw {
+  from {
+    stroke-dashoffset: var(--len, 200);
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes v-breathe {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(0.96);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes v-line {
+  0% {
+    transform: translateX(-100%) scaleX(0.4);
+  }
+  50% {
+    transform: translateX(10%) scaleX(0.9);
+  }
+  100% {
+    transform: translateX(110%) scaleX(0.4);
+  }
+}
+@keyframes v-msg {
+  0% {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  12%,
+  88% {
+    opacity: 1;
+    transform: none;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+.v-fade-up {
+  animation: v-fade-up var(--v-dur-3) var(--v-ease) both;
+}
+.v-fade-in {
+  animation: v-fade-in var(--v-dur-2) ease both;
+}
+.v-sheet-up {
+  animation: v-sheet-up var(--v-dur-3) var(--v-ease) both;
+}
+.v-drop-in {
+  animation: v-drop-in var(--v-dur-2) var(--v-ease) both;
+  transform-origin: top right;
+}
+.v-sheet {
+  animation: v-sheet-up var(--v-dur-3) var(--v-ease) both;
+}
+@media (min-width: 640px) {
+  .v-sheet {
+    animation-name: v-fade-up;
+  }
+}
+.v-heart {
+  animation: v-heart var(--v-dur-3) var(--v-ease);
+}
+.v-bump {
+  animation: v-bump var(--v-dur-3) var(--v-ease);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .v-skel::after,
+  .vinna-skeleton::after {
+    animation: none;
+  }
+  .v-fade-up,
+  .v-fade-in,
+  .v-sheet-up,
+  .v-sheet,
+  .v-drop-in,
+  .v-heart,
+  .v-bump {
+    animation-duration: 1ms;
+  }
+}
+
+/* If scripts never take the splash down, CSS does. */
+@keyframes v-splash-out {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+.v-splash {
+  animation: v-splash-out 300ms ease 4s forwards;
+}
+
+/* Our search fields draw their own clear button. */
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+}

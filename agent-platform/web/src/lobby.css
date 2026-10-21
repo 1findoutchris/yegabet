@@ -1,0 +1,22 @@
+/* The player lobby: the old YegaBet design (Tailwind v4 + its design tokens), compiled
+   into our own CSS so the Content-Security-Policy stays strict. */
+@import "tailwindcss";
+@import "@fontsource-variable/manrope";
+@import "./vinna/tokens.css";
+
+:root {
+  --font-vinna: "Manrope Variable";
+}
+html,
+body {
+  margin: 0;
+  background: var(--v-bg-0);
+  color: #fff;
+  font-family: var(--font-outfit);
+}
+
+/* Off-screen lobby rows skip layout and paint until scrolled near (as on the old site). */
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 420px;
+}

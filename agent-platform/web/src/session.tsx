@@ -118,7 +118,8 @@ export function Brand({ role }: { role?: string }) {
   );
 }
 
-export function Login() {
+/** `embedded`: shown inside the lobby, which already has its own header. */
+export function Login({ embedded = false }: { embedded?: boolean }) {
   const { info, refresh } = useSession();
   const [as, setAs] = useState<"player" | "agent_member" | "staff">(() =>
     window.location.hash.startsWith("#/admin")
@@ -172,9 +173,11 @@ export function Login() {
   const inTelegram = miniApp() !== null;
   return (
     <div className="app">
-      <header className="top">
-        <Brand />
-      </header>
+      {!embedded && (
+        <header className="top">
+          <Brand />
+        </header>
+      )}
       {as === "player" && (
         <Panel title="Create your account">
           <p className="muted">

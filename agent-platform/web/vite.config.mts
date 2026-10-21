@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import tailwindcss from "@tailwindcss/vite";
 
 /**
  * The web app (plan 11 lite): built into web/dist and served by the API
@@ -9,8 +10,8 @@ import react from "@vitejs/plugin-react";
 const api = ["/health", "/auth", "/me", "/deposits", "/withdrawals", "/agent", "/admin", "/games", "/public"];
 
 export default defineConfig({
-  root: __dirname,
-  plugins: [react()],
+  root: import.meta.dirname,
+  plugins: [react(), tailwindcss()],
   build: { outDir: "dist", emptyOutDir: true, sourcemap: false },
   server: { proxy: Object.fromEntries(api.map((p) => [p, "http://localhost:3000"])) },
 });

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { api, post } from "../lib/api";
 import { isAmount, shortDate } from "../lib/money";
-import { miniApp, openUrl } from "../lib/telegram";
+import { miniApp } from "../lib/telegram";
 import { useSession } from "../session";
 import { Birr, Loading, Notice, Panel, Tag, useAction, useLoad } from "../ui";
 
@@ -9,101 +9,6 @@ interface Wallet {
   availableSantim: string;
   heldSantim: string;
 }
-interface Game {
-  gameUid: string;
-  name: string;
-  type: string | null;
-  img: string | null;
-  providerName: string | null;
-}
-
-export function PlayerHome() {
-  const wallet = useLoad(() => api<Wallet>("/me/wallet"));
-  const [search, setSearch] = useState("");
-  const [type, setType] = useState("");
-  const games = useLoad(
-    () =>
-      api<{ games: Game[]; total: number }>(
-        `/games?search=${encodeURIComponent(search)}&type=${encodeURIComponent(type)}`,
-      ),
-    [search, type],
-  );
-  const play = useAction();
-  const launch = (g: Game) =>
-    play.run(async () => {
-      const { url } = await post<{ url: string }>(`/games/${encodeURIComponent(g.gameUid)}/launch`, {
-        device: window.innerWidth < 800 ? "mobile" : "desktop",
-      });
-      openUrl(url);
-    });
-
-  return (
-    <>
-      <Panel>
-        <div className="muted">Balance</div>
-        {wallet.data ? (
-          <>
-            <div className="big">
-              <Birr santim={wallet.data.availableSantim} />
-            </div>
-            {wallet.data.heldSantim !== "0" && (
-              <div className="muted">
-                <Birr santim={wallet.data.heldSantim} /> held for withdrawals
-              </div>
-            )}
-          </>
-        ) : (
-          <Loading error={wallet.error} />
-        )}
-        <div className="row" style={{ marginTop: 10 }}>
-          <a href="#/deposit">
-            <button>Deposit</button>
-          </a>
-          <a href="#/withdraw">
-            <button className="ghost">Withdraw</button>
-          </a>
-        </div>
-      </Panel>
-      <Panel title="Games">
-        <div className="row" style={{ marginBottom: 10 }}>
-          <input
-            placeholder="Search games"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            style={{ flex: 2 }}
-          />
-          <select value={type} onChange={(e) => setType(e.target.value)} style={{ flex: 1 }}>
-            <option value="">All</option>
-            {["Slot", "Crash", "Live", "Table", "Instant", "Arcade", "Multiplayer"].map((t) => (
-              <option key={t}>{t}</option>
-            ))}
-          </select>
-        </div>
-        <Notice error={play.error} />
-        {games.data ? (
-          games.data.games.length === 0 ? (
-            <p className="muted">No games yet.</p>
-          ) : (
-            <div className="games">
-              {games.data.games.map((g) => (
-                <div key={g.gameUid} className="game" onClick={() => launch(g)}>
-                  {g.img ? <img src={g.img} alt="" loading="lazy" /> : <img alt="" />}
-                  <div>
-                    {g.name}
-                    <div className="muted">{g.providerName}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          )
-        ) : (
-          <Loading error={games.error} />
-        )}
-      </Panel>
-    </>
-  );
-}
-
 interface PayAccount {
   id: string;
   method: string;
