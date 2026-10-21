@@ -445,12 +445,18 @@ model Game {
   type         String?
   img          String?
   active       Boolean  @default(true)
+  section      String   @default("games")
+  category     String   @default("other")
+  providerSlug String?  @map("provider_slug")
+  firstSeenAt  DateTime @default(now()) @map("first_seen_at") @db.Timestamptz(6)
   syncedAt     DateTime @default(now()) @map("synced_at") @db.Timestamptz(6)
 
   provider Provider @relation(fields: [providerId], references: [id], onDelete: Restrict)
 
   @@id([providerId, gameUid])
   @@index([active, type])
+  @@index([active, section, category], map: "games_active_section_category_idx")
+  @@index([providerSlug], map: "games_provider_slug_idx")
   @@map("games")
 }
 

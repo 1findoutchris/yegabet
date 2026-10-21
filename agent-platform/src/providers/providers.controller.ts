@@ -88,6 +88,13 @@ export class GamesController {
     return this.games.list(q);
   }
 
+  /** The lobby in one call: category counts, providers and the rows (plan 12). */
+  @Public()
+  @Get("lobby")
+  lobby() {
+    return this.games.lobby();
+  }
+
   @Authenticated()
   @Post(":uid/launch")
   @HttpCode(200)

@@ -231,6 +231,10 @@ describe("catalog", () => {
     expect(res.body.games.map((g: { gameUid: string }) => g.gameUid)).toContain(`list-${process.pid}`);
     expect((await http.get("/games?page=999")).body).toMatchObject({ page: 500, games: [] });
     expect((await http.get("/games")).body.page).toBe(1);
+    const lobby = await http.get("/games/lobby");
+    expect(lobby.status).toBe(200);
+    expect(lobby.body).toHaveProperty("counts.slots");
+    expect(lobby.body).toHaveProperty("rows.popular");
   });
 });
 

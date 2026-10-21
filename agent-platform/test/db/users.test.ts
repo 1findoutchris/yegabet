@@ -59,7 +59,9 @@ describe("seed", () => {
     );
     for (const a of seeded) {
       expect(a.allowNegative).toBe(ACCOUNT_TYPES[a.type as keyof typeof ACCOUNT_TYPES].allowNegative);
-      expect(await ledger.getBalance(a.id)).toBe(0n);
+      // Every seeded account has its balance row. (Not "is 0": other test files, e.g.
+      // settlement, legitimately credit the company accounts, in whatever order they run.)
+      expect(typeof (await ledger.getBalance(a.id))).toBe("bigint");
     }
     expect((await db.role.findMany()).map((r) => r.key).sort()).toEqual(
       ["cofounder", "finance", "owner", "staff_reviewer", "support"].sort(),

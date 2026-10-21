@@ -1,5 +1,6 @@
-import type { PrismaClient } from "@prisma/client";
+import type { Game, Prisma, PrismaClient } from "@prisma/client";
 import { isEnabled } from "../config/featureFlags";
+import { classify, slugify } from "./classify";
 import { PROVIDER, toProviderPlayerId } from "./octhera/adapter";
 import type { OctheraClient } from "./octhera/client";
 
@@ -41,9 +42,15 @@ export class Games {
       const games = res.games ?? [];
       for (const g of games) {
         if (!g?.gameUid || !g.name) continue;
+        const providerName = g.providerName ?? g.provider ?? null;
+        // The old site's lobby placement (plan 12): section + category from type, then name.
+        const place = classify(g.type, g.name);
         const data = {
           name: g.name.slice(0, 200),
-          providerName: g.providerName ?? g.provider ?? null,
+          providerName,
+          providerSlug: providerName ? slugify(providerName) : null,
+          section: place.section,
+          category: place.category,
           type: g.type ?? null,
           img: g.img ?? null,
           active: true,
@@ -69,30 +76,119 @@ export class Games {
     return { fetched, deactivated, complete };
   }
 
-  async list(q: { type?: unknown; search?: unknown; page?: unknown }) {
+  /**
+   * One page of active games, filtered by category, section, provider or a
+   * name search. Sports games are never listed: the new platform has no
+   * sportsbook (plan 12).
+   */
+  async list(q: {
+    type?: unknown;
+    search?: unknown;
+    page?: unknown;
+    category?: unknown;
+    section?: unknown;
+    provider?: unknown;
+  }) {
     const page = Math.max(1, Math.min(500, Number(q.page) || 1));
-    const where = {
+    const str = (v: unknown) => (typeof v === "string" && v ? v.slice(0, 50) : undefined);
+    const where: Prisma.GameWhereInput = {
       active: true,
-      ...(typeof q.type === "string" && q.type ? { type: q.type } : {}),
-      ...(typeof q.search === "string" && q.search
-        ? { name: { contains: q.search.slice(0, 50), mode: "insensitive" as const } }
-        : {}),
+      section: str(q.section) ?? { not: "sports" },
+      ...(str(q.type) ? { type: str(q.type) } : {}),
+      ...(str(q.category) ? { category: str(q.category) } : {}),
+      ...(str(q.provider) ? { providerSlug: str(q.provider) } : {}),
+      ...(str(q.search) ? { name: { contains: str(q.search), mode: "insensitive" as const } } : {}),
     };
+    if (where.section === "sports") where.section = "__none__";
     const [total, rows] = await Promise.all([
       this.db.game.count({ where }),
       this.db.game.findMany({ where, orderBy: { name: "asc" }, skip: (page - 1) * 60, take: 60 }),
     ]);
+    return { total, page, games: rows.map(gameView) };
+  }
+
+  /**
+   * Everything the lobby shows, in one call (plan 12): category counts, casino
+   * providers with counts, and the rows. Rows are filled top to bottom and a
+   * game shown in one row isn't repeated further down, as on the old site.
+   */
+  async lobby() {
+    const active = { active: true, section: { not: "sports" } };
+    const counts = await this.db.game.groupBy({
+      by: ["section", "category"],
+      where: active,
+      _count: { _all: true },
+    });
+    const count = (category: string) =>
+      counts.filter((c) => c.category === category).reduce((s, c) => s + c._count._all, 0);
+    const providers = await this.db.game.groupBy({
+      by: ["providerSlug", "providerName"],
+      where: { ...active, section: "casino", providerSlug: { not: null } },
+      _count: { _all: true },
+      orderBy: { _count: { providerSlug: "desc" } },
+      take: 24,
+    });
+
+    const since = new Date(Date.now() - 30 * 86_400_000);
+    const played = await this.db.bet.groupBy({
+      by: ["gameUid"],
+      where: { providerId: PROVIDER, placedAt: { gte: since }, gameUid: { not: null } },
+      _count: { _all: true },
+      orderBy: { _count: { gameUid: "desc" } },
+      take: 64,
+    });
+    const popularRows = await this.db.game.findMany({
+      where: { ...active, gameUid: { in: played.map((p) => p.gameUid as string) } },
+    });
+    const rank = new Map(played.map((p, i) => [p.gameUid, i]));
+    popularRows.sort((a, b) => (rank.get(a.gameUid) as number) - (rank.get(b.gameUid) as number));
+
+    const byCategory = (category: string) =>
+      this.db.game.findMany({ where: { ...active, category }, orderBy: { name: "asc" }, take: 60 });
+    const [crash, slots, live, table, recent] = await Promise.all([
+      byCategory("crash"),
+      byCategory("slots"),
+      byCategory("live"),
+      byCategory("table"),
+      this.db.game.findMany({ where: active, orderBy: { firstSeenAt: "desc" }, take: 60 }),
+    ]);
+
+    const seen = new Set<string>();
+    const fresh = (rows: { gameUid: string }[], n = 16) => {
+      const out = [];
+      for (const r of rows) {
+        if (out.length >= n) break;
+        if (seen.has(r.gameUid)) continue;
+        seen.add(r.gameUid);
+        out.push(r);
+      }
+      return out as typeof rows;
+    };
     return {
-      total,
-      page,
-      games: rows.map((g) => ({
-        provider: g.providerId,
-        gameUid: g.gameUid,
-        name: g.name,
-        providerName: g.providerName,
-        type: g.type,
-        img: g.img,
+      counts: {
+        slots: count("slots"),
+        live: count("live"),
+        table: count("table"),
+        crash: count("crash"),
+        fishing: count("fishing"),
+        lottery: count("lottery"),
+        arcade: count("arcade"),
+        other: count("other"),
+      },
+      providers: providers.map((p) => ({
+        slug: p.providerSlug as string,
+        // The slug is made from the name, so a provider with a slug has a name.
+        name: p.providerName as string,
+        count: p._count._all,
       })),
+      rows: {
+        popular: (fresh(popularRows) as typeof popularRows).map(gameView),
+        crash: (fresh(crash) as typeof crash).map(gameView),
+        slots: (fresh(slots) as typeof slots).map(gameView),
+        live: (fresh(live) as typeof live).map(gameView),
+        new: (fresh(recent) as typeof recent).map(gameView),
+        table: (fresh(table) as typeof table).map(gameView),
+      },
     };
   }
 
@@ -124,4 +220,18 @@ export class Games {
       device: device === "mobile" ? "mobile" : "desktop",
     });
   }
+}
+
+function gameView(g: Game) {
+  return {
+    provider: g.providerId,
+    gameUid: g.gameUid,
+    name: g.name,
+    providerName: g.providerName,
+    providerSlug: g.providerSlug,
+    section: g.section,
+    category: g.category,
+    type: g.type,
+    img: g.img,
+  };
 }
